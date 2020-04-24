@@ -32996,6 +32996,46 @@ yet the idea that if you take any two things that prove a third thing and, then,
 
 
 
+<a name="195243147"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113489-new%20members/topic/noob%20question%28s%29/near/195243147" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Kevin Buzzard <a href="https://leanprover-community.github.io/archive/stream/113489-new-members/topic/noob.20question(s).html#195243147">(Apr 24 2020 at 20:53)</a>:</h4>
+<p><span class="user-mention" data-user-id="214077">@Sayantan Majumdar</span></p>
+<div class="codehilite"><pre><span></span>    <span class="kn">example</span> <span class="o">:</span> <span class="bp">∀</span> <span class="n">n</span> <span class="o">:</span> <span class="bp">ℕ</span><span class="o">,</span> <span class="n">fib1</span> <span class="n">n</span> <span class="bp">=</span> <span class="n">fib2</span> <span class="n">n</span>
+    <span class="bp">|</span> <span class="mi">0</span> <span class="o">:=</span> <span class="n">rfl</span>
+    <span class="bp">|</span> <span class="mi">1</span> <span class="o">:=</span> <span class="n">rfl</span>
+    <span class="bp">|</span> <span class="o">(</span><span class="n">n</span> <span class="bp">+</span> <span class="mi">2</span><span class="o">)</span> <span class="o">:=</span> <span class="k">begin</span>
+     <span class="n">rw</span> <span class="o">[</span><span class="n">fib1</span><span class="o">,</span> <span class="n">fib2</span><span class="o">,</span> <span class="bp">_</span><span class="n">example</span> <span class="n">n</span><span class="o">,</span> <span class="bp">_</span><span class="n">example</span> <span class="o">(</span><span class="n">nat</span><span class="bp">.</span><span class="n">succ</span> <span class="n">n</span><span class="o">)],</span>
+     <span class="n">refl</span><span class="o">,</span>
+    <span class="kn">end</span>
+</pre></div>
+
+
+
+<a name="195243284"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113489-new%20members/topic/noob%20question%28s%29/near/195243284" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Michael Barz <a href="https://leanprover-community.github.io/archive/stream/113489-new-members/topic/noob.20question(s).html#195243284">(Apr 24 2020 at 20:54)</a>:</h4>
+<p>I'm trying to learn lean at the moment by formalizing a few statements about lattices to get a feel for proving things. I was having two difficulties. </p>
+<p>At the moment, I have a list of easy theorems about lattices with a closure operator I'd like to try writing up in Lean. From the source code in order.lattice, I decided to define `class closed_lattice (P : Type u) extends lattice P' to be a structure obeying four properties (has a closure function + 3 axioms of closure). </p>
+<p>With the very first theorem on my list, I encountered a difficulty: If I want to prove a result about <em>finite</em> lattices with closure operator, how do I add finiteness as a hypothesis to a theorem?</p>
+
+
+
+<a name="195243356"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113489-new%20members/topic/noob%20question%28s%29/near/195243356" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Reid Barton <a href="https://leanprover-community.github.io/archive/stream/113489-new-members/topic/noob.20question(s).html#195243356">(Apr 24 2020 at 20:55)</a>:</h4>
+<p>Probably by adding <code>[fintype P]</code> in the list of arguments somewhere</p>
+
+
+
+<a name="195243520"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113489-new%20members/topic/noob%20question%28s%29/near/195243520" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Kevin Buzzard <a href="https://leanprover-community.github.io/archive/stream/113489-new-members/topic/noob.20question(s).html#195243520">(Apr 24 2020 at 20:56)</a>:</h4>
+<p>Close code quoting with <code> ` </code> (the same character as opening it). And post full working code if you want more precise answers.</p>
+
+
+
+<a name="195243967"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113489-new%20members/topic/noob%20question%28s%29/near/195243967" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Michael Barz <a href="https://leanprover-community.github.io/archive/stream/113489-new-members/topic/noob.20question(s).html#195243967">(Apr 24 2020 at 21:00)</a>:</h4>
+<p>Thank you Reid, that seems to have worked! Sorry about the lack of code--Reid's answer seems to be enough to work at the moment, though I'll be sure to include actual code snippets if I have future questions.</p>
+
+
+
 {% endraw %}
 
-<hr><p>Last updated: Apr 24 2020 at 20:56 UTC</p>
+<hr><p>Last updated: Apr 24 2020 at 21:02 UTC</p>
