@@ -20,7 +20,7 @@ permalink: /index.html
 
 * [Lean Together 2019](stream/179818-Lean-Together-2019/index.html) (31 topics)
 
-* [Is there code for X?](stream/217875-Is-there-code-for-X?/index.html) (28 topics)
+* [Is there code for X?](stream/217875-Is-there-code-for-X%3F/index.html) (28 topics)
 
 * [Lean for teaching](stream/187764-Lean-for-teaching/index.html) (20 topics)
 
@@ -36,4 +36,4 @@ permalink: /index.html
 
 * [Big Proof 2019](stream/198800-Big-Proof-2019/index.html) (3 topics)
 
-<hr><p>Last updated: Apr 24 2020 at 19:15 UTC</p>
+<hr><p>Last updated: Apr 24 2020 at 20:56 UTC</p>
