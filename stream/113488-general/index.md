@@ -9,8 +9,8 @@ permalink: /stream/113488-general/index.html
 
 ### Topics:
 
-* [class instance unification fails](topic/class.20instance.20unification.20fails.html) (13 messages, latest: Apr 24 2020 at 20:36)
-* [Notices of the AMS paper](topic/Notices.20of.20the.20AMS.20paper.html) (31 messages, latest: Apr 24 2020 at 20:26)
+* [Notices of the AMS paper](topic/Notices.20of.20the.20AMS.20paper.html) (32 messages, latest: Apr 24 2020 at 23:31)
+* [class instance unification fails](topic/class.20instance.20unification.20fails.html) (14 messages, latest: Apr 24 2020 at 23:12)
 * [lean-client-python](topic/lean-client-python.html) (43 messages, latest: Apr 24 2020 at 18:04)
 * [parser fun](topic/parser.20fun.html) (10 messages, latest: Apr 24 2020 at 17:06)
 * [Case tags](topic/Case.20tags.html) (20 messages, latest: Apr 24 2020 at 16:54)
@@ -2702,4 +2702,4 @@ permalink: /stream/113488-general/index.html
 * [test](topic/test.html) (4 messages, latest: Feb 26 2018 at 16:22)
 * [welcome](topic/welcome.html) (1 message, latest: Feb 26 2018 at 16:02)
 
-<hr><p>Last updated: Apr 24 2020 at 23:02 UTC</p>
+<hr><p>Last updated: Apr 24 2020 at 23:32 UTC</p>
