@@ -9,7 +9,7 @@ permalink: /stream/113488-general/index.html
 
 ### Topics:
 
-* [Invitation to join the Codewars Lean community, Round 2](topic/Invitation.20to.20join.20the.20Codewars.20Lean.20community.2C.20Round.202.html) (126 messages, latest: Apr 25 2020 at 08:27)
+* [Invitation to join the Codewars Lean community, Round 2](topic/Invitation.20to.20join.20the.20Codewars.20Lean.20community.2C.20Round.202.html) (134 messages, latest: Apr 25 2020 at 08:53)
 * [Notices of the AMS paper](topic/Notices.20of.20the.20AMS.20paper.html) (38 messages, latest: Apr 25 2020 at 07:20)
 * [structure unification fails](topic/structure.20unification.20fails.html) (1 message, latest: Apr 25 2020 at 06:15)
 * [Intuitionistic Type Theory Proofs](topic/Intuitionistic.20Type.20Theory.20Proofs.html) (114 messages, latest: Apr 25 2020 at 05:38)
@@ -2704,4 +2704,4 @@ permalink: /stream/113488-general/index.html
 * [test](topic/test.html) (4 messages, latest: Feb 26 2018 at 16:22)
 * [welcome](topic/welcome.html) (1 message, latest: Feb 26 2018 at 16:02)
 
-<hr><p>Last updated: Apr 25 2020 at 08:33 UTC</p>
+<hr><p>Last updated: Apr 25 2020 at 09:03 UTC</p>

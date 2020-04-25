@@ -925,6 +925,58 @@ Don't bother going through every axiom. Use Ltac instead."</p>
 
 
 
+<a name="195275126"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113488-general/topic/Invitation%20to%20join%20the%20Codewars%20Lean%20community%2C%20Round%202/near/195275126" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> David Wärn <a href="https://leanprover-community.github.io/archive/stream/113488-general/topic/Invitation.20to.20join.20the.20Codewars.20Lean.20community.2C.20Round.202.html#195275126">(Apr 25 2020 at 08:43)</a>:</h4>
+<p>Given a (rather long) kata solution that takes more than 16s to compile, how might I go about optimizing it? Is there a tool that would show me how much time is spent compiling each step?</p>
+
+
+
+<a name="195275251"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113488-general/topic/Invitation%20to%20join%20the%20Codewars%20Lean%20community%2C%20Round%202/near/195275251" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Bryan Gin-ge Chen <a href="https://leanprover-community.github.io/archive/stream/113488-general/topic/Invitation.20to.20join.20the.20Codewars.20Lean.20community.2C.20Round.202.html#195275251">(Apr 25 2020 at 08:47)</a>:</h4>
+<p><code>set_option profiler true</code></p>
+
+
+
+<a name="195275252"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113488-general/topic/Invitation%20to%20join%20the%20Codewars%20Lean%20community%2C%20Round%202/near/195275252" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Kevin Buzzard <a href="https://leanprover-community.github.io/archive/stream/113488-general/topic/Invitation.20to.20join.20the.20Codewars.20Lean.20community.2C.20Round.202.html#195275252">(Apr 25 2020 at 08:47)</a>:</h4>
+<p>My solution to <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi mathvariant="normal">∣</mi><msup><mi>R</mi><mo>×</mo></msup><mi mathvariant="normal">∣</mi><mo>=</mo><mn>5</mn></mrow><annotation encoding="application/x-tex">|R^\times|=5</annotation></semantics></math></span><span aria-hidden="true" class="katex-html"><span class="base"><span class="strut" style="height:1.021331em;vertical-align:-0.25em;"></span><span class="mord">∣</span><span class="mord"><span class="mord mathdefault" style="margin-right:0.00773em;">R</span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.771331em;"><span style="top:-3.063em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mbin mtight">×</span></span></span></span></span></span></span></span><span class="mord">∣</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:0.64444em;vertical-align:0em;"></span><span class="mord">5</span></span></span></span> took more than 16 seconds to compile so I just gave up and decided to wait to see if there was a rule change :-) Kenny is the master of speeding solutions up.</p>
+
+
+
+<a name="195275300"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113488-general/topic/Invitation%20to%20join%20the%20Codewars%20Lean%20community%2C%20Round%202/near/195275300" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Kenny Lau <a href="https://leanprover-community.github.io/archive/stream/113488-general/topic/Invitation.20to.20join.20the.20Codewars.20Lean.20community.2C.20Round.202.html#195275300">(Apr 25 2020 at 08:48)</a>:</h4>
+<p>in short: don't use <code>simp</code>, don't use <code>ring</code>, etc</p>
+
+
+
+<a name="195275334"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113488-general/topic/Invitation%20to%20join%20the%20Codewars%20Lean%20community%2C%20Round%202/near/195275334" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Kenny Lau <a href="https://leanprover-community.github.io/archive/stream/113488-general/topic/Invitation.20to.20join.20the.20Codewars.20Lean.20community.2C.20Round.202.html#195275334">(Apr 25 2020 at 08:49)</a>:</h4>
+<p>and optimize the "proof tree"</p>
+
+
+
+<a name="195275342"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113488-general/topic/Invitation%20to%20join%20the%20Codewars%20Lean%20community%2C%20Round%202/near/195275342" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Kenny Lau <a href="https://leanprover-community.github.io/archive/stream/113488-general/topic/Invitation.20to.20join.20the.20Codewars.20Lean.20community.2C.20Round.202.html#195275342">(Apr 25 2020 at 08:49)</a>:</h4>
+<p>you can send me the code in DM and i can optimize it when i am free and willing</p>
+
+
+
+<a name="195275456"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113488-general/topic/Invitation%20to%20join%20the%20Codewars%20Lean%20community%2C%20Round%202/near/195275456" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Kevin Buzzard <a href="https://leanprover-community.github.io/archive/stream/113488-general/topic/Invitation.20to.20join.20the.20Codewars.20Lean.20community.2C.20Round.202.html#195275456">(Apr 25 2020 at 08:52)</a>:</h4>
+<p>It's a dismal process. I have a kata proof in another window which is taking a long time, and the only way I will be able to speed it up is to replace 10 applications of <code>linarith</code> with <code>rw sub_lt_iff_lt_add</code> or whatever; I usually cannot be bothered to do this because for me this is anti-(the whole point of linarith).</p>
+
+
+
+<a name="195275481"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113488-general/topic/Invitation%20to%20join%20the%20Codewars%20Lean%20community%2C%20Round%202/near/195275481" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Kenny Lau <a href="https://leanprover-community.github.io/archive/stream/113488-general/topic/Invitation.20to.20join.20the.20Codewars.20Lean.20community.2C.20Round.202.html#195275481">(Apr 25 2020 at 08:53)</a>:</h4>
+<p><span class="user-mention silent" data-user-id="110038">Kevin Buzzard</span> <a href="#narrow/stream/113488-general/topic/Invitation.20to.20join.20the.20Codewars.20Lean.20community.2C.20Round.202/near/195275252" title="#narrow/stream/113488-general/topic/Invitation.20to.20join.20the.20Codewars.20Lean.20community.2C.20Round.202/near/195275252">said</a>:</p>
+<blockquote>
+<p>My solution to <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi mathvariant="normal">∣</mi><msup><mi>R</mi><mo>×</mo></msup><mi mathvariant="normal">∣</mi><mo>=</mo><mn>5</mn></mrow><annotation encoding="application/x-tex">|R^\times|=5</annotation></semantics></math></span><span aria-hidden="true" class="katex-html"><span class="base"><span class="strut" style="height:1.021331em;vertical-align:-0.25em;"></span><span class="mord">∣</span><span class="mord"><span class="mord mathdefault" style="margin-right:0.00773em;">R</span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.771331em;"><span style="top:-3.063em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mbin mtight">×</span></span></span></span></span></span></span></span><span class="mord">∣</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:0.64444em;vertical-align:0em;"></span><span class="mord">5</span></span></span></span> took more than 16 seconds to compile so I just gave up and decided to wait to see if there was a rule change :-) Kenny is the master of speeding solutions up.</p>
+</blockquote>
+<p>I'm good at it because I have to</p>
+
+
+
 {% endraw %}
 
-<hr><p>Last updated: Apr 25 2020 at 08:33 UTC</p>
+<hr><p>Last updated: Apr 25 2020 at 09:03 UTC</p>
