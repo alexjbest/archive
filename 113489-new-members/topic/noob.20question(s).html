@@ -33526,6 +33526,92 @@ For future reference though, how would I get a proposition asserting that <code>
 
 
 
+<a name="195298088"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113489-new%20members/topic/noob%20question%28s%29/near/195298088" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Kevin Buzzard <a href="https://leanprover-community.github.io/archive/stream/113489-new-members/topic/noob.20question(s).html#195298088">(Apr 25 2020 at 19:03)</a>:</h4>
+<p><code>have</code> is a very useful way to make new hypothesis. It creates a new goal, but if the proof is easy then this is no problem.</p>
+
+
+
+<a name="195298129"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113489-new%20members/topic/noob%20question%28s%29/near/195298129" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Frank Dai <a href="https://leanprover-community.github.io/archive/stream/113489-new-members/topic/noob.20question(s).html#195298129">(Apr 25 2020 at 19:04)</a>:</h4>
+<p>is there a way to do it without copying f and g (they're both really long)?</p>
+
+
+
+<a name="195298134"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113489-new%20members/topic/noob%20question%28s%29/near/195298134" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Johan Commelin <a href="https://leanprover-community.github.io/archive/stream/113489-new-members/topic/noob.20question(s).html#195298134">(Apr 25 2020 at 19:04)</a>:</h4>
+<p>The term-mode variant is <code>have hx := congr_fun h x</code></p>
+
+
+
+<a name="195298139"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113489-new%20members/topic/noob%20question%28s%29/near/195298139" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Johan Commelin <a href="https://leanprover-community.github.io/archive/stream/113489-new-members/topic/noob.20question(s).html#195298139">(Apr 25 2020 at 19:04)</a>:</h4>
+<p>And it doesn't require copying <code>f</code> and <code>g</code></p>
+
+
+
+<a name="195298165"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113489-new%20members/topic/noob%20question%28s%29/near/195298165" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Sam Raleigh <a href="https://leanprover-community.github.io/archive/stream/113489-new-members/topic/noob.20question(s).html#195298165">(Apr 25 2020 at 19:05)</a>:</h4>
+<p>If I wanted to prove results about graphs in lean, is there a graph type of some kind?</p>
+
+
+
+<a name="195298169"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113489-new%20members/topic/noob%20question%28s%29/near/195298169" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Frank Dai <a href="https://leanprover-community.github.io/archive/stream/113489-new-members/topic/noob.20question(s).html#195298169">(Apr 25 2020 at 19:05)</a>:</h4>
+<p>I prefer <code>ap</code> but I guess that's okay :P</p>
+
+
+
+<a name="195298339"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113489-new%20members/topic/noob%20question%28s%29/near/195298339" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Johan Commelin <a href="https://leanprover-community.github.io/archive/stream/113489-new-members/topic/noob.20question(s).html#195298339">(Apr 25 2020 at 19:09)</a>:</h4>
+<p><span class="user-mention silent" data-user-id="294527">Sam Raleigh</span> <a href="#narrow/stream/113489-new-members/topic/noob.20question(s)/near/195298165" title="#narrow/stream/113489-new-members/topic/noob.20question(s)/near/195298165">said</a>:</p>
+<blockquote>
+<p>If I wanted to prove results about graphs in lean, is there a graph type of some kind?</p>
+</blockquote>
+<p>See the <code>hedetniemi</code> branch</p>
+
+
+
+<a name="195298341"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113489-new%20members/topic/noob%20question%28s%29/near/195298341" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Johan Commelin <a href="https://leanprover-community.github.io/archive/stream/113489-new-members/topic/noob.20question(s).html#195298341">(Apr 25 2020 at 19:09)</a>:</h4>
+<p>It's very much work in progress</p>
+
+
+
+<a name="195298388"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113489-new%20members/topic/noob%20question%28s%29/near/195298388" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Bryan Gin-ge Chen <a href="https://leanprover-community.github.io/archive/stream/113489-new-members/topic/noob.20question(s).html#195298388">(Apr 25 2020 at 19:10)</a>:</h4>
+<p>See also <a href="#narrow/stream/116395-maths/topic/Hedetniemi/near/191947028" title="#narrow/stream/116395-maths/topic/Hedetniemi/near/191947028">the associated Zulip thread</a>.</p>
+
+
+
+<a name="195299817"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113489-new%20members/topic/noob%20question%28s%29/near/195299817" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> ROCKY KAMEN-RUBIO <a href="https://leanprover-community.github.io/archive/stream/113489-new-members/topic/noob.20question(s).html#195299817">(Apr 25 2020 at 19:47)</a>:</h4>
+<p>Does Lean have a floor/ceiling function to get from non-negative reals to nats? Looking through mathlib I'm not seeing anything, but my intuition for mathlib's organization and naming conventions still isn't great.</p>
+
+
+
+<a name="195299894"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113489-new%20members/topic/noob%20question%28s%29/near/195299894" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Mario Carneiro <a href="https://leanprover-community.github.io/archive/stream/113489-new-members/topic/noob.20question(s).html#195299894">(Apr 25 2020 at 19:49)</a>:</h4>
+<p>They are in <code>algebra.archimedean</code></p>
+
+
+
+<a name="195299910"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113489-new%20members/topic/noob%20question%28s%29/near/195299910" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Mario Carneiro <a href="https://leanprover-community.github.io/archive/stream/113489-new-members/topic/noob.20question(s).html#195299910">(Apr 25 2020 at 19:49)</a>:</h4>
+<p>grepping for <code>floor</code> also helps</p>
+
+
+
+<a name="195300338"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113489-new%20members/topic/noob%20question%28s%29/near/195300338" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> ROCKY KAMEN-RUBIO <a href="https://leanprover-community.github.io/archive/stream/113489-new-members/topic/noob.20question(s).html#195300338">(Apr 25 2020 at 20:00)</a>:</h4>
+<p><span class="user-mention silent" data-user-id="110049">Mario Carneiro</span> <a href="#narrow/stream/113489-new-members/topic/noob.20question(s)/near/195299894" title="#narrow/stream/113489-new-members/topic/noob.20question(s)/near/195299894">said</a>:</p>
+<blockquote>
+<p>They are in <code>algebra.archimedean</code></p>
+</blockquote>
+<p>Looks like <code>exists_nat_gt</code> coupled with a <code>cases</code> does the job. A little clunky though. I'll keep looking to see if there's a direct function.</p>
+
+
+
 {% endraw %}
 
-<hr><p>Last updated: Apr 25 2020 at 19:03 UTC</p>
+<hr><p>Last updated: Apr 25 2020 at 20:09 UTC</p>
