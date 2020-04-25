@@ -57,6 +57,130 @@ permalink: /stream/116395-maths/topic/Coersion.20and.20composition.html
 
 
 
+<a name="195268723"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/116395-maths/topic/Coersion%20and%20composition/near/195268723" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Yury G. Kudryashov <a href="https://leanprover-community.github.io/archive/stream/116395-maths/topic/Coersion.20and.20composition.html#195268723">(Apr 25 2020 at 05:10)</a>:</h4>
+<p>Could you please copy+paste proof state? BTW, why do you use <code>Projector</code> as a typeclass in <code>Complementary</code> and as an explicit argument in the next lemma?</p>
+
+
+
+<a name="195268824"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/116395-maths/topic/Coersion%20and%20composition/near/195268824" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> orlando <a href="https://leanprover-community.github.io/archive/stream/116395-maths/topic/Coersion.20and.20composition.html#195268824">(Apr 25 2020 at 05:14)</a>:</h4>
+<p>Hello, it's a problem <code> ⇑p ∘ ⇑p = ⇑(p  * p) </code> coersion ! </p>
+<div class="codehilite"><pre><span></span><span class="n">rewrite</span> <span class="n">tactic</span> <span class="n">failed</span><span class="o">,</span> <span class="n">did</span> <span class="n">not</span> <span class="n">find</span> <span class="kn">instance</span> <span class="n">of</span> <span class="n">the</span> <span class="n">pattern</span> <span class="k">in</span> <span class="n">the</span> <span class="n">target</span> <span class="n">expression</span>
+  <span class="n">p</span> <span class="bp">*</span> <span class="n">p</span>
+<span class="n">state</span><span class="o">:</span>
+<span class="mi">2</span> <span class="n">goals</span>
+<span class="n">R</span> <span class="o">:</span> <span class="kt">Type</span> <span class="n">u</span><span class="o">,</span>
+<span class="bp">_</span><span class="n">inst_1</span> <span class="o">:</span> <span class="n">comm_ring</span> <span class="n">R</span><span class="o">,</span>
+<span class="n">M</span> <span class="o">:</span> <span class="kt">Type</span> <span class="n">v</span><span class="o">,</span>
+<span class="bp">_</span><span class="n">inst_2</span> <span class="o">:</span> <span class="n">add_comm_group</span> <span class="n">M</span><span class="o">,</span>
+<span class="bp">_</span><span class="n">inst_3</span> <span class="o">:</span> <span class="n">module</span> <span class="n">R</span> <span class="n">M</span><span class="o">,</span>
+<span class="n">p</span> <span class="o">:</span> <span class="n">M</span> <span class="bp">→</span><span class="err">ₗ</span><span class="o">[</span><span class="n">R</span><span class="o">]</span> <span class="n">M</span><span class="o">,</span>
+<span class="n">x</span> <span class="n">y</span> <span class="o">:</span> <span class="n">M</span><span class="o">,</span>
+<span class="n">hyp_y</span> <span class="o">:</span> <span class="err">⇑</span><span class="n">p</span> <span class="n">y</span> <span class="bp">=</span> <span class="n">x</span><span class="o">,</span>
+<span class="n">hyp</span> <span class="o">:</span> <span class="n">p</span> <span class="bp">*</span> <span class="n">p</span> <span class="bp">=</span> <span class="n">p</span>
+<span class="err">⊢</span> <span class="err">⇑</span><span class="n">p</span> <span class="n">y</span> <span class="bp">-</span> <span class="o">(</span><span class="err">⇑</span><span class="n">p</span> <span class="err">∘</span> <span class="err">⇑</span><span class="n">p</span><span class="o">)</span> <span class="n">y</span> <span class="bp">=</span> <span class="mi">0</span>
+
+<span class="n">R</span> <span class="o">:</span> <span class="kt">Type</span> <span class="n">u</span><span class="o">,</span>
+<span class="bp">_</span><span class="n">inst_1</span> <span class="o">:</span> <span class="n">comm_ring</span> <span class="n">R</span><span class="o">,</span>
+<span class="n">M</span> <span class="o">:</span> <span class="kt">Type</span> <span class="n">v</span><span class="o">,</span>
+<span class="bp">_</span><span class="n">inst_2</span> <span class="o">:</span> <span class="n">add_comm_group</span> <span class="n">M</span><span class="o">,</span>
+<span class="bp">_</span><span class="n">inst_3</span> <span class="o">:</span> <span class="n">module</span> <span class="n">R</span> <span class="n">M</span><span class="o">,</span>
+<span class="n">p</span> <span class="o">:</span> <span class="n">M</span> <span class="bp">→</span><span class="err">ₗ</span><span class="o">[</span><span class="n">R</span><span class="o">]</span> <span class="n">M</span><span class="o">,</span>
+<span class="n">hyp</span> <span class="o">:</span> <span class="n">Projector</span> <span class="n">p</span><span class="o">,</span>
+<span class="n">x</span> <span class="o">:</span> <span class="n">M</span>
+<span class="err">⊢</span> <span class="n">x</span> <span class="err">∈</span> <span class="n">ker</span> <span class="o">(</span><span class="mi">1</span> <span class="bp">-</span> <span class="n">p</span><span class="o">)</span> <span class="bp">→</span> <span class="n">x</span> <span class="err">∈</span> <span class="n">range</span> <span class="n">p</span>
+</pre></div>
+
+
+
+<a name="195268827"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/116395-maths/topic/Coersion%20and%20composition/near/195268827" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Johan Commelin <a href="https://leanprover-community.github.io/archive/stream/116395-maths/topic/Coersion.20and.20composition.html#195268827">(Apr 25 2020 at 05:15)</a>:</h4>
+<p>You can try to change your goal:</p>
+<div class="codehilite"><pre><span></span><span class="n">change</span> <span class="n">p</span> <span class="n">y</span> <span class="bp">-</span> <span class="o">(</span><span class="n">p</span> <span class="bp">*</span> <span class="n">p</span><span class="o">)</span> <span class="n">y</span> <span class="bp">=</span> <span class="mi">0</span>
+</pre></div>
+
+
+
+<a name="195268830"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/116395-maths/topic/Coersion%20and%20composition/near/195268830" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Yury G. Kudryashov <a href="https://leanprover-community.github.io/archive/stream/116395-maths/topic/Coersion.20and.20composition.html#195268830">(Apr 25 2020 at 05:15)</a>:</h4>
+<p>There should be a <code>linear_map.mul_apply</code> lemma. Use it instead of <code>function.comp_apply</code>.</p>
+
+
+
+<a name="195268835"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/116395-maths/topic/Coersion%20and%20composition/near/195268835" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Johan Commelin <a href="https://leanprover-community.github.io/archive/stream/116395-maths/topic/Coersion.20and.20composition.html#195268835">(Apr 25 2020 at 05:15)</a>:</h4>
+<p>Yury's advice is better</p>
+
+
+
+<a name="195268901"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/116395-maths/topic/Coersion%20and%20composition/near/195268901" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Yury G. Kudryashov <a href="https://leanprover-community.github.io/archive/stream/116395-maths/topic/Coersion.20and.20composition.html#195268901">(Apr 25 2020 at 05:17)</a>:</h4>
+<p>If there is no such lemma, please add it right after the instance that gives you <code>*</code></p>
+
+
+
+<a name="195268947"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/116395-maths/topic/Coersion%20and%20composition/near/195268947" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> orlando <a href="https://leanprover-community.github.io/archive/stream/116395-maths/topic/Coersion.20and.20composition.html#195268947">(Apr 25 2020 at 05:18)</a>:</h4>
+<p>But it's work Johan ! </p>
+<p><span class="user-mention" data-user-id="214703">@Yury G. Kudryashov</span>  the tatic state change to <code> ⊢ ⇑p y - ⇑(comp p p) y = 0 </code> lean transform <code> * </code> to composition and i can't `rw``` after <span aria-label="frown" class="emoji emoji-1f641" role="img" title="frown">:frown:</span></p>
+
+
+
+<a name="195268948"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/116395-maths/topic/Coersion%20and%20composition/near/195268948" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> orlando <a href="https://leanprover-community.github.io/archive/stream/116395-maths/topic/Coersion.20and.20composition.html#195268948">(Apr 25 2020 at 05:18)</a>:</h4>
+<p>I thinck there is a stuff with using <code> * </code> !</p>
+
+
+
+<a name="195268956"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/116395-maths/topic/Coersion%20and%20composition/near/195268956" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Yury G. Kudryashov <a href="https://leanprover-community.github.io/archive/stream/116395-maths/topic/Coersion.20and.20composition.html#195268956">(Apr 25 2020 at 05:19)</a>:</h4>
+<p>It's called <code>linear_map.mul_app</code></p>
+
+
+
+<a name="195268997"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/116395-maths/topic/Coersion%20and%20composition/near/195268997" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Yury G. Kudryashov <a href="https://leanprover-community.github.io/archive/stream/116395-maths/topic/Coersion.20and.20composition.html#195268997">(Apr 25 2020 at 05:20)</a>:</h4>
+<p>If you <code>rw ← p.mul_app</code> instead of <code>function.comp_apply</code>, then you should get <code>*</code></p>
+
+
+
+<a name="195269050"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/116395-maths/topic/Coersion%20and%20composition/near/195269050" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> orlando <a href="https://leanprover-community.github.io/archive/stream/116395-maths/topic/Coersion.20and.20composition.html#195269050">(Apr 25 2020 at 05:22)</a>:</h4>
+<p>oh Sorry, i read <code>linear_map.comp_apply </code>  so  ok nice !</p>
+
+
+
+<a name="195269059"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/116395-maths/topic/Coersion%20and%20composition/near/195269059" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> orlando <a href="https://leanprover-community.github.io/archive/stream/116395-maths/topic/Coersion.20and.20composition.html#195269059">(Apr 25 2020 at 05:23)</a>:</h4>
+<p>For your question : i don't understand when a have to use <code> class</code> or <code>def</code> or <code>structure</code></p>
+
+
+
+<a name="195269159"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/116395-maths/topic/Coersion%20and%20composition/near/195269159" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> orlando <a href="https://leanprover-community.github.io/archive/stream/116395-maths/topic/Coersion.20and.20composition.html#195269159">(Apr 25 2020 at 05:26)</a>:</h4>
+<p>if i understand, i have to use <code> (hyp :  Projector p) </code></p>
+
+
+
+<a name="195269168"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/116395-maths/topic/Coersion%20and%20composition/near/195269168" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Yury G. Kudryashov <a href="https://leanprover-community.github.io/archive/stream/116395-maths/topic/Coersion.20and.20composition.html#195269168">(Apr 25 2020 at 05:26)</a>:</h4>
+<p>You should use <code>class</code> and <code>[Projector p]</code> if you will have quite a few <code>instance</code>s, and every time you apply your theorem Lean will find an instance automatically. It is used, e.g., for various information about <code>Type</code>s (<code>[group α]</code> etc)</p>
+
+
+
+<a name="195269212"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/116395-maths/topic/Coersion%20and%20composition/near/195269212" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Yury G. Kudryashov <a href="https://leanprover-community.github.io/archive/stream/116395-maths/topic/Coersion.20and.20composition.html#195269212">(Apr 25 2020 at 05:28)</a>:</h4>
+<p>If you're not going to have many <code>instance</code>s, then you should use <code>(hyp : Projector p)</code>. BTW, if you're going to PR this to <code>mathlib</code>, then I'd recommend to call it <code>is_projector p</code>.</p>
+
+
+
+<a name="195269289"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/116395-maths/topic/Coersion%20and%20composition/near/195269289" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> orlando <a href="https://leanprover-community.github.io/archive/stream/116395-maths/topic/Coersion.20and.20composition.html#195269289">(Apr 25 2020 at 05:30)</a>:</h4>
+<p>ok, <code>is_projector</code> is  really a better name !</p>
+
+
+
 {% endraw %}
 
-<hr><p>Last updated: Apr 25 2020 at 05:02 UTC</p>
+<hr><p>Last updated: Apr 25 2020 at 05:32 UTC</p>
