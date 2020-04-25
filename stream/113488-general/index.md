@@ -9,10 +9,10 @@ permalink: /stream/113488-general/index.html
 
 ### Topics:
 
+* [unfreezeI](topic/unfreezeI.html) (3 messages, latest: Apr 25 2020 at 17:56)
 * [class instances in definition of Prop](topic/class.20instances.20in.20definition.20of.20Prop.html) (16 messages, latest: Apr 25 2020 at 16:37)
 * [a + succ b syntactically succ(a+b)?](topic/a.20.2B.20succ.20b.20syntactically.20succ(a.2Bb).3F.html) (3 messages, latest: Apr 25 2020 at 16:27)
 * [Invitation to join the Codewars Lean community, Round 2](topic/Invitation.20to.20join.20the.20Codewars.20Lean.20community.2C.20Round.202.html) (140 messages, latest: Apr 25 2020 at 15:01)
-* [unfreezeI](topic/unfreezeI.html) (2 messages, latest: Apr 25 2020 at 14:10)
 * [lean-client-python](topic/lean-client-python.html) (45 messages, latest: Apr 25 2020 at 12:37)
 * [Intuitionistic Type Theory Proofs](topic/Intuitionistic.20Type.20Theory.20Proofs.html) (124 messages, latest: Apr 25 2020 at 11:29)
 * [Notices of the AMS paper](topic/Notices.20of.20the.20AMS.20paper.html) (38 messages, latest: Apr 25 2020 at 07:20)
@@ -2707,4 +2707,4 @@ permalink: /stream/113488-general/index.html
 * [test](topic/test.html) (4 messages, latest: Feb 26 2018 at 16:22)
 * [welcome](topic/welcome.html) (1 message, latest: Feb 26 2018 at 16:02)
 
-<hr><p>Last updated: Apr 25 2020 at 17:03 UTC</p>
+<hr><p>Last updated: Apr 25 2020 at 18:03 UTC</p>

@@ -9,6 +9,7 @@ permalink: /stream/217875-Is-there-code-for-X%3F/index.html
 
 ### Topics:
 
+* [bnot (a && b) = (bnot a) \|\| (bnot b)](topic/bnot.20(a.20.26.26.20b).20.3D.20(bnot.20a).20.7C.7C.20(bnot.20b).html) (24 messages, latest: Apr 25 2020 at 17:59)
 * [exporting a program's AST](topic/exporting.20a.20program's.20AST.html) (10 messages, latest: Apr 25 2020 at 02:25)
 * [enumerating a fintype](topic/enumerating.20a.20fintype.html) (6 messages, latest: Apr 23 2020 at 05:21)
 * [last n elements of a list](topic/last.20n.20elements.20of.20a.20list.html) (10 messages, latest: Apr 21 2020 at 09:35)
@@ -38,4 +39,4 @@ permalink: /stream/217875-Is-there-code-for-X%3F/index.html
 * [Super vector space](topic/Super.20vector.20space.html) (1 message, latest: Dec 22 2019 at 14:10)
 * [stream events](topic/stream.20events.html) (1 message, latest: Dec 22 2019 at 14:08)
 
-<hr><p>Last updated: Apr 25 2020 at 17:03 UTC</p>
+<hr><p>Last updated: Apr 25 2020 at 18:03 UTC</p>

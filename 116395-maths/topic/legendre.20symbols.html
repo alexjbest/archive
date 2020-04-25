@@ -1,0 +1,80 @@
+---
+layout: archive
+title: Zulip Chat Archive
+permalink: /stream/116395-maths/topic/legendre.20symbols.html
+---
+
+<h2>Stream: <a href="https://leanprover-community.github.io/archive/stream/116395-maths/index.html">maths</a></h2>
+<h3>Topic: <a href="https://leanprover-community.github.io/archive/stream/116395-maths/topic/legendre.20symbols.html">legendre symbols</a></h3>
+
+<hr>
+
+<base href="https://leanprover.zulipchat.com/">
+
+<head><link href="/style.css" rel="stylesheet"></head>
+
+{% raw %}
+
+<a name="195294382"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/116395-maths/topic/legendre%20symbols/near/195294382" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Johan Commelin <a href="https://leanprover-community.github.io/archive/stream/116395-maths/topic/legendre.20symbols.html#195294382">(Apr 25 2020 at 17:26)</a>:</h4>
+<div class="codehilite"><pre><span></span><span class="kn">lemma</span> <span class="n">legendre_sym_mul</span> <span class="o">(</span><span class="n">a</span> <span class="n">b</span> <span class="n">p</span> <span class="o">:</span> <span class="bp">ℕ</span><span class="o">)</span> <span class="o">[</span><span class="n">fact</span> <span class="n">p</span><span class="bp">.</span><span class="n">prime</span><span class="o">]</span> <span class="o">:</span>
+  <span class="n">legendre_sym</span> <span class="o">(</span><span class="n">a</span> <span class="bp">*</span> <span class="n">b</span><span class="o">)</span> <span class="n">p</span> <span class="bp">=</span> <span class="n">legendre_sym</span> <span class="n">a</span> <span class="n">p</span> <span class="bp">*</span> <span class="n">legendre_sym</span> <span class="n">b</span> <span class="n">p</span> <span class="o">:=</span>
+<span class="k">by</span> <span class="n">simp</span> <span class="n">only</span> <span class="o">[</span><span class="err">←</span> <span class="n">legendre_sym_hom_apply</span><span class="o">,</span> <span class="n">nat</span><span class="bp">.</span><span class="n">cast_mul</span><span class="o">,</span> <span class="o">(</span><span class="n">legendre_sym_hom</span> <span class="n">p</span><span class="o">)</span><span class="bp">.</span><span class="n">map_mul</span><span class="o">]</span>
+</pre></div>
+
+
+<p><a href="https://github.com/leanprover-community/mathlib/blob/legendre-sym-mul/src/number_theory/quadratic_reciprocity.lean#L562" title="https://github.com/leanprover-community/mathlib/blob/legendre-sym-mul/src/number_theory/quadratic_reciprocity.lean#L562">https://github.com/leanprover-community/mathlib/blob/legendre-sym-mul/src/number_theory/quadratic_reciprocity.lean#L562</a></p>
+
+
+
+<a name="195294394"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/116395-maths/topic/legendre%20symbols/near/195294394" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Johan Commelin <a href="https://leanprover-community.github.io/archive/stream/116395-maths/topic/legendre.20symbols.html#195294394">(Apr 25 2020 at 17:26)</a>:</h4>
+<p>Which leads to</p>
+<div class="codehilite"><pre><span></span><span class="kn">example</span> <span class="o">:</span> <span class="n">legendre_sym</span> <span class="mi">43</span> <span class="mi">29</span> <span class="bp">=</span> <span class="bp">-</span><span class="mi">1</span> <span class="o">:=</span>
+<span class="k">begin</span>
+  <span class="n">haveI</span> <span class="o">:</span> <span class="n">fact</span> <span class="o">(</span><span class="n">nat</span><span class="bp">.</span><span class="n">prime</span> <span class="mi">29</span><span class="o">)</span> <span class="o">:=</span> <span class="k">by</span> <span class="n">norm_num</span><span class="o">,</span>
+  <span class="n">haveI</span> <span class="o">:</span> <span class="n">fact</span> <span class="o">(</span><span class="n">nat</span><span class="bp">.</span><span class="n">prime</span>  <span class="mi">7</span><span class="o">)</span> <span class="o">:=</span> <span class="k">by</span> <span class="n">norm_num</span><span class="o">,</span>
+  <span class="n">haveI</span> <span class="o">:</span> <span class="n">fact</span> <span class="o">(</span><span class="mi">29</span> <span class="err">%</span> <span class="mi">2</span> <span class="bp">=</span> <span class="mi">1</span><span class="o">)</span>   <span class="o">:=</span> <span class="k">by</span> <span class="n">norm_num</span><span class="o">,</span>
+  <span class="n">haveI</span> <span class="o">:</span> <span class="n">fact</span> <span class="o">(</span> <span class="mi">7</span> <span class="err">%</span> <span class="mi">2</span> <span class="bp">=</span> <span class="mi">1</span><span class="o">)</span>   <span class="o">:=</span> <span class="k">by</span> <span class="n">norm_num</span><span class="o">,</span>
+  <span class="k">calc</span> <span class="n">legendre_sym</span> <span class="mi">43</span> <span class="mi">29</span> <span class="bp">=</span> <span class="n">legendre_sym</span> <span class="mi">14</span> <span class="mi">29</span> <span class="o">:</span>
+                            <span class="k">by</span> <span class="o">{</span> <span class="n">rw</span> <span class="o">[</span><span class="n">legendre_sym_mod</span><span class="o">,</span> <span class="k">show</span> <span class="mi">43</span> <span class="err">%</span> <span class="mi">29</span> <span class="bp">=</span> <span class="mi">14</span><span class="o">,</span> <span class="k">by</span> <span class="n">norm_num</span><span class="o">]</span> <span class="o">}</span>
+                      <span class="bp">...</span> <span class="bp">=</span> <span class="n">legendre_sym</span> <span class="o">(</span><span class="mi">2</span> <span class="bp">*</span> <span class="mi">7</span><span class="o">)</span> <span class="mi">29</span> <span class="o">:</span>
+                            <span class="k">by</span> <span class="o">{</span> <span class="n">rw</span> <span class="o">[</span><span class="k">show</span> <span class="mi">14</span> <span class="bp">=</span> <span class="mi">2</span> <span class="bp">*</span> <span class="mi">7</span><span class="o">,</span> <span class="k">by</span> <span class="n">norm_num</span><span class="o">]</span> <span class="o">}</span>
+                      <span class="bp">...</span> <span class="bp">=</span> <span class="n">legendre_sym</span> <span class="mi">2</span> <span class="mi">29</span> <span class="bp">*</span> <span class="n">legendre_sym</span> <span class="mi">7</span> <span class="mi">29</span> <span class="o">:</span>
+                            <span class="k">by</span> <span class="o">{</span> <span class="n">rw</span> <span class="o">[</span><span class="n">legendre_sym_mul</span><span class="o">]</span> <span class="o">}</span>
+                      <span class="bp">...</span> <span class="bp">=</span> <span class="bp">-</span><span class="n">legendre_sym</span> <span class="mi">7</span> <span class="mi">29</span> <span class="o">:</span>
+                            <span class="k">by</span> <span class="o">{</span> <span class="n">rw</span> <span class="o">[</span><span class="n">legendre_sym_two</span><span class="o">,</span> <span class="k">show</span> <span class="o">(</span><span class="bp">-</span><span class="mi">1</span><span class="o">:</span><span class="bp">ℤ</span><span class="o">)</span><span class="err">^</span><span class="o">(</span><span class="mi">29</span><span class="bp">/</span><span class="mi">4</span> <span class="bp">+</span> <span class="mi">29</span><span class="bp">/</span><span class="mi">2</span><span class="o">)</span> <span class="bp">=</span> <span class="bp">-</span><span class="mi">1</span><span class="o">,</span> <span class="k">by</span> <span class="n">norm_num</span><span class="o">],</span>
+                                 <span class="n">rw</span> <span class="o">[</span><span class="n">neg_one_mul</span><span class="o">]</span> <span class="o">}</span>
+                      <span class="bp">...</span> <span class="bp">=</span> <span class="bp">-</span><span class="n">legendre_sym</span> <span class="mi">29</span> <span class="mi">7</span> <span class="o">:</span>
+                            <span class="k">by</span> <span class="o">{</span> <span class="n">rw</span> <span class="o">[</span><span class="n">legendre_sym_swap</span> <span class="mi">7</span> <span class="mi">29</span> <span class="n">dec_trivial</span><span class="o">],</span>
+                                 <span class="n">rw</span> <span class="o">[</span><span class="k">show</span> <span class="o">(</span><span class="bp">-</span><span class="mi">1</span><span class="o">:</span><span class="bp">ℤ</span><span class="o">)</span> <span class="err">^</span> <span class="o">(</span><span class="mi">7</span> <span class="bp">/</span> <span class="mi">2</span> <span class="bp">*</span> <span class="o">(</span><span class="mi">29</span> <span class="bp">/</span> <span class="mi">2</span><span class="o">))</span> <span class="bp">=</span> <span class="mi">1</span><span class="o">,</span> <span class="k">by</span> <span class="n">norm_num</span><span class="o">,</span> <span class="n">mul_one</span><span class="o">]</span> <span class="o">}</span>
+                      <span class="bp">...</span> <span class="bp">=</span> <span class="bp">-</span><span class="n">legendre_sym</span> <span class="mi">1</span> <span class="mi">7</span> <span class="o">:</span>
+                            <span class="k">by</span> <span class="o">{</span> <span class="n">rw</span> <span class="o">[</span><span class="n">legendre_sym_mod</span><span class="o">,</span> <span class="k">show</span> <span class="mi">29</span> <span class="err">%</span> <span class="mi">7</span> <span class="bp">=</span> <span class="mi">1</span><span class="o">,</span> <span class="k">by</span> <span class="n">norm_num</span><span class="o">]</span> <span class="o">}</span>
+                      <span class="bp">...</span> <span class="bp">=</span> <span class="bp">-</span><span class="mi">1</span> <span class="o">:</span>
+                            <span class="k">by</span> <span class="o">{</span> <span class="n">rw</span> <span class="o">[</span><span class="n">legendre_sym_one</span><span class="o">]</span> <span class="o">}</span>
+<span class="kn">end</span>
+</pre></div>
+
+
+
+<a name="195294408"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/116395-maths/topic/legendre%20symbols/near/195294408" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Johan Commelin <a href="https://leanprover-community.github.io/archive/stream/116395-maths/topic/legendre.20symbols.html#195294408">(Apr 25 2020 at 17:27)</a>:</h4>
+<p>But I think that we might want to refactor this a bit. Because currently we cannot talk about the Legendre symbol of <code>x : Z_[p]</code> with respect to <code>p</code>.</p>
+
+
+
+<a name="195295622"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/116395-maths/topic/legendre%20symbols/near/195295622" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Alex J. Best <a href="https://leanprover-community.github.io/archive/stream/116395-maths/topic/legendre.20symbols.html#195295622">(Apr 25 2020 at 17:57)</a>:</h4>
+<p>I was thinking exactly the same thing last week! Legendre needs a little love, but it would be cool to generalize to kronecker symbols too</p>
+
+
+
+<a name="195295767"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/116395-maths/topic/legendre%20symbols/near/195295767" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Kevin Buzzard <a href="https://leanprover-community.github.io/archive/stream/116395-maths/topic/legendre.20symbols.html#195295767">(Apr 25 2020 at 18:00)</a>:</h4>
+<p>One of the codewars questions would be a whole lot easier if we had Kronecker symbols.</p>
+
+
+
+{% endraw %}
+
+<hr><p>Last updated: Apr 25 2020 at 18:03 UTC</p>
