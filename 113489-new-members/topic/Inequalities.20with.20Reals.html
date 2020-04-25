@@ -64,6 +64,43 @@ permalink: /stream/113489-new-members/topic/Inequalities.20with.20Reals.html
 
 
 
+<a name="195301867"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113489-new%20members/topic/Inequalities%20with%20Reals/near/195301867" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> ROCKY KAMEN-RUBIO <a href="https://leanprover-community.github.io/archive/stream/113489-new-members/topic/Inequalities.20with.20Reals.html#195301867">(Apr 25 2020 at 20:37)</a>:</h4>
+<p>Somewhat related inequality question: I'm trying to do this pretty simple limit proof. I get this far, and I know conceptually I need to use <code>he</code> and the inverse of <code>hn</code> to finesse my goal state into something trivial, but I can't seem to get there with the theorems I know (especially with the type casting). Could someone point me in the right direction?</p>
+<div class="codehilite"><pre><span></span><span class="kn">import</span> <span class="n">data</span><span class="bp">.</span><span class="n">real</span><span class="bp">.</span><span class="n">basic</span>
+<span class="kn">import</span> <span class="n">data</span><span class="bp">.</span><span class="n">nat</span><span class="bp">.</span><span class="n">basic</span>
+<span class="kn">import</span> <span class="n">algebra</span><span class="bp">.</span><span class="n">archimedean</span>
+<span class="n">def</span> <span class="n">lim_to_inf</span> <span class="o">(</span><span class="n">x</span> <span class="o">:</span> <span class="bp">ℕ</span> <span class="bp">→</span> <span class="n">ℝ</span><span class="o">)</span> <span class="o">(</span><span class="n">l</span> <span class="o">:</span> <span class="n">ℝ</span><span class="o">)</span> <span class="o">:=</span>
+  <span class="bp">∀</span> <span class="n">ε</span> <span class="bp">&gt;</span> <span class="mi">0</span><span class="o">,</span> <span class="bp">∃</span> <span class="n">N</span><span class="o">,</span> <span class="bp">∀</span> <span class="n">n</span> <span class="bp">≥</span> <span class="n">N</span><span class="o">,</span> <span class="n">abs</span> <span class="o">(</span><span class="n">x</span> <span class="n">n</span> <span class="bp">-</span> <span class="n">l</span><span class="o">)</span> <span class="bp">&lt;</span> <span class="n">ε</span>
+
+<span class="kn">example</span> <span class="o">:</span> <span class="n">lim_to_inf</span> <span class="o">(</span><span class="bp">λ</span> <span class="n">n</span><span class="o">,</span> <span class="mi">1</span><span class="bp">/</span><span class="n">n</span><span class="o">)</span> <span class="mi">0</span> <span class="o">:=</span>
+<span class="k">begin</span>
+<span class="n">rw</span> <span class="n">lim_to_inf</span><span class="o">,</span>
+<span class="n">intro</span> <span class="n">ε</span><span class="o">,</span>
+<span class="n">intro</span> <span class="n">hε</span><span class="o">,</span>
+<span class="k">have</span> <span class="n">he</span> <span class="o">:=</span> <span class="n">exists_nat_gt</span> <span class="n">ε</span><span class="o">,</span>
+<span class="n">cases</span> <span class="n">he</span> <span class="k">with</span> <span class="n">N</span> <span class="n">he</span><span class="o">,</span>
+<span class="n">use</span> <span class="n">N</span><span class="o">,</span>
+<span class="n">intro</span> <span class="n">n</span><span class="o">,</span>
+<span class="n">intro</span> <span class="n">hn</span><span class="o">,</span>
+<span class="n">simp</span><span class="o">,</span>
+<span class="kn">end</span>
+</pre></div>
+
+
+
+<a name="195302531"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113489-new%20members/topic/Inequalities%20with%20Reals/near/195302531" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Kevin Buzzard <a href="https://leanprover-community.github.io/archive/stream/113489-new-members/topic/Inequalities.20with.20Reals.html#195302531">(Apr 25 2020 at 20:54)</a>:</h4>
+<p>What if epsilon=0.1, N=1, and n=1? Then the goal is false.</p>
+
+
+
+<a name="195302784"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113489-new%20members/topic/Inequalities%20with%20Reals/near/195302784" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Chris Hughes <a href="https://leanprover-community.github.io/archive/stream/113489-new-members/topic/Inequalities.20with.20Reals.html#195302784">(Apr 25 2020 at 21:01)</a>:</h4>
+<p>You want a <code>nat</code> greater than <code>1/epsilon</code> I think.</p>
+
+
+
 {% endraw %}
 
-<hr><p>Last updated: Apr 25 2020 at 20:09 UTC</p>
+<hr><p>Last updated: Apr 25 2020 at 21:03 UTC</p>

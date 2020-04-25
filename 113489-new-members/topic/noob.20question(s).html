@@ -33612,6 +33612,30 @@ For future reference though, how would I get a proposition asserting that <code>
 
 
 
+<a name="195301267"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113489-new%20members/topic/noob%20question%28s%29/near/195301267" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Chris Hughes <a href="https://leanprover-community.github.io/archive/stream/113489-new-members/topic/noob.20question(s).html#195301267">(Apr 25 2020 at 20:21)</a>:</h4>
+<p><code>ceil</code> gives you an <code>int</code></p>
+
+
+
+<a name="195301800"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113489-new%20members/topic/noob%20question%28s%29/near/195301800" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Kevin Buzzard <a href="https://leanprover-community.github.io/archive/stream/113489-new-members/topic/noob.20question(s).html#195301800">(Apr 25 2020 at 20:35)</a>:</h4>
+<p>I suspect that the precise functions you're asking about aren't there Rocky, you might want to write it yourself. It could take as input a real x and output a natural <code>real.natfloor x</code>, which is 0 if x is negative and the floor otherwise. You'd then have to make a little API for the function so it was usable</p>
+
+
+
+<a name="195302026"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113489-new%20members/topic/noob%20question%28s%29/near/195302026" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Mario Carneiro <a href="https://leanprover-community.github.io/archive/stream/113489-new-members/topic/noob.20question(s).html#195302026">(Apr 25 2020 at 20:41)</a>:</h4>
+<p>You could always use <code>int.to_nat (floor x)</code></p>
+
+
+
+<a name="195302068"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113489-new%20members/topic/noob%20question%28s%29/near/195302068" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Mario Carneiro <a href="https://leanprover-community.github.io/archive/stream/113489-new-members/topic/noob.20question(s).html#195302068">(Apr 25 2020 at 20:42)</a>:</h4>
+<p>but if <code>cases exists_nat_gt</code> does the job for you, I would actually suggest using that instead, since the floor function is more complicated than that</p>
+
+
+
 {% endraw %}
 
-<hr><p>Last updated: Apr 25 2020 at 20:09 UTC</p>
+<hr><p>Last updated: Apr 25 2020 at 21:03 UTC</p>
