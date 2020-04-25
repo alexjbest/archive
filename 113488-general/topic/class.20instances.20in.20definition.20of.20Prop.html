@@ -1,0 +1,44 @@
+---
+layout: archive
+title: Zulip Chat Archive
+permalink: /stream/113488-general/topic/class.20instances.20in.20definition.20of.20Prop.html
+---
+
+<h2>Stream: <a href="https://leanprover-community.github.io/archive/stream/113488-general/index.html">general</a></h2>
+<h3>Topic: <a href="https://leanprover-community.github.io/archive/stream/113488-general/topic/class.20instances.20in.20definition.20of.20Prop.html">class instances in definition of Prop</a></h3>
+
+<hr>
+
+<base href="https://leanprover.zulipchat.com/">
+
+<head><link href="/style.css" rel="stylesheet"></head>
+
+{% raw %}
+
+<a name="195286002"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113488-general/topic/class%20instances%20in%20definition%20of%20Prop/near/195286002" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Kenny Lau <a href="https://leanprover-community.github.io/archive/stream/113488-general/topic/class.20instances.20in.20definition.20of.20Prop.html#195286002">(Apr 25 2020 at 13:55)</a>:</h4>
+<div class="codehilite"><pre><span></span><span class="kn">universe</span> <span class="n">u</span>
+<span class="n">def</span> <span class="n">how_do_I_make_this_work</span> <span class="o">:</span> <span class="kt">Prop</span> <span class="o">:=</span>
+<span class="bp">∀</span> <span class="o">(</span><span class="n">G</span> <span class="o">:</span> <span class="kt">Type</span> <span class="n">u</span><span class="o">)</span> <span class="o">[</span><span class="n">group</span> <span class="n">G</span><span class="o">]</span> <span class="o">(</span><span class="n">x</span> <span class="o">:</span> <span class="n">G</span><span class="o">)</span> <span class="o">(</span><span class="n">hx</span> <span class="o">:</span> <span class="n">x</span> <span class="bp">*</span> <span class="n">x</span> <span class="bp">=</span> <span class="n">x</span><span class="o">),</span> <span class="n">x</span> <span class="bp">=</span> <span class="mi">1</span>
+</pre></div>
+
+
+<div class="codehilite"><pre><span></span>failed to synthesize type class instance for
+G : Type u,
+_inst_1 : group G,
+x : G
+⊢ has_mul G
+
+failed to synthesize type class instance for
+G : Type u,
+_inst_1 : group G,
+x : G,
+hx : x * x = x
+⊢ has_one G
+</pre></div>
+
+
+
+{% endraw %}
+
+<hr><p>Last updated: Apr 25 2020 at 14:03 UTC</p>

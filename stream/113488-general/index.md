@@ -9,6 +9,8 @@ permalink: /stream/113488-general/index.html
 
 ### Topics:
 
+* [class instances in definition of Prop](topic/class.20instances.20in.20definition.20of.20Prop.html) (1 message, latest: Apr 25 2020 at 13:55)
+* [unfreezeI](topic/unfreezeI.html) (1 message, latest: Apr 25 2020 at 13:53)
 * [lean-client-python](topic/lean-client-python.html) (45 messages, latest: Apr 25 2020 at 12:37)
 * [Intuitionistic Type Theory Proofs](topic/Intuitionistic.20Type.20Theory.20Proofs.html) (124 messages, latest: Apr 25 2020 at 11:29)
 * [Invitation to join the Codewars Lean community, Round 2](topic/Invitation.20to.20join.20the.20Codewars.20Lean.20community.2C.20Round.202.html) (135 messages, latest: Apr 25 2020 at 09:48)
@@ -2704,4 +2706,4 @@ permalink: /stream/113488-general/index.html
 * [test](topic/test.html) (4 messages, latest: Feb 26 2018 at 16:22)
 * [welcome](topic/welcome.html) (1 message, latest: Feb 26 2018 at 16:02)
 
-<hr><p>Last updated: Apr 25 2020 at 13:03 UTC</p>
+<hr><p>Last updated: Apr 25 2020 at 14:03 UTC</p>
