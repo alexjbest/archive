@@ -9,6 +9,8 @@ permalink: /stream/113488-general/index.html
 
 ### Topics:
 
+* [Intuitionistic Type Theory Proofs](topic/Intuitionistic.20Type.20Theory.20Proofs.html) (14 messages, latest: Apr 25 2020 at 03:13)
+* [Invitation to join the Codewars Lean community, Round 2](topic/Invitation.20to.20join.20the.20Codewars.20Lean.20community.2C.20Round.202.html) (118 messages, latest: Apr 25 2020 at 03:11)
 * [Notices of the AMS paper](topic/Notices.20of.20the.20AMS.20paper.html) (34 messages, latest: Apr 25 2020 at 01:33)
 * [tac1;{tac2, tac3}](topic/tac1.3B.7Btac2.2C.20tac3.7D.html) (22 messages, latest: Apr 25 2020 at 01:06)
 * [class instance unification fails](topic/class.20instance.20unification.20fails.html) (14 messages, latest: Apr 24 2020 at 23:12)
@@ -19,7 +21,6 @@ permalink: /stream/113488-general/index.html
 * [tooltips on keywords](topic/tooltips.20on.20keywords.html) (4 messages, latest: Apr 24 2020 at 13:48)
 * [why does a sync command take so long in the lean server](topic/why.20does.20a.20sync.20command.20take.20so.20long.20in.20the.20lean.20server.html) (35 messages, latest: Apr 24 2020 at 13:31)
 * [unnecessary imports](topic/unnecessary.20imports.html) (47 messages, latest: Apr 24 2020 at 02:28)
-* [Invitation to join the Codewars Lean community, Round 2](topic/Invitation.20to.20join.20the.20Codewars.20Lean.20community.2C.20Round.202.html) (117 messages, latest: Apr 23 2020 at 20:03)
 * [import order](topic/import.20order.html) (5 messages, latest: Apr 23 2020 at 17:33)
 * [How does one prove unit ≠ bool](topic/How.20does.20one.20prove.20unit.20.E2.89.A0.20bool.html) (11 messages, latest: Apr 23 2020 at 14:03)
 * [hammers](topic/hammers.html) (32 messages, latest: Apr 23 2020 at 12:12)
@@ -67,7 +68,6 @@ permalink: /stream/113488-general/index.html
 * [Updated `ring_exp` paper](topic/Updated.20.60ring_exp.60.20paper.html) (11 messages, latest: Apr 16 2020 at 11:29)
 * [apply bug?](topic/apply.20bug.3F.html) (41 messages, latest: Apr 16 2020 at 10:53)
 * [Name](topic/Name.html) (1 message, latest: Apr 16 2020 at 07:00)
-* [Intuitionistic Type Theory Proofs](topic/Intuitionistic.20Type.20Theory.20Proofs.html) (11 messages, latest: Apr 16 2020 at 05:22)
 * [write access to the repository](topic/write.20access.20to.20the.20repository.html) (13 messages, latest: Apr 16 2020 at 00:54)
 * [spike in active users today](topic/spike.20in.20active.20users.20today.html) (3 messages, latest: Apr 15 2020 at 21:45)
 * [delate lambda in tatic state](topic/delate.20lambda.20in.20tatic.20state.html) (63 messages, latest: Apr 15 2020 at 19:34)
@@ -2703,4 +2703,4 @@ permalink: /stream/113488-general/index.html
 * [test](topic/test.html) (4 messages, latest: Feb 26 2018 at 16:22)
 * [welcome](topic/welcome.html) (1 message, latest: Feb 26 2018 at 16:02)
 
-<hr><p>Last updated: Apr 25 2020 at 03:02 UTC</p>
+<hr><p>Last updated: Apr 25 2020 at 03:32 UTC</p>
