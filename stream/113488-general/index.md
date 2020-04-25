@@ -9,7 +9,7 @@ permalink: /stream/113488-general/index.html
 
 ### Topics:
 
-* [Notices of the AMS paper](topic/Notices.20of.20the.20AMS.20paper.html) (33 messages, latest: Apr 25 2020 at 01:25)
+* [Notices of the AMS paper](topic/Notices.20of.20the.20AMS.20paper.html) (34 messages, latest: Apr 25 2020 at 01:33)
 * [tac1;{tac2, tac3}](topic/tac1.3B.7Btac2.2C.20tac3.7D.html) (22 messages, latest: Apr 25 2020 at 01:06)
 * [class instance unification fails](topic/class.20instance.20unification.20fails.html) (14 messages, latest: Apr 24 2020 at 23:12)
 * [lean-client-python](topic/lean-client-python.html) (43 messages, latest: Apr 24 2020 at 18:04)
@@ -2703,4 +2703,4 @@ permalink: /stream/113488-general/index.html
 * [test](topic/test.html) (4 messages, latest: Feb 26 2018 at 16:22)
 * [welcome](topic/welcome.html) (1 message, latest: Feb 26 2018 at 16:02)
 
-<hr><p>Last updated: Apr 25 2020 at 01:32 UTC</p>
+<hr><p>Last updated: Apr 25 2020 at 02:03 UTC</p>
