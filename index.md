@@ -8,7 +8,7 @@ permalink: /index.html
 
 ## Streams:
 
-* [general](stream/113488-general/index.html) (2692 topics)
+* [general](stream/113488-general/index.html) (2693 topics)
 
 * [new members](stream/113489-new-members/index.html) (960 topics)
 
@@ -28,12 +28,12 @@ permalink: /index.html
 
 * [FoMM / Lean Together 2020](stream/218272-FoMM-/-Lean-Together-2020/index.html) (13 topics)
 
-* [kbb](stream/141825-kbb/index.html) (13 topics)
+* [Machine Learning for Theorem Proving](stream/219941-Machine-Learning-for-Theorem-Proving/index.html) (13 topics)
 
-* [Machine Learning for Theorem Proving](stream/219941-Machine-Learning-for-Theorem-Proving/index.html) (12 topics)
+* [kbb](stream/141825-kbb/index.html) (13 topics)
 
 * [concrete semantics](stream/187724-concrete-semantics/index.html) (4 topics)
 
 * [Big Proof 2019](stream/198800-Big-Proof-2019/index.html) (3 topics)
 
-<hr><p>Last updated: Apr 24 2020 at 23:32 UTC</p>
+<hr><p>Last updated: Apr 25 2020 at 00:05 UTC</p>
