@@ -173,6 +173,18 @@ permalink: /stream/113488-general/topic/tac1.3B.7Btac2.2C.20tac3.7D.html
 
 
 
+<a name="195260564"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113488-general/topic/tac1%3B%7Btac2%2C%20tac3%7D/near/195260564" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Mario Carneiro <a href="https://leanprover-community.github.io/archive/stream/113488-general/topic/tac1.3B.7Btac2.2C.20tac3.7D.html#195260564">(Apr 25 2020 at 01:04)</a>:</h4>
+<p>I use <code>try</code> for this. Unfortunately <code>`[...]</code> doesn't work because it takes the line out of interactive mode, and <code>do</code> is already taken - I really want a notation for the identity function in interactive tactics</p>
+
+
+
+<a name="195260643"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113488-general/topic/tac1%3B%7Btac2%2C%20tac3%7D/near/195260643" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Mario Carneiro <a href="https://leanprover-community.github.io/archive/stream/113488-general/topic/tac1.3B.7Btac2.2C.20tac3.7D.html#195260643">(Apr 25 2020 at 01:06)</a>:</h4>
+<p>I guess <code>all_goals</code> will also work - that is <code>split; all_goals {rw h1, rw h2}</code> - because when there is only one goal <code>all_goals</code> is the identity</p>
+
+
+
 {% endraw %}
 
-<hr><p>Last updated: Apr 25 2020 at 01:02 UTC</p>
+<hr><p>Last updated: Apr 25 2020 at 01:32 UTC</p>

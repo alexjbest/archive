@@ -9,8 +9,8 @@ permalink: /stream/113489-new-members/index.html
 
 ### Topics:
 
+* [noob question(s)](topic/noob.20question(s).html) (4478 messages, latest: Apr 25 2020 at 01:09)
 * [Help with Proving a Simple Theorem](topic/Help.20with.20Proving.20a.20Simple.20Theorem.html) (1 message, latest: Apr 25 2020 at 01:00)
-* [noob question(s)](topic/noob.20question(s).html) (4476 messages, latest: Apr 25 2020 at 00:34)
 * [brec_on and below](topic/brec_on.20and.20below.html) (2 messages, latest: Apr 24 2020 at 18:46)
 * [documentation exercise questions](topic/documentation.20exercise.20questions.html) (15 messages, latest: Apr 24 2020 at 13:54)
 * [zero locus of an ideal](topic/zero.20locus.20of.20an.20ideal.html) (14 messages, latest: Apr 24 2020 at 13:07)
@@ -971,4 +971,4 @@ permalink: /stream/113489-new-members/index.html
 * [Andrew Ashworth](topic/Andrew.20Ashworth.html) (15 messages, latest: Feb 26 2018 at 16:21)
 * [onboarding](topic/onboarding.html) (1 message, latest: Feb 26 2018 at 16:02)
 
-<hr><p>Last updated: Apr 25 2020 at 01:02 UTC</p>
+<hr><p>Last updated: Apr 25 2020 at 01:32 UTC</p>
