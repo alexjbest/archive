@@ -39,6 +39,25 @@ hx : x * x = x
 
 
 
+<a name="195286335"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113488-general/topic/class%20instances%20in%20definition%20of%20Prop/near/195286335" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Sebastien Gouezel <a href="https://leanprover-community.github.io/archive/stream/113488-general/topic/class.20instances.20in.20definition.20of.20Prop.html#195286335">(Apr 25 2020 at 14:04)</a>:</h4>
+<p>One answer for two threads.</p>
+<div class="codehilite"><pre><span></span><span class="kn">universe</span> <span class="n">u</span>
+<span class="n">def</span> <span class="n">how_do_I_make_this_work</span> <span class="o">:</span> <span class="kt">Prop</span> <span class="o">:=</span>
+<span class="bp">∀</span> <span class="o">(</span><span class="n">G</span> <span class="o">:</span> <span class="kt">Type</span> <span class="n">u</span><span class="o">)</span> <span class="o">[</span><span class="n">group</span> <span class="n">G</span><span class="o">]</span> <span class="o">(</span><span class="n">x</span> <span class="o">:</span> <span class="n">G</span><span class="o">)</span> <span class="o">(</span><span class="n">hx</span> <span class="o">:</span> <span class="k">by</span> <span class="o">{</span><span class="n">unfreezeI</span><span class="o">,</span> <span class="n">exact</span> <span class="n">x</span> <span class="bp">*</span> <span class="n">x</span> <span class="bp">=</span> <span class="n">x</span><span class="o">}),</span>
+<span class="k">by</span> <span class="o">{</span><span class="n">unfreezeI</span><span class="o">,</span> <span class="n">exact</span> <span class="n">x</span> <span class="bp">=</span> <span class="mi">1</span><span class="o">}</span>
+</pre></div>
+
+
+
+<a name="195286357"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113488-general/topic/class%20instances%20in%20definition%20of%20Prop/near/195286357" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Kenny Lau <a href="https://leanprover-community.github.io/archive/stream/113488-general/topic/class.20instances.20in.20definition.20of.20Prop.html#195286357">(Apr 25 2020 at 14:05)</a>:</h4>
+<div class="codehilite"><pre><span></span><span class="n">def</span> <span class="n">how_do_I_make_this_work</span> <span class="o">:</span> <span class="kt">Prop</span> <span class="o">:=</span>
+<span class="bp">∀</span> <span class="o">(</span><span class="n">G</span> <span class="o">:</span> <span class="kt">Type</span> <span class="n">u</span><span class="o">)</span> <span class="o">[</span><span class="n">group</span> <span class="n">G</span><span class="o">]</span> <span class="o">(</span><span class="n">x</span> <span class="o">:</span> <span class="n">G</span><span class="o">),</span> <span class="k">by</span> <span class="n">unfreezeI</span><span class="bp">;</span> <span class="n">exact</span> <span class="bp">∀</span> <span class="o">(</span><span class="n">hx</span> <span class="o">:</span> <span class="n">x</span> <span class="bp">*</span> <span class="n">x</span> <span class="bp">=</span> <span class="n">x</span><span class="o">),</span> <span class="n">x</span> <span class="bp">=</span> <span class="mi">1</span>
+</pre></div>
+
+
+
 {% endraw %}
 
-<hr><p>Last updated: Apr 25 2020 at 14:03 UTC</p>
+<hr><p>Last updated: Apr 25 2020 at 15:03 UTC</p>
