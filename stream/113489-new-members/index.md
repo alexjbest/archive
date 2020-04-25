@@ -9,7 +9,7 @@ permalink: /stream/113489-new-members/index.html
 
 ### Topics:
 
-* [Building sets](topic/Building.20sets.html) (6 messages, latest: Apr 25 2020 at 09:29)
+* [Building sets](topic/Building.20sets.html) (19 messages, latest: Apr 25 2020 at 09:48)
 * [noob question(s)](topic/noob.20question(s).html) (4496 messages, latest: Apr 25 2020 at 08:54)
 * [Diagonal Ramsey Number Lower Bound](topic/Diagonal.20Ramsey.20Number.20Lower.20Bound.html) (13 messages, latest: Apr 25 2020 at 08:41)
 * [Help with Proving a Simple Theorem](topic/Help.20with.20Proving.20a.20Simple.20Theorem.html) (7 messages, latest: Apr 25 2020 at 01:57)
@@ -974,4 +974,4 @@ permalink: /stream/113489-new-members/index.html
 * [Andrew Ashworth](topic/Andrew.20Ashworth.html) (15 messages, latest: Feb 26 2018 at 16:21)
 * [onboarding](topic/onboarding.html) (1 message, latest: Feb 26 2018 at 16:02)
 
-<hr><p>Last updated: Apr 25 2020 at 09:32 UTC</p>
+<hr><p>Last updated: Apr 25 2020 at 10:05 UTC</p>
