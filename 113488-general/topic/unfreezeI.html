@@ -33,6 +33,36 @@ permalink: /stream/113488-general/topic/unfreezeI.html
 
 
 
+<a name="195296042"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113488-general/topic/unfreezeI/near/195296042" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Patrick Massot <a href="https://leanprover-community.github.io/archive/stream/113488-general/topic/unfreezeI.html#195296042">(Apr 25 2020 at 18:07)</a>:</h4>
+<p>I have a more relevant question (I think). Do we know what will be the situation in Lean 4? We don't want to unlearn our instance cache management habits in Lean 3 only to relearn them when we'll switch to Lean 4? I don't expect Leo will change his mind on this question, but maybe the question itself will become irrelevant in Lean 4.</p>
+
+
+
+<a name="195296501"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113488-general/topic/unfreezeI/near/195296501" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Sebastian Ullrich <a href="https://leanprover-community.github.io/archive/stream/113488-general/topic/unfreezeI.html#195296501">(Apr 25 2020 at 18:18)</a>:</h4>
+<p>I believe the plan is that all surface-level binders automatically reset the cache. Only tactics introducing instances internally have to worry about it.</p>
+
+
+
+<a name="195296585"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113488-general/topic/unfreezeI/near/195296585" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Patrick Massot <a href="https://leanprover-community.github.io/archive/stream/113488-general/topic/unfreezeI.html#195296585">(Apr 25 2020 at 18:21)</a>:</h4>
+<p>I'm afraid I don't understand this whole story well enough to parse this answer.</p>
+
+
+
+<a name="195296591"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113488-general/topic/unfreezeI/near/195296591" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Patrick Massot <a href="https://leanprover-community.github.io/archive/stream/113488-general/topic/unfreezeI.html#195296591">(Apr 25 2020 at 18:21)</a>:</h4>
+<p>Does it mean we won't need <code>haveI</code> and <code>letI</code>?</p>
+
+
+
+<a name="195296852"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113488-general/topic/unfreezeI/near/195296852" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Sebastian Ullrich <a href="https://leanprover-community.github.io/archive/stream/113488-general/topic/unfreezeI.html#195296852">(Apr 25 2020 at 18:28)</a>:</h4>
+<p>Yes, unless you're a tactic writer and care about that level of optimization.</p>
+
+
+
 {% endraw %}
 
-<hr><p>Last updated: Apr 25 2020 at 18:03 UTC</p>
+<hr><p>Last updated: Apr 25 2020 at 19:03 UTC</p>
