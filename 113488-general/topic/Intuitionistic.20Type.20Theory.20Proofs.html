@@ -156,6 +156,375 @@ Here <code> prf Γ A</code> stands for <code>Γ ⊢ A</code>. So for example <co
 
 
 
+<a name="195267534"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113488-general/topic/Intuitionistic%20Type%20Theory%20Proofs/near/195267534" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Billy Price <a href="https://leanprover-community.github.io/archive/stream/113488-general/topic/Intuitionistic.20Type.20Theory.20Proofs.html#195267534">(Apr 25 2020 at 04:33)</a>:</h4>
+<p>Why would it be uncountable? Surely the fact that it's defined inductively only gives me countably many?</p>
+
+
+
+<a name="195267583"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113488-general/topic/Intuitionistic%20Type%20Theory%20Proofs/near/195267583" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Kenny Lau <a href="https://leanprover-community.github.io/archive/stream/113488-general/topic/Intuitionistic.20Type.20Theory.20Proofs.html#195267583">(Apr 25 2020 at 04:35)</a>:</h4>
+<p><code>elem x</code> is different for each <code>x : Type</code></p>
+
+
+
+<a name="195267607"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113488-general/topic/Intuitionistic%20Type%20Theory%20Proofs/near/195267607" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Kenny Lau <a href="https://leanprover-community.github.io/archive/stream/113488-general/topic/Intuitionistic.20Type.20Theory.20Proofs.html#195267607">(Apr 25 2020 at 04:35)</a>:</h4>
+<p>what does <code>PowerSet A</code> do?</p>
+
+
+
+<a name="195267646"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113488-general/topic/Intuitionistic%20Type%20Theory%20Proofs/near/195267646" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Kenny Lau <a href="https://leanprover-community.github.io/archive/stream/113488-general/topic/Intuitionistic.20Type.20Theory.20Proofs.html#195267646">(Apr 25 2020 at 04:36)</a>:</h4>
+<p>it has no constructor so there can be no instances of it...</p>
+
+
+
+<a name="195267653"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113488-general/topic/Intuitionistic%20Type%20Theory%20Proofs/near/195267653" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Mario Carneiro <a href="https://leanprover-community.github.io/archive/stream/113488-general/topic/Intuitionistic.20Type.20Theory.20Proofs.html#195267653">(Apr 25 2020 at 04:36)</a>:</h4>
+<p>actually it's a <code>structure</code> so there is one for each <code>A</code></p>
+
+
+
+<a name="195267662"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113488-general/topic/Intuitionistic%20Type%20Theory%20Proofs/near/195267662" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Billy Price <a href="https://leanprover-community.github.io/archive/stream/113488-general/topic/Intuitionistic.20Type.20Theory.20Proofs.html#195267662">(Apr 25 2020 at 04:37)</a>:</h4>
+<p>I am ambivalent to what PowerSet A is, just that it's also a type in the same way that A is</p>
+
+
+
+<a name="195267663"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113488-general/topic/Intuitionistic%20Type%20Theory%20Proofs/near/195267663" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Mario Carneiro <a href="https://leanprover-community.github.io/archive/stream/113488-general/topic/Intuitionistic.20Type.20Theory.20Proofs.html#195267663">(Apr 25 2020 at 04:37)</a>:</h4>
+<p>but the problem is that <code>A</code> can be anything</p>
+
+
+
+<a name="195267669"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113488-general/topic/Intuitionistic%20Type%20Theory%20Proofs/near/195267669" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Kenny Lau <a href="https://leanprover-community.github.io/archive/stream/113488-general/topic/Intuitionistic.20Type.20Theory.20Proofs.html#195267669">(Apr 25 2020 at 04:37)</a>:</h4>
+<p>I claim that <code>PowerSet A -&gt; false</code> for all <code>A</code></p>
+
+
+
+<a name="195267706"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113488-general/topic/Intuitionistic%20Type%20Theory%20Proofs/near/195267706" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Mario Carneiro <a href="https://leanprover-community.github.io/archive/stream/113488-general/topic/Intuitionistic.20Type.20Theory.20Proofs.html#195267706">(Apr 25 2020 at 04:38)</a>:</h4>
+<p>that's false, <code>PowerSet A ~= unit</code></p>
+
+
+
+<a name="195267783"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113488-general/topic/Intuitionistic%20Type%20Theory%20Proofs/near/195267783" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Kenny Lau <a href="https://leanprover-community.github.io/archive/stream/113488-general/topic/Intuitionistic.20Type.20Theory.20Proofs.html#195267783">(Apr 25 2020 at 04:38)</a>:</h4>
+<p>I don't understand structures</p>
+
+
+
+<a name="195267784"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113488-general/topic/Intuitionistic%20Type%20Theory%20Proofs/near/195267784" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Billy Price <a href="https://leanprover-community.github.io/archive/stream/113488-general/topic/Intuitionistic.20Type.20Theory.20Proofs.html#195267784">(Apr 25 2020 at 04:39)</a>:</h4>
+<p>Yeah okay, well here's my updated attempt (doesn't compile)</p>
+<div class="codehilite"><pre><span></span><span class="kn">inductive</span> <span class="n">type</span> <span class="o">:</span> <span class="kt">Type</span> <span class="mi">1</span>
+<span class="bp">|</span> <span class="n">prod</span> <span class="o">:</span> <span class="n">type</span> <span class="bp">→</span> <span class="n">type</span> <span class="bp">→</span> <span class="n">type</span>
+<span class="bp">|</span> <span class="n">pow</span>  <span class="o">:</span> <span class="n">type</span> <span class="bp">→</span> <span class="n">type</span>
+
+<span class="kn">inductive</span> <span class="n">Formula</span> <span class="o">:</span> <span class="kt">Type</span> <span class="mi">1</span>
+<span class="bp">|</span> <span class="n">top</span> <span class="o">:</span> <span class="n">Formula</span>
+<span class="bp">|</span> <span class="n">bot</span> <span class="o">:</span> <span class="n">Formula</span>
+<span class="bp">|</span> <span class="n">and</span> <span class="o">:</span> <span class="n">Formula</span> <span class="bp">→</span> <span class="n">Formula</span> <span class="bp">→</span> <span class="n">Formula</span>
+<span class="bp">|</span> <span class="n">or</span>  <span class="o">:</span> <span class="n">Formula</span> <span class="bp">→</span> <span class="n">Formula</span> <span class="bp">→</span> <span class="n">Formula</span>
+<span class="bp">|</span> <span class="n">imp</span> <span class="o">:</span> <span class="n">Formula</span> <span class="bp">→</span> <span class="n">Formula</span> <span class="bp">→</span> <span class="n">Formula</span>
+<span class="bp">|</span> <span class="n">elem</span> <span class="o">{</span><span class="n">A</span> <span class="o">:</span> <span class="n">type</span><span class="o">}</span> <span class="o">:</span> <span class="n">A</span> <span class="bp">→</span> <span class="o">(</span><span class="n">type</span><span class="bp">.</span><span class="n">pow</span> <span class="n">A</span><span class="o">)</span> <span class="bp">→</span> <span class="n">Formula</span>
+</pre></div>
+
+
+
+<a name="195267791"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113488-general/topic/Intuitionistic%20Type%20Theory%20Proofs/near/195267791" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Mario Carneiro <a href="https://leanprover-community.github.io/archive/stream/113488-general/topic/Intuitionistic.20Type.20Theory.20Proofs.html#195267791">(Apr 25 2020 at 04:39)</a>:</h4>
+<p><span class="user-mention" data-user-id="255481">@Billy Price</span> What I think you want is an inductive type declaring the valid types of your theory. At minimum, it should include <code>PowerSet</code> and some fixed collection of base types</p>
+
+
+
+<a name="195267792"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113488-general/topic/Intuitionistic%20Type%20Theory%20Proofs/near/195267792" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Kenny Lau <a href="https://leanprover-community.github.io/archive/stream/113488-general/topic/Intuitionistic.20Type.20Theory.20Proofs.html#195267792">(Apr 25 2020 at 04:39)</a>:</h4>
+<div class="codehilite"><pre><span></span><span class="n">PowerSet</span><span class="bp">.</span><span class="n">rec</span> <span class="o">:</span> <span class="bp">Π</span> <span class="o">{</span><span class="n">A</span> <span class="o">:</span> <span class="kt">Type</span><span class="o">}</span> <span class="o">{</span><span class="n">C</span> <span class="o">:</span> <span class="n">PowerSet</span> <span class="n">A</span> <span class="bp">→</span> <span class="n">Sort</span> <span class="n">u_1</span><span class="o">},</span> <span class="n">C</span> <span class="n">PowerSet</span><span class="bp">.</span><span class="n">mk</span> <span class="bp">→</span> <span class="bp">Π</span> <span class="o">(</span><span class="n">n</span> <span class="o">:</span> <span class="n">PowerSet</span> <span class="n">A</span><span class="o">),</span> <span class="n">C</span> <span class="n">n</span>
+</pre></div>
+
+
+
+<a name="195267797"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113488-general/topic/Intuitionistic%20Type%20Theory%20Proofs/near/195267797" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Kenny Lau <a href="https://leanprover-community.github.io/archive/stream/113488-general/topic/Intuitionistic.20Type.20Theory.20Proofs.html#195267797">(Apr 25 2020 at 04:39)</a>:</h4>
+<p>now I can claim that <code>type -&gt; false</code></p>
+
+
+
+<a name="195267839"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113488-general/topic/Intuitionistic%20Type%20Theory%20Proofs/near/195267839" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Billy Price <a href="https://leanprover-community.github.io/archive/stream/113488-general/topic/Intuitionistic.20Type.20Theory.20Proofs.html#195267839">(Apr 25 2020 at 04:40)</a>:</h4>
+<p>This is the Type theory I am trying to model in Lean. <a href="http://therisingsea.org/notes/ch2018-lecture9.pdf" title="http://therisingsea.org/notes/ch2018-lecture9.pdf">http://therisingsea.org/notes/ch2018-lecture9.pdf</a></p>
+
+
+
+<a name="195267843"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113488-general/topic/Intuitionistic%20Type%20Theory%20Proofs/near/195267843" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Mario Carneiro <a href="https://leanprover-community.github.io/archive/stream/113488-general/topic/Intuitionistic.20Type.20Theory.20Proofs.html#195267843">(Apr 25 2020 at 04:40)</a>:</h4>
+<p><span class="user-mention" data-user-id="110064">@Kenny Lau</span> A structure is like an inductive type with one constructor and many arguments. So it is basically a product of all the fields, and the 0-ary case is unit</p>
+
+
+
+<a name="195267847"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113488-general/topic/Intuitionistic%20Type%20Theory%20Proofs/near/195267847" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Kenny Lau <a href="https://leanprover-community.github.io/archive/stream/113488-general/topic/Intuitionistic.20Type.20Theory.20Proofs.html#195267847">(Apr 25 2020 at 04:40)</a>:</h4>
+<div class="codehilite"><pre><span></span><span class="kn">structure</span> <span class="n">PowerSet</span> <span class="o">(</span><span class="n">A</span> <span class="o">:</span> <span class="kt">Type</span><span class="o">)</span> <span class="o">:</span> <span class="kt">Type</span>
+
+<span class="kn">inductive</span> <span class="n">Formula</span> <span class="o">:</span> <span class="kt">Type</span> <span class="mi">1</span>
+<span class="bp">|</span> <span class="n">var</span> <span class="o">:</span> <span class="bp">ℕ</span> <span class="bp">→</span> <span class="n">Formula</span>
+<span class="bp">|</span> <span class="n">top</span> <span class="o">:</span> <span class="n">Formula</span>
+<span class="bp">|</span> <span class="n">bot</span> <span class="o">:</span> <span class="n">Formula</span>
+<span class="bp">|</span> <span class="n">and</span> <span class="o">:</span> <span class="n">Formula</span> <span class="bp">→</span> <span class="n">Formula</span> <span class="bp">→</span> <span class="n">Formula</span>
+<span class="bp">|</span> <span class="n">or</span>  <span class="o">:</span> <span class="n">Formula</span> <span class="bp">→</span> <span class="n">Formula</span> <span class="bp">→</span> <span class="n">Formula</span>
+<span class="bp">|</span> <span class="n">imp</span> <span class="o">:</span> <span class="n">Formula</span> <span class="bp">→</span> <span class="n">Formula</span> <span class="bp">→</span> <span class="n">Formula</span>
+<span class="bp">|</span> <span class="n">elem</span> <span class="o">{</span><span class="n">A</span> <span class="o">:</span> <span class="kt">Type</span><span class="o">}</span> <span class="o">:</span> <span class="n">A</span> <span class="bp">→</span> <span class="o">(</span><span class="n">PowerSet</span> <span class="n">A</span><span class="o">)</span> <span class="bp">→</span> <span class="n">Formula</span>
+</pre></div>
+
+
+
+<a name="195267853"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113488-general/topic/Intuitionistic%20Type%20Theory%20Proofs/near/195267853" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Kenny Lau <a href="https://leanprover-community.github.io/archive/stream/113488-general/topic/Intuitionistic.20Type.20Theory.20Proofs.html#195267853">(Apr 25 2020 at 04:40)</a>:</h4>
+<p>I'm not sure if this is the intended interpretation</p>
+
+
+
+<a name="195267872"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113488-general/topic/Intuitionistic%20Type%20Theory%20Proofs/near/195267872" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Kenny Lau <a href="https://leanprover-community.github.io/archive/stream/113488-general/topic/Intuitionistic.20Type.20Theory.20Proofs.html#195267872">(Apr 25 2020 at 04:41)</a>:</h4>
+<p><span class="user-mention" data-user-id="110049">@Mario Carneiro</span> I see</p>
+
+
+
+<a name="195267914"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113488-general/topic/Intuitionistic%20Type%20Theory%20Proofs/near/195267914" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Mario Carneiro <a href="https://leanprover-community.github.io/archive/stream/113488-general/topic/Intuitionistic.20Type.20Theory.20Proofs.html#195267914">(Apr 25 2020 at 04:42)</a>:</h4>
+<p>Here's an easy fix:</p>
+<div class="codehilite"><pre><span></span><span class="kn">inductive</span> <span class="n">type</span> <span class="o">:</span> <span class="kt">Type</span>
+<span class="bp">|</span> <span class="n">prod</span> <span class="o">:</span> <span class="n">type</span> <span class="bp">→</span> <span class="n">type</span> <span class="bp">→</span> <span class="n">type</span>
+<span class="bp">|</span> <span class="n">pow</span>  <span class="o">:</span> <span class="n">type</span> <span class="bp">→</span> <span class="n">type</span>
+
+<span class="kn">inductive</span> <span class="n">Formula</span> <span class="o">:</span> <span class="kt">Type</span>
+<span class="bp">|</span> <span class="n">top</span> <span class="o">:</span> <span class="n">Formula</span>
+<span class="bp">|</span> <span class="n">bot</span> <span class="o">:</span> <span class="n">Formula</span>
+<span class="bp">|</span> <span class="n">and</span> <span class="o">:</span> <span class="n">Formula</span> <span class="bp">→</span> <span class="n">Formula</span> <span class="bp">→</span> <span class="n">Formula</span>
+<span class="bp">|</span> <span class="n">or</span>  <span class="o">:</span> <span class="n">Formula</span> <span class="bp">→</span> <span class="n">Formula</span> <span class="bp">→</span> <span class="n">Formula</span>
+<span class="bp">|</span> <span class="n">imp</span> <span class="o">:</span> <span class="n">Formula</span> <span class="bp">→</span> <span class="n">Formula</span> <span class="bp">→</span> <span class="n">Formula</span>
+<span class="bp">|</span> <span class="n">elem</span> <span class="o">{</span><span class="n">A</span> <span class="o">:</span> <span class="n">type</span><span class="o">}</span> <span class="o">:</span> <span class="bp">ℕ</span> <span class="bp">→</span> <span class="bp">ℕ</span> <span class="bp">→</span> <span class="n">Formula</span>
+</pre></div>
+
+
+
+<a name="195267926"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113488-general/topic/Intuitionistic%20Type%20Theory%20Proofs/near/195267926" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Mario Carneiro <a href="https://leanprover-community.github.io/archive/stream/113488-general/topic/Intuitionistic.20Type.20Theory.20Proofs.html#195267926">(Apr 25 2020 at 04:42)</a>:</h4>
+<p>The problem is that you don't have a grammar of terms that can inhabit a type</p>
+
+
+
+<a name="195267929"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113488-general/topic/Intuitionistic%20Type%20Theory%20Proofs/near/195267929" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Mario Carneiro <a href="https://leanprover-community.github.io/archive/stream/113488-general/topic/Intuitionistic.20Type.20Theory.20Proofs.html#195267929">(Apr 25 2020 at 04:42)</a>:</h4>
+<p>here I'm just assuming they are numbered variables, and the type checking is separate</p>
+
+
+
+<a name="195267934"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113488-general/topic/Intuitionistic%20Type%20Theory%20Proofs/near/195267934" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Mario Carneiro <a href="https://leanprover-community.github.io/archive/stream/113488-general/topic/Intuitionistic.20Type.20Theory.20Proofs.html#195267934">(Apr 25 2020 at 04:43)</a>:</h4>
+<p>Also, <code>type</code> is empty</p>
+
+
+
+<a name="195267987"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113488-general/topic/Intuitionistic%20Type%20Theory%20Proofs/near/195267987" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Mario Carneiro <a href="https://leanprover-community.github.io/archive/stream/113488-general/topic/Intuitionistic.20Type.20Theory.20Proofs.html#195267987">(Apr 25 2020 at 04:45)</a>:</h4>
+<p>Here's a more well typed version</p>
+<div class="codehilite"><pre><span></span><span class="kn">inductive</span> <span class="n">type</span> <span class="o">:</span> <span class="kt">Type</span>
+<span class="bp">|</span> <span class="n">prod</span> <span class="o">:</span> <span class="n">type</span> <span class="bp">→</span> <span class="n">type</span> <span class="bp">→</span> <span class="n">type</span>
+<span class="bp">|</span> <span class="n">pow</span>  <span class="o">:</span> <span class="n">type</span> <span class="bp">→</span> <span class="n">type</span>
+
+<span class="n">def</span> <span class="n">term</span> <span class="o">:</span> <span class="n">type</span> <span class="bp">→</span> <span class="kt">Type</span>
+<span class="bp">|</span> <span class="o">(</span><span class="n">type</span><span class="bp">.</span><span class="n">prod</span> <span class="n">a</span> <span class="n">b</span><span class="o">)</span> <span class="o">:=</span> <span class="n">term</span> <span class="n">a</span> <span class="bp">×</span> <span class="n">term</span> <span class="n">b</span>
+<span class="bp">|</span> <span class="o">(</span><span class="n">type</span><span class="bp">.</span><span class="n">pow</span> <span class="n">a</span><span class="o">)</span> <span class="o">:=</span> <span class="n">term</span> <span class="n">a</span> <span class="bp">→</span> <span class="kt">Prop</span>
+
+<span class="kn">inductive</span> <span class="n">Formula</span> <span class="o">:</span> <span class="kt">Type</span>
+<span class="bp">|</span> <span class="n">top</span> <span class="o">:</span> <span class="n">Formula</span>
+<span class="bp">|</span> <span class="n">bot</span> <span class="o">:</span> <span class="n">Formula</span>
+<span class="bp">|</span> <span class="n">and</span> <span class="o">:</span> <span class="n">Formula</span> <span class="bp">→</span> <span class="n">Formula</span> <span class="bp">→</span> <span class="n">Formula</span>
+<span class="bp">|</span> <span class="n">or</span>  <span class="o">:</span> <span class="n">Formula</span> <span class="bp">→</span> <span class="n">Formula</span> <span class="bp">→</span> <span class="n">Formula</span>
+<span class="bp">|</span> <span class="n">imp</span> <span class="o">:</span> <span class="n">Formula</span> <span class="bp">→</span> <span class="n">Formula</span> <span class="bp">→</span> <span class="n">Formula</span>
+<span class="bp">|</span> <span class="n">elem</span> <span class="o">{</span><span class="n">A</span> <span class="o">:</span> <span class="n">type</span><span class="o">}</span> <span class="o">:</span> <span class="n">term</span> <span class="n">A</span> <span class="bp">→</span> <span class="n">term</span> <span class="o">(</span><span class="n">type</span><span class="bp">.</span><span class="n">pow</span> <span class="n">A</span><span class="o">)</span> <span class="bp">→</span> <span class="n">Formula</span>
+</pre></div>
+
+
+<p>but it's still not good because there are too many elements of <code>term (type.pow a)</code></p>
+
+
+
+<a name="195268047"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113488-general/topic/Intuitionistic%20Type%20Theory%20Proofs/near/195268047" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Billy Price <a href="https://leanprover-community.github.io/archive/stream/113488-general/topic/Intuitionistic.20Type.20Theory.20Proofs.html#195268047">(Apr 25 2020 at 04:46)</a>:</h4>
+<p>Yeah I need to add Unit and Omega, where Omega is interpreted as the type of propositions. At the moment I was modelling Omega with Formula, without explicitly calling it a <code>type</code>, maybe I should try that</p>
+
+
+
+<a name="195268051"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113488-general/topic/Intuitionistic%20Type%20Theory%20Proofs/near/195268051" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Kenny Lau <a href="https://leanprover-community.github.io/archive/stream/113488-general/topic/Intuitionistic.20Type.20Theory.20Proofs.html#195268051">(Apr 25 2020 at 04:47)</a>:</h4>
+<p>I <strong>don't</strong> think the intended meaning is "1 is a Type, Ω is a Type, AxB is a type for each A and B, PA is a type for each A, <strong>and this is all there is to it</strong>"</p>
+
+
+
+<a name="195268052"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113488-general/topic/Intuitionistic%20Type%20Theory%20Proofs/near/195268052" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Kenny Lau <a href="https://leanprover-community.github.io/archive/stream/113488-general/topic/Intuitionistic.20Type.20Theory.20Proofs.html#195268052">(Apr 25 2020 at 04:47)</a>:</h4>
+<p>i.e. I don't agree with the use of <code>inductive</code></p>
+
+
+
+<a name="195268053"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113488-general/topic/Intuitionistic%20Type%20Theory%20Proofs/near/195268053" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Mario Carneiro <a href="https://leanprover-community.github.io/archive/stream/113488-general/topic/Intuitionistic.20Type.20Theory.20Proofs.html#195268053">(Apr 25 2020 at 04:47)</a>:</h4>
+<p>The problem is that this is going to turn into an inductive-recursive type if you aren't careful</p>
+
+
+
+<a name="195268056"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113488-general/topic/Intuitionistic%20Type%20Theory%20Proofs/near/195268056" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Mario Carneiro <a href="https://leanprover-community.github.io/archive/stream/113488-general/topic/Intuitionistic.20Type.20Theory.20Proofs.html#195268056">(Apr 25 2020 at 04:47)</a>:</h4>
+<p>because the definition of <code>term</code> depends on <code>formula</code> and vice versa</p>
+
+
+
+<a name="195268148"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113488-general/topic/Intuitionistic%20Type%20Theory%20Proofs/near/195268148" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Billy Price <a href="https://leanprover-community.github.io/archive/stream/113488-general/topic/Intuitionistic.20Type.20Theory.20Proofs.html#195268148">(Apr 25 2020 at 04:51)</a>:</h4>
+<p><span class="user-mention" data-user-id="110064">@Kenny Lau</span> Would it not be possible to inject the semantics of each of these types later on?</p>
+
+
+
+<a name="195268188"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113488-general/topic/Intuitionistic%20Type%20Theory%20Proofs/near/195268188" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Mario Carneiro <a href="https://leanprover-community.github.io/archive/stream/113488-general/topic/Intuitionistic.20Type.20Theory.20Proofs.html#195268188">(Apr 25 2020 at 04:52)</a>:</h4>
+<p>When I look at the lecture notes you linked, I see a description of a structure, a system of constraints that defines a "type system", not an inductive type enumerating all possible terms</p>
+
+
+
+<a name="195268191"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113488-general/topic/Intuitionistic%20Type%20Theory%20Proofs/near/195268191" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Kenny Lau <a href="https://leanprover-community.github.io/archive/stream/113488-general/topic/Intuitionistic.20Type.20Theory.20Proofs.html#195268191">(Apr 25 2020 at 04:53)</a>:</h4>
+<div class="codehilite"><pre><span></span><span class="kn">inductive</span> <span class="n">type</span> <span class="o">:</span> <span class="kt">Type</span>
+<span class="bp">|</span> <span class="n">one</span> <span class="bp">|</span> <span class="n">Omega</span> <span class="bp">|</span> <span class="n">prod</span> <span class="o">(</span><span class="n">A</span> <span class="n">B</span> <span class="o">:</span> <span class="n">type</span><span class="o">)</span> <span class="bp">|</span> <span class="n">pow</span> <span class="o">(</span><span class="n">A</span> <span class="o">:</span> <span class="n">type</span><span class="o">)</span>
+
+<span class="kn">inductive</span> <span class="n">term</span> <span class="o">:</span> <span class="n">type</span> <span class="bp">→</span> <span class="kt">Type</span>
+<span class="bp">|</span> <span class="n">prod</span> <span class="o">:</span> <span class="bp">Π</span> <span class="n">A</span> <span class="n">B</span> <span class="o">:</span> <span class="n">type</span><span class="o">,</span> <span class="n">term</span> <span class="n">A</span> <span class="bp">→</span> <span class="n">term</span> <span class="n">B</span> <span class="bp">→</span> <span class="n">term</span> <span class="o">(</span><span class="n">type</span><span class="bp">.</span><span class="n">prod</span> <span class="n">A</span> <span class="n">B</span><span class="o">)</span>
+<span class="bp">|</span> <span class="n">elem</span> <span class="o">:</span> <span class="bp">Π</span> <span class="n">A</span> <span class="o">:</span> <span class="n">type</span><span class="o">,</span> <span class="n">term</span> <span class="n">A</span> <span class="bp">→</span> <span class="n">term</span> <span class="o">(</span><span class="n">type</span><span class="bp">.</span><span class="n">pow</span> <span class="n">A</span><span class="o">)</span> <span class="bp">→</span> <span class="n">term</span> <span class="n">type</span><span class="bp">.</span><span class="n">Omega</span>
+<span class="c1">-- what is b3?</span>
+<span class="bp">|</span> <span class="n">and</span> <span class="o">:</span> <span class="n">term</span> <span class="n">type</span><span class="bp">.</span><span class="n">Omega</span> <span class="bp">→</span> <span class="n">term</span> <span class="n">type</span><span class="bp">.</span><span class="n">Omega</span> <span class="bp">→</span> <span class="n">term</span> <span class="n">type</span><span class="bp">.</span><span class="n">Omega</span>
+<span class="bp">|</span> <span class="n">or</span> <span class="o">:</span> <span class="n">term</span> <span class="n">type</span><span class="bp">.</span><span class="n">Omega</span> <span class="bp">→</span> <span class="n">term</span> <span class="n">type</span><span class="bp">.</span><span class="n">Omega</span> <span class="bp">→</span> <span class="n">term</span> <span class="n">type</span><span class="bp">.</span><span class="n">Omega</span>
+<span class="bp">|</span> <span class="n">imp</span> <span class="o">:</span> <span class="n">term</span> <span class="n">type</span><span class="bp">.</span><span class="n">Omega</span> <span class="bp">→</span> <span class="n">term</span> <span class="n">type</span><span class="bp">.</span><span class="n">Omega</span> <span class="bp">→</span> <span class="n">term</span> <span class="n">type</span><span class="bp">.</span><span class="n">Omega</span>
+<span class="c1">-- what is b5??</span>
+</pre></div>
+
+
+
+<a name="195268193"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113488-general/topic/Intuitionistic%20Type%20Theory%20Proofs/near/195268193" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Kenny Lau <a href="https://leanprover-community.github.io/archive/stream/113488-general/topic/Intuitionistic.20Type.20Theory.20Proofs.html#195268193">(Apr 25 2020 at 04:53)</a>:</h4>
+<p><span class="user-mention" data-user-id="110049">@Mario Carneiro</span> and then I looked deeper, and they defined "Pure type theory" to be basically the inductive thing</p>
+
+
+
+<a name="195268195"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113488-general/topic/Intuitionistic%20Type%20Theory%20Proofs/near/195268195" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Kenny Lau <a href="https://leanprover-community.github.io/archive/stream/113488-general/topic/Intuitionistic.20Type.20Theory.20Proofs.html#195268195">(Apr 25 2020 at 04:53)</a>:</h4>
+<p>I'm not sure how to formalize "a variable x of type A"</p>
+
+
+
+<a name="195268196"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113488-general/topic/Intuitionistic%20Type%20Theory%20Proofs/near/195268196" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Kenny Lau <a href="https://leanprover-community.github.io/archive/stream/113488-general/topic/Intuitionistic.20Type.20Theory.20Proofs.html#195268196">(Apr 25 2020 at 04:53)</a>:</h4>
+<p>which is required in b3 and b5</p>
+
+
+
+<a name="195268197"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113488-general/topic/Intuitionistic%20Type%20Theory%20Proofs/near/195268197" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Kenny Lau <a href="https://leanprover-community.github.io/archive/stream/113488-general/topic/Intuitionistic.20Type.20Theory.20Proofs.html#195268197">(Apr 25 2020 at 04:53)</a>:</h4>
+<p>but here's b2 formalized <span class="user-mention" data-user-id="255481">@Billy Price</span></p>
+
+
+
+<a name="195268262"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113488-general/topic/Intuitionistic%20Type%20Theory%20Proofs/near/195268262" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Mario Carneiro <a href="https://leanprover-community.github.io/archive/stream/113488-general/topic/Intuitionistic.20Type.20Theory.20Proofs.html#195268262">(Apr 25 2020 at 04:55)</a>:</h4>
+<p>A variable of type A would be a constructor <code>| var {A : type} : nat -&gt; term A</code></p>
+
+
+
+<a name="195268301"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113488-general/topic/Intuitionistic%20Type%20Theory%20Proofs/near/195268301" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Billy Price <a href="https://leanprover-community.github.io/archive/stream/113488-general/topic/Intuitionistic.20Type.20Theory.20Proofs.html#195268301">(Apr 25 2020 at 04:56)</a>:</h4>
+<p>Awesome, thanks. For the variables, I just need them to act such that I can substitute terms of the <code>type</code> that the variable is associated to.</p>
+
+
+
+<a name="195268303"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113488-general/topic/Intuitionistic%20Type%20Theory%20Proofs/near/195268303" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Kenny Lau <a href="https://leanprover-community.github.io/archive/stream/113488-general/topic/Intuitionistic.20Type.20Theory.20Proofs.html#195268303">(Apr 25 2020 at 04:56)</a>:</h4>
+<div class="codehilite"><pre><span></span><span class="kn">inductive</span> <span class="n">type</span> <span class="o">:</span> <span class="kt">Type</span>
+<span class="bp">|</span> <span class="n">one</span> <span class="bp">|</span> <span class="n">Omega</span> <span class="bp">|</span> <span class="n">prod</span> <span class="o">(</span><span class="n">A</span> <span class="n">B</span> <span class="o">:</span> <span class="n">type</span><span class="o">)</span> <span class="bp">|</span> <span class="n">pow</span> <span class="o">(</span><span class="n">A</span> <span class="o">:</span> <span class="n">type</span><span class="o">)</span>
+
+<span class="kn">inductive</span> <span class="n">term</span> <span class="o">:</span> <span class="n">type</span> <span class="bp">→</span> <span class="kt">Type</span>
+<span class="bp">|</span> <span class="n">prod</span> <span class="o">:</span> <span class="bp">Π</span> <span class="n">A</span> <span class="n">B</span> <span class="o">:</span> <span class="n">type</span><span class="o">,</span> <span class="n">term</span> <span class="n">A</span> <span class="bp">→</span> <span class="n">term</span> <span class="n">B</span> <span class="bp">→</span> <span class="n">term</span> <span class="o">(</span><span class="n">type</span><span class="bp">.</span><span class="n">prod</span> <span class="n">A</span> <span class="n">B</span><span class="o">)</span>
+<span class="bp">|</span> <span class="n">elem</span> <span class="o">:</span> <span class="bp">Π</span> <span class="n">A</span> <span class="o">:</span> <span class="n">type</span><span class="o">,</span> <span class="n">term</span> <span class="n">A</span> <span class="bp">→</span> <span class="n">term</span> <span class="o">(</span><span class="n">type</span><span class="bp">.</span><span class="n">pow</span> <span class="n">A</span><span class="o">)</span> <span class="bp">→</span> <span class="n">term</span> <span class="n">type</span><span class="bp">.</span><span class="n">Omega</span>
+<span class="bp">|</span> <span class="n">sep</span> <span class="o">:</span> <span class="bp">Π</span> <span class="n">A</span> <span class="o">:</span> <span class="n">type</span><span class="o">,</span> <span class="n">term</span> <span class="n">type</span><span class="bp">.</span><span class="n">Omega</span> <span class="bp">→</span> <span class="bp">ℕ</span> <span class="bp">→</span> <span class="n">term</span> <span class="o">(</span><span class="n">type</span><span class="bp">.</span><span class="n">pow</span> <span class="n">A</span><span class="o">)</span>
+<span class="bp">|</span> <span class="n">and</span> <span class="o">:</span> <span class="n">term</span> <span class="n">type</span><span class="bp">.</span><span class="n">Omega</span> <span class="bp">→</span> <span class="n">term</span> <span class="n">type</span><span class="bp">.</span><span class="n">Omega</span> <span class="bp">→</span> <span class="n">term</span> <span class="n">type</span><span class="bp">.</span><span class="n">Omega</span>
+<span class="bp">|</span> <span class="n">or</span> <span class="o">:</span> <span class="n">term</span> <span class="n">type</span><span class="bp">.</span><span class="n">Omega</span> <span class="bp">→</span> <span class="n">term</span> <span class="n">type</span><span class="bp">.</span><span class="n">Omega</span> <span class="bp">→</span> <span class="n">term</span> <span class="n">type</span><span class="bp">.</span><span class="n">Omega</span>
+<span class="bp">|</span> <span class="n">imp</span> <span class="o">:</span> <span class="n">term</span> <span class="n">type</span><span class="bp">.</span><span class="n">Omega</span> <span class="bp">→</span> <span class="n">term</span> <span class="n">type</span><span class="bp">.</span><span class="n">Omega</span> <span class="bp">→</span> <span class="n">term</span> <span class="n">type</span><span class="bp">.</span><span class="n">Omega</span>
+<span class="bp">|</span> <span class="n">all</span> <span class="o">:</span> <span class="bp">Π</span> <span class="n">A</span> <span class="o">:</span> <span class="n">type</span><span class="o">,</span> <span class="n">term</span> <span class="n">type</span><span class="bp">.</span><span class="n">Omega</span> <span class="bp">→</span> <span class="bp">ℕ</span> <span class="bp">→</span> <span class="n">term</span> <span class="n">type</span><span class="bp">.</span><span class="n">Omega</span>
+<span class="bp">|</span> <span class="n">ex</span> <span class="o">:</span> <span class="bp">Π</span> <span class="n">A</span> <span class="o">:</span> <span class="n">type</span><span class="o">,</span> <span class="n">term</span> <span class="n">type</span><span class="bp">.</span><span class="n">Omega</span> <span class="bp">→</span> <span class="bp">ℕ</span> <span class="bp">→</span> <span class="n">term</span> <span class="n">type</span><span class="bp">.</span><span class="n">Omega</span>
+</pre></div>
+
+
+
+<a name="195268305"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113488-general/topic/Intuitionistic%20Type%20Theory%20Proofs/near/195268305" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Kenny Lau <a href="https://leanprover-community.github.io/archive/stream/113488-general/topic/Intuitionistic.20Type.20Theory.20Proofs.html#195268305">(Apr 25 2020 at 04:56)</a>:</h4>
+<p>how does this look</p>
+
+
+
+<a name="195268316"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113488-general/topic/Intuitionistic%20Type%20Theory%20Proofs/near/195268316" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Mario Carneiro <a href="https://leanprover-community.github.io/archive/stream/113488-general/topic/Intuitionistic.20Type.20Theory.20Proofs.html#195268316">(Apr 25 2020 at 04:57)</a>:</h4>
+<p>If you use de bruijn variables you don't need the index on <code>sep</code>,<code>all</code>,<code>ex</code></p>
+
+
+
+<a name="195268357"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113488-general/topic/Intuitionistic%20Type%20Theory%20Proofs/near/195268357" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Mario Carneiro <a href="https://leanprover-community.github.io/archive/stream/113488-general/topic/Intuitionistic.20Type.20Theory.20Proofs.html#195268357">(Apr 25 2020 at 04:58)</a>:</h4>
+<p>and you are still missing <code>var</code></p>
+
+
+
+<a name="195268365"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113488-general/topic/Intuitionistic%20Type%20Theory%20Proofs/near/195268365" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Mario Carneiro <a href="https://leanprover-community.github.io/archive/stream/113488-general/topic/Intuitionistic.20Type.20Theory.20Proofs.html#195268365">(Apr 25 2020 at 04:59)</a>:</h4>
+<p>also <code>star</code>,<code>true</code>,<code>false</code></p>
+
+
+
+<a name="195268421"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113488-general/topic/Intuitionistic%20Type%20Theory%20Proofs/near/195268421" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Kenny Lau <a href="https://leanprover-community.github.io/archive/stream/113488-general/topic/Intuitionistic.20Type.20Theory.20Proofs.html#195268421">(Apr 25 2020 at 05:01)</a>:</h4>
+<div class="codehilite"><pre><span></span><span class="kn">inductive</span> <span class="n">type</span> <span class="o">:</span> <span class="kt">Type</span>
+<span class="bp">|</span> <span class="n">one</span> <span class="bp">|</span> <span class="n">Omega</span> <span class="bp">|</span> <span class="n">prod</span> <span class="o">(</span><span class="n">A</span> <span class="n">B</span> <span class="o">:</span> <span class="n">type</span><span class="o">)</span> <span class="bp">|</span> <span class="n">pow</span> <span class="o">(</span><span class="n">A</span> <span class="o">:</span> <span class="n">type</span><span class="o">)</span>
+
+<span class="kn">inductive</span> <span class="n">term</span> <span class="o">:</span> <span class="n">type</span> <span class="bp">→</span> <span class="kt">Type</span>
+<span class="bp">|</span> <span class="n">var</span> <span class="o">:</span> <span class="bp">Π</span> <span class="n">A</span> <span class="o">:</span> <span class="n">type</span><span class="o">,</span> <span class="bp">ℕ</span> <span class="bp">→</span> <span class="n">term</span> <span class="n">A</span>
+<span class="bp">|</span> <span class="n">star</span> <span class="o">:</span> <span class="n">term</span> <span class="n">type</span><span class="bp">.</span><span class="n">one</span>
+<span class="bp">|</span> <span class="n">true</span> <span class="o">:</span> <span class="n">term</span> <span class="n">type</span><span class="bp">.</span><span class="n">Omega</span>
+<span class="bp">|</span> <span class="n">false</span> <span class="o">:</span> <span class="n">term</span> <span class="n">type</span><span class="bp">.</span><span class="n">Omega</span>
+<span class="bp">|</span> <span class="n">prod</span> <span class="o">:</span> <span class="bp">Π</span> <span class="n">A</span> <span class="n">B</span> <span class="o">:</span> <span class="n">type</span><span class="o">,</span> <span class="n">term</span> <span class="n">A</span> <span class="bp">→</span> <span class="n">term</span> <span class="n">B</span> <span class="bp">→</span> <span class="n">term</span> <span class="o">(</span><span class="n">type</span><span class="bp">.</span><span class="n">prod</span> <span class="n">A</span> <span class="n">B</span><span class="o">)</span>
+<span class="bp">|</span> <span class="n">elem</span> <span class="o">:</span> <span class="bp">Π</span> <span class="n">A</span> <span class="o">:</span> <span class="n">type</span><span class="o">,</span> <span class="n">term</span> <span class="n">A</span> <span class="bp">→</span> <span class="n">term</span> <span class="o">(</span><span class="n">type</span><span class="bp">.</span><span class="n">pow</span> <span class="n">A</span><span class="o">)</span> <span class="bp">→</span> <span class="n">term</span> <span class="n">type</span><span class="bp">.</span><span class="n">Omega</span>
+<span class="bp">|</span> <span class="n">sep</span> <span class="o">:</span> <span class="bp">Π</span> <span class="n">A</span> <span class="o">:</span> <span class="n">type</span><span class="o">,</span> <span class="n">term</span> <span class="n">type</span><span class="bp">.</span><span class="n">Omega</span> <span class="bp">→</span> <span class="bp">ℕ</span> <span class="bp">→</span> <span class="n">term</span> <span class="o">(</span><span class="n">type</span><span class="bp">.</span><span class="n">pow</span> <span class="n">A</span><span class="o">)</span>
+<span class="bp">|</span> <span class="n">and</span> <span class="o">:</span> <span class="n">term</span> <span class="n">type</span><span class="bp">.</span><span class="n">Omega</span> <span class="bp">→</span> <span class="n">term</span> <span class="n">type</span><span class="bp">.</span><span class="n">Omega</span> <span class="bp">→</span> <span class="n">term</span> <span class="n">type</span><span class="bp">.</span><span class="n">Omega</span>
+<span class="bp">|</span> <span class="n">or</span> <span class="o">:</span> <span class="n">term</span> <span class="n">type</span><span class="bp">.</span><span class="n">Omega</span> <span class="bp">→</span> <span class="n">term</span> <span class="n">type</span><span class="bp">.</span><span class="n">Omega</span> <span class="bp">→</span> <span class="n">term</span> <span class="n">type</span><span class="bp">.</span><span class="n">Omega</span>
+<span class="bp">|</span> <span class="n">imp</span> <span class="o">:</span> <span class="n">term</span> <span class="n">type</span><span class="bp">.</span><span class="n">Omega</span> <span class="bp">→</span> <span class="n">term</span> <span class="n">type</span><span class="bp">.</span><span class="n">Omega</span> <span class="bp">→</span> <span class="n">term</span> <span class="n">type</span><span class="bp">.</span><span class="n">Omega</span>
+<span class="bp">|</span> <span class="n">all</span> <span class="o">:</span> <span class="bp">Π</span> <span class="n">A</span> <span class="o">:</span> <span class="n">type</span><span class="o">,</span> <span class="n">term</span> <span class="n">type</span><span class="bp">.</span><span class="n">Omega</span> <span class="bp">→</span> <span class="bp">ℕ</span> <span class="bp">→</span> <span class="n">term</span> <span class="n">type</span><span class="bp">.</span><span class="n">Omega</span>
+<span class="bp">|</span> <span class="n">ex</span> <span class="o">:</span> <span class="bp">Π</span> <span class="n">A</span> <span class="o">:</span> <span class="n">type</span><span class="o">,</span> <span class="n">term</span> <span class="n">type</span><span class="bp">.</span><span class="n">Omega</span> <span class="bp">→</span> <span class="bp">ℕ</span> <span class="bp">→</span> <span class="n">term</span> <span class="n">type</span><span class="bp">.</span><span class="n">Omega</span>
+</pre></div>
+
+
+
+<a name="195268458"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113488-general/topic/Intuitionistic%20Type%20Theory%20Proofs/near/195268458" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Kenny Lau <a href="https://leanprover-community.github.io/archive/stream/113488-general/topic/Intuitionistic.20Type.20Theory.20Proofs.html#195268458">(Apr 25 2020 at 05:02)</a>:</h4>
+<p>what do you mean by use de Bruijn variables?</p>
+
+
+
+<a name="195268466"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113488-general/topic/Intuitionistic%20Type%20Theory%20Proofs/near/195268466" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Mario Carneiro <a href="https://leanprover-community.github.io/archive/stream/113488-general/topic/Intuitionistic.20Type.20Theory.20Proofs.html#195268466">(Apr 25 2020 at 05:02)</a>:</h4>
+<p>that is, binders are defined so that all variable numbers shift up by one and variable number 0 becomes the newly introduced variable</p>
+
+
+
 {% endraw %}
 
-<hr><p>Last updated: Apr 25 2020 at 04:32 UTC</p>
+<hr><p>Last updated: Apr 25 2020 at 05:02 UTC</p>
