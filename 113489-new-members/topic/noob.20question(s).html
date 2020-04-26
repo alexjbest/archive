@@ -33636,6 +33636,41 @@ For future reference though, how would I get a proposition asserting that <code>
 
 
 
+<a name="195312196"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113489-new%20members/topic/noob%20question%28s%29/near/195312196" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Sam Raleigh <a href="https://leanprover-community.github.io/archive/stream/113489-new-members/topic/noob.20question(s).html#195312196">(Apr 26 2020 at 01:59)</a>:</h4>
+<p>Given <code>a b c : nat</code>, how do I rewrite a hypothesis of the form <code>a &lt; b</code> as <code> a*c &lt; b*c</code>?</p>
+
+
+
+<a name="195312204"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113489-new%20members/topic/noob%20question%28s%29/near/195312204" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Sam Raleigh <a href="https://leanprover-community.github.io/archive/stream/113489-new-members/topic/noob.20question(s).html#195312204">(Apr 26 2020 at 01:59)</a>:</h4>
+<p>Assuming <code>c &gt; 0</code> ofc</p>
+
+
+
+<a name="195312277"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113489-new%20members/topic/noob%20question%28s%29/near/195312277" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Bryan Gin-ge Chen <a href="https://leanprover-community.github.io/archive/stream/113489-new-members/topic/noob.20question(s).html#195312277">(Apr 26 2020 at 02:01)</a>:</h4>
+<p>Here's one way to find lemmas like this:</p>
+<div class="codehilite"><pre><span></span><span class="kn">import</span> <span class="n">tactic</span>
+
+<span class="kn">example</span> <span class="o">(</span><span class="n">a</span> <span class="n">b</span> <span class="n">c</span> <span class="o">:</span> <span class="bp">ℕ</span><span class="o">)</span> <span class="o">(</span><span class="n">hc</span> <span class="o">:</span> <span class="n">c</span> <span class="bp">&gt;</span> <span class="mi">0</span><span class="o">)</span> <span class="o">(</span><span class="n">h</span> <span class="o">:</span> <span class="n">a</span> <span class="bp">&lt;</span> <span class="n">b</span><span class="o">)</span> <span class="o">:</span> <span class="n">a</span> <span class="bp">*</span> <span class="n">c</span> <span class="bp">&lt;</span> <span class="n">b</span> <span class="bp">*</span> <span class="n">c</span> <span class="o">:=</span> <span class="k">by</span> <span class="n">library_search</span>
+<span class="c1">-- Try this: exact mul_lt_mul_of_pos_right h hc</span>
+</pre></div>
+
+
+
+<a name="195312318"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113489-new%20members/topic/noob%20question%28s%29/near/195312318" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Sam Raleigh <a href="https://leanprover-community.github.io/archive/stream/113489-new-members/topic/noob.20question(s).html#195312318">(Apr 26 2020 at 02:02)</a>:</h4>
+<p>Haha you answered my next question before I could even ask it: how do I find lemmas like this in general?</p>
+
+
+
+<a name="195312320"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113489-new%20members/topic/noob%20question%28s%29/near/195312320" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Sam Raleigh <a href="https://leanprover-community.github.io/archive/stream/113489-new-members/topic/noob.20question(s).html#195312320">(Apr 26 2020 at 02:02)</a>:</h4>
+<p>thanks!</p>
+
+
+
 {% endraw %}
 
-<hr><p>Last updated: Apr 26 2020 at 01:03 UTC</p>
+<hr><p>Last updated: Apr 26 2020 at 02:03 UTC</p>
