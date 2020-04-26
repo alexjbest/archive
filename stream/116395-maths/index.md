@@ -9,8 +9,8 @@ permalink: /stream/116395-maths/index.html
 
 ### Topics:
 
-* [DVRs](topic/DVRs.html) (23 messages, latest: Apr 26 2020 at 15:27)
-* [submodule map](topic/submodule.20map.html) (5 messages, latest: Apr 26 2020 at 09:32)
+* [DVRs](topic/DVRs.html) (39 messages, latest: Apr 26 2020 at 17:03)
+* [submodule map](topic/submodule.20map.html) (6 messages, latest: Apr 26 2020 at 16:22)
 * [legendre symbols](topic/legendre.20symbols.html) (42 messages, latest: Apr 26 2020 at 09:25)
 * [Coersion and composition](topic/Coersion.20and.20composition.html) (30 messages, latest: Apr 25 2020 at 16:19)
 * [Analytic functions](topic/Analytic.20functions.html) (2 messages, latest: Apr 25 2020 at 07:31)
@@ -873,4 +873,4 @@ permalink: /stream/116395-maths/index.html
 * [free group](topic/free.20group.html) (92 messages, latest: Apr 02 2018 at 05:00)
 * [Easy topological space question](topic/Easy.20topological.20space.20question.html) (18 messages, latest: Apr 02 2018 at 01:23)
 
-<hr><p>Last updated: Apr 26 2020 at 16:04 UTC</p>
+<hr><p>Last updated: Apr 26 2020 at 17:03 UTC</p>

@@ -185,6 +185,114 @@ permalink: /stream/116395-maths/topic/DVRs.html
 
 
 
+<a name="195341519"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/116395-maths/topic/DVRs/near/195341519" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Kevin Buzzard <a href="https://leanprover-community.github.io/archive/stream/116395-maths/topic/DVRs.html#195341519">(Apr 26 2020 at 16:25)</a>:</h4>
+<p>Later on it might be convenient to have valuations taking values in a discrete subgroup of the rationals</p>
+
+
+
+<a name="195341580"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/116395-maths/topic/DVRs/near/195341580" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Kevin Buzzard <a href="https://leanprover-community.github.io/archive/stream/116395-maths/topic/DVRs.html#195341580">(Apr 26 2020 at 16:26)</a>:</h4>
+<p>I think Johan is the expert in valuations now, there has been lot of movement since that valuation file was originally written, especially with group_with_zero</p>
+
+
+
+<a name="195341707"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/116395-maths/topic/DVRs/near/195341707" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Ashwin Iyengar <a href="https://leanprover-community.github.io/archive/stream/116395-maths/topic/DVRs.html#195341707">(Apr 26 2020 at 16:29)</a>:</h4>
+<p>We could do something like</p>
+<div class="codehilite"><pre><span></span><span class="n">def</span> <span class="n">to_discrete_valuation</span> <span class="o">(</span><span class="n">R</span> <span class="o">:</span> <span class="kt">Type</span> <span class="n">u</span><span class="o">)</span> <span class="o">[</span><span class="n">discrete_valuation_ring</span> <span class="n">R</span><span class="o">]</span>
+<span class="o">(</span><span class="n">G</span> <span class="o">:</span> <span class="kt">Type</span> <span class="n">v</span><span class="o">)</span> <span class="o">[</span><span class="n">comm_group</span> <span class="n">G</span><span class="o">]</span> <span class="o">(</span><span class="n">g</span> <span class="o">:</span> <span class="n">G</span><span class="o">)</span> <span class="o">(</span><span class="n">cyclic</span> <span class="o">:</span> <span class="n">G</span> <span class="bp">=</span> <span class="n">span</span> <span class="o">{</span><span class="n">g</span><span class="o">})</span> <span class="o">:</span>
+<span class="n">discrete_valuation</span> <span class="n">R</span> <span class="n">G</span> <span class="n">g</span> <span class="o">:=</span>
+</pre></div>
+
+
+<p>maybe, and have the discrete valuation take values in an arbitrary infinite cyclic group... oh but I'm missing a proof that it's infinite</p>
+
+
+
+<a name="195341852"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/116395-maths/topic/DVRs/near/195341852" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Johan Commelin <a href="https://leanprover-community.github.io/archive/stream/116395-maths/topic/DVRs.html#195341852">(Apr 26 2020 at 16:33)</a>:</h4>
+<p>An alternative is to use the general valuations as found in the perfectoid project, and define a predicate on those, saying that the valuation is discrete.</p>
+
+
+
+<a name="195341916"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/116395-maths/topic/DVRs/near/195341916" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Johan Commelin <a href="https://leanprover-community.github.io/archive/stream/116395-maths/topic/DVRs.html#195341916">(Apr 26 2020 at 16:34)</a>:</h4>
+<p>Do you want <code>discrete_valuation_ring R</code> to be a <code>Prop</code> or will it record data (say a distinguished uniformiser...)?</p>
+
+
+
+<a name="195342402"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/116395-maths/topic/DVRs/near/195342402" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Ashwin Iyengar <a href="https://leanprover-community.github.io/archive/stream/116395-maths/topic/DVRs.html#195342402">(Apr 26 2020 at 16:47)</a>:</h4>
+<div class="codehilite"><pre><span></span><span class="n">class</span> <span class="n">discrete_valuation_ring</span> <span class="o">(</span><span class="n">R</span> <span class="o">:</span> <span class="kt">Type</span> <span class="n">u</span><span class="o">)</span> <span class="kn">extends</span> <span class="n">principal_ideal_domain</span> <span class="n">R</span> <span class="o">:=</span>
+<span class="o">(</span><span class="n">prime_ideal&#39;</span> <span class="o">:</span> <span class="n">ideal</span> <span class="n">R</span><span class="o">)</span>
+<span class="o">(</span><span class="n">primality</span> <span class="o">:</span> <span class="n">prime_ideal&#39;</span><span class="bp">.</span><span class="n">is_prime</span><span class="o">)</span>
+<span class="o">(</span><span class="n">is_nonzero</span> <span class="o">:</span> <span class="n">prime_ideal&#39;</span> <span class="bp">≠</span> <span class="err">⊥</span><span class="o">)</span>
+<span class="o">(</span><span class="n">unique_nonzero_prime_ideal</span> <span class="o">:</span> <span class="bp">∀</span> <span class="n">P</span> <span class="o">:</span> <span class="n">ideal</span> <span class="n">R</span><span class="o">,</span> <span class="n">P</span><span class="bp">.</span><span class="n">is_prime</span> <span class="bp">→</span> <span class="n">P</span> <span class="bp">=</span> <span class="err">⊥</span> <span class="bp">∨</span> <span class="n">P</span> <span class="bp">=</span> <span class="n">prime_ideal&#39;</span><span class="o">)</span>
+</pre></div>
+
+
+
+<a name="195342405"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/116395-maths/topic/DVRs/near/195342405" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Ashwin Iyengar <a href="https://leanprover-community.github.io/archive/stream/116395-maths/topic/DVRs.html#195342405">(Apr 26 2020 at 16:47)</a>:</h4>
+<p>so it records some data</p>
+
+
+
+<a name="195342447"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/116395-maths/topic/DVRs/near/195342447" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Ashwin Iyengar <a href="https://leanprover-community.github.io/archive/stream/116395-maths/topic/DVRs.html#195342447">(Apr 26 2020 at 16:48)</a>:</h4>
+<p>a PID with a unique nonzero prime ideal</p>
+
+
+
+<a name="195342489"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/116395-maths/topic/DVRs/near/195342489" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Johan Commelin <a href="https://leanprover-community.github.io/archive/stream/116395-maths/topic/DVRs.html#195342489">(Apr 26 2020 at 16:50)</a>:</h4>
+<p>Ok, I see. But it is a subsingleton. That seems like a fine definition</p>
+
+
+
+<a name="195342540"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/116395-maths/topic/DVRs/near/195342540" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Ashwin Iyengar <a href="https://leanprover-community.github.io/archive/stream/116395-maths/topic/DVRs.html#195342540">(Apr 26 2020 at 16:50)</a>:</h4>
+<p>Then we construct a valuation basically by using the UFD structure and the fact that prime elements are uniformizers</p>
+
+
+
+<a name="195342926"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/116395-maths/topic/DVRs/near/195342926" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Johan Commelin <a href="https://leanprover-community.github.io/archive/stream/116395-maths/topic/DVRs.html#195342926">(Apr 26 2020 at 17:01)</a>:</h4>
+<p>In the perfectoid project we also had the notion of a <code>valued_ring</code>, which was a class that registered a (multiplicative) valuation on the ring.</p>
+
+
+
+<a name="195342953"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/116395-maths/topic/DVRs/near/195342953" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Kevin Buzzard <a href="https://leanprover-community.github.io/archive/stream/116395-maths/topic/DVRs.html#195342953">(Apr 26 2020 at 17:02)</a>:</h4>
+<p>One could have an is_discrete predicate on a valuation in the sense of Huber and a construction which goes from this to the Z-valued valuation. But I don't think it matters that traditionally the group law on Z with 0 is addition -- why not use multiplicative Z with 0?</p>
+
+
+
+<a name="195342997"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/116395-maths/topic/DVRs/near/195342997" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Johan Commelin <a href="https://leanprover-community.github.io/archive/stream/116395-maths/topic/DVRs.html#195342997">(Apr 26 2020 at 17:02)</a>:</h4>
+<p>We might want to have two classes <code>discrete_valuation_ring R</code>, like you propose, and <code>discretely_valued_ring R</code>, for rings like Z_p that have a canonical valuation.</p>
+
+
+
+<a name="195343020"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/116395-maths/topic/DVRs/near/195343020" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Kevin Buzzard <a href="https://leanprover-community.github.io/archive/stream/116395-maths/topic/DVRs.html#195343020">(Apr 26 2020 at 17:03)</a>:</h4>
+<p>What structure do people use on Z with +infinity? Add, max, probably never multiplication, but external multiplication by Z yes. But we have all this on a group with 0</p>
+
+
+
+<a name="195343030"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/116395-maths/topic/DVRs/near/195343030" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Johan Commelin <a href="https://leanprover-community.github.io/archive/stream/116395-maths/topic/DVRs.html#195343030">(Apr 26 2020 at 17:03)</a>:</h4>
+<p>I'm still upset that it seems really painful to move back and forth between multiplicative and additive valuations...</p>
+
+
+
+<a name="195343034"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/116395-maths/topic/DVRs/near/195343034" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Kevin Buzzard <a href="https://leanprover-community.github.io/archive/stream/116395-maths/topic/DVRs.html#195343034">(Apr 26 2020 at 17:03)</a>:</h4>
+<p>So why not just bite the bullet and never use additive valuations?</p>
+
+
+
 {% endraw %}
 
-<hr><p>Last updated: Apr 26 2020 at 16:04 UTC</p>
+<hr><p>Last updated: Apr 26 2020 at 17:03 UTC</p>
