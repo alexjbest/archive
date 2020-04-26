@@ -33789,6 +33789,29 @@ For future reference though, how would I get a proposition asserting that <code>
 
 
 
+<a name="195317138"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113489-new%20members/topic/noob%20question%28s%29/near/195317138" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Billy Price <a href="https://leanprover-community.github.io/archive/stream/113489-new-members/topic/noob.20question(s).html#195317138">(Apr 26 2020 at 04:40)</a>:</h4>
+<p>How do see the fully unpacked version of this term I'm trying to check?</p>
+<div class="codehilite"><pre><span></span><span class="n">def</span> <span class="n">ex_unique</span> <span class="o">(</span><span class="n">A</span> <span class="o">:</span> <span class="n">type</span><span class="o">)</span> <span class="o">(</span><span class="n">φ</span> <span class="o">:</span> <span class="n">term</span> <span class="err">Ω</span><span class="o">)</span> <span class="o">:</span> <span class="n">term</span> <span class="err">Ω</span> <span class="o">:=</span>
+  <span class="bp">∃</span><span class="err">&#39;</span> <span class="n">A</span> <span class="err">$</span> <span class="bp">|</span><span class="o">{</span><span class="n">A</span> <span class="bp">|</span> <span class="n">φ</span><span class="o">}</span><span class="bp">|</span> <span class="err">≃</span> <span class="bp">|</span><span class="o">{</span><span class="n">var</span> <span class="n">A</span> <span class="mi">3</span><span class="o">}</span><span class="bp">|</span>
+
+<span class="bp">#</span><span class="kn">check</span> <span class="n">ex_unique</span> <span class="mi">𝟙</span> <span class="err">⊤</span>
+</pre></div>
+
+
+
+<a name="195317365"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113489-new%20members/topic/noob%20question%28s%29/near/195317365" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Frank Dai <a href="https://leanprover-community.github.io/archive/stream/113489-new-members/topic/noob.20question(s).html#195317365">(Apr 26 2020 at 04:49)</a>:</h4>
+<p>How do I compute with <code>snd</code> on dependent pairs? Slightly more generally, how do I see what the computation rules for <code>foo_thing</code> are?</p>
+<div class="codehilite"><pre><span></span><span class="n">def</span> <span class="n">foo</span> <span class="o">:</span> <span class="kt">Type</span> <span class="mi">1</span> <span class="o">:=</span> <span class="err">Σ</span> <span class="o">(</span><span class="n">B</span> <span class="o">:</span> <span class="kt">Type</span><span class="o">),</span> <span class="o">(</span><span class="n">A</span> <span class="bp">→</span> <span class="n">B</span><span class="o">)</span>
+
+<span class="n">def</span> <span class="n">foo_thing</span> <span class="o">:</span> <span class="n">foo</span> <span class="o">:=</span> <span class="bp">⟨</span><span class="n">nat</span><span class="o">,</span> <span class="n">id</span><span class="bp">⟩</span>
+
+<span class="kn">lemma</span> <span class="n">foo_map_is_id</span> <span class="o">:</span> <span class="n">foo_thing</span><span class="bp">.</span><span class="n">snd</span> <span class="bp">=</span> <span class="n">id</span> <span class="o">:=</span> <span class="n">sorry</span>
+</pre></div>
+
+
+
 {% endraw %}
 
-<hr><p>Last updated: Apr 26 2020 at 04:03 UTC</p>
+<hr><p>Last updated: Apr 26 2020 at 05:03 UTC</p>
