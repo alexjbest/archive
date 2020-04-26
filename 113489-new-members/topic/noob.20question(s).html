@@ -33832,6 +33832,116 @@ For future reference though, how would I get a proposition asserting that <code>
 
 
 
+<a name="195321375"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113489-new%20members/topic/noob%20question%28s%29/near/195321375" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Sam Raleigh <a href="https://leanprover-community.github.io/archive/stream/113489-new-members/topic/noob.20question(s).html#195321375">(Apr 26 2020 at 07:06)</a>:</h4>
+<div class="codehilite"><pre><span></span><span class="kn">lemma</span> <span class="n">num_2_cols_Kn_with_monochromatic_Kk_lt_num_2_cols_Kn</span>
+    <span class="o">(</span><span class="n">n</span> <span class="n">k</span> <span class="o">:</span> <span class="bp">ℕ</span><span class="o">)</span> <span class="o">(</span><span class="n">h</span> <span class="o">:</span> <span class="mi">2</span><span class="err">^</span><span class="o">(</span><span class="mi">1</span> <span class="bp">-</span> <span class="n">k</span><span class="bp">.</span><span class="n">choose</span><span class="o">(</span><span class="mi">2</span><span class="o">))</span> <span class="bp">*</span> <span class="n">n</span><span class="bp">.</span><span class="n">choose</span><span class="o">(</span><span class="n">k</span><span class="o">)</span> <span class="bp">&lt;</span> <span class="mi">1</span><span class="o">)</span> <span class="o">:</span>
+    <span class="mi">2</span><span class="err">^</span><span class="o">(</span><span class="n">n</span><span class="bp">.</span><span class="n">choose</span><span class="o">(</span><span class="mi">2</span><span class="o">)</span> <span class="bp">-</span> <span class="n">k</span><span class="bp">.</span><span class="n">choose</span><span class="o">(</span><span class="mi">2</span><span class="o">))</span> <span class="bp">*</span> <span class="mi">2</span> <span class="bp">*</span> <span class="n">n</span><span class="bp">.</span><span class="n">choose</span><span class="o">(</span><span class="n">k</span><span class="o">)</span> <span class="bp">&lt;</span> <span class="mi">2</span><span class="err">^</span><span class="o">(</span><span class="n">n</span><span class="bp">.</span><span class="n">choose</span><span class="o">(</span><span class="mi">2</span><span class="o">))</span> <span class="o">:=</span>
+<span class="k">calc</span>
+    <span class="mi">2</span><span class="err">^</span><span class="o">(</span><span class="n">n</span><span class="bp">.</span><span class="n">choose</span><span class="o">(</span><span class="mi">2</span><span class="o">)</span> <span class="bp">-</span> <span class="n">k</span><span class="bp">.</span><span class="n">choose</span><span class="o">(</span><span class="mi">2</span><span class="o">))</span> <span class="bp">*</span> <span class="mi">2</span> <span class="bp">*</span> <span class="n">n</span><span class="bp">.</span><span class="n">choose</span><span class="o">(</span><span class="n">k</span><span class="o">)</span> <span class="bp">=</span> <span class="mi">2</span><span class="err">^</span><span class="o">(</span><span class="n">n</span><span class="bp">.</span><span class="n">choose</span><span class="o">(</span><span class="n">k</span><span class="o">))</span> <span class="bp">*</span> <span class="mi">2</span><span class="err">^</span><span class="o">(</span><span class="bp">-</span><span class="o">(</span><span class="n">k</span><span class="bp">.</span><span class="n">choose</span><span class="o">(</span><span class="mi">2</span><span class="o">)))</span> <span class="bp">*</span> <span class="mi">2</span> <span class="bp">*</span> <span class="n">n</span><span class="bp">.</span><span class="n">choose</span><span class="o">(</span><span class="n">k</span><span class="o">)</span> <span class="o">:</span>
+</pre></div>
+
+
+<p>I'm getting an error on the last line that says</p>
+<p>failed to synthesize type class instance for<br>
+n k : ℕ,<br>
+h : 2 ^ (1 - nat.choose k 2) * nat.choose n k &lt; 1<br>
+⊢ has_neg ℕ</p>
+<p>Now I know this is likely happening because nat and subtraction aren't playing nicely together and I should switch to <code>k n : int</code>.<br>
+My only concern is that <code>int</code> doesn't contain a <code>choose</code> function the way <code>nat</code> does. Should I define my own binomial coefficient that accepts integers? If so, I'd greatly appreciate it if someone could point me towards resources on defining your own functions. Or is there a way I could still use <code>nat.choose</code> with <code>k n : int</code>?</p>
+
+
+
+<a name="195321433"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113489-new%20members/topic/noob%20question%28s%29/near/195321433" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Kenny Lau <a href="https://leanprover-community.github.io/archive/stream/113489-new-members/topic/noob.20question(s).html#195321433">(Apr 26 2020 at 07:08)</a>:</h4>
+<p>how about don't write <code>2^-k.choose 2</code></p>
+
+
+
+<a name="195321452"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113489-new%20members/topic/noob%20question%28s%29/near/195321452" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Kenny Lau <a href="https://leanprover-community.github.io/archive/stream/113489-new-members/topic/noob.20question(s).html#195321452">(Apr 26 2020 at 07:08)</a>:</h4>
+<p>because in all interpretations it is just 0</p>
+
+
+
+<a name="195321466"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113489-new%20members/topic/noob%20question%28s%29/near/195321466" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Kenny Lau <a href="https://leanprover-community.github.io/archive/stream/113489-new-members/topic/noob.20question(s).html#195321466">(Apr 26 2020 at 07:08)</a>:</h4>
+<p>instead <code>2^(nC2-kC2) = 2^(nC2) / 2^(kC2)</code> makes more sense</p>
+
+
+
+<a name="195321476"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113489-new%20members/topic/noob%20question%28s%29/near/195321476" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Kenny Lau <a href="https://leanprover-community.github.io/archive/stream/113489-new-members/topic/noob.20question(s).html#195321476">(Apr 26 2020 at 07:09)</a>:</h4>
+<p>also <code>2^(1 - k.choose(2)) * n.choose(k) &lt; 1</code> probably doesn't mean what you think it means</p>
+
+
+
+<a name="195321479"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113489-new%20members/topic/noob%20question%28s%29/near/195321479" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Mario Carneiro <a href="https://leanprover-community.github.io/archive/stream/113489-new-members/topic/noob.20question(s).html#195321479">(Apr 26 2020 at 07:09)</a>:</h4>
+<p>Maybe lift everything to Q</p>
+
+
+
+<a name="195321523"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113489-new%20members/topic/noob%20question%28s%29/near/195321523" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Kenny Lau <a href="https://leanprover-community.github.io/archive/stream/113489-new-members/topic/noob.20question(s).html#195321523">(Apr 26 2020 at 07:10)</a>:</h4>
+<p>right, you can coerce <code>n.choose (k)</code> to <code>\Q</code></p>
+
+
+
+<a name="195321528"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113489-new%20members/topic/noob%20question%28s%29/near/195321528" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Kenny Lau <a href="https://leanprover-community.github.io/archive/stream/113489-new-members/topic/noob.20question(s).html#195321528">(Apr 26 2020 at 07:10)</a>:</h4>
+<p>without having to define <code>rat.choose</code></p>
+
+
+
+<a name="195321848"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113489-new%20members/topic/noob%20question%28s%29/near/195321848" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Sam Raleigh <a href="https://leanprover-community.github.io/archive/stream/113489-new-members/topic/noob.20question(s).html#195321848">(Apr 26 2020 at 07:20)</a>:</h4>
+<p>Thanks for your answers. What do you mean by coerce?</p>
+
+
+
+<a name="195321954"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113489-new%20members/topic/noob%20question%28s%29/near/195321954" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Kenny Lau <a href="https://leanprover-community.github.io/archive/stream/113489-new-members/topic/noob.20question(s).html#195321954">(Apr 26 2020 at 07:24)</a>:</h4>
+<div class="codehilite"><pre><span></span><span class="kn">lemma</span> <span class="n">num_2_cols_Kn_with_monochromatic_Kk_lt_num_2_cols_Kn</span>
+    <span class="o">(</span><span class="n">n</span> <span class="n">k</span> <span class="o">:</span> <span class="bp">ℕ</span><span class="o">)</span> <span class="o">(</span><span class="n">h</span> <span class="o">:</span> <span class="o">(</span><span class="mi">2</span><span class="err">^</span><span class="o">(</span><span class="mi">1</span> <span class="bp">-</span> <span class="n">k</span><span class="bp">.</span><span class="n">choose</span><span class="o">(</span><span class="mi">2</span><span class="o">))</span> <span class="bp">*</span> <span class="n">n</span><span class="bp">.</span><span class="n">choose</span><span class="o">(</span><span class="n">k</span><span class="o">)</span> <span class="o">:</span> <span class="err">\</span><span class="n">Q</span><span class="o">)</span> <span class="bp">&lt;</span> <span class="mi">1</span><span class="o">)</span> <span class="o">:</span>
+    <span class="o">(</span><span class="mi">2</span><span class="err">^</span><span class="o">(</span><span class="n">n</span><span class="bp">.</span><span class="n">choose</span><span class="o">(</span><span class="mi">2</span><span class="o">)</span> <span class="bp">-</span> <span class="n">k</span><span class="bp">.</span><span class="n">choose</span><span class="o">(</span><span class="mi">2</span><span class="o">))</span> <span class="bp">*</span> <span class="mi">2</span> <span class="bp">*</span> <span class="n">n</span><span class="bp">.</span><span class="n">choose</span><span class="o">(</span><span class="n">k</span><span class="o">)</span> <span class="o">:</span> <span class="err">\</span><span class="n">Q</span><span class="o">)</span> <span class="bp">&lt;</span> <span class="mi">2</span><span class="err">^</span><span class="o">(</span><span class="n">n</span><span class="bp">.</span><span class="n">choose</span><span class="o">(</span><span class="mi">2</span><span class="o">))</span> <span class="o">:=</span>
+</pre></div>
+
+
+
+<a name="195321956"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113489-new%20members/topic/noob%20question%28s%29/near/195321956" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Kenny Lau <a href="https://leanprover-community.github.io/archive/stream/113489-new-members/topic/noob.20question(s).html#195321956">(Apr 26 2020 at 07:24)</a>:</h4>
+<p>remember to import <code>data.rat.basic</code></p>
+
+
+
+<a name="195321960"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113489-new%20members/topic/noob%20question%28s%29/near/195321960" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Kenny Lau <a href="https://leanprover-community.github.io/archive/stream/113489-new-members/topic/noob.20question(s).html#195321960">(Apr 26 2020 at 07:25)</a>:</h4>
+<p>oh and you need to coerce the exponents to <code>\Z</code></p>
+
+
+
+<a name="195321966"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113489-new%20members/topic/noob%20question%28s%29/near/195321966" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Kenny Lau <a href="https://leanprover-community.github.io/archive/stream/113489-new-members/topic/noob.20question(s).html#195321966">(Apr 26 2020 at 07:25)</a>:</h4>
+<div class="codehilite"><pre><span></span><span class="kn">lemma</span> <span class="n">num_2_cols_Kn_with_monochromatic_Kk_lt_num_2_cols_Kn</span>
+    <span class="o">(</span><span class="n">n</span> <span class="n">k</span> <span class="o">:</span> <span class="bp">ℕ</span><span class="o">)</span> <span class="o">(</span><span class="n">h</span> <span class="o">:</span> <span class="o">(</span><span class="mi">2</span><span class="err">^</span><span class="o">(</span><span class="mi">1</span> <span class="bp">-</span> <span class="n">k</span><span class="bp">.</span><span class="n">choose</span><span class="o">(</span><span class="mi">2</span><span class="o">)</span> <span class="o">:</span> <span class="err">\</span><span class="n">Z</span><span class="o">)</span> <span class="bp">*</span> <span class="n">n</span><span class="bp">.</span><span class="n">choose</span><span class="o">(</span><span class="n">k</span><span class="o">)</span> <span class="o">:</span> <span class="err">\</span><span class="n">Q</span><span class="o">)</span> <span class="bp">&lt;</span> <span class="mi">1</span><span class="o">)</span> <span class="o">:</span>
+    <span class="o">(</span><span class="mi">2</span><span class="err">^</span><span class="o">(</span><span class="n">n</span><span class="bp">.</span><span class="n">choose</span><span class="o">(</span><span class="mi">2</span><span class="o">)</span> <span class="bp">-</span> <span class="n">k</span><span class="bp">.</span><span class="n">choose</span><span class="o">(</span><span class="mi">2</span><span class="o">)</span> <span class="o">:</span> <span class="err">\</span><span class="n">Z</span><span class="o">)</span> <span class="bp">*</span> <span class="mi">2</span> <span class="bp">*</span> <span class="n">n</span><span class="bp">.</span><span class="n">choose</span><span class="o">(</span><span class="n">k</span><span class="o">)</span> <span class="o">:</span> <span class="err">\</span><span class="n">Q</span><span class="o">)</span> <span class="bp">&lt;</span> <span class="mi">2</span><span class="err">^</span><span class="o">(</span><span class="n">n</span><span class="bp">.</span><span class="n">choose</span><span class="o">(</span><span class="mi">2</span><span class="o">)</span> <span class="o">:</span> <span class="err">\</span><span class="n">Z</span><span class="o">)</span> <span class="o">:=</span>
+</pre></div>
+
+
+
+<a name="195322008"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113489-new%20members/topic/noob%20question%28s%29/near/195322008" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Kenny Lau <a href="https://leanprover-community.github.io/archive/stream/113489-new-members/topic/noob.20question(s).html#195322008">(Apr 26 2020 at 07:26)</a>:</h4>
+<p>coercion is basically an injection, in this case the injection <code>\N -&gt; \Z</code></p>
+
+
+
+<a name="195322147"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113489-new%20members/topic/noob%20question%28s%29/near/195322147" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Sam Raleigh <a href="https://leanprover-community.github.io/archive/stream/113489-new-members/topic/noob.20question(s).html#195322147">(Apr 26 2020 at 07:30)</a>:</h4>
+<p>Oh wow I was hoping it was possible to do something just like this. Thanks a bunch : D</p>
+
+
+
 {% endraw %}
 
-<hr><p>Last updated: Apr 26 2020 at 07:04 UTC</p>
+<hr><p>Last updated: Apr 26 2020 at 08:03 UTC</p>

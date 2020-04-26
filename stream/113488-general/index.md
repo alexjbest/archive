@@ -9,7 +9,7 @@ permalink: /stream/113488-general/index.html
 
 ### Topics:
 
-* [`subset` on `finset`](topic/.60subset.60.20on.20.60finset.60.html) (12 messages, latest: Apr 25 2020 at 21:45)
+* [`subset` on `finset`](topic/.60subset.60.20on.20.60finset.60.html) (13 messages, latest: Apr 26 2020 at 07:54)
 * [unfreezeI](topic/unfreezeI.html) (8 messages, latest: Apr 25 2020 at 18:28)
 * [class instances in definition of Prop](topic/class.20instances.20in.20definition.20of.20Prop.html) (16 messages, latest: Apr 25 2020 at 16:37)
 * [a + succ b syntactically succ(a+b)?](topic/a.20.2B.20succ.20b.20syntactically.20succ(a.2Bb).3F.html) (3 messages, latest: Apr 25 2020 at 16:27)
@@ -2708,4 +2708,4 @@ permalink: /stream/113488-general/index.html
 * [test](topic/test.html) (4 messages, latest: Feb 26 2018 at 16:22)
 * [welcome](topic/welcome.html) (1 message, latest: Feb 26 2018 at 16:02)
 
-<hr><p>Last updated: Apr 26 2020 at 07:04 UTC</p>
+<hr><p>Last updated: Apr 26 2020 at 08:03 UTC</p>
