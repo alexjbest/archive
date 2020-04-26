@@ -59,6 +59,48 @@ permalink: /stream/113488-general/topic/apply.20bug.html
 
 
 
+<a name="195345794"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113488-general/topic/apply%20bug/near/195345794" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Reid Barton <a href="https://leanprover-community.github.io/archive/stream/113488-general/topic/apply.20bug.html#195345794">(Apr 26 2020 at 18:08)</a>:</h4>
+<p>there is already a hacky fix <code>apply'</code> in mathlib which apparently just implements "try every number of <code>_</code>s"</p>
+
+
+
+<a name="195345811"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113488-general/topic/apply%20bug/near/195345811" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Reid Barton <a href="https://leanprover-community.github.io/archive/stream/113488-general/topic/apply.20bug.html#195345811">(Apr 26 2020 at 18:09)</a>:</h4>
+<p>Maybe it's acceptable if it can be made to produce the same error messages as the current <code>apply</code> (after all, 99% of the errors when using <code>apply</code> interactively will not be due to the apply bug)</p>
+
+
+
+<a name="195346305"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113488-general/topic/apply%20bug/near/195346305" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Sebastien Gouezel <a href="https://leanprover-community.github.io/archive/stream/113488-general/topic/apply.20bug.html#195346305">(Apr 26 2020 at 18:22)</a>:</h4>
+<p>The bug is easy to fix, we just have to make <code>continuous</code> irreducible :) Joke aside, I think this would be a good idea. What do you think?</p>
+
+
+
+<a name="195346316"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113488-general/topic/apply%20bug/near/195346316" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Kevin Buzzard <a href="https://leanprover-community.github.io/archive/stream/113488-general/topic/apply.20bug.html#195346316">(Apr 26 2020 at 18:22)</a>:</h4>
+<p>I thought the fix was <code>refine</code>?</p>
+
+
+
+<a name="195346381"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113488-general/topic/apply%20bug/near/195346381" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Reid Barton <a href="https://leanprover-community.github.io/archive/stream/113488-general/topic/apply.20bug.html#195346381">(Apr 26 2020 at 18:24)</a>:</h4>
+<p>the workaround is <code>refine</code></p>
+
+
+
+<a name="195346383"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113488-general/topic/apply%20bug/near/195346383" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Reid Barton <a href="https://leanprover-community.github.io/archive/stream/113488-general/topic/apply.20bug.html#195346383">(Apr 26 2020 at 18:24)</a>:</h4>
+<p>I agree making <code>continuous</code> irreducible would be good, or probably better yet a structure.</p>
+
+
+
+<a name="195346386"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113488-general/topic/apply%20bug/near/195346386" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Reid Barton <a href="https://leanprover-community.github.io/archive/stream/113488-general/topic/apply.20bug.html#195346386">(Apr 26 2020 at 18:24)</a>:</h4>
+<p>However, I thought I'd first try to solve the problem at its source</p>
+
+
+
 {% endraw %}
 
-<hr><p>Last updated: Apr 26 2020 at 18:04 UTC</p>
+<hr><p>Last updated: Apr 26 2020 at 19:04 UTC</p>

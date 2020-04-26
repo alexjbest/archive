@@ -9,8 +9,9 @@ permalink: /stream/113488-general/index.html
 
 ### Topics:
 
-* [apply bug](topic/apply.20bug.html) (4 messages, latest: Apr 26 2020 at 18:03)
-* [Notices of the AMS paper](topic/Notices.20of.20the.20AMS.20paper.html) (66 messages, latest: Apr 26 2020 at 17:59)
+* [to_extending](topic/to_extending.html) (17 messages, latest: Apr 26 2020 at 18:59)
+* [Notices of the AMS paper](topic/Notices.20of.20the.20AMS.20paper.html) (80 messages, latest: Apr 26 2020 at 18:53)
+* [apply bug](topic/apply.20bug.html) (11 messages, latest: Apr 26 2020 at 18:24)
 * [Proposal: `fix x` for `assume x`](topic/Proposal.3A.20.60fix.20x.60.20for.20.60assume.20x.60.html) (126 messages, latest: Apr 26 2020 at 17:41)
 * [`subset` on `finset`](topic/.60subset.60.20on.20.60finset.60.html) (16 messages, latest: Apr 26 2020 at 17:07)
 * [wlog is slow](topic/wlog.20is.20slow.html) (2 messages, latest: Apr 26 2020 at 16:28)
@@ -112,7 +113,6 @@ permalink: /stream/113488-general/index.html
 * [norm_num is slow](topic/norm_num.20is.20slow.html) (18 messages, latest: Apr 12 2020 at 09:07)
 * [what does parsing mean?](topic/what.20does.20parsing.20mean.3F.html) (10 messages, latest: Apr 12 2020 at 08:56)
 * [dependent type hell resolved by heq_of_eq_mp](topic/dependent.20type.20hell.20resolved.20by.20heq_of_eq_mp.html) (2 messages, latest: Apr 12 2020 at 07:02)
-* [to_extending](topic/to_extending.html) (16 messages, latest: Apr 12 2020 at 05:26)
 * [Generating docs locally](topic/Generating.20docs.20locally.html) (15 messages, latest: Apr 12 2020 at 04:59)
 * [John Conway has died](topic/John.20Conway.20has.20died.html) (2 messages, latest: Apr 12 2020 at 01:30)
 * [#print: option to control max depth?](topic/.23print.3A.20option.20to.20control.20max.20depth.3F.html) (2 messages, latest: Apr 11 2020 at 16:28)
@@ -2710,4 +2710,4 @@ permalink: /stream/113488-general/index.html
 * [test](topic/test.html) (4 messages, latest: Feb 26 2018 at 16:22)
 * [welcome](topic/welcome.html) (1 message, latest: Feb 26 2018 at 16:02)
 
-<hr><p>Last updated: Apr 26 2020 at 18:04 UTC</p>
+<hr><p>Last updated: Apr 26 2020 at 19:04 UTC</p>
