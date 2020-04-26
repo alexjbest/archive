@@ -171,6 +171,20 @@ permalink: /stream/116395-maths/topic/DVRs.html
 
 
 
+<a name="195339207"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/116395-maths/topic/DVRs/near/195339207" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Ashwin Iyengar <a href="https://leanprover-community.github.io/archive/stream/116395-maths/topic/DVRs.html#195339207">(Apr 26 2020 at 15:27)</a>:</h4>
+<p>Additive is what is usually done, but if we want to do multiplicative instead, one option for the target would be to just use a free group on one generator (written multiplicatively), define the obvious ordering on it, and then use your</p>
+<div class="codehilite"><pre><span></span><span class="c">/-</span><span class="cm">- Adjoining a zero element to a linearly ordered commutative group</span>
+<span class="cm">gives a linearly ordered commutative group with zero.-/</span>
+<span class="kn">instance</span> <span class="o">(</span><span class="n">α</span> <span class="o">:</span> <span class="kt">Type</span><span class="bp">*</span><span class="o">)</span> <span class="o">[</span><span class="n">linear_ordered_comm_group</span> <span class="n">α</span><span class="o">]</span> <span class="o">[</span><span class="n">decidable_eq</span> <span class="n">α</span><span class="o">]</span> <span class="o">:</span>
+  <span class="n">linear_ordered_comm_group_with_zero</span> <span class="o">(</span><span class="n">with_zero</span> <span class="n">α</span><span class="o">)</span> <span class="o">:=</span><span class="bp">```</span>
+</pre></div>
+
+
+<p>I'll try this for now.</p>
+
+
+
 {% endraw %}
 
-<hr><p>Last updated: Apr 26 2020 at 15:03 UTC</p>
+<hr><p>Last updated: Apr 26 2020 at 16:04 UTC</p>
