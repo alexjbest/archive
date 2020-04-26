@@ -277,6 +277,36 @@ permalink: /stream/116395-maths/topic/legendre.20symbols.html
 
 
 
+<a name="195323784"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/116395-maths/topic/legendre%20symbols/near/195323784" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> David Wärn <a href="https://leanprover-community.github.io/archive/stream/116395-maths/topic/legendre.20symbols.html#195323784">(Apr 26 2020 at 08:20)</a>:</h4>
+<p>I don't know if this helps, but there's also a simple &amp; efficient algorithm to compute large Legendre symbols using QR: <a href="https://en.wikipedia.org/wiki/Jacobi_symbol#Calculating_the_Jacobi_symbol" title="https://en.wikipedia.org/wiki/Jacobi_symbol#Calculating_the_Jacobi_symbol">https://en.wikipedia.org/wiki/Jacobi_symbol#Calculating_the_Jacobi_symbol</a></p>
+
+
+
+<a name="195324077"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/116395-maths/topic/legendre%20symbols/near/195324077" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Alex J. Best <a href="https://leanprover-community.github.io/archive/stream/116395-maths/topic/legendre.20symbols.html#195324077">(Apr 26 2020 at 08:30)</a>:</h4>
+<p>Right the quadratic reciprocity one is what I had in mind, it's what I would do by hand. I don't know what the runtime of exponentiating and using eulers criterion is but it seems like it should be harder to take exponentials, even if you do it in a smart way (but it is easiest to implement).</p>
+
+
+
+<a name="195324757"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/116395-maths/topic/legendre%20symbols/near/195324757" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> David Wärn <a href="https://leanprover-community.github.io/archive/stream/116395-maths/topic/legendre.20symbols.html#195324757">(Apr 26 2020 at 08:49)</a>:</h4>
+<p>Both should be polynomial in the number of digits, but exponentiation needs lots of expensive multiplications / remainders</p>
+
+
+
+<a name="195325115"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/116395-maths/topic/legendre%20symbols/near/195325115" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Mario Carneiro <a href="https://leanprover-community.github.io/archive/stream/116395-maths/topic/legendre.20symbols.html#195325115">(Apr 26 2020 at 08:58)</a>:</h4>
+<p>keep in mind that the asymptotic analysis in the books isn't quite correct for theorem provers. Division / modulus are exactly as expensive as multiplication + addition, because it's the same proof</p>
+
+
+
+<a name="195325140"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/116395-maths/topic/legendre%20symbols/near/195325140" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Mario Carneiro <a href="https://leanprover-community.github.io/archive/stream/116395-maths/topic/legendre.20symbols.html#195325140">(Apr 26 2020 at 08:59)</a>:</h4>
+<p>Unfortunately the literature is much sparser on what the best bounds are for nondeterministic TMs</p>
+
+
+
 {% endraw %}
 
-<hr><p>Last updated: Apr 26 2020 at 08:03 UTC</p>
+<hr><p>Last updated: Apr 26 2020 at 09:03 UTC</p>
