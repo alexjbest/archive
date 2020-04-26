@@ -34084,6 +34084,84 @@ a b : ℤ<br>
 
 
 
+<a name="195352573"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113489-new%20members/topic/noob%20question%28s%29/near/195352573" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Kenny Lau <a href="https://leanprover-community.github.io/archive/stream/113489-new-members/topic/noob.20question(s).html#195352573">(Apr 26 2020 at 21:03)</a>:</h4>
+<div class="codehilite"><pre><span></span><span class="bp">#</span><span class="kn">check</span> <span class="bp">@</span><span class="n">fpow_sub</span>
+<span class="c">/-</span><span class="cm"> fpow_sub :</span>
+<span class="cm">  ∀ {G₀ : Type u_1} [_inst_1 : group_with_zero G₀] {a : G₀},</span>
+<span class="cm">    a ≠ 0 → ∀ (z1 z2 : ℤ), a ^ (z1 - z2) = a ^ z1 / a ^ z2</span>
+<span class="cm"> -/</span>
+</pre></div>
+
+
+
+<a name="195352632"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113489-new%20members/topic/noob%20question%28s%29/near/195352632" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Sam Raleigh <a href="https://leanprover-community.github.io/archive/stream/113489-new-members/topic/noob.20question(s).html#195352632">(Apr 26 2020 at 21:05)</a>:</h4>
+<p>How come <code>by library_search</code>didn't turn this up? How did you find this?</p>
+
+
+
+<a name="195352691"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113489-new%20members/topic/noob%20question%28s%29/near/195352691" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Sam Raleigh <a href="https://leanprover-community.github.io/archive/stream/113489-new-members/topic/noob.20question(s).html#195352691">(Apr 26 2020 at 21:06)</a>:</h4>
+<p>Also what does the ampersand do? Sorry I'm extremely new to this</p>
+
+
+
+<a name="195352705"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113489-new%20members/topic/noob%20question%28s%29/near/195352705" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Kenny Lau <a href="https://leanprover-community.github.io/archive/stream/113489-new-members/topic/noob.20question(s).html#195352705">(Apr 26 2020 at 21:07)</a>:</h4>
+<p>the <code>@</code> shows all the parameters instead of just the explicit parameters (i.e. the ones you need to specify)</p>
+
+
+
+<a name="195352716"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113489-new%20members/topic/noob%20question%28s%29/near/195352716" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Bryan Gin-ge Chen <a href="https://leanprover-community.github.io/archive/stream/113489-new-members/topic/noob.20question(s).html#195352716">(Apr 26 2020 at 21:07)</a>:</h4>
+<p>I guess it doesn't show up in <del><code>by library_suggest</code></del> <code>by library_search</code> because you need to convince Lean that <code>2 ≠ 0</code>. It's the 3rd thing that comes up in <code>by suggest</code>.</p>
+
+
+
+<a name="195352757"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113489-new%20members/topic/noob%20question%28s%29/near/195352757" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Bryan Gin-ge Chen <a href="https://leanprover-community.github.io/archive/stream/113489-new-members/topic/noob.20question(s).html#195352757">(Apr 26 2020 at 21:08)</a>:</h4>
+<div class="codehilite"><pre><span></span><span class="kn">import</span> <span class="n">algebra</span><span class="bp">.</span><span class="n">field_power</span>
+
+<span class="kn">example</span> <span class="o">(</span><span class="n">a</span> <span class="n">b</span> <span class="o">:</span> <span class="bp">ℤ</span><span class="o">)</span> <span class="o">:</span> <span class="o">(</span><span class="mi">2</span> <span class="o">:</span> <span class="n">ℚ</span><span class="o">)</span><span class="err">^</span><span class="o">(</span><span class="n">a</span> <span class="bp">-</span> <span class="n">b</span><span class="o">)</span> <span class="bp">=</span> <span class="o">(</span><span class="mi">2</span> <span class="o">:</span> <span class="n">ℚ</span><span class="o">)</span><span class="err">^</span><span class="n">a</span> <span class="bp">/</span> <span class="o">(</span><span class="mi">2</span> <span class="o">:</span> <span class="n">ℚ</span><span class="o">)</span><span class="err">^</span><span class="n">b</span> <span class="o">:=</span>
+<span class="n">fpow_sub</span> <span class="n">dec_trivial</span> <span class="n">a</span> <span class="n">b</span>
+<span class="c1">-- this also works:</span>
+<span class="c1">-- fpow_sub two_ne_zero a b</span>
+</pre></div>
+
+
+
+<a name="195352909"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113489-new%20members/topic/noob%20question%28s%29/near/195352909" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Sam Raleigh <a href="https://leanprover-community.github.io/archive/stream/113489-new-members/topic/noob.20question(s).html#195352909">(Apr 26 2020 at 21:12)</a>:</h4>
+<p>What are the differences between <code>by library_search</code>, <code>by library_suggest </code> and <code>by suggest</code>? I was unaware that the last two existed until now.</p>
+
+
+
+<a name="195352917"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113489-new%20members/topic/noob%20question%28s%29/near/195352917" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Bryan Gin-ge Chen <a href="https://leanprover-community.github.io/archive/stream/113489-new-members/topic/noob.20question(s).html#195352917">(Apr 26 2020 at 21:13)</a>:</h4>
+<p>Whoops, <code>library_suggest</code> doesn't exist. That was a typo on my part. You can read more about them in the tactic docs: <a href="https://leanprover-community.github.io/mathlib_docs/tactics.html#suggest" title="https://leanprover-community.github.io/mathlib_docs/tactics.html#suggest">https://leanprover-community.github.io/mathlib_docs/tactics.html#suggest</a></p>
+
+
+
+<a name="195352920"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113489-new%20members/topic/noob%20question%28s%29/near/195352920" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Sam Raleigh <a href="https://leanprover-community.github.io/archive/stream/113489-new-members/topic/noob.20question(s).html#195352920">(Apr 26 2020 at 21:13)</a>:</h4>
+<p>thank you!</p>
+
+
+
+<a name="195353123"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113489-new%20members/topic/noob%20question%28s%29/near/195353123" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Kevin Buzzard <a href="https://leanprover-community.github.io/archive/stream/113489-new-members/topic/noob.20question(s).html#195353123">(Apr 26 2020 at 21:19)</a>:</h4>
+<p><code>library_search</code> finds the exact lemma which will solve your goal. It doesn't know that 2 isn't 0 so it won't be able to solve it. I suspect <code>0^{a-b}=0^a/0^b</code> is false in general. <code>suggest</code>just looks for lemmas that look like they might make progress, and doesn't claim to solve the goal in general (indeed you'd be left with the goal 2 \ne 0 if you applied fpow_sub directly). </p>
+<p>There is another method though, and although it is a lot harder to master, it is in some sense the most powerful. The method is to learn the conventions used in naming lemmas in the library, and then start to guess what the name of the lemma you are looking for is. For example <code>pow</code> means raising something to a natural power, and <code>fpow</code> means raising something to an integer power. <code>add</code> is addition, <code>sub</code> is subtraction, not to be confused with <code>neg</code> which is unary negation. <code>div</code> is division, not to be confused with <code>dvd</code>, which means "divides" (like 3 divides 6), and so on and so on. After a while you can start predicting theorem names, and then typing a guess and hitting ctrl-space might bring up a list of possibilities, which (possibly after pressing ctrl-space again) you can start to scroll through until you hit the one you want.</p>
+
+
+
+<a name="195353206"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113489-new%20members/topic/noob%20question%28s%29/near/195353206" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Bryan Gin-ge Chen <a href="https://leanprover-community.github.io/archive/stream/113489-new-members/topic/noob.20question(s).html#195353206">(Apr 26 2020 at 21:21)</a>:</h4>
+<p><a href="https://github.com/leanprover-community/mathlib/blob/master/docs/contribute/naming.md" title="https://github.com/leanprover-community/mathlib/blob/master/docs/contribute/naming.md">This mathlib doc</a> might help re: the naming conventions.</p>
+
+
+
 {% endraw %}
 
-<hr><p>Last updated: Apr 26 2020 at 21:03 UTC</p>
+<hr><p>Last updated: Apr 26 2020 at 22:03 UTC</p>
