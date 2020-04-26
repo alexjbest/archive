@@ -163,6 +163,126 @@ permalink: /stream/113489-new-members/topic/Tactics.html
 
 
 
+<a name="195319562"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113489-new%20members/topic/Tactics/near/195319562" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Bryan Gin-ge Chen <a href="https://leanprover-community.github.io/archive/stream/113489-new-members/topic/Tactics.html#195319562">(Apr 26 2020 at 06:06)</a>:</h4>
+<p>Did you look at the sources we linked <a href="#narrow/stream/113489-new-members/topic/noob.20question%28s%29/near/193395147" title="#narrow/stream/113489-new-members/topic/noob.20question%28s%29/near/193395147">here</a> when you asked this previously?</p>
+
+
+
+<a name="195319687"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113489-new%20members/topic/Tactics/near/195319687" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Brandon Brown <a href="https://leanprover-community.github.io/archive/stream/113489-new-members/topic/Tactics.html#195319687">(Apr 26 2020 at 06:10)</a>:</h4>
+<p>Yes, but I have zero background in functional programming. I know Python and R and Java and C.  So a "proof state" doesn't make sense to me in the first place. I am sort of learning how to prove basic things but I'm frustrated I don't know what's going on at the computer science level.</p>
+
+
+
+<a name="195319702"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113489-new%20members/topic/Tactics/near/195319702" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Mario Carneiro <a href="https://leanprover-community.github.io/archive/stream/113489-new-members/topic/Tactics.html#195319702">(Apr 26 2020 at 06:10)</a>:</h4>
+<p>Behind the scenes Lean is building a term which has holes, metavariables, in it</p>
+
+
+
+<a name="195319706"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113489-new%20members/topic/Tactics/near/195319706" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Mario Carneiro <a href="https://leanprover-community.github.io/archive/stream/113489-new-members/topic/Tactics.html#195319706">(Apr 26 2020 at 06:11)</a>:</h4>
+<p>as you use more tactics these holes get filled with more terms with holes until eventually the holes go away</p>
+
+
+
+<a name="195319710"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113489-new%20members/topic/Tactics/near/195319710" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Mario Carneiro <a href="https://leanprover-community.github.io/archive/stream/113489-new-members/topic/Tactics.html#195319710">(Apr 26 2020 at 06:11)</a>:</h4>
+<p>each hole is marked with the type that is expected at that position, and that's the goal state that you see</p>
+
+
+
+<a name="195319748"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113489-new%20members/topic/Tactics/near/195319748" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Mario Carneiro <a href="https://leanprover-community.github.io/archive/stream/113489-new-members/topic/Tactics.html#195319748">(Apr 26 2020 at 06:12)</a>:</h4>
+<p>It's very much like writing term mode proofs using <code>_</code></p>
+
+
+
+<a name="195319758"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113489-new%20members/topic/Tactics/near/195319758" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Brandon Brown <a href="https://leanprover-community.github.io/archive/stream/113489-new-members/topic/Tactics.html#195319758">(Apr 26 2020 at 06:12)</a>:</h4>
+<p>So in principle  there is a way to mechanistically translate a proof written using tactics into a term mode proof?</p>
+
+
+
+<a name="195319762"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113489-new%20members/topic/Tactics/near/195319762" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Brandon Brown <a href="https://leanprover-community.github.io/archive/stream/113489-new-members/topic/Tactics.html#195319762">(Apr 26 2020 at 06:13)</a>:</h4>
+<p>And get one ugly lambda expression at the other end</p>
+
+
+
+<a name="195319763"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113489-new%20members/topic/Tactics/near/195319763" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Kenny Lau <a href="https://leanprover-community.github.io/archive/stream/113489-new-members/topic/Tactics.html#195319763">(Apr 26 2020 at 06:13)</a>:</h4>
+<p><code>#print</code></p>
+
+
+
+<a name="195319805"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113489-new%20members/topic/Tactics/near/195319805" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Mario Carneiro <a href="https://leanprover-community.github.io/archive/stream/113489-new-members/topic/Tactics.html#195319805">(Apr 26 2020 at 06:14)</a>:</h4>
+<p>See also the thread <a href="#narrow/stream/113489-new-members/topic/Basic.20building.20block.20tactics/near/189273625" title="#narrow/stream/113489-new-members/topic/Basic.20building.20block.20tactics/near/189273625">here</a></p>
+
+
+
+<a name="195319806"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113489-new%20members/topic/Tactics/near/195319806" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Kenny Lau <a href="https://leanprover-community.github.io/archive/stream/113489-new-members/topic/Tactics.html#195319806">(Apr 26 2020 at 06:14)</a>:</h4>
+<p>treat tactics as little C++ programs that help you write term mode proofs</p>
+
+
+
+<a name="195319815"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113489-new%20members/topic/Tactics/near/195319815" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Brandon Brown <a href="https://leanprover-community.github.io/archive/stream/113489-new-members/topic/Tactics.html#195319815">(Apr 26 2020 at 06:15)</a>:</h4>
+<p>Ohh, ok #print is exactly what I wanted to know</p>
+
+
+
+<a name="195319819"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113489-new%20members/topic/Tactics/near/195319819" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Mario Carneiro <a href="https://leanprover-community.github.io/archive/stream/113489-new-members/topic/Tactics.html#195319819">(Apr 26 2020 at 06:15)</a>:</h4>
+<p>the lean kernel only knows term proofs, so tactics have to run to produce a term proof before the theorem can be accepted</p>
+
+
+
+<a name="195319859"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113489-new%20members/topic/Tactics/near/195319859" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Mario Carneiro <a href="https://leanprover-community.github.io/archive/stream/113489-new-members/topic/Tactics.html#195319859">(Apr 26 2020 at 06:16)</a>:</h4>
+<p>these proofs are stored and <code>#print</code> recalls them</p>
+
+
+
+<a name="195319863"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113489-new%20members/topic/Tactics/near/195319863" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Bryan Gin-ge Chen <a href="https://leanprover-community.github.io/archive/stream/113489-new-members/topic/Tactics.html#195319863">(Apr 26 2020 at 06:17)</a>:</h4>
+<p><code>#print</code> is mentioned early on in the <a href="https://leanprover.github.io/theorem_proving_in_lean/tactics.html" title="https://leanprover.github.io/theorem_proving_in_lean/tactics.html">Tactics chapter of TPiL</a>.</p>
+
+
+
+<a name="195319864"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113489-new%20members/topic/Tactics/near/195319864" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Brandon Brown <a href="https://leanprover-community.github.io/archive/stream/113489-new-members/topic/Tactics.html#195319864">(Apr 26 2020 at 06:17)</a>:</h4>
+<p>I see - starting to make a lot more sense. I just couldnt understand why there seemed to be two completely different languages in the same language</p>
+
+
+
+<a name="195319884"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113489-new%20members/topic/Tactics/near/195319884" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Mario Carneiro <a href="https://leanprover-community.github.io/archive/stream/113489-new-members/topic/Tactics.html#195319884">(Apr 26 2020 at 06:17)</a>:</h4>
+<p>They call it metaprogramming because you are writing a program (tactic) to build a program (term)</p>
+
+
+
+<a name="195320062"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113489-new%20members/topic/Tactics/near/195320062" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Brandon Brown <a href="https://leanprover-community.github.io/archive/stream/113489-new-members/topic/Tactics.html#195320062">(Apr 26 2020 at 06:22)</a>:</h4>
+<p>Ahh, your answer there about filling holes is very lucid, thanks</p>
+
+
+
+<a name="195320116"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113489-new%20members/topic/Tactics/near/195320116" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Brandon Brown <a href="https://leanprover-community.github.io/archive/stream/113489-new-members/topic/Tactics.html#195320116">(Apr 26 2020 at 06:24)</a>:</h4>
+<p>Thanks for bearing with me - I'm actually a medical doctor just trying to learn more math so I have very little background in all of this</p>
+
+
+
+<a name="195320243"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113489-new%20members/topic/Tactics/near/195320243" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Bryan Gin-ge Chen <a href="https://leanprover-community.github.io/archive/stream/113489-new-members/topic/Tactics.html#195320243">(Apr 26 2020 at 06:29)</a>:</h4>
+<p>Feel free to keep asking questions! There aren't very many introductory sources so most of us have been learning here.</p>
+
+
+
 {% endraw %}
 
-<hr><p>Last updated: Apr 26 2020 at 06:04 UTC</p>
+<hr><p>Last updated: Apr 26 2020 at 07:04 UTC</p>
