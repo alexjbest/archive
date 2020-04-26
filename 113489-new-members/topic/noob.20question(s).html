@@ -33997,6 +33997,93 @@ My only concern is that <code>int</code> doesn't contain a <code>choose</code> f
 
 
 
+<a name="195351866"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113489-new%20members/topic/noob%20question%28s%29/near/195351866" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Sam Raleigh <a href="https://leanprover-community.github.io/archive/stream/113489-new-members/topic/noob.20question(s).html#195351866">(Apr 26 2020 at 20:43)</a>:</h4>
+<p><span class="user-mention" data-user-id="110064">@Kenny Lau</span> I added the coercions:</p>
+<div class="codehilite"><pre><span></span><span class="kn">lemma</span> <span class="n">num_2_cols_Kn_with_mono_Kk_lt_num_2_cols_Kn</span>
+    <span class="o">(</span><span class="n">n</span> <span class="n">k</span> <span class="o">:</span> <span class="bp">ℕ</span><span class="o">)</span> <span class="o">(</span><span class="n">h</span> <span class="o">:</span> <span class="o">(</span><span class="mi">2</span><span class="err">^</span><span class="o">(</span><span class="mi">1</span> <span class="bp">-</span> <span class="n">k</span><span class="bp">.</span><span class="n">choose</span><span class="o">(</span><span class="mi">2</span><span class="o">)</span> <span class="o">:</span> <span class="bp">ℤ</span><span class="o">)</span> <span class="bp">*</span> <span class="n">n</span><span class="bp">.</span><span class="n">choose</span><span class="o">(</span><span class="n">k</span><span class="o">)</span> <span class="o">:</span> <span class="n">ℚ</span><span class="o">)</span> <span class="bp">&lt;</span> <span class="mi">1</span><span class="o">)</span> <span class="o">:</span>
+    <span class="o">(</span><span class="mi">2</span><span class="err">^</span><span class="o">(</span><span class="n">n</span><span class="bp">.</span><span class="n">choose</span><span class="o">(</span><span class="mi">2</span><span class="o">)</span> <span class="bp">-</span> <span class="n">k</span><span class="bp">.</span><span class="n">choose</span><span class="o">(</span><span class="mi">2</span><span class="o">)</span> <span class="o">:</span> <span class="bp">ℤ</span><span class="o">)</span> <span class="bp">*</span> <span class="mi">2</span> <span class="bp">*</span> <span class="n">n</span><span class="bp">.</span><span class="n">choose</span><span class="o">(</span><span class="n">k</span><span class="o">)</span> <span class="o">:</span> <span class="n">ℚ</span><span class="o">)</span> <span class="bp">&lt;</span> <span class="mi">2</span><span class="err">^</span><span class="o">(</span><span class="n">n</span><span class="bp">.</span><span class="n">choose</span><span class="o">(</span><span class="mi">2</span><span class="o">)</span> <span class="o">:</span> <span class="bp">ℤ</span><span class="o">)</span> <span class="o">:=</span>
+<span class="k">calc</span>
+    <span class="mi">2</span><span class="err">^</span><span class="o">(</span><span class="n">n</span><span class="bp">.</span><span class="n">choose</span><span class="o">(</span><span class="mi">2</span><span class="o">)</span> <span class="bp">-</span> <span class="n">k</span><span class="bp">.</span><span class="n">choose</span><span class="o">(</span><span class="mi">2</span><span class="o">))</span> <span class="bp">*</span> <span class="mi">2</span> <span class="bp">*</span> <span class="n">n</span><span class="bp">.</span><span class="n">choose</span><span class="o">(</span><span class="n">k</span><span class="o">)</span> <span class="bp">=</span> <span class="mi">2</span><span class="err">^</span><span class="o">(</span><span class="n">n</span><span class="bp">.</span><span class="n">choose</span><span class="o">(</span><span class="mi">2</span><span class="o">)</span> <span class="bp">-</span> <span class="n">k</span><span class="bp">.</span><span class="n">choose</span><span class="o">(</span><span class="mi">2</span><span class="o">))</span> <span class="bp">*</span> <span class="mi">2</span> <span class="bp">*</span> <span class="n">n</span><span class="bp">.</span><span class="n">choose</span><span class="o">(</span><span class="n">k</span><span class="o">)</span> <span class="o">:</span>
+    <span class="bp">...</span>
+</pre></div>
+
+
+<p>But I'm still getting this issue:</p>
+<p>failed to synthesize type class instance for<br>
+n k : ℕ<br>
+⊢ has_pow ℚ ℤ</p>
+
+
+
+<a name="195351910"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113489-new%20members/topic/noob%20question%28s%29/near/195351910" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Kenny Lau <a href="https://leanprover-community.github.io/archive/stream/113489-new-members/topic/noob.20question(s).html#195351910">(Apr 26 2020 at 20:44)</a>:</h4>
+<p>you need to <code>import algebra.field_power</code></p>
+
+
+
+<a name="195351926"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113489-new%20members/topic/noob%20question%28s%29/near/195351926" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Sam Raleigh <a href="https://leanprover-community.github.io/archive/stream/113489-new-members/topic/noob.20question(s).html#195351926">(Apr 26 2020 at 20:45)</a>:</h4>
+<p>Aha! I was wondering why exponentiation didn't seem to be defined for <code>int</code>, thanks</p>
+
+
+
+<a name="195352127"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113489-new%20members/topic/noob%20question%28s%29/near/195352127" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Sam Raleigh <a href="https://leanprover-community.github.io/archive/stream/113489-new-members/topic/noob.20question(s).html#195352127">(Apr 26 2020 at 20:50)</a>:</h4>
+<p>Why do I still get a similar issue for this?<br>
+<code>example (a b : ℤ) : 2^(a - b) = 2^a / 2^b := </code></p>
+
+
+
+<a name="195352139"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113489-new%20members/topic/noob%20question%28s%29/near/195352139" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Sam Raleigh <a href="https://leanprover-community.github.io/archive/stream/113489-new-members/topic/noob.20question(s).html#195352139">(Apr 26 2020 at 20:51)</a>:</h4>
+<p>failed to synthesize type class instance for<br>
+a b : ℤ<br>
+⊢ has_pow ℕ ℤ</p>
+
+
+
+<a name="195352178"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113489-new%20members/topic/noob%20question%28s%29/near/195352178" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Sam Raleigh <a href="https://leanprover-community.github.io/archive/stream/113489-new-members/topic/noob.20question(s).html#195352178">(Apr 26 2020 at 20:52)</a>:</h4>
+<p>Is there another import I'm missing?</p>
+
+
+
+<a name="195352188"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113489-new%20members/topic/noob%20question%28s%29/near/195352188" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Bryan Gin-ge Chen <a href="https://leanprover-community.github.io/archive/stream/113489-new-members/topic/noob.20question(s).html#195352188">(Apr 26 2020 at 20:52)</a>:</h4>
+<p>Lean thinks the <code>2</code>s are <code>nat</code>s. You might just have to include the coercions explicitly:</p>
+<div class="codehilite"><pre><span></span><span class="kn">example</span> <span class="o">(</span><span class="n">a</span> <span class="n">b</span> <span class="o">:</span> <span class="bp">ℤ</span><span class="o">)</span> <span class="o">:</span> <span class="o">(</span><span class="mi">2</span> <span class="o">:</span> <span class="n">ℚ</span><span class="o">)</span><span class="err">^</span><span class="o">(</span><span class="n">a</span> <span class="bp">-</span> <span class="n">b</span><span class="o">)</span> <span class="bp">=</span> <span class="o">(</span><span class="mi">2</span> <span class="o">:</span> <span class="n">ℚ</span><span class="o">)</span><span class="err">^</span><span class="n">a</span> <span class="bp">/</span> <span class="o">(</span><span class="mi">2</span> <span class="o">:</span> <span class="n">ℚ</span><span class="o">)</span><span class="err">^</span><span class="n">b</span> <span class="o">:=</span>
+</pre></div>
+
+
+<p><strong>edit</strong>: sorry, you'll want <code>ℚ</code>, not <code>ℤ</code> for the <code>2</code>s.</p>
+
+
+
+<a name="195352239"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113489-new%20members/topic/noob%20question%28s%29/near/195352239" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Sam Raleigh <a href="https://leanprover-community.github.io/archive/stream/113489-new-members/topic/noob.20question(s).html#195352239">(Apr 26 2020 at 20:54)</a>:</h4>
+<p>Thanks! How come I didn't get this issue earlier with the exponents involving binomial coefficients?</p>
+
+
+
+<a name="195352260"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113489-new%20members/topic/noob%20question%28s%29/near/195352260" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Bryan Gin-ge Chen <a href="https://leanprover-community.github.io/archive/stream/113489-new-members/topic/noob.20question(s).html#195352260">(Apr 26 2020 at 20:54)</a>:</h4>
+<p>I guess it's because Lean was able to correctly infer the <code>rat</code>s from the LHS: <code>(2^(n.choose(2) - k.choose(2) : ℤ) * 2 * n.choose(k) : ℚ)</code></p>
+
+
+
+<a name="195352323"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113489-new%20members/topic/noob%20question%28s%29/near/195352323" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Sam Raleigh <a href="https://leanprover-community.github.io/archive/stream/113489-new-members/topic/noob.20question(s).html#195352323">(Apr 26 2020 at 20:57)</a>:</h4>
+<p>neat, thank you</p>
+
+
+
+<a name="195352501"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113489-new%20members/topic/noob%20question%28s%29/near/195352501" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Sam Raleigh <a href="https://leanprover-community.github.io/archive/stream/113489-new-members/topic/noob.20question(s).html#195352501">(Apr 26 2020 at 21:01)</a>:</h4>
+<p>I'm surprised <code>example (a b : ℤ) : (2 : ℚ)^(a - b) = (2 : ℚ)^a / (2 : ℚ)^b := by library_search</code> turned up nothing. Is there really no theorem for this?</p>
+
+
+
 {% endraw %}
 
-<hr><p>Last updated: Apr 26 2020 at 20:04 UTC</p>
+<hr><p>Last updated: Apr 26 2020 at 21:03 UTC</p>
