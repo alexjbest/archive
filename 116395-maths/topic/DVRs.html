@@ -121,6 +121,36 @@ permalink: /stream/116395-maths/topic/DVRs.html
 
 
 
+<a name="195335223"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/116395-maths/topic/DVRs/near/195335223" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Ashwin Iyengar <a href="https://leanprover-community.github.io/archive/stream/116395-maths/topic/DVRs.html#195335223">(Apr 26 2020 at 13:38)</a>:</h4>
+<p>Alternatively, <code>\bbZ</code> and <code>\bbN</code> have <code>has_le</code>, but <code>multiplicative \bbZ</code> doesn't seem to preserve this, and I'm not sure whether <code>with_zero</code> defines a new ordering...</p>
+
+
+
+<a name="195335249"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/116395-maths/topic/DVRs/near/195335249" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Kenny Lau <a href="https://leanprover-community.github.io/archive/stream/116395-maths/topic/DVRs.html#195335249">(Apr 26 2020 at 13:39)</a>:</h4>
+<p><span class="user-mention" data-user-id="235423">@Ashwin Iyengar</span> they used valuations in <a href="https://leanprover-community.github.io/lean-perfectoid-spaces/" title="https://leanprover-community.github.io/lean-perfectoid-spaces/">the perfectoid project</a> which you might find helpful</p>
+
+
+
+<a name="195335498"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/116395-maths/topic/DVRs/near/195335498" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Ashwin Iyengar <a href="https://leanprover-community.github.io/archive/stream/116395-maths/topic/DVRs.html#195335498">(Apr 26 2020 at 13:44)</a>:</h4>
+<p>Yeah I guess what I want to use is linear_ordered_comm_group_with_zero.lean then: <span class="user-mention" data-user-id="110038">@Kevin Buzzard</span> is this destined for mathlib?</p>
+
+
+
+<a name="195335533"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/116395-maths/topic/DVRs/near/195335533" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Ashwin Iyengar <a href="https://leanprover-community.github.io/archive/stream/116395-maths/topic/DVRs.html#195335533">(Apr 26 2020 at 13:45)</a>:</h4>
+<p>But maybe this should be rewritten replacing <code>0</code> with <code>⊥</code> to avoid confusion with <code>0</code> in the integers?</p>
+
+
+
+<a name="195336032"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/116395-maths/topic/DVRs/near/195336032" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Ashwin Iyengar <a href="https://leanprover-community.github.io/archive/stream/116395-maths/topic/DVRs.html#195336032">(Apr 26 2020 at 13:58)</a>:</h4>
+<p>I guess I can achieve what I want if I have linear_ordered_comm_group_with_zero.lean, and some way to distinguish between the natural number <code>0</code> and the adjoined <code>0</code></p>
+
+
+
 {% endraw %}
 
-<hr><p>Last updated: Apr 26 2020 at 13:03 UTC</p>
+<hr><p>Last updated: Apr 26 2020 at 14:03 UTC</p>
