@@ -9,8 +9,8 @@ permalink: /stream/116395-maths/index.html
 
 ### Topics:
 
-* [legendre symbols](topic/legendre.20symbols.html) (38 messages, latest: Apr 26 2020 at 08:59)
-* [submodule map](topic/submodule.20map.html) (1 message, latest: Apr 26 2020 at 08:11)
+* [submodule map](topic/submodule.20map.html) (5 messages, latest: Apr 26 2020 at 09:32)
+* [legendre symbols](topic/legendre.20symbols.html) (42 messages, latest: Apr 26 2020 at 09:25)
 * [Coersion and composition](topic/Coersion.20and.20composition.html) (30 messages, latest: Apr 25 2020 at 16:19)
 * [Analytic functions](topic/Analytic.20functions.html) (2 messages, latest: Apr 25 2020 at 07:31)
 * [finite sum](topic/finite.20sum.html) (20 messages, latest: Apr 24 2020 at 07:12)
@@ -873,4 +873,4 @@ permalink: /stream/116395-maths/index.html
 * [free group](topic/free.20group.html) (92 messages, latest: Apr 02 2018 at 05:00)
 * [Easy topological space question](topic/Easy.20topological.20space.20question.html) (18 messages, latest: Apr 02 2018 at 01:23)
 
-<hr><p>Last updated: Apr 26 2020 at 09:03 UTC</p>
+<hr><p>Last updated: Apr 26 2020 at 10:03 UTC</p>
