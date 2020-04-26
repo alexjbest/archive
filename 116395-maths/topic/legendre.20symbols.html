@@ -157,6 +157,102 @@ permalink: /stream/116395-maths/topic/legendre.20symbols.html
 
 
 
+<a name="195315292"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/116395-maths/topic/legendre%20symbols/near/195315292" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Johan Commelin <a href="https://leanprover-community.github.io/archive/stream/116395-maths/topic/legendre.20symbols.html#195315292">(Apr 26 2020 at 03:37)</a>:</h4>
+<p>Nice! I had recently been thinking about how to hook up more general computations. The vague idea that I had was:</p>
+<ul>
+<li>introduce a class <code>compute foo</code></li>
+<li>add instances of <code>compute fib</code> and <code>compute legendre_sym</code> that "explain" how to compute these functions</li>
+<li>make the <code>norm_num</code> tactic aware of this class</li>
+</ul>
+<p>Now the hard part is to figure out what "explain" means. <span class="user-mention" data-user-id="110049">@Mario Carneiro</span> <span class="user-mention" data-user-id="110026">@Simon Hudon</span> do you have any ideas on how this could work?</p>
+
+
+
+<a name="195315511"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/116395-maths/topic/legendre%20symbols/near/195315511" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Yury G. Kudryashov <a href="https://leanprover-community.github.io/archive/stream/116395-maths/topic/legendre.20symbols.html#195315511">(Apr 26 2020 at 03:44)</a>:</h4>
+<p>Probably it should return the answer and a proof of correctness.</p>
+
+
+
+<a name="195315513"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/116395-maths/topic/legendre%20symbols/near/195315513" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Mario Carneiro <a href="https://leanprover-community.github.io/archive/stream/116395-maths/topic/legendre.20symbols.html#195315513">(Apr 26 2020 at 03:44)</a>:</h4>
+<p>My plan has been to use a <code>def_replacer</code> for <code>norm_num</code> so that you can dynamically add more disjuncts to <a href="https://github.com/leanprover-community/mathlib/blob/master/src/tactic/norm_num.lean#L450-L451" title="https://github.com/leanprover-community/mathlib/blob/master/src/tactic/norm_num.lean#L450-L451">https://github.com/leanprover-community/mathlib/blob/master/src/tactic/norm_num.lean#L450-L451</a></p>
+
+
+
+<a name="195315580"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/116395-maths/topic/legendre%20symbols/near/195315580" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Mario Carneiro <a href="https://leanprover-community.github.io/archive/stream/116395-maths/topic/legendre.20symbols.html#195315580">(Apr 26 2020 at 03:46)</a>:</h4>
+<p>So for instance you could write something like <code>eval_prime</code> there in the file on primes instead of inside <code>norm_num</code> itself, and this tactic can do whatever trickery it needs to to efficiently compute the result</p>
+
+
+
+<a name="195315585"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/116395-maths/topic/legendre%20symbols/near/195315585" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Mario Carneiro <a href="https://leanprover-community.github.io/archive/stream/116395-maths/topic/legendre.20symbols.html#195315585">(Apr 26 2020 at 03:46)</a>:</h4>
+<p>It's not just constrained to being an evaluator, although for a lot of functions that's probably what you would do</p>
+
+
+
+<a name="195315696"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/116395-maths/topic/legendre%20symbols/near/195315696" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Johan Commelin <a href="https://leanprover-community.github.io/archive/stream/116395-maths/topic/legendre.20symbols.html#195315696">(Apr 26 2020 at 03:52)</a>:</h4>
+<p>Would there be a dumbed down API method for people who are not very good at tactic writing?</p>
+
+
+
+<a name="195315744"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/116395-maths/topic/legendre%20symbols/near/195315744" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Mario Carneiro <a href="https://leanprover-community.github.io/archive/stream/116395-maths/topic/legendre.20symbols.html#195315744">(Apr 26 2020 at 03:53)</a>:</h4>
+<p>I think the easy version is that you first match on the expr you are looking for (e.g. <code>`(prime %%e)</code>), then use a quick tactic script to rewrite with the definition and call norm_num on what remains</p>
+
+
+
+<a name="195315748"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/116395-maths/topic/legendre%20symbols/near/195315748" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Mario Carneiro <a href="https://leanprover-community.github.io/archive/stream/116395-maths/topic/legendre.20symbols.html#195315748">(Apr 26 2020 at 03:53)</a>:</h4>
+<p>which will wind up calling this function again recursively if you aren't done yet</p>
+
+
+
+<a name="195315796"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/116395-maths/topic/legendre%20symbols/near/195315796" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Mario Carneiro <a href="https://leanprover-community.github.io/archive/stream/116395-maths/topic/legendre.20symbols.html#195315796">(Apr 26 2020 at 03:54)</a>:</h4>
+<p>Alternatively, you run the function externally (in the tactic/VM), then construct the result numeral and hope that <code>rfl</code> works as a proof</p>
+
+
+
+<a name="195315856"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/116395-maths/topic/legendre%20symbols/near/195315856" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Mario Carneiro <a href="https://leanprover-community.github.io/archive/stream/116395-maths/topic/legendre.20symbols.html#195315856">(Apr 26 2020 at 03:56)</a>:</h4>
+<p>But to really have the desired dumbed down API we need the <code>cbv</code> tactic</p>
+
+
+
+<a name="195315868"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/116395-maths/topic/legendre%20symbols/near/195315868" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Mario Carneiro <a href="https://leanprover-community.github.io/archive/stream/116395-maths/topic/legendre.20symbols.html#195315868">(Apr 26 2020 at 03:57)</a>:</h4>
+<p>and that probably has to be implemented in core</p>
+
+
+
+<a name="195315977"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/116395-maths/topic/legendre%20symbols/near/195315977" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Bryan Gin-ge Chen <a href="https://leanprover-community.github.io/archive/stream/116395-maths/topic/legendre.20symbols.html#195315977">(Apr 26 2020 at 04:00)</a>:</h4>
+<p>What would we need to make <code>cbv</code> happen? Could you write a roadmap?</p>
+
+
+
+<a name="195315983"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/116395-maths/topic/legendre%20symbols/near/195315983" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Mario Carneiro <a href="https://leanprover-community.github.io/archive/stream/116395-maths/topic/legendre.20symbols.html#195315983">(Apr 26 2020 at 04:01)</a>:</h4>
+<p>Basically it is a tactic that performs the same operation as <code>#reduce</code> but with proofs</p>
+
+
+
+<a name="195315987"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/116395-maths/topic/legendre%20symbols/near/195315987" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Mario Carneiro <a href="https://leanprover-community.github.io/archive/stream/116395-maths/topic/legendre.20symbols.html#195315987">(Apr 26 2020 at 04:01)</a>:</h4>
+<p>I think it needs to be implemented in C++ for efficiency</p>
+
+
+
+<a name="195316024"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/116395-maths/topic/legendre%20symbols/near/195316024" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Mario Carneiro <a href="https://leanprover-community.github.io/archive/stream/116395-maths/topic/legendre.20symbols.html#195316024">(Apr 26 2020 at 04:02)</a>:</h4>
+<p>It is more or less <code>simp [all equation lemmas]</code></p>
+
+
+
 {% endraw %}
 
-<hr><p>Last updated: Apr 26 2020 at 03:03 UTC</p>
+<hr><p>Last updated: Apr 26 2020 at 04:03 UTC</p>

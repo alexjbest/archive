@@ -1,0 +1,43 @@
+---
+layout: archive
+title: Zulip Chat Archive
+permalink: /stream/113489-new-members/topic/Double.20Negation.20and.20Proof.20by.20Contradiction.html
+---
+
+<h2>Stream: <a href="https://leanprover-community.github.io/archive/stream/113489-new-members/index.html">new members</a></h2>
+<h3>Topic: <a href="https://leanprover-community.github.io/archive/stream/113489-new-members/topic/Double.20Negation.20and.20Proof.20by.20Contradiction.html">Double Negation and Proof by Contradiction</a></h3>
+
+<hr>
+
+<base href="https://leanprover.zulipchat.com/">
+
+<head><link href="/style.css" rel="stylesheet"></head>
+
+{% raw %}
+
+<a name="195315194"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113489-new%20members/topic/Double%20Negation%20and%20Proof%20by%20Contradiction/near/195315194" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Dan Knight <a href="https://leanprover-community.github.io/archive/stream/113489-new-members/topic/Double.20Negation.20and.20Proof.20by.20Contradiction.html#195315194">(Apr 26 2020 at 03:34)</a>:</h4>
+<p>Hi All - I've done a little bit of formal mathematics in uni and have started with the publicly available "Logic and Proof" course using Lean. I'm looking for some help with proofs that prove the negation of a proposition (-A) by contradiction. </p>
+<p>My problem arises as the type checker expects the negation of the already negated proposition (--A) to lead to false, rather than just the proposition (A) itself. If I use the have keyword to prove A from --A, my text then type checks to ... -&gt;  A -&gt;  -A and fails given this extra step (pseudo example at the bottom).</p>
+<p>Is there a way around this double negation problem? I've tried rewriting the proofs but can't seem to do quite a few of the exercises without something of this form. Any all help would be greatly appreciated it. Moreover, apologize for the noob question, this has been quite the humbling evening/afternoon</p>
+<p>-Example-<br>
+(assume hNNA : \not \not A,<br>
+have hA : A, from ...<br>
+show false, h? hA)<br>
+-Error-<br>
+type mismatch at application<br>
+A→ false<br>
+but is expected to have type<br>
+  ¬¬A → false</p>
+
+
+
+<a name="195315346"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113489-new%20members/topic/Double%20Negation%20and%20Proof%20by%20Contradiction/near/195315346" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Shing Tak Lam <a href="https://leanprover-community.github.io/archive/stream/113489-new-members/topic/Double.20Negation.20and.20Proof.20by.20Contradiction.html#195315346">(Apr 26 2020 at 03:38)</a>:</h4>
+<p>There is <code>theorem not_not [decidable a] : ¬¬a ↔ a</code>, which might be useful. Although it may be helpful if you post example code?</p>
+
+
+
+{% endraw %}
+
+<hr><p>Last updated: Apr 26 2020 at 04:03 UTC</p>
