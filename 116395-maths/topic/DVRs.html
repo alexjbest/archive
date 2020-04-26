@@ -293,6 +293,134 @@ permalink: /stream/116395-maths/topic/DVRs.html
 
 
 
+<a name="195343075"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/116395-maths/topic/DVRs/near/195343075" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Kevin Buzzard <a href="https://leanprover-community.github.io/archive/stream/116395-maths/topic/DVRs.html#195343075">(Apr 26 2020 at 17:04)</a>:</h4>
+<p>It's either that or make add_group_with_zero</p>
+
+
+
+<a name="195343077"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/116395-maths/topic/DVRs/near/195343077" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Johan Commelin <a href="https://leanprover-community.github.io/archive/stream/116395-maths/topic/DVRs.html#195343077">(Apr 26 2020 at 17:04)</a>:</h4>
+<p>Because sometimes it's really nice and intuitive to reason about <code>int</code></p>
+
+
+
+<a name="195343085"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/116395-maths/topic/DVRs/near/195343085" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Kevin Buzzard <a href="https://leanprover-community.github.io/archive/stream/116395-maths/topic/DVRs.html#195343085">(Apr 26 2020 at 17:04)</a>:</h4>
+<p>Or with infinity or whatever</p>
+
+
+
+<a name="195343088"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/116395-maths/topic/DVRs/near/195343088" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Johan Commelin <a href="https://leanprover-community.github.io/archive/stream/116395-maths/topic/DVRs.html#195343088">(Apr 26 2020 at 17:04)</a>:</h4>
+<p><span class="user-mention silent" data-user-id="110038">Kevin Buzzard</span> <a href="#narrow/stream/116395-maths/topic/DVRs/near/195343075" title="#narrow/stream/116395-maths/topic/DVRs/near/195343075">said</a>:</p>
+<blockquote>
+<p>It's either that or make add_group_with_zero</p>
+</blockquote>
+<p><code>add_group_with_infty</code></p>
+
+
+
+<a name="195343096"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/116395-maths/topic/DVRs/near/195343096" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Johan Commelin <a href="https://leanprover-community.github.io/archive/stream/116395-maths/topic/DVRs.html#195343096">(Apr 26 2020 at 17:04)</a>:</h4>
+<p>But I don't think the <code>to_additive</code> machinery is built with such translations in mind...</p>
+
+
+
+<a name="195343105"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/116395-maths/topic/DVRs/near/195343105" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Kevin Buzzard <a href="https://leanprover-community.github.io/archive/stream/116395-maths/topic/DVRs.html#195343105">(Apr 26 2020 at 17:05)</a>:</h4>
+<p>But I don't think the target Z really is a Z. It's certainly not the ring Z. It's the additive group Z with an occasional infinity</p>
+
+
+
+<a name="195343124"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/116395-maths/topic/DVRs/near/195343124" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Kevin Buzzard <a href="https://leanprover-community.github.io/archive/stream/116395-maths/topic/DVRs.html#195343124">(Apr 26 2020 at 17:05)</a>:</h4>
+<p>And an action of Z which is either a smul or a gpow</p>
+
+
+
+<a name="195343196"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/116395-maths/topic/DVRs/near/195343196" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Kevin Buzzard <a href="https://leanprover-community.github.io/archive/stream/116395-maths/topic/DVRs.html#195343196">(Apr 26 2020 at 17:07)</a>:</h4>
+<p>I don't see why we need to introduce the concept of an additive valuation at all. Just because it's in maths in some superficial way doesn't mean we need it. Or we could have it in this one off case. What did Rob use for p-adics?</p>
+
+
+
+<a name="195343208"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/116395-maths/topic/DVRs/near/195343208" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Johan Commelin <a href="https://leanprover-community.github.io/archive/stream/116395-maths/topic/DVRs.html#195343208">(Apr 26 2020 at 17:07)</a>:</h4>
+<p>norms...</p>
+
+
+
+<a name="195343272"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/116395-maths/topic/DVRs/near/195343272" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Ashwin Iyengar <a href="https://leanprover-community.github.io/archive/stream/116395-maths/topic/DVRs.html#195343272">(Apr 26 2020 at 17:08)</a>:</h4>
+<p>I would be happy with multiplicative <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi mathvariant="double-struck">Z</mi></mrow><annotation encoding="application/x-tex">\mathbb{Z}</annotation></semantics></math></span><span aria-hidden="true" class="katex-html"><span class="base"><span class="strut" style="height:0.68889em;vertical-align:0em;"></span><span class="mord"><span class="mord mathbb">Z</span></span></span></span></span> with an added 0 element, but won't this cause notational trouble because you have the integer 0 and then the added 0?</p>
+
+
+
+<a name="195343296"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/116395-maths/topic/DVRs/near/195343296" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Johan Commelin <a href="https://leanprover-community.github.io/archive/stream/116395-maths/topic/DVRs.html#195343296">(Apr 26 2020 at 17:09)</a>:</h4>
+<p>There are ways around that.</p>
+
+
+
+<a name="195343342"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/116395-maths/topic/DVRs/near/195343342" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Johan Commelin <a href="https://leanprover-community.github.io/archive/stream/116395-maths/topic/DVRs.html#195343342">(Apr 26 2020 at 17:10)</a>:</h4>
+<p>We could define <code>free_group</code>, or something like that.</p>
+
+
+
+<a name="195343348"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/116395-maths/topic/DVRs/near/195343348" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Johan Commelin <a href="https://leanprover-community.github.io/archive/stream/116395-maths/topic/DVRs.html#195343348">(Apr 26 2020 at 17:10)</a>:</h4>
+<p>As in, don't actually use <code>int</code>, but use a different type.</p>
+
+
+
+<a name="195343430"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/116395-maths/topic/DVRs/near/195343430" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Johan Commelin <a href="https://leanprover-community.github.io/archive/stream/116395-maths/topic/DVRs.html#195343430">(Apr 26 2020 at 17:12)</a>:</h4>
+<p><span class="user-mention silent" data-user-id="112680">Johan Commelin</span> <a href="#narrow/stream/116395-maths/topic/DVRs/near/195343348" title="#narrow/stream/116395-maths/topic/DVRs/near/195343348">said</a>:</p>
+<blockquote>
+<p>As in, don't actually use <code>int</code>, but use a different type.</p>
+</blockquote>
+<p>If you want, we could give it some names like <code>discrete_valuation.target_type</code>, or something fancier...</p>
+
+
+
+<a name="195343556"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/116395-maths/topic/DVRs/near/195343556" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Johan Commelin <a href="https://leanprover-community.github.io/archive/stream/116395-maths/topic/DVRs.html#195343556">(Apr 26 2020 at 17:14)</a>:</h4>
+<p>But it would be best to already include the extra <code>0</code> element in the definition of this type. You don't want to work with <code>with_zero foo</code> all the time, even though in "normal" maths we keep up that facade.</p>
+
+
+
+<a name="195343565"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/116395-maths/topic/DVRs/near/195343565" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Johan Commelin <a href="https://leanprover-community.github.io/archive/stream/116395-maths/topic/DVRs.html#195343565">(Apr 26 2020 at 17:14)</a>:</h4>
+<p>We did that for a long time in the perfectoid project, but it just became too painful.</p>
+
+
+
+<a name="195343597"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/116395-maths/topic/DVRs/near/195343597" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Johan Commelin <a href="https://leanprover-community.github.io/archive/stream/116395-maths/topic/DVRs.html#195343597">(Apr 26 2020 at 17:15)</a>:</h4>
+<p>Still, I wonder if you should settle on 1 target type. It might be better to characterise what it means to be a discrete valuation, as I proposed above.</p>
+
+
+
+<a name="195343606"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/116395-maths/topic/DVRs/near/195343606" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Johan Commelin <a href="https://leanprover-community.github.io/archive/stream/116395-maths/topic/DVRs.html#195343606">(Apr 26 2020 at 17:15)</a>:</h4>
+<p>Because otherwise you will regret it once you get a DVR with a different target type.</p>
+
+
+
+<a name="195343651"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/116395-maths/topic/DVRs/near/195343651" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Johan Commelin <a href="https://leanprover-community.github.io/archive/stream/116395-maths/topic/DVRs.html#195343651">(Apr 26 2020 at 17:16)</a>:</h4>
+<p>(Say some subset of the reals)</p>
+
+
+
+<a name="195343661"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/116395-maths/topic/DVRs/near/195343661" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Johan Commelin <a href="https://leanprover-community.github.io/archive/stream/116395-maths/topic/DVRs.html#195343661">(Apr 26 2020 at 17:16)</a>:</h4>
+<p>We should really work to get the definition of a general valuation into mathlib</p>
+
+
+
 {% endraw %}
 
-<hr><p>Last updated: Apr 26 2020 at 17:03 UTC</p>
+<hr><p>Last updated: Apr 26 2020 at 18:04 UTC</p>

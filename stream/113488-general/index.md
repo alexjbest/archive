@@ -9,15 +9,17 @@ permalink: /stream/113488-general/index.html
 
 ### Topics:
 
+* [apply bug](topic/apply.20bug.html) (4 messages, latest: Apr 26 2020 at 18:03)
+* [Notices of the AMS paper](topic/Notices.20of.20the.20AMS.20paper.html) (66 messages, latest: Apr 26 2020 at 17:59)
+* [Proposal: `fix x` for `assume x`](topic/Proposal.3A.20.60fix.20x.60.20for.20.60assume.20x.60.html) (126 messages, latest: Apr 26 2020 at 17:41)
+* [`subset` on `finset`](topic/.60subset.60.20on.20.60finset.60.html) (16 messages, latest: Apr 26 2020 at 17:07)
 * [wlog is slow](topic/wlog.20is.20slow.html) (2 messages, latest: Apr 26 2020 at 16:28)
-* [`subset` on `finset`](topic/.60subset.60.20on.20.60finset.60.html) (15 messages, latest: Apr 26 2020 at 16:23)
 * [unfreezeI](topic/unfreezeI.html) (8 messages, latest: Apr 25 2020 at 18:28)
 * [class instances in definition of Prop](topic/class.20instances.20in.20definition.20of.20Prop.html) (16 messages, latest: Apr 25 2020 at 16:37)
 * [a + succ b syntactically succ(a+b)?](topic/a.20.2B.20succ.20b.20syntactically.20succ(a.2Bb).3F.html) (3 messages, latest: Apr 25 2020 at 16:27)
 * [Invitation to join the Codewars Lean community, Round 2](topic/Invitation.20to.20join.20the.20Codewars.20Lean.20community.2C.20Round.202.html) (140 messages, latest: Apr 25 2020 at 15:01)
 * [lean-client-python](topic/lean-client-python.html) (45 messages, latest: Apr 25 2020 at 12:37)
 * [Intuitionistic Type Theory Proofs](topic/Intuitionistic.20Type.20Theory.20Proofs.html) (124 messages, latest: Apr 25 2020 at 11:29)
-* [Notices of the AMS paper](topic/Notices.20of.20the.20AMS.20paper.html) (38 messages, latest: Apr 25 2020 at 07:20)
 * [structure unification fails](topic/structure.20unification.20fails.html) (1 message, latest: Apr 25 2020 at 06:15)
 * [tac1;{tac2, tac3}](topic/tac1.3B.7Btac2.2C.20tac3.7D.html) (22 messages, latest: Apr 25 2020 at 01:06)
 * [class instance unification fails](topic/class.20instance.20unification.20fails.html) (14 messages, latest: Apr 24 2020 at 23:12)
@@ -38,7 +40,6 @@ permalink: /stream/113488-general/index.html
 * [universe inequalities](topic/universe.20inequalities.html) (15 messages, latest: Apr 22 2020 at 14:16)
 * [typeclass for has_coe_to_fun is slow?](topic/typeclass.20for.20has_coe_to_fun.20is.20slow.3F.html) (31 messages, latest: Apr 22 2020 at 11:50)
 * [autogenerating `*_hom` and `sub*`](topic/autogenerating.20.60*_hom.60.20and.20.60sub*.60.html) (37 messages, latest: Apr 21 2020 at 23:52)
-* [Proposal: `fix x` for `assume x`](topic/Proposal.3A.20.60fix.20x.60.20for.20.60assume.20x.60.html) (121 messages, latest: Apr 21 2020 at 16:20)
 * [de Bruijn factor of Lean?](topic/de.20Bruijn.20factor.20of.20Lean.3F.html) (6 messages, latest: Apr 21 2020 at 15:21)
 * [Custom highlighting](topic/Custom.20highlighting.html) (6 messages, latest: Apr 21 2020 at 12:47)
 * [hole? golf!](topic/hole.3F.20golf!.html) (22 messages, latest: Apr 21 2020 at 12:29)
@@ -2709,4 +2710,4 @@ permalink: /stream/113488-general/index.html
 * [test](topic/test.html) (4 messages, latest: Feb 26 2018 at 16:22)
 * [welcome](topic/welcome.html) (1 message, latest: Feb 26 2018 at 16:02)
 
-<hr><p>Last updated: Apr 26 2020 at 17:03 UTC</p>
+<hr><p>Last updated: Apr 26 2020 at 18:04 UTC</p>
