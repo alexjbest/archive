@@ -34162,6 +34162,37 @@ a b : ℤ<br>
 
 
 
+<a name="195356815"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113489-new%20members/topic/noob%20question%28s%29/near/195356815" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Brandon Brown <a href="https://leanprover-community.github.io/archive/stream/113489-new-members/topic/noob.20question(s).html#195356815">(Apr 26 2020 at 22:53)</a>:</h4>
+<p>Looks for some hints for this one.<br>
+<code>example : (∃ x, p x) ↔ ¬ (∀ x, ¬ p x) := sorry</code><br>
+My guess is its a longer proof, so just looking for some general guidance. I find proofs involving <code>\not</code> challenging for some reason.<br>
+Here's my starting point:</p>
+<div class="codehilite"><pre><span></span>        <span class="kn">example</span> <span class="o">:</span> <span class="o">(</span><span class="bp">∃</span> <span class="n">x</span><span class="o">,</span> <span class="n">p</span> <span class="n">x</span><span class="o">)</span> <span class="bp">↔</span> <span class="bp">¬</span> <span class="o">(</span><span class="bp">∀</span> <span class="n">x</span><span class="o">,</span> <span class="bp">¬</span> <span class="n">p</span> <span class="n">x</span><span class="o">)</span> <span class="o">:=</span>
+            <span class="n">iff</span><span class="bp">.</span><span class="n">intro</span>
+            <span class="o">(</span>
+                <span class="k">assume</span> <span class="n">h1</span><span class="o">,</span>
+                <span class="k">match</span> <span class="n">h1</span> <span class="k">with</span> <span class="bp">⟨</span><span class="n">x</span><span class="o">,</span> <span class="n">p1</span><span class="bp">⟩</span> <span class="o">:=</span>
+                    <span class="n">by_contradiction</span>
+                    <span class="o">(</span>
+                        <span class="bp">_</span>
+                    <span class="o">)</span>
+                <span class="kn">end</span>
+            <span class="o">)</span>
+            <span class="o">(</span>
+                <span class="k">assume</span> <span class="n">h1</span><span class="o">,</span>
+                <span class="bp">_</span>
+            <span class="o">)</span>
+</pre></div>
+
+
+<p>Which gives me a first goal of <br>
+<code>⊢ (¬¬∀ (x : α), ¬p x) → false</code><br>
+and second goal of <br>
+<code>⊢  ∃ (x : α), p x</code></p>
+
+
+
 {% endraw %}
 
-<hr><p>Last updated: Apr 26 2020 at 22:03 UTC</p>
+<hr><p>Last updated: Apr 26 2020 at 23:03 UTC</p>
