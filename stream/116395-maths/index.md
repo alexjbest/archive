@@ -9,6 +9,7 @@ permalink: /stream/116395-maths/index.html
 
 ### Topics:
 
+* [DVRs](topic/DVRs.html) (16 messages, latest: Apr 26 2020 at 13:02)
 * [submodule map](topic/submodule.20map.html) (5 messages, latest: Apr 26 2020 at 09:32)
 * [legendre symbols](topic/legendre.20symbols.html) (42 messages, latest: Apr 26 2020 at 09:25)
 * [Coersion and composition](topic/Coersion.20and.20composition.html) (30 messages, latest: Apr 25 2020 at 16:19)
@@ -122,7 +123,6 @@ permalink: /stream/116395-maths/index.html
 * [why `nonempty`?](topic/why.20.60nonempty.60.3F.html) (7 messages, latest: Feb 16 2020 at 12:38)
 * [Carlos Simpson and VHS](topic/Carlos.20Simpson.20and.20VHS.html) (11 messages, latest: Feb 15 2020 at 12:05)
 * [class groups of number fields?](topic/class.20groups.20of.20number.20fields.3F.html) (14 messages, latest: Feb 14 2020 at 16:22)
-* [DVRs](topic/DVRs.html) (14 messages, latest: Feb 13 2020 at 20:16)
 * [proof basics](topic/proof.20basics.html) (5 messages, latest: Feb 13 2020 at 19:33)
 * [subquotients](topic/subquotients.html) (1 message, latest: Feb 13 2020 at 12:07)
 * [Commutative diagrams](topic/Commutative.20diagrams.html) (12 messages, latest: Feb 13 2020 at 12:04)
@@ -873,4 +873,4 @@ permalink: /stream/116395-maths/index.html
 * [free group](topic/free.20group.html) (92 messages, latest: Apr 02 2018 at 05:00)
 * [Easy topological space question](topic/Easy.20topological.20space.20question.html) (18 messages, latest: Apr 02 2018 at 01:23)
 
-<hr><p>Last updated: Apr 26 2020 at 12:04 UTC</p>
+<hr><p>Last updated: Apr 26 2020 at 13:03 UTC</p>
