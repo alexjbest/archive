@@ -9,9 +9,9 @@ permalink: /stream/113488-general/index.html
 
 ### Topics:
 
-* [to_extending](topic/to_extending.html) (17 messages, latest: Apr 26 2020 at 18:59)
-* [Notices of the AMS paper](topic/Notices.20of.20the.20AMS.20paper.html) (80 messages, latest: Apr 26 2020 at 18:53)
-* [apply bug](topic/apply.20bug.html) (11 messages, latest: Apr 26 2020 at 18:24)
+* [apply bug](topic/apply.20bug.html) (14 messages, latest: Apr 26 2020 at 20:02)
+* [to_extending](topic/to_extending.html) (18 messages, latest: Apr 26 2020 at 19:46)
+* [Notices of the AMS paper](topic/Notices.20of.20the.20AMS.20paper.html) (82 messages, latest: Apr 26 2020 at 19:31)
 * [Proposal: `fix x` for `assume x`](topic/Proposal.3A.20.60fix.20x.60.20for.20.60assume.20x.60.html) (126 messages, latest: Apr 26 2020 at 17:41)
 * [`subset` on `finset`](topic/.60subset.60.20on.20.60finset.60.html) (16 messages, latest: Apr 26 2020 at 17:07)
 * [wlog is slow](topic/wlog.20is.20slow.html) (2 messages, latest: Apr 26 2020 at 16:28)
@@ -2710,4 +2710,4 @@ permalink: /stream/113488-general/index.html
 * [test](topic/test.html) (4 messages, latest: Feb 26 2018 at 16:22)
 * [welcome](topic/welcome.html) (1 message, latest: Feb 26 2018 at 16:02)
 
-<hr><p>Last updated: Apr 26 2020 at 19:04 UTC</p>
+<hr><p>Last updated: Apr 26 2020 at 20:04 UTC</p>
