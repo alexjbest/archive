@@ -143,6 +143,30 @@ permalink: /stream/113488-general/topic/apply.20bug.html
 
 
 
+<a name="195360421"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113488-general/topic/apply%20bug/near/195360421" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Simon Hudon <a href="https://leanprover-community.github.io/archive/stream/113488-general/topic/apply.20bug.html#195360421">(Apr 27 2020 at 00:20)</a>:</h4>
+<p>Wouldn't it be sufficient to define it as:</p>
+<div class="codehilite"><pre><span></span><span class="n">def</span> <span class="n">read</span><span class="bp">.</span><span class="n">add</span> <span class="o">:</span> <span class="n">real</span> <span class="bp">-&gt;</span> <span class="n">real</span> <span class="bp">-&gt;</span> <span class="n">real</span>
+<span class="bp">|</span> <span class="err">\</span><span class="bp">&lt;</span> <span class="n">x</span> <span class="err">\</span><span class="bp">&gt;</span> <span class="err">\</span><span class="bp">&lt;</span> <span class="n">y</span> <span class="err">\</span><span class="bp">&gt;</span> <span class="o">:=</span> <span class="err">\</span><span class="bp">&lt;</span> <span class="bp">...</span> <span class="err">\</span><span class="bp">&gt;</span>
+</pre></div>
+
+
+<p>It would only reduce if you already had <code>\&lt; x \&gt;</code></p>
+
+
+
+<a name="195361344"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113488-general/topic/apply%20bug/near/195361344" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Reid Barton <a href="https://leanprover-community.github.io/archive/stream/113488-general/topic/apply.20bug.html#195361344">(Apr 27 2020 at 00:40)</a>:</h4>
+<p>That would often help, but you would still be able to prove, for example, <code>2 + 2 = 4</code> by rfl</p>
+
+
+
+<a name="195361379"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113488-general/topic/apply%20bug/near/195361379" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Reid Barton <a href="https://leanprover-community.github.io/archive/stream/113488-general/topic/apply.20bug.html#195361379">(Apr 27 2020 at 00:40)</a>:</h4>
+<p>Which I think is quite slow</p>
+
+
+
 {% endraw %}
 
-<hr><p>Last updated: Apr 27 2020 at 00:06 UTC</p>
+<hr><p>Last updated: Apr 27 2020 at 01:03 UTC</p>

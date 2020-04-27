@@ -34223,6 +34223,61 @@ and second goal of <br>
 
 
 
+<a name="195360975"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113489-new%20members/topic/noob%20question%28s%29/near/195360975" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Sam Raleigh <a href="https://leanprover-community.github.io/archive/stream/113489-new-members/topic/noob.20question(s).html#195360975">(Apr 27 2020 at 00:31)</a>:</h4>
+<p>What does "maximum class-instance resolution depth has been reached" mean?</p>
+
+
+
+<a name="195361219"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113489-new%20members/topic/noob%20question%28s%29/near/195361219" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Bryan Gin-ge Chen <a href="https://leanprover-community.github.io/archive/stream/113489-new-members/topic/noob.20question(s).html#195361219">(Apr 27 2020 at 00:36)</a>:</h4>
+<p><span class="user-mention" data-user-id="243102">@Brandon Brown</span> <code>by finish</code> (or even <code>by simp</code>) works after you <code>import tactic</code>. Here are some hints towards an "honest" (or "tedious" depending on your tastes) term proof:</p>
+<div class="codehilite"><pre><span></span><span class="kn">open</span> <span class="n">classical</span>
+<span class="kn">variables</span> <span class="o">(</span><span class="n">α</span> <span class="o">:</span> <span class="kt">Type</span><span class="o">)</span> <span class="o">(</span><span class="n">x</span> <span class="o">:</span> <span class="n">α</span><span class="o">)</span> <span class="o">(</span><span class="n">p</span> <span class="o">:</span> <span class="n">α</span> <span class="bp">→</span> <span class="kt">Prop</span><span class="o">)</span>
+<span class="kn">example</span> <span class="o">:</span> <span class="o">(</span><span class="bp">∃</span> <span class="n">x</span><span class="o">,</span> <span class="n">p</span> <span class="n">x</span><span class="o">)</span> <span class="bp">↔</span> <span class="bp">¬</span> <span class="o">(</span><span class="bp">∀</span> <span class="n">x</span><span class="o">,</span> <span class="bp">¬</span> <span class="n">p</span> <span class="n">x</span><span class="o">)</span> <span class="o">:=</span>
+    <span class="n">iff</span><span class="bp">.</span><span class="n">intro</span>
+    <span class="o">(</span>
+        <span class="k">assume</span> <span class="n">h1</span> <span class="n">h2</span><span class="o">,</span>
+        <span class="n">exists</span><span class="bp">.</span><span class="n">elim</span> <span class="n">h1</span> <span class="bp">_</span>
+    <span class="o">)</span>
+    <span class="o">(</span>
+        <span class="k">assume</span> <span class="n">h1</span><span class="o">,</span>
+        <span class="n">by_contradiction</span> <span class="o">(</span><span class="k">assume</span> <span class="n">h2</span> <span class="o">:</span> <span class="bp">¬</span> <span class="bp">_</span><span class="o">,</span> <span class="n">h2</span> <span class="o">(</span><span class="n">h1</span> <span class="bp">_</span><span class="o">)</span><span class="bp">.</span><span class="n">elim</span><span class="o">)</span>
+    <span class="o">)</span>
+</pre></div>
+
+
+
+<a name="195361268"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113489-new%20members/topic/noob%20question%28s%29/near/195361268" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Bryan Gin-ge Chen <a href="https://leanprover-community.github.io/archive/stream/113489-new-members/topic/noob.20question(s).html#195361268">(Apr 27 2020 at 00:37)</a>:</h4>
+<p><span class="user-mention" data-user-id="294527">@Sam Raleigh</span> It can mean different things, depending on the state of your code. Sometimes it means you have a bad instance. Sometimes it means that there's some other issue with your code. Can you post a MWE (minimum working example)?</p>
+
+
+
+<a name="195361535"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113489-new%20members/topic/noob%20question%28s%29/near/195361535" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Brandon Brown <a href="https://leanprover-community.github.io/archive/stream/113489-new-members/topic/noob.20question(s).html#195361535">(Apr 27 2020 at 00:46)</a>:</h4>
+<p>thanks <span class="user-mention" data-user-id="123965">@Bryan Gin-ge Chen</span> !</p>
+
+
+
+<a name="195361866"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113489-new%20members/topic/noob%20question%28s%29/near/195361866" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Sam Raleigh <a href="https://leanprover-community.github.io/archive/stream/113489-new-members/topic/noob.20question(s).html#195361866">(Apr 27 2020 at 00:57)</a>:</h4>
+<p>Actually I think I figured it out, thank you Bryan</p>
+
+
+
+<a name="195361875"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113489-new%20members/topic/noob%20question%28s%29/near/195361875" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Sam Raleigh <a href="https://leanprover-community.github.io/archive/stream/113489-new-members/topic/noob.20question(s).html#195361875">(Apr 27 2020 at 00:57)</a>:</h4>
+<p>I am curious as to what you meant by "bad instance" though</p>
+
+
+
+<a name="195362061"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113489-new%20members/topic/noob%20question%28s%29/near/195362061" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Bryan Gin-ge Chen <a href="https://leanprover-community.github.io/archive/stream/113489-new-members/topic/noob.20question(s).html#195362061">(Apr 27 2020 at 01:03)</a>:</h4>
+<p>If you're not careful about the instances you declare, Lean's type class search can get into an infinite loop. I can't come up with an example off the top of my head, but searching Zulip for "type class loop" will pull up a bunch of conversations where these sorts of things get debugged. (If by chance you haven't learned about Lean's type classes yet, <a href="https://leanprover.github.io/theorem_proving_in_lean/type_classes.html#type-classes-and-instances" title="https://leanprover.github.io/theorem_proving_in_lean/type_classes.html#type-classes-and-instances">here's the relevant section of TPiL</a>).</p>
+
+
+
 {% endraw %}
 
-<hr><p>Last updated: Apr 27 2020 at 00:06 UTC</p>
+<hr><p>Last updated: Apr 27 2020 at 01:03 UTC</p>
