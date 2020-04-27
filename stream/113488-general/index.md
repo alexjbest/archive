@@ -9,6 +9,7 @@ permalink: /stream/113488-general/index.html
 
 ### Topics:
 
+* [PRing to mathlib from forks](topic/PRing.20to.20mathlib.20from.20forks.html) (12 messages, latest: Apr 27 2020 at 22:49)
 * [wlog is slow](topic/wlog.20is.20slow.html) (15 messages, latest: Apr 27 2020 at 16:03)
 * [data.int.basic](topic/data.2Eint.2Ebasic.html) (4 messages, latest: Apr 27 2020 at 13:54)
 * [Notices of the AMS paper](topic/Notices.20of.20the.20AMS.20paper.html) (95 messages, latest: Apr 27 2020 at 12:16)
@@ -35,7 +36,6 @@ permalink: /stream/113488-general/index.html
 * [import order](topic/import.20order.html) (5 messages, latest: Apr 23 2020 at 17:33)
 * [How does one prove unit ≠ bool](topic/How.20does.20one.20prove.20unit.20.E2.89.A0.20bool.html) (11 messages, latest: Apr 23 2020 at 14:03)
 * [hammers](topic/hammers.html) (32 messages, latest: Apr 23 2020 at 12:12)
-* [PRing to mathlib from forks](topic/PRing.20to.20mathlib.20from.20forks.html) (7 messages, latest: Apr 23 2020 at 11:24)
 * [`precedence` command](topic/.60precedence.60.20command.html) (3 messages, latest: Apr 23 2020 at 00:05)
 * [`variables` introduction rules](topic/.60variables.60.20introduction.20rules.html) (4 messages, latest: Apr 22 2020 at 21:16)
 * [Show the objects for an equality of morphisms](topic/Show.20the.20objects.20for.20an.20equality.20of.20morphisms.html) (11 messages, latest: Apr 22 2020 at 17:22)
@@ -2712,4 +2712,4 @@ permalink: /stream/113488-general/index.html
 * [test](topic/test.html) (4 messages, latest: Feb 26 2018 at 16:22)
 * [welcome](topic/welcome.html) (1 message, latest: Feb 26 2018 at 16:02)
 
-<hr><p>Last updated: Apr 27 2020 at 22:06 UTC</p>
+<hr><p>Last updated: Apr 27 2020 at 23:03 UTC</p>
