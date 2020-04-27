@@ -9,7 +9,7 @@ permalink: /stream/219941-Machine-Learning-for-Theorem-Proving/index.html
 
 ### Topics:
 
-* [Data sets: where to put them?](topic/Data.20sets.3A.20where.20to.20put.20them.3F.html) (7 messages, latest: Apr 25 2020 at 00:12)
+* [Data sets: where to put them?](topic/Data.20sets.3A.20where.20to.20put.20them.3F.html) (8 messages, latest: Apr 27 2020 at 12:42)
 * [rw_hint](topic/rw_hint.html) (35 messages, latest: Apr 08 2020 at 12:46)
 * [AITP 2020](topic/AITP.202020.html) (17 messages, latest: Apr 06 2020 at 14:34)
 * [Paper: Tactic Learning and Proving for the Coq Proof Assista](topic/Paper.3A.20Tactic.20Learning.20and.20Proving.20for.20the.20Coq.20Proof.20Assista.html) (15 messages, latest: Apr 06 2020 at 03:02)
@@ -23,4 +23,4 @@ permalink: /stream/219941-Machine-Learning-for-Theorem-Proving/index.html
 * [stream events](topic/stream.20events.html) (2 messages, latest: Jan 14 2020 at 00:58)
 * [NEVER MIND.  USE THIS STREAM NOW.](topic/NEVER.20MIND.2E.20.20USE.20THIS.20STREAM.20NOW.2E.html) (1 message, latest: Jan 14 2020 at 00:42)
 
-<hr><p>Last updated: Apr 27 2020 at 12:04 UTC</p>
+<hr><p>Last updated: Apr 27 2020 at 13:03 UTC</p>
