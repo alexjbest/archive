@@ -9,6 +9,7 @@ permalink: /stream/113488-general/index.html
 
 ### Topics:
 
+* [wlog is slow](topic/wlog.20is.20slow.html) (15 messages, latest: Apr 27 2020 at 16:03)
 * [data.int.basic](topic/data.2Eint.2Ebasic.html) (4 messages, latest: Apr 27 2020 at 13:54)
 * [Notices of the AMS paper](topic/Notices.20of.20the.20AMS.20paper.html) (95 messages, latest: Apr 27 2020 at 12:16)
 * [apply bug](topic/apply.20bug.html) (23 messages, latest: Apr 27 2020 at 01:40)
@@ -16,7 +17,6 @@ permalink: /stream/113488-general/index.html
 * [to_extending](topic/to_extending.html) (18 messages, latest: Apr 26 2020 at 19:46)
 * [Proposal: `fix x` for `assume x`](topic/Proposal.3A.20.60fix.20x.60.20for.20.60assume.20x.60.html) (126 messages, latest: Apr 26 2020 at 17:41)
 * [`subset` on `finset`](topic/.60subset.60.20on.20.60finset.60.html) (16 messages, latest: Apr 26 2020 at 17:07)
-* [wlog is slow](topic/wlog.20is.20slow.html) (2 messages, latest: Apr 26 2020 at 16:28)
 * [unfreezeI](topic/unfreezeI.html) (8 messages, latest: Apr 25 2020 at 18:28)
 * [class instances in definition of Prop](topic/class.20instances.20in.20definition.20of.20Prop.html) (16 messages, latest: Apr 25 2020 at 16:37)
 * [a + succ b syntactically succ(a+b)?](topic/a.20.2B.20succ.20b.20syntactically.20succ(a.2Bb).3F.html) (3 messages, latest: Apr 25 2020 at 16:27)
@@ -2712,4 +2712,4 @@ permalink: /stream/113488-general/index.html
 * [test](topic/test.html) (4 messages, latest: Feb 26 2018 at 16:22)
 * [welcome](topic/welcome.html) (1 message, latest: Feb 26 2018 at 16:02)
 
-<hr><p>Last updated: Apr 27 2020 at 15:03 UTC</p>
+<hr><p>Last updated: Apr 27 2020 at 16:03 UTC</p>

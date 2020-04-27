@@ -34457,6 +34457,189 @@ but is expected to have type<br>
 
 
 
+<a name="195431287"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113489-new%20members/topic/noob%20question%28s%29/near/195431287" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Dan Stanescu <a href="https://leanprover-community.github.io/archive/stream/113489-new-members/topic/noob.20question(s).html#195431287">(Apr 27 2020 at 15:11)</a>:</h4>
+<p>I have a function defined like this: <code>(X Y : set ℝ) (f : X → Y)</code> and would like to use <code>image_subset_range</code> to get <code>f(X) ⊆ Y</code>but not sure how to handle the set type casts that are involved. Can someone please help?</p>
+
+
+
+<a name="195431887"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113489-new%20members/topic/noob%20question%28s%29/near/195431887" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Kenny Lau <a href="https://leanprover-community.github.io/archive/stream/113489-new-members/topic/noob.20question(s).html#195431887">(Apr 27 2020 at 15:15)</a>:</h4>
+<p>don't use partial functions</p>
+
+
+
+<a name="195432059"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113489-new%20members/topic/noob%20question%28s%29/near/195432059" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Chris Hughes <a href="https://leanprover-community.github.io/archive/stream/113489-new-members/topic/noob.20question(s).html#195432059">(Apr 27 2020 at 15:16)</a>:</h4>
+<p>If <code>f : X -&gt; Y</code> then <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>f</mi><mo stretchy="false">(</mo><mi>X</mi><mo stretchy="false">)</mo></mrow><annotation encoding="application/x-tex">f(X)</annotation></semantics></math></span><span aria-hidden="true" class="katex-html"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord mathdefault" style="margin-right:0.10764em;">f</span><span class="mopen">(</span><span class="mord mathdefault" style="margin-right:0.07847em;">X</span><span class="mclose">)</span></span></span></span>, will be written in Lean as <code>set.range f</code>. This is because when you write <code>f : X -&gt; Y</code>, then <code>X</code> is being treated as a type rather than a set.</p>
+
+
+
+<a name="195432102"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113489-new%20members/topic/noob%20question%28s%29/near/195432102" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Chris Hughes <a href="https://leanprover-community.github.io/archive/stream/113489-new-members/topic/noob.20question(s).html#195432102">(Apr 27 2020 at 15:16)</a>:</h4>
+<p>There's a coercion that turns sets into types</p>
+
+
+
+<a name="195432231"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113489-new%20members/topic/noob%20question%28s%29/near/195432231" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Chris Hughes <a href="https://leanprover-community.github.io/archive/stream/113489-new-members/topic/noob.20question(s).html#195432231">(Apr 27 2020 at 15:17)</a>:</h4>
+<p><code>set.range f</code> has type <code>set Y</code>, so it doesn't actually make sense in Lean straight away to say <code>set.range f \subseteq Y</code> since they have different types.</p>
+
+
+
+<a name="195432265"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113489-new%20members/topic/noob%20question%28s%29/near/195432265" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Dan Stanescu <a href="https://leanprover-community.github.io/archive/stream/113489-new-members/topic/noob.20question(s).html#195432265">(Apr 27 2020 at 15:17)</a>:</h4>
+<p>So if I have my function like this I can't get that result? Because I saw that I could use <code>f : \real \to \real</code> instead.</p>
+
+
+
+<a name="195432357"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113489-new%20members/topic/noob%20question%28s%29/near/195432357" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Chris Hughes <a href="https://leanprover-community.github.io/archive/stream/113489-new-members/topic/noob.20question(s).html#195432357">(Apr 27 2020 at 15:18)</a>:</h4>
+<p>It might be more sensible to use <code>f : real -&gt; real</code></p>
+
+
+
+<a name="195432451"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113489-new%20members/topic/noob%20question%28s%29/near/195432451" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Chris Hughes <a href="https://leanprover-community.github.io/archive/stream/113489-new-members/topic/noob.20question(s).html#195432451">(Apr 27 2020 at 15:18)</a>:</h4>
+<p>And then I guess you'll need the assumption that <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>f</mi><mo stretchy="false">(</mo><mi>X</mi><mo stretchy="false">)</mo><mo>⊆</mo><mi>Y</mi></mrow><annotation encoding="application/x-tex">f(X) \subseteq Y</annotation></semantics></math></span><span aria-hidden="true" class="katex-html"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord mathdefault" style="margin-right:0.10764em;">f</span><span class="mopen">(</span><span class="mord mathdefault" style="margin-right:0.07847em;">X</span><span class="mclose">)</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">⊆</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:0.68333em;vertical-align:0em;"></span><span class="mord mathdefault" style="margin-right:0.22222em;">Y</span></span></span></span></p>
+
+
+
+<a name="195432919"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113489-new%20members/topic/noob%20question%28s%29/near/195432919" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Dan Stanescu <a href="https://leanprover-community.github.io/archive/stream/113489-new-members/topic/noob.20question(s).html#195432919">(Apr 27 2020 at 15:22)</a>:</h4>
+<p>OK, thanks! Unfortunately that will make the result I'm eventually after quite a bit more difficult.</p>
+
+
+
+<a name="195432943"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113489-new%20members/topic/noob%20question%28s%29/near/195432943" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Kenny Lau <a href="https://leanprover-community.github.io/archive/stream/113489-new-members/topic/noob.20question(s).html#195432943">(Apr 27 2020 at 15:22)</a>:</h4>
+<p><span class="user-mention" data-user-id="259857">@Dan Stanescu</span> do you have more context?</p>
+
+
+
+<a name="195433379"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113489-new%20members/topic/noob%20question%28s%29/near/195433379" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Patrick Massot <a href="https://leanprover-community.github.io/archive/stream/113489-new-members/topic/noob.20question(s).html#195433379">(Apr 27 2020 at 15:24)</a>:</h4>
+<p><span class="user-mention silent" data-user-id="259857">Dan Stanescu</span> <a href="#narrow/stream/113489-new-members/topic/noob.20question(s)/near/195432919" title="#narrow/stream/113489-new-members/topic/noob.20question(s)/near/195432919">said</a>:</p>
+<blockquote>
+<p>OK, thanks! Unfortunately that will make the result I'm eventually after quite a bit more difficult.</p>
+</blockquote>
+<p>This is a very natural belief, but almost surely wrong.</p>
+
+
+
+<a name="195433706"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113489-new%20members/topic/noob%20question%28s%29/near/195433706" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Dan Stanescu <a href="https://leanprover-community.github.io/archive/stream/113489-new-members/topic/noob.20question(s).html#195433706">(Apr 27 2020 at 15:26)</a>:</h4>
+<p><span class="user-mention" data-user-id="110064">@Kenny Lau</span>  The larger context is this:</p>
+<div class="codehilite"><pre><span></span><span class="kn">import</span> <span class="n">data</span><span class="bp">.</span><span class="n">real</span><span class="bp">.</span><span class="n">basic</span>
+<span class="kn">import</span> <span class="n">topology</span><span class="bp">.</span><span class="n">basic</span>
+<span class="kn">open</span> <span class="n">function</span>
+<span class="kn">open</span> <span class="n">set</span>
+
+<span class="kn">theorem</span> <span class="n">countable_inj</span> <span class="o">(</span><span class="n">X</span> <span class="n">Y</span> <span class="o">:</span> <span class="n">set</span> <span class="n">ℝ</span><span class="o">)</span> <span class="o">(</span><span class="n">f</span> <span class="o">:</span> <span class="n">X</span> <span class="bp">→</span> <span class="n">Y</span><span class="o">)</span> <span class="o">(</span><span class="n">hY</span> <span class="o">:</span> <span class="n">countable</span> <span class="n">Y</span><span class="o">)</span> <span class="o">:</span>
+    <span class="n">injective</span> <span class="n">f</span> <span class="bp">→</span> <span class="n">countable</span> <span class="n">X</span> <span class="o">:=</span>
+<span class="k">begin</span>
+   <span class="n">sorry</span><span class="o">,</span>
+<span class="kn">end</span>
+</pre></div>
+
+
+
+<a name="195433748"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113489-new%20members/topic/noob%20question%28s%29/near/195433748" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Kenny Lau <a href="https://leanprover-community.github.io/archive/stream/113489-new-members/topic/noob.20question(s).html#195433748">(Apr 27 2020 at 15:27)</a>:</h4>
+<p>it has nothing to do with R so might as well let X and Y be arbitrary types</p>
+
+
+
+<a name="195433789"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113489-new%20members/topic/noob%20question%28s%29/near/195433789" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Dan Stanescu <a href="https://leanprover-community.github.io/archive/stream/113489-new-members/topic/noob.20question(s).html#195433789">(Apr 27 2020 at 15:27)</a>:</h4>
+<p>I agree. Never mind that.</p>
+
+
+
+<a name="195433965"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113489-new%20members/topic/noob%20question%28s%29/near/195433965" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Kenny Lau <a href="https://leanprover-community.github.io/archive/stream/113489-new-members/topic/noob.20question(s).html#195433965">(Apr 27 2020 at 15:28)</a>:</h4>
+<p>also <code>countable</code> isn't defined</p>
+
+
+
+<a name="195434004"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113489-new%20members/topic/noob%20question%28s%29/near/195434004" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Dan Stanescu <a href="https://leanprover-community.github.io/archive/stream/113489-new-members/topic/noob.20question(s).html#195434004">(Apr 27 2020 at 15:29)</a>:</h4>
+<p>I get it with my imports.</p>
+
+
+
+<a name="195434027"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113489-new%20members/topic/noob%20question%28s%29/near/195434027" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Patrick Massot <a href="https://leanprover-community.github.io/archive/stream/113489-new-members/topic/noob.20question(s).html#195434027">(Apr 27 2020 at 15:29)</a>:</h4>
+<p><a href="https://leanprover-community.github.io/mathlib_docs/data/set/countable.html" title="https://leanprover-community.github.io/mathlib_docs/data/set/countable.html">https://leanprover-community.github.io/mathlib_docs/data/set/countable.html</a></p>
+
+
+
+<a name="195434244"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113489-new%20members/topic/noob%20question%28s%29/near/195434244" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Chris Hughes <a href="https://leanprover-community.github.io/archive/stream/113489-new-members/topic/noob.20question(s).html#195434244">(Apr 27 2020 at 15:31)</a>:</h4>
+<p>I never understood <code>set.countable</code>, <code>set.finite</code>, <code>set.infinite</code> etc. Shouldn't all of these things be about types?</p>
+
+
+
+<a name="195434271"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113489-new%20members/topic/noob%20question%28s%29/near/195434271" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Kenny Lau <a href="https://leanprover-community.github.io/archive/stream/113489-new-members/topic/noob.20question(s).html#195434271">(Apr 27 2020 at 15:31)</a>:</h4>
+<div class="codehilite"><pre><span></span><span class="kn">import</span> <span class="n">data</span><span class="bp">.</span><span class="n">real</span><span class="bp">.</span><span class="n">basic</span>
+<span class="kn">import</span> <span class="n">topology</span><span class="bp">.</span><span class="n">basic</span>
+<span class="kn">import</span> <span class="n">data</span><span class="bp">.</span><span class="n">set</span><span class="bp">.</span><span class="n">countable</span>
+<span class="kn">open</span> <span class="n">function</span>
+<span class="kn">open</span> <span class="n">set</span>
+
+<span class="n">universes</span> <span class="n">u</span> <span class="n">v</span>
+
+<span class="kn">theorem</span> <span class="n">countable_inj</span> <span class="o">(</span><span class="n">X</span> <span class="n">Y</span> <span class="o">:</span> <span class="n">set</span> <span class="n">ℝ</span><span class="o">)</span> <span class="o">(</span><span class="n">f</span> <span class="o">:</span> <span class="n">X</span> <span class="bp">→</span> <span class="n">Y</span><span class="o">)</span> <span class="o">(</span><span class="n">hY</span> <span class="o">:</span> <span class="n">countable</span> <span class="n">Y</span><span class="o">)</span> <span class="o">:</span>
+    <span class="n">injective</span> <span class="n">f</span> <span class="bp">→</span> <span class="n">countable</span> <span class="n">X</span> <span class="o">:=</span>
+<span class="bp">λ</span> <span class="n">hf</span><span class="o">,</span> <span class="k">let</span> <span class="bp">⟨</span><span class="n">g</span><span class="o">,</span> <span class="n">hg</span><span class="bp">⟩</span> <span class="o">:=</span> <span class="n">countable_iff_exists_injective</span><span class="bp">.</span><span class="mi">1</span> <span class="n">hY</span> <span class="k">in</span>
+<span class="n">countable_iff_exists_injective</span><span class="bp">.</span><span class="mi">2</span> <span class="bp">⟨</span><span class="n">g</span> <span class="err">∘</span> <span class="n">f</span><span class="o">,</span> <span class="n">injective_comp</span> <span class="n">hg</span> <span class="n">hf</span><span class="bp">⟩</span>
+</pre></div>
+
+
+
+<a name="195434306"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113489-new%20members/topic/noob%20question%28s%29/near/195434306" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Patrick Massot <a href="https://leanprover-community.github.io/archive/stream/113489-new-members/topic/noob.20question(s).html#195434306">(Apr 27 2020 at 15:31)</a>:</h4>
+<p>We need both, and the set version covers the type use through <code>univ</code>. But maybe we need more API around that.</p>
+
+
+
+<a name="195434434"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113489-new%20members/topic/noob%20question%28s%29/near/195434434" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Chris Hughes <a href="https://leanprover-community.github.io/archive/stream/113489-new-members/topic/noob.20question(s).html#195434434">(Apr 27 2020 at 15:32)</a>:</h4>
+<p>But the type version covers sets by coercion.</p>
+
+
+
+<a name="195434502"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113489-new%20members/topic/noob%20question%28s%29/near/195434502" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Dan Stanescu <a href="https://leanprover-community.github.io/archive/stream/113489-new-members/topic/noob.20question(s).html#195434502">(Apr 27 2020 at 15:33)</a>:</h4>
+<p><span class="user-mention silent" data-user-id="110064">Kenny Lau</span> <a href="#narrow/stream/113489-new-members/topic/noob.20question(s)/near/195434271" title="#narrow/stream/113489-new-members/topic/noob.20question(s)/near/195434271">said</a>:</p>
+<blockquote>
+<div class="codehilite"><pre><span></span><span class="kn">import</span> <span class="n">data</span><span class="bp">.</span><span class="n">real</span><span class="bp">.</span><span class="n">basic</span>
+<span class="kn">import</span> <span class="n">topology</span><span class="bp">.</span><span class="n">basic</span>
+<span class="kn">import</span> <span class="n">data</span><span class="bp">.</span><span class="n">set</span><span class="bp">.</span><span class="n">countable</span>
+<span class="kn">open</span> <span class="n">function</span>
+<span class="kn">open</span> <span class="n">set</span>
+
+<span class="n">universes</span> <span class="n">u</span> <span class="n">v</span>
+
+<span class="kn">theorem</span> <span class="n">countable_inj</span> <span class="o">(</span><span class="n">X</span> <span class="n">Y</span> <span class="o">:</span> <span class="n">set</span> <span class="n">ℝ</span><span class="o">)</span> <span class="o">(</span><span class="n">f</span> <span class="o">:</span> <span class="n">X</span> <span class="bp">→</span> <span class="n">Y</span><span class="o">)</span> <span class="o">(</span><span class="n">hY</span> <span class="o">:</span> <span class="n">countable</span> <span class="n">Y</span><span class="o">)</span> <span class="o">:</span>
+    <span class="n">injective</span> <span class="n">f</span> <span class="bp">→</span> <span class="n">countable</span> <span class="n">X</span> <span class="o">:=</span>
+<span class="bp">λ</span> <span class="n">hf</span><span class="o">,</span> <span class="k">let</span> <span class="bp">⟨</span><span class="n">g</span><span class="o">,</span> <span class="n">hg</span><span class="bp">⟩</span> <span class="o">:=</span> <span class="n">countable_iff_exists_injective</span><span class="bp">.</span><span class="mi">1</span> <span class="n">hY</span> <span class="k">in</span>
+<span class="n">countable_iff_exists_injective</span><span class="bp">.</span><span class="mi">2</span> <span class="bp">⟨</span><span class="n">g</span> <span class="err">∘</span> <span class="n">f</span><span class="o">,</span> <span class="n">injective_comp</span> <span class="n">hg</span> <span class="n">hf</span><span class="bp">⟩</span>
+</pre></div>
+
+
+</blockquote>
+<p>Thanks Kenny!  I think this will actually do.</p>
+
+
+
+<a name="195434508"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113489-new%20members/topic/noob%20question%28s%29/near/195434508" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Patrick Massot <a href="https://leanprover-community.github.io/archive/stream/113489-new-members/topic/noob.20question(s).html#195434508">(Apr 27 2020 at 15:33)</a>:</h4>
+<p>Coercions can be nasty, so basing everything on them is dangerous</p>
+
+
+
 {% endraw %}
 
-<hr><p>Last updated: Apr 27 2020 at 15:03 UTC</p>
+<hr><p>Last updated: Apr 27 2020 at 16:03 UTC</p>
