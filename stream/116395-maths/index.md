@@ -9,7 +9,7 @@ permalink: /stream/116395-maths/index.html
 
 ### Topics:
 
-* [DVRs](topic/DVRs.html) (60 messages, latest: Apr 27 2020 at 05:45)
+* [DVRs](topic/DVRs.html) (61 messages, latest: Apr 27 2020 at 06:55)
 * [ring localization](topic/ring.20localization.html) (1 message, latest: Apr 26 2020 at 21:44)
 * [submodule map](topic/submodule.20map.html) (6 messages, latest: Apr 26 2020 at 16:22)
 * [legendre symbols](topic/legendre.20symbols.html) (42 messages, latest: Apr 26 2020 at 09:25)
@@ -874,4 +874,4 @@ permalink: /stream/116395-maths/index.html
 * [free group](topic/free.20group.html) (92 messages, latest: Apr 02 2018 at 05:00)
 * [Easy topological space question](topic/Easy.20topological.20space.20question.html) (18 messages, latest: Apr 02 2018 at 01:23)
 
-<hr><p>Last updated: Apr 27 2020 at 06:04 UTC</p>
+<hr><p>Last updated: Apr 27 2020 at 07:05 UTC</p>
