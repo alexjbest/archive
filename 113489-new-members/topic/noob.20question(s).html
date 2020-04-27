@@ -34396,6 +34396,22 @@ but is expected to have type<br>
 
 
 
+<a name="195372626"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113489-new%20members/topic/noob%20question%28s%29/near/195372626" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Kenny Lau <a href="https://leanprover-community.github.io/archive/stream/113489-new-members/topic/noob.20question(s).html#195372626">(Apr 27 2020 at 05:02)</a>:</h4>
+<div class="codehilite"><pre><span></span><span class="kn">variables</span> <span class="o">(</span><span class="n">α</span> <span class="o">:</span> <span class="kt">Type</span><span class="o">)</span> <span class="o">(</span><span class="n">x</span> <span class="o">:</span> <span class="n">α</span><span class="o">)</span> <span class="o">(</span><span class="n">p</span> <span class="o">:</span> <span class="n">α</span> <span class="bp">→</span> <span class="kt">Prop</span><span class="o">)</span>
+<span class="kn">example</span> <span class="o">:</span> <span class="o">(</span><span class="bp">∃</span> <span class="n">x</span><span class="o">,</span> <span class="n">p</span> <span class="n">x</span><span class="o">)</span> <span class="bp">↔</span> <span class="bp">¬</span> <span class="o">(</span><span class="bp">∀</span> <span class="n">x</span><span class="o">,</span> <span class="bp">¬</span> <span class="n">p</span> <span class="n">x</span><span class="o">)</span> <span class="o">:=</span>
+<span class="bp">⟨λ</span> <span class="bp">⟨</span><span class="n">x</span><span class="o">,</span> <span class="n">hx</span><span class="bp">⟩</span> <span class="n">ha</span><span class="o">,</span> <span class="n">ha</span> <span class="n">x</span> <span class="n">hx</span><span class="o">,</span>
+<span class="bp">λ</span> <span class="n">ha</span><span class="o">,</span> <span class="n">classical</span><span class="bp">.</span><span class="n">by_contradiction</span> <span class="err">$</span> <span class="bp">λ</span> <span class="n">he</span><span class="o">,</span> <span class="n">ha</span> <span class="err">$</span> <span class="bp">λ</span> <span class="n">x</span> <span class="n">hx</span><span class="o">,</span> <span class="n">he</span> <span class="bp">⟨</span><span class="n">x</span><span class="o">,</span> <span class="n">hx</span><span class="bp">⟩⟩</span>
+</pre></div>
+
+
+
+<a name="195372633"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113489-new%20members/topic/noob%20question%28s%29/near/195372633" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Kenny Lau <a href="https://leanprover-community.github.io/archive/stream/113489-new-members/topic/noob.20question(s).html#195372633">(Apr 27 2020 at 05:03)</a>:</h4>
+<p>to write term mode proofs you just need to use a lot of underscores</p>
+
+
+
 {% endraw %}
 
-<hr><p>Last updated: Apr 27 2020 at 04:04 UTC</p>
+<hr><p>Last updated: Apr 27 2020 at 05:03 UTC</p>
