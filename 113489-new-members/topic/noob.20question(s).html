@@ -34418,6 +34418,35 @@ but is expected to have type<br>
 
 
 
+<a name="195379385"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113489-new%20members/topic/noob%20question%28s%29/near/195379385" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Brandon Brown <a href="https://leanprover-community.github.io/archive/stream/113489-new-members/topic/noob.20question(s).html#195379385">(Apr 27 2020 at 07:07)</a>:</h4>
+<p>I'm not familiar with the $ operator, and I don't see it used in TPIL</p>
+
+
+
+<a name="195379538"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113489-new%20members/topic/noob%20question%28s%29/near/195379538" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Kenny Lau <a href="https://leanprover-community.github.io/archive/stream/113489-new-members/topic/noob.20question(s).html#195379538">(Apr 27 2020 at 07:09)</a>:</h4>
+<p>it just means open parenthesis</p>
+
+
+
+<a name="195379559"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113489-new%20members/topic/noob%20question%28s%29/near/195379559" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Kenny Lau <a href="https://leanprover-community.github.io/archive/stream/113489-new-members/topic/noob.20question(s).html#195379559">(Apr 27 2020 at 07:09)</a>:</h4>
+<p>so it's the same as:</p>
+<div class="codehilite"><pre><span></span><span class="kn">variables</span> <span class="o">(</span><span class="n">α</span> <span class="o">:</span> <span class="kt">Type</span><span class="o">)</span> <span class="o">(</span><span class="n">x</span> <span class="o">:</span> <span class="n">α</span><span class="o">)</span> <span class="o">(</span><span class="n">p</span> <span class="o">:</span> <span class="n">α</span> <span class="bp">→</span> <span class="kt">Prop</span><span class="o">)</span>
+<span class="kn">example</span> <span class="o">:</span> <span class="o">(</span><span class="bp">∃</span> <span class="n">x</span><span class="o">,</span> <span class="n">p</span> <span class="n">x</span><span class="o">)</span> <span class="bp">↔</span> <span class="bp">¬</span> <span class="o">(</span><span class="bp">∀</span> <span class="n">x</span><span class="o">,</span> <span class="bp">¬</span> <span class="n">p</span> <span class="n">x</span><span class="o">)</span> <span class="o">:=</span>
+<span class="bp">⟨λ</span> <span class="bp">⟨</span><span class="n">x</span><span class="o">,</span> <span class="n">hx</span><span class="bp">⟩</span> <span class="n">ha</span><span class="o">,</span> <span class="n">ha</span> <span class="n">x</span> <span class="n">hx</span><span class="o">,</span>
+<span class="bp">λ</span> <span class="n">ha</span><span class="o">,</span> <span class="n">classical</span><span class="bp">.</span><span class="n">by_contradiction</span> <span class="o">(</span><span class="bp">λ</span> <span class="n">he</span><span class="o">,</span> <span class="n">ha</span> <span class="o">(</span><span class="bp">λ</span> <span class="n">x</span> <span class="n">hx</span><span class="o">,</span> <span class="n">he</span> <span class="bp">⟨</span><span class="n">x</span><span class="o">,</span> <span class="n">hx</span><span class="bp">⟩</span><span class="o">))</span><span class="bp">⟩</span>
+</pre></div>
+
+
+
+<a name="195379938"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113489-new%20members/topic/noob%20question%28s%29/near/195379938" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Brandon Brown <a href="https://leanprover-community.github.io/archive/stream/113489-new-members/topic/noob.20question(s).html#195379938">(Apr 27 2020 at 07:14)</a>:</h4>
+<p>ah it just saves a bunch of parentheses I see</p>
+
+
+
 {% endraw %}
 
-<hr><p>Last updated: Apr 27 2020 at 07:05 UTC</p>
+<hr><p>Last updated: Apr 27 2020 at 08:03 UTC</p>
