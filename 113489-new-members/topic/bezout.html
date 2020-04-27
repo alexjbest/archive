@@ -1,0 +1,38 @@
+---
+layout: archive
+title: Zulip Chat Archive
+permalink: /stream/113489-new-members/topic/bezout.html
+---
+
+<h2>Stream: <a href="https://leanprover-community.github.io/archive/stream/113489-new-members/index.html">new members</a></h2>
+<h3>Topic: <a href="https://leanprover-community.github.io/archive/stream/113489-new-members/topic/bezout.html">bezout</a></h3>
+
+<hr>
+
+<base href="https://leanprover.zulipchat.com/">
+
+<head><link href="/style.css" rel="stylesheet"></head>
+
+{% raw %}
+
+<a name="195366074"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113489-new%20members/topic/bezout/near/195366074" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Brian Jiang <a href="https://leanprover-community.github.io/archive/stream/113489-new-members/topic/bezout.html#195366074">(Apr 27 2020 at 02:31)</a>:</h4>
+<p>one of the theorems I am trying to prove uses this version of bezouts defined over the integers</p>
+<p>'''<br>
+theorem relatively_prime_sum_to_one (a b : ℤ) (h : relatively_prime a b) : <br>
+∃ m n: ℤ, m* a + n * b = 1 := sorry<br>
+'''<br>
+Does lean already have a way to show the existence of m and n? Could I end up exacting something to get rid of the sorry?</p>
+
+
+
+<a name="195366692"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113489-new%20members/topic/bezout/near/195366692" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Bryan Gin-ge Chen <a href="https://leanprover-community.github.io/archive/stream/113489-new-members/topic/bezout.html#195366692">(Apr 27 2020 at 02:46)</a>:</h4>
+<p>You can probably use <a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/int/gcd.lean#L74" title="https://github.com/leanprover-community/mathlib/blob/master/src/data/int/gcd.lean#L74"><code>nat.gcd_eq_gcd_ab</code></a> from <code>data.int.gcd</code>. If you paste more of your code (esp. the definition of <code>relatively_prime</code>) we can give more details.</p>
+<p>By the way, to get proper syntax highlighting, use three backticks: ```, not single quotes.</p>
+
+
+
+{% endraw %}
+
+<hr><p>Last updated: Apr 27 2020 at 03:04 UTC</p>
