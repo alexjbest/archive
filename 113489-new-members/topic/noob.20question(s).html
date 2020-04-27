@@ -34278,6 +34278,124 @@ and second goal of <br>
 
 
 
+<a name="195362228"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113489-new%20members/topic/noob%20question%28s%29/near/195362228" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Sam Raleigh <a href="https://leanprover-community.github.io/archive/stream/113489-new-members/topic/noob.20question(s).html#195362228">(Apr 27 2020 at 01:09)</a>:</h4>
+<div class="codehilite"><pre><span></span><span class="kn">lemma</span> <span class="n">strict_ineq</span>
+    <span class="o">(</span><span class="n">a</span> <span class="n">b</span> <span class="n">c</span> <span class="o">:</span> <span class="bp">ℤ</span><span class="o">)</span>
+    <span class="o">(</span><span class="n">h</span> <span class="o">:</span> <span class="o">(</span><span class="mi">2</span><span class="err">^</span><span class="o">(</span><span class="mi">1</span> <span class="bp">-</span> <span class="n">b</span><span class="o">)</span> <span class="bp">*</span> <span class="n">c</span> <span class="o">:</span> <span class="n">ℚ</span><span class="o">)</span> <span class="bp">&lt;</span> <span class="mi">1</span><span class="o">)</span> <span class="o">:</span>
+    <span class="o">(</span><span class="mi">2</span><span class="err">^</span><span class="o">(</span><span class="n">a</span> <span class="bp">-</span> <span class="n">b</span><span class="o">)</span> <span class="bp">*</span> <span class="mi">2</span> <span class="bp">*</span> <span class="n">c</span> <span class="o">:</span> <span class="n">ℚ</span><span class="o">)</span> <span class="bp">&lt;</span> <span class="mi">2</span><span class="err">^</span><span class="n">a</span> <span class="o">:=</span>
+<span class="k">begin</span>
+    <span class="n">rw</span> <span class="n">fpow_sub</span> <span class="n">two_ne_zero</span> <span class="n">a</span> <span class="n">b</span>
+    <span class="c1">--other stuff</span>
+<span class="kn">end</span>
+</pre></div>
+
+
+<p>I don't understand how I am getting the following type mismatch error:</p>
+<p>type mismatch at application<br>
+  fpow_sub two_ne_zero<br>
+term<br>
+  two_ne_zero<br>
+has type<br>
+  2 ≠ 0<br>
+but is expected to have type<br>
+  ?m_2 ≠ 0</p>
+<p>How are <code>2 \neq 0</code> and <code>?m_2 ≠ 0</code> a mismatch?</p>
+
+
+
+<a name="195362743"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113489-new%20members/topic/noob%20question%28s%29/near/195362743" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Bryan Gin-ge Chen <a href="https://leanprover-community.github.io/archive/stream/113489-new-members/topic/noob.20question(s).html#195362743">(Apr 27 2020 at 01:19)</a>:</h4>
+<p>Hmm, looks like there's something funky going on with the zero instances:</p>
+<div class="codehilite"><pre><span></span><span class="kn">import</span> <span class="n">data</span><span class="bp">.</span><span class="n">rat</span><span class="bp">.</span><span class="n">basic</span>
+<span class="kn">import</span> <span class="n">algebra</span><span class="bp">.</span><span class="n">field_power</span>
+
+<span class="c1">-- set_option pp.all true</span>
+<span class="kn">lemma</span> <span class="n">strict_ineq</span>
+    <span class="o">(</span><span class="n">a</span> <span class="n">b</span> <span class="n">c</span> <span class="o">:</span> <span class="bp">ℤ</span><span class="o">)</span>
+    <span class="o">(</span><span class="n">h</span> <span class="o">:</span> <span class="o">(</span><span class="mi">2</span><span class="err">^</span><span class="o">(</span><span class="mi">1</span> <span class="bp">-</span> <span class="n">b</span><span class="o">)</span> <span class="bp">*</span> <span class="n">c</span> <span class="o">:</span> <span class="n">ℚ</span><span class="o">)</span> <span class="bp">&lt;</span> <span class="mi">1</span><span class="o">)</span> <span class="o">:</span>
+    <span class="o">(</span><span class="mi">2</span><span class="err">^</span><span class="o">(</span><span class="n">a</span> <span class="bp">-</span> <span class="n">b</span><span class="o">)</span> <span class="bp">*</span> <span class="mi">2</span> <span class="bp">*</span> <span class="n">c</span> <span class="o">:</span> <span class="n">ℚ</span><span class="o">)</span> <span class="bp">&lt;</span> <span class="mi">2</span><span class="err">^</span><span class="n">a</span> <span class="o">:=</span>
+<span class="k">begin</span>
+    <span class="n">rw</span> <span class="o">[</span><span class="n">fpow_sub</span> <span class="o">(</span><span class="k">begin</span>
+      <span class="n">convert</span> <span class="n">two_ne_zero</span><span class="o">,</span>
+<span class="c">/-</span><span class="cm"></span>
+<span class="cm">Tactic State:</span>
+<span class="cm">4 goals</span>
+<span class="cm">a b c : ℤ,</span>
+<span class="cm">h : 2 ^ (1 - b) * ↑c &lt; 1</span>
+<span class="cm">⊢ no_zero_divisors.to_has_zero ?m_1 = mul_zero_class.to_has_zero ?m_1</span>
+
+<span class="cm">a b c : ℤ,</span>
+<span class="cm">h : 2 ^ (1 - b) * ↑c &lt; 1</span>
+<span class="cm">⊢ group_with_zero ?m_1</span>
+
+<span class="cm">a b c : ℤ,</span>
+<span class="cm">h : 2 ^ (1 - b) * ↑c &lt; 1</span>
+<span class="cm">⊢ Type ?</span>
+
+<span class="cm">a b c : ℤ,</span>
+<span class="cm">h : 2 ^ (1 - b) * ↑c &lt; 1</span>
+<span class="cm">⊢ linear_ordered_semiring ?m_1</span>
+
+<span class="cm">-/</span>
+    <span class="kn">end</span><span class="o">)</span> <span class="n">a</span> <span class="n">b</span><span class="o">],</span>
+    <span class="c1">--other stuff</span>
+<span class="kn">end</span>
+</pre></div>
+
+
+
+<a name="195363537"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113489-new%20members/topic/noob%20question%28s%29/near/195363537" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Bryan Gin-ge Chen <a href="https://leanprover-community.github.io/archive/stream/113489-new-members/topic/noob.20question(s).html#195363537">(Apr 27 2020 at 01:34)</a>:</h4>
+<p>This works, but this issue deserves more attention from someone who understands what's going on above:</p>
+<div class="codehilite"><pre><span></span><span class="kn">import</span> <span class="n">data</span><span class="bp">.</span><span class="n">rat</span><span class="bp">.</span><span class="n">basic</span>
+<span class="kn">import</span> <span class="n">algebra</span><span class="bp">.</span><span class="n">field_power</span>
+
+<span class="c1">-- set_option pp.all true</span>
+<span class="kn">lemma</span> <span class="n">strict_ineq</span>
+    <span class="o">(</span><span class="n">a</span> <span class="n">b</span> <span class="n">c</span> <span class="o">:</span> <span class="bp">ℤ</span><span class="o">)</span>
+    <span class="o">(</span><span class="n">h</span> <span class="o">:</span> <span class="o">(</span><span class="mi">2</span><span class="err">^</span><span class="o">(</span><span class="mi">1</span> <span class="bp">-</span> <span class="n">b</span><span class="o">)</span> <span class="bp">*</span> <span class="n">c</span> <span class="o">:</span> <span class="n">ℚ</span><span class="o">)</span> <span class="bp">&lt;</span> <span class="mi">1</span><span class="o">)</span> <span class="o">:</span>
+    <span class="o">(</span><span class="mi">2</span><span class="err">^</span><span class="o">(</span><span class="n">a</span> <span class="bp">-</span> <span class="n">b</span><span class="o">)</span> <span class="bp">*</span> <span class="mi">2</span> <span class="bp">*</span> <span class="n">c</span> <span class="o">:</span> <span class="n">ℚ</span><span class="o">)</span> <span class="bp">&lt;</span> <span class="mi">2</span><span class="err">^</span><span class="n">a</span> <span class="o">:=</span>
+<span class="k">begin</span>
+    <span class="n">rw</span> <span class="o">[</span><span class="n">fpow_sub</span> <span class="o">(</span><span class="bp">@</span><span class="n">two_ne_zero</span> <span class="n">ℚ</span> <span class="bp">_</span><span class="o">)</span> <span class="n">a</span> <span class="n">b</span><span class="o">],</span>
+    <span class="c1">-- other stuff</span>
+<span class="kn">end</span>
+</pre></div>
+
+
+
+<a name="195364149"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113489-new%20members/topic/noob%20question%28s%29/near/195364149" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Mario Carneiro <a href="https://leanprover-community.github.io/archive/stream/113489-new-members/topic/noob.20question(s).html#195364149">(Apr 27 2020 at 01:51)</a>:</h4>
+<p><code>rw @fpow_sub ℚ _ _ two_ne_zero a b</code> also works. Think about what the elaborator has to do here. The error happens at <code>fpow_sub two_ne_zero</code>, where</p>
+<div class="codehilite"><pre><span></span><span class="n">fpow_sub</span> <span class="o">:</span>
+  <span class="bp">∀</span> <span class="o">{</span><span class="n">G₀</span> <span class="o">:</span> <span class="kt">Type</span> <span class="n">u_1</span><span class="o">}</span> <span class="o">[</span><span class="bp">_</span><span class="n">inst_1</span> <span class="o">:</span> <span class="n">group_with_zero</span> <span class="n">G₀</span><span class="o">]</span> <span class="o">{</span><span class="n">a</span> <span class="o">:</span> <span class="n">G₀</span><span class="o">},</span>
+    <span class="n">a</span> <span class="bp">≠</span> <span class="mi">0</span> <span class="bp">→</span> <span class="bp">∀</span> <span class="o">(</span><span class="n">z1</span> <span class="n">z2</span> <span class="o">:</span> <span class="bp">ℤ</span><span class="o">),</span> <span class="n">a</span> <span class="err">^</span> <span class="o">(</span><span class="n">z1</span> <span class="bp">-</span> <span class="n">z2</span><span class="o">)</span> <span class="bp">=</span> <span class="n">a</span> <span class="err">^</span> <span class="n">z1</span> <span class="bp">/</span> <span class="n">a</span> <span class="err">^</span> <span class="n">z2</span>
+<span class="n">two_ne_zero</span> <span class="o">:</span> <span class="bp">∀</span> <span class="o">{</span><span class="n">α</span> <span class="o">:</span> <span class="kt">Type</span> <span class="n">u_1</span><span class="o">}</span> <span class="o">[</span><span class="bp">_</span><span class="n">inst_1</span> <span class="o">:</span> <span class="n">linear_ordered_semiring</span> <span class="n">α</span><span class="o">],</span> <span class="mi">2</span> <span class="bp">≠</span> <span class="mi">0</span>
+</pre></div>
+
+
+<p>Since the term <code>fpow_sub two_ne_zero a b</code> has no expected type (because it is in a <code>rw</code>), lean has to just elaborate it to find out what type it has. The <code>a</code> and <code>b</code> are no help to find the target type since they are always of type <code>int</code> in the lemma, so we just have a general variable <code>α</code>, which is apparently a <code>linear_ordered_semiring</code> and also a <code>group_with_zero</code> in order to make the applications make sense. But wait: we have an application here of one theorem to the other, and so <code>2 ≠ 0</code> in one theorem needs to match <code>a ≠ 0</code> in the other, where the <code>0</code>'s are being provided by <em>different</em> typeclasses (recall that at this point we know only that <code>α</code> has two unrelated typeclasses, <code>linear_ordered_semiring</code> and <code>group_with_zero</code>, on it). At this point lean fails, because asking it to solve a commutative diagram in typeclass inference is too much. (It needs a type which has both typeclasses, such that the zero projections out of them are defeq.)</p>
+
+
+
+<a name="195364436"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113489-new%20members/topic/noob%20question%28s%29/near/195364436" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Bryan Gin-ge Chen <a href="https://leanprover-community.github.io/archive/stream/113489-new-members/topic/noob.20question(s).html#195364436">(Apr 27 2020 at 01:58)</a>:</h4>
+<p>Thanks, that makes sense! It's surprising to me that <code>rw</code> can't find <code>ℚ</code> from the goal somehow.</p>
+
+
+
+<a name="195364447"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113489-new%20members/topic/noob%20question%28s%29/near/195364447" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Mario Carneiro <a href="https://leanprover-community.github.io/archive/stream/113489-new-members/topic/noob.20question(s).html#195364447">(Apr 27 2020 at 01:58)</a>:</h4>
+<p>It first elaborates the term, then matches the target type against the subterms</p>
+
+
+
+<a name="195364450"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113489-new%20members/topic/noob%20question%28s%29/near/195364450" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Mario Carneiro <a href="https://leanprover-community.github.io/archive/stream/113489-new-members/topic/noob.20question(s).html#195364450">(Apr 27 2020 at 01:58)</a>:</h4>
+<p>Otherwise it would have to re-elaborate the term many times</p>
+
+
+
 {% endraw %}
 
-<hr><p>Last updated: Apr 27 2020 at 01:03 UTC</p>
+<hr><p>Last updated: Apr 27 2020 at 02:04 UTC</p>
