@@ -9,7 +9,8 @@ permalink: /stream/113488-general/index.html
 
 ### Topics:
 
-* [unusable arguments](topic/unusable.20arguments.html) (1 message, latest: Apr 28 2020 at 10:59)
+* [prettyprinter and parameters](topic/prettyprinter.20and.20parameters.html) (1 message, latest: Apr 28 2020 at 11:58)
+* [unusable arguments](topic/unusable.20arguments.html) (13 messages, latest: Apr 28 2020 at 11:49)
 * [Invitation to join the Codewars Lean community, Round 2](topic/Invitation.20to.20join.20the.20Codewars.20Lean.20community.2C.20Round.202.html) (143 messages, latest: Apr 28 2020 at 10:32)
 * [interactive calc](topic/interactive.20calc.html) (7 messages, latest: Apr 28 2020 at 09:36)
 * [even or odd](topic/even.20or.20odd.html) (9 messages, latest: Apr 28 2020 at 09:32)
@@ -2718,4 +2719,4 @@ permalink: /stream/113488-general/index.html
 * [test](topic/test.html) (4 messages, latest: Feb 26 2018 at 16:22)
 * [welcome](topic/welcome.html) (1 message, latest: Feb 26 2018 at 16:02)
 
-<hr><p>Last updated: Apr 28 2020 at 11:04 UTC</p>
+<hr><p>Last updated: Apr 28 2020 at 12:04 UTC</p>

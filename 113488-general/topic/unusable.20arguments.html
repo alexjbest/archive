@@ -29,6 +29,78 @@ permalink: /stream/113488-general/topic/unusable.20arguments.html
 
 
 
+<a name="195548058"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113488-general/topic/unusable%20arguments/near/195548058" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Gabriel Ebner <a href="https://leanprover-community.github.io/archive/stream/113488-general/topic/unusable.20arguments.html#195548058">(Apr 28 2020 at 11:10)</a>:</h4>
+<p>It can be inferred using an instance for <code>parent_projection</code>.</p>
+
+
+
+<a name="195548502"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113488-general/topic/unusable%20arguments/near/195548502" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Scott Morrison <a href="https://leanprover-community.github.io/archive/stream/113488-general/topic/unusable.20arguments.html#195548502">(Apr 28 2020 at 11:15)</a>:</h4>
+<p>I think you're right, Reid, this should be a def, not an instance.</p>
+
+
+
+<a name="195549058"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113488-general/topic/unusable%20arguments/near/195549058" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Reid Barton <a href="https://leanprover-community.github.io/archive/stream/113488-general/topic/unusable.20arguments.html#195549058">(Apr 28 2020 at 11:20)</a>:</h4>
+<p>It makes me wonder whether, in the context of <a href="https://github.com/leanprover-community/mathlib/issues/2502" title="https://github.com/leanprover-community/mathlib/issues/2502">#2502</a>, <code>parent_projection</code> plays any role at all</p>
+
+
+
+<a name="195549960"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113488-general/topic/unusable%20arguments/near/195549960" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Reid Barton <a href="https://leanprover-community.github.io/archive/stream/113488-general/topic/unusable.20arguments.html#195549960">(Apr 28 2020 at 11:30)</a>:</h4>
+<p>Gabriel, I don't understand. I see that we could infer <code>F</code> from the instance or the instance from <code>F</code> (by instance search), but how can either of them be determined by anything on the right side of the <code>:</code>?</p>
+
+
+
+<a name="195550969"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113488-general/topic/unusable%20arguments/near/195550969" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Gabriel Ebner <a href="https://leanprover-community.github.io/archive/stream/113488-general/topic/unusable.20arguments.html#195550969">(Apr 28 2020 at 11:42)</a>:</h4>
+<p>I hope I understand how this is supposed to be used.  Say you want to solve <code>?m_1 : has_forget₂ (bundled group) (bundled monoid)</code>, then Lean will apply the instance <code>forget₂</code> and you get a new goal <code>?m_2 : @parent_projection monoid group ?m_3</code>, which is then presumably solved using the instance <code> Group.category_theory.bundled_hom.parent_projection : parent_projection group.to_monoid</code>.</p>
+
+
+
+<a name="195551151"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113488-general/topic/unusable%20arguments/near/195551151" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Gabriel Ebner <a href="https://leanprover-community.github.io/archive/stream/113488-general/topic/unusable.20arguments.html#195551151">(Apr 28 2020 at 11:44)</a>:</h4>
+<p>I think it would be a bit clearer if the type arguments in <code>parent_projection</code> were explicit and the functor was explicily marked as an <code>out_param</code>.</p>
+
+
+
+<a name="195551337"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113488-general/topic/unusable%20arguments/near/195551337" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Mario Carneiro <a href="https://leanprover-community.github.io/archive/stream/113488-general/topic/unusable.20arguments.html#195551337">(Apr 28 2020 at 11:47)</a>:</h4>
+<p>Couldn't the functor be a field of <code>parent_projection</code>?</p>
+
+
+
+<a name="195551343"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113488-general/topic/unusable%20arguments/near/195551343" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Reid Barton <a href="https://leanprover-community.github.io/archive/stream/113488-general/topic/unusable.20arguments.html#195551343">(Apr 28 2020 at 11:47)</a>:</h4>
+<p>I thought that the instance could only be used if <code>F</code> was an <code>out_param</code>.</p>
+
+
+
+<a name="195551373"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113488-general/topic/unusable%20arguments/near/195551373" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Gabriel Ebner <a href="https://leanprover-community.github.io/archive/stream/113488-general/topic/unusable.20arguments.html#195551373">(Apr 28 2020 at 11:48)</a>:</h4>
+<p>If the functor is a field you'd need to reduce them afterwards to get acceptable terms.</p>
+
+
+
+<a name="195551441"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113488-general/topic/unusable%20arguments/near/195551441" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Gabriel Ebner <a href="https://leanprover-community.github.io/archive/stream/113488-general/topic/unusable.20arguments.html#195551441">(Apr 28 2020 at 11:48)</a>:</h4>
+<p><code>out_param</code> is only necessary at the interface between type-class search and the rest of Lean.  Inside type-class search, everything is an out-param.</p>
+
+
+
+<a name="195551449"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113488-general/topic/unusable%20arguments/near/195551449" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Mario Carneiro <a href="https://leanprover-community.github.io/archive/stream/113488-general/topic/unusable.20arguments.html#195551449">(Apr 28 2020 at 11:48)</a>:</h4>
+<p>no more than usual, I think</p>
+
+
+
+<a name="195551490"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113488-general/topic/unusable%20arguments/near/195551490" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Mario Carneiro <a href="https://leanprover-community.github.io/archive/stream/113488-general/topic/unusable.20arguments.html#195551490">(Apr 28 2020 at 11:49)</a>:</h4>
+<p>With this setup it seems that <code>parent_projection</code> doesn't carry any information at all</p>
+
+
+
 {% endraw %}
 
-<hr><p>Last updated: Apr 28 2020 at 11:04 UTC</p>
+<hr><p>Last updated: Apr 28 2020 at 12:04 UTC</p>
