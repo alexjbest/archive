@@ -120,6 +120,66 @@ permalink: /stream/113488-general/topic/even.20or.20odd.html
 
 
 
+<a name="195632609"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113488-general/topic/even%20or%20odd/near/195632609" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Patrick Massot <a href="https://leanprover-community.github.io/archive/stream/113488-general/topic/even.20or.20odd.html#195632609">(Apr 28 2020 at 21:56)</a>:</h4>
+<p>I did it so dirty that the following code should be read by <span class="user-mention" data-user-id="110596">@Rob Lewis</span>  and <span class="user-mention" data-user-id="110043">@Gabriel Ebner</span>  as a PR threat:</p>
+<div class="codehilite"><pre><span></span><code><span class="kn">import</span> <span class="n">tactic</span><span class="bp">.</span><span class="n">interval_cases</span>
+<span class="kn">import</span> <span class="n">data</span><span class="bp">.</span><span class="n">int</span><span class="bp">.</span><span class="n">basic</span>
+
+<span class="kn">namespace</span> <span class="n">tactic</span><span class="bp">.</span><span class="n">interactive</span>
+<span class="kn">open</span> <span class="n">tactic</span>
+<span class="kn">open</span> <span class="n">interactive</span> <span class="o">(</span><span class="n">parse</span><span class="o">)</span>
+<span class="kn">open</span> <span class="n">lean</span><span class="bp">.</span><span class="n">parser</span> <span class="o">(</span><span class="n">tk</span><span class="o">)</span>
+<span class="kn">open</span> <span class="n">interactive</span><span class="bp">.</span><span class="n">types</span> <span class="o">(</span><span class="n">texpr</span><span class="o">)</span>
+
+<span class="n">meta</span> <span class="n">def</span> <span class="n">modulo_cases</span> <span class="o">(</span><span class="n">n</span> <span class="o">:</span> <span class="n">parse</span> <span class="n">texpr</span><span class="o">)</span> <span class="o">(</span><span class="n">q</span> <span class="o">:</span> <span class="n">parse</span> <span class="o">(</span><span class="n">tk</span> <span class="s2">&quot;:&quot;</span> <span class="bp">*&gt;</span> <span class="n">texpr</span><span class="o">))</span> <span class="o">:</span> <span class="n">tactic</span> <span class="n">unit</span> <span class="o">:=</span>
+<span class="n">do</span> <span class="n">qe</span> <span class="err">←</span> <span class="n">tactic</span><span class="bp">.</span><span class="n">i_to_expr</span> <span class="n">q</span><span class="o">,</span>
+   <span class="n">ne</span> <span class="err">←</span> <span class="n">tactic</span><span class="bp">.</span><span class="n">i_to_expr</span> <span class="n">n</span><span class="o">,</span>
+   <span class="err">«</span><span class="k">have</span><span class="err">»</span> <span class="bp">`</span><span class="n">h1</span> <span class="bp">``</span><span class="o">(</span><span class="err">%%</span><span class="n">ne</span> <span class="bp">=</span> <span class="err">%%</span><span class="n">ne</span> <span class="err">%</span> <span class="err">%%</span><span class="n">qe</span> <span class="bp">+</span> <span class="err">%%</span><span class="n">qe</span> <span class="bp">*</span> <span class="o">(</span><span class="err">%%</span><span class="n">n</span> <span class="bp">/</span> <span class="err">%%</span><span class="n">qe</span><span class="o">))</span> <span class="bp">``</span><span class="o">((</span><span class="n">int</span><span class="bp">.</span><span class="n">mod_add_div</span> <span class="err">%%</span><span class="n">ne</span> <span class="err">%%</span><span class="n">qe</span><span class="o">)</span><span class="bp">.</span><span class="n">symm</span><span class="o">),</span>
+   <span class="bp">`</span><span class="o">[</span><span class="n">rw</span> <span class="n">add_comm</span> <span class="n">at</span> <span class="n">h1</span><span class="o">],</span>
+   <span class="err">«</span><span class="k">have</span><span class="err">»</span> <span class="bp">`</span><span class="n">h2</span> <span class="bp">``</span><span class="o">(</span><span class="err">%%</span><span class="n">ne</span> <span class="err">%</span> <span class="err">%%</span><span class="n">qe</span> <span class="bp">&lt;</span> <span class="n">abs</span> <span class="err">%%</span><span class="n">qe</span><span class="o">)</span> <span class="bp">``</span><span class="o">(</span><span class="n">int</span><span class="bp">.</span><span class="n">mod_lt</span> <span class="err">%%</span><span class="n">ne</span> <span class="o">(</span><span class="k">by</span> <span class="n">norm_num</span> <span class="o">:</span> <span class="o">(</span><span class="err">%%</span><span class="n">qe</span> <span class="o">:</span> <span class="bp">ℤ</span><span class="o">)</span> <span class="bp">≠</span> <span class="mi">0</span><span class="o">)),</span>
+   <span class="err">«</span><span class="k">have</span><span class="err">»</span> <span class="bp">`</span><span class="n">h4</span> <span class="bp">``</span><span class="o">(</span><span class="mi">0</span> <span class="bp">≤</span> <span class="o">(</span><span class="err">%%</span><span class="n">qe</span><span class="o">:</span> <span class="bp">ℤ</span><span class="o">))</span> <span class="bp">``</span><span class="o">(</span><span class="n">dec_trivial</span><span class="o">),</span>
+   <span class="bp">`</span><span class="o">[</span><span class="n">rw</span> <span class="n">abs_of_nonneg</span> <span class="n">h4</span> <span class="n">at</span> <span class="n">h2</span><span class="o">],</span>
+   <span class="n">h4e</span> <span class="err">←</span> <span class="n">get_local</span> <span class="bp">`</span><span class="n">h4</span><span class="o">,</span>
+   <span class="n">tactic</span><span class="bp">.</span><span class="n">clear</span> <span class="n">h4e</span><span class="o">,</span>
+   <span class="err">«</span><span class="k">have</span><span class="err">»</span> <span class="bp">`</span><span class="n">h3</span> <span class="bp">``</span><span class="o">(</span><span class="mi">0</span> <span class="bp">≤</span> <span class="err">%%</span><span class="n">ne</span> <span class="err">%</span> <span class="err">%%</span><span class="n">qe</span><span class="o">)</span> <span class="bp">``</span><span class="o">(</span><span class="n">int</span><span class="bp">.</span><span class="n">mod_nonneg</span> <span class="err">%%</span><span class="n">ne</span> <span class="n">dec_trivial</span><span class="o">),</span>
+   <span class="n">h1e</span> <span class="err">←</span> <span class="n">get_local</span> <span class="bp">`</span><span class="n">h1</span><span class="o">,</span>
+   <span class="n">h2e</span> <span class="err">←</span> <span class="n">get_local</span> <span class="bp">`</span><span class="n">h2</span><span class="o">,</span>
+   <span class="n">h3e</span> <span class="err">←</span> <span class="n">get_local</span> <span class="bp">`</span><span class="n">h3</span><span class="o">,</span>
+   <span class="n">tactic</span><span class="bp">.</span><span class="n">revert</span> <span class="n">h1e</span><span class="o">,</span>
+   <span class="n">tactic</span><span class="bp">.</span><span class="n">revert</span> <span class="n">h2e</span><span class="o">,</span>
+   <span class="n">tactic</span><span class="bp">.</span><span class="n">revert</span> <span class="n">h3e</span><span class="o">,</span>
+   <span class="n">e</span> <span class="err">←</span> <span class="o">(</span><span class="n">to_expr</span> <span class="bp">``</span><span class="o">(</span><span class="err">%%</span><span class="n">ne</span> <span class="err">%</span> <span class="err">%%</span><span class="n">qe</span><span class="o">)),</span>
+   <span class="n">tactic</span><span class="bp">.</span><span class="n">generalize</span> <span class="n">e</span><span class="o">,</span>
+   <span class="n">e</span> <span class="err">←</span> <span class="o">(</span><span class="n">to_expr</span> <span class="bp">``</span><span class="o">(</span><span class="err">%%</span><span class="n">ne</span> <span class="bp">/</span> <span class="err">%%</span><span class="n">qe</span><span class="o">)),</span>
+   <span class="bp">`</span><span class="o">[</span> <span class="n">intros</span> <span class="n">r</span> <span class="n">h1</span> <span class="n">h2</span> <span class="n">h3</span><span class="o">,</span>
+      <span class="n">interval_cases</span> <span class="n">r</span> <span class="bp">;</span> <span class="n">clear</span> <span class="n">h1</span> <span class="n">h2</span> <span class="bp">;</span> <span class="n">try</span> <span class="o">{</span><span class="n">rw</span> <span class="n">add_zero</span> <span class="n">at</span> <span class="n">h3</span><span class="o">}],</span>
+   <span class="n">tactic</span><span class="bp">.</span><span class="n">all_goals</span> <span class="err">$</span> <span class="n">do</span>
+      <span class="n">h3e</span> <span class="err">←</span> <span class="n">get_local</span> <span class="bp">`</span><span class="n">h3</span><span class="o">,</span>
+      <span class="n">tactic</span><span class="bp">.</span><span class="n">revert</span> <span class="n">h3e</span><span class="o">,</span>
+      <span class="n">tactic</span><span class="bp">.</span><span class="n">generalize</span> <span class="n">e</span><span class="o">,</span>
+      <span class="bp">`</span><span class="o">[</span><span class="n">rintros</span> <span class="n">k</span> <span class="n">rfl</span><span class="o">]</span>
+
+<span class="kn">end</span> <span class="n">tactic</span><span class="bp">.</span><span class="n">interactive</span>
+
+<span class="kn">example</span> <span class="o">(</span><span class="n">n</span> <span class="o">:</span> <span class="bp">ℤ</span><span class="o">)</span> <span class="o">:</span> <span class="o">(</span><span class="bp">∃</span> <span class="n">k</span><span class="o">,</span> <span class="n">n</span> <span class="bp">=</span> <span class="mi">2</span><span class="bp">*</span><span class="n">k</span><span class="o">)</span> <span class="bp">∨</span> <span class="o">(</span><span class="bp">∃</span> <span class="n">k</span><span class="o">,</span> <span class="n">n</span> <span class="bp">=</span> <span class="mi">2</span><span class="bp">*</span><span class="n">k</span> <span class="bp">+</span> <span class="mi">1</span><span class="o">)</span> <span class="o">:=</span>
+<span class="k">begin</span>
+  <span class="n">modulo_cases</span> <span class="n">n</span> <span class="o">:</span> <span class="o">(</span><span class="mi">2</span> <span class="o">:</span> <span class="bp">ℤ</span><span class="o">),</span>
+  <span class="o">{</span> <span class="n">left</span><span class="o">,</span>
+    <span class="n">use</span> <span class="n">k</span> <span class="o">},</span>
+  <span class="o">{</span> <span class="n">right</span><span class="o">,</span>
+    <span class="n">use</span> <span class="n">k</span> <span class="o">},</span>
+<span class="kn">end</span>
+</code></pre></div>
+
+
+
+<a name="195632744"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113488-general/topic/even%20or%20odd/near/195632744" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Patrick Massot <a href="https://leanprover-community.github.io/archive/stream/113488-general/topic/even.20or.20odd.html#195632744">(Apr 28 2020 at 21:57)</a>:</h4>
+<p>A (small) part of the problem is I don't know how to parse two <code>texpr</code> in a row without a separating token. And I don't know how to force a type ascription when parsing a <code>texpr</code>. And then of course the name handling is awful.</p>
+
+
+
 {% endraw %}
 
-<hr><p>Last updated: Apr 28 2020 at 21:04 UTC</p>
+<hr><p>Last updated: Apr 28 2020 at 22:07 UTC</p>

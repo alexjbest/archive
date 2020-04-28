@@ -655,6 +655,279 @@ or<br>
 
 
 
+<a name="195626806"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113489-new%20members/topic/Diagonal%20Ramsey%20Number%20Lower%20Bound/near/195626806" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Kevin Buzzard <a href="https://leanprover-community.github.io/archive/stream/113489-new-members/topic/Diagonal.20Ramsey.20Number.20Lower.20Bound.html#195626806">(Apr 28 2020 at 21:04)</a>:</h4>
+<p>and I remember the power I felt I had once I realised that more often than not I could actually turn the information in the error message into a way of figuring out how to fix my code</p>
+
+
+
+<a name="195626895"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113489-new%20members/topic/Diagonal%20Ramsey%20Number%20Lower%20Bound/near/195626895" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Sam Raleigh <a href="https://leanprover-community.github.io/archive/stream/113489-new-members/topic/Diagonal.20Ramsey.20Number.20Lower.20Bound.html#195626895">(Apr 28 2020 at 21:05)</a>:</h4>
+<p>That'll be the day...</p>
+
+
+
+<a name="195626909"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113489-new%20members/topic/Diagonal%20Ramsey%20Number%20Lower%20Bound/near/195626909" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Kevin Buzzard <a href="https://leanprover-community.github.io/archive/stream/113489-new-members/topic/Diagonal.20Ramsey.20Number.20Lower.20Bound.html#195626909">(Apr 28 2020 at 21:05)</a>:</h4>
+<p>I think the error just means "I'm trying to match up all the metavariables but I am hopelessly stuck, I can't even solve for the first one: here's what I was thinking"</p>
+
+
+
+<a name="195626981"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113489-new%20members/topic/Diagonal%20Ramsey%20Number%20Lower%20Bound/near/195626981" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Sam Raleigh <a href="https://leanprover-community.github.io/archive/stream/113489-new-members/topic/Diagonal.20Ramsey.20Number.20Lower.20Bound.html#195626981">(Apr 28 2020 at 21:05)</a>:</h4>
+<p>I get a particularly difficult to read error message when I add the parentheses:</p>
+<p><code>have h1 : 2^a * (2 ^ 1 / 2 ^ ↑b * ↑c) &lt; 2^a * 1 := by exact mul_lt_mul_of_pos_left h h0,</code></p>
+
+
+
+<a name="195627068"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113489-new%20members/topic/Diagonal%20Ramsey%20Number%20Lower%20Bound/near/195627068" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Kevin Buzzard <a href="https://leanprover-community.github.io/archive/stream/113489-new-members/topic/Diagonal.20Ramsey.20Number.20Lower.20Bound.html#195627068">(Apr 28 2020 at 21:06)</a>:</h4>
+<p>Everything has to match exactly for this lemma to work, your <code>h0</code> does not say what you want it to say.</p>
+
+
+
+<a name="195627108"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113489-new%20members/topic/Diagonal%20Ramsey%20Number%20Lower%20Bound/near/195627108" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Kevin Buzzard <a href="https://leanprover-community.github.io/archive/stream/113489-new-members/topic/Diagonal.20Ramsey.20Number.20Lower.20Bound.html#195627108">(Apr 28 2020 at 21:06)</a>:</h4>
+<p>2^(1-\u b) might look the same as 2^1/2^\u b to you but it's certainly not definitionally equal to it</p>
+
+
+
+<a name="195627116"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113489-new%20members/topic/Diagonal%20Ramsey%20Number%20Lower%20Bound/near/195627116" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Reid Barton <a href="https://leanprover-community.github.io/archive/stream/113489-new-members/topic/Diagonal.20Ramsey.20Number.20Lower.20Bound.html#195627116">(Apr 28 2020 at 21:07)</a>:</h4>
+<p>this is part of why backwards reasoning flows more smoothly</p>
+
+
+
+<a name="195627292"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113489-new%20members/topic/Diagonal%20Ramsey%20Number%20Lower%20Bound/near/195627292" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Sam Raleigh <a href="https://leanprover-community.github.io/archive/stream/113489-new-members/topic/Diagonal.20Ramsey.20Number.20Lower.20Bound.html#195627292">(Apr 28 2020 at 21:08)</a>:</h4>
+<p><span class="user-mention" data-user-id="110038">@Kevin Buzzard</span> the "stuff" part of my code handles that</p>
+
+
+
+<a name="195627323"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113489-new%20members/topic/Diagonal%20Ramsey%20Number%20Lower%20Bound/near/195627323" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Reid Barton <a href="https://leanprover-community.github.io/archive/stream/113489-new-members/topic/Diagonal.20Ramsey.20Number.20Lower.20Bound.html#195627323">(Apr 28 2020 at 21:08)</a>:</h4>
+<p><code>h0</code> is also wrong, though</p>
+
+
+
+<a name="195627337"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113489-new%20members/topic/Diagonal%20Ramsey%20Number%20Lower%20Bound/near/195627337" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Sam Raleigh <a href="https://leanprover-community.github.io/archive/stream/113489-new-members/topic/Diagonal.20Ramsey.20Number.20Lower.20Bound.html#195627337">(Apr 28 2020 at 21:08)</a>:</h4>
+<p>Sorry I should have posted the full thing</p>
+
+
+
+<a name="195627347"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113489-new%20members/topic/Diagonal%20Ramsey%20Number%20Lower%20Bound/near/195627347" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Sam Raleigh <a href="https://leanprover-community.github.io/archive/stream/113489-new-members/topic/Diagonal.20Ramsey.20Number.20Lower.20Bound.html#195627347">(Apr 28 2020 at 21:09)</a>:</h4>
+<p>Give me one moment</p>
+
+
+
+<a name="195627418"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113489-new%20members/topic/Diagonal%20Ramsey%20Number%20Lower%20Bound/near/195627418" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Sam Raleigh <a href="https://leanprover-community.github.io/archive/stream/113489-new-members/topic/Diagonal.20Ramsey.20Number.20Lower.20Bound.html#195627418">(Apr 28 2020 at 21:09)</a>:</h4>
+<div class="codehilite"><pre><span></span><code><span class="kn">lemma</span> <span class="n">core_ineq</span>
+    <span class="o">{</span><span class="n">a</span> <span class="n">b</span> <span class="n">c</span> <span class="o">:</span> <span class="bp">ℕ</span><span class="o">}</span>
+    <span class="o">(</span><span class="n">h</span> <span class="o">:</span> <span class="o">((</span><span class="mi">2</span> <span class="o">:</span> <span class="n">ℚ</span><span class="o">)</span><span class="bp">^</span><span class="o">(</span><span class="mi">1</span> <span class="bp">-</span> <span class="n">b</span> <span class="o">:</span> <span class="bp">ℤ</span><span class="o">)</span> <span class="bp">*</span> <span class="n">c</span> <span class="o">:</span> <span class="n">ℚ</span><span class="o">)</span> <span class="bp">&lt;</span> <span class="mi">1</span><span class="o">)</span> <span class="o">:</span>
+    <span class="o">(</span><span class="mi">2</span><span class="bp">^</span><span class="o">(</span><span class="n">a</span> <span class="bp">-</span> <span class="n">b</span> <span class="o">:</span> <span class="bp">ℤ</span><span class="o">)</span> <span class="bp">*</span> <span class="mi">2</span> <span class="bp">*</span> <span class="n">c</span> <span class="o">:</span> <span class="n">ℚ</span><span class="o">)</span> <span class="bp">&lt;</span> <span class="o">(</span><span class="mi">2</span><span class="bp">^</span><span class="n">a</span> <span class="o">:</span> <span class="n">ℚ</span><span class="o">)</span> <span class="o">:=</span>
+<span class="k">begin</span>
+    <span class="n">rw</span> <span class="bp">@</span><span class="n">fpow_sub</span> <span class="n">ℚ</span> <span class="bp">_</span> <span class="bp">_</span> <span class="n">two_ne_zero</span> <span class="mi">1</span> <span class="n">b</span> <span class="n">at</span> <span class="n">h</span><span class="o">,</span>
+
+  <span class="k">have</span> <span class="n">h0</span> <span class="o">:</span> <span class="mi">0</span> <span class="bp">&lt;</span> <span class="mi">2</span><span class="bp">^</span><span class="n">a</span> <span class="o">:=</span> <span class="n">sorry</span><span class="o">,</span>
+  <span class="k">have</span> <span class="n">h1</span> <span class="o">:</span> <span class="mi">2</span><span class="bp">^</span><span class="n">a</span> <span class="bp">*</span> <span class="o">(</span><span class="mi">2</span> <span class="bp">^</span> <span class="mi">1</span> <span class="bp">/</span> <span class="mi">2</span> <span class="bp">^</span> <span class="err">↑</span><span class="n">b</span> <span class="bp">*</span> <span class="err">↑</span><span class="n">c</span><span class="o">)</span> <span class="bp">&lt;</span> <span class="mi">2</span><span class="bp">^</span><span class="n">a</span> <span class="bp">*</span> <span class="mi">1</span> <span class="o">:=</span> <span class="k">by</span> <span class="n">exact</span> <span class="n">mul_lt_mul_of_pos_left</span> <span class="n">h</span> <span class="n">h0</span><span class="o">,</span>
+
+  <span class="c1">--other stuff</span>
+</code></pre></div>
+
+
+
+<a name="195627485"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113489-new%20members/topic/Diagonal%20Ramsey%20Number%20Lower%20Bound/near/195627485" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Sam Raleigh <a href="https://leanprover-community.github.io/archive/stream/113489-new-members/topic/Diagonal.20Ramsey.20Number.20Lower.20Bound.html#195627485">(Apr 28 2020 at 21:10)</a>:</h4>
+<p>I made a mistake omitting that line in my last example, I forgot I changed <code>h</code> my bad</p>
+
+
+
+<a name="195627488"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113489-new%20members/topic/Diagonal%20Ramsey%20Number%20Lower%20Bound/near/195627488" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Reid Barton <a href="https://leanprover-community.github.io/archive/stream/113489-new-members/topic/Diagonal.20Ramsey.20Number.20Lower.20Bound.html#195627488">(Apr 28 2020 at 21:10)</a>:</h4>
+<p><code>have h0 : 0 &lt; 2^a := sorry</code> &lt;-- this is a statement about <code>nat</code></p>
+
+
+
+<a name="195627629"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113489-new%20members/topic/Diagonal%20Ramsey%20Number%20Lower%20Bound/near/195627629" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Reid Barton <a href="https://leanprover-community.github.io/archive/stream/113489-new-members/topic/Diagonal.20Ramsey.20Number.20Lower.20Bound.html#195627629">(Apr 28 2020 at 21:11)</a>:</h4>
+<p>That is why you get this confusing</p>
+<div class="codehilite"><pre><span></span><code><span class="n">has</span> <span class="n">type</span>
+  <span class="mi">0</span> <span class="bp">&lt;</span> <span class="mi">2</span> <span class="bp">^</span> <span class="n">a</span>
+<span class="n">but</span> <span class="n">is</span> <span class="n">expected</span> <span class="n">to</span> <span class="k">have</span> <span class="n">type</span>
+  <span class="mi">0</span> <span class="bp">&lt;</span> <span class="err">?</span><span class="n">m_1</span>
+</code></pre></div>
+
+
+<p>error. Yes, the error message could be more helpful.</p>
+
+
+
+<a name="195627651"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113489-new%20members/topic/Diagonal%20Ramsey%20Number%20Lower%20Bound/near/195627651" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Sam Raleigh <a href="https://leanprover-community.github.io/archive/stream/113489-new-members/topic/Diagonal.20Ramsey.20Number.20Lower.20Bound.html#195627651">(Apr 28 2020 at 21:11)</a>:</h4>
+<p><span class="user-mention" data-user-id="110032">@Reid Barton</span> Thanks for pointing that out, too. I'll change it to <code>have h0 : 0 &lt; (2 : ℚ)^a := sorry,</code></p>
+
+
+
+<a name="195628741"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113489-new%20members/topic/Diagonal%20Ramsey%20Number%20Lower%20Bound/near/195628741" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Sam Raleigh <a href="https://leanprover-community.github.io/archive/stream/113489-new-members/topic/Diagonal.20Ramsey.20Number.20Lower.20Bound.html#195628741">(Apr 28 2020 at 21:21)</a>:</h4>
+<p><span class="user-mention" data-user-id="110032">@Reid Barton</span> Could you elaborate on why backwards reasoning is better?</p>
+
+
+
+<a name="195628842"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113489-new%20members/topic/Diagonal%20Ramsey%20Number%20Lower%20Bound/near/195628842" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Reid Barton <a href="https://leanprover-community.github.io/archive/stream/113489-new-members/topic/Diagonal.20Ramsey.20Number.20Lower.20Bound.html#195628842">(Apr 28 2020 at 21:22)</a>:</h4>
+<p>Lean already knows the correct way to elaborate the goal</p>
+
+
+
+<a name="195628881"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113489-new%20members/topic/Diagonal%20Ramsey%20Number%20Lower%20Bound/near/195628881" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Reid Barton <a href="https://leanprover-community.github.io/archive/stream/113489-new-members/topic/Diagonal.20Ramsey.20Number.20Lower.20Bound.html#195628881">(Apr 28 2020 at 21:22)</a>:</h4>
+<p>If you apply a lemma which requires a side condition, then Lean will work out the correct side condition</p>
+
+
+
+<a name="195628918"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113489-new%20members/topic/Diagonal%20Ramsey%20Number%20Lower%20Bound/near/195628918" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Reid Barton <a href="https://leanprover-community.github.io/archive/stream/113489-new-members/topic/Diagonal.20Ramsey.20Number.20Lower.20Bound.html#195628918">(Apr 28 2020 at 21:23)</a>:</h4>
+<p>and it may print as the same <code>0 &lt; 2^a</code> but it will be at the correct type</p>
+
+
+
+<a name="195628967"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113489-new%20members/topic/Diagonal%20Ramsey%20Number%20Lower%20Bound/near/195628967" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Reid Barton <a href="https://leanprover-community.github.io/archive/stream/113489-new-members/topic/Diagonal.20Ramsey.20Number.20Lower.20Bound.html#195628967">(Apr 28 2020 at 21:23)</a>:</h4>
+<p>If you build up forwards, Lean has no way of knowing how your facts like <code>h0</code> are supposed to relate to the goal so you must help the elaborator by being specific</p>
+
+
+
+<a name="195629078"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113489-new%20members/topic/Diagonal%20Ramsey%20Number%20Lower%20Bound/near/195629078" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Kevin Buzzard <a href="https://leanprover-community.github.io/archive/stream/113489-new-members/topic/Diagonal.20Ramsey.20Number.20Lower.20Bound.html#195629078">(Apr 28 2020 at 21:24)</a>:</h4>
+<p><code>rw fpow_sub at h,</code> works because Lean knows the type of <code>h</code></p>
+
+
+
+<a name="195629376"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113489-new%20members/topic/Diagonal%20Ramsey%20Number%20Lower%20Bound/near/195629376" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Reid Barton <a href="https://leanprover-community.github.io/archive/stream/113489-new-members/topic/Diagonal.20Ramsey.20Number.20Lower.20Bound.html#195629376">(Apr 28 2020 at 21:26)</a>:</h4>
+<p>or say you skip <code>have h0 : 0 &lt; 2^a := sorry</code>, and instead begin</p>
+<div class="codehilite"><pre><span></span><code>  <span class="k">have</span> <span class="n">h1</span> <span class="o">:</span> <span class="mi">2</span><span class="bp">^</span><span class="n">a</span> <span class="bp">*</span> <span class="o">(</span><span class="mi">2</span> <span class="bp">^</span> <span class="mi">1</span> <span class="bp">/</span> <span class="mi">2</span> <span class="bp">^</span> <span class="err">↑</span><span class="n">b</span> <span class="bp">*</span> <span class="err">↑</span><span class="n">c</span><span class="o">)</span> <span class="bp">&lt;</span> <span class="mi">2</span><span class="bp">^</span><span class="n">a</span> <span class="bp">*</span> <span class="mi">1</span><span class="o">,</span>
+  <span class="o">{</span> <span class="n">apply</span> <span class="n">mul_lt_mul_of_pos_left</span> <span class="n">h</span><span class="o">,</span>
+  <span class="o">}</span>
+</code></pre></div>
+
+
+
+<a name="195629397"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113489-new%20members/topic/Diagonal%20Ramsey%20Number%20Lower%20Bound/near/195629397" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Reid Barton <a href="https://leanprover-community.github.io/archive/stream/113489-new-members/topic/Diagonal.20Ramsey.20Number.20Lower.20Bound.html#195629397">(Apr 28 2020 at 21:27)</a>:</h4>
+<p>now the goal is the correct <code>0 &lt; 2^a</code></p>
+
+
+
+<a name="195629611"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113489-new%20members/topic/Diagonal%20Ramsey%20Number%20Lower%20Bound/near/195629611" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Bryan Gin-ge Chen <a href="https://leanprover-community.github.io/archive/stream/113489-new-members/topic/Diagonal.20Ramsey.20Number.20Lower.20Bound.html#195629611">(Apr 28 2020 at 21:29)</a>:</h4>
+<p><span class="user-mention silent" data-user-id="110038">Kevin Buzzard</span> <a href="#narrow/stream/113489-new-members/topic/Diagonal.20Ramsey.20Number.20Lower.20Bound/near/195629078" title="#narrow/stream/113489-new-members/topic/Diagonal.20Ramsey.20Number.20Lower.20Bound/near/195629078">said</a>:</p>
+<blockquote>
+<p><code>rw fpow_sub at h,</code> works because Lean knows the type of <code>h</code></p>
+</blockquote>
+<p>That adds an additional <code>2 ≠ 0</code> goal. We discussed this around <a href="#narrow/stream/113489-new-members/topic/noob.20question%28s%29/near/195362228" title="#narrow/stream/113489-new-members/topic/noob.20question%28s%29/near/195362228">here</a> last night.</p>
+
+
+
+<a name="195629671"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113489-new%20members/topic/Diagonal%20Ramsey%20Number%20Lower%20Bound/near/195629671" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Kevin Buzzard <a href="https://leanprover-community.github.io/archive/stream/113489-new-members/topic/Diagonal.20Ramsey.20Number.20Lower.20Bound.html#195629671">(Apr 28 2020 at 21:29)</a>:</h4>
+<p>you can solve that goal whenever you feel like it with <code>by norm_num</code></p>
+
+
+
+<a name="195629841"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113489-new%20members/topic/Diagonal%20Ramsey%20Number%20Lower%20Bound/near/195629841" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Kevin Buzzard <a href="https://leanprover-community.github.io/archive/stream/113489-new-members/topic/Diagonal.20Ramsey.20Number.20Lower.20Bound.html#195629841">(Apr 28 2020 at 21:30)</a>:</h4>
+<p><code>rw fpow_sub at h; try {by norm_num},</code></p>
+
+
+
+<a name="195629926"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113489-new%20members/topic/Diagonal%20Ramsey%20Number%20Lower%20Bound/near/195629926" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Kevin Buzzard <a href="https://leanprover-community.github.io/archive/stream/113489-new-members/topic/Diagonal.20Ramsey.20Number.20Lower.20Bound.html#195629926">(Apr 28 2020 at 21:31)</a>:</h4>
+<p>You are going to end up with a bunch of <code>2 \ne 0</code> goals, it might be even worth proving it beforehand.</p>
+
+
+
+<a name="195629997"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113489-new%20members/topic/Diagonal%20Ramsey%20Number%20Lower%20Bound/near/195629997" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Bryan Gin-ge Chen <a href="https://leanprover-community.github.io/archive/stream/113489-new-members/topic/Diagonal.20Ramsey.20Number.20Lower.20Bound.html#195629997">(Apr 28 2020 at 21:32)</a>:</h4>
+<p>Maybe the mathematician tactic mode should apply <code>; try  {by norm_num}</code> after every step.</p>
+
+
+
+<a name="195630020"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113489-new%20members/topic/Diagonal%20Ramsey%20Number%20Lower%20Bound/near/195630020" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Kevin Buzzard <a href="https://leanprover-community.github.io/archive/stream/113489-new-members/topic/Diagonal.20Ramsey.20Number.20Lower.20Bound.html#195630020">(Apr 28 2020 at 21:32)</a>:</h4>
+<div class="codehilite"><pre><span></span><code>  <span class="k">have</span> <span class="n">h2</span> <span class="o">:</span> <span class="o">(</span><span class="mi">2</span> <span class="o">:</span> <span class="n">ℚ</span><span class="o">)</span> <span class="bp">≠</span> <span class="mi">0</span> <span class="o">:=</span> <span class="k">by</span> <span class="n">norm_num</span><span class="o">,</span>
+  <span class="n">rw</span> <span class="n">fpow_sub</span> <span class="n">h2</span> <span class="n">at</span> <span class="n">h</span><span class="o">,</span>
+</code></pre></div>
+
+
+<p>I suspect you'll need <code>h2</code> later on</p>
+
+
+
+<a name="195630119"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113489-new%20members/topic/Diagonal%20Ramsey%20Number%20Lower%20Bound/near/195630119" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Reid Barton <a href="https://leanprover-community.github.io/archive/stream/113489-new-members/topic/Diagonal.20Ramsey.20Number.20Lower.20Bound.html#195630119">(Apr 28 2020 at 21:33)</a>:</h4>
+<p>Does <code>rw</code> put the side conditions at the end or something?</p>
+
+
+
+<a name="195630126"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113489-new%20members/topic/Diagonal%20Ramsey%20Number%20Lower%20Bound/near/195630126" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Reid Barton <a href="https://leanprover-community.github.io/archive/stream/113489-new-members/topic/Diagonal.20Ramsey.20Number.20Lower.20Bound.html#195630126">(Apr 28 2020 at 21:33)</a>:</h4>
+<p>I seem to recall that</p>
+
+
+
+<a name="195630218"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113489-new%20members/topic/Diagonal%20Ramsey%20Number%20Lower%20Bound/near/195630218" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Reid Barton <a href="https://leanprover-community.github.io/archive/stream/113489-new-members/topic/Diagonal.20Ramsey.20Number.20Lower.20Bound.html#195630218">(Apr 28 2020 at 21:34)</a>:</h4>
+<p>That seems usually annoying</p>
+
+
+
+<a name="195630233"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113489-new%20members/topic/Diagonal%20Ramsey%20Number%20Lower%20Bound/near/195630233" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Reid Barton <a href="https://leanprover-community.github.io/archive/stream/113489-new-members/topic/Diagonal.20Ramsey.20Number.20Lower.20Bound.html#195630233">(Apr 28 2020 at 21:34)</a>:</h4>
+<p>maybe there's a good reason though</p>
+
+
+
+<a name="195631204"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113489-new%20members/topic/Diagonal%20Ramsey%20Number%20Lower%20Bound/near/195631204" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Kevin Buzzard <a href="https://leanprover-community.github.io/archive/stream/113489-new-members/topic/Diagonal.20Ramsey.20Number.20Lower.20Bound.html#195631204">(Apr 28 2020 at 21:44)</a>:</h4>
+<p>Because nobody fixed it yet?</p>
+
+
+
+<a name="195631244"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113489-new%20members/topic/Diagonal%20Ramsey%20Number%20Lower%20Bound/near/195631244" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Kevin Buzzard <a href="https://leanprover-community.github.io/archive/stream/113489-new-members/topic/Diagonal.20Ramsey.20Number.20Lower.20Bound.html#195631244">(Apr 28 2020 at 21:45)</a>:</h4>
+<p>Actually maybe the idea is that if you knew how to prove it with a one-liner you would have written the proof in the rw line</p>
+
+
+
+<a name="195632154"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113489-new%20members/topic/Diagonal%20Ramsey%20Number%20Lower%20Bound/near/195632154" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Sam Raleigh <a href="https://leanprover-community.github.io/archive/stream/113489-new-members/topic/Diagonal.20Ramsey.20Number.20Lower.20Bound.html#195632154">(Apr 28 2020 at 21:52)</a>:</h4>
+<p>Is there a list of all the theorems somewhere?</p>
+
+
+
+<a name="195632753"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113489-new%20members/topic/Diagonal%20Ramsey%20Number%20Lower%20Bound/near/195632753" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Kevin Buzzard <a href="https://leanprover-community.github.io/archive/stream/113489-new-members/topic/Diagonal.20Ramsey.20Number.20Lower.20Bound.html#195632753">(Apr 28 2020 at 21:57)</a>:</h4>
+<p>The documentation?</p>
+
+
+
+<a name="195633160"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113489-new%20members/topic/Diagonal%20Ramsey%20Number%20Lower%20Bound/near/195633160" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Kevin Buzzard <a href="https://leanprover-community.github.io/archive/stream/113489-new-members/topic/Diagonal.20Ramsey.20Number.20Lower.20Bound.html#195633160">(Apr 28 2020 at 22:00)</a>:</h4>
+<p><a href="https://leanprover-community.github.io/mathlib_docs/" title="https://leanprover-community.github.io/mathlib_docs/">https://leanprover-community.github.io/mathlib_docs/</a></p>
+
+
+
+<a name="195633184"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113489-new%20members/topic/Diagonal%20Ramsey%20Number%20Lower%20Bound/near/195633184" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Kevin Buzzard <a href="https://leanprover-community.github.io/archive/stream/113489-new-members/topic/Diagonal.20Ramsey.20Number.20Lower.20Bound.html#195633184">(Apr 28 2020 at 22:00)</a>:</h4>
+<p>Better make yourself a nice cup of tea before you start</p>
+
+
+
 {% endraw %}
 
-<hr><p>Last updated: Apr 28 2020 at 21:04 UTC</p>
+<hr><p>Last updated: Apr 28 2020 at 22:07 UTC</p>

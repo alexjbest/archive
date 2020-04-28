@@ -9,7 +9,7 @@ permalink: /stream/113488-general/index.html
 
 ### Topics:
 
-* [even or odd](topic/even.20or.20odd.html) (15 messages, latest: Apr 28 2020 at 20:12)
+* [even or odd](topic/even.20or.20odd.html) (17 messages, latest: Apr 28 2020 at 21:57)
 * [type ascription style](topic/type.20ascription.20style.html) (5 messages, latest: Apr 28 2020 at 17:32)
 * [seminars](topic/seminars.html) (11 messages, latest: Apr 28 2020 at 15:43)
 * [unusable arguments](topic/unusable.20arguments.html) (20 messages, latest: Apr 28 2020 at 13:27)
@@ -2721,4 +2721,4 @@ permalink: /stream/113488-general/index.html
 * [test](topic/test.html) (4 messages, latest: Feb 26 2018 at 16:22)
 * [welcome](topic/welcome.html) (1 message, latest: Feb 26 2018 at 16:02)
 
-<hr><p>Last updated: Apr 28 2020 at 21:04 UTC</p>
+<hr><p>Last updated: Apr 28 2020 at 22:07 UTC</p>
