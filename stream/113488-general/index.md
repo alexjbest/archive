@@ -9,11 +9,12 @@ permalink: /stream/113488-general/index.html
 
 ### Topics:
 
+* [definition of real log](topic/definition.20of.20real.20log.html) (5 messages, latest: Apr 28 2020 at 07:59)
+* [data.int.basic](topic/data.2Eint.2Ebasic.html) (6 messages, latest: Apr 28 2020 at 07:23)
 * [Invitation to join the Codewars Lean community, Round 2](topic/Invitation.20to.20join.20the.20Codewars.20Lean.20community.2C.20Round.202.html) (142 messages, latest: Apr 28 2020 at 06:33)
 * [seminars](topic/seminars.html) (10 messages, latest: Apr 28 2020 at 05:22)
 * [PRing to mathlib from forks](topic/PRing.20to.20mathlib.20from.20forks.html) (13 messages, latest: Apr 27 2020 at 23:10)
 * [wlog is slow](topic/wlog.20is.20slow.html) (15 messages, latest: Apr 27 2020 at 16:03)
-* [data.int.basic](topic/data.2Eint.2Ebasic.html) (4 messages, latest: Apr 27 2020 at 13:54)
 * [Notices of the AMS paper](topic/Notices.20of.20the.20AMS.20paper.html) (95 messages, latest: Apr 27 2020 at 12:16)
 * [apply bug](topic/apply.20bug.html) (23 messages, latest: Apr 27 2020 at 01:40)
 * [proofs](topic/proofs.html) (4 messages, latest: Apr 26 2020 at 23:37)
@@ -2713,4 +2714,4 @@ permalink: /stream/113488-general/index.html
 * [test](topic/test.html) (4 messages, latest: Feb 26 2018 at 16:22)
 * [welcome](topic/welcome.html) (1 message, latest: Feb 26 2018 at 16:02)
 
-<hr><p>Last updated: Apr 28 2020 at 07:04 UTC</p>
+<hr><p>Last updated: Apr 28 2020 at 08:04 UTC</p>
