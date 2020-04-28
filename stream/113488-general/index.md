@@ -9,8 +9,10 @@ permalink: /stream/113488-general/index.html
 
 ### Topics:
 
+* [Intuitionistic Type Theory Proofs](topic/Intuitionistic.20Type.20Theory.20Proofs.html) (139 messages, latest: Apr 28 2020 at 13:02)
+* [annotated lean files](topic/annotated.20lean.20files.html) (24 messages, latest: Apr 28 2020 at 12:55)
+* [unusable arguments](topic/unusable.20arguments.html) (19 messages, latest: Apr 28 2020 at 12:45)
 * [prettyprinter and parameters](topic/prettyprinter.20and.20parameters.html) (1 message, latest: Apr 28 2020 at 11:58)
-* [unusable arguments](topic/unusable.20arguments.html) (13 messages, latest: Apr 28 2020 at 11:49)
 * [Invitation to join the Codewars Lean community, Round 2](topic/Invitation.20to.20join.20the.20Codewars.20Lean.20community.2C.20Round.202.html) (143 messages, latest: Apr 28 2020 at 10:32)
 * [interactive calc](topic/interactive.20calc.html) (7 messages, latest: Apr 28 2020 at 09:36)
 * [even or odd](topic/even.20or.20odd.html) (9 messages, latest: Apr 28 2020 at 09:32)
@@ -30,7 +32,6 @@ permalink: /stream/113488-general/index.html
 * [class instances in definition of Prop](topic/class.20instances.20in.20definition.20of.20Prop.html) (16 messages, latest: Apr 25 2020 at 16:37)
 * [a + succ b syntactically succ(a+b)?](topic/a.20.2B.20succ.20b.20syntactically.20succ(a.2Bb).3F.html) (3 messages, latest: Apr 25 2020 at 16:27)
 * [lean-client-python](topic/lean-client-python.html) (45 messages, latest: Apr 25 2020 at 12:37)
-* [Intuitionistic Type Theory Proofs](topic/Intuitionistic.20Type.20Theory.20Proofs.html) (124 messages, latest: Apr 25 2020 at 11:29)
 * [structure unification fails](topic/structure.20unification.20fails.html) (1 message, latest: Apr 25 2020 at 06:15)
 * [tac1;{tac2, tac3}](topic/tac1.3B.7Btac2.2C.20tac3.7D.html) (22 messages, latest: Apr 25 2020 at 01:06)
 * [class instance unification fails](topic/class.20instance.20unification.20fails.html) (14 messages, latest: Apr 24 2020 at 23:12)
@@ -2719,4 +2720,4 @@ permalink: /stream/113488-general/index.html
 * [test](topic/test.html) (4 messages, latest: Feb 26 2018 at 16:22)
 * [welcome](topic/welcome.html) (1 message, latest: Feb 26 2018 at 16:02)
 
-<hr><p>Last updated: Apr 28 2020 at 12:04 UTC</p>
+<hr><p>Last updated: Apr 28 2020 at 13:03 UTC</p>

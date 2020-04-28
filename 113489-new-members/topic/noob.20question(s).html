@@ -34949,6 +34949,409 @@ but is expected to have type<br>
 
 
 
+<a name="195556525"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113489-new%20members/topic/noob%20question%28s%29/near/195556525" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Stephanie Zhou <a href="https://leanprover-community.github.io/archive/stream/113489-new-members/topic/noob.20question(s).html#195556525">(Apr 28 2020 at 12:36)</a>:</h4>
+<p>Is there any reason why by_library search would not work anymore? About halfway through my proof, Lean just doesn't seem to recognize the command anymore.</p>
+
+
+
+<a name="195556991"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113489-new%20members/topic/noob%20question%28s%29/near/195556991" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Kevin Buzzard <a href="https://leanprover-community.github.io/archive/stream/113489-new-members/topic/noob.20question(s).html#195556991">(Apr 28 2020 at 12:40)</a>:</h4>
+<p>What is the first error in your file?</p>
+
+
+
+<a name="195557108"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113489-new%20members/topic/noob%20question%28s%29/near/195557108" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Reid Barton <a href="https://leanprover-community.github.io/archive/stream/113489-new-members/topic/noob.20question(s).html#195557108">(Apr 28 2020 at 12:41)</a>:</h4>
+<p>Are you actually writing <code>by_library search</code>, or <code>by library_search</code>?</p>
+
+
+
+<a name="195557231"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113489-new%20members/topic/noob%20question%28s%29/near/195557231" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Stephanie Zhou <a href="https://leanprover-community.github.io/archive/stream/113489-new-members/topic/noob.20question(s).html#195557231">(Apr 28 2020 at 12:42)</a>:</h4>
+<p>It's at the very end, which is just "tactic failed, there are unsolved goals"</p>
+
+
+
+<a name="195557267"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113489-new%20members/topic/noob%20question%28s%29/near/195557267" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Stephanie Zhou <a href="https://leanprover-community.github.io/archive/stream/113489-new-members/topic/noob.20question(s).html#195557267">(Apr 28 2020 at 12:42)</a>:</h4>
+<p>And yeah, I misspelled, I was writing the latter <span class="user-mention" data-user-id="110032">@Reid Barton</span></p>
+
+
+
+<a name="195557284"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113489-new%20members/topic/noob%20question%28s%29/near/195557284" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Mario Carneiro <a href="https://leanprover-community.github.io/archive/stream/113489-new-members/topic/noob.20question(s).html#195557284">(Apr 28 2020 at 12:42)</a>:</h4>
+<p>you should be writing the latter</p>
+
+
+
+<a name="195557368"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113489-new%20members/topic/noob%20question%28s%29/near/195557368" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Mario Carneiro <a href="https://leanprover-community.github.io/archive/stream/113489-new-members/topic/noob.20question(s).html#195557368">(Apr 28 2020 at 12:43)</a>:</h4>
+<p>what error do you get when you write it?</p>
+
+
+
+<a name="195557680"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113489-new%20members/topic/noob%20question%28s%29/near/195557680" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Stephanie Zhou <a href="https://leanprover-community.github.io/archive/stream/113489-new-members/topic/noob.20question(s).html#195557680">(Apr 28 2020 at 12:46)</a>:</h4>
+<p>Unknown identifier "library_search"</p>
+
+
+
+<a name="195557773"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113489-new%20members/topic/noob%20question%28s%29/near/195557773" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Kevin Buzzard <a href="https://leanprover-community.github.io/archive/stream/113489-new-members/topic/noob.20question(s).html#195557773">(Apr 28 2020 at 12:46)</a>:</h4>
+<p>Are you in tactic mode? Can you just post code instead of making us play this guessing game?</p>
+
+
+
+<a name="195557799"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113489-new%20members/topic/noob%20question%28s%29/near/195557799" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Kevin Buzzard <a href="https://leanprover-community.github.io/archive/stream/113489-new-members/topic/noob.20question(s).html#195557799">(Apr 28 2020 at 12:46)</a>:</h4>
+<p>Post fully working code so we can all see the error</p>
+
+
+
+<a name="195558037"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113489-new%20members/topic/noob%20question%28s%29/near/195558037" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Stephanie Zhou <a href="https://leanprover-community.github.io/archive/stream/113489-new-members/topic/noob.20question(s).html#195558037">(Apr 28 2020 at 12:48)</a>:</h4>
+<p>Okay, should I post the whole thing or a screenshot? How should I do it?</p>
+
+
+
+<a name="195558086"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113489-new%20members/topic/noob%20question%28s%29/near/195558086" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Kevin Buzzard <a href="https://leanprover-community.github.io/archive/stream/113489-new-members/topic/noob.20question(s).html#195558086">(Apr 28 2020 at 12:49)</a>:</h4>
+<div class="codehilite"><pre><span></span><code><span class="bp">```</span>
+<span class="bp">&lt;</span><span class="n">paste</span> <span class="n">code</span> <span class="n">here</span><span class="bp">&gt;</span>
+<span class="bp">```</span>
+</code></pre></div>
+
+
+
+<a name="195558148"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113489-new%20members/topic/noob%20question%28s%29/near/195558148" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Stephanie Zhou <a href="https://leanprover-community.github.io/archive/stream/113489-new-members/topic/noob.20question(s).html#195558148">(Apr 28 2020 at 12:49)</a>:</h4>
+<div class="codehilite"><pre><span></span><code><span class="kn">import</span> <span class="n">analysis</span><span class="bp">.</span><span class="n">normed_space</span><span class="bp">.</span><span class="n">basic</span>
+<span class="kn">import</span> <span class="n">topology</span><span class="bp">.</span><span class="n">instances</span><span class="bp">.</span><span class="n">ennreal</span>
+<span class="kn">import</span> <span class="n">analysis</span><span class="bp">.</span><span class="n">normed_space</span><span class="bp">.</span><span class="n">basic</span>
+<span class="kn">import</span> <span class="n">topology</span><span class="bp">.</span><span class="n">instances</span><span class="bp">.</span><span class="n">ennreal</span>
+<span class="kn">import</span> <span class="n">algebra</span><span class="bp">.</span><span class="n">archimedean</span> <span class="n">algebra</span><span class="bp">.</span><span class="n">geom_sum</span>
+<span class="kn">import</span> <span class="n">data</span><span class="bp">.</span><span class="n">nat</span><span class="bp">.</span><span class="n">choose</span> <span class="n">data</span><span class="bp">.</span><span class="n">complex</span><span class="bp">.</span><span class="n">basic</span>
+<span class="kn">import</span> <span class="n">tactic</span><span class="bp">.</span><span class="n">linarith</span>
+<span class="kn">import</span> <span class="n">analysis</span><span class="bp">.</span><span class="n">calculus</span><span class="bp">.</span><span class="n">deriv</span>
+<span class="kn">import</span> <span class="n">data</span><span class="bp">.</span><span class="n">complex</span><span class="bp">.</span><span class="n">exponential</span>
+
+<span class="kn">open</span> <span class="n">finset</span>
+<span class="kn">open</span> <span class="n">cau_seq</span>
+<span class="kn">namespace</span> <span class="n">complex</span>
+<span class="n">noncomputable</span> <span class="n">theory</span>
+
+
+<span class="kn">lemma</span> <span class="n">is_cau_abs_cos</span> <span class="o">(</span><span class="n">z</span> <span class="o">:</span> <span class="n">ℂ</span><span class="o">)</span> <span class="o">:</span> <span class="n">is_cau_seq</span> <span class="bp">_</span><span class="n">root_</span><span class="bp">.</span><span class="n">abs</span>
+  <span class="o">(</span><span class="bp">λ</span> <span class="n">n</span><span class="o">,</span> <span class="o">(</span><span class="n">range</span> <span class="n">n</span><span class="o">)</span><span class="bp">.</span><span class="n">sum</span> <span class="o">(</span><span class="bp">λ</span> <span class="n">m</span><span class="o">,</span> <span class="n">abs</span> <span class="o">(</span>
+      <span class="o">((</span><span class="bp">-</span><span class="mi">1</span><span class="o">)</span> <span class="bp">^</span> <span class="n">m</span><span class="o">)</span> <span class="bp">*</span> <span class="n">z</span> <span class="bp">^</span> <span class="o">(</span><span class="mi">2</span> <span class="bp">*</span> <span class="n">m</span> <span class="o">)</span> <span class="bp">/</span> <span class="n">nat</span><span class="bp">.</span><span class="n">fact</span> <span class="o">(</span><span class="mi">2</span> <span class="bp">*</span> <span class="n">m</span> <span class="o">))))</span> <span class="o">:=</span>
+<span class="k">begin</span>
+<span class="n">sorry</span><span class="o">,</span>
+<span class="kn">end</span>
+
+<span class="kn">lemma</span> <span class="n">is_cau_abs_sin</span> <span class="o">(</span><span class="n">z</span> <span class="o">:</span> <span class="n">ℂ</span><span class="o">)</span> <span class="o">:</span> <span class="n">is_cau_seq</span> <span class="bp">_</span><span class="n">root_</span><span class="bp">.</span><span class="n">abs</span>
+  <span class="o">(</span><span class="bp">λ</span> <span class="n">n</span><span class="o">,</span> <span class="o">(</span><span class="n">range</span> <span class="n">n</span><span class="o">)</span><span class="bp">.</span><span class="n">sum</span> <span class="o">(</span><span class="bp">λ</span> <span class="n">m</span><span class="o">,</span> <span class="n">abs</span> <span class="o">(</span>
+      <span class="o">((</span><span class="bp">-</span><span class="mi">1</span><span class="o">)</span> <span class="bp">^</span> <span class="n">m</span><span class="o">)</span> <span class="bp">*</span> <span class="n">z</span> <span class="bp">^</span> <span class="o">(</span><span class="mi">2</span> <span class="bp">*</span> <span class="n">m</span> <span class="bp">+</span> <span class="mi">1</span><span class="o">)</span> <span class="bp">/</span> <span class="n">nat</span><span class="bp">.</span><span class="n">fact</span> <span class="o">(</span><span class="mi">2</span> <span class="bp">*</span> <span class="n">m</span> <span class="bp">+</span> <span class="mi">1</span><span class="o">))))</span> <span class="o">:=</span>
+<span class="k">begin</span>
+<span class="n">sorry</span><span class="o">,</span>
+<span class="c">/-</span><span class="cm"></span>
+<span class="cm">let ⟨n, hn⟩ := exists_nat_gt (abs z) in</span>
+<span class="cm">have hn0 : (0 : ℝ) &lt; n, from lt_of_le_of_lt (abs_nonneg _) hn,</span>
+<span class="cm">series_ratio_test n (complex.abs z / n)</span>
+<span class="cm">(div_nonneg_of_nonneg_of_pos (complex.abs_nonneg _) hn0)</span>
+<span class="cm">  (by rwa [div_lt_iff hn0, one_mul])</span>
+<span class="cm">  (λ m hm,</span>
+<span class="cm">    by rw [abs_abs, abs_abs, nat.fact_succ, pow_succ,</span>
+<span class="cm">      mul_comm m.succ, nat.cast_mul, ← div_div_eq_div_mul, mul_div_assoc,</span>
+<span class="cm">      mul_div_right_comm, abs_mul, abs_div, abs_cast_nat];</span>
+<span class="cm">    exact mul_le_mul_of_nonneg_right</span>
+<span class="cm">      (div_le_div_of_le_left (abs_nonneg _) hn0</span>
+<span class="cm">        (nat.cast_le.2 (le_trans hm (nat.le_succ _)))) (abs_nonneg _))</span>
+<span class="cm">-/</span>
+<span class="kn">end</span>
+
+<span class="kn">lemma</span> <span class="n">is_cau_sin</span> <span class="o">(</span><span class="n">z</span> <span class="o">:</span> <span class="n">ℂ</span><span class="o">)</span> <span class="o">:</span>
+ <span class="n">is_cau_seq</span> <span class="n">abs</span> <span class="o">(</span><span class="bp">λ</span> <span class="n">n</span><span class="o">,</span> <span class="o">(</span><span class="n">range</span> <span class="n">n</span><span class="o">)</span><span class="bp">.</span><span class="n">sum</span> <span class="o">(</span><span class="bp">λ</span> <span class="n">m</span><span class="o">,</span>
+ <span class="o">((</span><span class="bp">-</span><span class="mi">1</span><span class="o">)</span> <span class="bp">^</span> <span class="n">m</span><span class="o">)</span> <span class="bp">*</span> <span class="n">z</span> <span class="bp">^</span> <span class="o">(</span><span class="mi">2</span> <span class="bp">*</span> <span class="n">m</span> <span class="bp">+</span> <span class="mi">1</span><span class="o">)</span> <span class="bp">/</span> <span class="n">nat</span><span class="bp">.</span><span class="n">fact</span> <span class="o">(</span><span class="mi">2</span> <span class="bp">*</span> <span class="n">m</span> <span class="bp">+</span> <span class="mi">1</span><span class="o">)))</span>
+<span class="o">:=</span>
+<span class="k">begin</span>
+    <span class="n">exact</span> <span class="n">is_cau_series_of_abv_cau</span> <span class="o">(</span><span class="n">is_cau_abs_sin</span> <span class="n">z</span><span class="o">),</span>
+<span class="kn">end</span>
+
+<span class="kn">lemma</span> <span class="n">is_cau_cos</span> <span class="o">(</span><span class="n">z</span> <span class="o">:</span> <span class="n">ℂ</span><span class="o">)</span> <span class="o">:</span>
+ <span class="n">is_cau_seq</span> <span class="n">abs</span> <span class="o">(</span><span class="bp">λ</span> <span class="n">n</span><span class="o">,</span> <span class="o">(</span><span class="n">range</span> <span class="n">n</span><span class="o">)</span><span class="bp">.</span><span class="n">sum</span> <span class="o">(</span><span class="bp">λ</span> <span class="n">m</span><span class="o">,</span>
+ <span class="o">((</span><span class="bp">-</span><span class="mi">1</span><span class="o">)</span> <span class="bp">^</span> <span class="n">m</span><span class="o">)</span> <span class="bp">*</span> <span class="n">z</span> <span class="bp">^</span> <span class="o">(</span><span class="mi">2</span> <span class="bp">*</span> <span class="n">m</span> <span class="o">)</span> <span class="bp">/</span> <span class="n">nat</span><span class="bp">.</span><span class="n">fact</span> <span class="o">(</span><span class="mi">2</span> <span class="bp">*</span> <span class="n">m</span><span class="o">)))</span>
+<span class="o">:=</span>
+<span class="k">begin</span>
+    <span class="n">exact</span> <span class="n">is_cau_series_of_abv_cau</span> <span class="o">(</span><span class="n">is_cau_abs_cos</span> <span class="n">z</span><span class="o">),</span>
+<span class="kn">end</span>
+
+<span class="n">def</span> <span class="n">sin&#39;</span> <span class="o">(</span><span class="n">z</span> <span class="o">:</span> <span class="n">ℂ</span><span class="o">)</span> <span class="o">:</span> <span class="n">cau_seq</span> <span class="n">ℂ</span> <span class="n">complex</span><span class="bp">.</span><span class="n">abs</span> <span class="o">:=</span>
+ <span class="bp">⟨λ</span> <span class="n">n</span><span class="o">,</span> <span class="o">(</span><span class="n">range</span> <span class="n">n</span><span class="o">)</span><span class="bp">.</span><span class="n">sum</span>
+ <span class="o">(</span><span class="bp">λ</span> <span class="n">m</span><span class="o">,</span> <span class="o">((</span><span class="bp">-</span><span class="mi">1</span><span class="o">)</span> <span class="bp">^</span> <span class="n">m</span><span class="o">)</span> <span class="bp">*</span> <span class="n">z</span> <span class="bp">^</span> <span class="o">(</span><span class="mi">2</span> <span class="bp">*</span> <span class="n">m</span> <span class="bp">+</span> <span class="mi">1</span><span class="o">)</span> <span class="bp">/</span> <span class="n">nat</span><span class="bp">.</span><span class="n">fact</span> <span class="o">(</span><span class="mi">2</span> <span class="bp">*</span> <span class="n">m</span> <span class="bp">+</span> <span class="mi">1</span><span class="o">)),</span>
+ <span class="n">is_cau_sin</span> <span class="n">z</span><span class="bp">⟩</span>
+<span class="n">def</span> <span class="n">sin1</span> <span class="o">(</span><span class="n">z</span> <span class="o">:</span> <span class="n">ℂ</span><span class="o">)</span> <span class="o">:</span> <span class="n">ℂ</span> <span class="o">:=</span> <span class="n">lim</span> <span class="o">(</span><span class="n">sin&#39;</span> <span class="n">z</span><span class="o">)</span>
+
+<span class="n">def</span> <span class="n">cos&#39;</span> <span class="o">(</span><span class="n">z</span> <span class="o">:</span> <span class="n">ℂ</span><span class="o">)</span> <span class="o">:</span> <span class="n">cau_seq</span> <span class="n">ℂ</span> <span class="n">complex</span><span class="bp">.</span><span class="n">abs</span> <span class="o">:=</span>
+ <span class="bp">⟨λ</span> <span class="n">n</span><span class="o">,</span> <span class="o">(</span><span class="n">range</span> <span class="n">n</span><span class="o">)</span><span class="bp">.</span><span class="n">sum</span>
+ <span class="o">(</span><span class="bp">λ</span> <span class="n">m</span><span class="o">,</span> <span class="o">(</span><span class="bp">-</span><span class="mi">1</span><span class="o">)</span> <span class="bp">^</span> <span class="n">m</span> <span class="bp">*</span> <span class="n">z</span> <span class="bp">^</span> <span class="o">(</span><span class="mi">2</span> <span class="bp">*</span> <span class="n">m</span><span class="o">)</span> <span class="bp">/</span> <span class="n">nat</span><span class="bp">.</span><span class="n">fact</span> <span class="o">(</span><span class="mi">2</span> <span class="bp">*</span> <span class="n">m</span><span class="o">)),</span>
+ <span class="n">is_cau_cos</span> <span class="n">z</span><span class="bp">⟩</span>
+<span class="n">def</span> <span class="n">cos1</span> <span class="o">(</span><span class="n">z</span> <span class="o">:</span> <span class="n">ℂ</span><span class="o">)</span> <span class="o">:</span> <span class="n">ℂ</span> <span class="o">:=</span> <span class="n">lim</span> <span class="o">(</span><span class="n">cos&#39;</span> <span class="n">z</span><span class="o">)</span>
+
+<span class="kn">theorem</span> <span class="n">euler</span> <span class="o">:</span> <span class="bp">∀</span> <span class="n">x</span><span class="o">,</span> <span class="n">exp</span> <span class="o">(</span><span class="n">x</span> <span class="bp">*</span> <span class="n">I</span><span class="o">)</span> <span class="bp">=</span> <span class="n">cos1</span> <span class="n">x</span> <span class="bp">+</span> <span class="n">sin1</span> <span class="n">x</span> <span class="bp">*</span> <span class="n">I</span>
+<span class="o">:=</span>
+<span class="k">begin</span>
+    <span class="n">intros</span><span class="o">,</span>
+
+    <span class="k">have</span> <span class="n">partials</span><span class="o">:</span> <span class="bp">∀</span> <span class="n">n</span><span class="o">:</span><span class="bp">ℕ</span> <span class="o">,</span> <span class="o">(</span><span class="n">exp&#39;</span> <span class="o">(</span><span class="n">x</span><span class="bp">*</span><span class="n">I</span><span class="o">))</span><span class="bp">.</span><span class="mi">1</span> <span class="o">(</span><span class="mi">2</span><span class="bp">*</span><span class="n">n</span><span class="bp">+</span><span class="mi">1</span><span class="o">)</span> <span class="bp">=</span>
+     <span class="o">(</span><span class="n">cos&#39;</span> <span class="n">x</span><span class="o">)</span><span class="bp">.</span><span class="mi">1</span> <span class="o">(</span><span class="n">n</span><span class="bp">+</span><span class="mi">1</span><span class="o">)</span> <span class="bp">+</span> <span class="o">((</span><span class="n">sin&#39;</span> <span class="n">x</span><span class="o">)</span><span class="bp">.</span><span class="mi">1</span> <span class="n">n</span><span class="o">)</span> <span class="bp">*</span> <span class="n">I</span><span class="o">,</span>
+    <span class="o">{</span>
+        <span class="n">intros</span><span class="o">,</span>
+        <span class="n">rw</span> <span class="n">exp&#39;</span><span class="o">,</span>
+        <span class="n">simp</span><span class="o">,</span>
+        <span class="n">rw</span> <span class="n">cos&#39;</span><span class="o">,</span>
+        <span class="n">simp</span><span class="o">,</span>
+        <span class="n">rw</span> <span class="n">sin&#39;</span><span class="o">,</span>
+        <span class="n">simp</span><span class="o">,</span>
+
+        <span class="n">induction</span> <span class="n">n</span> <span class="k">with</span> <span class="n">n0</span> <span class="n">hn</span><span class="o">,</span>
+        <span class="o">{</span> <span class="c1">-- case n0=0</span>
+            <span class="n">simp</span><span class="o">,</span>
+        <span class="o">},</span>
+        <span class="o">{</span> <span class="c1">-- induction on n0</span>
+            <span class="n">rw</span> <span class="n">sum_range_succ</span> <span class="bp">_</span> <span class="bp">_</span><span class="o">,</span> <span class="c1">-- takes out last term in cos</span>
+            <span class="k">have</span> <span class="n">lastSin</span> <span class="o">:</span>
+            <span class="n">sum</span> <span class="o">(</span><span class="n">range</span> <span class="o">(</span><span class="n">nat</span><span class="bp">.</span><span class="n">succ</span> <span class="n">n0</span><span class="o">))</span> <span class="o">(</span><span class="bp">λ</span> <span class="o">(</span><span class="n">x_1</span> <span class="o">:</span> <span class="bp">ℕ</span><span class="o">),</span> <span class="o">(</span><span class="bp">-</span><span class="mi">1</span><span class="o">)</span> <span class="bp">^</span> <span class="n">x_1</span> <span class="bp">*</span> <span class="n">x</span> <span class="bp">^</span> <span class="o">(</span><span class="mi">1</span> <span class="bp">+</span> <span class="mi">2</span> <span class="bp">*</span> <span class="n">x_1</span><span class="o">)</span> <span class="bp">/</span> <span class="err">↑</span><span class="o">(</span><span class="n">nat</span><span class="bp">.</span><span class="n">fact</span> <span class="o">(</span><span class="mi">1</span> <span class="bp">+</span> <span class="mi">2</span> <span class="bp">*</span> <span class="n">x_1</span><span class="o">)))</span>
+            <span class="bp">=</span>
+            <span class="o">(</span><span class="bp">-</span><span class="mi">1</span><span class="o">)</span> <span class="bp">^</span> <span class="n">n0</span> <span class="bp">*</span> <span class="n">x</span> <span class="bp">^</span> <span class="o">(</span><span class="mi">1</span> <span class="bp">+</span> <span class="mi">2</span> <span class="bp">*</span> <span class="n">n0</span><span class="o">)</span> <span class="bp">/</span> <span class="err">↑</span><span class="o">(</span><span class="n">nat</span><span class="bp">.</span><span class="n">fact</span> <span class="o">(</span><span class="mi">1</span> <span class="bp">+</span> <span class="mi">2</span> <span class="bp">*</span> <span class="n">n0</span><span class="o">))</span>
+            <span class="bp">+</span>
+            <span class="n">sum</span> <span class="o">(</span><span class="n">range</span> <span class="o">(</span><span class="n">n0</span><span class="o">))</span> <span class="o">(</span><span class="bp">λ</span> <span class="o">(</span><span class="n">x_1</span> <span class="o">:</span> <span class="bp">ℕ</span><span class="o">),</span> <span class="o">(</span><span class="bp">-</span><span class="mi">1</span><span class="o">)</span> <span class="bp">^</span> <span class="n">x_1</span> <span class="bp">*</span> <span class="n">x</span> <span class="bp">^</span> <span class="o">(</span><span class="mi">1</span> <span class="bp">+</span> <span class="mi">2</span> <span class="bp">*</span> <span class="n">x_1</span><span class="o">)</span> <span class="bp">/</span> <span class="err">↑</span><span class="o">(</span><span class="n">nat</span><span class="bp">.</span><span class="n">fact</span> <span class="o">(</span><span class="mi">1</span> <span class="bp">+</span> <span class="mi">2</span> <span class="bp">*</span> <span class="n">x_1</span><span class="o">)))</span>
+            <span class="o">,</span>
+            <span class="o">{</span>
+              <span class="n">rw</span> <span class="n">sum_range_succ</span> <span class="bp">_</span> <span class="bp">_</span><span class="o">,</span>
+            <span class="o">},</span>
+            <span class="k">have</span> <span class="n">sinFactorial</span> <span class="o">:</span>
+            <span class="n">sum</span> <span class="o">(</span><span class="n">range</span> <span class="o">(</span><span class="n">nat</span><span class="bp">.</span><span class="n">succ</span> <span class="n">n0</span><span class="o">))</span> <span class="o">(</span><span class="bp">λ</span> <span class="o">(</span><span class="n">x_1</span> <span class="o">:</span> <span class="bp">ℕ</span><span class="o">),</span> <span class="o">(</span><span class="bp">-</span><span class="mi">1</span><span class="o">)</span> <span class="bp">^</span> <span class="n">x_1</span> <span class="bp">*</span> <span class="n">x</span> <span class="bp">^</span> <span class="o">(</span><span class="mi">2</span> <span class="bp">*</span> <span class="n">x_1</span> <span class="bp">+</span> <span class="mi">1</span><span class="o">)</span> <span class="bp">/</span> <span class="o">((</span><span class="mi">2</span> <span class="bp">*</span> <span class="err">↑</span><span class="n">x_1</span> <span class="bp">+</span> <span class="mi">1</span><span class="o">)</span> <span class="bp">*</span> <span class="err">↑</span><span class="o">(</span><span class="n">nat</span><span class="bp">.</span><span class="n">fact</span> <span class="o">(</span><span class="mi">2</span> <span class="bp">*</span> <span class="n">x_1</span><span class="o">))))</span>
+            <span class="bp">=</span>
+            <span class="n">sum</span> <span class="o">(</span><span class="n">range</span> <span class="o">(</span><span class="n">nat</span><span class="bp">.</span><span class="n">succ</span> <span class="n">n0</span><span class="o">))</span> <span class="o">(</span><span class="bp">λ</span> <span class="o">(</span><span class="n">x_1</span> <span class="o">:</span> <span class="bp">ℕ</span><span class="o">),</span> <span class="o">(</span><span class="bp">-</span><span class="mi">1</span><span class="o">)</span> <span class="bp">^</span> <span class="n">x_1</span> <span class="bp">*</span> <span class="n">x</span> <span class="bp">^</span> <span class="o">(</span><span class="mi">1</span> <span class="bp">+</span> <span class="mi">2</span> <span class="bp">*</span> <span class="n">x_1</span><span class="o">)</span> <span class="bp">/</span> <span class="err">↑</span><span class="o">(</span><span class="n">nat</span><span class="bp">.</span><span class="n">fact</span> <span class="o">(</span><span class="mi">1</span> <span class="bp">+</span> <span class="mi">2</span> <span class="bp">*</span> <span class="n">x_1</span><span class="o">))),</span>
+            <span class="o">{</span>
+              <span class="n">sorry</span><span class="o">,</span>
+              <span class="c1">--lean should fucking know this!</span>
+            <span class="o">},</span>
+            <span class="n">rw</span> <span class="n">sinFactorial</span><span class="o">,</span>
+            <span class="n">rw</span> <span class="n">lastSin</span><span class="o">,</span>
+
+            <span class="k">have</span> <span class="n">twoFromExp</span><span class="o">:</span>
+            <span class="n">sum</span> <span class="o">(</span><span class="n">range</span> <span class="o">(</span><span class="n">nat</span><span class="bp">.</span><span class="n">succ</span> <span class="o">(</span><span class="mi">2</span> <span class="bp">*</span> <span class="n">nat</span><span class="bp">.</span><span class="n">succ</span> <span class="n">n0</span><span class="o">)))</span> <span class="o">(</span><span class="bp">λ</span> <span class="o">(</span><span class="n">x_1</span> <span class="o">:</span> <span class="bp">ℕ</span><span class="o">),</span>
+            <span class="o">(</span><span class="n">x</span> <span class="bp">*</span> <span class="n">I</span><span class="o">)</span> <span class="bp">^</span> <span class="n">x_1</span> <span class="bp">/</span> <span class="err">↑</span><span class="o">(</span><span class="n">nat</span><span class="bp">.</span><span class="n">fact</span> <span class="n">x_1</span><span class="o">))</span>
+            <span class="bp">=</span>
+            <span class="o">(</span><span class="n">x</span> <span class="bp">*</span> <span class="n">I</span><span class="o">)</span> <span class="bp">^</span> <span class="o">(</span> <span class="mi">2</span> <span class="bp">*</span> <span class="n">nat</span><span class="bp">.</span><span class="n">succ</span> <span class="n">n0</span><span class="o">)</span> <span class="bp">/</span> <span class="err">↑</span><span class="o">(</span><span class="n">nat</span><span class="bp">.</span><span class="n">fact</span> <span class="o">(</span> <span class="mi">2</span> <span class="bp">*</span> <span class="n">nat</span><span class="bp">.</span><span class="n">succ</span> <span class="n">n0</span><span class="o">))</span><span class="bp">+</span>
+            <span class="n">sum</span> <span class="o">(</span><span class="n">range</span> <span class="o">(</span> <span class="mi">2</span> <span class="bp">*</span> <span class="n">nat</span><span class="bp">.</span><span class="n">succ</span> <span class="n">n0</span><span class="o">))</span> <span class="o">(</span><span class="bp">λ</span> <span class="o">(</span><span class="n">x_1</span> <span class="o">:</span> <span class="bp">ℕ</span><span class="o">),</span>
+            <span class="o">(</span><span class="n">x</span> <span class="bp">*</span> <span class="n">I</span><span class="o">)</span> <span class="bp">^</span> <span class="n">x_1</span> <span class="bp">/</span> <span class="err">↑</span><span class="o">(</span><span class="n">nat</span><span class="bp">.</span><span class="n">fact</span> <span class="n">x_1</span><span class="o">))</span>
+            <span class="o">,</span>
+            <span class="o">{</span>
+              <span class="n">rw</span> <span class="n">sum_range_succ</span> <span class="bp">_</span> <span class="o">(</span> <span class="mi">2</span> <span class="bp">*</span> <span class="n">nat</span><span class="bp">.</span><span class="n">succ</span> <span class="n">n0</span><span class="o">),</span>
+            <span class="o">},</span>
+            <span class="k">have</span> <span class="n">twoFromExpv1</span> <span class="o">:</span>
+            <span class="o">(</span><span class="n">x</span> <span class="bp">*</span> <span class="n">I</span><span class="o">)</span> <span class="bp">^</span> <span class="o">(</span> <span class="mi">2</span> <span class="bp">*</span> <span class="n">nat</span><span class="bp">.</span><span class="n">succ</span> <span class="n">n0</span><span class="o">)</span> <span class="bp">/</span> <span class="err">↑</span><span class="o">(</span><span class="n">nat</span><span class="bp">.</span><span class="n">fact</span> <span class="o">(</span> <span class="mi">2</span> <span class="bp">*</span> <span class="n">nat</span><span class="bp">.</span><span class="n">succ</span> <span class="n">n0</span><span class="o">))</span><span class="bp">+</span><span class="n">sum</span> <span class="o">(</span><span class="n">range</span> <span class="o">(</span> <span class="mi">2</span> <span class="bp">*</span> <span class="n">nat</span><span class="bp">.</span><span class="n">succ</span> <span class="n">n0</span><span class="o">))</span> <span class="o">(</span><span class="bp">λ</span> <span class="o">(</span><span class="n">x_1</span> <span class="o">:</span> <span class="bp">ℕ</span><span class="o">),</span> <span class="o">(</span><span class="n">x</span> <span class="bp">*</span> <span class="n">I</span><span class="o">)</span> <span class="bp">^</span> <span class="n">x_1</span> <span class="bp">/</span> <span class="err">↑</span><span class="o">(</span><span class="n">nat</span><span class="bp">.</span><span class="n">fact</span> <span class="n">x_1</span><span class="o">))</span>
+            <span class="bp">=</span>
+            <span class="n">sum</span> <span class="o">(</span><span class="n">range</span> <span class="o">(</span><span class="n">nat</span><span class="bp">.</span><span class="n">succ</span> <span class="o">(</span><span class="mi">2</span> <span class="bp">*</span> <span class="n">nat</span><span class="bp">.</span><span class="n">succ</span> <span class="n">n0</span><span class="o">)))</span> <span class="o">(</span><span class="bp">λ</span> <span class="o">(</span><span class="n">x_1</span> <span class="o">:</span> <span class="bp">ℕ</span><span class="o">),</span>
+            <span class="o">(</span><span class="n">x</span> <span class="bp">*</span> <span class="n">I</span><span class="o">)</span> <span class="bp">^</span> <span class="n">x_1</span> <span class="bp">/</span> <span class="err">↑</span><span class="o">(</span><span class="n">nat</span><span class="bp">.</span><span class="n">fact</span> <span class="n">x_1</span><span class="o">)),</span>
+             <span class="o">{</span>
+               <span class="k">by</span> <span class="n">exact</span> <span class="n">eq</span><span class="bp">.</span><span class="n">symm</span> <span class="n">twoFromExp</span><span class="o">,</span>
+             <span class="o">},</span>
+
+            <span class="k">have</span> <span class="n">twoNP1</span> <span class="o">:</span> <span class="mi">1</span><span class="bp">+</span> <span class="o">(</span><span class="mi">2</span> <span class="bp">*</span> <span class="n">nat</span><span class="bp">.</span><span class="n">succ</span> <span class="n">n0</span><span class="o">)</span> <span class="bp">=</span><span class="n">nat</span><span class="bp">.</span><span class="n">succ</span> <span class="o">(</span><span class="mi">2</span> <span class="bp">*</span> <span class="n">nat</span><span class="bp">.</span><span class="n">succ</span> <span class="n">n0</span><span class="o">)</span>
+            <span class="o">,</span>
+            <span class="o">{</span>
+              <span class="n">exact</span> <span class="n">add_comm</span> <span class="mi">1</span> <span class="o">(</span><span class="mi">2</span> <span class="bp">*</span> <span class="n">nat</span><span class="bp">.</span><span class="n">succ</span> <span class="n">n0</span><span class="o">),</span>
+            <span class="o">},</span>
+
+            <span class="k">have</span> <span class="n">twoNP1v1</span> <span class="o">:</span> <span class="n">nat</span><span class="bp">.</span><span class="n">succ</span> <span class="o">(</span> <span class="mi">2</span> <span class="bp">*</span> <span class="n">nat</span><span class="bp">.</span><span class="n">succ</span> <span class="n">n0</span><span class="o">)</span> <span class="bp">=</span> <span class="mi">1</span> <span class="bp">+</span> <span class="o">(</span><span class="mi">2</span> <span class="bp">*</span> <span class="n">nat</span><span class="bp">.</span><span class="n">succ</span> <span class="n">n0</span><span class="o">),</span>
+            <span class="o">{</span>
+              <span class="k">by</span> <span class="n">exact</span> <span class="n">eq</span><span class="bp">.</span><span class="n">symm</span> <span class="n">twoNP1</span><span class="o">,</span>
+            <span class="o">},</span>
+
+            <span class="c1">--rw twoNP1v1,</span>
+            <span class="n">rw</span> <span class="n">twoFromExpv1</span><span class="o">,</span>
+
+            <span class="k">have</span> <span class="n">oneFromExp</span><span class="o">:</span>
+            <span class="n">sum</span> <span class="o">(</span><span class="n">range</span> <span class="o">(</span><span class="mi">2</span> <span class="bp">*</span> <span class="n">nat</span><span class="bp">.</span><span class="n">succ</span> <span class="n">n0</span><span class="o">))</span> <span class="o">(</span><span class="bp">λ</span> <span class="o">(</span><span class="n">x_1</span> <span class="o">:</span> <span class="bp">ℕ</span><span class="o">),</span> <span class="o">(</span><span class="n">x</span> <span class="bp">*</span> <span class="n">I</span><span class="o">)</span> <span class="bp">^</span> <span class="n">x_1</span> <span class="bp">/</span> <span class="err">↑</span><span class="o">(</span><span class="n">nat</span><span class="bp">.</span><span class="n">fact</span> <span class="n">x_1</span><span class="o">))</span>
+            <span class="bp">=</span>
+            <span class="o">(</span><span class="n">x</span> <span class="bp">*</span> <span class="n">I</span><span class="o">)</span> <span class="bp">^</span> <span class="o">(</span><span class="mi">1</span><span class="bp">+</span><span class="mi">2</span> <span class="bp">*</span> <span class="n">n0</span><span class="o">)</span> <span class="bp">/</span> <span class="err">↑</span><span class="o">(</span><span class="n">nat</span><span class="bp">.</span><span class="n">fact</span> <span class="o">(</span><span class="mi">1</span><span class="bp">+</span><span class="mi">2</span> <span class="bp">*</span> <span class="n">n0</span><span class="o">))</span>
+            <span class="bp">+</span>
+            <span class="n">sum</span> <span class="o">(</span><span class="n">range</span> <span class="o">(</span><span class="mi">1</span><span class="bp">+</span> <span class="mi">2</span> <span class="bp">*</span> <span class="n">n0</span><span class="o">))</span> <span class="o">(</span><span class="bp">λ</span> <span class="o">(</span><span class="n">x_1</span> <span class="o">:</span> <span class="bp">ℕ</span><span class="o">),</span> <span class="o">(</span><span class="n">x</span> <span class="bp">*</span> <span class="n">I</span><span class="o">)</span> <span class="bp">^</span> <span class="n">x_1</span> <span class="bp">/</span> <span class="err">↑</span><span class="o">(</span><span class="n">nat</span><span class="bp">.</span><span class="n">fact</span> <span class="n">x_1</span><span class="o">))</span>
+            <span class="o">,</span>
+            <span class="o">{</span>
+              <span class="k">have</span> <span class="n">stupid</span> <span class="o">:</span> <span class="mi">2</span> <span class="bp">*</span> <span class="n">nat</span><span class="bp">.</span><span class="n">succ</span> <span class="n">n0</span> <span class="bp">=</span> <span class="n">nat</span><span class="bp">.</span><span class="n">succ</span><span class="o">(</span><span class="mi">1</span><span class="bp">+</span><span class="mi">2</span><span class="bp">*</span><span class="n">n0</span><span class="o">),</span>
+              <span class="o">{</span>
+                <span class="k">have</span> <span class="n">RRS</span> <span class="o">:</span> <span class="n">nat</span><span class="bp">.</span><span class="n">succ</span><span class="o">(</span><span class="mi">1</span><span class="bp">+</span><span class="mi">2</span><span class="bp">*</span><span class="n">n0</span><span class="o">)</span> <span class="bp">=</span> <span class="mi">1</span><span class="bp">+</span><span class="o">(</span><span class="mi">1</span><span class="bp">+</span><span class="mi">2</span><span class="bp">*</span><span class="n">n0</span><span class="o">)</span> <span class="o">,</span>
+                <span class="o">{</span>
+                  <span class="n">sorry</span><span class="o">,</span>
+                <span class="o">},</span>
+                <span class="n">rw</span> <span class="n">RRS</span><span class="o">,</span>
+
+                <span class="k">have</span> <span class="n">realSt</span> <span class="o">:</span> <span class="mi">1</span><span class="bp">+</span><span class="o">(</span><span class="mi">1</span><span class="bp">+</span><span class="mi">2</span><span class="bp">*</span><span class="n">n0</span><span class="o">)</span> <span class="bp">=</span> <span class="mi">1</span><span class="bp">+</span><span class="mi">1</span><span class="bp">+</span><span class="mi">2</span><span class="bp">*</span><span class="n">n0</span><span class="o">,</span>
+                <span class="o">{</span>
+                  <span class="n">simp</span><span class="o">,</span>
+                <span class="o">},</span>
+                <span class="n">rw</span> <span class="n">realSt</span><span class="o">,</span>
+                <span class="n">exact</span> <span class="n">nat</span><span class="bp">.</span><span class="n">add_comm</span> <span class="o">(</span><span class="n">nat</span><span class="bp">.</span><span class="n">mul</span> <span class="mi">2</span> <span class="n">n0</span><span class="o">)</span> <span class="mi">2</span><span class="o">,</span>
+              <span class="o">},</span>
+              <span class="n">rw</span> <span class="n">stupid</span><span class="o">,</span>
+              <span class="n">rw</span> <span class="n">sum_range_succ</span> <span class="bp">_</span> <span class="o">(</span><span class="mi">1</span> <span class="bp">+</span> <span class="mi">2</span> <span class="bp">*</span> <span class="n">n0</span><span class="o">),</span>
+            <span class="o">},</span>
+            <span class="c1">--rw oneFromExp,</span>
+            <span class="c1">--rw hn,</span>
+            <span class="c1">--simp,</span>
+
+            <span class="c1">--  need (x*I)^(2 n0 )= x^(2n0) (-1)^n0 etc, commutativity</span>
+
+            <span class="n">sorry</span><span class="o">,</span>
+            <span class="c1">--ring,</span>
+        <span class="o">},</span>
+    <span class="o">},</span>
+
+    <span class="k">have</span> <span class="n">partialExp</span> <span class="o">:</span> <span class="n">lim</span> <span class="o">(</span><span class="n">exp&#39;</span> <span class="o">(</span><span class="n">x</span> <span class="bp">*</span> <span class="n">I</span><span class="o">))</span> <span class="bp">=</span> <span class="n">exp</span> <span class="o">(</span><span class="n">x</span><span class="bp">*</span><span class="n">I</span><span class="o">),</span>
+    <span class="o">{</span>
+      <span class="n">sorry</span><span class="o">,</span>
+    <span class="o">},</span>
+
+    <span class="n">rw</span> <span class="n">exp</span><span class="o">,</span>
+    <span class="n">rw</span> <span class="n">partialExp</span><span class="o">,</span>
+
+    <span class="c1">-- Now: need to take limits on both sides, they&#39;re same,</span>
+    <span class="c1">-- but need to convince Lean that limit of exp&#39; (2n+1) is same as</span>
+    <span class="c1">-- limit of exp&#39; (n) which is what exp is defined to be</span>
+<span class="kn">end</span>
+
+<span class="kn">end</span> <span class="n">complex</span>
+</code></pre></div>
+
+
+
+<a name="195558313"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113489-new%20members/topic/noob%20question%28s%29/near/195558313" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Kevin Buzzard <a href="https://leanprover-community.github.io/archive/stream/113489-new-members/topic/noob.20question(s).html#195558313">(Apr 28 2020 at 12:51)</a>:</h4>
+<p>I get an error on line 96 but it's not about library_search</p>
+
+
+
+<a name="195558444"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113489-new%20members/topic/noob%20question%28s%29/near/195558444" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Kevin Buzzard <a href="https://leanprover-community.github.io/archive/stream/113489-new-members/topic/noob.20question(s).html#195558444">(Apr 28 2020 at 12:52)</a>:</h4>
+<p>How do I make the error <code>Unknown identifier "library_search"</code> appear on my screen?</p>
+
+
+
+<a name="195558602"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113489-new%20members/topic/noob%20question%28s%29/near/195558602" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Stephanie Zhou <a href="https://leanprover-community.github.io/archive/stream/113489-new-members/topic/noob.20question(s).html#195558602">(Apr 28 2020 at 12:53)</a>:</h4>
+<p>Funny, I sent this code to my professor and he got a different error on a different line, which I didn't see on my computer</p>
+
+
+
+<a name="195558620"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113489-new%20members/topic/noob%20question%28s%29/near/195558620" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Kevin Buzzard <a href="https://leanprover-community.github.io/archive/stream/113489-new-members/topic/noob.20question(s).html#195558620">(Apr 28 2020 at 12:53)</a>:</h4>
+<p>:-)</p>
+
+
+
+<a name="195558628"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113489-new%20members/topic/noob%20question%28s%29/near/195558628" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Stephanie Zhou <a href="https://leanprover-community.github.io/archive/stream/113489-new-members/topic/noob.20question(s).html#195558628">(Apr 28 2020 at 12:53)</a>:</h4>
+<p>I believe after line 88, Lean stops recognizing "by library_search"</p>
+
+
+
+<a name="195558689"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113489-new%20members/topic/noob%20question%28s%29/near/195558689" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Kevin Buzzard <a href="https://leanprover-community.github.io/archive/stream/113489-new-members/topic/noob.20question(s).html#195558689">(Apr 28 2020 at 12:54)</a>:</h4>
+<p>If people use different versions of Lean or mathlib they'll see different errors. Which version of Lean and mathlib are you using? [neither Lean nor mathlib are backwards compatible].</p>
+
+
+
+<a name="195558905"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113489-new%20members/topic/noob%20question%28s%29/near/195558905" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Stephanie Zhou <a href="https://leanprover-community.github.io/archive/stream/113489-new-members/topic/noob.20question(s).html#195558905">(Apr 28 2020 at 12:56)</a>:</h4>
+<p>For lean, it's 0.15.8</p>
+
+
+
+<a name="195558918"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113489-new%20members/topic/noob%20question%28s%29/near/195558918" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Patrick Massot <a href="https://leanprover-community.github.io/archive/stream/113489-new-members/topic/noob.20question(s).html#195558918">(Apr 28 2020 at 12:56)</a>:</h4>
+<p>No, this is the VS code extension version.</p>
+
+
+
+<a name="195558919"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113489-new%20members/topic/noob%20question%28s%29/near/195558919" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Mario Carneiro <a href="https://leanprover-community.github.io/archive/stream/113489-new-members/topic/noob.20question(s).html#195558919">(Apr 28 2020 at 12:56)</a>:</h4>
+<p>??</p>
+
+
+
+<a name="195558970"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113489-new%20members/topic/noob%20question%28s%29/near/195558970" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Kevin Buzzard <a href="https://leanprover-community.github.io/archive/stream/113489-new-members/topic/noob.20question(s).html#195558970">(Apr 28 2020 at 12:56)</a>:</h4>
+<p>You can click on <code>terminal</code> in the bottom window and type <code>lean --version</code></p>
+
+
+
+<a name="195559026"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113489-new%20members/topic/noob%20question%28s%29/near/195559026" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Kevin Buzzard <a href="https://leanprover-community.github.io/archive/stream/113489-new-members/topic/noob.20question(s).html#195559026">(Apr 28 2020 at 12:57)</a>:</h4>
+<p><a href="/user_uploads/3121/Gijf-Z924-TqAarfNUxl4q5z/terminal.png" title="terminal.png">terminal.png</a></p>
+<div class="message_inline_image"><a href="/user_uploads/3121/Gijf-Z924-TqAarfNUxl4q5z/terminal.png" title="terminal.png"><img src="/user_uploads/3121/Gijf-Z924-TqAarfNUxl4q5z/terminal.png"></a></div>
+
+
+
+<a name="195559046"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113489-new%20members/topic/noob%20question%28s%29/near/195559046" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Reid Barton <a href="https://leanprover-community.github.io/archive/stream/113489-new-members/topic/noob.20question(s).html#195559046">(Apr 28 2020 at 12:57)</a>:</h4>
+<p>Presumably if we know the mathlib version, we can work out the Lean version.</p>
+
+
+
+<a name="195559087"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113489-new%20members/topic/noob%20question%28s%29/near/195559087" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Kevin Buzzard <a href="https://leanprover-community.github.io/archive/stream/113489-new-members/topic/noob.20question(s).html#195559087">(Apr 28 2020 at 12:58)</a>:</h4>
+<p>You can "pull up" on the blue bar at the bottom if you don't have this little window</p>
+
+
+
+<a name="195559183"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113489-new%20members/topic/noob%20question%28s%29/near/195559183" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Kevin Buzzard <a href="https://leanprover-community.github.io/archive/stream/113489-new-members/topic/noob.20question(s).html#195559183">(Apr 28 2020 at 12:58)</a>:</h4>
+<p><code>#print lean.version</code> will also do it</p>
+
+
+
+<a name="195559709"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113489-new%20members/topic/noob%20question%28s%29/near/195559709" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Stephanie Zhou <a href="https://leanprover-community.github.io/archive/stream/113489-new-members/topic/noob.20question(s).html#195559709">(Apr 28 2020 at 13:01)</a>:</h4>
+<p>Hm, #print lean.version just gives this</p>
+
+
+
+<a name="195559716"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113489-new%20members/topic/noob%20question%28s%29/near/195559716" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Stephanie Zhou <a href="https://leanprover-community.github.io/archive/stream/113489-new-members/topic/noob.20question(s).html#195559716">(Apr 28 2020 at 13:01)</a>:</h4>
+<p><a href="/user_uploads/3121/OgPqz-dfjGwN7WYyhp7LN4Xv/Capture.PNG" title="Capture.PNG">Capture.PNG</a></p>
+<div class="message_inline_image"><a href="/user_uploads/3121/OgPqz-dfjGwN7WYyhp7LN4Xv/Capture.PNG" title="Capture.PNG"><img src="/user_uploads/3121/OgPqz-dfjGwN7WYyhp7LN4Xv/Capture.PNG"></a></div>
+
+
+
+<a name="195559882"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113489-new%20members/topic/noob%20question%28s%29/near/195559882" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Johan Commelin <a href="https://leanprover-community.github.io/archive/stream/113489-new-members/topic/noob.20question(s).html#195559882">(Apr 28 2020 at 13:02)</a>:</h4>
+<p>Seems like <code>3.7.2</code>, which isn't too old.</p>
+
+
+
+<a name="195559931"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113489-new%20members/topic/noob%20question%28s%29/near/195559931" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Kevin Buzzard <a href="https://leanprover-community.github.io/archive/stream/113489-new-members/topic/noob.20question(s).html#195559931">(Apr 28 2020 at 13:03)</a>:</h4>
+<p>Your code is taking a very long time to compile though. library_search might just be running out of memory.</p>
+
+
+
+<a name="195559982"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113489-new%20members/topic/noob%20question%28s%29/near/195559982" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Reid Barton <a href="https://leanprover-community.github.io/archive/stream/113489-new-members/topic/noob.20question(s).html#195559982">(Apr 28 2020 at 13:03)</a>:</h4>
+<p>Hang on, isn't</p>
+<div class="codehilite"><pre><span></span><code>euler.lean:88:8: error
+invalid expression, unexpected token
+</code></pre></div>
+
+
+<p>an error which occurs earlier than the end of your file, and not "tactic failed, there are unsolved goals"?</p>
+
+
+
 {% endraw %}
 
-<hr><p>Last updated: Apr 28 2020 at 12:04 UTC</p>
+<hr><p>Last updated: Apr 28 2020 at 13:03 UTC</p>

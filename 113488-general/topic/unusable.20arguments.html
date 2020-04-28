@@ -101,6 +101,50 @@ permalink: /stream/113488-general/topic/unusable.20arguments.html
 
 
 
+<a name="195553389"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113488-general/topic/unusable%20arguments/near/195553389" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Reid Barton <a href="https://leanprover-community.github.io/archive/stream/113488-general/topic/unusable.20arguments.html#195553389">(Apr 28 2020 at 12:07)</a>:</h4>
+<p><span class="user-mention silent" data-user-id="110043">Gabriel Ebner</span> <a href="#narrow/stream/113488-general/topic/unusable.20arguments/near/195551441" title="#narrow/stream/113488-general/topic/unusable.20arguments/near/195551441">said</a>:</p>
+<blockquote>
+<p><code>out_param</code> is only necessary at the interface between type-class search and the rest of Lean.  Inside type-class search, everything is an out-param.</p>
+</blockquote>
+<p>Oh wow, that seems super crazy to me (but then I am used to the sensible world of Haskell)</p>
+
+
+
+<a name="195553649"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113488-general/topic/unusable%20arguments/near/195553649" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Reid Barton <a href="https://leanprover-community.github.io/archive/stream/113488-general/topic/unusable.20arguments.html#195553649">(Apr 28 2020 at 12:10)</a>:</h4>
+<p>I feel like this is variable declaration all over again, where ALGOL 60 solved the problem properly and subsequently every dynamic language in the world decided it had a better idea how to do it.</p>
+
+
+
+<a name="195554319"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113488-general/topic/unusable%20arguments/near/195554319" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Gabriel Ebner <a href="https://leanprover-community.github.io/archive/stream/113488-general/topic/unusable.20arguments.html#195554319">(Apr 28 2020 at 12:16)</a>:</h4>
+<p>I guess it explains some of our performance problems.  Unfortunately the powers that be have decided to keep this Prolog-like search in Lean 4.  AFAICT the only real application of this "feature" are the transitive instances for <code>has_coe</code> such as <code>coe_trans</code>.  And Lean 4 isn't getting rid of <code>coe_trans</code> either, so we'll have to live with the <code>coe_coe</code> simp lemma hack.  <span aria-label="disappointed" class="emoji emoji-1f61e" role="img" title="disappointed">:disappointed:</span></p>
+
+
+
+<a name="195556881"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113488-general/topic/unusable%20arguments/near/195556881" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Reid Barton <a href="https://leanprover-community.github.io/archive/stream/113488-general/topic/unusable.20arguments.html#195556881">(Apr 28 2020 at 12:39)</a>:</h4>
+<p>Well, I'd prefer an efficient, predictable, and dumb procedure over what we have in Lean 3. The dumb part is not a requirement <span aria-label="upside down" class="emoji emoji-1f643" role="img" title="upside down">:upside_down:</span> We'll see how well the Lean 4 approach works when we start using it.</p>
+
+
+
+<a name="195557251"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113488-general/topic/unusable%20arguments/near/195557251" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Kevin Buzzard <a href="https://leanprover-community.github.io/archive/stream/113488-general/topic/unusable.20arguments.html#195557251">(Apr 28 2020 at 12:42)</a>:</h4>
+<p><span class="user-mention silent" data-user-id="110043">Gabriel Ebner</span> <a href="#narrow/stream/113488-general/topic/unusable.20arguments/near/195554319" title="#narrow/stream/113488-general/topic/unusable.20arguments/near/195554319">said</a>:</p>
+<blockquote>
+<p>Unfortunately the powers that be have decided to keep this Prolog-like search in Lean 4. </p>
+</blockquote>
+<p>Maybe it's time for a fork!</p>
+
+
+
+<a name="195557563"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113488-general/topic/unusable%20arguments/near/195557563" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Reid Barton <a href="https://leanprover-community.github.io/archive/stream/113488-general/topic/unusable.20arguments.html#195557563">(Apr 28 2020 at 12:45)</a>:</h4>
+<p>Lean 4.0.0-beta-1-c-alpha?</p>
+
+
+
 {% endraw %}
 
-<hr><p>Last updated: Apr 28 2020 at 12:04 UTC</p>
+<hr><p>Last updated: Apr 28 2020 at 13:03 UTC</p>
