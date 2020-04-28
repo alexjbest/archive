@@ -9,8 +9,9 @@ permalink: /stream/113489-new-members/index.html
 
 ### Topics:
 
+* [bezout](topic/bezout.html) (30 messages, latest: Apr 28 2020 at 02:04)
+* [\[\] in class syntax](topic/.5B.5D.20in.20class.20syntax.html) (20 messages, latest: Apr 28 2020 at 02:02)
 * [noob question(s)](topic/noob.20question(s).html) (4641 messages, latest: Apr 27 2020 at 17:56)
-* [bezout](topic/bezout.html) (2 messages, latest: Apr 27 2020 at 02:46)
 * [Finishing off induction for pigeonhole](topic/Finishing.20off.20induction.20for.20pigeonhole.html) (222 messages, latest: Apr 26 2020 at 22:49)
 * [Double Negation and Proof by Contradiction](topic/Double.20Negation.20and.20Proof.20by.20Contradiction.html) (5 messages, latest: Apr 26 2020 at 20:18)
 * [Extracting from a forall](topic/Extracting.20from.20a.20forall.html) (17 messages, latest: Apr 26 2020 at 17:48)
@@ -980,4 +981,4 @@ permalink: /stream/113489-new-members/index.html
 * [Andrew Ashworth](topic/Andrew.20Ashworth.html) (15 messages, latest: Feb 26 2018 at 16:21)
 * [onboarding](topic/onboarding.html) (1 message, latest: Feb 26 2018 at 16:02)
 
-<hr><p>Last updated: Apr 28 2020 at 01:08 UTC</p>
+<hr><p>Last updated: Apr 28 2020 at 02:04 UTC</p>
