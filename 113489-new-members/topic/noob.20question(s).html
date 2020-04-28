@@ -34925,6 +34925,30 @@ but is expected to have type<br>
 
 
 
+<a name="195543685"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113489-new%20members/topic/noob%20question%28s%29/near/195543685" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Reid Barton <a href="https://leanprover-community.github.io/archive/stream/113489-new-members/topic/noob.20question(s).html#195543685">(Apr 28 2020 at 10:24)</a>:</h4>
+<p><span class="user-mention silent" data-user-id="294527">Sam Raleigh</span> <a href="#narrow/stream/113489-new-members/topic/noob.20question(s)/near/195521133" title="#narrow/stream/113489-new-members/topic/noob.20question(s)/near/195521133">said</a>:</p>
+<blockquote>
+<div class="codehilite"><pre><span></span><code> <span class="o">:=</span> <span class="o">(</span><span class="n">card</span> <span class="o">(</span><span class="n">mono_sub_colorings</span> <span class="n">n</span> <span class="n">k</span><span class="o">)</span> <span class="o">:</span> <span class="n">ℚ</span><span class="o">)</span> <span class="bp">=</span> <span class="o">(((</span><span class="mi">2</span> <span class="o">:</span> <span class="n">ℚ</span><span class="o">)</span><span class="bp">^</span><span class="o">((</span><span class="n">n</span><span class="bp">.</span><span class="n">choose</span><span class="o">(</span><span class="mi">2</span><span class="o">))</span> <span class="bp">-</span> <span class="o">(</span><span class="n">k</span><span class="bp">.</span><span class="n">choose</span><span class="o">(</span><span class="mi">2</span><span class="o">)))</span> <span class="o">:</span> <span class="n">ℚ</span><span class="o">)</span> <span class="bp">*</span> <span class="n">n</span><span class="bp">.</span><span class="n">choose</span><span class="o">(</span><span class="n">k</span><span class="o">)</span>
+</code></pre></div>
+
+
+</blockquote>
+<p>There are so many parentheses here that it's hard to notice that the parentheses are not even balanced. You can simply write</p>
+<div class="codehilite"><pre><span></span><code><span class="o">(</span><span class="n">card</span> <span class="o">(</span><span class="n">mono_sub_colorings</span> <span class="n">n</span> <span class="n">k</span><span class="o">)</span> <span class="o">:</span> <span class="n">ℚ</span><span class="o">)</span> <span class="bp">=</span> <span class="o">((</span><span class="mi">2</span> <span class="o">:</span> <span class="n">ℚ</span><span class="o">)</span><span class="bp">^</span><span class="o">(</span><span class="n">n</span><span class="bp">.</span><span class="n">choose</span> <span class="mi">2</span> <span class="bp">-</span> <span class="n">k</span><span class="bp">.</span><span class="n">choose</span> <span class="mi">2</span><span class="o">)</span> <span class="o">:</span> <span class="n">ℚ</span><span class="o">)</span> <span class="bp">*</span> <span class="n">n</span><span class="bp">.</span><span class="n">choose</span> <span class="n">k</span>
+</code></pre></div>
+
+
+<p>All I did was remove parentheses and it's already much easier to read, but now you could notice that some of the <code>: ℚ</code>s are redundant, as well.</p>
+
+
+
+<a name="195544447"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113489-new%20members/topic/noob%20question%28s%29/near/195544447" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Kenny Lau <a href="https://leanprover-community.github.io/archive/stream/113489-new-members/topic/noob.20question(s).html#195544447">(Apr 28 2020 at 10:31)</a>:</h4>
+<p><code>(2 : ℚ)</code> is redundant</p>
+
+
+
 {% endraw %}
 
-<hr><p>Last updated: Apr 28 2020 at 10:04 UTC</p>
+<hr><p>Last updated: Apr 28 2020 at 11:04 UTC</p>

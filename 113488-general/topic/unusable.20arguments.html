@@ -1,0 +1,34 @@
+---
+layout: archive
+title: Zulip Chat Archive
+permalink: /stream/113488-general/topic/unusable.20arguments.html
+---
+
+<h2>Stream: <a href="https://leanprover-community.github.io/archive/stream/113488-general/index.html">general</a></h2>
+<h3>Topic: <a href="https://leanprover-community.github.io/archive/stream/113488-general/topic/unusable.20arguments.html">unusable arguments</a></h3>
+
+<hr>
+
+<base href="https://leanprover.zulipchat.com/">
+
+<head><link href="/style.css" rel="stylesheet"></head>
+
+{% raw %}
+
+<a name="195547000"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113488-general/topic/unusable%20arguments/near/195547000" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Reid Barton <a href="https://leanprover-community.github.io/archive/stream/113488-general/topic/unusable.20arguments.html#195547000">(Apr 28 2020 at 10:59)</a>:</h4>
+<p>From <a href="https://github.com/leanprover-community/mathlib/issues/2502" title="https://github.com/leanprover-community/mathlib/issues/2502">#2502</a>:</p>
+<div class="codehilite"><pre><span></span><code><span class="kn">instance</span> <span class="n">forget₂</span> <span class="o">(</span><span class="n">F</span> <span class="o">:</span> <span class="bp">Π</span> <span class="o">{</span><span class="n">α</span><span class="o">},</span> <span class="n">d</span> <span class="n">α</span> <span class="bp">→</span> <span class="n">c</span> <span class="n">α</span><span class="o">)</span> <span class="o">[</span><span class="n">parent_projection</span> <span class="bp">@</span><span class="n">F</span><span class="o">]</span> <span class="o">:</span> <span class="n">has_forget₂</span> <span class="o">(</span><span class="n">bundled</span> <span class="n">d</span><span class="o">)</span> <span class="o">(</span><span class="n">bundled</span> <span class="n">c</span><span class="o">)</span> <span class="o">:=</span>
+<span class="o">{</span> <span class="n">forget₂</span> <span class="o">:=</span>
+  <span class="o">{</span> <span class="n">obj</span> <span class="o">:=</span> <span class="bp">λ</span> <span class="n">X</span><span class="o">,</span> <span class="bp">⟨</span><span class="n">X</span><span class="o">,</span> <span class="n">F</span> <span class="n">X</span><span class="bp">.</span><span class="mi">2</span><span class="bp">⟩</span><span class="o">,</span>
+    <span class="n">map</span> <span class="o">:=</span> <span class="bp">λ</span> <span class="n">X</span> <span class="n">Y</span> <span class="n">f</span><span class="o">,</span> <span class="n">f</span> <span class="o">}</span> <span class="o">}</span>
+</code></pre></div>
+
+
+<p>Unless I am very confused, I'm pretty sure this is not usable as an instance because <code>F</code> could never be inferred (<code>bundled</code> doesn't mention it implicitly). Wasn't there some discussion about a linter for cases like this?</p>
+
+
+
+{% endraw %}
+
+<hr><p>Last updated: Apr 28 2020 at 11:04 UTC</p>
