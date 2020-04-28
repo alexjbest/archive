@@ -346,6 +346,196 @@ h : n ≥ k<br>
 
 
 
+<a name="195587633"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113489-new%20members/topic/Diagonal%20Ramsey%20Number%20Lower%20Bound/near/195587633" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Sam Raleigh <a href="https://leanprover-community.github.io/archive/stream/113489-new-members/topic/Diagonal.20Ramsey.20Number.20Lower.20Bound.html#195587633">(Apr 28 2020 at 16:12)</a>:</h4>
+<p>Could someone please explain why I'm getting a "don't know how to synthesize placeholder context" issue (and what this means) on <code>card</code> in the following code? Also just to be sure, is this an appropriate MWE for the problem at hand?</p>
+<div class="codehilite"><pre><span></span><code><span class="kn">import</span> <span class="n">data</span><span class="bp">.</span><span class="n">finset</span>
+<span class="kn">open</span> <span class="n">finset</span>
+
+<span class="kn">universe</span> <span class="n">u</span>
+<span class="kn">variable</span> <span class="n">α</span> <span class="o">:</span> <span class="kt">Type</span> <span class="n">u</span>
+
+<span class="n">def</span> <span class="n">mono_sub_colorings</span> <span class="o">(</span><span class="n">n</span> <span class="o">:</span> <span class="bp">ℕ</span><span class="o">)</span> <span class="o">(</span><span class="n">k</span> <span class="o">:</span> <span class="bp">ℕ</span><span class="o">)</span> <span class="o">:</span> <span class="n">finset</span> <span class="o">(</span><span class="n">finset</span> <span class="o">(</span><span class="n">finset</span> <span class="n">α</span><span class="o">))</span> <span class="o">:=</span> <span class="n">sorry</span>
+
+<span class="kn">lemma</span> <span class="n">test</span> <span class="o">(</span><span class="n">n</span> <span class="n">k</span> <span class="o">:</span> <span class="bp">ℕ</span><span class="o">)</span> <span class="o">:</span> <span class="n">card</span> <span class="o">(</span><span class="n">mono_sub_colorings</span> <span class="n">n</span> <span class="n">k</span><span class="o">)</span> <span class="bp">=</span> <span class="n">n</span><span class="bp">.</span><span class="n">choose</span><span class="o">(</span><span class="n">k</span><span class="o">)</span> <span class="o">:=</span>
+<span class="k">begin</span>
+  <span class="n">sorry</span>
+<span class="kn">end</span>
+</code></pre></div>
+
+
+<p>Thank you!</p>
+
+
+
+<a name="195587913"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113489-new%20members/topic/Diagonal%20Ramsey%20Number%20Lower%20Bound/near/195587913" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Kenny Lau <a href="https://leanprover-community.github.io/archive/stream/113489-new-members/topic/Diagonal.20Ramsey.20Number.20Lower.20Bound.html#195587913">(Apr 28 2020 at 16:14)</a>:</h4>
+<p>the type of <code>\a</code>cannot be inferred</p>
+
+
+
+<a name="195588003"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113489-new%20members/topic/Diagonal%20Ramsey%20Number%20Lower%20Bound/near/195588003" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Kenny Lau <a href="https://leanprover-community.github.io/archive/stream/113489-new-members/topic/Diagonal.20Ramsey.20Number.20Lower.20Bound.html#195588003">(Apr 28 2020 at 16:15)</a>:</h4>
+<p>but this is not an MWE because it does not compile (I only compiled it with my eyes though so I'm not 100% sure)</p>
+
+
+
+<a name="195588311"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113489-new%20members/topic/Diagonal%20Ramsey%20Number%20Lower%20Bound/near/195588311" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Sam Raleigh <a href="https://leanprover-community.github.io/archive/stream/113489-new-members/topic/Diagonal.20Ramsey.20Number.20Lower.20Bound.html#195588311">(Apr 28 2020 at 16:17)</a>:</h4>
+<p>Thanks! I copied and pasted this exact code into a separate lean file and it compiles (aside from this issue you just fixed).</p>
+
+
+
+<a name="195588378"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113489-new%20members/topic/Diagonal%20Ramsey%20Number%20Lower%20Bound/near/195588378" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Kenny Lau <a href="https://leanprover-community.github.io/archive/stream/113489-new-members/topic/Diagonal.20Ramsey.20Number.20Lower.20Bound.html#195588378">(Apr 28 2020 at 16:17)</a>:</h4>
+<p>well the MWE would be <code>mono_sub_colorings _ n k</code></p>
+
+
+
+<a name="195588467"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113489-new%20members/topic/Diagonal%20Ramsey%20Number%20Lower%20Bound/near/195588467" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Kenny Lau <a href="https://leanprover-community.github.io/archive/stream/113489-new-members/topic/Diagonal.20Ramsey.20Number.20Lower.20Bound.html#195588467">(Apr 28 2020 at 16:18)</a>:</h4>
+<p>and then my comment of the type of <code>\a</code> not able to be inferred would apply</p>
+
+
+
+<a name="195588530"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113489-new%20members/topic/Diagonal%20Ramsey%20Number%20Lower%20Bound/near/195588530" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Kenny Lau <a href="https://leanprover-community.github.io/archive/stream/113489-new-members/topic/Diagonal.20Ramsey.20Number.20Lower.20Bound.html#195588530">(Apr 28 2020 at 16:18)</a>:</h4>
+<p>also this is not python, we write <code>n.choose k</code> here</p>
+
+
+
+<a name="195588673"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113489-new%20members/topic/Diagonal%20Ramsey%20Number%20Lower%20Bound/near/195588673" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Sam Raleigh <a href="https://leanprover-community.github.io/archive/stream/113489-new-members/topic/Diagonal.20Ramsey.20Number.20Lower.20Bound.html#195588673">(Apr 28 2020 at 16:19)</a>:</h4>
+<p>Thank you for the clarification. Wouldn't a person seeking to assist with the problem want to know what <code>mono_sub_colorings</code> was?</p>
+
+
+
+<a name="195588745"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113489-new%20members/topic/Diagonal%20Ramsey%20Number%20Lower%20Bound/near/195588745" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Sam Raleigh <a href="https://leanprover-community.github.io/archive/stream/113489-new-members/topic/Diagonal.20Ramsey.20Number.20Lower.20Bound.html#195588745">(Apr 28 2020 at 16:20)</a>:</h4>
+<p>Perhaps I don't understand the definition of an MWE</p>
+
+
+
+<a name="195588784"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113489-new%20members/topic/Diagonal%20Ramsey%20Number%20Lower%20Bound/near/195588784" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Sam Raleigh <a href="https://leanprover-community.github.io/archive/stream/113489-new-members/topic/Diagonal.20Ramsey.20Number.20Lower.20Bound.html#195588784">(Apr 28 2020 at 16:20)</a>:</h4>
+<p>And what do you mean by your last comment? I did write <code>n.choose(k)</code>, no?</p>
+
+
+
+<a name="195588825"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113489-new%20members/topic/Diagonal%20Ramsey%20Number%20Lower%20Bound/near/195588825" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Sam Raleigh <a href="https://leanprover-community.github.io/archive/stream/113489-new-members/topic/Diagonal.20Ramsey.20Number.20Lower.20Bound.html#195588825">(Apr 28 2020 at 16:21)</a>:</h4>
+<p>o wait</p>
+
+
+
+<a name="195588833"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113489-new%20members/topic/Diagonal%20Ramsey%20Number%20Lower%20Bound/near/195588833" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Sam Raleigh <a href="https://leanprover-community.github.io/archive/stream/113489-new-members/topic/Diagonal.20Ramsey.20Number.20Lower.20Bound.html#195588833">(Apr 28 2020 at 16:21)</a>:</h4>
+<p>I see what you mean</p>
+
+
+
+<a name="195588887"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113489-new%20members/topic/Diagonal%20Ramsey%20Number%20Lower%20Bound/near/195588887" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Reid Barton <a href="https://leanprover-community.github.io/archive/stream/113489-new-members/topic/Diagonal.20Ramsey.20Number.20Lower.20Bound.html#195588887">(Apr 28 2020 at 16:21)</a>:</h4>
+<p>I think Kenny is being somewhat unreasonable. If the issue is that some code is not compiling, then we want to be able to verify that the same code does not compile. It is not supposed to be "W" in the sense of working/compiling then!</p>
+
+
+
+<a name="195589018"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113489-new%20members/topic/Diagonal%20Ramsey%20Number%20Lower%20Bound/near/195589018" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Kenny Lau <a href="https://leanprover-community.github.io/archive/stream/113489-new-members/topic/Diagonal.20Ramsey.20Number.20Lower.20Bound.html#195589018">(Apr 28 2020 at 16:22)</a>:</h4>
+<p>well this is just a misunderstanding.</p>
+
+
+
+<a name="195589339"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113489-new%20members/topic/Diagonal%20Ramsey%20Number%20Lower%20Bound/near/195589339" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Sam Raleigh <a href="https://leanprover-community.github.io/archive/stream/113489-new-members/topic/Diagonal.20Ramsey.20Number.20Lower.20Bound.html#195589339">(Apr 28 2020 at 16:25)</a>:</h4>
+<p>Ah I think I'm starting to get it. So by "don't know how to synthesize placeholder" Lean means that it is unsure what argument to insert in the underscore in <code>mono_sub_colorings _ n k</code>, yes?</p>
+
+
+
+<a name="195589537"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113489-new%20members/topic/Diagonal%20Ramsey%20Number%20Lower%20Bound/near/195589537" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Kenny Lau <a href="https://leanprover-community.github.io/archive/stream/113489-new-members/topic/Diagonal.20Ramsey.20Number.20Lower.20Bound.html#195589537">(Apr 28 2020 at 16:26)</a>:</h4>
+<p>right</p>
+
+
+
+<a name="195591662"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113489-new%20members/topic/Diagonal%20Ramsey%20Number%20Lower%20Bound/near/195591662" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Sam Raleigh <a href="https://leanprover-community.github.io/archive/stream/113489-new-members/topic/Diagonal.20Ramsey.20Number.20Lower.20Bound.html#195591662">(Apr 28 2020 at 16:41)</a>:</h4>
+<p>Given <code>universe u</code>, what is the difference between <code>variables {α : Type u} </code> and <code>variables α : Type u</code>?</p>
+
+
+
+<a name="195592193"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113489-new%20members/topic/Diagonal%20Ramsey%20Number%20Lower%20Bound/near/195592193" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Kenny Lau <a href="https://leanprover-community.github.io/archive/stream/113489-new-members/topic/Diagonal.20Ramsey.20Number.20Lower.20Bound.html#195592193">(Apr 28 2020 at 16:45)</a>:</h4>
+<p>if you prove a theorem / make a definition using the latter then you don't need to supply <code>\a</code> and Lean will try to infer <code>\a</code></p>
+
+
+
+<a name="195592374"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113489-new%20members/topic/Diagonal%20Ramsey%20Number%20Lower%20Bound/near/195592374" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Sam Raleigh <a href="https://leanprover-community.github.io/archive/stream/113489-new-members/topic/Diagonal.20Ramsey.20Number.20Lower.20Bound.html#195592374">(Apr 28 2020 at 16:46)</a>:</h4>
+<p>Thanks!</p>
+
+
+
+<a name="195592546"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113489-new%20members/topic/Diagonal%20Ramsey%20Number%20Lower%20Bound/near/195592546" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Bryan Gin-ge Chen <a href="https://leanprover-community.github.io/archive/stream/113489-new-members/topic/Diagonal.20Ramsey.20Number.20Lower.20Bound.html#195592546">(Apr 28 2020 at 16:47)</a>:</h4>
+<p>Obligatory <a href="https://leanprover.github.io/theorem_proving_in_lean/dependent_type_theory.html#implicit-arguments" title="https://leanprover.github.io/theorem_proving_in_lean/dependent_type_theory.html#implicit-arguments">TPiL link</a>. See also <a href="https://leanprover.github.io/theorem_proving_in_lean/interacting_with_lean.html#more-on-implicit-arguments" title="https://leanprover.github.io/theorem_proving_in_lean/interacting_with_lean.html#more-on-implicit-arguments">6.5</a>.</p>
+
+
+
+<a name="195592660"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113489-new%20members/topic/Diagonal%20Ramsey%20Number%20Lower%20Bound/near/195592660" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Kevin Buzzard <a href="https://leanprover-community.github.io/archive/stream/113489-new-members/topic/Diagonal.20Ramsey.20Number.20Lower.20Bound.html#195592660">(Apr 28 2020 at 16:48)</a>:</h4>
+<p>The <em>former</em>!</p>
+
+
+
+<a name="195593118"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113489-new%20members/topic/Diagonal%20Ramsey%20Number%20Lower%20Bound/near/195593118" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Kenny Lau <a href="https://leanprover-community.github.io/archive/stream/113489-new-members/topic/Diagonal.20Ramsey.20Number.20Lower.20Bound.html#195593118">(Apr 28 2020 at 16:51)</a>:</h4>
+<p>I stand corrected.</p>
+
+
+
+<a name="195593920"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113489-new%20members/topic/Diagonal%20Ramsey%20Number%20Lower%20Bound/near/195593920" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Sam Raleigh <a href="https://leanprover-community.github.io/archive/stream/113489-new-members/topic/Diagonal.20Ramsey.20Number.20Lower.20Bound.html#195593920">(Apr 28 2020 at 16:56)</a>:</h4>
+<p>Judging by what Kevin said, I'd think that <code>variable {\a : u}</code> would allow me to have <code>lemma test (n k : ℕ) : card (mono_sub_colorings n k) = n.choose(k) := sorry</code> without any issues. So why am I getting a cannot synthesize placeholder error?</p>
+
+
+
+<a name="195593996"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113489-new%20members/topic/Diagonal%20Ramsey%20Number%20Lower%20Bound/near/195593996" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Reid Barton <a href="https://leanprover-community.github.io/archive/stream/113489-new-members/topic/Diagonal.20Ramsey.20Number.20Lower.20Bound.html#195593996">(Apr 28 2020 at 16:57)</a>:</h4>
+<p>Kevin said Lean would try to infer <code>\a</code>, not that it would succeed.</p>
+
+
+
+<a name="195594053"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113489-new%20members/topic/Diagonal%20Ramsey%20Number%20Lower%20Bound/near/195594053" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Reid Barton <a href="https://leanprover-community.github.io/archive/stream/113489-new-members/topic/Diagonal.20Ramsey.20Number.20Lower.20Bound.html#195594053">(Apr 28 2020 at 16:57)</a>:</h4>
+<p>How would it know what type to pick?</p>
+
+
+
+<a name="195594177"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113489-new%20members/topic/Diagonal%20Ramsey%20Number%20Lower%20Bound/near/195594177" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Sam Raleigh <a href="https://leanprover-community.github.io/archive/stream/113489-new-members/topic/Diagonal.20Ramsey.20Number.20Lower.20Bound.html#195594177">(Apr 28 2020 at 16:58)</a>:</h4>
+<p>Wouldn't it be able to infer it from the definition of <code>mono_sub_colorings</code>?</p>
+
+
+
+<a name="195594474"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113489-new%20members/topic/Diagonal%20Ramsey%20Number%20Lower%20Bound/near/195594474" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Reid Barton <a href="https://leanprover-community.github.io/archive/stream/113489-new-members/topic/Diagonal.20Ramsey.20Number.20Lower.20Bound.html#195594474">(Apr 28 2020 at 17:00)</a>:</h4>
+<p>But what even is the correct answer? There isn't one.</p>
+
+
+
+<a name="195594526"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113489-new%20members/topic/Diagonal%20Ramsey%20Number%20Lower%20Bound/near/195594526" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Reid Barton <a href="https://leanprover-community.github.io/archive/stream/113489-new-members/topic/Diagonal.20Ramsey.20Number.20Lower.20Bound.html#195594526">(Apr 28 2020 at 17:00)</a>:</h4>
+<p>If this isn't clear, imagine adding <code>variable {\b : Type u}</code>, or even deleting <code>variable {\a : Type u}</code>.</p>
+
+
+
+<a name="195594720"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113489-new%20members/topic/Diagonal%20Ramsey%20Number%20Lower%20Bound/near/195594720" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Reid Barton <a href="https://leanprover-community.github.io/archive/stream/113489-new-members/topic/Diagonal.20Ramsey.20Number.20Lower.20Bound.html#195594720">(Apr 28 2020 at 17:01)</a>:</h4>
+<p>Who knows, Lean seems to like the type <code>nat -&gt; real</code> so maybe that is a good choice.</p>
+
+
+
 {% endraw %}
 
-<hr><p>Last updated: Apr 28 2020 at 16:04 UTC</p>
+<hr><p>Last updated: Apr 28 2020 at 17:04 UTC</p>

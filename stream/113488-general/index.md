@@ -9,6 +9,8 @@ permalink: /stream/113488-general/index.html
 
 ### Topics:
 
+* [even or odd](topic/even.20or.20odd.html) (11 messages, latest: Apr 28 2020 at 16:22)
+* [type ascription style](topic/type.20ascription.20style.html) (1 message, latest: Apr 28 2020 at 16:21)
 * [seminars](topic/seminars.html) (11 messages, latest: Apr 28 2020 at 15:43)
 * [unusable arguments](topic/unusable.20arguments.html) (20 messages, latest: Apr 28 2020 at 13:27)
 * [Intuitionistic Type Theory Proofs](topic/Intuitionistic.20Type.20Theory.20Proofs.html) (139 messages, latest: Apr 28 2020 at 13:02)
@@ -16,7 +18,6 @@ permalink: /stream/113488-general/index.html
 * [prettyprinter and parameters](topic/prettyprinter.20and.20parameters.html) (1 message, latest: Apr 28 2020 at 11:58)
 * [Invitation to join the Codewars Lean community, Round 2](topic/Invitation.20to.20join.20the.20Codewars.20Lean.20community.2C.20Round.202.html) (143 messages, latest: Apr 28 2020 at 10:32)
 * [interactive calc](topic/interactive.20calc.html) (7 messages, latest: Apr 28 2020 at 09:36)
-* [even or odd](topic/even.20or.20odd.html) (9 messages, latest: Apr 28 2020 at 09:32)
 * [finset.filter](topic/finset.2Efilter.html) (22 messages, latest: Apr 28 2020 at 09:22)
 * [definition of real log](topic/definition.20of.20real.20log.html) (17 messages, latest: Apr 28 2020 at 09:15)
 * [data.int.basic](topic/data.2Eint.2Ebasic.html) (6 messages, latest: Apr 28 2020 at 07:23)
@@ -2720,4 +2721,4 @@ permalink: /stream/113488-general/index.html
 * [test](topic/test.html) (4 messages, latest: Feb 26 2018 at 16:22)
 * [welcome](topic/welcome.html) (1 message, latest: Feb 26 2018 at 16:02)
 
-<hr><p>Last updated: Apr 28 2020 at 16:04 UTC</p>
+<hr><p>Last updated: Apr 28 2020 at 17:04 UTC</p>
