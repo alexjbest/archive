@@ -9,6 +9,7 @@ permalink: /stream/113488-general/index.html
 
 ### Topics:
 
+* [Invitation to join the Codewars Lean community, Round 2](topic/Invitation.20to.20join.20the.20Codewars.20Lean.20community.2C.20Round.202.html) (141 messages, latest: Apr 28 2020 at 02:20)
 * [seminars](topic/seminars.html) (2 messages, latest: Apr 28 2020 at 01:31)
 * [PRing to mathlib from forks](topic/PRing.20to.20mathlib.20from.20forks.html) (13 messages, latest: Apr 27 2020 at 23:10)
 * [wlog is slow](topic/wlog.20is.20slow.html) (15 messages, latest: Apr 27 2020 at 16:03)
@@ -22,7 +23,6 @@ permalink: /stream/113488-general/index.html
 * [unfreezeI](topic/unfreezeI.html) (8 messages, latest: Apr 25 2020 at 18:28)
 * [class instances in definition of Prop](topic/class.20instances.20in.20definition.20of.20Prop.html) (16 messages, latest: Apr 25 2020 at 16:37)
 * [a + succ b syntactically succ(a+b)?](topic/a.20.2B.20succ.20b.20syntactically.20succ(a.2Bb).3F.html) (3 messages, latest: Apr 25 2020 at 16:27)
-* [Invitation to join the Codewars Lean community, Round 2](topic/Invitation.20to.20join.20the.20Codewars.20Lean.20community.2C.20Round.202.html) (140 messages, latest: Apr 25 2020 at 15:01)
 * [lean-client-python](topic/lean-client-python.html) (45 messages, latest: Apr 25 2020 at 12:37)
 * [Intuitionistic Type Theory Proofs](topic/Intuitionistic.20Type.20Theory.20Proofs.html) (124 messages, latest: Apr 25 2020 at 11:29)
 * [structure unification fails](topic/structure.20unification.20fails.html) (1 message, latest: Apr 25 2020 at 06:15)
@@ -2713,4 +2713,4 @@ permalink: /stream/113488-general/index.html
 * [test](topic/test.html) (4 messages, latest: Feb 26 2018 at 16:22)
 * [welcome](topic/welcome.html) (1 message, latest: Feb 26 2018 at 16:02)
 
-<hr><p>Last updated: Apr 28 2020 at 02:04 UTC</p>
+<hr><p>Last updated: Apr 28 2020 at 03:03 UTC</p>
