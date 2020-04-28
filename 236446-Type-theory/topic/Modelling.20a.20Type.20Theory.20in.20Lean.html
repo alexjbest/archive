@@ -1,0 +1,166 @@
+---
+layout: archive
+title: Zulip Chat Archive
+permalink: /stream/236446-Type-theory/topic/Modelling.20a.20Type.20Theory.20in.20Lean.html
+---
+
+<h2>Stream: <a href="https://leanprover-community.github.io/archive/stream/236446-Type-theory/index.html">Type theory</a></h2>
+<h3>Topic: <a href="https://leanprover-community.github.io/archive/stream/236446-Type-theory/topic/Modelling.20a.20Type.20Theory.20in.20Lean.html">Modelling a Type Theory in Lean</a></h3>
+
+<hr>
+
+<base href="https://leanprover.zulipchat.com/">
+
+<head><link href="/style.css" rel="stylesheet"></head>
+
+{% raw %}
+
+<a name="195563859"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/236446-Type%20theory/topic/Modelling%20a%20Type%20Theory%20in%20Lean/near/195563859" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Billy Price <a href="https://leanprover-community.github.io/archive/stream/236446-Type-theory/topic/Modelling.20a.20Type.20Theory.20in.20Lean.html#195563859">(Apr 28 2020 at 13:30)</a>:</h4>
+<p>My current inductive definition of a term can produce ill-formed terms, for example if <code>A : type</code> is a type that is not <code>Ω</code> , then <code>all A (var 0 Ω)</code> is trying to bind an <code>Ω</code> variable to a <code>A</code> type binder.</p>
+<div class="codehilite"><pre><span></span><code><span class="kn">inductive</span> <span class="n">type</span> <span class="o">:</span> <span class="kt">Type</span>
+<span class="bp">|</span> <span class="n">One</span> <span class="bp">|</span> <span class="n">Omega</span> <span class="bp">|</span> <span class="n">Prod</span> <span class="o">(</span><span class="n">A</span> <span class="n">B</span> <span class="o">:</span> <span class="n">type</span><span class="o">)</span><span class="bp">|</span> <span class="n">Pow</span> <span class="o">(</span><span class="n">A</span> <span class="o">:</span> <span class="n">type</span><span class="o">)</span>
+
+<span class="kn">notation</span> <span class="bp">`</span><span class="err">Ω</span><span class="bp">`</span> <span class="o">:=</span> <span class="n">type</span><span class="bp">.</span><span class="n">Omega</span>
+<span class="kn">notation</span> <span class="bp">`</span><span class="mi">𝟙</span><span class="bp">`</span> <span class="o">:=</span> <span class="n">type</span><span class="bp">.</span><span class="n">One</span>
+<span class="kn">infix</span> <span class="bp">`××`</span> <span class="o">:</span><span class="mi">100</span> <span class="o">:=</span> <span class="n">type</span><span class="bp">.</span><span class="n">Prod</span>
+<span class="kn">prefix</span> <span class="err">𝒫</span> <span class="o">:</span><span class="mi">101</span> <span class="o">:=</span> <span class="n">type</span><span class="bp">.</span><span class="n">Pow</span>
+
+<span class="kn">inductive</span> <span class="n">term</span> <span class="o">:</span> <span class="n">type</span> <span class="bp">→</span> <span class="kt">Type</span>
+<span class="bp">|</span> <span class="n">var</span>  <span class="o">:</span> <span class="bp">ℕ</span> <span class="bp">→</span> <span class="bp">Π</span> <span class="n">A</span> <span class="o">:</span> <span class="n">type</span><span class="o">,</span> <span class="n">term</span> <span class="n">A</span>
+<span class="bp">|</span> <span class="n">star</span> <span class="o">:</span> <span class="n">term</span> <span class="mi">𝟙</span>
+<span class="bp">|</span> <span class="n">top</span>  <span class="o">:</span> <span class="n">term</span> <span class="err">Ω</span>
+<span class="bp">|</span> <span class="n">bot</span>  <span class="o">:</span> <span class="n">term</span> <span class="err">Ω</span>
+<span class="bp">|</span> <span class="n">prod</span> <span class="o">:</span> <span class="bp">Π</span> <span class="o">{</span><span class="n">A</span> <span class="n">B</span> <span class="o">:</span> <span class="n">type</span><span class="o">},</span> <span class="n">term</span> <span class="n">A</span> <span class="bp">→</span> <span class="n">term</span> <span class="n">B</span> <span class="bp">→</span> <span class="n">term</span> <span class="o">(</span><span class="n">A</span> <span class="bp">××</span> <span class="n">B</span><span class="o">)</span>
+<span class="bp">|</span> <span class="n">elem</span> <span class="o">:</span> <span class="bp">Π</span> <span class="o">{</span><span class="n">A</span> <span class="o">:</span> <span class="n">type</span><span class="o">},</span> <span class="n">term</span> <span class="n">A</span> <span class="bp">→</span> <span class="n">term</span> <span class="o">(</span><span class="err">𝒫</span> <span class="n">A</span><span class="o">)</span> <span class="bp">→</span> <span class="n">term</span> <span class="err">Ω</span>
+<span class="bp">|</span> <span class="n">comp</span> <span class="o">:</span> <span class="bp">Π</span> <span class="n">A</span> <span class="o">:</span> <span class="n">type</span><span class="o">,</span> <span class="n">term</span> <span class="err">Ω</span> <span class="bp">→</span> <span class="n">term</span> <span class="o">(</span><span class="err">𝒫</span> <span class="n">A</span><span class="o">)</span>
+<span class="bp">|</span> <span class="n">and</span>  <span class="o">:</span> <span class="n">term</span> <span class="err">Ω</span> <span class="bp">→</span> <span class="n">term</span> <span class="err">Ω</span> <span class="bp">→</span> <span class="n">term</span> <span class="err">Ω</span>
+<span class="bp">|</span> <span class="n">or</span>   <span class="o">:</span> <span class="n">term</span> <span class="err">Ω</span> <span class="bp">→</span> <span class="n">term</span> <span class="err">Ω</span> <span class="bp">→</span> <span class="n">term</span> <span class="err">Ω</span>
+<span class="bp">|</span> <span class="n">imp</span>  <span class="o">:</span> <span class="n">term</span> <span class="err">Ω</span> <span class="bp">→</span> <span class="n">term</span> <span class="err">Ω</span> <span class="bp">→</span> <span class="n">term</span> <span class="err">Ω</span>
+<span class="bp">|</span> <span class="n">all</span>  <span class="o">:</span> <span class="bp">Π</span> <span class="n">A</span> <span class="o">:</span> <span class="n">type</span><span class="o">,</span> <span class="n">term</span> <span class="err">Ω</span> <span class="bp">→</span> <span class="n">term</span> <span class="err">Ω</span>
+<span class="bp">|</span> <span class="n">ex</span>   <span class="o">:</span> <span class="bp">Π</span> <span class="n">A</span> <span class="o">:</span> <span class="n">type</span><span class="o">,</span> <span class="n">term</span> <span class="err">Ω</span> <span class="bp">→</span> <span class="n">term</span> <span class="err">Ω</span>
+</code></pre></div>
+
+
+<p>I'm guessing in Lean you cannot enforce conditions on the creation of inductive terms (like trying to say you can only make an <code>all A φ</code> expression  if <code>φ</code> has only <code>var 0 A</code> and no <code>var 0 B</code>).</p>
+<p>My next best idea is introducing the context on terms which is a mapping of free variables to types. Here's my start on that, though I am not that familiar with using <code>fin</code>. Should I use array, vector, list? Or is there a more direct approach to only creating well-defined terms?</p>
+
+
+
+<a name="195564055"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/236446-Type%20theory/topic/Modelling%20a%20Type%20Theory%20in%20Lean/near/195564055" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Billy Price <a href="https://leanprover-community.github.io/archive/stream/236446-Type-theory/topic/Modelling.20a.20Type.20Theory.20in.20Lean.html#195564055">(Apr 28 2020 at 13:31)</a>:</h4>
+<p>I guess what I would like to be able to say is that a variable can be any term, and it's really only defined by its number, and when we bind it to a binder, it then has an associated type.</p>
+
+
+
+<a name="195564501"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/236446-Type%20theory/topic/Modelling%20a%20Type%20Theory%20in%20Lean/near/195564501" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Mario Carneiro <a href="https://leanprover-community.github.io/archive/stream/236446-Type-theory/topic/Modelling.20a.20Type.20Theory.20in.20Lean.html#195564501">(Apr 28 2020 at 13:34)</a>:</h4>
+<blockquote>
+<p>I'm guessing in Lean you cannot enforce conditions on the creation of inductive terms (like trying to say you can only make an all A φ expression if φ has only var 0 A and no var 0 B).</p>
+</blockquote>
+<p>You can, but it's a pain because you are still in the middle of the definition so you can't easily use recursive functions at the same time</p>
+
+
+
+<a name="195564583"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/236446-Type%20theory/topic/Modelling%20a%20Type%20Theory%20in%20Lean/near/195564583" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Mario Carneiro <a href="https://leanprover-community.github.io/archive/stream/236446-Type-theory/topic/Modelling.20a.20Type.20Theory.20in.20Lean.html#195564583">(Apr 28 2020 at 13:34)</a>:</h4>
+<p>I would recommend keeping the term syntax as context free as possible, and have a well typing condition afterward that can have whatever dependencies it wants</p>
+
+
+
+<a name="195565429"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/236446-Type%20theory/topic/Modelling%20a%20Type%20Theory%20in%20Lean/near/195565429" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Billy Price <a href="https://leanprover-community.github.io/archive/stream/236446-Type-theory/topic/Modelling.20a.20Type.20Theory.20in.20Lean.html#195565429">(Apr 28 2020 at 13:41)</a>:</h4>
+<p>Hmm okay I'll take your advice. I was looking at flypitch documentation and they seem to do without a well-formedness predicate. Is that just because their terms are all the same type?</p>
+
+
+
+<a name="195565908"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/236446-Type%20theory/topic/Modelling%20a%20Type%20Theory%20in%20Lean/near/195565908" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Mario Carneiro <a href="https://leanprover-community.github.io/archive/stream/236446-Type-theory/topic/Modelling.20a.20Type.20Theory.20in.20Lean.html#195565908">(Apr 28 2020 at 13:45)</a>:</h4>
+<p>It's easier for them because it's only one type, yes. You end up having to carry around a lot of "type state" in real type theories, and it becomes hard to get all the definitional equalities you want</p>
+
+
+
+<a name="195566085"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/236446-Type%20theory/topic/Modelling%20a%20Type%20Theory%20in%20Lean/near/195566085" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Mario Carneiro <a href="https://leanprover-community.github.io/archive/stream/236446-Type-theory/topic/Modelling.20a.20Type.20Theory.20in.20Lean.html#195566085">(Apr 28 2020 at 13:46)</a>:</h4>
+<p>But they have a clearly distinct step for proofs, which I think should be the analogue of type checking for you</p>
+
+
+
+<a name="195566880"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/236446-Type%20theory/topic/Modelling%20a%20Type%20Theory%20in%20Lean/near/195566880" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Billy Price <a href="https://leanprover-community.github.io/archive/stream/236446-Type-theory/topic/Modelling.20a.20Type.20Theory.20in.20Lean.html#195566880">(Apr 28 2020 at 13:52)</a>:</h4>
+<p>Sorry what step are you referring to?</p>
+
+
+
+<a name="195567152"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/236446-Type%20theory/topic/Modelling%20a%20Type%20Theory%20in%20Lean/near/195567152" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Mario Carneiro <a href="https://leanprover-community.github.io/archive/stream/236446-Type-theory/topic/Modelling.20a.20Type.20Theory.20in.20Lean.html#195567152">(Apr 28 2020 at 13:54)</a>:</h4>
+<p>step in the construction</p>
+
+
+
+<a name="195567199"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/236446-Type%20theory/topic/Modelling%20a%20Type%20Theory%20in%20Lean/near/195567199" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Mario Carneiro <a href="https://leanprover-community.github.io/archive/stream/236446-Type-theory/topic/Modelling.20a.20Type.20Theory.20in.20Lean.html#195567199">(Apr 28 2020 at 13:54)</a>:</h4>
+<p>I would separate the grammar from the syntax rules</p>
+
+
+
+<a name="195567247"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/236446-Type%20theory/topic/Modelling%20a%20Type%20Theory%20in%20Lean/near/195567247" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Jannis Limperg <a href="https://leanprover-community.github.io/archive/stream/236446-Type-theory/topic/Modelling.20a.20Type.20Theory.20in.20Lean.html#195567247">(Apr 28 2020 at 13:55)</a>:</h4>
+<p>If you want terms that embed typing information, so that only well-typed terms can be constructed, the usual approach is to index it not only by a type, but also by a context containing the types of free variables. Thus, you would have something like this:</p>
+<div class="codehilite"><pre><span></span><code><span class="kn">inductive</span> <span class="n">type</span> <span class="o">:</span> <span class="kt">Type</span>
+<span class="bp">|</span> <span class="n">One</span> <span class="bp">|</span> <span class="n">Omega</span> <span class="bp">|</span> <span class="n">Prod</span> <span class="o">(</span><span class="n">A</span> <span class="n">B</span> <span class="o">:</span> <span class="n">type</span><span class="o">)</span><span class="bp">|</span> <span class="n">Pow</span> <span class="o">(</span><span class="n">A</span> <span class="o">:</span> <span class="n">type</span><span class="o">)</span> <span class="bp">|</span> <span class="n">Fun</span> <span class="o">(</span><span class="n">A</span> <span class="n">B</span> <span class="o">:</span> <span class="n">type</span><span class="o">)</span>
+
+<span class="kn">open</span> <span class="n">type</span>
+
+<span class="n">def</span> <span class="kn">context</span> <span class="o">:=</span> <span class="n">list</span> <span class="n">type</span>
+
+<span class="kn">inductive</span> <span class="n">var</span> <span class="o">:</span> <span class="kn">context</span> <span class="bp">→</span> <span class="n">type</span> <span class="bp">→</span> <span class="kt">Type</span>
+<span class="bp">|</span> <span class="n">var0</span> <span class="o">(</span><span class="n">α</span><span class="o">)</span> <span class="o">:</span> <span class="n">var</span> <span class="o">[</span><span class="n">α</span><span class="o">]</span> <span class="n">α</span>
+<span class="bp">|</span> <span class="n">varsucc</span> <span class="o">{</span><span class="err">Γ</span> <span class="n">α</span> <span class="n">β</span><span class="o">}</span> <span class="o">:</span> <span class="n">var</span> <span class="err">Γ</span> <span class="n">α</span> <span class="bp">→</span> <span class="n">var</span> <span class="o">(</span><span class="n">β</span> <span class="bp">::</span> <span class="err">Γ</span><span class="o">)</span> <span class="n">β</span>
+
+<span class="c1">-- This is the simply-typed lambda calculus with a unit type and products.</span>
+<span class="kn">inductive</span> <span class="n">term</span> <span class="o">:</span> <span class="kn">context</span> <span class="bp">→</span> <span class="n">type</span> <span class="bp">→</span> <span class="kt">Type</span>
+<span class="bp">|</span> <span class="n">var</span> <span class="o">{</span><span class="err">Γ</span> <span class="n">α</span><span class="o">}</span> <span class="o">:</span> <span class="n">var</span> <span class="err">Γ</span> <span class="n">α</span> <span class="bp">→</span> <span class="n">term</span> <span class="err">Γ</span> <span class="n">α</span>
+<span class="bp">|</span> <span class="n">lam</span> <span class="o">{</span><span class="err">Γ</span> <span class="n">α</span> <span class="n">β</span><span class="o">}</span> <span class="o">:</span> <span class="n">term</span> <span class="o">(</span><span class="n">α</span> <span class="bp">::</span> <span class="err">Γ</span><span class="o">)</span> <span class="n">β</span> <span class="bp">→</span> <span class="n">term</span> <span class="err">Γ</span> <span class="o">(</span><span class="n">Fun</span> <span class="n">α</span> <span class="n">β</span><span class="o">)</span>
+<span class="bp">|</span> <span class="n">prod</span> <span class="o">{</span><span class="err">Γ</span> <span class="n">α</span> <span class="n">β</span><span class="o">}</span> <span class="o">:</span> <span class="n">term</span> <span class="err">Γ</span> <span class="n">α</span> <span class="bp">→</span> <span class="n">term</span> <span class="err">Γ</span> <span class="n">β</span> <span class="bp">→</span> <span class="n">term</span> <span class="err">Γ</span> <span class="o">(</span><span class="n">Prod</span> <span class="n">α</span> <span class="n">β</span><span class="o">)</span>
+<span class="bp">|</span> <span class="n">unit</span> <span class="o">{</span><span class="err">Γ</span><span class="o">}</span> <span class="o">:</span> <span class="n">term</span> <span class="err">Γ</span> <span class="n">One</span>
+</code></pre></div>
+
+
+<p>This approach works fine and makes the development a little easier if (a) you don't have dependencies in your types (but I guess your <code>all</code> and <code>ex</code> are supposed to be quantifiers?) and (b) Lean properly supports indexed families (which I don't know). Mario's suggested approach -- keeping the syntax simple and putting a type predicate on top -- requires some additional boilerplate, but has the distinct advantage that it'll work regardless of what object theory you want to encode.</p>
+
+
+
+<a name="195567396"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/236446-Type%20theory/topic/Modelling%20a%20Type%20Theory%20in%20Lean/near/195567396" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Mario Carneiro <a href="https://leanprover-community.github.io/archive/stream/236446-Type-theory/topic/Modelling.20a.20Type.20Theory.20in.20Lean.html#195567396">(Apr 28 2020 at 13:56)</a>:</h4>
+<p>Lean's support for indexed families is fine</p>
+
+
+
+<a name="195567406"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/236446-Type%20theory/topic/Modelling%20a%20Type%20Theory%20in%20Lean/near/195567406" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Mario Carneiro <a href="https://leanprover-community.github.io/archive/stream/236446-Type-theory/topic/Modelling.20a.20Type.20Theory.20in.20Lean.html#195567406">(Apr 28 2020 at 13:56)</a>:</h4>
+<p>mutual is not fine</p>
+
+
+
+<a name="195567538"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/236446-Type%20theory/topic/Modelling%20a%20Type%20Theory%20in%20Lean/near/195567538" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Mario Carneiro <a href="https://leanprover-community.github.io/archive/stream/236446-Type-theory/topic/Modelling.20a.20Type.20Theory.20in.20Lean.html#195567538">(Apr 28 2020 at 13:57)</a>:</h4>
+<p>While I agree with you up to a point, I find that once you get down to proving theorems about these terms, you might want to e.g. prove something by induction on the context from the other end, and then it enters DTT hell</p>
+
+
+
+<a name="195568076"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/236446-Type%20theory/topic/Modelling%20a%20Type%20Theory%20in%20Lean/near/195568076" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Billy Price <a href="https://leanprover-community.github.io/archive/stream/236446-Type-theory/topic/Modelling.20a.20Type.20Theory.20in.20Lean.html#195568076">(Apr 28 2020 at 14:01)</a>:</h4>
+<p>Yeah I'm a little turned off by the fact that my sequents will also have a context, and I'd have to marry them properly.</p>
+
+
+
+<a name="195568381"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/236446-Type%20theory/topic/Modelling%20a%20Type%20Theory%20in%20Lean/near/195568381" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Jannis Limperg <a href="https://leanprover-community.github.io/archive/stream/236446-Type-theory/topic/Modelling.20a.20Type.20Theory.20in.20Lean.html#195568381">(Apr 28 2020 at 14:03)</a>:</h4>
+<p><span class="user-mention" data-user-id="110049">@Mario Carneiro</span> I can see how that proof might be tricky. I've also become more skeptical of intrinsically typed syntax lately -- it's nice when it works, but when it breaks, it sure breaks.</p>
+
+
+
+{% endraw %}
+
+<hr><p>Last updated: Apr 28 2020 at 14:04 UTC</p>

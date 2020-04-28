@@ -1,0 +1,15 @@
+---
+layout: archive
+title: Zulip Chat Archive
+permalink: /stream/236446-Type-theory/index.html
+---
+
+## Stream: [Type theory](https://leanprover-community.github.io/archive/stream/236446-Type-theory/index.html)
+---
+
+### Topics:
+
+* [Modelling a Type Theory in Lean](topic/Modelling.20a.20Type.20Theory.20in.20Lean.html) (16 messages, latest: Apr 28 2020 at 14:03)
+* [stream events](topic/stream.20events.html) (1 message, latest: Apr 28 2020 at 13:07)
+
+<hr><p>Last updated: Apr 28 2020 at 14:04 UTC</p>
