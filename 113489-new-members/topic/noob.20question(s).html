@@ -34652,6 +34652,42 @@ but is expected to have type<br>
 
 
 
+<a name="195521133"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113489-new%20members/topic/noob%20question%28s%29/near/195521133" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Sam Raleigh <a href="https://leanprover-community.github.io/archive/stream/113489-new-members/topic/noob.20question(s).html#195521133">(Apr 28 2020 at 05:42)</a>:</h4>
+<div class="codehilite"><pre><span></span><code><span class="kn">universe</span> <span class="n">u</span>
+<span class="kn">variables</span> <span class="o">{</span><span class="n">α</span> <span class="o">:</span> <span class="kt">Type</span> <span class="n">u</span><span class="o">}</span> <span class="o">(</span><span class="n">K</span> <span class="o">:</span> <span class="n">finset</span> <span class="n">α</span><span class="o">)</span> <span class="o">{</span><span class="n">n</span> <span class="o">:</span> <span class="bp">ℕ</span><span class="o">}</span> <span class="o">[</span><span class="n">decidable_eq</span> <span class="n">α</span><span class="o">]</span>
+
+<span class="n">def</span> <span class="n">mono_sub_colorings</span> <span class="o">(</span><span class="n">n</span> <span class="o">:</span> <span class="bp">ℕ</span><span class="o">)</span> <span class="o">(</span><span class="n">k</span> <span class="o">:</span> <span class="bp">ℕ</span><span class="o">)</span> <span class="o">:</span> <span class="n">finset</span> <span class="o">(</span><span class="n">finset</span> <span class="o">(</span><span class="n">finset</span> <span class="n">α</span><span class="o">))</span> <span class="o">:=</span> <span class="n">sorry</span>
+
+<span class="kn">lemma</span> <span class="n">num_mono_sub_colorings</span> <span class="o">(</span><span class="n">n</span> <span class="n">k</span> <span class="o">:</span> <span class="bp">ℕ</span><span class="o">)</span> <span class="o">(</span><span class="n">h</span> <span class="o">:</span> <span class="n">n</span> <span class="bp">≥</span> <span class="n">k</span><span class="o">)</span>
+  <span class="o">:=</span> <span class="o">(</span><span class="n">card</span> <span class="o">(</span><span class="n">mono_sub_colorings</span> <span class="n">n</span> <span class="n">k</span><span class="o">)</span> <span class="o">:</span> <span class="n">ℚ</span><span class="o">)</span> <span class="bp">=</span> <span class="o">(((</span><span class="mi">2</span> <span class="o">:</span> <span class="n">ℚ</span><span class="o">)</span><span class="bp">^</span><span class="o">((</span><span class="n">n</span><span class="bp">.</span><span class="n">choose</span><span class="o">(</span><span class="mi">2</span><span class="o">))</span> <span class="bp">-</span> <span class="o">(</span><span class="n">k</span><span class="bp">.</span><span class="n">choose</span><span class="o">(</span><span class="mi">2</span><span class="o">)))</span> <span class="o">:</span> <span class="n">ℚ</span><span class="o">)</span> <span class="bp">*</span> <span class="n">n</span><span class="bp">.</span><span class="n">choose</span><span class="o">(</span><span class="n">k</span><span class="o">)</span>
+<span class="k">begin</span>
+  <span class="n">sorry</span>
+<span class="kn">end</span>
+</code></pre></div>
+
+
+<p>Getting the following error:<br>
+"<br>
+type mismatch at application<br>
+  2 ^ (choose n 2 - choose k 2) * ⇑(choose n k) ?m_1<br>
+term<br>
+  ⇑(choose n k) ?m_1<br>
+has type<br>
+  ℝ<br>
+but is expected to have type<br>
+  ℚ<br>
+"</p>
+<p>Why is <code>choose n k</code> being coerced to <code>\R</code>? How can I fix this?</p>
+
+
+
+<a name="195521282"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113489-new%20members/topic/noob%20question%28s%29/near/195521282" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Sam Raleigh <a href="https://leanprover-community.github.io/archive/stream/113489-new-members/topic/noob.20question(s).html#195521282">(Apr 28 2020 at 05:46)</a>:</h4>
+<p>What's even more bizarre to me is that if I remove the coercion from  <code> (card (mono_sub_colorings n k) : ℚ)</code>, then I get <code>n.choose(k)</code> is of type <code>\Q</code>.</p>
+
+
+
 {% endraw %}
 
-<hr><p>Last updated: Apr 28 2020 at 05:03 UTC</p>
+<hr><p>Last updated: Apr 28 2020 at 06:04 UTC</p>
