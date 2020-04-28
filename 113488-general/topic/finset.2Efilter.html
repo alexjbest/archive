@@ -123,6 +123,69 @@ permalink: /stream/113488-general/topic/finset.2Efilter.html
 
 
 
+<a name="195537200"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113488-general/topic/finset.filter/near/195537200" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Kenny Lau <a href="https://leanprover-community.github.io/archive/stream/113488-general/topic/finset.2Efilter.html#195537200">(Apr 28 2020 at 09:17)</a>:</h4>
+<div class="codehilite"><pre><span></span><code><span class="kn">import</span> <span class="n">data</span><span class="bp">.</span><span class="n">fintype</span><span class="bp">.</span><span class="n">basic</span>
+
+<span class="n">universes</span> <span class="n">u</span>
+
+<span class="n">noncomputable</span> <span class="n">def</span> <span class="n">finset_of</span> <span class="o">{</span><span class="n">α</span> <span class="o">:</span> <span class="kt">Type</span> <span class="n">u</span><span class="o">}</span> <span class="o">[</span><span class="n">fintype</span> <span class="n">α</span><span class="o">]</span> <span class="o">(</span><span class="n">p</span> <span class="o">:</span> <span class="n">α</span> <span class="bp">→</span> <span class="kt">Prop</span><span class="o">)</span> <span class="o">:</span> <span class="n">finset</span> <span class="n">α</span> <span class="o">:=</span>
+<span class="bp">@</span><span class="n">finset</span><span class="bp">.</span><span class="n">filter</span> <span class="n">α</span> <span class="n">p</span> <span class="o">(</span><span class="n">classical</span><span class="bp">.</span><span class="n">dec_pred</span> <span class="n">p</span><span class="o">)</span> <span class="n">finset</span><span class="bp">.</span><span class="n">univ</span>
+
+<span class="kn">notation</span> <span class="bp">`</span><span class="o">{</span><span class="bp">`</span> <span class="n">binders</span> <span class="bp">`</span> <span class="bp">|</span> <span class="bp">`</span> <span class="n">r</span><span class="o">:(</span><span class="n">scoped</span> <span class="n">p</span><span class="o">,</span> <span class="n">finset_of</span> <span class="n">p</span><span class="o">)</span> <span class="bp">`</span><span class="o">}</span><span class="bp">`</span> <span class="o">:=</span> <span class="n">r</span>
+
+<span class="c1">-- { (x : bool) | x = x} : finset bool</span>
+<span class="bp">#</span><span class="kn">check</span> <span class="o">{</span> <span class="n">x</span> <span class="o">:</span> <span class="n">bool</span> <span class="bp">|</span> <span class="n">x</span> <span class="bp">=</span> <span class="n">x</span> <span class="o">}</span>
+</code></pre></div>
+
+
+<p>... but the downside is that the <code>set</code> equivalent is no longer within reach</p>
+
+
+
+<a name="195537331"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113488-general/topic/finset.filter/near/195537331" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Gabriel Ebner <a href="https://leanprover-community.github.io/archive/stream/113488-general/topic/finset.2Efilter.html#195537331">(Apr 28 2020 at 09:19)</a>:</h4>
+<p>There's no need to make this noncomputable:</p>
+<div class="codehilite"><pre><span></span><code><span class="n">def</span> <span class="n">finset</span><span class="bp">.</span><span class="n">set_of</span> <span class="o">{</span><span class="n">α</span><span class="o">}</span> <span class="o">[</span><span class="n">fintype</span> <span class="n">α</span><span class="o">]</span> <span class="o">(</span><span class="n">p</span> <span class="o">:</span> <span class="n">α</span> <span class="bp">→</span> <span class="kt">Prop</span><span class="o">)</span> <span class="o">[</span><span class="n">decidable_pred</span> <span class="n">p</span><span class="o">]</span> <span class="o">:</span> <span class="n">finset</span> <span class="n">α</span> <span class="o">:=</span>
+<span class="n">univ</span><span class="bp">.</span><span class="n">filter</span> <span class="n">p</span>
+
+<span class="n">localized</span> <span class="s2">&quot;notation `{` binders ` | ` r:(scoped p, finset.set_of p) `}` := r&quot;</span> <span class="k">in</span> <span class="n">finset</span>
+
+<span class="bp">#</span><span class="kn">eval</span> <span class="o">{</span> <span class="n">x</span> <span class="o">:</span> <span class="n">bool</span> <span class="bp">|</span> <span class="n">x</span> <span class="bp">=</span> <span class="n">tt</span> <span class="o">}</span>
+</code></pre></div>
+
+
+
+<a name="195537453"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113488-general/topic/finset.filter/near/195537453" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Patrick Massot <a href="https://leanprover-community.github.io/archive/stream/113488-general/topic/finset.2Efilter.html#195537453">(Apr 28 2020 at 09:20)</a>:</h4>
+<p>Would this break other uses of this notation?</p>
+
+
+
+<a name="195537472"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113488-general/topic/finset.filter/near/195537472" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Kenny Lau <a href="https://leanprover-community.github.io/archive/stream/113488-general/topic/finset.2Efilter.html#195537472">(Apr 28 2020 at 09:20)</a>:</h4>
+<p>yeah this still breaks the <code>set</code> equivalent</p>
+
+
+
+<a name="195537475"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113488-general/topic/finset.filter/near/195537475" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Gabriel Ebner <a href="https://leanprover-community.github.io/archive/stream/113488-general/topic/finset.2Efilter.html#195537475">(Apr 28 2020 at 09:21)</a>:</h4>
+<p>The bigger problem is that all the other bracket notations disappear as well.  Think of <code>{ x // x &gt; 0 }</code> or <code>{1,2,3}</code>.</p>
+
+
+
+<a name="195537485"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113488-general/topic/finset.filter/near/195537485" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Kenny Lau <a href="https://leanprover-community.github.io/archive/stream/113488-general/topic/finset.2Efilter.html#195537485">(Apr 28 2020 at 09:21)</a>:</h4>
+<p>oh no</p>
+
+
+
+<a name="195537598"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113488-general/topic/finset.filter/near/195537598" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Gabriel Ebner <a href="https://leanprover-community.github.io/archive/stream/113488-general/topic/finset.2Efilter.html#195537598">(Apr 28 2020 at 09:22)</a>:</h4>
+<p>The obvious solution is to write <code>❴ x : bool | x = x ❵</code> instead.</p>
+
+
+
 {% endraw %}
 
-<hr><p>Last updated: Apr 28 2020 at 09:04 UTC</p>
+<hr><p>Last updated: Apr 28 2020 at 10:04 UTC</p>
