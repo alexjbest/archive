@@ -9,6 +9,7 @@ permalink: /stream/113488-general/index.html
 
 ### Topics:
 
+* [seminars](topic/seminars.html) (11 messages, latest: Apr 28 2020 at 15:43)
 * [unusable arguments](topic/unusable.20arguments.html) (20 messages, latest: Apr 28 2020 at 13:27)
 * [Intuitionistic Type Theory Proofs](topic/Intuitionistic.20Type.20Theory.20Proofs.html) (139 messages, latest: Apr 28 2020 at 13:02)
 * [annotated lean files](topic/annotated.20lean.20files.html) (24 messages, latest: Apr 28 2020 at 12:55)
@@ -19,7 +20,6 @@ permalink: /stream/113488-general/index.html
 * [finset.filter](topic/finset.2Efilter.html) (22 messages, latest: Apr 28 2020 at 09:22)
 * [definition of real log](topic/definition.20of.20real.20log.html) (17 messages, latest: Apr 28 2020 at 09:15)
 * [data.int.basic](topic/data.2Eint.2Ebasic.html) (6 messages, latest: Apr 28 2020 at 07:23)
-* [seminars](topic/seminars.html) (10 messages, latest: Apr 28 2020 at 05:22)
 * [PRing to mathlib from forks](topic/PRing.20to.20mathlib.20from.20forks.html) (13 messages, latest: Apr 27 2020 at 23:10)
 * [wlog is slow](topic/wlog.20is.20slow.html) (15 messages, latest: Apr 27 2020 at 16:03)
 * [Notices of the AMS paper](topic/Notices.20of.20the.20AMS.20paper.html) (95 messages, latest: Apr 27 2020 at 12:16)
@@ -2720,4 +2720,4 @@ permalink: /stream/113488-general/index.html
 * [test](topic/test.html) (4 messages, latest: Feb 26 2018 at 16:22)
 * [welcome](topic/welcome.html) (1 message, latest: Feb 26 2018 at 16:02)
 
-<hr><p>Last updated: Apr 28 2020 at 15:04 UTC</p>
+<hr><p>Last updated: Apr 28 2020 at 16:04 UTC</p>
