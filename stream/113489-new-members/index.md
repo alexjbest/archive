@@ -9,13 +9,14 @@ permalink: /stream/113489-new-members/index.html
 
 ### Topics:
 
-* [showing injectivity](topic/showing.20injectivity.html) (86 messages, latest: Apr 28 2020 at 20:04)
-* [noob question(s)](topic/noob.20question(s).html) (4939 messages, latest: Apr 28 2020 at 19:53)
+* [Diagonal Ramsey Number Lower Bound](topic/Diagonal.20Ramsey.20Number.20Lower.20Bound.html) (85 messages, latest: Apr 28 2020 at 21:03)
+* [showing injectivity](topic/showing.20injectivity.html) (116 messages, latest: Apr 28 2020 at 21:01)
+* [Some olympiad formalisations](topic/Some.20olympiad.20formalisations.html) (28 messages, latest: Apr 28 2020 at 20:41)
+* [noob question(s)](topic/noob.20question(s).html) (4941 messages, latest: Apr 28 2020 at 20:15)
 * [rw with inductive types](topic/rw.20with.20inductive.20types.html) (1 message, latest: Apr 28 2020 at 19:33)
 * [Help with proving with contradiction](topic/Help.20with.20proving.20with.20contradiction.html) (10 messages, latest: Apr 28 2020 at 19:03)
 * [IVT](topic/IVT.html) (44 messages, latest: Apr 28 2020 at 17:59)
 * [pow_mono](topic/pow_mono.html) (28 messages, latest: Apr 28 2020 at 17:50)
-* [Diagonal Ramsey Number Lower Bound](topic/Diagonal.20Ramsey.20Number.20Lower.20Bound.html) (77 messages, latest: Apr 28 2020 at 17:12)
 * [bezout](topic/bezout.html) (34 messages, latest: Apr 28 2020 at 08:30)
 * [\[\] in class syntax](topic/.5B.5D.20in.20class.20syntax.html) (21 messages, latest: Apr 28 2020 at 07:45)
 * [Finishing off induction for pigeonhole](topic/Finishing.20off.20induction.20for.20pigeonhole.html) (222 messages, latest: Apr 26 2020 at 22:49)
@@ -49,7 +50,6 @@ permalink: /stream/113489-new-members/index.html
 * [Universal algebra](topic/Universal.20algebra.html) (19 messages, latest: Apr 20 2020 at 10:44)
 * [gcd_domain](topic/gcd_domain.html) (29 messages, latest: Apr 20 2020 at 01:10)
 * [triangle inequality](topic/triangle.20inequality.html) (15 messages, latest: Apr 19 2020 at 16:30)
-* [Some olympiad formalisations](topic/Some.20olympiad.20formalisations.html) (7 messages, latest: Apr 19 2020 at 15:47)
 * [Installing mathlib](topic/Installing.20mathlib.html) (176 messages, latest: Apr 19 2020 at 10:10)
 * [rw not working with nat.fib](topic/rw.20not.20working.20with.20nat.2Efib.html) (10 messages, latest: Apr 19 2020 at 07:20)
 * [Simp not working inside a predicate](topic/Simp.20not.20working.20inside.20a.20predicate.html) (8 messages, latest: Apr 18 2020 at 23:17)
@@ -986,4 +986,4 @@ permalink: /stream/113489-new-members/index.html
 * [Andrew Ashworth](topic/Andrew.20Ashworth.html) (15 messages, latest: Feb 26 2018 at 16:21)
 * [onboarding](topic/onboarding.html) (1 message, latest: Feb 26 2018 at 16:02)
 
-<hr><p>Last updated: Apr 28 2020 at 20:04 UTC</p>
+<hr><p>Last updated: Apr 28 2020 at 21:04 UTC</p>

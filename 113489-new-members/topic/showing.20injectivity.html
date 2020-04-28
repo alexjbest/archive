@@ -880,6 +880,204 @@ which means either ((relabel m k p) x).1 &lt; ((relabel m k p) y).2, contradicti
 
 
 
+<a name="195619555"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113489-new%20members/topic/showing%20injectivity/near/195619555" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Adeeb K <a href="https://leanprover-community.github.io/archive/stream/113489-new-members/topic/showing.20injectivity.html#195619555">(Apr 28 2020 at 20:08)</a>:</h4>
+<p>I <code>introv p</code>, which gives me the following window:</p>
+
+
+
+<a name="195619599"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113489-new%20members/topic/showing%20injectivity/near/195619599" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Adeeb K <a href="https://leanprover-community.github.io/archive/stream/113489-new-members/topic/showing.20injectivity.html#195619599">(Apr 28 2020 at 20:08)</a>:</h4>
+<div class="codehilite"><pre><span></span><code><span class="mi">1</span> <span class="n">goal</span>
+<span class="n">m</span> <span class="n">k</span> <span class="o">:</span> <span class="bp">ℕ</span><span class="o">,</span>
+<span class="n">p</span> <span class="o">:</span> <span class="n">k</span> <span class="bp">&lt;</span> <span class="n">m</span><span class="o">,</span>
+<span class="n">x</span> <span class="n">y</span> <span class="o">:</span> <span class="n">finite_subset</span> <span class="n">m</span><span class="o">,</span>
+<span class="n">p</span> <span class="o">:</span> <span class="n">relabel</span> <span class="n">m</span> <span class="n">k</span> <span class="n">p</span> <span class="n">x</span> <span class="bp">=</span> <span class="n">relabel</span> <span class="n">m</span> <span class="n">k</span> <span class="n">p</span> <span class="n">y</span>
+<span class="err">⊢</span> <span class="n">x</span><span class="bp">.</span><span class="n">fst</span> <span class="bp">≤</span> <span class="n">k</span> <span class="bp">∧</span> <span class="n">y</span><span class="bp">.</span><span class="n">fst</span> <span class="bp">≤</span> <span class="n">k</span> <span class="bp">∨</span> <span class="n">x</span><span class="bp">.</span><span class="n">fst</span> <span class="bp">≥</span> <span class="n">k</span> <span class="bp">∧</span> <span class="n">y</span><span class="bp">.</span><span class="n">fst</span> <span class="bp">≥</span> <span class="n">k</span>
+</code></pre></div>
+
+
+
+<a name="195619635"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113489-new%20members/topic/showing%20injectivity/near/195619635" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Adeeb K <a href="https://leanprover-community.github.io/archive/stream/113489-new-members/topic/showing.20injectivity.html#195619635">(Apr 28 2020 at 20:09)</a>:</h4>
+<p>how can I split the goal?</p>
+
+
+
+<a name="195620599"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113489-new%20members/topic/showing%20injectivity/near/195620599" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Adeeb K <a href="https://leanprover-community.github.io/archive/stream/113489-new-members/topic/showing.20injectivity.html#195620599">(Apr 28 2020 at 20:15)</a>:</h4>
+<p>actually, I'm sort of lost as to how I would get cases to examine the <code>relabel m k p x</code> in the first place</p>
+
+
+
+<a name="195623473"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113489-new%20members/topic/showing%20injectivity/near/195623473" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Adeeb K <a href="https://leanprover-community.github.io/archive/stream/113489-new-members/topic/showing.20injectivity.html#195623473">(Apr 28 2020 at 20:36)</a>:</h4>
+<p>wait, would split_ifs help me here to split the goal or split the cases for relabel's output?</p>
+
+
+
+<a name="195624074"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113489-new%20members/topic/showing%20injectivity/near/195624074" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Kevin Buzzard <a href="https://leanprover-community.github.io/archive/stream/113489-new-members/topic/showing.20injectivity.html#195624074">(Apr 28 2020 at 20:42)</a>:</h4>
+<p><span class="user-mention silent" data-user-id="283719">Adeeb K</span> <a href="#narrow/stream/113489-new-members/topic/showing.20injectivity/near/195619635" title="#narrow/stream/113489-new-members/topic/showing.20injectivity/near/195619635">said</a>:</p>
+<blockquote>
+<p>how can I split the goal?</p>
+</blockquote>
+<p>Have you read <a href="https://leanprover.github.io/theorem_proving_in_lean/" title="https://leanprover.github.io/theorem_proving_in_lean/">Theorem Proving In Lean</a> or played the <a href="http://wwwf.imperial.ac.uk/~buzzard/xena/natural_number_game/" title="http://wwwf.imperial.ac.uk/~buzzard/xena/natural_number_game/">natural number game</a>? If you don't know what to do with a goal which is just logical connectives and propositions then perhaps you've bitten off more than you can chew.</p>
+
+
+
+<a name="195624350"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113489-new%20members/topic/showing%20injectivity/near/195624350" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Reid Barton <a href="https://leanprover-community.github.io/archive/stream/113489-new-members/topic/showing.20injectivity.html#195624350">(Apr 28 2020 at 20:45)</a>:</h4>
+<p>Well, I don't think the NNG covers <code>if</code>, does it?</p>
+
+
+
+<a name="195624443"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113489-new%20members/topic/showing%20injectivity/near/195624443" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Kevin Buzzard <a href="https://leanprover-community.github.io/archive/stream/113489-new-members/topic/showing.20injectivity.html#195624443">(Apr 28 2020 at 20:46)</a>:</h4>
+<p>I thought the question was what to do with <code>x.fst ≤ k ∧ y.fst ≤ k ∨ x.fst ≥ k ∧ y.fst ≥ k</code>?</p>
+
+
+
+<a name="195624586"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113489-new%20members/topic/showing%20injectivity/near/195624586" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Adeeb K <a href="https://leanprover-community.github.io/archive/stream/113489-new-members/topic/showing.20injectivity.html#195624586">(Apr 28 2020 at 20:47)</a>:</h4>
+<p>Well, I'm sort of asking about both.  I'm wondering how I can split up <code>relabel m k p x</code> into cases for its output</p>
+
+
+
+<a name="195624592"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113489-new%20members/topic/showing%20injectivity/near/195624592" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Kevin Buzzard <a href="https://leanprover-community.github.io/archive/stream/113489-new-members/topic/showing.20injectivity.html#195624592">(Apr 28 2020 at 20:47)</a>:</h4>
+<p><span class="user-mention" data-user-id="283719">@Adeeb K</span> if you read <a href="https://leanprover-community.github.io/mathlib_docs/tactics.html#split_ifs" title="https://leanprover-community.github.io/mathlib_docs/tactics.html#split_ifs">the documentation for <code>split_ifs</code></a> you will see exactly what it does.</p>
+
+
+
+<a name="195624629"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113489-new%20members/topic/showing%20injectivity/near/195624629" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Adeeb K <a href="https://leanprover-community.github.io/archive/stream/113489-new-members/topic/showing.20injectivity.html#195624629">(Apr 28 2020 at 20:47)</a>:</h4>
+<p>as for <code>x.fst ≤ k ∧ y.fst ≤ k ∨ x.fst ≥ k ∧ y.fst ≥ k</code> I'll do more of the natural number game - I think I got 3-4 worlds in my last time</p>
+
+
+
+<a name="195624659"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113489-new%20members/topic/showing%20injectivity/near/195624659" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Kevin Buzzard <a href="https://leanprover-community.github.io/archive/stream/113489-new-members/topic/showing.20injectivity.html#195624659">(Apr 28 2020 at 20:47)</a>:</h4>
+<p>In particular, <code>split_ifs</code> will only work if it can see an <code>if</code></p>
+
+
+
+<a name="195624748"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113489-new%20members/topic/showing%20injectivity/near/195624748" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Adeeb K <a href="https://leanprover-community.github.io/archive/stream/113489-new-members/topic/showing.20injectivity.html#195624748">(Apr 28 2020 at 20:48)</a>:</h4>
+<p>and I should be able to apply it to a statement that isn't the goal?</p>
+
+
+
+<a name="195624767"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113489-new%20members/topic/showing%20injectivity/near/195624767" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Kevin Buzzard <a href="https://leanprover-community.github.io/archive/stream/113489-new-members/topic/showing.20injectivity.html#195624767">(Apr 28 2020 at 20:48)</a>:</h4>
+<p><span class="user-mention silent" data-user-id="110038">Kevin Buzzard</span> <a href="#narrow/stream/113489-new-members/topic/showing.20injectivity/near/195624592" title="#narrow/stream/113489-new-members/topic/showing.20injectivity/near/195624592">said</a>:</p>
+<blockquote>
+<p><span class="user-mention silent" data-user-id="283719">Adeeb K</span> if you read <a href="https://leanprover-community.github.io/mathlib_docs/tactics.html#split_ifs" title="https://leanprover-community.github.io/mathlib_docs/tactics.html#split_ifs">the documentation for <code>split_ifs</code></a> you will see exactly what it does.</p>
+</blockquote>
+
+
+
+<a name="195624830"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113489-new%20members/topic/showing%20injectivity/near/195624830" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Adeeb K <a href="https://leanprover-community.github.io/archive/stream/113489-new-members/topic/showing.20injectivity.html#195624830">(Apr 28 2020 at 20:49)</a>:</h4>
+<p>but I keep getting errors when I do so..</p>
+
+
+
+<a name="195624874"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113489-new%20members/topic/showing%20injectivity/near/195624874" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Kevin Buzzard <a href="https://leanprover-community.github.io/archive/stream/113489-new-members/topic/showing.20injectivity.html#195624874">(Apr 28 2020 at 20:49)</a>:</h4>
+<p><span class="user-mention silent" data-user-id="110038">Kevin Buzzard</span> <a href="#narrow/stream/113489-new-members/topic/showing.20injectivity/near/195624659" title="#narrow/stream/113489-new-members/topic/showing.20injectivity/near/195624659">said</a>:</p>
+<blockquote>
+<p>In particular, <code>split_ifs</code> will only work if it can see an <code>if</code></p>
+</blockquote>
+
+
+
+<a name="195625125"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113489-new%20members/topic/showing%20injectivity/near/195625125" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Adeeb K <a href="https://leanprover-community.github.io/archive/stream/113489-new-members/topic/showing.20injectivity.html#195625125">(Apr 28 2020 at 20:51)</a>:</h4>
+<p>relabel is defined with an if-then-else and starts with an if.  Do you mean I have to manually put the if into my expression?</p>
+
+
+
+<a name="195625326"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113489-new%20members/topic/showing%20injectivity/near/195625326" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Kevin Buzzard <a href="https://leanprover-community.github.io/archive/stream/113489-new-members/topic/showing.20injectivity.html#195625326">(Apr 28 2020 at 20:52)</a>:</h4>
+<p>Yes, it really need to be able to see an if. Can you unfold?</p>
+
+
+
+<a name="195625482"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113489-new%20members/topic/showing%20injectivity/near/195625482" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Kevin Buzzard <a href="https://leanprover-community.github.io/archive/stream/113489-new-members/topic/showing.20injectivity.html#195625482">(Apr 28 2020 at 20:54)</a>:</h4>
+<p>Some tactics work up to definitional equality, and some up to syntactic equality. In other words, some tactics will be fine if what you point them at is equal by definition to what they're expecting (e.g. <code>exact</code>) but others will only work if what you point them at is literally the string of characters they are expecting (e.g. <code>rw</code> or <code>split_ifs</code>).</p>
+
+
+
+<a name="195625489"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113489-new%20members/topic/showing%20injectivity/near/195625489" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Adeeb K <a href="https://leanprover-community.github.io/archive/stream/113489-new-members/topic/showing.20injectivity.html#195625489">(Apr 28 2020 at 20:54)</a>:</h4>
+<p>I get an error for the simplify tactic failing to simplify when I <code>unfold at p2</code></p>
+
+
+
+<a name="195625517"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113489-new%20members/topic/showing%20injectivity/near/195625517" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Kevin Buzzard <a href="https://leanprover-community.github.io/archive/stream/113489-new-members/topic/showing.20injectivity.html#195625517">(Apr 28 2020 at 20:54)</a>:</h4>
+<p><code>unfold at p2</code> doesn't make any sense</p>
+
+
+
+<a name="195625558"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113489-new%20members/topic/showing%20injectivity/near/195625558" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Kevin Buzzard <a href="https://leanprover-community.github.io/archive/stream/113489-new-members/topic/showing.20injectivity.html#195625558">(Apr 28 2020 at 20:54)</a>:</h4>
+<p><a href="https://leanprover-community.github.io/mathlib_docs/tactics.html#unfold" title="https://leanprover-community.github.io/mathlib_docs/tactics.html#unfold">https://leanprover-community.github.io/mathlib_docs/tactics.html#unfold</a></p>
+
+
+
+<a name="195625813"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113489-new%20members/topic/showing%20injectivity/near/195625813" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Adeeb K <a href="https://leanprover-community.github.io/archive/stream/113489-new-members/topic/showing.20injectivity.html#195625813">(Apr 28 2020 at 20:56)</a>:</h4>
+<p>okay, I just read through <code>unfold</code>.  I'm not sure how to use it in this case, or what my constants as arguments would be in this case.</p>
+
+
+
+<a name="195626028"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113489-new%20members/topic/showing%20injectivity/near/195626028" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Johan Commelin <a href="https://leanprover-community.github.io/archive/stream/113489-new-members/topic/showing.20injectivity.html#195626028">(Apr 28 2020 at 20:58)</a>:</h4>
+<p>What is <code>p2</code>?</p>
+
+
+
+<a name="195626073"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113489-new%20members/topic/showing%20injectivity/near/195626073" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Adeeb K <a href="https://leanprover-community.github.io/archive/stream/113489-new-members/topic/showing.20injectivity.html#195626073">(Apr 28 2020 at 20:58)</a>:</h4>
+<p><code>p2 : relabel m k p x = relabel m k p y</code></p>
+
+
+
+<a name="195626088"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113489-new%20members/topic/showing%20injectivity/near/195626088" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Johan Commelin <a href="https://leanprover-community.github.io/archive/stream/113489-new-members/topic/showing.20injectivity.html#195626088">(Apr 28 2020 at 20:59)</a>:</h4>
+<p>Did you mean <code>unfold relabel at p2</code>?</p>
+
+
+
+<a name="195626189"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113489-new%20members/topic/showing%20injectivity/near/195626189" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Reid Barton <a href="https://leanprover-community.github.io/archive/stream/113489-new-members/topic/showing.20injectivity.html#195626189">(Apr 28 2020 at 20:59)</a>:</h4>
+<p>The documentation is written in such jargon that someone who understands it would probably already know how to use <code>unfold</code>.<br>
+More useful would be an example or links to TPIL or similar.</p>
+
+
+
+<a name="195626296"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113489-new%20members/topic/showing%20injectivity/near/195626296" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Adeeb K <a href="https://leanprover-community.github.io/archive/stream/113489-new-members/topic/showing.20injectivity.html#195626296">(Apr 28 2020 at 21:00)</a>:</h4>
+<p>oh, that makes sense<br>
+sorry I wasn't seeing it earlier..</p>
+
+
+
+<a name="195626381"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113489-new%20members/topic/showing%20injectivity/near/195626381" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Kevin Buzzard <a href="https://leanprover-community.github.io/archive/stream/113489-new-members/topic/showing.20injectivity.html#195626381">(Apr 28 2020 at 21:01)</a>:</h4>
+<p>Yes, the documentation is a bit crappy for unfold :-/</p>
+
+
+
+<a name="195626425"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113489-new%20members/topic/showing%20injectivity/near/195626425" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Kevin Buzzard <a href="https://leanprover-community.github.io/archive/stream/113489-new-members/topic/showing.20injectivity.html#195626425">(Apr 28 2020 at 21:01)</a>:</h4>
+<p>The core tactics were only recently documented.</p>
+
+
+
 {% endraw %}
 
-<hr><p>Last updated: Apr 28 2020 at 20:04 UTC</p>
+<hr><p>Last updated: Apr 28 2020 at 21:04 UTC</p>

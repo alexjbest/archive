@@ -68,6 +68,153 @@ permalink: /stream/113489-new-members/topic/Some.20olympiad.20formalisations.htm
 
 
 
+<a name="195620616"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113489-new%20members/topic/Some%20olympiad%20formalisations/near/195620616" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Joseph Myers <a href="https://leanprover-community.github.io/archive/stream/113489-new-members/topic/Some.20olympiad.20formalisations.html#195620616">(Apr 28 2020 at 20:15)</a>:</h4>
+<p>Having got a first few batches of lemmas intro mathlib, a couple of followup questions.</p>
+<ol>
+<li>One of the lemmas I have is one where the statement seems reasonable for mathlib, but the proof I have surely isn't.</li>
+</ol>
+<div class="codehilite"><pre><span></span><code><span class="kn">import</span> <span class="n">data</span><span class="bp">.</span><span class="n">real</span><span class="bp">.</span><span class="n">cardinality</span>
+
+<span class="c">/-</span><span class="cm">- Any open interval of reals is uncountable. -/</span>
+<span class="kn">lemma</span> <span class="n">not_countable_real_Ioo</span> <span class="o">{</span><span class="n">k1</span> <span class="n">k2</span> <span class="o">:</span> <span class="n">ℝ</span><span class="o">}</span> <span class="o">(</span><span class="n">h</span> <span class="o">:</span> <span class="n">k1</span> <span class="bp">&lt;</span> <span class="n">k2</span><span class="o">)</span> <span class="o">:</span>
+  <span class="bp">¬</span> <span class="n">set</span><span class="bp">.</span><span class="n">countable</span> <span class="o">(</span><span class="n">set</span><span class="bp">.</span><span class="n">Ioo</span> <span class="n">k1</span> <span class="n">k2</span><span class="o">)</span> <span class="o">:=</span>
+<span class="k">begin</span>
+  <span class="n">sorry</span>
+<span class="kn">end</span>
+</code></pre></div>
+
+
+<p>The proof I have (in p4_lemmas.lean) deducing this from <code>not_countable_real</code> is about as long as the whole of <code>data.real.cardinality</code> once you include the auxiliary lemmas. Maybe someone can see a much simpler proof of this and can PR that to mathlib instead?</p>
+<ol start="2">
+<li>I only formalised solutions to three of the four problems on the paper because the other one is geometry and mathlib doesn't have any Euclidean geometry. I know there have been various attempts at Euclidean geometry in Lean, are there any plans to add it (at least basic definitions) to mathlib? (I tend to think the natural starting point is the <a href="https://en.wikipedia.org/wiki/Euclidean_space#Technical_definition" title="https://en.wikipedia.org/wiki/Euclidean_space#Technical_definition">definition</a> of a Euclidean space as an affine space whose associated vector space is a finite-dimensional real inner product space. mathlib has real inner product spaces, but not affine spaces.)</li>
+</ol>
+
+
+
+<a name="195622197"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113489-new%20members/topic/Some%20olympiad%20formalisations/near/195622197" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Reid Barton <a href="https://leanprover-community.github.io/archive/stream/113489-new-members/topic/Some.20olympiad.20formalisations.html#195622197">(Apr 28 2020 at 20:27)</a>:</h4>
+<p>For 1, it would be nice to know that an open interval is homeomorphic to ℝ anyways, from which the uncountability follows. (Maybe <span class="user-mention" data-user-id="110050">@Sebastien Gouezel</span> knows whether we have this already?)</p>
+
+
+
+<a name="195622357"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113489-new%20members/topic/Some%20olympiad%20formalisations/near/195622357" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Johan Commelin <a href="https://leanprover-community.github.io/archive/stream/113489-new-members/topic/Some.20olympiad.20formalisations.html#195622357">(Apr 28 2020 at 20:28)</a>:</h4>
+<p>For 2, I don't know of any plans to add Euclidean geometry to mathlib. But PRs are welcome!</p>
+
+
+
+<a name="195622504"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113489-new%20members/topic/Some%20olympiad%20formalisations/near/195622504" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Patrick Massot <a href="https://leanprover-community.github.io/archive/stream/113489-new-members/topic/Some.20olympiad.20formalisations.html#195622504">(Apr 28 2020 at 20:29)</a>:</h4>
+<p>Not having affine spaces is really really sad, especially now calculus is very advanced in the wrong direction (using linear spaces everywhere instead of affine spaces)</p>
+
+
+
+<a name="195622510"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113489-new%20members/topic/Some%20olympiad%20formalisations/near/195622510" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Johan Commelin <a href="https://leanprover-community.github.io/archive/stream/113489-new-members/topic/Some.20olympiad.20formalisations.html#195622510">(Apr 28 2020 at 20:29)</a>:</h4>
+<p>For 1. I would guess that it is not too hard to show that the interval <code>Ioo a b</code> is uncountable if the unit interval <code>Ioo 0 1</code> is.</p>
+
+
+
+<a name="195622601"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113489-new%20members/topic/Some%20olympiad%20formalisations/near/195622601" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Patrick Massot <a href="https://leanprover-community.github.io/archive/stream/113489-new-members/topic/Some.20olympiad.20formalisations.html#195622601">(Apr 28 2020 at 20:30)</a>:</h4>
+<p>I tried to define affine spaces a very very long time ago, but I never managed to get elaboration to cooperate.</p>
+
+
+
+<a name="195622655"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113489-new%20members/topic/Some%20olympiad%20formalisations/near/195622655" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Johan Commelin <a href="https://leanprover-community.github.io/archive/stream/113489-new-members/topic/Some.20olympiad.20formalisations.html#195622655">(Apr 28 2020 at 20:30)</a>:</h4>
+<p>And we know that <code>exp</code> is injective. So <code>R</code> injects into the positive reals. That's also only a couple of lines.</p>
+
+
+
+<a name="195622762"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113489-new%20members/topic/Some%20olympiad%20formalisations/near/195622762" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Johan Commelin <a href="https://leanprover-community.github.io/archive/stream/113489-new-members/topic/Some.20olympiad.20formalisations.html#195622762">(Apr 28 2020 at 20:31)</a>:</h4>
+<p>Then you apply negation, and another <code>exp</code>.</p>
+
+
+
+<a name="195622789"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113489-new%20members/topic/Some%20olympiad%20formalisations/near/195622789" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Johan Commelin <a href="https://leanprover-community.github.io/archive/stream/113489-new-members/topic/Some.20olympiad.20formalisations.html#195622789">(Apr 28 2020 at 20:31)</a>:</h4>
+<p>We know that exp is monotone as well, I htink.</p>
+
+
+
+<a name="195623114"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113489-new%20members/topic/Some%20olympiad%20formalisations/near/195623114" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Patrick Massot <a href="https://leanprover-community.github.io/archive/stream/113489-new-members/topic/Some.20olympiad.20formalisations.html#195623114">(Apr 28 2020 at 20:34)</a>:</h4>
+<p>Library-wise I don't think we should look for a tricky proof. We need to make sure we have an bijection from R to any nonempty open interval</p>
+
+
+
+<a name="195623282"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113489-new%20members/topic/Some%20olympiad%20formalisations/near/195623282" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Reid Barton <a href="https://leanprover-community.github.io/archive/stream/113489-new-members/topic/Some.20olympiad.20formalisations.html#195623282">(Apr 28 2020 at 20:35)</a>:</h4>
+<p>The library should have (a) <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo stretchy="false">(</mo><mn>0</mn><mo separator="true">,</mo><mn>1</mn><mo stretchy="false">)</mo><mo>≅</mo><mo stretchy="false">(</mo><mi>a</mi><mo separator="true">,</mo><mi>b</mi><mo stretchy="false">)</mo></mrow><annotation encoding="application/x-tex">(0, 1) \cong (a, b)</annotation></semantics></math></span><span aria-hidden="true" class="katex-html"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mopen">(</span><span class="mord">0</span><span class="mpunct">,</span><span class="mspace" style="margin-right:0.16666666666666666em;"></span><span class="mord">1</span><span class="mclose">)</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">≅</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mopen">(</span><span class="mord mathdefault">a</span><span class="mpunct">,</span><span class="mspace" style="margin-right:0.16666666666666666em;"></span><span class="mord mathdefault">b</span><span class="mclose">)</span></span></span></span> for any <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>a</mi><mo>&lt;</mo><mi>b</mi></mrow><annotation encoding="application/x-tex">a &lt; b</annotation></semantics></math></span><span aria-hidden="true" class="katex-html"><span class="base"><span class="strut" style="height:0.5782em;vertical-align:-0.0391em;"></span><span class="mord mathdefault">a</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">&lt;</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:0.69444em;vertical-align:0em;"></span><span class="mord mathdefault">b</span></span></span></span>, (b) <a href="https://en.wikipedia.org/wiki/Sigmoid_function" title="https://en.wikipedia.org/wiki/Sigmoid_function">https://en.wikipedia.org/wiki/Sigmoid_function</a> or similar.</p>
+
+
+
+<a name="195623442"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113489-new%20members/topic/Some%20olympiad%20formalisations/near/195623442" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Johan Commelin <a href="https://leanprover-community.github.io/archive/stream/113489-new-members/topic/Some.20olympiad.20formalisations.html#195623442">(Apr 28 2020 at 20:36)</a>:</h4>
+<p>Hmmm, didn't <span class="user-mention" data-user-id="110050">@Sebastien Gouezel</span> do the sigmoid function, or something similar?</p>
+
+
+
+<a name="195623475"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113489-new%20members/topic/Some%20olympiad%20formalisations/near/195623475" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Patrick Massot <a href="https://leanprover-community.github.io/archive/stream/113489-new-members/topic/Some.20olympiad.20formalisations.html#195623475">(Apr 28 2020 at 20:36)</a>:</h4>
+<p>Assuming of course <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo>≅</mo></mrow><annotation encoding="application/x-tex">\cong</annotation></semantics></math></span><span aria-hidden="true" class="katex-html"><span class="base"><span class="strut" style="height:0.589em;vertical-align:0em;"></span><span class="mrel">≅</span></span></span></span> means diffemorphism.</p>
+
+
+
+<a name="195623483"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113489-new%20members/topic/Some%20olympiad%20formalisations/near/195623483" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Reid Barton <a href="https://leanprover-community.github.io/archive/stream/113489-new-members/topic/Some.20olympiad.20formalisations.html#195623483">(Apr 28 2020 at 20:36)</a>:</h4>
+<p>Oh I guess I always thought that the sigmoid function specifically meant what that page calls the logistic function, but the point is we should have at least one such function which also has some other utility.</p>
+
+
+
+<a name="195623725"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113489-new%20members/topic/Some%20olympiad%20formalisations/near/195623725" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Johan Commelin <a href="https://leanprover-community.github.io/archive/stream/113489-new-members/topic/Some.20olympiad.20formalisations.html#195623725">(Apr 28 2020 at 20:38)</a>:</h4>
+<p>Oooh, I was thinking of</p>
+<div class="codehilite"><pre><span></span><code>src/analysis/calculus/specific_functions.lean:
+The real function `exp_neg_inv_glue` given by `x ↦ exp (-1/x)` for `x &gt; 0` and `0`
+</code></pre></div>
+
+
+
+<a name="195623732"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113489-new%20members/topic/Some%20olympiad%20formalisations/near/195623732" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Reid Barton <a href="https://leanprover-community.github.io/archive/stream/113489-new-members/topic/Some.20olympiad.20formalisations.html#195623732">(Apr 28 2020 at 20:38)</a>:</h4>
+<p>There is <code>exp_neg_inv_glue</code>, but this is a bit different (and more difficult)</p>
+
+
+
+<a name="195623869"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113489-new%20members/topic/Some%20olympiad%20formalisations/near/195623869" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Johan Commelin <a href="https://leanprover-community.github.io/archive/stream/113489-new-members/topic/Some.20olympiad.20formalisations.html#195623869">(Apr 28 2020 at 20:40)</a>:</h4>
+<p>But <code>exp_neg_inv_glue</code> would also do the trick, right?</p>
+
+
+
+<a name="195623879"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113489-new%20members/topic/Some%20olympiad%20formalisations/near/195623879" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Kevin Buzzard <a href="https://leanprover-community.github.io/archive/stream/113489-new-members/topic/Some.20olympiad.20formalisations.html#195623879">(Apr 28 2020 at 20:40)</a>:</h4>
+<p>For 2, one has to think about how to formalise a general Euclidean geometry question. If it says something like "Let ABC be a triangle, now construct D,E,F,G,H and prove that ABDH all lie on a circle" then you can either use a coordinate approach or a synthetic approach. There has been a lot of work towards getting the synthetic approach to work in a theorem prover, including some serious stuff done in Coq (<a href="https://mathoverflow.net/questions/337558/automatically-solving-olympiad-geometry-problems" title="https://mathoverflow.net/questions/337558/automatically-solving-olympiad-geometry-problems">some links here</a>). I had a student formalise a load of stuff in Lean <a href="https://github.com/ImperialCollegeLondon/xena-UROP-2018/tree/master/src/Geometry" title="https://github.com/ImperialCollegeLondon/xena-UROP-2018/tree/master/src/Geometry">here</a> but they didn't document what they did so the code is impenetrable.</p>
+
+
+
+<a name="195623977"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113489-new%20members/topic/Some%20olympiad%20formalisations/near/195623977" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Sebastien Gouezel <a href="https://leanprover-community.github.io/archive/stream/113489-new-members/topic/Some.20olympiad.20formalisations.html#195623977">(Apr 28 2020 at 20:41)</a>:</h4>
+<p>I don't think we have the sigmoid (and I just learned this name). But it would be very easy to do.</p>
+
+
+
+<a name="195623991"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113489-new%20members/topic/Some%20olympiad%20formalisations/near/195623991" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Patrick Massot <a href="https://leanprover-community.github.io/archive/stream/113489-new-members/topic/Some.20olympiad.20formalisations.html#195623991">(Apr 28 2020 at 20:41)</a>:</h4>
+<p>And then we can claim Lean does AI</p>
+
+
+
+<a name="195624014"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113489-new%20members/topic/Some%20olympiad%20formalisations/near/195624014" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Patrick Massot <a href="https://leanprover-community.github.io/archive/stream/113489-new-members/topic/Some.20olympiad.20formalisations.html#195624014">(Apr 28 2020 at 20:41)</a>:</h4>
+<p>Sébastien, this fancy sigmoid name is AI</p>
+
+
+
 {% endraw %}
 
-<hr><p>Last updated: Apr 28 2020 at 20:04 UTC</p>
+<hr><p>Last updated: Apr 28 2020 at 21:04 UTC</p>

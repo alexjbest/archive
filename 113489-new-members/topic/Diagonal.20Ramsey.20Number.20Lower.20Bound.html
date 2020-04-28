@@ -574,6 +574,87 @@ or<br>
 
 
 
+<a name="195624933"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113489-new%20members/topic/Diagonal%20Ramsey%20Number%20Lower%20Bound/near/195624933" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Sam Raleigh <a href="https://leanprover-community.github.io/archive/stream/113489-new-members/topic/Diagonal.20Ramsey.20Number.20Lower.20Bound.html#195624933">(Apr 28 2020 at 20:49)</a>:</h4>
+<div class="codehilite"><pre><span></span><code><span class="kn">import</span> <span class="n">algebra</span><span class="bp">.</span><span class="n">field_power</span>
+
+<span class="kn">lemma</span> <span class="n">core_ineq</span>
+    <span class="o">{</span><span class="n">a</span> <span class="n">b</span> <span class="n">c</span> <span class="o">:</span> <span class="bp">ℕ</span><span class="o">}</span>
+    <span class="o">(</span><span class="n">h</span> <span class="o">:</span> <span class="o">((</span><span class="mi">2</span> <span class="o">:</span> <span class="n">ℚ</span><span class="o">)</span><span class="bp">^</span><span class="o">(</span><span class="mi">1</span> <span class="bp">-</span> <span class="n">b</span> <span class="o">:</span> <span class="bp">ℤ</span><span class="o">)</span> <span class="bp">*</span> <span class="n">c</span> <span class="o">:</span> <span class="n">ℚ</span><span class="o">)</span> <span class="bp">&lt;</span> <span class="mi">1</span><span class="o">)</span> <span class="o">:</span>
+    <span class="o">(</span><span class="mi">2</span><span class="bp">^</span><span class="o">(</span><span class="n">a</span> <span class="bp">-</span> <span class="n">b</span> <span class="o">:</span> <span class="bp">ℤ</span><span class="o">)</span> <span class="bp">*</span> <span class="mi">2</span> <span class="bp">*</span> <span class="n">c</span> <span class="o">:</span> <span class="n">ℚ</span><span class="o">)</span> <span class="bp">&lt;</span> <span class="o">(</span><span class="mi">2</span><span class="bp">^</span><span class="n">a</span> <span class="o">:</span> <span class="n">ℚ</span><span class="o">)</span> <span class="o">:=</span>
+<span class="k">begin</span>
+
+  <span class="c1">--stuff</span>
+
+  <span class="k">have</span> <span class="n">h0</span> <span class="o">:</span> <span class="mi">0</span> <span class="bp">&lt;</span> <span class="mi">2</span><span class="bp">^</span><span class="n">a</span> <span class="o">:=</span> <span class="n">sorry</span><span class="o">,</span>
+  <span class="k">have</span> <span class="n">h1</span> <span class="o">:</span> <span class="o">(</span><span class="mi">2</span><span class="bp">^</span><span class="n">a</span> <span class="bp">*</span> <span class="mi">2</span> <span class="bp">^</span> <span class="mi">1</span> <span class="bp">/</span> <span class="mi">2</span> <span class="bp">^</span> <span class="err">↑</span><span class="n">b</span> <span class="bp">*</span> <span class="err">↑</span><span class="n">c</span> <span class="bp">&lt;</span> <span class="mi">2</span><span class="bp">^</span><span class="n">a</span> <span class="bp">*</span> <span class="mi">1</span><span class="o">)</span> <span class="o">:=</span> <span class="k">by</span> <span class="n">exact</span> <span class="n">mul_lt_mul_of_pos_left</span> <span class="n">h</span> <span class="n">h0</span><span class="o">,</span>
+
+  <span class="c1">--other stuff</span>
+
+<span class="kn">end</span>
+</code></pre></div>
+
+
+<p>How do I fix the type mismatch at <code>mul_lt_mul_of_pos_left</code>?</p>
+
+
+
+<a name="195625119"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113489-new%20members/topic/Diagonal%20Ramsey%20Number%20Lower%20Bound/near/195625119" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Kevin Buzzard <a href="https://leanprover-community.github.io/archive/stream/113489-new-members/topic/Diagonal.20Ramsey.20Number.20Lower.20Bound.html#195625119">(Apr 28 2020 at 20:51)</a>:</h4>
+<div class="codehilite"><pre><span></span><code>    <span class="n">mul_lt_mul_of_pos_left</span> <span class="err">?</span><span class="n">m_6</span> <span class="err">?</span><span class="n">m_7</span>
+  <span class="n">has</span> <span class="n">type</span>
+    <span class="err">?</span><span class="n">m_3</span> <span class="bp">*</span> <span class="err">?</span><span class="n">m_4</span> <span class="bp">&lt;</span> <span class="err">?</span><span class="n">m_3</span> <span class="bp">*</span> <span class="err">?</span><span class="n">m_5</span>
+  <span class="n">but</span> <span class="n">is</span> <span class="n">expected</span> <span class="n">to</span> <span class="k">have</span> <span class="n">type</span>
+    <span class="mi">2</span> <span class="bp">^</span> <span class="n">a</span> <span class="bp">*</span> <span class="mi">2</span> <span class="bp">^</span> <span class="mi">1</span> <span class="bp">/</span> <span class="mi">2</span> <span class="bp">^</span> <span class="err">↑</span><span class="n">b</span> <span class="bp">*</span> <span class="err">↑</span><span class="n">c</span> <span class="bp">&lt;</span> <span class="mi">2</span> <span class="bp">^</span> <span class="n">a</span> <span class="bp">*</span> <span class="mi">1</span>
+</code></pre></div>
+
+
+
+<a name="195625298"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113489-new%20members/topic/Diagonal%20Ramsey%20Number%20Lower%20Bound/near/195625298" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Kevin Buzzard <a href="https://leanprover-community.github.io/archive/stream/113489-new-members/topic/Diagonal.20Ramsey.20Number.20Lower.20Bound.html#195625298">(Apr 28 2020 at 20:52)</a>:</h4>
+<p>Your right hand side says ?m_3 must be 2^a but the left hand side is not of the form <code>2^a * X</code></p>
+
+
+
+<a name="195626253"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113489-new%20members/topic/Diagonal%20Ramsey%20Number%20Lower%20Bound/near/195626253" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Kevin Buzzard <a href="https://leanprover-community.github.io/archive/stream/113489-new-members/topic/Diagonal.20Ramsey.20Number.20Lower.20Bound.html#195626253">(Apr 28 2020 at 21:00)</a>:</h4>
+<p>(because of associativity conventions)</p>
+
+
+
+<a name="195626375"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113489-new%20members/topic/Diagonal%20Ramsey%20Number%20Lower%20Bound/near/195626375" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Sam Raleigh <a href="https://leanprover-community.github.io/archive/stream/113489-new-members/topic/Diagonal.20Ramsey.20Number.20Lower.20Bound.html#195626375">(Apr 28 2020 at 21:01)</a>:</h4>
+<p>Is that the error you got? I mean thank you for pointing that out as I would have had to fix it eventually, but I got this error:</p>
+<div class="codehilite"><pre><span></span><code><span class="n">type</span> <span class="n">mismatch</span> <span class="n">at</span> <span class="n">application</span>
+  <span class="n">mul_lt_mul_of_pos_left</span> <span class="n">h</span> <span class="n">h0</span>
+<span class="n">term</span>
+  <span class="n">h0</span>
+<span class="n">has</span> <span class="n">type</span>
+  <span class="mi">0</span> <span class="bp">&lt;</span> <span class="mi">2</span> <span class="bp">^</span> <span class="n">a</span>
+<span class="n">but</span> <span class="n">is</span> <span class="n">expected</span> <span class="n">to</span> <span class="k">have</span> <span class="n">type</span>
+  <span class="mi">0</span> <span class="bp">&lt;</span> <span class="err">?</span><span class="n">m_1</span>
+</code></pre></div>
+
+
+
+<a name="195626503"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113489-new%20members/topic/Diagonal%20Ramsey%20Number%20Lower%20Bound/near/195626503" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Kevin Buzzard <a href="https://leanprover-community.github.io/archive/stream/113489-new-members/topic/Diagonal.20Ramsey.20Number.20Lower.20Bound.html#195626503">(Apr 28 2020 at 21:02)</a>:</h4>
+<p>Read more?</p>
+
+
+
+<a name="195626637"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113489-new%20members/topic/Diagonal%20Ramsey%20Number%20Lower%20Bound/near/195626637" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Sam Raleigh <a href="https://leanprover-community.github.io/archive/stream/113489-new-members/topic/Diagonal.20Ramsey.20Number.20Lower.20Bound.html#195626637">(Apr 28 2020 at 21:03)</a>:</h4>
+<p>Had my eyes only looked an inch farther down on the screen, I would not have needed to ask such a silly question. Thanks Kevin : D</p>
+
+
+
+<a name="195626678"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113489-new%20members/topic/Diagonal%20Ramsey%20Number%20Lower%20Bound/near/195626678" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Kevin Buzzard <a href="https://leanprover-community.github.io/archive/stream/113489-new-members/topic/Diagonal.20Ramsey.20Number.20Lower.20Bound.html#195626678">(Apr 28 2020 at 21:03)</a>:</h4>
+<p>Learning to read Lean error messages takes a long time</p>
+
+
+
 {% endraw %}
 
-<hr><p>Last updated: Apr 28 2020 at 20:04 UTC</p>
+<hr><p>Last updated: Apr 28 2020 at 21:04 UTC</p>

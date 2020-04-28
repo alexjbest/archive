@@ -67,6 +67,21 @@ Do  you have an idea ?  I think it's because  <code> n : nat </code>  and the bu
 
 
 
+<a name="195620694"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/116395-maths/topic/I%20love%20coersion%20%3A%29/near/195620694" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> orlando <a href="https://leanprover-community.github.io/archive/stream/116395-maths/topic/I.20love.20coersion.20.3A).html#195620694">(Apr 28 2020 at 20:15)</a>:</h4>
+<p>That good,  i find the function :</p>
+<div class="codehilite"><pre><span></span><code><span class="kn">example</span> <span class="o">(</span><span class="n">n</span> <span class="o">:</span> <span class="bp">ℕ</span><span class="o">)</span> <span class="o">(</span><span class="n">a</span> <span class="o">:</span> <span class="n">R</span><span class="o">)(</span><span class="n">hyp</span> <span class="o">:</span>  <span class="n">a</span> <span class="bp">*</span> <span class="n">n</span> <span class="bp">=</span> <span class="mi">1</span><span class="o">)(</span><span class="n">x</span> <span class="o">:</span> <span class="n">M</span><span class="o">)</span> <span class="o">:</span> <span class="n">a</span> <span class="err">•</span> <span class="o">((</span><span class="n">n</span><span class="o">)</span> <span class="err">•</span>  <span class="n">x</span><span class="o">)</span> <span class="bp">=</span> <span class="n">x</span> <span class="o">:=</span> <span class="k">begin</span>
+    <span class="k">have</span> <span class="n">R</span> <span class="o">:</span> <span class="n">n</span> <span class="err">•</span> <span class="n">x</span> <span class="bp">=</span> <span class="o">(</span><span class="n">n</span> <span class="o">:</span> <span class="n">R</span><span class="o">)</span> <span class="err">•</span> <span class="n">x</span><span class="o">,</span>   <span class="c1">--- just library_search !</span>
+        <span class="n">exact</span> <span class="n">semimodule</span><span class="bp">.</span><span class="n">smul_eq_smul</span> <span class="n">R</span> <span class="n">n</span> <span class="n">x</span><span class="o">,</span>
+    <span class="n">rw</span> <span class="n">R</span><span class="o">,</span>
+    <span class="n">rw</span> <span class="err">←</span> <span class="n">mul_smul</span><span class="o">,</span>
+    <span class="n">rw</span> <span class="n">hyp</span><span class="o">,</span>
+    <span class="n">rw</span> <span class="n">one_smul</span><span class="o">,</span>
+<span class="kn">end</span> <span class="bp">```</span>
+</code></pre></div>
+
+
+
 {% endraw %}
 
-<hr><p>Last updated: Apr 28 2020 at 20:04 UTC</p>
+<hr><p>Last updated: Apr 28 2020 at 21:04 UTC</p>
