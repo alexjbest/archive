@@ -9,8 +9,8 @@ permalink: /stream/113488-general/index.html
 
 ### Topics:
 
+* [seminars](topic/seminars.html) (3 messages, latest: Apr 28 2020 at 03:35)
 * [Invitation to join the Codewars Lean community, Round 2](topic/Invitation.20to.20join.20the.20Codewars.20Lean.20community.2C.20Round.202.html) (141 messages, latest: Apr 28 2020 at 02:20)
-* [seminars](topic/seminars.html) (2 messages, latest: Apr 28 2020 at 01:31)
 * [PRing to mathlib from forks](topic/PRing.20to.20mathlib.20from.20forks.html) (13 messages, latest: Apr 27 2020 at 23:10)
 * [wlog is slow](topic/wlog.20is.20slow.html) (15 messages, latest: Apr 27 2020 at 16:03)
 * [data.int.basic](topic/data.2Eint.2Ebasic.html) (4 messages, latest: Apr 27 2020 at 13:54)
@@ -2713,4 +2713,4 @@ permalink: /stream/113488-general/index.html
 * [test](topic/test.html) (4 messages, latest: Feb 26 2018 at 16:22)
 * [welcome](topic/welcome.html) (1 message, latest: Feb 26 2018 at 16:02)
 
-<hr><p>Last updated: Apr 28 2020 at 03:03 UTC</p>
+<hr><p>Last updated: Apr 28 2020 at 04:04 UTC</p>
