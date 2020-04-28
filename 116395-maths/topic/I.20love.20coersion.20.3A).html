@@ -1,0 +1,38 @@
+---
+layout: archive
+title: Zulip Chat Archive
+permalink: /stream/116395-maths/topic/I.20love.20coersion.20.3A).html
+---
+
+<h2>Stream: <a href="https://leanprover-community.github.io/archive/stream/116395-maths/index.html">maths</a></h2>
+<h3>Topic: <a href="https://leanprover-community.github.io/archive/stream/116395-maths/topic/I.20love.20coersion.20.3A).html">I love coersion :)</a></h3>
+
+<hr>
+
+<base href="https://leanprover.zulipchat.com/">
+
+<head><link href="/style.css" rel="stylesheet"></head>
+
+{% raw %}
+
+<a name="195609283"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/116395-maths/topic/I%20love%20coersion%20%3A%29/near/195609283" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> orlando <a href="https://leanprover-community.github.io/archive/stream/116395-maths/topic/I.20love.20coersion.20.3A).html#195609283">(Apr 28 2020 at 18:47)</a>:</h4>
+<p>Hello,  <br>
+Do  you have an idea ?  I think it's because  <code> n : nat </code>  and the bullet <code> n \bu x </code> is not the same bullet  than the first bullet in <code> a \bu ( n\bu x ) </code></p>
+<div class="codehilite"><pre><span></span><code><span class="kn">variables</span> <span class="o">{</span><span class="n">R</span> <span class="o">:</span> <span class="kt">Type</span><span class="o">}[</span><span class="n">comm_ring</span> <span class="n">R</span><span class="o">]{</span><span class="n">M</span> <span class="o">:</span> <span class="kt">Type</span><span class="o">}[</span><span class="n">add_comm_group</span> <span class="n">M</span><span class="o">]</span> <span class="o">[</span><span class="n">module</span> <span class="n">R</span> <span class="n">M</span> <span class="o">]</span>
+<span class="kn">example</span> <span class="o">(</span><span class="n">n</span> <span class="o">:</span> <span class="bp">ℕ</span><span class="o">)</span> <span class="o">(</span><span class="n">a</span> <span class="o">:</span> <span class="n">R</span><span class="o">)(</span><span class="n">hyp</span> <span class="o">:</span>  <span class="n">a</span> <span class="bp">*</span> <span class="n">n</span> <span class="bp">=</span> <span class="mi">1</span><span class="o">)(</span><span class="n">x</span> <span class="o">:</span> <span class="n">M</span><span class="o">)</span> <span class="o">:</span> <span class="n">a</span> <span class="err">•</span> <span class="o">(</span><span class="n">n</span> <span class="err">•</span> <span class="n">x</span><span class="o">)</span> <span class="bp">=</span> <span class="n">x</span> <span class="o">:=</span> <span class="k">begin</span>
+    <span class="n">erw</span> <span class="err">←</span> <span class="n">mul_smul</span><span class="o">,</span>     <span class="c1">---   :/ :/</span>
+<span class="kn">end</span>
+</code></pre></div>
+
+
+
+<a name="195609754"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/116395-maths/topic/I%20love%20coersion%20%3A%29/near/195609754" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Reid Barton <a href="https://leanprover-community.github.io/archive/stream/116395-maths/topic/I.20love.20coersion.20.3A).html#195609754">(Apr 28 2020 at 18:51)</a>:</h4>
+<p>In my experience it's usually better to avoid using this <code>nat</code> <code>•</code> instance at all, by writing <code>(n : R) • x</code></p>
+
+
+
+{% endraw %}
+
+<hr><p>Last updated: Apr 28 2020 at 19:04 UTC</p>

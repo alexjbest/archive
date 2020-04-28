@@ -36681,6 +36681,252 @@ by_contradiction</p>
 
 
 
+<a name="195603685"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113489-new%20members/topic/noob%20question%28s%29/near/195603685" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Adeeb K <a href="https://leanprover-community.github.io/archive/stream/113489-new-members/topic/noob.20question(s).html#195603685">(Apr 28 2020 at 18:05)</a>:</h4>
+<p>hi small question</p>
+
+
+
+<a name="195603747"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113489-new%20members/topic/noob%20question%28s%29/near/195603747" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Adeeb K <a href="https://leanprover-community.github.io/archive/stream/113489-new-members/topic/noob.20question(s).html#195603747">(Apr 28 2020 at 18:05)</a>:</h4>
+<p>suppose I have a variable named <code>x_2</code> and just want to rename it <code>y</code>.  How would I do so?</p>
+
+
+
+<a name="195605159"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113489-new%20members/topic/noob%20question%28s%29/near/195605159" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Reid Barton <a href="https://leanprover-community.github.io/archive/stream/113489-new-members/topic/noob.20question(s).html#195605159">(Apr 28 2020 at 18:16)</a>:</h4>
+<p>I assume there is a rename tactic or something, but normally one would arrange for the variable to have the correct name in the first place; how did you get <code>x_2</code>?</p>
+
+
+
+<a name="195605225"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113489-new%20members/topic/noob%20question%28s%29/near/195605225" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Adeeb K <a href="https://leanprover-community.github.io/archive/stream/113489-new-members/topic/noob.20question(s).html#195605225">(Apr 28 2020 at 18:17)</a>:</h4>
+<p>I used the <code>intros</code> tactic</p>
+
+
+
+<a name="195605355"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113489-new%20members/topic/noob%20question%28s%29/near/195605355" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Adeeb K <a href="https://leanprover-community.github.io/archive/stream/113489-new-members/topic/noob.20question(s).html#195605355">(Apr 28 2020 at 18:18)</a>:</h4>
+<p>err</p>
+
+
+
+<a name="195605372"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113489-new%20members/topic/noob%20question%28s%29/near/195605372" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Adeeb K <a href="https://leanprover-community.github.io/archive/stream/113489-new-members/topic/noob.20question(s).html#195605372">(Apr 28 2020 at 18:18)</a>:</h4>
+<p>the <code>introv</code> tactic</p>
+
+
+
+<a name="195605422"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113489-new%20members/topic/noob%20question%28s%29/near/195605422" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Adeeb K <a href="https://leanprover-community.github.io/archive/stream/113489-new-members/topic/noob.20question(s).html#195605422">(Apr 28 2020 at 18:18)</a>:</h4>
+<p>but more than that, I have this:</p>
+
+
+
+<a name="195605433"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113489-new%20members/topic/noob%20question%28s%29/near/195605433" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> orlando <a href="https://leanprover-community.github.io/archive/stream/113489-new-members/topic/noob.20question(s).html#195605433">(Apr 28 2020 at 18:19)</a>:</h4>
+<p><code> intros y, </code> ?</p>
+
+
+
+<a name="195605506"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113489-new%20members/topic/noob%20question%28s%29/near/195605506" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Adeeb K <a href="https://leanprover-community.github.io/archive/stream/113489-new-members/topic/noob.20question(s).html#195605506">(Apr 28 2020 at 18:19)</a>:</h4>
+<div class="codehilite"><pre><span></span><code><span class="k">let</span> <span class="n">p</span> <span class="o">:=</span> <span class="n">relabel</span> <span class="o">(</span><span class="n">m</span> <span class="bp">+</span> <span class="mi">1</span><span class="o">)</span> <span class="n">k</span> <span class="n">pf</span> <span class="o">(</span><span class="n">f</span> <span class="o">(</span><span class="n">lift_one</span> <span class="o">(</span><span class="n">m</span> <span class="bp">+</span> <span class="mi">1</span><span class="o">)</span> <span class="n">x</span><span class="o">))</span> <span class="bp">=</span> <span class="n">relabel</span> <span class="o">(</span><span class="n">m</span> <span class="bp">+</span> <span class="mi">1</span><span class="o">)</span> <span class="n">k</span> <span class="n">pf</span> <span class="o">(</span><span class="n">f</span> <span class="o">(</span><span class="n">lift_one</span> <span class="o">(</span><span class="n">m</span> <span class="bp">+</span> <span class="mi">1</span><span class="o">)</span> <span class="n">x₂</span><span class="o">)),</span>
+<span class="k">let</span> <span class="n">x_l</span> <span class="o">:=</span> <span class="o">(</span><span class="n">lift_one</span> <span class="o">(</span><span class="n">m</span> <span class="bp">+</span> <span class="mi">1</span><span class="o">)</span> <span class="n">x</span><span class="o">),</span>
+<span class="k">let</span> <span class="n">y_l</span> <span class="o">:=</span> <span class="o">(</span><span class="n">lift_one</span> <span class="o">(</span><span class="n">m</span> <span class="bp">+</span> <span class="mi">1</span><span class="o">)</span> <span class="n">x₂</span><span class="o">),</span>
+</code></pre></div>
+
+
+
+<a name="195605689"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113489-new%20members/topic/noob%20question%28s%29/near/195605689" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Adeeb K <a href="https://leanprover-community.github.io/archive/stream/113489-new-members/topic/noob.20question(s).html#195605689">(Apr 28 2020 at 18:20)</a>:</h4>
+<p>How would I be able to then get the statement:</p>
+<div class="codehilite"><pre><span></span><code><span class="n">relabel</span> <span class="o">(</span><span class="n">m</span> <span class="bp">+</span> <span class="mi">1</span><span class="o">)</span> <span class="n">k</span> <span class="n">pf</span> <span class="o">(</span><span class="n">f</span> <span class="n">x_l</span><span class="o">)</span> <span class="bp">=</span> <span class="n">relabel</span> <span class="o">(</span><span class="n">m</span> <span class="bp">+</span> <span class="mi">1</span><span class="o">)</span> <span class="n">k</span> <span class="n">pf</span> <span class="o">(</span><span class="n">f</span> <span class="n">y_l</span><span class="o">)</span>
+</code></pre></div>
+
+
+
+<a name="195605744"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113489-new%20members/topic/noob%20question%28s%29/near/195605744" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Adeeb K <a href="https://leanprover-community.github.io/archive/stream/113489-new-members/topic/noob.20question(s).html#195605744">(Apr 28 2020 at 18:21)</a>:</h4>
+<p>I should add that I have <code>p</code> from my tactic state window</p>
+
+
+
+<a name="195605746"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113489-new%20members/topic/noob%20question%28s%29/near/195605746" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Reid Barton <a href="https://leanprover-community.github.io/archive/stream/113489-new-members/topic/noob.20question(s).html#195605746">(Apr 28 2020 at 18:21)</a>:</h4>
+<p><code>p</code></p>
+
+
+
+<a name="195605783"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113489-new%20members/topic/noob%20question%28s%29/near/195605783" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Adeeb K <a href="https://leanprover-community.github.io/archive/stream/113489-new-members/topic/noob.20question(s).html#195605783">(Apr 28 2020 at 18:21)</a>:</h4>
+<p><code>p</code>?</p>
+
+
+
+<a name="195605884"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113489-new%20members/topic/noob%20question%28s%29/near/195605884" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Reid Barton <a href="https://leanprover-community.github.io/archive/stream/113489-new-members/topic/noob.20question(s).html#195605884">(Apr 28 2020 at 18:22)</a>:</h4>
+<p><code>p</code> already equals what you wrote</p>
+
+
+
+<a name="195606180"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113489-new%20members/topic/noob%20question%28s%29/near/195606180" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Reid Barton <a href="https://leanprover-community.github.io/archive/stream/113489-new-members/topic/noob.20question(s).html#195606180">(Apr 28 2020 at 18:24)</a>:</h4>
+<p>if you have a proof of <code>p</code> and you really need a proof of <code>relabel (m + 1) k pf (f x_l) = relabel (m + 1) k pf (f y_l)</code> in particular then you can use <code>change</code></p>
+
+
+
+<a name="195606197"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113489-new%20members/topic/noob%20question%28s%29/near/195606197" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Reid Barton <a href="https://leanprover-community.github.io/archive/stream/113489-new-members/topic/noob.20question(s).html#195606197">(Apr 28 2020 at 18:24)</a>:</h4>
+<p>but most other tactics will not notice the difference anyways</p>
+
+
+
+<a name="195606304"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113489-new%20members/topic/noob%20question%28s%29/near/195606304" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Reid Barton <a href="https://leanprover-community.github.io/archive/stream/113489-new-members/topic/noob.20question(s).html#195606304">(Apr 28 2020 at 18:25)</a>:</h4>
+<p><code>let</code> is a tricky thing and it would be better to understand everything else first. But in general you can pretend something defined with <code>let</code> is the same as its definition.</p>
+
+
+
+<a name="195606373"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113489-new%20members/topic/noob%20question%28s%29/near/195606373" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Adeeb K <a href="https://leanprover-community.github.io/archive/stream/113489-new-members/topic/noob.20question(s).html#195606373">(Apr 28 2020 at 18:25)</a>:</h4>
+<p>ah, I see.</p>
+
+
+
+<a name="195606577"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113489-new%20members/topic/noob%20question%28s%29/near/195606577" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Adeeb K <a href="https://leanprover-community.github.io/archive/stream/113489-new-members/topic/noob.20question(s).html#195606577">(Apr 28 2020 at 18:27)</a>:</h4>
+<p>thanks!</p>
+
+
+
+<a name="195606784"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113489-new%20members/topic/noob%20question%28s%29/near/195606784" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Adeeb K <a href="https://leanprover-community.github.io/archive/stream/113489-new-members/topic/noob.20question(s).html#195606784">(Apr 28 2020 at 18:28)</a>:</h4>
+<p>Okay, so new question:</p>
+
+
+
+<a name="195606842"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113489-new%20members/topic/noob%20question%28s%29/near/195606842" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Adeeb K <a href="https://leanprover-community.github.io/archive/stream/113489-new-members/topic/noob.20question(s).html#195606842">(Apr 28 2020 at 18:29)</a>:</h4>
+<p>I have a definition for a function using if-then-else</p>
+
+
+
+<a name="195606870"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113489-new%20members/topic/noob%20question%28s%29/near/195606870" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Adeeb K <a href="https://leanprover-community.github.io/archive/stream/113489-new-members/topic/noob.20question(s).html#195606870">(Apr 28 2020 at 18:29)</a>:</h4>
+<p>particularly:</p>
+
+
+
+<a name="195606899"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113489-new%20members/topic/noob%20question%28s%29/near/195606899" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Adeeb K <a href="https://leanprover-community.github.io/archive/stream/113489-new-members/topic/noob.20question(s).html#195606899">(Apr 28 2020 at 18:29)</a>:</h4>
+<div class="codehilite"><pre><span></span><code><span class="n">def</span> <span class="n">relabel</span>
+<span class="o">(</span><span class="n">m</span> <span class="n">k</span> <span class="o">:</span> <span class="bp">ℕ</span><span class="o">)</span>
+<span class="o">(</span><span class="n">p</span><span class="o">:</span> <span class="n">k</span> <span class="bp">&lt;</span> <span class="n">m</span><span class="o">)</span>
+<span class="o">:</span> <span class="n">finite_subset</span> <span class="n">m</span> <span class="bp">→</span> <span class="n">finite_subset</span> <span class="o">(</span><span class="n">m</span> <span class="bp">-</span> <span class="mi">1</span><span class="o">)</span>
+<span class="o">:=</span> <span class="bp">λ</span> <span class="n">j</span><span class="o">,</span> <span class="k">if</span> <span class="n">H</span> <span class="o">:</span> <span class="n">j</span><span class="bp">.</span><span class="mi">1</span> <span class="bp">≤</span> <span class="n">k</span> <span class="k">then</span> <span class="bp">⟨</span><span class="n">j</span><span class="bp">.</span><span class="mi">1</span><span class="o">,</span> <span class="n">my_le_trans</span> <span class="n">j</span><span class="bp">.</span><span class="mi">1</span> <span class="n">k</span> <span class="n">m</span> <span class="n">p</span> <span class="n">H</span> <span class="bp">⟩</span> <span class="k">else</span> <span class="bp">⟨</span><span class="n">j</span><span class="bp">.</span><span class="mi">1</span> <span class="bp">-</span> <span class="mi">1</span><span class="o">,</span> <span class="n">inequality_fact</span> <span class="n">j</span><span class="bp">.</span><span class="mi">1</span> <span class="n">m</span> <span class="n">j</span><span class="bp">.</span><span class="mi">2</span><span class="bp">⟩</span>
+</code></pre></div>
+
+
+
+<a name="195607095"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113489-new%20members/topic/noob%20question%28s%29/near/195607095" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Adeeb K <a href="https://leanprover-community.github.io/archive/stream/113489-new-members/topic/noob.20question(s).html#195607095">(Apr 28 2020 at 18:31)</a>:</h4>
+<p>the function you helped me with earlier tells me that with an injective function <code>f</code>, there is no <code>j</code> in <code>{0, 1, ..., m}</code> such that <code>f(j) = f(m + 1)</code></p>
+
+
+
+<a name="195607270"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113489-new%20members/topic/noob%20question%28s%29/near/195607270" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Adeeb K <a href="https://leanprover-community.github.io/archive/stream/113489-new-members/topic/noob.20question(s).html#195607270">(Apr 28 2020 at 18:32)</a>:</h4>
+<p>With that, I want to show that the composition <code>(relabel (m + 1) k pf) ∘ f ∘ lift_one (m + 1)</code> is injective.  I have already have that <code>f</code> is injective, and I have a lemma that any lifting is injective as well</p>
+
+
+
+<a name="195607283"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113489-new%20members/topic/noob%20question%28s%29/near/195607283" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Adeeb K <a href="https://leanprover-community.github.io/archive/stream/113489-new-members/topic/noob.20question(s).html#195607283">(Apr 28 2020 at 18:32)</a>:</h4>
+<p>this is what I have so far:</p>
+
+
+
+<a name="195607334"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113489-new%20members/topic/noob%20question%28s%29/near/195607334" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Adeeb K <a href="https://leanprover-community.github.io/archive/stream/113489-new-members/topic/noob.20question(s).html#195607334">(Apr 28 2020 at 18:32)</a>:</h4>
+<div class="codehilite"><pre><span></span><code><span class="kn">lemma</span> <span class="n">relabel_inj</span>
+<span class="o">(</span><span class="n">m</span> <span class="n">k</span> <span class="o">:</span> <span class="bp">ℕ</span><span class="o">)</span>
+<span class="o">(</span><span class="n">p</span><span class="o">:</span> <span class="n">k</span> <span class="bp">&lt;</span> <span class="n">m</span><span class="o">)</span>
+<span class="o">(</span><span class="n">f</span><span class="o">:</span> <span class="n">finite_subset</span> <span class="o">(</span><span class="n">m</span> <span class="bp">+</span> <span class="mi">2</span><span class="o">)</span> <span class="bp">→</span> <span class="n">finite_subset</span> <span class="o">(</span><span class="n">m</span> <span class="bp">+</span> <span class="mi">1</span><span class="o">))</span>
+<span class="o">(</span><span class="n">inj</span><span class="o">:</span> <span class="n">injective</span> <span class="n">f</span><span class="o">)</span>
+<span class="o">{</span><span class="n">pf</span><span class="o">}</span> <span class="o">(</span><span class="n">miss</span><span class="o">:</span> <span class="bp">∀</span> <span class="n">j</span> <span class="o">:</span> <span class="n">finite_subset</span> <span class="o">(</span><span class="n">m</span> <span class="bp">+</span> <span class="mi">1</span><span class="o">),</span> <span class="o">(</span><span class="n">f</span> <span class="err">∘</span> <span class="n">lift_one</span> <span class="o">(</span><span class="n">m</span> <span class="bp">+</span> <span class="mi">1</span><span class="o">))</span> <span class="n">j</span> <span class="bp">≠</span> <span class="bp">⟨</span><span class="n">k</span><span class="o">,</span>  <span class="n">pf</span><span class="bp">⟩</span> <span class="o">)</span>
+<span class="o">:</span> <span class="n">injective</span> <span class="o">((</span><span class="n">relabel</span> <span class="o">(</span><span class="n">m</span> <span class="bp">+</span> <span class="mi">1</span><span class="o">)</span> <span class="n">k</span> <span class="n">pf</span><span class="o">)</span> <span class="err">∘</span> <span class="n">f</span> <span class="err">∘</span> <span class="n">lift_one</span> <span class="o">(</span><span class="n">m</span> <span class="bp">+</span> <span class="mi">1</span><span class="o">))</span>
+<span class="o">:=</span>
+<span class="k">begin</span>
+
+  <span class="n">introv</span> <span class="n">x</span><span class="o">,</span>
+  <span class="k">let</span> <span class="n">y</span> <span class="o">:=</span> <span class="n">x₂</span><span class="o">,</span>
+  <span class="n">intros</span><span class="o">,</span>
+  <span class="n">change</span> <span class="o">(</span><span class="n">relabel</span> <span class="o">(</span><span class="n">m</span> <span class="bp">+</span> <span class="mi">1</span><span class="o">)</span> <span class="n">k</span> <span class="n">pf</span> <span class="o">(</span><span class="n">f</span> <span class="o">(</span><span class="n">lift_one</span> <span class="o">(</span><span class="n">m</span> <span class="bp">+</span> <span class="mi">1</span><span class="o">)</span> <span class="n">x</span><span class="o">)))</span> <span class="bp">=</span> <span class="o">(</span><span class="n">relabel</span> <span class="o">(</span><span class="n">m</span> <span class="bp">+</span> <span class="mi">1</span><span class="o">)</span> <span class="n">k</span> <span class="n">pf</span> <span class="o">(</span><span class="n">f</span> <span class="o">(</span><span class="n">lift_one</span> <span class="o">(</span><span class="n">m</span> <span class="bp">+</span> <span class="mi">1</span><span class="o">)</span> <span class="n">x₂</span><span class="o">)))</span> <span class="n">at</span> <span class="n">a</span><span class="o">,</span>
+  <span class="k">let</span> <span class="n">x_l</span> <span class="o">:=</span> <span class="o">(</span><span class="n">lift_one</span> <span class="o">(</span><span class="n">m</span> <span class="bp">+</span> <span class="mi">1</span><span class="o">)</span> <span class="n">x</span><span class="o">),</span>
+  <span class="k">let</span> <span class="n">y_l</span> <span class="o">:=</span> <span class="o">(</span><span class="n">lift_one</span> <span class="o">(</span><span class="n">m</span> <span class="bp">+</span> <span class="mi">1</span><span class="o">)</span> <span class="n">x₂</span><span class="o">),</span>
+  <span class="n">change</span> <span class="n">relabel</span> <span class="o">(</span><span class="n">m</span> <span class="bp">+</span> <span class="mi">1</span><span class="o">)</span> <span class="n">k</span> <span class="n">pf</span> <span class="o">(</span><span class="n">f</span> <span class="n">x_l</span><span class="o">)</span> <span class="bp">=</span> <span class="n">relabel</span> <span class="o">(</span><span class="n">m</span> <span class="bp">+</span> <span class="mi">1</span><span class="o">)</span> <span class="n">k</span> <span class="n">pf</span> <span class="o">(</span><span class="n">f</span> <span class="n">y_l</span><span class="o">)</span> <span class="n">at</span> <span class="n">a</span><span class="o">,</span>
+
+  <span class="n">sorry</span><span class="o">,</span>
+<span class="kn">end</span>
+</code></pre></div>
+
+
+
+<a name="195607431"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113489-new%20members/topic/noob%20question%28s%29/near/195607431" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Adeeb K <a href="https://leanprover-community.github.io/archive/stream/113489-new-members/topic/noob.20question(s).html#195607431">(Apr 28 2020 at 18:33)</a>:</h4>
+<p>at this step, I want to be able to break this up into cases</p>
+
+
+
+<a name="195607547"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113489-new%20members/topic/noob%20question%28s%29/near/195607547" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Adeeb K <a href="https://leanprover-community.github.io/archive/stream/113489-new-members/topic/noob.20question(s).html#195607547">(Apr 28 2020 at 18:34)</a>:</h4>
+<p>where relabel (f x_l) &lt;= k and and when relabel (f x_l) &gt; k</p>
+
+
+
+<a name="195607601"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113489-new%20members/topic/noob%20question%28s%29/near/195607601" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Adeeb K <a href="https://leanprover-community.github.io/archive/stream/113489-new-members/topic/noob.20question(s).html#195607601">(Apr 28 2020 at 18:34)</a>:</h4>
+<p>and then apply my proof that f x_l != k to show we only have the cases for &lt; and &gt;</p>
+
+
+
+<a name="195607613"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113489-new%20members/topic/noob%20question%28s%29/near/195607613" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Adeeb K <a href="https://leanprover-community.github.io/archive/stream/113489-new-members/topic/noob.20question(s).html#195607613">(Apr 28 2020 at 18:34)</a>:</h4>
+<p>does that make sense?</p>
+
+
+
+<a name="195607725"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113489-new%20members/topic/noob%20question%28s%29/near/195607725" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Adeeb K <a href="https://leanprover-community.github.io/archive/stream/113489-new-members/topic/noob.20question(s).html#195607725">(Apr 28 2020 at 18:35)</a>:</h4>
+<p>would <code>cases</code> help me here in any way?</p>
+
+
+
+<a name="195607751"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113489-new%20members/topic/noob%20question%28s%29/near/195607751" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Adeeb K <a href="https://leanprover-community.github.io/archive/stream/113489-new-members/topic/noob.20question(s).html#195607751">(Apr 28 2020 at 18:35)</a>:</h4>
+<p>or <code>refine</code>?</p>
+
+
+
+<a name="195609237"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113489-new%20members/topic/noob%20question%28s%29/near/195609237" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Adeeb K <a href="https://leanprover-community.github.io/archive/stream/113489-new-members/topic/noob.20question(s).html#195609237">(Apr 28 2020 at 18:47)</a>:</h4>
+<p>Is this a better question as a new topic?</p>
+
+
+
+<a name="195609577"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113489-new%20members/topic/noob%20question%28s%29/near/195609577" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Bryan Gin-ge Chen <a href="https://leanprover-community.github.io/archive/stream/113489-new-members/topic/noob.20question(s).html#195609577">(Apr 28 2020 at 18:50)</a>:</h4>
+<p>Yes, pretty much all questions that require &gt; 1 reply would work better in their own topics.</p>
+
+
+
+<a name="195609616"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113489-new%20members/topic/noob%20question%28s%29/near/195609616" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Adeeb K <a href="https://leanprover-community.github.io/archive/stream/113489-new-members/topic/noob.20question(s).html#195609616">(Apr 28 2020 at 18:50)</a>:</h4>
+<p>gotcha, gonna make it now.</p>
+
+
+
 {% endraw %}
 
-<hr><p>Last updated: Apr 28 2020 at 18:04 UTC</p>
+<hr><p>Last updated: Apr 28 2020 at 19:04 UTC</p>

@@ -1,0 +1,345 @@
+---
+layout: archive
+title: Zulip Chat Archive
+permalink: /stream/113489-new-members/topic/showing.20injectivity.html
+---
+
+<h2>Stream: <a href="https://leanprover-community.github.io/archive/stream/113489-new-members/index.html">new members</a></h2>
+<h3>Topic: <a href="https://leanprover-community.github.io/archive/stream/113489-new-members/topic/showing.20injectivity.html">showing injectivity</a></h3>
+
+<hr>
+
+<base href="https://leanprover.zulipchat.com/">
+
+<head><link href="/style.css" rel="stylesheet"></head>
+
+{% raw %}
+
+<a name="195609756"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113489-new%20members/topic/showing%20injectivity/near/195609756" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Adeeb K <a href="https://leanprover-community.github.io/archive/stream/113489-new-members/topic/showing.20injectivity.html#195609756">(Apr 28 2020 at 18:51)</a>:</h4>
+<p>I have a definition of a function using the if-then-else pattern, and I want to break it up into cases based on that definition.  How can I do so?  The context is that I am trying to show a function is injective</p>
+
+
+
+<a name="195609814"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113489-new%20members/topic/showing%20injectivity/near/195609814" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Adeeb K <a href="https://leanprover-community.github.io/archive/stream/113489-new-members/topic/showing.20injectivity.html#195609814">(Apr 28 2020 at 18:52)</a>:</h4>
+<p>Here is all I have so far</p>
+
+
+
+<a name="195609902"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113489-new%20members/topic/showing%20injectivity/near/195609902" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Adeeb K <a href="https://leanprover-community.github.io/archive/stream/113489-new-members/topic/showing.20injectivity.html#195609902">(Apr 28 2020 at 18:52)</a>:</h4>
+<div class="codehilite"><pre><span></span><code><span class="kn">import</span> <span class="n">tactic</span>
+
+
+<span class="n">def</span> <span class="n">injective</span> <span class="o">{</span><span class="n">X</span> <span class="n">Y</span><span class="o">}</span> <span class="o">(</span><span class="n">f</span> <span class="o">:</span> <span class="n">X</span> <span class="bp">→</span> <span class="n">Y</span><span class="o">)</span> <span class="o">:=</span> <span class="bp">∀</span> <span class="n">x₁</span> <span class="n">x₂</span><span class="o">,</span> <span class="n">f</span> <span class="n">x₁</span> <span class="bp">=</span> <span class="n">f</span> <span class="n">x₂</span> <span class="bp">→</span> <span class="n">x₁</span> <span class="bp">=</span> <span class="n">x₂</span>
+
+
+<span class="n">def</span> <span class="n">range</span> <span class="o">{</span><span class="n">X</span> <span class="n">Y</span><span class="o">}</span> <span class="o">(</span><span class="n">f</span> <span class="o">:</span> <span class="n">X</span> <span class="bp">→</span> <span class="n">Y</span><span class="o">)</span> <span class="o">:=</span> <span class="o">{</span> <span class="n">y</span> <span class="bp">|</span> <span class="bp">∃</span> <span class="n">x</span><span class="o">,</span> <span class="n">f</span> <span class="n">x</span> <span class="bp">=</span> <span class="n">y</span> <span class="o">}</span>
+
+
+<span class="kn">theorem</span> <span class="n">comp_inj_is_inj</span>
+<span class="o">{</span><span class="n">X</span> <span class="n">Y</span> <span class="n">Z</span><span class="o">}</span> <span class="o">(</span><span class="n">f</span> <span class="o">:</span> <span class="n">X</span> <span class="bp">→</span> <span class="n">Y</span><span class="o">)</span> <span class="o">(</span><span class="n">g</span> <span class="o">:</span> <span class="n">Y</span> <span class="bp">→</span> <span class="n">Z</span><span class="o">)</span>
+<span class="o">(</span><span class="n">p1</span> <span class="o">:</span> <span class="n">injective</span> <span class="n">f</span><span class="o">)</span>
+<span class="o">(</span><span class="n">p2</span> <span class="o">:</span> <span class="n">injective</span> <span class="n">g</span><span class="o">)</span>
+<span class="o">:</span>  <span class="n">injective</span> <span class="o">(</span><span class="n">g</span> <span class="err">∘</span> <span class="n">f</span><span class="o">)</span>
+<span class="o">:=</span> <span class="k">begin</span>
+  <span class="n">introv</span> <span class="n">x</span> <span class="n">p3</span><span class="o">,</span>
+  <span class="n">change</span> <span class="n">g</span> <span class="o">(</span><span class="n">f</span> <span class="n">x</span><span class="o">)</span> <span class="bp">=</span> <span class="n">g</span> <span class="o">(</span><span class="n">f</span> <span class="n">x₂</span><span class="o">)</span> <span class="n">at</span> <span class="n">p3</span><span class="o">,</span>
+  <span class="n">apply</span> <span class="n">p1</span><span class="o">,</span>
+  <span class="n">apply</span> <span class="n">p2</span><span class="o">,</span>
+  <span class="n">apply</span> <span class="n">p3</span><span class="o">,</span>
+<span class="kn">end</span>
+
+
+<span class="kn">lemma</span> <span class="n">succ_greater_than_nat</span> <span class="o">(</span><span class="n">n</span> <span class="o">:</span> <span class="bp">ℕ</span><span class="o">)</span> <span class="o">:</span> <span class="n">nat</span><span class="bp">.</span><span class="n">succ</span> <span class="n">n</span> <span class="bp">&gt;</span> <span class="n">n</span>
+<span class="o">:=</span>
+<span class="k">begin</span>
+  <span class="n">rw</span> <span class="n">nat</span><span class="bp">.</span><span class="n">succ_eq_add_one</span><span class="o">,</span>
+  <span class="n">linarith</span>
+<span class="kn">end</span>
+
+
+<span class="kn">lemma</span> <span class="n">pred_exists</span> <span class="o">(</span><span class="n">n</span> <span class="o">:</span> <span class="bp">ℕ</span><span class="o">)</span> <span class="o">(</span><span class="n">p</span><span class="o">:</span> <span class="n">n</span> <span class="bp">&gt;</span> <span class="mi">0</span><span class="o">)</span> <span class="o">:</span> <span class="n">exists</span> <span class="n">k</span><span class="o">,</span> <span class="n">nat</span><span class="bp">.</span><span class="n">succ</span> <span class="n">k</span> <span class="bp">=</span> <span class="n">n</span>
+<span class="o">:=</span>
+<span class="k">begin</span>
+<span class="n">induction</span> <span class="n">n</span> <span class="k">with</span> <span class="n">d</span> <span class="n">hd</span><span class="o">,</span>
+<span class="o">{</span><span class="n">linarith</span><span class="o">,},</span>
+<span class="o">{</span>
+    <span class="n">existsi</span> <span class="n">d</span><span class="o">,</span>
+  <span class="n">refl</span>
+<span class="o">}</span>
+<span class="kn">end</span>
+
+
+<span class="c1">-- forgot library function, lifted from square root prime code</span>
+<span class="c1">-- credit to github user dm1237</span>
+<span class="kn">lemma</span> <span class="n">succ_eq_add_one</span> <span class="o">(</span><span class="n">n</span> <span class="o">:</span> <span class="bp">ℕ</span><span class="o">)</span> <span class="o">:</span> <span class="n">nat</span><span class="bp">.</span><span class="n">succ</span> <span class="n">n</span> <span class="bp">=</span> <span class="n">n</span> <span class="bp">+</span> <span class="mi">1</span> <span class="o">:=</span>
+<span class="k">begin</span>
+    <span class="n">exact</span> <span class="n">rfl</span><span class="o">,</span>
+<span class="kn">end</span>
+
+<span class="c1">-- forgot library function</span>
+<span class="kn">lemma</span> <span class="n">my_le_trans</span>
+<span class="o">(</span><span class="n">j</span> <span class="n">k</span> <span class="n">m</span> <span class="o">:</span> <span class="bp">ℕ</span><span class="o">)</span>
+<span class="o">(</span><span class="n">p1</span><span class="o">:</span> <span class="n">k</span> <span class="bp">&lt;</span> <span class="n">m</span><span class="o">)</span>
+<span class="o">(</span><span class="n">p2</span><span class="o">:</span> <span class="n">j</span> <span class="bp">≤</span> <span class="n">k</span><span class="o">)</span>
+<span class="o">:</span> <span class="n">j</span> <span class="bp">&lt;</span> <span class="n">m</span> <span class="bp">-</span> <span class="mi">1</span>
+<span class="o">:=</span>
+<span class="k">begin</span>
+  <span class="n">intros</span><span class="o">,</span>
+  <span class="c1">-- try induction?</span>
+  <span class="n">sorry</span><span class="o">,</span>
+<span class="kn">end</span>
+
+
+<span class="kn">lemma</span> <span class="n">inequality_fact</span>
+<span class="o">(</span><span class="n">j</span> <span class="n">m</span> <span class="o">:</span> <span class="bp">ℕ</span><span class="o">)</span>
+<span class="o">(</span><span class="n">p</span><span class="o">:</span> <span class="n">j</span> <span class="bp">&lt;</span> <span class="n">m</span><span class="o">)</span>
+
+<span class="o">:</span> <span class="n">j</span> <span class="bp">-</span> <span class="mi">1</span> <span class="bp">&lt;</span> <span class="n">m</span> <span class="bp">-</span> <span class="mi">1</span>
+<span class="o">:=</span> <span class="k">begin</span>
+  <span class="n">intros</span><span class="o">,</span>
+  <span class="n">sorry</span>
+<span class="kn">end</span>
+
+<span class="c">/-</span><span class="cm">-</span>
+<span class="cm">Type of pairs (k,p) where k</span>
+<span class="cm">is a natural number and p is a witness to the proof that k &lt; n.</span>
+<span class="cm">-/</span>
+<span class="n">def</span> <span class="n">finite_subset</span> <span class="o">(</span><span class="n">n</span> <span class="o">:</span> <span class="bp">ℕ</span><span class="o">)</span> <span class="o">:=</span> <span class="err">Σ&#39;</span> <span class="n">k</span><span class="o">,</span> <span class="n">k</span> <span class="bp">&lt;</span> <span class="n">n</span>
+
+<span class="c">/-</span><span class="cm">-</span>
+<span class="cm">Every pair that lives in finite_subest m lives in finite_subset n</span>
+<span class="cm">where m &lt; n</span>
+<span class="cm">-/</span>
+<span class="n">def</span> <span class="n">lift_finite</span> <span class="o">(</span><span class="n">m</span> <span class="n">n</span> <span class="o">:</span> <span class="bp">ℕ</span><span class="o">)</span> <span class="o">(</span><span class="n">p</span> <span class="o">:</span> <span class="n">m</span> <span class="bp">&lt;</span> <span class="n">n</span><span class="o">)</span> <span class="o">:</span> <span class="n">finite_subset</span> <span class="n">m</span> <span class="bp">→</span> <span class="n">finite_subset</span> <span class="n">n</span>
+    <span class="o">:=</span> <span class="bp">λ</span> <span class="n">k</span><span class="o">,</span> <span class="bp">⟨</span><span class="n">k</span><span class="bp">.</span><span class="mi">1</span><span class="o">,</span> <span class="n">lt</span><span class="bp">.</span><span class="n">trans</span> <span class="n">k</span><span class="bp">.</span><span class="mi">2</span> <span class="n">p</span><span class="bp">⟩</span>
+
+
+<span class="c">/-</span><span class="cm">-</span>
+<span class="cm">Application of lift_finite from m to m + 1</span>
+<span class="cm">-/</span>
+<span class="n">def</span> <span class="n">lift_one</span>
+<span class="o">(</span><span class="n">m</span> <span class="o">:</span> <span class="bp">ℕ</span><span class="o">)</span>
+<span class="o">:</span> <span class="n">finite_subset</span> <span class="n">m</span> <span class="bp">→</span> <span class="n">finite_subset</span> <span class="o">(</span><span class="n">m</span> <span class="bp">+</span> <span class="mi">1</span><span class="o">)</span>
+<span class="o">:=</span> <span class="o">(</span><span class="n">lift_finite</span> <span class="n">m</span> <span class="o">(</span><span class="n">m</span><span class="bp">+</span><span class="mi">1</span><span class="o">)</span> <span class="o">(</span><span class="n">succ_greater_than_nat</span> <span class="n">m</span><span class="o">))</span>
+
+
+
+<span class="kn">lemma</span> <span class="n">lift_one_fst</span> <span class="o">{</span><span class="n">m</span><span class="o">}</span> <span class="o">(</span><span class="n">j</span> <span class="o">:</span> <span class="n">finite_subset</span> <span class="n">m</span><span class="o">)</span> <span class="o">:</span> <span class="o">(</span><span class="n">lift_one</span> <span class="n">m</span> <span class="n">j</span><span class="o">)</span><span class="bp">.</span><span class="n">fst</span> <span class="bp">=</span> <span class="n">j</span><span class="bp">.</span><span class="n">fst</span>
+<span class="o">:=</span>
+<span class="k">begin</span>
+<span class="n">refl</span><span class="o">,</span>
+
+<span class="kn">end</span>
+
+
+
+<span class="c">/-</span><span class="cm">-</span>
+<span class="cm">The lifting function is injective</span>
+<span class="cm">-/</span>
+<span class="kn">theorem</span> <span class="n">lift_finite_injective</span> <span class="o">(</span><span class="n">m</span> <span class="n">n</span> <span class="o">:</span> <span class="bp">ℕ</span><span class="o">)</span> <span class="o">(</span><span class="n">p</span> <span class="o">:</span> <span class="n">m</span> <span class="bp">&lt;</span> <span class="n">n</span><span class="o">)</span> <span class="o">:</span>
+ <span class="n">injective</span> <span class="o">(</span><span class="n">lift_finite</span> <span class="n">m</span> <span class="n">n</span> <span class="n">p</span><span class="o">)</span>
+<span class="o">:=</span> <span class="k">begin</span>
+
+
+<span class="c">/-</span><span class="cm"> pf sketch</span>
+<span class="cm">--  suppose f x1 = f x2 = &lt; k, pf: k &lt; n &gt;</span>
+<span class="cm">--  we know x1 = &lt; l , pf: k &lt; m &gt; and x2 = &lt; j , pf: j &lt; m &gt;</span>
+<span class="cm">--  note that (f x1).1 = (f x2).1 = k</span>
+<span class="cm">--  furthermore, k &lt; m &lt; n</span>
+<span class="cm">--  then x1 = &lt; k, pf: k &lt; m &gt; = x2</span>
+<span class="cm">--  done</span>
+<span class="cm">-/</span>
+
+<span class="n">introv</span> <span class="n">x</span> <span class="n">p2</span><span class="o">,</span>
+<span class="n">cases</span> <span class="n">x</span><span class="o">,</span>
+<span class="n">cases</span> <span class="n">x₂</span><span class="o">,</span>
+<span class="n">cases</span> <span class="n">p2</span><span class="o">,</span>
+<span class="n">refl</span><span class="o">,</span>
+<span class="kn">end</span>
+
+
+<span class="c">/-</span><span class="cm">-</span>
+<span class="cm">The lifting from m to m + 1 injective</span>
+<span class="cm">-/</span>
+<span class="kn">lemma</span> <span class="n">lift_one_injective</span> <span class="o">(</span><span class="n">m</span> <span class="o">:</span> <span class="bp">ℕ</span><span class="o">)</span>
+<span class="o">:</span> <span class="n">injective</span> <span class="o">(</span><span class="n">lift_one</span> <span class="n">m</span><span class="o">)</span>
+<span class="o">:=</span> <span class="k">begin</span>
+<span class="n">apply</span> <span class="n">lift_finite_injective</span> <span class="n">m</span> <span class="o">(</span><span class="n">m</span> <span class="bp">+</span> <span class="mi">1</span><span class="o">)</span> <span class="o">(</span><span class="n">succ_greater_than_nat</span> <span class="n">m</span><span class="o">),</span>
+<span class="kn">end</span>
+
+
+
+<span class="kn">lemma</span> <span class="n">ext_iff</span> <span class="o">(</span><span class="n">n</span> <span class="o">:</span> <span class="bp">ℕ</span><span class="o">)</span> <span class="o">(</span><span class="n">a</span> <span class="n">b</span> <span class="o">:</span> <span class="n">finite_subset</span> <span class="n">n</span><span class="o">)</span> <span class="o">:</span> <span class="n">a</span> <span class="bp">=</span> <span class="n">b</span> <span class="bp">↔</span> <span class="n">a</span><span class="bp">.</span><span class="mi">1</span> <span class="bp">=</span> <span class="n">b</span><span class="bp">.</span><span class="mi">1</span> <span class="o">:=</span>
+<span class="k">begin</span>
+  <span class="n">cases</span> <span class="n">a</span><span class="o">,</span>
+  <span class="n">cases</span> <span class="n">b</span><span class="o">,</span>
+  <span class="n">split</span><span class="o">,</span>
+  <span class="o">{</span> <span class="n">intro</span> <span class="n">h</span><span class="o">,</span> <span class="n">rw</span> <span class="n">h</span><span class="o">},</span>
+  <span class="o">{</span> <span class="n">intro</span> <span class="n">h</span><span class="o">,</span> <span class="n">cases</span> <span class="n">h</span><span class="o">,</span> <span class="n">refl</span><span class="o">,}</span>
+<span class="kn">end</span>
+
+
+
+<span class="n">def</span> <span class="n">relabel</span>
+<span class="o">(</span><span class="n">m</span> <span class="n">k</span> <span class="o">:</span> <span class="bp">ℕ</span><span class="o">)</span>
+<span class="o">(</span><span class="n">p</span><span class="o">:</span> <span class="n">k</span> <span class="bp">&lt;</span> <span class="n">m</span><span class="o">)</span>
+<span class="o">:</span> <span class="n">finite_subset</span> <span class="n">m</span> <span class="bp">→</span> <span class="n">finite_subset</span> <span class="o">(</span><span class="n">m</span> <span class="bp">-</span> <span class="mi">1</span><span class="o">)</span>
+<span class="o">:=</span> <span class="bp">λ</span> <span class="n">j</span><span class="o">,</span> <span class="k">if</span> <span class="n">H</span> <span class="o">:</span> <span class="n">j</span><span class="bp">.</span><span class="mi">1</span> <span class="bp">≤</span> <span class="n">k</span> <span class="k">then</span> <span class="bp">⟨</span><span class="n">j</span><span class="bp">.</span><span class="mi">1</span><span class="o">,</span> <span class="n">my_le_trans</span> <span class="n">j</span><span class="bp">.</span><span class="mi">1</span> <span class="n">k</span> <span class="n">m</span> <span class="n">p</span> <span class="n">H</span> <span class="bp">⟩</span> <span class="k">else</span> <span class="bp">⟨</span><span class="n">j</span><span class="bp">.</span><span class="mi">1</span> <span class="bp">-</span> <span class="mi">1</span><span class="o">,</span> <span class="n">inequality_fact</span> <span class="n">j</span><span class="bp">.</span><span class="mi">1</span> <span class="n">m</span> <span class="n">j</span><span class="bp">.</span><span class="mi">2</span><span class="bp">⟩</span>
+
+
+<span class="c">/-</span><span class="cm"></span>
+<span class="cm">This formalizes the notion that when f is injective and misses k</span>
+<span class="cm">in the codomain then when we relabel to bring m to m - 1,</span>
+<span class="cm">composition is injective</span>
+<span class="cm">-/</span>
+<span class="kn">lemma</span> <span class="n">relabel_with_inj_f_misses_k_is_inj</span>
+<span class="o">(</span><span class="n">m</span> <span class="n">k</span> <span class="o">:</span> <span class="bp">ℕ</span><span class="o">)</span>
+<span class="o">(</span><span class="n">p</span><span class="o">:</span> <span class="n">k</span> <span class="bp">&lt;</span> <span class="n">m</span><span class="o">)</span>
+<span class="o">(</span><span class="n">f</span><span class="o">:</span> <span class="n">finite_subset</span> <span class="n">m</span> <span class="bp">→</span> <span class="n">finite_subset</span> <span class="n">m</span><span class="o">)</span>
+<span class="o">(</span><span class="n">inj</span><span class="o">:</span> <span class="n">injective</span> <span class="n">f</span><span class="o">)</span>
+<span class="o">:</span> <span class="n">injective</span> <span class="o">((</span><span class="n">relabel</span> <span class="n">m</span> <span class="n">k</span> <span class="n">p</span><span class="o">)</span> <span class="err">∘</span> <span class="n">f</span><span class="o">)</span>
+<span class="o">:=</span>
+<span class="k">begin</span>
+  <span class="n">intros</span> <span class="n">x</span><span class="o">,</span>
+  <span class="n">intros</span><span class="o">,</span>
+
+  <span class="n">sorry</span><span class="o">,</span>
+<span class="kn">end</span>
+
+
+<span class="c1">--proof that f : [m + 2] -&gt; [m + 1] restricted</span>
+<span class="c1">--to [m + 1] = {0, 1, ..., m} does not hit f(m + 1)</span>
+<span class="kn">lemma</span> <span class="n">miss_proof</span>
+<span class="o">{</span><span class="n">m</span><span class="o">}</span> <span class="o">(</span><span class="n">f</span> <span class="o">:</span> <span class="n">finite_subset</span> <span class="o">(</span><span class="n">m</span> <span class="bp">+</span> <span class="mi">2</span><span class="o">)</span> <span class="bp">→</span> <span class="n">finite_subset</span> <span class="o">(</span><span class="n">m</span> <span class="bp">+</span> <span class="mi">1</span><span class="o">))</span>
+<span class="o">(</span><span class="n">inj</span> <span class="o">:</span> <span class="n">injective</span> <span class="n">f</span><span class="o">)</span>
+<span class="o">{</span><span class="n">pf</span><span class="o">:</span> <span class="n">m</span> <span class="bp">+</span> <span class="mi">1</span> <span class="bp">&lt;</span> <span class="n">m</span> <span class="bp">+</span> <span class="mi">2</span><span class="o">}</span>
+<span class="o">:</span> <span class="bp">∀</span> <span class="n">j</span> <span class="o">:</span> <span class="n">finite_subset</span> <span class="o">(</span><span class="n">m</span> <span class="bp">+</span> <span class="mi">1</span><span class="o">),</span> <span class="o">(</span><span class="n">f</span> <span class="err">∘</span> <span class="n">lift_one</span> <span class="o">(</span><span class="n">m</span> <span class="bp">+</span> <span class="mi">1</span><span class="o">))</span> <span class="n">j</span> <span class="bp">≠</span> <span class="n">f</span> <span class="bp">⟨</span><span class="n">m</span> <span class="bp">+</span> <span class="mi">1</span><span class="o">,</span>  <span class="n">pf</span><span class="bp">⟩</span>
+<span class="o">:=</span> <span class="k">begin</span>
+
+<span class="n">introv</span> <span class="n">p</span><span class="o">,</span>
+<span class="n">change</span> <span class="n">f</span> <span class="o">(</span><span class="n">lift_one</span> <span class="o">(</span><span class="n">m</span><span class="bp">+</span><span class="mi">1</span><span class="o">)</span> <span class="n">j</span><span class="o">)</span> <span class="bp">=</span> <span class="n">f</span> <span class="bp">⟨</span><span class="n">m</span> <span class="bp">+</span> <span class="mi">1</span><span class="o">,</span>  <span class="n">pf</span><span class="bp">⟩</span> <span class="n">at</span> <span class="n">p</span><span class="o">,</span>
+<span class="k">let</span> <span class="n">p2</span> <span class="o">:=</span> <span class="n">inj</span> <span class="o">(</span><span class="n">lift_one</span> <span class="o">(</span><span class="n">m</span><span class="bp">+</span><span class="mi">1</span><span class="o">)</span> <span class="n">j</span><span class="o">)</span> <span class="bp">⟨</span><span class="n">m</span> <span class="bp">+</span> <span class="mi">1</span><span class="o">,</span>  <span class="n">pf</span><span class="bp">⟩</span><span class="o">,</span>
+<span class="k">let</span> <span class="n">p3</span> <span class="o">:=</span> <span class="n">p2</span> <span class="n">p</span><span class="o">,</span>
+<span class="n">rw</span> <span class="n">ext_iff</span> <span class="n">at</span> <span class="n">p3</span><span class="o">,</span>
+<span class="n">rw</span> <span class="n">lift_one_fst</span> <span class="n">at</span> <span class="n">p3</span><span class="o">,</span>
+<span class="k">let</span> <span class="n">p4</span> <span class="o">:=</span> <span class="n">j</span><span class="bp">.</span><span class="mi">2</span><span class="o">,</span>
+<span class="n">linarith</span><span class="o">,</span>
+
+<span class="kn">end</span>
+
+
+
+
+<span class="kn">lemma</span> <span class="n">relabel_inj</span>
+<span class="o">(</span><span class="n">m</span> <span class="n">k</span> <span class="o">:</span> <span class="bp">ℕ</span><span class="o">)</span>
+<span class="o">(</span><span class="n">p</span><span class="o">:</span> <span class="n">k</span> <span class="bp">&lt;</span> <span class="n">m</span><span class="o">)</span>
+<span class="o">(</span><span class="n">f</span><span class="o">:</span> <span class="n">finite_subset</span> <span class="o">(</span><span class="n">m</span> <span class="bp">+</span> <span class="mi">2</span><span class="o">)</span> <span class="bp">→</span> <span class="n">finite_subset</span> <span class="o">(</span><span class="n">m</span> <span class="bp">+</span> <span class="mi">1</span><span class="o">))</span>
+<span class="o">(</span><span class="n">inj</span><span class="o">:</span> <span class="n">injective</span> <span class="n">f</span><span class="o">)</span>
+<span class="o">{</span><span class="n">pf</span><span class="o">}</span> <span class="o">(</span><span class="n">miss</span><span class="o">:</span> <span class="bp">∀</span> <span class="n">j</span> <span class="o">:</span> <span class="n">finite_subset</span> <span class="o">(</span><span class="n">m</span> <span class="bp">+</span> <span class="mi">1</span><span class="o">),</span> <span class="o">(</span><span class="n">f</span> <span class="err">∘</span> <span class="n">lift_one</span> <span class="o">(</span><span class="n">m</span> <span class="bp">+</span> <span class="mi">1</span><span class="o">))</span> <span class="n">j</span> <span class="bp">≠</span> <span class="bp">⟨</span><span class="n">k</span><span class="o">,</span>  <span class="n">pf</span><span class="bp">⟩</span> <span class="o">)</span>
+<span class="o">:</span> <span class="n">injective</span> <span class="o">((</span><span class="n">relabel</span> <span class="o">(</span><span class="n">m</span> <span class="bp">+</span> <span class="mi">1</span><span class="o">)</span> <span class="n">k</span> <span class="n">pf</span><span class="o">)</span> <span class="err">∘</span> <span class="n">f</span> <span class="err">∘</span> <span class="n">lift_one</span> <span class="o">(</span><span class="n">m</span> <span class="bp">+</span> <span class="mi">1</span><span class="o">))</span>
+<span class="o">:=</span>
+<span class="k">begin</span>
+  <span class="n">introv</span> <span class="n">x</span><span class="o">,</span>
+  <span class="k">let</span> <span class="n">y</span> <span class="o">:=</span> <span class="n">x₂</span><span class="o">,</span>
+  <span class="n">intros</span><span class="o">,</span>
+  <span class="n">change</span> <span class="o">(</span><span class="n">relabel</span> <span class="o">(</span><span class="n">m</span> <span class="bp">+</span> <span class="mi">1</span><span class="o">)</span> <span class="n">k</span> <span class="n">pf</span> <span class="o">(</span><span class="n">f</span> <span class="o">(</span><span class="n">lift_one</span> <span class="o">(</span><span class="n">m</span> <span class="bp">+</span> <span class="mi">1</span><span class="o">)</span> <span class="n">x</span><span class="o">)))</span> <span class="bp">=</span> <span class="o">(</span><span class="n">relabel</span> <span class="o">(</span><span class="n">m</span> <span class="bp">+</span> <span class="mi">1</span><span class="o">)</span> <span class="n">k</span> <span class="n">pf</span> <span class="o">(</span><span class="n">f</span> <span class="o">(</span><span class="n">lift_one</span> <span class="o">(</span><span class="n">m</span> <span class="bp">+</span> <span class="mi">1</span><span class="o">)</span> <span class="n">x₂</span><span class="o">)))</span> <span class="n">at</span> <span class="n">a</span><span class="o">,</span>
+  <span class="k">let</span> <span class="n">x_l</span> <span class="o">:=</span> <span class="o">(</span><span class="n">lift_one</span> <span class="o">(</span><span class="n">m</span> <span class="bp">+</span> <span class="mi">1</span><span class="o">)</span> <span class="n">x</span><span class="o">),</span>
+  <span class="k">let</span> <span class="n">y_l</span> <span class="o">:=</span> <span class="o">(</span><span class="n">lift_one</span> <span class="o">(</span><span class="n">m</span> <span class="bp">+</span> <span class="mi">1</span><span class="o">)</span> <span class="n">x₂</span><span class="o">),</span>
+  <span class="n">change</span> <span class="n">relabel</span> <span class="o">(</span><span class="n">m</span> <span class="bp">+</span> <span class="mi">1</span><span class="o">)</span> <span class="n">k</span> <span class="n">pf</span> <span class="o">(</span><span class="n">f</span> <span class="n">x_l</span><span class="o">)</span> <span class="bp">=</span> <span class="n">relabel</span> <span class="o">(</span><span class="n">m</span> <span class="bp">+</span> <span class="mi">1</span><span class="o">)</span> <span class="n">k</span> <span class="n">pf</span> <span class="o">(</span><span class="n">f</span> <span class="n">y_l</span><span class="o">)</span> <span class="n">at</span> <span class="n">a</span><span class="o">,</span>
+  <span class="k">let</span> <span class="n">r_x_l</span> <span class="o">:=</span> <span class="n">relabel</span> <span class="o">(</span><span class="n">m</span> <span class="bp">+</span> <span class="mi">1</span><span class="o">)</span> <span class="n">k</span> <span class="n">pf</span> <span class="o">(</span><span class="n">f</span> <span class="n">x_l</span><span class="o">),</span>
+  <span class="k">let</span> <span class="n">r_y_l</span> <span class="o">:=</span> <span class="n">relabel</span> <span class="o">(</span><span class="n">m</span> <span class="bp">+</span> <span class="mi">1</span><span class="o">)</span> <span class="n">k</span> <span class="n">pf</span> <span class="o">(</span><span class="n">f</span> <span class="n">y_l</span><span class="o">),</span>
+  <span class="n">change</span> <span class="n">r_x_l</span> <span class="bp">=</span> <span class="n">r_y_l</span> <span class="n">at</span> <span class="n">a</span><span class="o">,</span>
+
+  <span class="n">sorry</span><span class="o">,</span>
+
+<span class="kn">end</span>
+
+
+
+<span class="c">/-</span><span class="cm">-</span>
+<span class="cm">Pigeonhole principle, induction on n</span>
+<span class="cm">-/</span>
+<span class="kn">theorem</span> <span class="n">pigeonhole_principle</span>
+    <span class="o">(</span><span class="n">n</span> <span class="n">m</span> <span class="o">:</span> <span class="bp">ℕ</span><span class="o">)</span>
+    <span class="o">(</span><span class="n">f</span> <span class="o">:</span> <span class="n">finite_subset</span> <span class="n">n</span> <span class="bp">→</span> <span class="n">finite_subset</span> <span class="n">m</span><span class="o">)</span>
+<span class="o">:</span> <span class="o">(</span><span class="n">n</span> <span class="bp">&gt;</span> <span class="n">m</span><span class="o">)</span> <span class="bp">→</span> <span class="bp">¬</span><span class="o">(</span><span class="n">injective</span> <span class="n">f</span><span class="o">)</span>
+<span class="o">:=</span> <span class="k">begin</span>
+
+  <span class="n">intros</span> <span class="n">n_gt_m</span> <span class="n">f_injective</span><span class="o">,</span>
+  <span class="n">induction</span> <span class="n">n</span> <span class="k">with</span> <span class="n">d</span> <span class="n">hd</span><span class="o">,</span>
+  <span class="o">{</span> <span class="n">linarith</span><span class="o">,</span> <span class="c">/-</span><span class="cm"> case d = 0 -/</span> <span class="o">},</span>
+
+
+  <span class="k">let</span> <span class="n">g</span> <span class="o">:=</span> <span class="n">f</span> <span class="err">∘</span> <span class="o">(</span><span class="n">lift_one</span> <span class="n">d</span><span class="o">),</span>
+  <span class="k">let</span> <span class="n">hd&#39;</span> <span class="o">:=</span> <span class="n">hd</span> <span class="n">g</span><span class="o">,</span>
+
+  <span class="n">rcases</span> <span class="n">lt_or_eq_of_le</span> <span class="o">(</span><span class="n">nat</span><span class="bp">.</span><span class="n">lt_succ_iff</span><span class="bp">.</span><span class="mi">1</span> <span class="n">n_gt_m</span><span class="o">)</span> <span class="k">with</span> <span class="n">h</span> <span class="bp">|</span> <span class="n">rfl</span><span class="o">,</span>
+
+  <span class="o">{</span>   <span class="c">/-</span><span class="cm"> case where d &gt; m -/</span>
+      <span class="c">/-</span><span class="cm"> prove injective g -/</span>
+    <span class="n">apply</span> <span class="n">hd&#39;</span> <span class="n">h</span><span class="o">,</span>
+    <span class="k">let</span> <span class="n">g_injective</span> <span class="o">:=</span> <span class="n">comp_inj_is_inj</span> <span class="o">(</span><span class="n">lift_one</span> <span class="n">d</span><span class="o">)</span> <span class="n">f</span> <span class="o">(</span><span class="n">lift_one_injective</span> <span class="n">d</span><span class="o">)</span> <span class="n">f_injective</span><span class="o">,</span>
+    <span class="n">exact</span> <span class="n">g_injective</span><span class="o">,</span>
+  <span class="o">},</span>
+
+  <span class="o">{</span>   <span class="c">/-</span><span class="cm"> case where d = m -/</span>
+      <span class="c">/-</span><span class="cm"> prove f : finite_subset (nat.succ m) → finite_subset m is not injective -/</span>
+
+    <span class="n">induction</span> <span class="n">m</span> <span class="k">with</span> <span class="n">l</span> <span class="n">hl</span><span class="o">,</span>
+
+    <span class="o">{</span>
+      <span class="k">let</span> <span class="n">e</span><span class="o">:=</span> <span class="n">f</span> <span class="bp">⟨</span><span class="mi">0</span><span class="o">,</span><span class="bp">_</span> <span class="bp">⟩</span><span class="o">,</span>
+      <span class="k">let</span> <span class="n">e2</span> <span class="o">:=</span> <span class="n">e</span><span class="bp">.</span><span class="mi">2</span><span class="o">,</span>
+      <span class="n">linarith</span><span class="o">,</span>
+      <span class="n">exact</span> <span class="n">n_gt_m</span><span class="o">,</span>
+    <span class="o">},</span>
+
+
+    <span class="k">let</span> <span class="n">k</span> <span class="o">:=</span> <span class="n">f</span> <span class="bp">⟨</span><span class="n">l</span> <span class="bp">+</span> <span class="mi">1</span><span class="o">,</span> <span class="n">succ_greater_than_nat</span> <span class="o">(</span><span class="n">l</span> <span class="bp">+</span> <span class="mi">1</span><span class="o">)</span><span class="bp">⟩</span><span class="o">,</span> <span class="c1">-- let k = f(l + 1)</span>
+    <span class="k">let</span> <span class="n">violator</span> <span class="o">:=</span> <span class="n">f</span> <span class="err">∘</span> <span class="o">(</span><span class="n">lift_one</span> <span class="o">(</span><span class="n">l</span> <span class="bp">+</span> <span class="mi">1</span><span class="o">)),</span>
+    <span class="k">let</span> <span class="n">restriction</span> <span class="o">:=</span> <span class="o">(</span><span class="n">relabel</span> <span class="o">(</span><span class="n">l</span> <span class="bp">+</span> <span class="mi">1</span><span class="o">)</span> <span class="n">k</span><span class="bp">.</span><span class="mi">1</span> <span class="n">k</span><span class="bp">.</span><span class="mi">2</span><span class="o">)</span> <span class="err">∘</span> <span class="n">violator</span><span class="o">,</span>
+    <span class="k">let</span> <span class="n">violator_is_inj</span> <span class="o">:=</span> <span class="n">comp_inj_is_inj</span> <span class="o">(</span><span class="n">lift_one</span> <span class="o">(</span><span class="n">l</span> <span class="bp">+</span> <span class="mi">1</span><span class="o">))</span> <span class="n">f</span> <span class="o">(</span><span class="n">lift_one_injective</span> <span class="o">(</span><span class="n">l</span> <span class="bp">+</span> <span class="mi">1</span><span class="o">))</span> <span class="n">f_injective</span><span class="o">,</span>
+    <span class="k">let</span> <span class="n">res_is_inj</span> <span class="o">:=</span> <span class="n">relabel_with_inj_f_misses_k_is_inj</span> <span class="o">(</span><span class="n">l</span> <span class="bp">+</span> <span class="mi">1</span><span class="o">)</span> <span class="n">k</span><span class="bp">.</span><span class="mi">1</span> <span class="n">k</span><span class="bp">.</span><span class="mi">2</span> <span class="n">violator</span> <span class="n">violator_is_inj</span><span class="o">,</span>
+    <span class="c">/-</span><span class="cm"> contradiction, since restriction: [m] →  [m - 1] is injective,</span>
+<span class="cm">     but this can&#39;t be true IH</span>
+<span class="cm">     -/</span>
+    <span class="n">refine</span> <span class="n">hl</span> <span class="bp">_</span> <span class="bp">_</span> <span class="bp">_</span> <span class="bp">_</span> <span class="o">,</span>
+    <span class="o">{</span>
+      <span class="n">intros</span><span class="o">,</span>
+      <span class="n">linarith</span><span class="o">,</span>
+    <span class="o">},</span>
+    <span class="o">{</span>
+      <span class="n">exact</span> <span class="n">restriction</span><span class="o">,</span>
+    <span class="o">},</span>
+    <span class="o">{</span>
+      <span class="n">exact</span> <span class="n">succ_greater_than_nat</span> <span class="bp">_</span><span class="o">,</span>
+    <span class="o">},</span>
+    <span class="o">{</span>
+      <span class="n">exact</span> <span class="n">res_is_inj</span><span class="o">,</span>
+    <span class="o">},</span>
+
+  <span class="o">}</span>
+
+<span class="kn">end</span>
+</code></pre></div>
+
+
+
+<a name="195609961"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113489-new%20members/topic/showing%20injectivity/near/195609961" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Adeeb K <a href="https://leanprover-community.github.io/archive/stream/113489-new-members/topic/showing.20injectivity.html#195609961">(Apr 28 2020 at 18:53)</a>:</h4>
+<p>I am trying to prove <code>relabel_inj</code>.  It uses the definition of <code>relabel</code>.</p>
+
+
+
+<a name="195610365"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113489-new%20members/topic/showing%20injectivity/near/195610365" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Adeeb K <a href="https://leanprover-community.github.io/archive/stream/113489-new-members/topic/showing.20injectivity.html#195610365">(Apr 28 2020 at 18:57)</a>:</h4>
+<p>Should I cut down the size of the code block?</p>
+
+
+
+{% endraw %}
+
+<hr><p>Last updated: Apr 28 2020 at 19:04 UTC</p>
