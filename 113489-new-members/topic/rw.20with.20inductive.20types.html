@@ -1,0 +1,72 @@
+---
+layout: archive
+title: Zulip Chat Archive
+permalink: /stream/113489-new-members/topic/rw.20with.20inductive.20types.html
+---
+
+<h2>Stream: <a href="https://leanprover-community.github.io/archive/stream/113489-new-members/index.html">new members</a></h2>
+<h3>Topic: <a href="https://leanprover-community.github.io/archive/stream/113489-new-members/topic/rw.20with.20inductive.20types.html">rw with inductive types</a></h3>
+
+<hr>
+
+<base href="https://leanprover.zulipchat.com/">
+
+<head><link href="/style.css" rel="stylesheet"></head>
+
+{% raw %}
+
+<a name="195614533"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113489-new%20members/topic/rw%20with%20inductive%20types/near/195614533" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> ROCKY KAMEN-RUBIO <a href="https://leanprover-community.github.io/archive/stream/113489-new-members/topic/rw.20with.20inductive.20types.html#195614533">(Apr 28 2020 at 19:33)</a>:</h4>
+<p>I'm trying to prove some identities using Lucas and Fibonacci numbers on natural numbers and integers. I have defined both inductively, but am finding that rewrites that work on the <code>nat</code> case fail for <code>int</code>s. The error message I get is pretty minimal and unhelpful. </p>
+<div class="codehilite"><pre><span></span><code><span class="kn">import</span> <span class="n">data</span><span class="bp">.</span><span class="n">nat</span><span class="bp">.</span><span class="n">basic</span>
+<span class="kn">import</span> <span class="n">data</span><span class="bp">.</span><span class="n">nat</span><span class="bp">.</span><span class="n">fib</span>
+<span class="kn">import</span> <span class="n">data</span><span class="bp">.</span><span class="n">int</span><span class="bp">.</span><span class="n">basic</span>
+<span class="kn">import</span> <span class="n">data</span><span class="bp">.</span><span class="n">list</span><span class="bp">.</span><span class="n">basic</span>
+<span class="kn">import</span> <span class="n">tactic</span>
+
+<span class="bp">@</span><span class="o">[</span><span class="kn">reducible</span><span class="o">]</span>
+<span class="n">def</span> <span class="n">fib_Z</span> <span class="o">:</span> <span class="bp">ℤ</span> <span class="bp">→</span> <span class="bp">ℤ</span>
+<span class="bp">|</span> <span class="o">(</span><span class="n">int</span><span class="bp">.</span><span class="n">of_nat</span> <span class="n">n</span><span class="o">)</span> <span class="o">:=</span> <span class="n">int</span><span class="bp">.</span><span class="n">of_nat</span> <span class="o">(</span><span class="n">nat</span><span class="bp">.</span><span class="n">fib</span> <span class="n">n</span><span class="o">)</span>
+<span class="bp">|</span> <span class="bp">-</span> <span class="o">(</span><span class="n">int</span><span class="bp">.</span><span class="n">of_nat</span> <span class="o">(</span><span class="n">n</span><span class="bp">+</span><span class="mi">1</span><span class="o">))</span> <span class="o">:=</span> <span class="k">if</span> <span class="n">n</span><span class="err">%</span><span class="mi">2</span> <span class="bp">=</span> <span class="mi">0</span> <span class="k">then</span> <span class="bp">-</span> <span class="o">(</span><span class="n">int</span><span class="bp">.</span><span class="n">of_nat</span> <span class="o">(</span><span class="n">nat</span><span class="bp">.</span><span class="n">fib</span> <span class="o">(</span><span class="n">n</span><span class="bp">+</span><span class="mi">1</span><span class="o">)))</span> <span class="k">else</span> <span class="n">int</span><span class="bp">.</span><span class="n">of_nat</span> <span class="o">(</span><span class="n">nat</span><span class="bp">.</span><span class="n">fib</span> <span class="o">(</span><span class="n">n</span><span class="bp">+</span><span class="mi">1</span><span class="o">))</span>
+
+<span class="bp">@</span><span class="o">[</span><span class="kn">reducible</span><span class="o">]</span>
+<span class="n">def</span> <span class="n">luc_N</span> <span class="o">:</span> <span class="bp">ℕ</span> <span class="bp">→</span> <span class="bp">ℕ</span>
+<span class="bp">|</span> <span class="mi">0</span> <span class="o">:=</span> <span class="mi">2</span>
+<span class="bp">|</span> <span class="mi">1</span> <span class="o">:=</span> <span class="mi">1</span>
+<span class="bp">|</span> <span class="o">(</span><span class="n">n</span><span class="bp">+</span><span class="mi">2</span><span class="o">)</span> <span class="o">:=</span> <span class="n">luc_N</span> <span class="n">n</span> <span class="bp">+</span> <span class="n">luc_N</span> <span class="o">(</span><span class="n">n</span><span class="bp">+</span><span class="mi">1</span><span class="o">)</span>
+
+<span class="bp">@</span><span class="o">[</span><span class="kn">reducible</span><span class="o">]</span>
+<span class="n">def</span> <span class="n">luc_Z</span> <span class="o">:</span> <span class="bp">ℤ</span> <span class="bp">→</span> <span class="bp">ℤ</span>
+<span class="bp">|</span> <span class="o">(</span><span class="n">int</span><span class="bp">.</span><span class="n">of_nat</span> <span class="n">n</span><span class="o">)</span> <span class="o">:=</span> <span class="n">int</span><span class="bp">.</span><span class="n">of_nat</span> <span class="o">(</span><span class="n">luc_N</span> <span class="n">n</span><span class="o">)</span>
+<span class="bp">|</span> <span class="bp">-</span> <span class="o">(</span><span class="n">int</span><span class="bp">.</span><span class="n">of_nat</span> <span class="o">(</span><span class="n">n</span><span class="bp">+</span><span class="mi">1</span><span class="o">))</span> <span class="o">:=</span> <span class="k">if</span> <span class="n">n</span><span class="err">%</span><span class="mi">2</span> <span class="bp">=</span> <span class="mi">0</span> <span class="k">then</span> <span class="bp">-</span> <span class="o">(</span><span class="n">int</span><span class="bp">.</span><span class="n">of_nat</span> <span class="o">(</span><span class="n">luc_N</span> <span class="o">(</span><span class="n">n</span><span class="bp">+</span><span class="mi">1</span><span class="o">)))</span> <span class="k">else</span> <span class="n">int</span><span class="bp">.</span><span class="n">of_nat</span> <span class="o">(</span><span class="n">luc_N</span> <span class="o">(</span><span class="n">n</span><span class="bp">+</span><span class="mi">1</span><span class="o">))</span>
+
+<span class="c1">--Minimal working examples</span>
+<span class="kn">example</span> <span class="o">:</span> <span class="n">luc_Z</span> <span class="mi">0</span> <span class="bp">=</span> <span class="n">int</span><span class="bp">.</span><span class="n">of_nat</span> <span class="o">(</span><span class="n">nat</span><span class="bp">.</span><span class="n">fib</span> <span class="mi">1</span> <span class="bp">+</span> <span class="n">nat</span><span class="bp">.</span><span class="n">fib</span> <span class="mi">1</span><span class="o">)</span> <span class="o">:=</span>
+<span class="k">begin</span>
+<span class="n">rw</span> <span class="n">luc_Z</span><span class="o">,</span>
+<span class="n">simp</span><span class="o">,</span>
+<span class="kn">end</span>
+
+<span class="kn">example</span> <span class="o">:</span> <span class="n">luc_N</span> <span class="mi">0</span> <span class="bp">=</span> <span class="o">(</span><span class="n">nat</span><span class="bp">.</span><span class="n">fib</span> <span class="mi">1</span> <span class="bp">+</span> <span class="n">nat</span><span class="bp">.</span><span class="n">fib</span> <span class="mi">1</span><span class="o">)</span> <span class="o">:=</span>
+<span class="k">begin</span>
+<span class="n">rw</span> <span class="n">luc_N</span><span class="o">,</span>
+<span class="n">simp</span><span class="o">,</span>
+<span class="kn">end</span>
+
+<span class="c1">--a little more context</span>
+<span class="kn">lemma</span> <span class="n">l0</span> <span class="o">{</span><span class="n">n</span> <span class="o">:</span> <span class="bp">ℤ</span><span class="o">}</span> <span class="o">:</span> <span class="n">luc_Z</span> <span class="n">n</span> <span class="bp">=</span> <span class="n">fib_Z</span> <span class="o">(</span><span class="n">n</span><span class="bp">-</span><span class="mi">1</span><span class="o">)</span> <span class="bp">+</span> <span class="n">fib_Z</span> <span class="o">(</span><span class="n">n</span><span class="bp">+</span><span class="mi">1</span><span class="o">)</span> <span class="o">:=</span>
+<span class="k">begin</span>
+<span class="n">cases</span> <span class="n">n</span> <span class="k">with</span> <span class="n">n</span><span class="o">,</span>
+<span class="n">cases</span> <span class="n">n</span> <span class="k">with</span> <span class="n">n</span><span class="o">,</span>
+<span class="n">simp</span><span class="o">,</span>
+<span class="n">rw</span> <span class="n">fib_Z</span><span class="o">,</span>
+<span class="n">rw</span> <span class="n">luc_Z</span><span class="o">,</span>
+<span class="n">sorry</span><span class="o">,</span>
+<span class="kn">end</span>
+</code></pre></div>
+
+
+
+{% endraw %}
+
+<hr><p>Last updated: Apr 28 2020 at 20:04 UTC</p>

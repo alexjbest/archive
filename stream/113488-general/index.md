@@ -9,8 +9,8 @@ permalink: /stream/113488-general/index.html
 
 ### Topics:
 
+* [even or odd](topic/even.20or.20odd.html) (13 messages, latest: Apr 28 2020 at 20:03)
 * [type ascription style](topic/type.20ascription.20style.html) (5 messages, latest: Apr 28 2020 at 17:32)
-* [even or odd](topic/even.20or.20odd.html) (11 messages, latest: Apr 28 2020 at 16:22)
 * [seminars](topic/seminars.html) (11 messages, latest: Apr 28 2020 at 15:43)
 * [unusable arguments](topic/unusable.20arguments.html) (20 messages, latest: Apr 28 2020 at 13:27)
 * [Intuitionistic Type Theory Proofs](topic/Intuitionistic.20Type.20Theory.20Proofs.html) (139 messages, latest: Apr 28 2020 at 13:02)
@@ -2721,4 +2721,4 @@ permalink: /stream/113488-general/index.html
 * [test](topic/test.html) (4 messages, latest: Feb 26 2018 at 16:22)
 * [welcome](topic/welcome.html) (1 message, latest: Feb 26 2018 at 16:02)
 
-<hr><p>Last updated: Apr 28 2020 at 19:04 UTC</p>
+<hr><p>Last updated: Apr 28 2020 at 20:04 UTC</p>

@@ -340,6 +340,546 @@ permalink: /stream/113489-new-members/topic/showing.20injectivity.html
 
 
 
+<a name="195611566"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113489-new%20members/topic/showing%20injectivity/near/195611566" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Adeeb K <a href="https://leanprover-community.github.io/archive/stream/113489-new-members/topic/showing.20injectivity.html#195611566">(Apr 28 2020 at 19:08)</a>:</h4>
+<p>I tried cases but that seems to come from if I do induction on k?</p>
+
+
+
+<a name="195611603"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113489-new%20members/topic/showing%20injectivity/near/195611603" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Kevin Buzzard <a href="https://leanprover-community.github.io/archive/stream/113489-new-members/topic/showing.20injectivity.html#195611603">(Apr 28 2020 at 19:08)</a>:</h4>
+<p>Try the <code>split_ifs</code> tactic</p>
+
+
+
+<a name="195611717"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113489-new%20members/topic/showing%20injectivity/near/195611717" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Adeeb K <a href="https://leanprover-community.github.io/archive/stream/113489-new-members/topic/showing.20injectivity.html#195611717">(Apr 28 2020 at 19:09)</a>:</h4>
+<p>so <code>split_ifs at a</code>, where <code>a : relabel (m + 1) k pf (f x_l) = relabel (m + 1) k pf (f y_l)</code>?</p>
+
+
+
+<a name="195611805"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113489-new%20members/topic/showing%20injectivity/near/195611805" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Adeeb K <a href="https://leanprover-community.github.io/archive/stream/113489-new-members/topic/showing.20injectivity.html#195611805">(Apr 28 2020 at 19:09)</a>:</h4>
+<p>I'm getting this error:</p>
+<div class="codehilite"><pre><span></span><code><span class="n">no</span> <span class="k">if</span><span class="bp">-</span><span class="k">then</span><span class="bp">-</span><span class="k">else</span> <span class="n">expressions</span> <span class="n">to</span> <span class="n">split</span>
+</code></pre></div>
+
+
+
+<a name="195611855"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113489-new%20members/topic/showing%20injectivity/near/195611855" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Reid Barton <a href="https://leanprover-community.github.io/archive/stream/113489-new-members/topic/showing.20injectivity.html#195611855">(Apr 28 2020 at 19:10)</a>:</h4>
+<p>I think this lemma will benefit from some strategic planning and maybe writing out a proof on paper first.</p>
+
+
+
+<a name="195611867"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113489-new%20members/topic/showing%20injectivity/near/195611867" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Kevin Buzzard <a href="https://leanprover-community.github.io/archive/stream/113489-new-members/topic/showing.20injectivity.html#195611867">(Apr 28 2020 at 19:10)</a>:</h4>
+<p><a href="https://leanprover-community.github.io/mathlib_docs/tactics.html#split_ifs" title="https://leanprover-community.github.io/mathlib_docs/tactics.html#split_ifs">https://leanprover-community.github.io/mathlib_docs/tactics.html#split_ifs</a></p>
+
+
+
+<a name="195611881"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113489-new%20members/topic/showing%20injectivity/near/195611881" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Adeeb K <a href="https://leanprover-community.github.io/archive/stream/113489-new-members/topic/showing.20injectivity.html#195611881">(Apr 28 2020 at 19:10)</a>:</h4>
+<p>I did write out a proof on paper</p>
+
+
+
+<a name="195611899"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113489-new%20members/topic/showing%20injectivity/near/195611899" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Reid Barton <a href="https://leanprover-community.github.io/archive/stream/113489-new-members/topic/showing.20injectivity.html#195611899">(Apr 28 2020 at 19:10)</a>:</h4>
+<p>Okay, what did you do at this point then?</p>
+
+
+
+<a name="195612025"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113489-new%20members/topic/showing%20injectivity/near/195612025" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Reid Barton <a href="https://leanprover-community.github.io/archive/stream/113489-new-members/topic/showing.20injectivity.html#195612025">(Apr 28 2020 at 19:11)</a>:</h4>
+<p>There is a better way to go about this than forging ahead with case splits here--I don't know whether it is a "spoiler" though.</p>
+
+
+
+<a name="195612028"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113489-new%20members/topic/showing%20injectivity/near/195612028" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Adeeb K <a href="https://leanprover-community.github.io/archive/stream/113489-new-members/topic/showing.20injectivity.html#195612028">(Apr 28 2020 at 19:11)</a>:</h4>
+<p>at this point, I split the proof into two cases based on the definition of <code>relabel</code>.  Either the RHS = LHS ≤ k or RHS = LHS &gt; k</p>
+
+
+
+<a name="195612129"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113489-new%20members/topic/showing%20injectivity/near/195612129" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Adeeb K <a href="https://leanprover-community.github.io/archive/stream/113489-new-members/topic/showing.20injectivity.html#195612129">(Apr 28 2020 at 19:12)</a>:</h4>
+<p>then, by <code>miss_proof</code>, we know that RHS = LHS != k</p>
+
+
+
+<a name="195612157"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113489-new%20members/topic/showing%20injectivity/near/195612157" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Reid Barton <a href="https://leanprover-community.github.io/archive/stream/113489-new-members/topic/showing.20injectivity.html#195612157">(Apr 28 2020 at 19:12)</a>:</h4>
+<p>So you are splitting based on the <em>output</em> of <code>relabel</code>?</p>
+
+
+
+<a name="195612167"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113489-new%20members/topic/showing%20injectivity/near/195612167" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Adeeb K <a href="https://leanprover-community.github.io/archive/stream/113489-new-members/topic/showing.20injectivity.html#195612167">(Apr 28 2020 at 19:12)</a>:</h4>
+<p>yes</p>
+
+
+
+<a name="195612180"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113489-new%20members/topic/showing%20injectivity/near/195612180" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Reid Barton <a href="https://leanprover-community.github.io/archive/stream/113489-new-members/topic/showing.20injectivity.html#195612180">(Apr 28 2020 at 19:12)</a>:</h4>
+<p>Okay, that is better than what I thought you were intending, but not what <code>split_if</code>s does.</p>
+
+
+
+<a name="195612217"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113489-new%20members/topic/showing%20injectivity/near/195612217" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Reid Barton <a href="https://leanprover-community.github.io/archive/stream/113489-new-members/topic/showing.20injectivity.html#195612217">(Apr 28 2020 at 19:13)</a>:</h4>
+<p>Still, I think breaking things down into more lemmas would help.</p>
+
+
+
+<a name="195612360"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113489-new%20members/topic/showing%20injectivity/near/195612360" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Adeeb K <a href="https://leanprover-community.github.io/archive/stream/113489-new-members/topic/showing.20injectivity.html#195612360">(Apr 28 2020 at 19:14)</a>:</h4>
+<p>then I should be able to conclude that either <code>f x_l = f y_l</code> or <code>(&lt; (f x_1) - 1,  (f x_1).snd  &gt;) = (&lt; (f y_1) - 1,  (f y_1).snd  &gt;)</code>, both of which would give me that <code>x = y</code> by injectivity of <code>lift_one</code> and <code>f</code></p>
+
+
+
+<a name="195612444"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113489-new%20members/topic/showing%20injectivity/near/195612444" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Adeeb K <a href="https://leanprover-community.github.io/archive/stream/113489-new-members/topic/showing.20injectivity.html#195612444">(Apr 28 2020 at 19:15)</a>:</h4>
+<p>I'm not sure how to split this into lemmas, or at least it isn't _immediately_ obvious to me how to do so</p>
+
+
+
+<a name="195612454"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113489-new%20members/topic/showing%20injectivity/near/195612454" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Reid Barton <a href="https://leanprover-community.github.io/archive/stream/113489-new-members/topic/showing.20injectivity.html#195612454">(Apr 28 2020 at 19:15)</a>:</h4>
+<p><span class="user-mention silent" data-user-id="283719">Adeeb K</span> <a href="#narrow/stream/113489-new-members/topic/showing.20injectivity/near/195612129" title="#narrow/stream/113489-new-members/topic/showing.20injectivity/near/195612129">said</a>:</p>
+<blockquote>
+<p>then, by <code>miss_proof</code>, we know that RHS = LHS != k</p>
+</blockquote>
+<p>Actually, this is not true, is it?</p>
+
+
+
+<a name="195612487"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113489-new%20members/topic/showing%20injectivity/near/195612487" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Adeeb K <a href="https://leanprover-community.github.io/archive/stream/113489-new-members/topic/showing.20injectivity.html#195612487">(Apr 28 2020 at 19:15)</a>:</h4>
+<p>It should be by <code>miss_proof</code> we gave earlier</p>
+
+
+
+<a name="195612587"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113489-new%20members/topic/showing%20injectivity/near/195612587" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Reid Barton <a href="https://leanprover-community.github.io/archive/stream/113489-new-members/topic/showing.20injectivity.html#195612587">(Apr 28 2020 at 19:16)</a>:</h4>
+<p><span class="user-mention silent" data-user-id="283719">Adeeb K</span> <a href="#narrow/stream/113489-new-members/topic/showing.20injectivity/near/195612360" title="#narrow/stream/113489-new-members/topic/showing.20injectivity/near/195612360">said</a>:</p>
+<blockquote>
+<p>then I should be able to conclude that either <code>f x_l = f y_l</code> or <code>(&lt; (f x_1) - 1,  (f x_1).snd  &gt;) = (&lt; (f y_1) - 1,  (f y_1).snd  &gt;)</code>, both of which would give me that <code>x = y</code> by injectivity of <code>lift_one</code> and <code>f</code></p>
+</blockquote>
+<p>How do you know that both <code>f x_1</code> and <code>f y_1</code> fall into the same case of <code>relabel</code>?</p>
+
+
+
+<a name="195612624"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113489-new%20members/topic/showing%20injectivity/near/195612624" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Reid Barton <a href="https://leanprover-community.github.io/archive/stream/113489-new-members/topic/showing.20injectivity.html#195612624">(Apr 28 2020 at 19:16)</a>:</h4>
+<p><span class="user-mention silent" data-user-id="283719">Adeeb K</span> <a href="#narrow/stream/113489-new-members/topic/showing.20injectivity/near/195612487" title="#narrow/stream/113489-new-members/topic/showing.20injectivity/near/195612487">said</a>:</p>
+<blockquote>
+<p>It should be by <code>miss_proof</code> we gave earlier</p>
+</blockquote>
+<p>But this is about the input of <code>relabel</code>, not the output of <code>relabel</code>.</p>
+
+
+
+<a name="195612628"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113489-new%20members/topic/showing%20injectivity/near/195612628" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Adeeb K <a href="https://leanprover-community.github.io/archive/stream/113489-new-members/topic/showing.20injectivity.html#195612628">(Apr 28 2020 at 19:16)</a>:</h4>
+<p>this whole proof to show that the composition is injective is to lead up to a contradiction in pigeonhole principle - I end up getting this whole thing is an injective function from <code>[m + 1]</code> to <code>[m]</code> which is a contradiction according to my inductive hypothesis</p>
+
+
+
+<a name="195612651"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113489-new%20members/topic/showing%20injectivity/near/195612651" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Adeeb K <a href="https://leanprover-community.github.io/archive/stream/113489-new-members/topic/showing.20injectivity.html#195612651">(Apr 28 2020 at 19:16)</a>:</h4>
+<p>because <code>f x_1 = f y_1</code></p>
+
+
+
+<a name="195612713"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113489-new%20members/topic/showing%20injectivity/near/195612713" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Adeeb K <a href="https://leanprover-community.github.io/archive/stream/113489-new-members/topic/showing.20injectivity.html#195612713">(Apr 28 2020 at 19:17)</a>:</h4>
+<p>by injectivity of <code>lift_one</code> and <code>f</code> right?</p>
+
+
+
+<a name="195612722"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113489-new%20members/topic/showing%20injectivity/near/195612722" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Reid Barton <a href="https://leanprover-community.github.io/archive/stream/113489-new-members/topic/showing.20injectivity.html#195612722">(Apr 28 2020 at 19:17)</a>:</h4>
+<p>Wait, that's what you're trying to prove.</p>
+
+
+
+<a name="195612751"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113489-new%20members/topic/showing%20injectivity/near/195612751" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Adeeb K <a href="https://leanprover-community.github.io/archive/stream/113489-new-members/topic/showing.20injectivity.html#195612751">(Apr 28 2020 at 19:17)</a>:</h4>
+<p>right right</p>
+
+
+
+<a name="195612851"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113489-new%20members/topic/showing%20injectivity/near/195612851" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Adeeb K <a href="https://leanprover-community.github.io/archive/stream/113489-new-members/topic/showing.20injectivity.html#195612851">(Apr 28 2020 at 19:18)</a>:</h4>
+<p>but by the definition of relabel, they have to either be &lt;= k or &gt; k right?  You can't be &lt;= k and &gt; k at the same time</p>
+
+
+
+<a name="195612856"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113489-new%20members/topic/showing%20injectivity/near/195612856" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Reid Barton <a href="https://leanprover-community.github.io/archive/stream/113489-new-members/topic/showing.20injectivity.html#195612856">(Apr 28 2020 at 19:18)</a>:</h4>
+<p>How do you know, for example, that <code>relabel 100 7 _ 3</code> isn't equal to <code>relabel 100 7 _ 21</code>.</p>
+
+
+
+<a name="195612944"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113489-new%20members/topic/showing%20injectivity/near/195612944" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Adeeb K <a href="https://leanprover-community.github.io/archive/stream/113489-new-members/topic/showing.20injectivity.html#195612944">(Apr 28 2020 at 19:19)</a>:</h4>
+<p>but wouldn't that imply that 2 = 20?</p>
+
+
+
+<a name="195612949"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113489-new%20members/topic/showing%20injectivity/near/195612949" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Reid Barton <a href="https://leanprover-community.github.io/archive/stream/113489-new-members/topic/showing.20injectivity.html#195612949">(Apr 28 2020 at 19:19)</a>:</h4>
+<p>Well, of course it's because <code>3</code> doesn't equal <code>20</code> but you have to consider this case and really use the definition of <code>relabel</code> somehow.</p>
+
+
+
+<a name="195612990"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113489-new%20members/topic/showing%20injectivity/near/195612990" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Adeeb K <a href="https://leanprover-community.github.io/archive/stream/113489-new-members/topic/showing.20injectivity.html#195612990">(Apr 28 2020 at 19:19)</a>:</h4>
+<p>oh, so this means I should introduce a lemma</p>
+
+
+
+<a name="195613107"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113489-new%20members/topic/showing%20injectivity/near/195613107" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Reid Barton <a href="https://leanprover-community.github.io/archive/stream/113489-new-members/topic/showing.20injectivity.html#195613107">(Apr 28 2020 at 19:20)</a>:</h4>
+<p>So I think this means in your paper proof you are implicitly assuming something which is "obvious" about the behavior of <code>relabel</code>, and you should figure out what it is and formulate it as a lemma.</p>
+
+
+
+<a name="195613137"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113489-new%20members/topic/showing%20injectivity/near/195613137" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Adeeb K <a href="https://leanprover-community.github.io/archive/stream/113489-new-members/topic/showing.20injectivity.html#195613137">(Apr 28 2020 at 19:20)</a>:</h4>
+<p>if (relabel m k p) x = (relabel m k p) y<br>
+then x, y &lt;= k or x, y &gt; k</p>
+
+
+
+<a name="195613326"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113489-new%20members/topic/showing%20injectivity/near/195613326" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Adeeb K <a href="https://leanprover-community.github.io/archive/stream/113489-new-members/topic/showing.20injectivity.html#195613326">(Apr 28 2020 at 19:22)</a>:</h4>
+<p>suppose not - then WLOG there exists x, y such that x &lt;= k and y &gt; k, but then ((relabel m k p) x).1 = x - 1 &lt; k &lt;= y = ((relabel m k p) y).2</p>
+
+
+
+<a name="195613338"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113489-new%20members/topic/showing%20injectivity/near/195613338" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Adeeb K <a href="https://leanprover-community.github.io/archive/stream/113489-new-members/topic/showing.20injectivity.html#195613338">(Apr 28 2020 at 19:22)</a>:</h4>
+<p>contradiction, so no such pair exist?</p>
+
+
+
+<a name="195613382"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113489-new%20members/topic/showing%20injectivity/near/195613382" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Adeeb K <a href="https://leanprover-community.github.io/archive/stream/113489-new-members/topic/showing.20injectivity.html#195613382">(Apr 28 2020 at 19:22)</a>:</h4>
+<p>though I made a leap here</p>
+
+
+
+<a name="195613436"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113489-new%20members/topic/showing%20injectivity/near/195613436" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Adeeb K <a href="https://leanprover-community.github.io/archive/stream/113489-new-members/topic/showing.20injectivity.html#195613436">(Apr 28 2020 at 19:23)</a>:</h4>
+<p>I assumed then x, y &lt;= k or x, y &gt; k if and only if !(x &lt;= k and y &gt; k)</p>
+
+
+
+<a name="195613444"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113489-new%20members/topic/showing%20injectivity/near/195613444" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Reid Barton <a href="https://leanprover-community.github.io/archive/stream/113489-new-members/topic/showing.20injectivity.html#195613444">(Apr 28 2020 at 19:23)</a>:</h4>
+<p>This is not the correct formula for <code>relabel</code></p>
+
+
+
+<a name="195613624"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113489-new%20members/topic/showing%20injectivity/near/195613624" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Reid Barton <a href="https://leanprover-community.github.io/archive/stream/113489-new-members/topic/showing.20injectivity.html#195613624">(Apr 28 2020 at 19:25)</a>:</h4>
+<p>It is a good general direction though.</p>
+
+
+
+<a name="195613802"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113489-new%20members/topic/showing%20injectivity/near/195613802" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Adeeb K <a href="https://leanprover-community.github.io/archive/stream/113489-new-members/topic/showing.20injectivity.html#195613802">(Apr 28 2020 at 19:26)</a>:</h4>
+<p>what's not the correct formula?</p>
+
+
+
+<a name="195613815"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113489-new%20members/topic/showing%20injectivity/near/195613815" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Adeeb K <a href="https://leanprover-community.github.io/archive/stream/113489-new-members/topic/showing.20injectivity.html#195613815">(Apr 28 2020 at 19:27)</a>:</h4>
+<p>oh, the way I split it up?</p>
+
+
+
+<a name="195613818"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113489-new%20members/topic/showing%20injectivity/near/195613818" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Reid Barton <a href="https://leanprover-community.github.io/archive/stream/113489-new-members/topic/showing.20injectivity.html#195613818">(Apr 28 2020 at 19:27)</a>:</h4>
+<p>((relabel m k p) x).1 = x - 1 &lt; k &lt;= y = ((relabel m k p) y).2</p>
+
+
+
+<a name="195613837"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113489-new%20members/topic/showing%20injectivity/near/195613837" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Adeeb K <a href="https://leanprover-community.github.io/archive/stream/113489-new-members/topic/showing.20injectivity.html#195613837">(Apr 28 2020 at 19:27)</a>:</h4>
+<p>oh right right</p>
+
+
+
+<a name="195613842"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113489-new%20members/topic/showing%20injectivity/near/195613842" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Adeeb K <a href="https://leanprover-community.github.io/archive/stream/113489-new-members/topic/showing.20injectivity.html#195613842">(Apr 28 2020 at 19:27)</a>:</h4>
+<p>other way around</p>
+
+
+
+<a name="195613921"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113489-new%20members/topic/showing%20injectivity/near/195613921" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Adeeb K <a href="https://leanprover-community.github.io/archive/stream/113489-new-members/topic/showing.20injectivity.html#195613921">(Apr 28 2020 at 19:28)</a>:</h4>
+<p>((relabel m k p) x).1 = x  &lt;= k &lt;= y = ((relabel m k p) y).2<br>
+which means either ((relabel m k p) x).1 &lt; ((relabel m k p) y).2, contradiction</p>
+
+
+
+<a name="195613954"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113489-new%20members/topic/showing%20injectivity/near/195613954" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Adeeb K <a href="https://leanprover-community.github.io/archive/stream/113489-new-members/topic/showing.20injectivity.html#195613954">(Apr 28 2020 at 19:28)</a>:</h4>
+<p>or ((relabel m k p) x).1 = ((relabel m k p) y).2 = k, contradiction by <code>miss_proof</code></p>
+
+
+
+<a name="195614949"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113489-new%20members/topic/showing%20injectivity/near/195614949" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Adeeb K <a href="https://leanprover-community.github.io/archive/stream/113489-new-members/topic/showing.20injectivity.html#195614949">(Apr 28 2020 at 19:36)</a>:</h4>
+<p>I wrote down the statement of the lemma:</p>
+
+
+
+<a name="195614967"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113489-new%20members/topic/showing%20injectivity/near/195614967" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Adeeb K <a href="https://leanprover-community.github.io/archive/stream/113489-new-members/topic/showing.20injectivity.html#195614967">(Apr 28 2020 at 19:36)</a>:</h4>
+<div class="codehilite"><pre><span></span><code><span class="kn">lemma</span> <span class="n">relabel_behavior</span>
+<span class="o">(</span><span class="n">m</span> <span class="n">k</span> <span class="o">:</span> <span class="bp">ℕ</span><span class="o">)</span>
+<span class="o">(</span><span class="n">p</span><span class="o">:</span> <span class="n">k</span> <span class="bp">&lt;</span> <span class="n">m</span><span class="o">)</span>
+<span class="o">{</span><span class="n">pf</span><span class="o">}</span> <span class="o">(</span><span class="n">miss</span><span class="o">:</span> <span class="bp">∀</span> <span class="n">j</span> <span class="o">:</span> <span class="n">finite_subset</span> <span class="n">m</span><span class="o">,</span> <span class="o">(</span><span class="n">relabel</span> <span class="n">m</span> <span class="n">k</span> <span class="n">p</span><span class="o">)</span> <span class="n">j</span> <span class="bp">≠</span> <span class="bp">⟨</span><span class="n">k</span><span class="o">,</span>  <span class="n">pf</span><span class="bp">⟩</span> <span class="o">)</span>
+<span class="o">:</span> <span class="bp">∀</span> <span class="n">x</span> <span class="n">y</span> <span class="o">:</span> <span class="n">finite_subset</span> <span class="n">m</span><span class="o">,</span> <span class="o">(</span><span class="n">x</span><span class="bp">.</span><span class="mi">1</span> <span class="bp">≤</span> <span class="n">k</span> <span class="bp">∧</span> <span class="n">y</span><span class="bp">.</span><span class="mi">1</span> <span class="bp">≤</span> <span class="n">k</span><span class="o">)</span> <span class="bp">∨</span> <span class="o">(</span><span class="n">x</span><span class="bp">.</span><span class="mi">1</span> <span class="bp">&gt;</span> <span class="n">k</span> <span class="bp">∧</span> <span class="n">y</span><span class="bp">.</span><span class="mi">1</span> <span class="bp">&gt;</span> <span class="n">k</span><span class="o">)</span>
+<span class="o">:=</span>
+<span class="k">begin</span>
+<span class="n">sorry</span>
+<span class="kn">end</span>
+</code></pre></div>
+
+
+
+<a name="195615034"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113489-new%20members/topic/showing%20injectivity/near/195615034" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Adeeb K <a href="https://leanprover-community.github.io/archive/stream/113489-new-members/topic/showing.20injectivity.html#195615034">(Apr 28 2020 at 19:37)</a>:</h4>
+<p>Not sure how to translate the proof above into lean - I imagine it would use a lot of transitivity of inequalities?</p>
+
+
+
+<a name="195615316"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113489-new%20members/topic/showing%20injectivity/near/195615316" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Reid Barton <a href="https://leanprover-community.github.io/archive/stream/113489-new-members/topic/showing.20injectivity.html#195615316">(Apr 28 2020 at 19:39)</a>:</h4>
+<p>Well this lemma is true but useless, because <code>miss</code> is just false.</p>
+
+
+
+<a name="195615371"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113489-new%20members/topic/showing%20injectivity/near/195615371" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Adeeb K <a href="https://leanprover-community.github.io/archive/stream/113489-new-members/topic/showing.20injectivity.html#195615371">(Apr 28 2020 at 19:40)</a>:</h4>
+<p>it is?</p>
+
+
+
+<a name="195615731"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113489-new%20members/topic/showing%20injectivity/near/195615731" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Adeeb K <a href="https://leanprover-community.github.io/archive/stream/113489-new-members/topic/showing.20injectivity.html#195615731">(Apr 28 2020 at 19:43)</a>:</h4>
+<p>wait, how?  If I have an injective function <code>f</code> from <code>{0, 1, ..., m + 1}</code> to <code>{0, 1, ..., m }</code> (no such function exists, but this is a lemma that helps me set up the conclusion to pigeonhole by assuming such an injective function exists in the first place), and I restrict my domain to <code>{0, 1, ..., m }</code> instead, then there is no element in the domain that will equal <code>f(m + 1)</code> since <code>f</code> is injective</p>
+
+
+
+<a name="195615785"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113489-new%20members/topic/showing%20injectivity/near/195615785" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Reid Barton <a href="https://leanprover-community.github.io/archive/stream/113489-new-members/topic/showing.20injectivity.html#195615785">(Apr 28 2020 at 19:43)</a>:</h4>
+<p>There is no <code>f</code> in the statement of <code>relabel_behavior</code>.</p>
+
+
+
+<a name="195615819"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113489-new%20members/topic/showing%20injectivity/near/195615819" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Adeeb K <a href="https://leanprover-community.github.io/archive/stream/113489-new-members/topic/showing.20injectivity.html#195615819">(Apr 28 2020 at 19:43)</a>:</h4>
+<p>oh right..</p>
+
+
+
+<a name="195615846"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113489-new%20members/topic/showing%20injectivity/near/195615846" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Reid Barton <a href="https://leanprover-community.github.io/archive/stream/113489-new-members/topic/showing.20injectivity.html#195615846">(Apr 28 2020 at 19:44)</a>:</h4>
+<p>But, something like it is true and useful.</p>
+
+
+
+<a name="195615976"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113489-new%20members/topic/showing%20injectivity/near/195615976" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Adeeb K <a href="https://leanprover-community.github.io/archive/stream/113489-new-members/topic/showing.20injectivity.html#195615976">(Apr 28 2020 at 19:44)</a>:</h4>
+<p>I'm not sure I see it?</p>
+
+
+
+<a name="195615988"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113489-new%20members/topic/showing%20injectivity/near/195615988" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Patrick Massot <a href="https://leanprover-community.github.io/archive/stream/113489-new-members/topic/showing.20injectivity.html#195615988">(Apr 28 2020 at 19:44)</a>:</h4>
+<p>Adeeb, it seems you should think much more seriously about the proof on paper.</p>
+
+
+
+<a name="195616219"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113489-new%20members/topic/showing%20injectivity/near/195616219" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Adeeb K <a href="https://leanprover-community.github.io/archive/stream/113489-new-members/topic/showing.20injectivity.html#195616219">(Apr 28 2020 at 19:46)</a>:</h4>
+<p>I (believe) I understand the proof, but there are a bunch of steps I think I didn't write out explicitly since they felt ''obvious''</p>
+
+
+
+<a name="195616259"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113489-new%20members/topic/showing%20injectivity/near/195616259" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Patrick Massot <a href="https://leanprover-community.github.io/archive/stream/113489-new-members/topic/showing.20injectivity.html#195616259">(Apr 28 2020 at 19:46)</a>:</h4>
+<p>But you're here to unlearn that feeling, right?</p>
+
+
+
+<a name="195616285"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113489-new%20members/topic/showing%20injectivity/near/195616285" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Adeeb K <a href="https://leanprover-community.github.io/archive/stream/113489-new-members/topic/showing.20injectivity.html#195616285">(Apr 28 2020 at 19:47)</a>:</h4>
+<p>yes</p>
+
+
+
+<a name="195616344"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113489-new%20members/topic/showing%20injectivity/near/195616344" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Reid Barton <a href="https://leanprover-community.github.io/archive/stream/113489-new-members/topic/showing.20injectivity.html#195616344">(Apr 28 2020 at 19:47)</a>:</h4>
+<p>Patrick, you make it sound like The Matrix</p>
+
+
+
+<a name="195616474"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113489-new%20members/topic/showing%20injectivity/near/195616474" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Patrick Massot <a href="https://leanprover-community.github.io/archive/stream/113489-new-members/topic/showing.20injectivity.html#195616474">(Apr 28 2020 at 19:48)</a>:</h4>
+<p>Lean: the red pill.</p>
+
+
+
+<a name="195616483"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113489-new%20members/topic/showing%20injectivity/near/195616483" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Adeeb K <a href="https://leanprover-community.github.io/archive/stream/113489-new-members/topic/showing.20injectivity.html#195616483">(Apr 28 2020 at 19:48)</a>:</h4>
+<p>Okay, so <code>miss</code> is not true simply because if <code>k &lt; m - 1</code> then <code>k + 1 &lt; m</code>, which means that there is in fact an element for which <code>relabel m k p j = &lt;k, pf&gt;</code></p>
+
+
+
+<a name="195616655"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113489-new%20members/topic/showing%20injectivity/near/195616655" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Adeeb K <a href="https://leanprover-community.github.io/archive/stream/113489-new-members/topic/showing.20injectivity.html#195616655">(Apr 28 2020 at 19:50)</a>:</h4>
+<p>and I probably don't really care about <code>miss</code> in the first place</p>
+
+
+
+<a name="195616709"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113489-new%20members/topic/showing%20injectivity/near/195616709" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Adeeb K <a href="https://leanprover-community.github.io/archive/stream/113489-new-members/topic/showing.20injectivity.html#195616709">(Apr 28 2020 at 19:50)</a>:</h4>
+<p>what I care about is showing that either <code>x, y &lt;= k</code> or <code>x, y &gt; k</code></p>
+
+
+
+<a name="195616854"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113489-new%20members/topic/showing%20injectivity/near/195616854" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Adeeb K <a href="https://leanprover-community.github.io/archive/stream/113489-new-members/topic/showing.20injectivity.html#195616854">(Apr 28 2020 at 19:51)</a>:</h4>
+<p>So what I have now is:</p>
+<div class="codehilite"><pre><span></span><code><span class="kn">lemma</span> <span class="n">relabel_behavior</span>
+<span class="o">(</span><span class="n">m</span> <span class="n">k</span> <span class="o">:</span> <span class="bp">ℕ</span><span class="o">)</span>
+<span class="o">(</span><span class="n">p</span><span class="o">:</span> <span class="n">k</span> <span class="bp">&lt;</span> <span class="n">m</span><span class="o">)</span>
+<span class="o">:</span> <span class="bp">∀</span> <span class="n">x</span> <span class="n">y</span> <span class="o">:</span> <span class="n">finite_subset</span> <span class="n">m</span><span class="o">,</span> <span class="o">(</span><span class="n">x</span><span class="bp">.</span><span class="mi">1</span> <span class="bp">≤</span> <span class="n">k</span> <span class="bp">∧</span> <span class="n">y</span><span class="bp">.</span><span class="mi">1</span> <span class="bp">≤</span> <span class="n">k</span><span class="o">)</span> <span class="bp">∨</span> <span class="o">(</span><span class="n">x</span><span class="bp">.</span><span class="mi">1</span> <span class="bp">&gt;</span> <span class="n">k</span> <span class="bp">∧</span> <span class="n">y</span><span class="bp">.</span><span class="mi">1</span> <span class="bp">&gt;</span> <span class="n">k</span><span class="o">)</span>
+<span class="o">:=</span>
+<span class="k">begin</span>
+<span class="n">sorry</span>
+<span class="kn">end</span>
+</code></pre></div>
+
+
+
+<a name="195617005"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113489-new%20members/topic/showing%20injectivity/near/195617005" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Adeeb K <a href="https://leanprover-community.github.io/archive/stream/113489-new-members/topic/showing.20injectivity.html#195617005">(Apr 28 2020 at 19:52)</a>:</h4>
+<p>is this the full 'useful' statement, or is there another detail I'm missing?</p>
+
+
+
+<a name="195617038"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113489-new%20members/topic/showing%20injectivity/near/195617038" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Adeeb K <a href="https://leanprover-community.github.io/archive/stream/113489-new-members/topic/showing.20injectivity.html#195617038">(Apr 28 2020 at 19:52)</a>:</h4>
+<p>wait wait wait one second</p>
+
+
+
+<a name="195617124"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113489-new%20members/topic/showing%20injectivity/near/195617124" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Adeeb K <a href="https://leanprover-community.github.io/archive/stream/113489-new-members/topic/showing.20injectivity.html#195617124">(Apr 28 2020 at 19:53)</a>:</h4>
+<p>sorry I meant this:</p>
+
+
+
+<a name="195617147"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113489-new%20members/topic/showing%20injectivity/near/195617147" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Adeeb K <a href="https://leanprover-community.github.io/archive/stream/113489-new-members/topic/showing.20injectivity.html#195617147">(Apr 28 2020 at 19:53)</a>:</h4>
+<div class="codehilite"><pre><span></span><code><span class="kn">lemma</span> <span class="n">relabel_behavior</span>
+<span class="o">(</span><span class="n">m</span> <span class="n">k</span> <span class="o">:</span> <span class="bp">ℕ</span><span class="o">)</span>
+<span class="o">(</span><span class="n">p</span><span class="o">:</span> <span class="n">k</span> <span class="bp">&lt;</span> <span class="n">m</span><span class="o">)</span>
+<span class="o">:</span> <span class="bp">∀</span> <span class="n">x</span> <span class="n">y</span> <span class="o">:</span> <span class="n">finite_subset</span> <span class="n">m</span><span class="o">,</span>
+<span class="o">(</span><span class="n">relabel</span> <span class="n">m</span> <span class="n">k</span> <span class="n">p</span><span class="o">)</span> <span class="n">x</span> <span class="bp">=</span> <span class="o">(</span><span class="n">relabel</span> <span class="n">m</span> <span class="n">k</span> <span class="n">p</span><span class="o">)</span> <span class="n">y</span>
+<span class="bp">→</span> <span class="o">(</span><span class="n">x</span><span class="bp">.</span><span class="mi">1</span> <span class="bp">≤</span> <span class="n">k</span> <span class="bp">∧</span> <span class="n">y</span><span class="bp">.</span><span class="mi">1</span> <span class="bp">≤</span> <span class="n">k</span><span class="o">)</span> <span class="bp">∨</span> <span class="o">(</span><span class="n">x</span><span class="bp">.</span><span class="mi">1</span> <span class="bp">&gt;</span> <span class="n">k</span> <span class="bp">∧</span> <span class="n">y</span><span class="bp">.</span><span class="mi">1</span> <span class="bp">&gt;</span> <span class="n">k</span><span class="o">)</span>
+<span class="o">:=</span>
+<span class="k">begin</span>
+<span class="n">sorry</span>
+<span class="kn">end</span>
+</code></pre></div>
+
+
+
+<a name="195617266"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113489-new%20members/topic/showing%20injectivity/near/195617266" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Reid Barton <a href="https://leanprover-community.github.io/archive/stream/113489-new-members/topic/showing.20injectivity.html#195617266">(Apr 28 2020 at 19:54)</a>:</h4>
+<p>It's getting closer but still not correct.</p>
+
+
+
+<a name="195617350"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113489-new%20members/topic/showing%20injectivity/near/195617350" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Adeeb K <a href="https://leanprover-community.github.io/archive/stream/113489-new-members/topic/showing.20injectivity.html#195617350">(Apr 28 2020 at 19:54)</a>:</h4>
+<p>is there something I'm missing or am I asserting something that's too strong?</p>
+
+
+
+<a name="195617599"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113489-new%20members/topic/showing%20injectivity/near/195617599" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Reid Barton <a href="https://leanprover-community.github.io/archive/stream/113489-new-members/topic/showing.20injectivity.html#195617599">(Apr 28 2020 at 19:56)</a>:</h4>
+<p>Does the statement look true to you? Forget about the pigeonhole proof.</p>
+
+
+
+<a name="195617831"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113489-new%20members/topic/showing%20injectivity/near/195617831" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Adeeb K <a href="https://leanprover-community.github.io/archive/stream/113489-new-members/topic/showing.20injectivity.html#195617831">(Apr 28 2020 at 19:58)</a>:</h4>
+<p>uh I think it probably doesn't match the way I have relabel defined</p>
+
+
+
+<a name="195617849"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113489-new%20members/topic/showing%20injectivity/near/195617849" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Adeeb K <a href="https://leanprover-community.github.io/archive/stream/113489-new-members/topic/showing.20injectivity.html#195617849">(Apr 28 2020 at 19:58)</a>:</h4>
+<p>so it would be better like this:</p>
+
+
+
+<a name="195617934"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113489-new%20members/topic/showing%20injectivity/near/195617934" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Adeeb K <a href="https://leanprover-community.github.io/archive/stream/113489-new-members/topic/showing.20injectivity.html#195617934">(Apr 28 2020 at 19:58)</a>:</h4>
+<div class="codehilite"><pre><span></span><code><span class="kn">lemma</span> <span class="n">relabel_behavior</span>
+<span class="o">(</span><span class="n">m</span> <span class="n">k</span> <span class="o">:</span> <span class="bp">ℕ</span><span class="o">)</span>
+<span class="o">(</span><span class="n">p</span><span class="o">:</span> <span class="n">k</span> <span class="bp">&lt;</span> <span class="n">m</span><span class="o">)</span>
+<span class="o">:</span> <span class="bp">∀</span> <span class="n">x</span> <span class="n">y</span> <span class="o">:</span> <span class="n">finite_subset</span> <span class="n">m</span><span class="o">,</span>
+<span class="o">(</span><span class="n">relabel</span> <span class="n">m</span> <span class="n">k</span> <span class="n">p</span><span class="o">)</span> <span class="n">x</span> <span class="bp">=</span> <span class="o">(</span><span class="n">relabel</span> <span class="n">m</span> <span class="n">k</span> <span class="n">p</span><span class="o">)</span> <span class="n">y</span>
+<span class="bp">→</span> <span class="o">(</span><span class="n">x</span><span class="bp">.</span><span class="mi">1</span> <span class="bp">≤</span> <span class="n">k</span> <span class="bp">∧</span> <span class="n">y</span><span class="bp">.</span><span class="mi">1</span> <span class="bp">≤</span> <span class="n">k</span><span class="o">)</span> <span class="bp">∨</span> <span class="o">(</span><span class="n">x</span><span class="bp">.</span><span class="mi">1</span> <span class="bp">≥</span> <span class="n">k</span> <span class="bp">∧</span> <span class="n">y</span><span class="bp">.</span><span class="mi">1</span> <span class="bp">≥</span> <span class="n">k</span><span class="o">)</span>
+<span class="o">:=</span>
+<span class="k">begin</span>
+<span class="n">sorry</span>
+<span class="kn">end</span>
+</code></pre></div>
+
+
+
+<a name="195618030"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113489-new%20members/topic/showing%20injectivity/near/195618030" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Adeeb K <a href="https://leanprover-community.github.io/archive/stream/113489-new-members/topic/showing.20injectivity.html#195618030">(Apr 28 2020 at 19:59)</a>:</h4>
+<p>is this closer?</p>
+
+
+
+<a name="195618306"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113489-new%20members/topic/showing%20injectivity/near/195618306" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Adeeb K <a href="https://leanprover-community.github.io/archive/stream/113489-new-members/topic/showing.20injectivity.html#195618306">(Apr 28 2020 at 20:00)</a>:</h4>
+<p>which is really 3 cases?</p>
+
+
+
+<a name="195618629"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113489-new%20members/topic/showing%20injectivity/near/195618629" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Adeeb K <a href="https://leanprover-community.github.io/archive/stream/113489-new-members/topic/showing.20injectivity.html#195618629">(Apr 28 2020 at 20:02)</a>:</h4>
+<p>Is there something really big and obvious that I'm missing, or is it more subtle?</p>
+
+
+
+<a name="195618694"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113489-new%20members/topic/showing%20injectivity/near/195618694" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Reid Barton <a href="https://leanprover-community.github.io/archive/stream/113489-new-members/topic/showing.20injectivity.html#195618694">(Apr 28 2020 at 20:03)</a>:</h4>
+<p>I think it is okay now.</p>
+
+
+
+<a name="195618863"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113489-new%20members/topic/showing%20injectivity/near/195618863" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Adeeb K <a href="https://leanprover-community.github.io/archive/stream/113489-new-members/topic/showing.20injectivity.html#195618863">(Apr 28 2020 at 20:04)</a>:</h4>
+<p>alright, cool!  Then...I'm not sure how to start after maybe an <code>intros</code> or <code>introv</code></p>
+
+
+
 {% endraw %}
 
-<hr><p>Last updated: Apr 28 2020 at 19:04 UTC</p>
+<hr><p>Last updated: Apr 28 2020 at 20:04 UTC</p>
