@@ -45,6 +45,75 @@ permalink: /stream/113488-general/topic/definition.20of.20real.20log.html
 
 
 
+<a name="195530790"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113488-general/topic/definition%20of%20real%20log/near/195530790" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Johan Commelin <a href="https://leanprover-community.github.io/archive/stream/113488-general/topic/definition.20of.20real.20log.html#195530790">(Apr 28 2020 at 08:07)</a>:</h4>
+<div class="codehilite"><pre><span></span><code><span class="bp">@</span><span class="o">[</span><span class="kn">irreducible</span><span class="o">]</span> <span class="n">def</span> <span class="n">junk</span> <span class="o">:=</span> <span class="mi">37</span>
+</code></pre></div>
+
+
+
+<a name="195531121"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113488-general/topic/definition%20of%20real%20log/near/195531121" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Johan Commelin <a href="https://leanprover-community.github.io/archive/stream/113488-general/topic/definition.20of.20real.20log.html#195531121">(Apr 28 2020 at 08:11)</a>:</h4>
+<div class="codehilite"><pre><span></span><code><span class="kn">example</span> <span class="o">:</span> <span class="bp">∃</span> <span class="n">p</span><span class="o">,</span> <span class="n">irregular_prime</span> <span class="o">:=</span> <span class="k">by</span> <span class="n">use</span> <span class="n">junk</span><span class="bp">;</span> <span class="n">exact</span> <span class="n">dec_trivial</span>
+</code></pre></div>
+
+
+
+<a name="195531234"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113488-general/topic/definition%20of%20real%20log/near/195531234" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Johan Commelin <a href="https://leanprover-community.github.io/archive/stream/113488-general/topic/definition.20of.20real.20log.html#195531234">(Apr 28 2020 at 08:12)</a>:</h4>
+<p>Sorry for trolling...<br>
+<span class="user-mention" data-user-id="110050">@Sebastien Gouezel</span> I think this is a great idea! I think this is even sometimes done in "real" maths, isn't it?</p>
+
+
+
+<a name="195531265"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113488-general/topic/definition%20of%20real%20log/near/195531265" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Johan Commelin <a href="https://leanprover-community.github.io/archive/stream/113488-general/topic/definition.20of.20real.20log.html#195531265">(Apr 28 2020 at 08:13)</a>:</h4>
+<p>As in, people write <code>ln x</code>, and they actually mean <code>ln |x|</code>, and this only gets corrected after a while</p>
+
+
+
+<a name="195531467"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113488-general/topic/definition%20of%20real%20log/near/195531467" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Scott Morrison <a href="https://leanprover-community.github.io/archive/stream/113488-general/topic/definition.20of.20real.20log.html#195531467">(Apr 28 2020 at 08:14)</a>:</h4>
+<p>One day there are going to be theses written about how 37 became the world's default junk value.</p>
+
+
+
+<a name="195533110"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113488-general/topic/definition%20of%20real%20log/near/195533110" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Mario Carneiro <a href="https://leanprover-community.github.io/archive/stream/113488-general/topic/definition.20of.20real.20log.html#195533110">(Apr 28 2020 at 08:33)</a>:</h4>
+<p>I think this is a good idea as well. Two arguments in favor are the use of <code>ln |x|</code> in intro calc and the fact that <code>log |x| = Re (log x)</code> (both mentioned above)</p>
+
+
+
+<a name="195533231"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113488-general/topic/definition%20of%20real%20log/near/195533231" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Mario Carneiro <a href="https://leanprover-community.github.io/archive/stream/113488-general/topic/definition.20of.20real.20log.html#195533231">(Apr 28 2020 at 08:34)</a>:</h4>
+<p>Less clear is whether <code>real.sqrt</code> should do the same thing</p>
+
+
+
+<a name="195533421"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113488-general/topic/definition%20of%20real%20log/near/195533421" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Kenny Lau <a href="https://leanprover-community.github.io/archive/stream/113488-general/topic/definition.20of.20real.20log.html#195533421">(Apr 28 2020 at 08:36)</a>:</h4>
+<p>when you said "intro calc" my first thought was the two tactics <code>by intro</code> and <code>by calc</code>... Lean syndrome</p>
+
+
+
+<a name="195533473"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113488-general/topic/definition%20of%20real%20log/near/195533473" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Kenny Lau <a href="https://leanprover-community.github.io/archive/stream/113488-general/topic/definition.20of.20real.20log.html#195533473">(Apr 28 2020 at 08:37)</a>:</h4>
+<p>should <code>real.sqrt (-4)</code> be <code>-2</code> or <code>2</code>?</p>
+
+
+
+<a name="195533501"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113488-general/topic/definition%20of%20real%20log/near/195533501" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Mario Carneiro <a href="https://leanprover-community.github.io/archive/stream/113488-general/topic/definition.20of.20real.20log.html#195533501">(Apr 28 2020 at 08:37)</a>:</h4>
+<p>I think the only reasonable choices are <code>0</code> and <code>2</code></p>
+
+
+
+<a name="195533518"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113488-general/topic/definition%20of%20real%20log/near/195533518" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Kenny Lau <a href="https://leanprover-community.github.io/archive/stream/113488-general/topic/definition.20of.20real.20log.html#195533518">(Apr 28 2020 at 08:37)</a>:</h4>
+<p>well <code>-2</code> would keep the monotonic property</p>
+
+
+
 {% endraw %}
 
-<hr><p>Last updated: Apr 28 2020 at 08:04 UTC</p>
+<hr><p>Last updated: Apr 28 2020 at 09:04 UTC</p>

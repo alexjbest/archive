@@ -9,7 +9,9 @@ permalink: /stream/113488-general/index.html
 
 ### Topics:
 
-* [definition of real log](topic/definition.20of.20real.20log.html) (5 messages, latest: Apr 28 2020 at 07:59)
+* [finset.filter](topic/finset.2Efilter.html) (15 messages, latest: Apr 28 2020 at 09:03)
+* [interactive calc](topic/interactive.20calc.html) (1 message, latest: Apr 28 2020 at 09:02)
+* [definition of real log](topic/definition.20of.20real.20log.html) (16 messages, latest: Apr 28 2020 at 08:37)
 * [data.int.basic](topic/data.2Eint.2Ebasic.html) (6 messages, latest: Apr 28 2020 at 07:23)
 * [Invitation to join the Codewars Lean community, Round 2](topic/Invitation.20to.20join.20the.20Codewars.20Lean.20community.2C.20Round.202.html) (142 messages, latest: Apr 28 2020 at 06:33)
 * [seminars](topic/seminars.html) (10 messages, latest: Apr 28 2020 at 05:22)
@@ -2714,4 +2716,4 @@ permalink: /stream/113488-general/index.html
 * [test](topic/test.html) (4 messages, latest: Feb 26 2018 at 16:22)
 * [welcome](topic/welcome.html) (1 message, latest: Feb 26 2018 at 16:02)
 
-<hr><p>Last updated: Apr 28 2020 at 08:04 UTC</p>
+<hr><p>Last updated: Apr 28 2020 at 09:04 UTC</p>
