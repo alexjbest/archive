@@ -536,6 +536,44 @@ h : n ≥ k<br>
 
 
 
+<a name="195595310"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113489-new%20members/topic/Diagonal%20Ramsey%20Number%20Lower%20Bound/near/195595310" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Reid Barton <a href="https://leanprover-community.github.io/archive/stream/113489-new-members/topic/Diagonal.20Ramsey.20Number.20Lower.20Bound.html#195595310">(Apr 28 2020 at 17:05)</a>:</h4>
+<p>If you like, the point is that <code>card</code> could take a <code>finset</code> of anything, so that's precisely the point where we lose the ability to determine the implicit parameter of <code>mono_sub_colorings</code>.</p>
+
+
+
+<a name="195595339"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113489-new%20members/topic/Diagonal%20Ramsey%20Number%20Lower%20Bound/near/195595339" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Reid Barton <a href="https://leanprover-community.github.io/archive/stream/113489-new-members/topic/Diagonal.20Ramsey.20Number.20Lower.20Bound.html#195595339">(Apr 28 2020 at 17:05)</a>:</h4>
+<p>No matter what that parameter is, this equation will type check.</p>
+
+
+
+<a name="195595740"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113489-new%20members/topic/Diagonal%20Ramsey%20Number%20Lower%20Bound/near/195595740" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Sam Raleigh <a href="https://leanprover-community.github.io/archive/stream/113489-new-members/topic/Diagonal.20Ramsey.20Number.20Lower.20Bound.html#195595740">(Apr 28 2020 at 17:08)</a>:</h4>
+<p>I see. So how do I fix it? If I try Kenny's suggestion <code>lemma test (n k : ℕ) : card (mono_sub_colorings α n k) = n.choose k  := sorry</code>, then I get a type mismatch because <code>\a</code>is expected to be of type <code>nat</code>.</p>
+
+
+
+<a name="195595992"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113489-new%20members/topic/Diagonal%20Ramsey%20Number%20Lower%20Bound/near/195595992" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Reid Barton <a href="https://leanprover-community.github.io/archive/stream/113489-new-members/topic/Diagonal.20Ramsey.20Number.20Lower.20Bound.html#195595992">(Apr 28 2020 at 17:10)</a>:</h4>
+<p><code>card (@mono_sub_colorings α n k)</code><br>
+or<br>
+<code>card (mono_sub_colorings n k : finset (finset (finset α)))</code></p>
+
+
+
+<a name="195596065"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113489-new%20members/topic/Diagonal%20Ramsey%20Number%20Lower%20Bound/near/195596065" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Reid Barton <a href="https://leanprover-community.github.io/archive/stream/113489-new-members/topic/Diagonal.20Ramsey.20Number.20Lower.20Bound.html#195596065">(Apr 28 2020 at 17:10)</a>:</h4>
+<p><code>@</code> means "I'm going to give all the parameters including the implicit ones".</p>
+
+
+
+<a name="195596247"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113489-new%20members/topic/Diagonal%20Ramsey%20Number%20Lower%20Bound/near/195596247" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Sam Raleigh <a href="https://leanprover-community.github.io/archive/stream/113489-new-members/topic/Diagonal.20Ramsey.20Number.20Lower.20Bound.html#195596247">(Apr 28 2020 at 17:12)</a>:</h4>
+<p>I was wondering how to do this, thank you.</p>
+
+
+
 {% endraw %}
 
-<hr><p>Last updated: Apr 28 2020 at 17:04 UTC</p>
+<hr><p>Last updated: Apr 28 2020 at 18:04 UTC</p>
