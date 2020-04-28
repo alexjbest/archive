@@ -294,6 +294,58 @@ h : n ≥ k<br>
 
 
 
+<a name="195569467"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113489-new%20members/topic/Diagonal%20Ramsey%20Number%20Lower%20Bound/near/195569467" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Reid Barton <a href="https://leanprover-community.github.io/archive/stream/113489-new-members/topic/Diagonal.20Ramsey.20Number.20Lower.20Bound.html#195569467">(Apr 28 2020 at 14:11)</a>:</h4>
+<p>I wonder how far we could get by elaborating <code>x y</code> when <code>x</code> is not a function to <code>x.to_fun y</code>, combined with the proposal to search "superclass" namespaces</p>
+
+
+
+<a name="195569696"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113489-new%20members/topic/Diagonal%20Ramsey%20Number%20Lower%20Bound/near/195569696" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Reid Barton <a href="https://leanprover-community.github.io/archive/stream/113489-new-members/topic/Diagonal.20Ramsey.20Number.20Lower.20Bound.html#195569696">(Apr 28 2020 at 14:12)</a>:</h4>
+<p>Or even without that second part.</p>
+
+
+
+<a name="195572415"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113489-new%20members/topic/Diagonal%20Ramsey%20Number%20Lower%20Bound/near/195572415" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Reid Barton <a href="https://leanprover-community.github.io/archive/stream/113489-new-members/topic/Diagonal.20Ramsey.20Number.20Lower.20Bound.html#195572415">(Apr 28 2020 at 14:32)</a>:</h4>
+<p>In any case,</p>
+<div class="codehilite"><pre><span></span><code><span class="kn">instance</span> <span class="n">coe_fn_trans</span> <span class="o">{</span><span class="n">a</span> <span class="o">:</span> <span class="n">Sort</span> <span class="n">u₁</span><span class="o">}</span> <span class="o">{</span><span class="n">b</span> <span class="o">:</span> <span class="n">Sort</span> <span class="n">u₂</span><span class="o">}</span> <span class="o">[</span><span class="n">has_coe_to_fun</span><span class="bp">.</span><span class="o">{</span><span class="n">u₂</span> <span class="n">u₃</span><span class="o">}</span> <span class="n">b</span><span class="o">]</span> <span class="o">[</span><span class="n">has_coe_t_aux</span> <span class="n">a</span> <span class="n">b</span><span class="o">]</span> <span class="o">:</span> <span class="n">has_coe_to_fun</span><span class="bp">.</span><span class="o">{</span><span class="n">u₁</span> <span class="n">u₃</span><span class="o">}</span> <span class="n">a</span> <span class="o">:=</span>
+</code></pre></div>
+
+
+<p>and perhaps</p>
+<div class="codehilite"><pre><span></span><code><span class="kn">instance</span> <span class="n">coe_sort_trans</span> <span class="o">{</span><span class="n">a</span> <span class="o">:</span> <span class="n">Sort</span> <span class="n">u₁</span><span class="o">}</span> <span class="o">{</span><span class="n">b</span> <span class="o">:</span> <span class="n">Sort</span> <span class="n">u₂</span><span class="o">}</span> <span class="o">[</span><span class="n">has_coe_to_sort</span><span class="bp">.</span><span class="o">{</span><span class="n">u₂</span> <span class="n">u₃</span><span class="o">}</span> <span class="n">b</span><span class="o">]</span> <span class="o">[</span><span class="n">has_coe_t_aux</span> <span class="n">a</span> <span class="n">b</span><span class="o">]</span> <span class="o">:</span> <span class="n">has_coe_to_sort</span><span class="bp">.</span><span class="o">{</span><span class="n">u₁</span> <span class="n">u₃</span><span class="o">}</span> <span class="n">a</span> <span class="o">:=</span>
+</code></pre></div>
+
+
+<p>seem particularly dubious; possibly we can just delete them?</p>
+
+
+
+<a name="195572473"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113489-new%20members/topic/Diagonal%20Ramsey%20Number%20Lower%20Bound/near/195572473" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Johan Commelin <a href="https://leanprover-community.github.io/archive/stream/113489-new-members/topic/Diagonal.20Ramsey.20Number.20Lower.20Bound.html#195572473">(Apr 28 2020 at 14:32)</a>:</h4>
+<p>What happens if you try?</p>
+
+
+
+<a name="195572518"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113489-new%20members/topic/Diagonal%20Ramsey%20Number%20Lower%20Bound/near/195572518" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Reid Barton <a href="https://leanprover-community.github.io/archive/stream/113489-new-members/topic/Diagonal.20Ramsey.20Number.20Lower.20Bound.html#195572518">(Apr 28 2020 at 14:32)</a>:</h4>
+<p>I would have to wait a few hours for mathlib to finish building, I imagine?</p>
+
+
+
+<a name="195572674"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113489-new%20members/topic/Diagonal%20Ramsey%20Number%20Lower%20Bound/near/195572674" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Reid Barton <a href="https://leanprover-community.github.io/archive/stream/113489-new-members/topic/Diagonal.20Ramsey.20Number.20Lower.20Bound.html#195572674">(Apr 28 2020 at 14:33)</a>:</h4>
+<p>I'm happy to try this but I cannot offer instant feedback <span aria-label="slight smile" class="emoji emoji-1f642" role="img" title="slight smile">:slight_smile:</span></p>
+
+
+
+<a name="195572827"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113489-new%20members/topic/Diagonal%20Ramsey%20Number%20Lower%20Bound/near/195572827" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Reid Barton <a href="https://leanprover-community.github.io/archive/stream/113489-new-members/topic/Diagonal.20Ramsey.20Number.20Lower.20Bound.html#195572827">(Apr 28 2020 at 14:34)</a>:</h4>
+<p>(hopefully I can offer instance feedback)</p>
+
+
+
 {% endraw %}
 
-<hr><p>Last updated: Apr 28 2020 at 14:04 UTC</p>
+<hr><p>Last updated: Apr 28 2020 at 15:04 UTC</p>

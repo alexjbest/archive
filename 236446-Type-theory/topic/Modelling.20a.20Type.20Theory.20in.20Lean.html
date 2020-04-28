@@ -161,6 +161,71 @@ permalink: /stream/236446-Type-theory/topic/Modelling.20a.20Type.20Theory.20in.2
 
 
 
+<a name="195568805"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/236446-Type%20theory/topic/Modelling%20a%20Type%20Theory%20in%20Lean/near/195568805" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Mario Carneiro <a href="https://leanprover-community.github.io/archive/stream/236446-Type-theory/topic/Modelling.20a.20Type.20Theory.20in.20Lean.html#195568805">(Apr 28 2020 at 14:06)</a>:</h4>
+<p><span class="user-mention" data-user-id="255481">@Billy Price</span> I don't know exactly what your sequents look like, but you will probably have two contexts, one for the types and one for the hypotheses (as is customary in HOL)</p>
+
+
+
+<a name="195568843"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/236446-Type%20theory/topic/Modelling%20a%20Type%20Theory%20in%20Lean/near/195568843" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Mario Carneiro <a href="https://leanprover-community.github.io/archive/stream/236446-Type-theory/topic/Modelling.20a.20Type.20Theory.20in.20Lean.html#195568843">(Apr 28 2020 at 14:06)</a>:</h4>
+<p>the hypotheses are nondependent so it's not such a big deal</p>
+
+
+
+<a name="195569469"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/236446-Type%20theory/topic/Modelling%20a%20Type%20Theory%20in%20Lean/near/195569469" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Billy Price <a href="https://leanprover-community.github.io/archive/stream/236446-Type-theory/topic/Modelling.20a.20Type.20Theory.20in.20Lean.html#195569469">(Apr 28 2020 at 14:11)</a>:</h4>
+<p>The hypotheses in my sequents are just a single <code>term Ω</code>.</p>
+
+
+
+<a name="195574629"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/236446-Type%20theory/topic/Modelling%20a%20Type%20Theory%20in%20Lean/near/195574629" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Billy Price <a href="https://leanprover-community.github.io/archive/stream/236446-Type-theory/topic/Modelling.20a.20Type.20Theory.20in.20Lean.html#195574629">(Apr 28 2020 at 14:46)</a>:</h4>
+<p>I'm having a little trouble stating the well-foundedness condition - am I on the right track?</p>
+<p>It also seems like there's two level's of well-foundedness - that every bound variable has the correct type, and that any free variables can be bound to a single type.</p>
+<div class="codehilite"><pre><span></span><code><span class="n">def</span> <span class="n">FV_have_type</span> <span class="o">(</span><span class="n">Z</span> <span class="o">:</span> <span class="n">type</span><span class="o">)</span> <span class="o">:</span> <span class="bp">ℕ</span> <span class="bp">→</span> <span class="bp">Π</span> <span class="o">{</span><span class="n">A</span> <span class="o">:</span> <span class="n">type</span><span class="o">},</span> <span class="n">term</span> <span class="n">A</span> <span class="bp">→</span> <span class="kt">Prop</span>
+<span class="bp">|</span> <span class="n">v</span> <span class="bp">_</span> <span class="o">(</span><span class="n">var</span> <span class="n">n</span> <span class="n">A</span><span class="o">)</span>  <span class="o">:=</span> <span class="n">v</span><span class="bp">=</span><span class="n">n</span> <span class="bp">∧</span> <span class="n">Z</span><span class="bp">=</span><span class="n">A</span>
+<span class="bp">|</span> <span class="n">v</span> <span class="bp">_</span> <span class="o">(</span><span class="n">comp</span> <span class="n">A</span> <span class="n">φ</span><span class="o">)</span> <span class="o">:=</span> <span class="n">FV_have_type</span> <span class="o">(</span><span class="n">v</span><span class="bp">+</span><span class="mi">1</span><span class="o">)</span> <span class="n">φ</span>
+<span class="bp">|</span> <span class="n">v</span> <span class="bp">_</span> <span class="o">(</span><span class="bp">∀</span><span class="err">&#39;</span> <span class="n">A</span> <span class="n">φ</span><span class="o">)</span>   <span class="o">:=</span> <span class="n">FV_have_type</span> <span class="o">(</span><span class="n">v</span><span class="bp">+</span><span class="mi">1</span><span class="o">)</span> <span class="n">φ</span>
+<span class="bp">|</span> <span class="n">v</span> <span class="bp">_</span> <span class="o">(</span><span class="bp">∃</span><span class="err">&#39;</span> <span class="n">A</span> <span class="n">φ</span><span class="o">)</span>   <span class="o">:=</span> <span class="n">FV_have_type</span> <span class="o">(</span><span class="n">v</span><span class="bp">+</span><span class="mi">1</span><span class="o">)</span> <span class="n">φ</span>
+<span class="bp">|</span> <span class="n">v</span> <span class="bp">_</span> <span class="err">⁎</span>          <span class="o">:=</span> <span class="n">true</span>
+<span class="bp">|</span> <span class="n">v</span> <span class="bp">_</span> <span class="n">top</span>        <span class="o">:=</span> <span class="n">true</span>
+<span class="bp">|</span> <span class="n">v</span> <span class="bp">_</span> <span class="n">bot</span>        <span class="o">:=</span> <span class="n">true</span>
+<span class="bp">|</span> <span class="n">v</span> <span class="bp">_</span> <span class="o">(</span><span class="n">prod</span> <span class="n">a</span> <span class="n">b</span><span class="o">)</span> <span class="o">:=</span> <span class="n">FV_have_type</span> <span class="n">v</span> <span class="n">a</span> <span class="bp">∧</span> <span class="n">FV_have_type</span> <span class="n">v</span> <span class="n">b</span>
+<span class="bp">|</span> <span class="n">v</span> <span class="bp">_</span> <span class="o">(</span><span class="n">a</span> <span class="err">∈</span> <span class="n">α</span><span class="o">)</span>    <span class="o">:=</span> <span class="n">FV_have_type</span> <span class="n">v</span> <span class="n">a</span> <span class="bp">∧</span> <span class="n">FV_have_type</span> <span class="n">v</span> <span class="n">α</span>
+<span class="bp">|</span> <span class="n">v</span> <span class="bp">_</span> <span class="o">(</span><span class="n">p</span> <span class="bp">∧</span><span class="err">&#39;</span> <span class="n">q</span><span class="o">)</span>   <span class="o">:=</span> <span class="n">FV_have_type</span> <span class="n">v</span> <span class="n">p</span> <span class="bp">∧</span> <span class="n">FV_have_type</span> <span class="n">v</span> <span class="n">q</span>
+<span class="bp">|</span> <span class="n">v</span> <span class="bp">_</span> <span class="o">(</span><span class="n">p</span> <span class="bp">∨</span><span class="err">&#39;</span> <span class="n">q</span><span class="o">)</span>   <span class="o">:=</span> <span class="n">FV_have_type</span> <span class="n">v</span> <span class="n">p</span> <span class="bp">∧</span> <span class="n">FV_have_type</span> <span class="n">v</span> <span class="n">q</span>
+<span class="bp">|</span> <span class="n">v</span> <span class="bp">_</span> <span class="o">(</span><span class="n">p</span> <span class="err">⟹</span> <span class="n">q</span><span class="o">)</span>  <span class="o">:=</span> <span class="n">FV_have_type</span> <span class="n">v</span> <span class="n">p</span> <span class="bp">∧</span> <span class="n">FV_have_type</span> <span class="n">v</span> <span class="n">q</span>
+
+<span class="n">def</span> <span class="n">well_formed</span> <span class="o">{</span><span class="n">A</span> <span class="o">:</span> <span class="n">type</span><span class="o">}</span> <span class="o">(</span><span class="n">φ</span> <span class="o">:</span> <span class="n">term</span> <span class="n">A</span><span class="o">)</span> <span class="o">:</span> <span class="kt">Prop</span> <span class="o">:=</span> <span class="n">sorry</span>
+</code></pre></div>
+
+
+
+<a name="195574849"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/236446-Type%20theory/topic/Modelling%20a%20Type%20Theory%20in%20Lean/near/195574849" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Reid Barton <a href="https://leanprover-community.github.io/archive/stream/236446-Type-theory/topic/Modelling.20a.20Type.20Theory.20in.20Lean.html#195574849">(Apr 28 2020 at 14:48)</a>:</h4>
+<p>Do you mean <code>v = n -&gt; Z = A</code>? in other words saying that all occurrences of variable <code>n</code> are used at type <code>Z</code>?</p>
+
+
+
+<a name="195575132"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/236446-Type%20theory/topic/Modelling%20a%20Type%20Theory%20in%20Lean/near/195575132" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Billy Price <a href="https://leanprover-community.github.io/archive/stream/236446-Type-theory/topic/Modelling.20a.20Type.20Theory.20in.20Lean.html#195575132">(Apr 28 2020 at 14:50)</a>:</h4>
+<p>Ah yes</p>
+
+
+
+<a name="195576900"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/236446-Type%20theory/topic/Modelling%20a%20Type%20Theory%20in%20Lean/near/195576900" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Reid Barton <a href="https://leanprover-community.github.io/archive/stream/236446-Type-theory/topic/Modelling.20a.20Type.20Theory.20in.20Lean.html#195576900">(Apr 28 2020 at 15:02)</a>:</h4>
+<p>I think it isn't the traditional presentation, but I'm pretty sure it is better to only have the notion "<code>φ : term A</code> is well-formed in <code>Γ : context</code>"</p>
+
+
+
+<a name="195577003"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/236446-Type%20theory/topic/Modelling%20a%20Type%20Theory%20in%20Lean/near/195577003" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Reid Barton <a href="https://leanprover-community.github.io/archive/stream/236446-Type-theory/topic/Modelling.20a.20Type.20Theory.20in.20Lean.html#195577003">(Apr 28 2020 at 15:03)</a>:</h4>
+<p>rather than having only <code>term</code>s with no context and trying to guess the free variables and their types by inspecting the term</p>
+
+
+
 {% endraw %}
 
-<hr><p>Last updated: Apr 28 2020 at 14:04 UTC</p>
+<hr><p>Last updated: Apr 28 2020 at 15:04 UTC</p>
