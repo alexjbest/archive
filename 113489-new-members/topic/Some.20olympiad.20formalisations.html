@@ -261,6 +261,24 @@ The real function `exp_neg_inv_glue` given by `x ↦ exp (-1/x)` for `x &gt; 0` 
 
 
 
+<a name="195645126"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113489-new%20members/topic/Some%20olympiad%20formalisations/near/195645126" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Joseph Myers <a href="https://leanprover-community.github.io/archive/stream/113489-new-members/topic/Some.20olympiad.20formalisations.html#195645126">(Apr 29 2020 at 00:11)</a>:</h4>
+<p>After writing the definition in terms of affine spaces, a natural starting point to make it usable might include proving lots of basic geometrical facts (both n-dimensional and 2-dimensional), including Tarski's axioms. At that point you could use either approach for proving further geometrical results. (To do coordinate proofs you'd also want functions of the form "choose a frame with these properties", like "let A be (0, 0) and B be (c, 0)".) Of course the reverse direction (constructing an affine space over a real inner product space from a structure satisfying Tarski's axioms) is also a theorem that could be proved.</p>
+
+
+
+<a name="195645432"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113489-new%20members/topic/Some%20olympiad%20formalisations/near/195645432" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Joseph Myers <a href="https://leanprover-community.github.io/archive/stream/113489-new-members/topic/Some.20olympiad.20formalisations.html#195645432">(Apr 29 2020 at 00:16)</a>:</h4>
+<p>I tend to find combinatorial geometry more interesting than the "here's a construction for a long sequence of points" type of problem, and synthetic geometry reasoning seems less often relevant for combinatorial problems.</p>
+
+
+
+<a name="195645688"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113489-new%20members/topic/Some%20olympiad%20formalisations/near/195645688" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Joseph Myers <a href="https://leanprover-community.github.io/archive/stream/113489-new-members/topic/Some.20olympiad.20formalisations.html#195645688">(Apr 29 2020 at 00:21)</a>:</h4>
+<p>I haven't tried defining any type classes in Lean, so don't know what would go wrong in a naive attempt to implement the definition of affine spaces and define Euclidean spaces on top of that. (But implementing it in terms of additive group actions would run into mathlib not having additive group actions, and I certainly don't understand the to_additive machinery for converting things between multiplicative and additive groups.)</p>
+
+
+
 {% endraw %}
 
-<hr><p>Last updated: Apr 29 2020 at 00:07 UTC</p>
+<hr><p>Last updated: Apr 29 2020 at 01:07 UTC</p>

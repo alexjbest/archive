@@ -9,6 +9,8 @@ permalink: /stream/113488-general/index.html
 
 ### Topics:
 
+* [Making Libraries and Packages](topic/Making.20Libraries.20and.20Packages.html) (5 messages, latest: Apr 29 2020 at 01:01)
+* [VSCode](topic/VSCode.html) (3 messages, latest: Apr 29 2020 at 00:49)
 * [type ascription style](topic/type.20ascription.20style.html) (6 messages, latest: Apr 28 2020 at 22:53)
 * [even or odd](topic/even.20or.20odd.html) (17 messages, latest: Apr 28 2020 at 21:57)
 * [seminars](topic/seminars.html) (11 messages, latest: Apr 28 2020 at 15:43)
@@ -2721,4 +2723,4 @@ permalink: /stream/113488-general/index.html
 * [test](topic/test.html) (4 messages, latest: Feb 26 2018 at 16:22)
 * [welcome](topic/welcome.html) (1 message, latest: Feb 26 2018 at 16:02)
 
-<hr><p>Last updated: Apr 29 2020 at 00:07 UTC</p>
+<hr><p>Last updated: Apr 29 2020 at 01:07 UTC</p>
