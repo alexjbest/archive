@@ -1791,6 +1791,506 @@ sorry I wasn't seeing it earlier..</p>
 
 
 
+<a name="195673910"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113489-new%20members/topic/showing%20injectivity/near/195673910" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Adeeb K <a href="https://leanprover-community.github.io/archive/stream/113489-new-members/topic/showing.20injectivity.html#195673910">(Apr 29 2020 at 08:04)</a>:</h4>
+<p>...I have to flip the equality?</p>
+
+
+
+<a name="195673939"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113489-new%20members/topic/showing%20injectivity/near/195673939" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Mario Carneiro <a href="https://leanprover-community.github.io/archive/stream/113489-new-members/topic/showing.20injectivity.html#195673939">(Apr 29 2020 at 08:05)</a>:</h4>
+<p><code>eq.symm</code> or <code>ne.symm</code></p>
+
+
+
+<a name="195673972"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113489-new%20members/topic/showing%20injectivity/near/195673972" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Adeeb K <a href="https://leanprover-community.github.io/archive/stream/113489-new-members/topic/showing.20injectivity.html#195673972">(Apr 29 2020 at 08:05)</a>:</h4>
+<p>ah, thank you</p>
+
+
+
+<a name="195674313"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113489-new%20members/topic/showing%20injectivity/near/195674313" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Adeeb K <a href="https://leanprover-community.github.io/archive/stream/113489-new-members/topic/showing.20injectivity.html#195674313">(Apr 29 2020 at 08:09)</a>:</h4>
+<p><span class="user-mention" data-user-id="110064">@Kenny Lau</span> I still don't understand how to use <code>dif_neg</code> here now that I have proofs for <code>(f ⟨m + 1, _⟩).val &lt; (f (lift_one (m + 1) x)).val</code>and <code>(f ⟨m + 1, _⟩).val &lt; (f (lift_one (m + 1) y)).val</code></p>
+
+
+
+<a name="195674408"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113489-new%20members/topic/showing%20injectivity/near/195674408" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Kenny Lau <a href="https://leanprover-community.github.io/archive/stream/113489-new-members/topic/showing.20injectivity.html#195674408">(Apr 29 2020 at 08:10)</a>:</h4>
+<p><span class="user-mention silent" data-user-id="110064">Kenny Lau</span> <a href="#narrow/stream/113489-new-members/topic/noob.20question(s)/near/195662516" title="#narrow/stream/113489-new-members/topic/noob.20question(s)/near/195662516">said</a>:</p>
+<blockquote>
+<p><code>have hnk : \not k \le ...,</code></p>
+</blockquote>
+<p><span class="user-mention silent" data-user-id="110064">Kenny Lau</span> <a href="#narrow/stream/113489-new-members/topic/noob.20question(s)/near/195662522" title="#narrow/stream/113489-new-members/topic/noob.20question(s)/near/195662522">said</a>:</p>
+<blockquote>
+<p>and after you prove it, <code>rw dif_neg hnk</code></p>
+</blockquote>
+
+
+
+<a name="195674441"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113489-new%20members/topic/showing%20injectivity/near/195674441" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Adeeb K <a href="https://leanprover-community.github.io/archive/stream/113489-new-members/topic/showing.20injectivity.html#195674441">(Apr 29 2020 at 08:10)</a>:</h4>
+<p>I'm getting an error.  should I send an MWE?</p>
+
+
+
+<a name="195674671"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113489-new%20members/topic/showing%20injectivity/near/195674671" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Adeeb K <a href="https://leanprover-community.github.io/archive/stream/113489-new-members/topic/showing.20injectivity.html#195674671">(Apr 29 2020 at 08:13)</a>:</h4>
+<p>Here it is <span class="user-mention" data-user-id="110064">@Kenny Lau</span> </p>
+<div class="codehilite"><pre><span></span><code><span class="kn">import</span> <span class="n">tactic</span>
+
+<span class="n">def</span> <span class="n">injective</span> <span class="o">{</span><span class="n">X</span> <span class="n">Y</span><span class="o">}</span> <span class="o">(</span><span class="n">f</span> <span class="o">:</span> <span class="n">X</span> <span class="bp">→</span> <span class="n">Y</span><span class="o">)</span> <span class="o">:=</span> <span class="bp">∀</span> <span class="n">x₁</span> <span class="n">x₂</span><span class="o">,</span> <span class="n">f</span> <span class="n">x₁</span> <span class="bp">=</span> <span class="n">f</span> <span class="n">x₂</span> <span class="bp">→</span> <span class="n">x₁</span> <span class="bp">=</span> <span class="n">x₂</span>
+<span class="kn">lemma</span> <span class="n">succ_greater_than_nat</span> <span class="o">(</span><span class="n">n</span> <span class="o">:</span> <span class="bp">ℕ</span><span class="o">)</span> <span class="o">:</span> <span class="n">nat</span><span class="bp">.</span><span class="n">succ</span> <span class="n">n</span> <span class="bp">&gt;</span> <span class="n">n</span> <span class="o">:=</span> <span class="n">sorry</span>
+<span class="n">def</span> <span class="n">finite_subset</span> <span class="o">(</span><span class="n">n</span> <span class="o">:</span> <span class="bp">ℕ</span><span class="o">)</span> <span class="o">:=</span> <span class="o">{</span> <span class="n">k</span> <span class="bp">//</span> <span class="n">k</span> <span class="bp">&lt;</span> <span class="n">n</span> <span class="o">}</span>
+<span class="n">def</span> <span class="n">lift_finite</span> <span class="o">(</span><span class="n">m</span> <span class="n">n</span> <span class="o">:</span> <span class="bp">ℕ</span><span class="o">)</span> <span class="o">(</span><span class="n">p</span> <span class="o">:</span> <span class="n">m</span> <span class="bp">&lt;</span> <span class="n">n</span><span class="o">)</span> <span class="o">:</span> <span class="n">finite_subset</span> <span class="n">m</span> <span class="bp">→</span> <span class="n">finite_subset</span> <span class="n">n</span> <span class="o">:=</span>
+<span class="bp">λ</span> <span class="n">k</span><span class="o">,</span> <span class="bp">⟨</span><span class="n">k</span><span class="bp">.</span><span class="mi">1</span><span class="o">,</span> <span class="n">lt</span><span class="bp">.</span><span class="n">trans</span> <span class="n">k</span><span class="bp">.</span><span class="mi">2</span> <span class="n">p</span><span class="bp">⟩</span>
+<span class="n">def</span> <span class="n">lift_one</span> <span class="o">(</span><span class="n">m</span> <span class="o">:</span> <span class="bp">ℕ</span><span class="o">)</span> <span class="o">:</span> <span class="n">finite_subset</span> <span class="n">m</span> <span class="bp">→</span> <span class="n">finite_subset</span> <span class="o">(</span><span class="n">m</span> <span class="bp">+</span> <span class="mi">1</span><span class="o">)</span> <span class="o">:=</span> <span class="o">(</span><span class="n">lift_finite</span> <span class="n">m</span> <span class="o">(</span><span class="n">m</span><span class="bp">+</span><span class="mi">1</span><span class="o">)</span> <span class="o">(</span><span class="n">succ_greater_than_nat</span> <span class="n">m</span><span class="o">))</span>
+<span class="kn">theorem</span> <span class="n">lift_finite_injective</span> <span class="o">(</span><span class="n">m</span> <span class="n">n</span> <span class="o">:</span> <span class="bp">ℕ</span><span class="o">)</span> <span class="o">(</span><span class="n">p</span> <span class="o">:</span> <span class="n">m</span> <span class="bp">&lt;</span> <span class="n">n</span><span class="o">)</span> <span class="o">:</span> <span class="n">injective</span> <span class="o">(</span><span class="n">lift_finite</span> <span class="n">m</span> <span class="n">n</span> <span class="n">p</span><span class="o">)</span> <span class="o">:=</span> <span class="n">sorry</span>
+<span class="kn">lemma</span> <span class="n">lift_one_injective</span> <span class="o">(</span><span class="n">m</span> <span class="o">:</span> <span class="bp">ℕ</span><span class="o">)</span>  <span class="o">:</span> <span class="n">injective</span> <span class="o">(</span><span class="n">lift_one</span> <span class="n">m</span><span class="o">)</span> <span class="o">:=</span> <span class="n">sorry</span>
+<span class="n">def</span> <span class="n">relabel</span> <span class="o">(</span><span class="n">m</span> <span class="n">k</span> <span class="o">:</span> <span class="bp">ℕ</span><span class="o">)</span> <span class="o">(</span><span class="n">h</span> <span class="o">:</span> <span class="n">k</span> <span class="bp">&lt;</span> <span class="n">m</span><span class="o">)</span> <span class="o">(</span><span class="n">j</span> <span class="o">:</span> <span class="n">finite_subset</span> <span class="n">m</span><span class="o">)</span> <span class="o">:</span> <span class="n">finite_subset</span> <span class="o">(</span><span class="n">m</span> <span class="bp">-</span> <span class="mi">1</span><span class="o">)</span> <span class="o">:=</span>
+<span class="k">if</span> <span class="n">H</span> <span class="o">:</span> <span class="n">j</span><span class="bp">.</span><span class="mi">1</span> <span class="bp">≤</span> <span class="n">k</span> <span class="k">then</span> <span class="bp">⟨</span><span class="n">j</span><span class="bp">.</span><span class="mi">1</span><span class="o">,</span> <span class="n">sorry</span><span class="bp">⟩</span> <span class="k">else</span> <span class="bp">⟨</span><span class="n">j</span><span class="bp">.</span><span class="mi">1</span> <span class="bp">-</span> <span class="mi">1</span><span class="o">,</span> <span class="n">sorry</span><span class="bp">⟩</span>
+<span class="kn">lemma</span> <span class="n">apply_relabel_lt</span> <span class="o">(</span><span class="n">m</span> <span class="n">k</span> <span class="o">:</span> <span class="bp">ℕ</span><span class="o">)</span> <span class="o">(</span><span class="n">hkm</span> <span class="o">:</span> <span class="n">k</span> <span class="bp">&lt;</span> <span class="n">m</span><span class="o">)</span> <span class="o">(</span><span class="n">z</span> <span class="o">:</span> <span class="n">finite_subset</span> <span class="n">m</span><span class="o">)</span> <span class="o">(</span><span class="n">h2</span> <span class="o">:</span> <span class="n">z</span><span class="bp">.</span><span class="mi">1</span> <span class="bp">≤</span> <span class="n">k</span><span class="o">)</span> <span class="o">(</span><span class="n">h3</span> <span class="o">:</span> <span class="n">z</span><span class="bp">.</span><span class="mi">1</span> <span class="bp">&lt;</span> <span class="n">m</span> <span class="bp">-</span> <span class="mi">1</span><span class="o">)</span> <span class="o">:</span> <span class="n">relabel</span> <span class="n">m</span> <span class="n">k</span> <span class="n">hkm</span> <span class="n">z</span> <span class="bp">=</span> <span class="bp">⟨</span><span class="n">z</span><span class="bp">.</span><span class="mi">1</span><span class="o">,</span> <span class="n">h3</span><span class="bp">⟩</span> <span class="o">:=</span> <span class="n">sorry</span>
+<span class="kn">lemma</span> <span class="n">apply_relabel_gt</span> <span class="o">(</span><span class="n">m</span> <span class="n">k</span> <span class="o">:</span> <span class="bp">ℕ</span><span class="o">)</span> <span class="o">(</span><span class="n">hkm</span> <span class="o">:</span> <span class="n">k</span> <span class="bp">&lt;</span> <span class="n">m</span><span class="o">)</span> <span class="o">(</span><span class="n">z</span> <span class="o">:</span> <span class="n">finite_subset</span> <span class="n">m</span><span class="o">)</span> <span class="o">(</span><span class="n">h2</span> <span class="o">:</span> <span class="n">k</span> <span class="bp">&lt;</span> <span class="n">z</span><span class="bp">.</span><span class="mi">1</span><span class="o">)</span> <span class="o">(</span><span class="n">h3</span> <span class="o">:</span> <span class="n">z</span><span class="bp">.</span><span class="mi">1</span> <span class="bp">-</span> <span class="mi">1</span> <span class="bp">&lt;</span> <span class="n">m</span> <span class="bp">-</span> <span class="mi">1</span><span class="o">)</span> <span class="o">:</span> <span class="n">relabel</span> <span class="n">m</span> <span class="n">k</span> <span class="n">hkm</span> <span class="n">z</span> <span class="bp">=</span> <span class="bp">⟨</span><span class="n">z</span><span class="bp">.</span><span class="mi">1</span> <span class="bp">-</span> <span class="mi">1</span><span class="o">,</span> <span class="n">h3</span><span class="bp">⟩</span> <span class="o">:=</span> <span class="n">sorry</span>
+<span class="kn">lemma</span> <span class="n">relabel_behavior</span> <span class="o">(</span><span class="n">m</span> <span class="n">k</span> <span class="o">:</span> <span class="bp">ℕ</span><span class="o">)</span> <span class="o">(</span><span class="n">h</span> <span class="o">:</span> <span class="n">k</span> <span class="bp">&lt;</span> <span class="n">m</span><span class="o">)</span> <span class="o">(</span><span class="n">x</span> <span class="n">y</span> <span class="o">:</span> <span class="n">finite_subset</span> <span class="n">m</span><span class="o">)</span> <span class="o">(</span><span class="n">hxy</span> <span class="o">:</span> <span class="n">relabel</span> <span class="n">m</span> <span class="n">k</span> <span class="n">h</span> <span class="n">x</span> <span class="bp">=</span> <span class="n">relabel</span> <span class="n">m</span> <span class="n">k</span> <span class="n">h</span> <span class="n">y</span><span class="o">)</span> <span class="o">:</span> <span class="o">(</span><span class="n">x</span><span class="bp">.</span><span class="mi">1</span> <span class="bp">≤</span> <span class="n">k</span> <span class="bp">∧</span> <span class="n">y</span><span class="bp">.</span><span class="mi">1</span> <span class="bp">≤</span> <span class="n">k</span><span class="o">)</span> <span class="bp">∨</span> <span class="o">(</span><span class="n">x</span><span class="bp">.</span><span class="mi">1</span> <span class="bp">≥</span> <span class="n">k</span> <span class="bp">∧</span> <span class="n">y</span><span class="bp">.</span><span class="mi">1</span> <span class="bp">≥</span> <span class="n">k</span><span class="o">)</span> <span class="o">:=</span> <span class="n">sorry</span>
+
+<span class="kn">lemma</span> <span class="n">relabel_inj</span> <span class="o">(</span><span class="n">m</span> <span class="n">k</span> <span class="o">:</span> <span class="bp">ℕ</span><span class="o">)</span> <span class="o">(</span><span class="n">hkm</span> <span class="o">:</span> <span class="n">k</span> <span class="bp">&lt;</span> <span class="n">m</span> <span class="bp">+</span> <span class="mi">1</span><span class="o">)</span>
+<span class="o">(</span><span class="n">f</span><span class="o">:</span> <span class="n">finite_subset</span> <span class="o">(</span><span class="n">m</span> <span class="bp">+</span> <span class="mi">2</span><span class="o">)</span> <span class="bp">→</span> <span class="n">finite_subset</span> <span class="o">(</span><span class="n">m</span> <span class="bp">+</span> <span class="mi">1</span><span class="o">))</span>
+<span class="o">(</span><span class="n">inj</span> <span class="o">:</span> <span class="n">injective</span> <span class="n">f</span><span class="o">)</span>
+<span class="o">(</span><span class="n">pf</span> <span class="o">:</span> <span class="o">(</span><span class="n">f</span> <span class="bp">⟨</span> <span class="n">m</span> <span class="bp">+</span> <span class="mi">1</span><span class="o">,</span> <span class="n">succ_greater_than_nat</span> <span class="o">(</span><span class="n">m</span> <span class="bp">+</span> <span class="mi">1</span><span class="o">)</span><span class="bp">⟩</span> <span class="o">)</span><span class="bp">.</span><span class="mi">1</span> <span class="bp">&lt;</span> <span class="n">m</span> <span class="bp">+</span> <span class="mi">1</span><span class="o">)</span>
+<span class="o">(</span><span class="n">miss</span> <span class="o">:</span> <span class="bp">∀</span> <span class="n">j</span> <span class="o">:</span> <span class="n">finite_subset</span> <span class="o">(</span><span class="n">m</span> <span class="bp">+</span> <span class="mi">1</span><span class="o">),</span> <span class="o">(</span><span class="n">f</span> <span class="err">∘</span> <span class="n">lift_one</span> <span class="o">(</span><span class="n">m</span> <span class="bp">+</span> <span class="mi">1</span><span class="o">))</span> <span class="n">j</span> <span class="bp">≠</span> <span class="n">f</span> <span class="bp">⟨</span><span class="n">m</span> <span class="bp">+</span> <span class="mi">1</span><span class="o">,</span>  <span class="n">succ_greater_than_nat</span> <span class="o">(</span><span class="n">m</span> <span class="bp">+</span> <span class="mi">1</span><span class="o">)</span><span class="bp">⟩</span> <span class="o">)</span> <span class="o">:</span>
+<span class="n">injective</span> <span class="o">((</span><span class="n">relabel</span> <span class="o">(</span><span class="n">m</span> <span class="bp">+</span> <span class="mi">1</span><span class="o">)</span> <span class="o">(</span><span class="n">f</span> <span class="bp">⟨</span><span class="n">m</span> <span class="bp">+</span> <span class="mi">1</span><span class="o">,</span> <span class="n">succ_greater_than_nat</span> <span class="o">(</span><span class="n">m</span> <span class="bp">+</span> <span class="mi">1</span><span class="o">)</span><span class="bp">⟩</span><span class="o">)</span><span class="bp">.</span><span class="mi">1</span> <span class="n">pf</span><span class="o">)</span> <span class="err">∘</span> <span class="n">f</span> <span class="err">∘</span> <span class="n">lift_one</span> <span class="o">(</span><span class="n">m</span> <span class="bp">+</span> <span class="mi">1</span><span class="o">))</span> <span class="o">:=</span>
+<span class="k">begin</span>
+  <span class="n">intros</span> <span class="n">x</span> <span class="n">y</span> <span class="n">h</span><span class="o">,</span>
+  <span class="n">change</span> <span class="o">(</span><span class="n">relabel</span> <span class="o">(</span><span class="n">m</span> <span class="bp">+</span> <span class="mi">1</span><span class="o">)</span> <span class="o">(</span><span class="n">f</span> <span class="bp">⟨</span> <span class="n">m</span> <span class="bp">+</span> <span class="mi">1</span><span class="o">,</span> <span class="n">succ_greater_than_nat</span> <span class="o">(</span><span class="n">m</span> <span class="bp">+</span> <span class="mi">1</span><span class="o">)</span><span class="bp">⟩</span> <span class="o">)</span><span class="bp">.</span><span class="mi">1</span> <span class="n">pf</span> <span class="o">(</span><span class="n">f</span> <span class="o">(</span><span class="n">lift_one</span> <span class="o">(</span><span class="n">m</span> <span class="bp">+</span> <span class="mi">1</span><span class="o">)</span> <span class="n">x</span><span class="o">)))</span> <span class="bp">=</span> <span class="o">(</span><span class="n">relabel</span> <span class="o">(</span><span class="n">m</span> <span class="bp">+</span> <span class="mi">1</span><span class="o">)</span> <span class="o">(</span><span class="n">f</span> <span class="bp">⟨</span> <span class="n">m</span> <span class="bp">+</span> <span class="mi">1</span><span class="o">,</span> <span class="n">succ_greater_than_nat</span> <span class="o">(</span><span class="n">m</span> <span class="bp">+</span> <span class="mi">1</span><span class="o">)</span><span class="bp">⟩</span> <span class="o">)</span><span class="bp">.</span><span class="mi">1</span> <span class="n">pf</span> <span class="o">(</span><span class="n">f</span> <span class="o">(</span><span class="n">lift_one</span> <span class="o">(</span><span class="n">m</span> <span class="bp">+</span> <span class="mi">1</span><span class="o">)</span> <span class="n">y</span><span class="o">)))</span> <span class="n">at</span> <span class="n">h</span><span class="o">,</span>
+  <span class="n">rcases</span> <span class="n">relabel_behavior</span> <span class="bp">_</span> <span class="bp">_</span> <span class="bp">_</span> <span class="bp">_</span> <span class="bp">_</span> <span class="n">h</span> <span class="k">with</span> <span class="bp">⟨</span><span class="n">h1</span><span class="o">,</span> <span class="n">h2</span><span class="bp">⟩</span> <span class="bp">|</span> <span class="bp">⟨</span><span class="n">h1</span><span class="o">,</span> <span class="n">h2</span><span class="bp">⟩;</span> <span class="n">unfold</span> <span class="n">relabel</span> <span class="n">at</span> <span class="n">h</span><span class="o">,</span>
+  <span class="o">{</span> <span class="n">sorry</span> <span class="o">},</span>
+  <span class="o">{</span>
+    <span class="k">have</span> <span class="n">m_x</span> <span class="o">:=</span> <span class="o">(</span><span class="n">miss</span> <span class="n">x</span><span class="o">),</span>
+    <span class="n">replace</span> <span class="n">m_x</span> <span class="o">:=</span> <span class="n">mt</span> <span class="n">subtype</span><span class="bp">.</span><span class="n">eq</span> <span class="n">m_x</span><span class="o">,</span>
+    <span class="k">have</span> <span class="n">m_y</span> <span class="o">:=</span> <span class="o">(</span><span class="n">miss</span> <span class="n">y</span><span class="o">),</span>
+    <span class="n">replace</span> <span class="n">m_y</span> <span class="o">:=</span> <span class="n">mt</span> <span class="n">subtype</span><span class="bp">.</span><span class="n">eq</span> <span class="n">m_y</span><span class="o">,</span>
+    <span class="k">let</span> <span class="n">h1_strict</span> <span class="o">:=</span> <span class="n">lt_of_le_of_ne</span> <span class="n">h1</span> <span class="o">(</span><span class="n">ne</span><span class="bp">.</span><span class="n">symm</span> <span class="n">m_x</span><span class="o">),</span>
+    <span class="k">let</span> <span class="n">h2_strict</span> <span class="o">:=</span> <span class="n">lt_of_le_of_ne</span> <span class="n">h2</span> <span class="o">(</span><span class="n">ne</span><span class="bp">.</span><span class="n">symm</span> <span class="n">m_y</span><span class="o">),</span>
+
+    <span class="n">rw</span> <span class="n">dif_neg</span> <span class="n">h1_strict</span><span class="o">,</span> <span class="c1">--type mismatch at application dif_neg h1_strict</span>
+    <span class="n">sorry</span> <span class="o">},</span>
+<span class="kn">end</span>
+</code></pre></div>
+
+
+
+<a name="195674738"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113489-new%20members/topic/showing%20injectivity/near/195674738" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Kenny Lau <a href="https://leanprover-community.github.io/archive/stream/113489-new-members/topic/showing.20injectivity.html#195674738">(Apr 29 2020 at 08:14)</a>:</h4>
+<p>what is the error</p>
+
+
+
+<a name="195674770"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113489-new%20members/topic/showing%20injectivity/near/195674770" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Adeeb K <a href="https://leanprover-community.github.io/archive/stream/113489-new-members/topic/showing.20injectivity.html#195674770">(Apr 29 2020 at 08:14)</a>:</h4>
+<div class="codehilite"><pre><span></span><code><span class="n">type</span> <span class="n">mismatch</span> <span class="n">at</span> <span class="n">application</span>
+  <span class="n">dif_neg</span> <span class="n">h1_strict</span>
+<span class="n">term</span>
+  <span class="n">h1_strict</span>
+<span class="n">has</span> <span class="n">type</span>
+  <span class="o">(</span><span class="n">f</span> <span class="bp">⟨</span><span class="n">m</span> <span class="bp">+</span> <span class="mi">1</span><span class="o">,</span> <span class="bp">_⟩</span><span class="o">)</span><span class="bp">.</span><span class="n">val</span> <span class="bp">&lt;</span> <span class="o">(</span><span class="n">f</span> <span class="o">(</span><span class="n">lift_one</span> <span class="o">(</span><span class="n">m</span> <span class="bp">+</span> <span class="mi">1</span><span class="o">)</span> <span class="n">x</span><span class="o">))</span><span class="bp">.</span><span class="n">val</span>
+<span class="n">but</span> <span class="n">is</span> <span class="n">expected</span> <span class="n">to</span> <span class="k">have</span> <span class="n">type</span>
+  <span class="bp">¬</span><span class="err">?</span><span class="n">m_1</span>
+</code></pre></div>
+
+
+
+<a name="195674781"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113489-new%20members/topic/showing%20injectivity/near/195674781" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Kenny Lau <a href="https://leanprover-community.github.io/archive/stream/113489-new-members/topic/showing.20injectivity.html#195674781">(Apr 29 2020 at 08:14)</a>:</h4>
+<p>read the error</p>
+
+
+
+<a name="195674786"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113489-new%20members/topic/showing%20injectivity/near/195674786" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Kenny Lau <a href="https://leanprover-community.github.io/archive/stream/113489-new-members/topic/showing.20injectivity.html#195674786">(Apr 29 2020 at 08:14)</a>:</h4>
+<p>and read what I told you</p>
+
+
+
+<a name="195674791"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113489-new%20members/topic/showing%20injectivity/near/195674791" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Kenny Lau <a href="https://leanprover-community.github.io/archive/stream/113489-new-members/topic/showing.20injectivity.html#195674791">(Apr 29 2020 at 08:15)</a>:</h4>
+<p><span class="user-mention silent" data-user-id="110064">Kenny Lau</span> <a href="#narrow/stream/113489-new-members/topic/noob.20question(s)/near/195662516" title="#narrow/stream/113489-new-members/topic/noob.20question(s)/near/195662516">said</a>:</p>
+<blockquote>
+<p><code>have hnk : \not k \le ...,</code></p>
+</blockquote>
+<p><span class="user-mention silent" data-user-id="110064">Kenny Lau</span> <a href="#narrow/stream/113489-new-members/topic/noob.20question(s)/near/195662522" title="#narrow/stream/113489-new-members/topic/noob.20question(s)/near/195662522">said</a>:</p>
+<blockquote>
+<p>and after you prove it, <code>rw dif_neg hnk</code></p>
+</blockquote>
+
+
+
+<a name="195674806"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113489-new%20members/topic/showing%20injectivity/near/195674806" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Kenny Lau <a href="https://leanprover-community.github.io/archive/stream/113489-new-members/topic/showing.20injectivity.html#195674806">(Apr 29 2020 at 08:15)</a>:</h4>
+<p>you need to prove <code>\not k \le ...</code></p>
+
+
+
+<a name="195674817"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113489-new%20members/topic/showing%20injectivity/near/195674817" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Kenny Lau <a href="https://leanprover-community.github.io/archive/stream/113489-new-members/topic/showing.20injectivity.html#195674817">(Apr 29 2020 at 08:15)</a>:</h4>
+<p>first of all there's not even a <code>k</code> in the <code>h1_strict</code></p>
+
+
+
+<a name="195674882"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113489-new%20members/topic/showing%20injectivity/near/195674882" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Kenny Lau <a href="https://leanprover-community.github.io/archive/stream/113489-new-members/topic/showing.20injectivity.html#195674882">(Apr 29 2020 at 08:16)</a>:</h4>
+<p>also stop abbreviating terms</p>
+
+
+
+<a name="195674904"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113489-new%20members/topic/showing%20injectivity/near/195674904" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Adeeb K <a href="https://leanprover-community.github.io/archive/stream/113489-new-members/topic/showing.20injectivity.html#195674904">(Apr 29 2020 at 08:16)</a>:</h4>
+<p>what abbreviating?</p>
+
+
+
+<a name="195674911"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113489-new%20members/topic/showing%20injectivity/near/195674911" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Kenny Lau <a href="https://leanprover-community.github.io/archive/stream/113489-new-members/topic/showing.20injectivity.html#195674911">(Apr 29 2020 at 08:16)</a>:</h4>
+<p><code>have m_x := (miss x),</code></p>
+
+
+
+<a name="195674928"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113489-new%20members/topic/showing%20injectivity/near/195674928" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Kenny Lau <a href="https://leanprover-community.github.io/archive/stream/113489-new-members/topic/showing.20injectivity.html#195674928">(Apr 29 2020 at 08:16)</a>:</h4>
+<p>I retract my comment about <code>k</code></p>
+
+
+
+<a name="195674929"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113489-new%20members/topic/showing%20injectivity/near/195674929" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Adeeb K <a href="https://leanprover-community.github.io/archive/stream/113489-new-members/topic/showing.20injectivity.html#195674929">(Apr 29 2020 at 08:16)</a>:</h4>
+<p>alright</p>
+
+
+
+<a name="195674945"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113489-new%20members/topic/showing%20injectivity/near/195674945" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Kenny Lau <a href="https://leanprover-community.github.io/archive/stream/113489-new-members/topic/showing.20injectivity.html#195674945">(Apr 29 2020 at 08:17)</a>:</h4>
+<div class="codehilite"><pre><span></span><code><span class="n">type</span> <span class="n">mismatch</span> <span class="n">at</span> <span class="n">application</span>
+  <span class="n">dif_neg</span> <span class="n">h1_strict</span>
+<span class="n">term</span>
+  <span class="n">h1_strict</span>
+<span class="n">has</span> <span class="n">type</span>
+  <span class="o">(</span><span class="n">f</span> <span class="bp">⟨</span><span class="n">m</span> <span class="bp">+</span> <span class="mi">1</span><span class="o">,</span> <span class="bp">_⟩</span><span class="o">)</span><span class="bp">.</span><span class="n">val</span> <span class="bp">&lt;</span> <span class="o">(</span><span class="n">f</span> <span class="o">(</span><span class="n">lift_one</span> <span class="o">(</span><span class="n">m</span> <span class="bp">+</span> <span class="mi">1</span><span class="o">)</span> <span class="n">x</span><span class="o">))</span><span class="bp">.</span><span class="n">val</span>
+<span class="n">but</span> <span class="n">is</span> <span class="n">expected</span> <span class="n">to</span> <span class="k">have</span> <span class="n">type</span>
+  <span class="bp">¬</span><span class="err">?</span><span class="n">m_1</span>
+<span class="n">state</span><span class="o">:</span>
+<span class="n">m</span> <span class="n">k</span> <span class="o">:</span> <span class="bp">ℕ</span><span class="o">,</span>
+<span class="n">hkm</span> <span class="o">:</span> <span class="n">k</span> <span class="bp">&lt;</span> <span class="n">m</span> <span class="bp">+</span> <span class="mi">1</span><span class="o">,</span>
+<span class="n">f</span> <span class="o">:</span> <span class="n">finite_subset</span> <span class="o">(</span><span class="n">m</span> <span class="bp">+</span> <span class="mi">2</span><span class="o">)</span> <span class="bp">→</span> <span class="n">finite_subset</span> <span class="o">(</span><span class="n">m</span> <span class="bp">+</span> <span class="mi">1</span><span class="o">),</span>
+<span class="n">inj</span> <span class="o">:</span> <span class="n">injective</span> <span class="n">f</span><span class="o">,</span>
+<span class="n">pf</span> <span class="o">:</span> <span class="o">(</span><span class="n">f</span> <span class="bp">⟨</span><span class="n">m</span> <span class="bp">+</span> <span class="mi">1</span><span class="o">,</span> <span class="bp">_⟩</span><span class="o">)</span><span class="bp">.</span><span class="n">val</span> <span class="bp">&lt;</span> <span class="n">m</span> <span class="bp">+</span> <span class="mi">1</span><span class="o">,</span>
+<span class="n">miss</span> <span class="o">:</span> <span class="bp">∀</span> <span class="o">(</span><span class="n">j</span> <span class="o">:</span> <span class="n">finite_subset</span> <span class="o">(</span><span class="n">m</span> <span class="bp">+</span> <span class="mi">1</span><span class="o">)),</span> <span class="o">(</span><span class="n">f</span> <span class="err">∘</span> <span class="n">lift_one</span> <span class="o">(</span><span class="n">m</span> <span class="bp">+</span> <span class="mi">1</span><span class="o">))</span> <span class="n">j</span> <span class="bp">≠</span> <span class="n">f</span> <span class="bp">⟨</span><span class="n">m</span> <span class="bp">+</span> <span class="mi">1</span><span class="o">,</span> <span class="bp">_⟩</span><span class="o">,</span>
+<span class="n">x</span> <span class="n">y</span> <span class="o">:</span> <span class="n">finite_subset</span> <span class="o">(</span><span class="n">m</span> <span class="bp">+</span> <span class="mi">1</span><span class="o">),</span>
+<span class="n">h1</span> <span class="o">:</span> <span class="o">(</span><span class="n">f</span> <span class="o">(</span><span class="n">lift_one</span> <span class="o">(</span><span class="n">m</span> <span class="bp">+</span> <span class="mi">1</span><span class="o">)</span> <span class="n">x</span><span class="o">))</span><span class="bp">.</span><span class="n">val</span> <span class="bp">≥</span> <span class="o">(</span><span class="n">f</span> <span class="bp">⟨</span><span class="n">m</span> <span class="bp">+</span> <span class="mi">1</span><span class="o">,</span> <span class="bp">_⟩</span><span class="o">)</span><span class="bp">.</span><span class="n">val</span><span class="o">,</span>
+<span class="n">h2</span> <span class="o">:</span> <span class="o">(</span><span class="n">f</span> <span class="o">(</span><span class="n">lift_one</span> <span class="o">(</span><span class="n">m</span> <span class="bp">+</span> <span class="mi">1</span><span class="o">)</span> <span class="n">y</span><span class="o">))</span><span class="bp">.</span><span class="n">val</span> <span class="bp">≥</span> <span class="o">(</span><span class="n">f</span> <span class="bp">⟨</span><span class="n">m</span> <span class="bp">+</span> <span class="mi">1</span><span class="o">,</span> <span class="bp">_⟩</span><span class="o">)</span><span class="bp">.</span><span class="n">val</span><span class="o">,</span>
+<span class="n">h</span> <span class="o">:</span>
+  <span class="n">dite</span> <span class="o">((</span><span class="n">f</span> <span class="o">(</span><span class="n">lift_one</span> <span class="o">(</span><span class="n">m</span> <span class="bp">+</span> <span class="mi">1</span><span class="o">)</span> <span class="n">x</span><span class="o">))</span><span class="bp">.</span><span class="n">val</span> <span class="bp">≤</span> <span class="o">(</span><span class="n">f</span> <span class="bp">⟨</span><span class="n">m</span> <span class="bp">+</span> <span class="mi">1</span><span class="o">,</span> <span class="bp">_⟩</span><span class="o">)</span><span class="bp">.</span><span class="n">val</span><span class="o">)</span>
+      <span class="o">(</span><span class="bp">λ</span> <span class="o">(</span><span class="n">H</span> <span class="o">:</span> <span class="o">(</span><span class="n">f</span> <span class="o">(</span><span class="n">lift_one</span> <span class="o">(</span><span class="n">m</span> <span class="bp">+</span> <span class="mi">1</span><span class="o">)</span> <span class="n">x</span><span class="o">))</span><span class="bp">.</span><span class="n">val</span> <span class="bp">≤</span> <span class="o">(</span><span class="n">f</span> <span class="bp">⟨</span><span class="n">m</span> <span class="bp">+</span> <span class="mi">1</span><span class="o">,</span> <span class="bp">_⟩</span><span class="o">)</span><span class="bp">.</span><span class="n">val</span><span class="o">),</span> <span class="bp">⟨</span><span class="o">(</span><span class="n">f</span> <span class="o">(</span><span class="n">lift_one</span> <span class="o">(</span><span class="n">m</span> <span class="bp">+</span> <span class="mi">1</span><span class="o">)</span> <span class="n">x</span><span class="o">))</span><span class="bp">.</span><span class="n">val</span><span class="o">,</span> <span class="bp">_⟩</span><span class="o">)</span>
+      <span class="o">(</span><span class="bp">λ</span> <span class="o">(</span><span class="n">H</span> <span class="o">:</span> <span class="bp">¬</span><span class="o">(</span><span class="n">f</span> <span class="o">(</span><span class="n">lift_one</span> <span class="o">(</span><span class="n">m</span> <span class="bp">+</span> <span class="mi">1</span><span class="o">)</span> <span class="n">x</span><span class="o">))</span><span class="bp">.</span><span class="n">val</span> <span class="bp">≤</span> <span class="o">(</span><span class="n">f</span> <span class="bp">⟨</span><span class="n">m</span> <span class="bp">+</span> <span class="mi">1</span><span class="o">,</span> <span class="bp">_⟩</span><span class="o">)</span><span class="bp">.</span><span class="n">val</span><span class="o">),</span> <span class="bp">⟨</span><span class="o">(</span><span class="n">f</span> <span class="o">(</span><span class="n">lift_one</span> <span class="o">(</span><span class="n">m</span> <span class="bp">+</span> <span class="mi">1</span><span class="o">)</span> <span class="n">x</span><span class="o">))</span><span class="bp">.</span><span class="n">val</span> <span class="bp">-</span> <span class="mi">1</span><span class="o">,</span> <span class="bp">_⟩</span><span class="o">)</span> <span class="bp">=</span>
+    <span class="n">dite</span> <span class="o">((</span><span class="n">f</span> <span class="o">(</span><span class="n">lift_one</span> <span class="o">(</span><span class="n">m</span> <span class="bp">+</span> <span class="mi">1</span><span class="o">)</span> <span class="n">y</span><span class="o">))</span><span class="bp">.</span><span class="n">val</span> <span class="bp">≤</span> <span class="o">(</span><span class="n">f</span> <span class="bp">⟨</span><span class="n">m</span> <span class="bp">+</span> <span class="mi">1</span><span class="o">,</span> <span class="bp">_⟩</span><span class="o">)</span><span class="bp">.</span><span class="n">val</span><span class="o">)</span>
+      <span class="o">(</span><span class="bp">λ</span> <span class="o">(</span><span class="n">H</span> <span class="o">:</span> <span class="o">(</span><span class="n">f</span> <span class="o">(</span><span class="n">lift_one</span> <span class="o">(</span><span class="n">m</span> <span class="bp">+</span> <span class="mi">1</span><span class="o">)</span> <span class="n">y</span><span class="o">))</span><span class="bp">.</span><span class="n">val</span> <span class="bp">≤</span> <span class="o">(</span><span class="n">f</span> <span class="bp">⟨</span><span class="n">m</span> <span class="bp">+</span> <span class="mi">1</span><span class="o">,</span> <span class="bp">_⟩</span><span class="o">)</span><span class="bp">.</span><span class="n">val</span><span class="o">),</span> <span class="bp">⟨</span><span class="o">(</span><span class="n">f</span> <span class="o">(</span><span class="n">lift_one</span> <span class="o">(</span><span class="n">m</span> <span class="bp">+</span> <span class="mi">1</span><span class="o">)</span> <span class="n">y</span><span class="o">))</span><span class="bp">.</span><span class="n">val</span><span class="o">,</span> <span class="bp">_⟩</span><span class="o">)</span>
+      <span class="o">(</span><span class="bp">λ</span> <span class="o">(</span><span class="n">H</span> <span class="o">:</span> <span class="bp">¬</span><span class="o">(</span><span class="n">f</span> <span class="o">(</span><span class="n">lift_one</span> <span class="o">(</span><span class="n">m</span> <span class="bp">+</span> <span class="mi">1</span><span class="o">)</span> <span class="n">y</span><span class="o">))</span><span class="bp">.</span><span class="n">val</span> <span class="bp">≤</span> <span class="o">(</span><span class="n">f</span> <span class="bp">⟨</span><span class="n">m</span> <span class="bp">+</span> <span class="mi">1</span><span class="o">,</span> <span class="bp">_⟩</span><span class="o">)</span><span class="bp">.</span><span class="n">val</span><span class="o">),</span> <span class="bp">⟨</span><span class="o">(</span><span class="n">f</span> <span class="o">(</span><span class="n">lift_one</span> <span class="o">(</span><span class="n">m</span> <span class="bp">+</span> <span class="mi">1</span><span class="o">)</span> <span class="n">y</span><span class="o">))</span><span class="bp">.</span><span class="n">val</span> <span class="bp">-</span> <span class="mi">1</span><span class="o">,</span> <span class="bp">_⟩</span><span class="o">),</span>
+<span class="n">m_x</span> <span class="o">:</span> <span class="bp">¬</span><span class="o">((</span><span class="n">f</span> <span class="err">∘</span> <span class="n">lift_one</span> <span class="o">(</span><span class="n">m</span> <span class="bp">+</span> <span class="mi">1</span><span class="o">))</span> <span class="n">x</span><span class="o">)</span><span class="bp">.</span><span class="n">val</span> <span class="bp">=</span> <span class="o">(</span><span class="n">f</span> <span class="bp">⟨</span><span class="n">m</span> <span class="bp">+</span> <span class="mi">1</span><span class="o">,</span> <span class="bp">_⟩</span><span class="o">)</span><span class="bp">.</span><span class="n">val</span><span class="o">,</span>
+<span class="n">m_y</span> <span class="o">:</span> <span class="bp">¬</span><span class="o">((</span><span class="n">f</span> <span class="err">∘</span> <span class="n">lift_one</span> <span class="o">(</span><span class="n">m</span> <span class="bp">+</span> <span class="mi">1</span><span class="o">))</span> <span class="n">y</span><span class="o">)</span><span class="bp">.</span><span class="n">val</span> <span class="bp">=</span> <span class="o">(</span><span class="n">f</span> <span class="bp">⟨</span><span class="n">m</span> <span class="bp">+</span> <span class="mi">1</span><span class="o">,</span> <span class="bp">_⟩</span><span class="o">)</span><span class="bp">.</span><span class="n">val</span><span class="o">,</span>
+<span class="n">h1_strict</span> <span class="o">:</span> <span class="o">(</span><span class="n">f</span> <span class="bp">⟨</span><span class="n">m</span> <span class="bp">+</span> <span class="mi">1</span><span class="o">,</span> <span class="bp">_⟩</span><span class="o">)</span><span class="bp">.</span><span class="n">val</span> <span class="bp">&lt;</span> <span class="o">(</span><span class="n">f</span> <span class="o">(</span><span class="n">lift_one</span> <span class="o">(</span><span class="n">m</span> <span class="bp">+</span> <span class="mi">1</span><span class="o">)</span> <span class="n">x</span><span class="o">))</span><span class="bp">.</span><span class="n">val</span> <span class="o">:=</span> <span class="n">lt_of_le_of_ne</span> <span class="n">h1</span> <span class="o">(</span><span class="n">ne</span><span class="bp">.</span><span class="n">symm</span> <span class="n">m_x</span><span class="o">),</span>
+<span class="n">h2_strict</span> <span class="o">:</span> <span class="o">(</span><span class="n">f</span> <span class="bp">⟨</span><span class="n">m</span> <span class="bp">+</span> <span class="mi">1</span><span class="o">,</span> <span class="bp">_⟩</span><span class="o">)</span><span class="bp">.</span><span class="n">val</span> <span class="bp">&lt;</span> <span class="o">(</span><span class="n">f</span> <span class="o">(</span><span class="n">lift_one</span> <span class="o">(</span><span class="n">m</span> <span class="bp">+</span> <span class="mi">1</span><span class="o">)</span> <span class="n">y</span><span class="o">))</span><span class="bp">.</span><span class="n">val</span> <span class="o">:=</span> <span class="n">lt_of_le_of_ne</span> <span class="n">h2</span> <span class="o">(</span><span class="n">ne</span><span class="bp">.</span><span class="n">symm</span> <span class="n">m_y</span><span class="o">)</span>
+<span class="err">⊢</span> <span class="n">x</span> <span class="bp">=</span> <span class="n">y</span>
+</code></pre></div>
+
+
+
+<a name="195674963"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113489-new%20members/topic/showing%20injectivity/near/195674963" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Kenny Lau <a href="https://leanprover-community.github.io/archive/stream/113489-new-members/topic/showing.20injectivity.html#195674963">(Apr 29 2020 at 08:17)</a>:</h4>
+<p>because this time the clause in the <code>dite</code> is <code>(f (lift_one (m + 1) x)).val ≤ (f ⟨m + 1, _⟩).val</code></p>
+
+
+
+<a name="195674971"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113489-new%20members/topic/showing%20injectivity/near/195674971" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Kenny Lau <a href="https://leanprover-community.github.io/archive/stream/113489-new-members/topic/showing.20injectivity.html#195674971">(Apr 29 2020 at 08:17)</a>:</h4>
+<p>so you need to prove <code>¬(f (lift_one (m + 1) x)).val ≤ (f ⟨m + 1, _⟩).val</code></p>
+
+
+
+<a name="195674980"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113489-new%20members/topic/showing%20injectivity/near/195674980" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Kenny Lau <a href="https://leanprover-community.github.io/archive/stream/113489-new-members/topic/showing.20injectivity.html#195674980">(Apr 29 2020 at 08:17)</a>:</h4>
+<p>which to you is equivalent to <code>... &gt; ...</code></p>
+
+
+
+<a name="195675027"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113489-new%20members/topic/showing%20injectivity/near/195675027" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Kenny Lau <a href="https://leanprover-community.github.io/archive/stream/113489-new-members/topic/showing.20injectivity.html#195675027">(Apr 29 2020 at 08:18)</a>:</h4>
+<p>but to Lean they are not definitionally equivalent</p>
+
+
+
+<a name="195675151"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113489-new%20members/topic/showing%20injectivity/near/195675151" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Adeeb K <a href="https://leanprover-community.github.io/archive/stream/113489-new-members/topic/showing.20injectivity.html#195675151">(Apr 29 2020 at 08:19)</a>:</h4>
+<p>would <code>not_le.mpr ((f (lift_one (m + 1) x)).val ≤ (f ⟨m + 1, _⟩).val)</code> give me what I'm looking for?</p>
+
+
+
+<a name="195675238"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113489-new%20members/topic/showing%20injectivity/near/195675238" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Kenny Lau <a href="https://leanprover-community.github.io/archive/stream/113489-new-members/topic/showing.20injectivity.html#195675238">(Apr 29 2020 at 08:20)</a>:</h4>
+<p>oh and I retract my comment about <code>miss x</code> being an abbreviation</p>
+
+
+
+<a name="195675250"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113489-new%20members/topic/showing%20injectivity/near/195675250" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Adeeb K <a href="https://leanprover-community.github.io/archive/stream/113489-new-members/topic/showing.20injectivity.html#195675250">(Apr 29 2020 at 08:20)</a>:</h4>
+<p>I library searched for a function after writing a small lemma, and that is what I got:</p>
+<div class="codehilite"><pre><span></span><code><span class="kn">lemma</span> <span class="n">lib</span>
+<span class="o">(</span><span class="n">x</span> <span class="n">y</span> <span class="o">:</span> <span class="bp">ℕ</span><span class="o">)</span>
+<span class="o">(</span><span class="n">p</span><span class="o">:</span> <span class="n">x</span> <span class="bp">&gt;</span> <span class="n">y</span><span class="o">)</span>
+<span class="o">:</span> <span class="bp">¬</span> <span class="n">x</span> <span class="bp">≤</span> <span class="n">y</span>
+<span class="o">:=</span> <span class="k">begin</span>
+<span class="n">exact</span> <span class="n">not_le</span><span class="bp">.</span><span class="n">mpr</span> <span class="n">p</span><span class="o">,</span>
+<span class="kn">end</span>
+</code></pre></div>
+
+
+
+<a name="195675255"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113489-new%20members/topic/showing%20injectivity/near/195675255" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Kenny Lau <a href="https://leanprover-community.github.io/archive/stream/113489-new-members/topic/showing.20injectivity.html#195675255">(Apr 29 2020 at 08:20)</a>:</h4>
+<p>but your two <code>let</code>s should bave <code>have</code>s because they are propositions</p>
+
+
+
+<a name="195675272"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113489-new%20members/topic/showing%20injectivity/near/195675272" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Kenny Lau <a href="https://leanprover-community.github.io/archive/stream/113489-new-members/topic/showing.20injectivity.html#195675272">(Apr 29 2020 at 08:20)</a>:</h4>
+<p>basically, the principle is that if you see a <code>let</code> in your code then you're doing something wrong</p>
+
+
+
+<a name="195675296"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113489-new%20members/topic/showing%20injectivity/near/195675296" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Kenny Lau <a href="https://leanprover-community.github.io/archive/stream/113489-new-members/topic/showing.20injectivity.html#195675296">(Apr 29 2020 at 08:21)</a>:</h4>
+<p>yeah so use it and <code>dif_neg</code></p>
+
+
+
+<a name="195675312"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113489-new%20members/topic/showing%20injectivity/near/195675312" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Adeeb K <a href="https://leanprover-community.github.io/archive/stream/113489-new-members/topic/showing.20injectivity.html#195675312">(Apr 29 2020 at 08:21)</a>:</h4>
+<p>alright, changed them to <code>have</code>'s.  I'll ask about <code>have</code> vs <code>let</code> tomorrow since it's pretty late and I want to finish this theorem up as soon as I can</p>
+
+
+
+<a name="195675318"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113489-new%20members/topic/showing%20injectivity/near/195675318" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Adeeb K <a href="https://leanprover-community.github.io/archive/stream/113489-new-members/topic/showing.20injectivity.html#195675318">(Apr 29 2020 at 08:21)</a>:</h4>
+<p>okay one sec</p>
+
+
+
+<a name="195675400"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113489-new%20members/topic/showing%20injectivity/near/195675400" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Adeeb K <a href="https://leanprover-community.github.io/archive/stream/113489-new-members/topic/showing.20injectivity.html#195675400">(Apr 29 2020 at 08:22)</a>:</h4>
+<div class="codehilite"><pre><span></span><code><span class="n">rewrite</span> <span class="n">tactic</span> <span class="n">failed</span><span class="o">,</span> <span class="n">did</span> <span class="n">not</span> <span class="n">find</span> <span class="kn">instance</span> <span class="n">of</span> <span class="n">the</span> <span class="n">pattern</span> <span class="k">in</span> <span class="n">the</span> <span class="n">target</span> <span class="n">expression</span>
+  <span class="n">dite</span> <span class="o">((</span><span class="n">f</span> <span class="o">(</span><span class="n">lift_one</span> <span class="o">(</span><span class="n">m</span> <span class="bp">+</span> <span class="mi">1</span><span class="o">)</span> <span class="n">x</span><span class="o">))</span><span class="bp">.</span><span class="n">val</span> <span class="bp">≤</span> <span class="o">(</span><span class="n">f</span> <span class="bp">⟨</span><span class="n">m</span> <span class="bp">+</span> <span class="mi">1</span><span class="o">,</span> <span class="bp">_⟩</span><span class="o">)</span><span class="bp">.</span><span class="n">val</span><span class="o">)</span> <span class="err">?</span><span class="n">m_2</span> <span class="err">?</span><span class="n">m_3</span>
+</code></pre></div>
+
+
+
+<a name="195675422"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113489-new%20members/topic/showing%20injectivity/near/195675422" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Adeeb K <a href="https://leanprover-community.github.io/archive/stream/113489-new-members/topic/showing.20injectivity.html#195675422">(Apr 29 2020 at 08:22)</a>:</h4>
+<p>this is in response to typing</p>
+<div class="codehilite"><pre><span></span><code><span class="n">rw</span> <span class="n">dif_neg</span> <span class="o">(</span><span class="n">not_le</span><span class="bp">.</span><span class="n">mpr</span> <span class="n">h1_strict</span><span class="o">)</span>
+</code></pre></div>
+
+
+
+<a name="195675484"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113489-new%20members/topic/showing%20injectivity/near/195675484" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Kenny Lau <a href="https://leanprover-community.github.io/archive/stream/113489-new-members/topic/showing.20injectivity.html#195675484">(Apr 29 2020 at 08:23)</a>:</h4>
+<p>did you forget <code>at h</code></p>
+
+
+
+<a name="195675502"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113489-new%20members/topic/showing%20injectivity/near/195675502" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Adeeb K <a href="https://leanprover-community.github.io/archive/stream/113489-new-members/topic/showing.20injectivity.html#195675502">(Apr 29 2020 at 08:24)</a>:</h4>
+<p>...oh whoops</p>
+
+
+
+<a name="195675650"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113489-new%20members/topic/showing%20injectivity/near/195675650" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Adeeb K <a href="https://leanprover-community.github.io/archive/stream/113489-new-members/topic/showing.20injectivity.html#195675650">(Apr 29 2020 at 08:25)</a>:</h4>
+<p>alright, I'm not sure to go from here.  This is what the goal window shows:</p>
+<div class="codehilite"><pre><span></span><code><span class="mi">1</span> <span class="n">goal</span>
+<span class="n">m</span> <span class="n">k</span> <span class="o">:</span> <span class="bp">ℕ</span><span class="o">,</span>
+<span class="n">hkm</span> <span class="o">:</span> <span class="n">k</span> <span class="bp">&lt;</span> <span class="n">m</span> <span class="bp">+</span> <span class="mi">1</span><span class="o">,</span>
+<span class="n">f</span> <span class="o">:</span> <span class="n">finite_subset</span> <span class="o">(</span><span class="n">m</span> <span class="bp">+</span> <span class="mi">2</span><span class="o">)</span> <span class="bp">→</span> <span class="n">finite_subset</span> <span class="o">(</span><span class="n">m</span> <span class="bp">+</span> <span class="mi">1</span><span class="o">),</span>
+<span class="n">inj</span> <span class="o">:</span> <span class="n">injective</span> <span class="n">f</span><span class="o">,</span>
+<span class="n">pf</span> <span class="o">:</span> <span class="o">(</span><span class="n">f</span> <span class="bp">⟨</span><span class="n">m</span> <span class="bp">+</span> <span class="mi">1</span><span class="o">,</span> <span class="bp">_⟩</span><span class="o">)</span><span class="bp">.</span><span class="n">val</span> <span class="bp">&lt;</span> <span class="n">m</span> <span class="bp">+</span> <span class="mi">1</span><span class="o">,</span>
+<span class="n">miss</span> <span class="o">:</span> <span class="bp">∀</span> <span class="o">(</span><span class="n">j</span> <span class="o">:</span> <span class="n">finite_subset</span> <span class="o">(</span><span class="n">m</span> <span class="bp">+</span> <span class="mi">1</span><span class="o">)),</span> <span class="o">(</span><span class="n">f</span> <span class="err">∘</span> <span class="n">lift_one</span> <span class="o">(</span><span class="n">m</span> <span class="bp">+</span> <span class="mi">1</span><span class="o">))</span> <span class="n">j</span> <span class="bp">≠</span> <span class="n">f</span> <span class="bp">⟨</span><span class="n">m</span> <span class="bp">+</span> <span class="mi">1</span><span class="o">,</span> <span class="bp">_⟩</span><span class="o">,</span>
+<span class="n">x</span> <span class="n">y</span> <span class="o">:</span> <span class="n">finite_subset</span> <span class="o">(</span><span class="n">m</span> <span class="bp">+</span> <span class="mi">1</span><span class="o">),</span>
+<span class="n">h1</span> <span class="o">:</span> <span class="o">(</span><span class="n">f</span> <span class="o">(</span><span class="n">lift_one</span> <span class="o">(</span><span class="n">m</span> <span class="bp">+</span> <span class="mi">1</span><span class="o">)</span> <span class="n">x</span><span class="o">))</span><span class="bp">.</span><span class="n">val</span> <span class="bp">≥</span> <span class="o">(</span><span class="n">f</span> <span class="bp">⟨</span><span class="n">m</span> <span class="bp">+</span> <span class="mi">1</span><span class="o">,</span> <span class="bp">_⟩</span><span class="o">)</span><span class="bp">.</span><span class="n">val</span><span class="o">,</span>
+<span class="n">h2</span> <span class="o">:</span> <span class="o">(</span><span class="n">f</span> <span class="o">(</span><span class="n">lift_one</span> <span class="o">(</span><span class="n">m</span> <span class="bp">+</span> <span class="mi">1</span><span class="o">)</span> <span class="n">y</span><span class="o">))</span><span class="bp">.</span><span class="n">val</span> <span class="bp">≥</span> <span class="o">(</span><span class="n">f</span> <span class="bp">⟨</span><span class="n">m</span> <span class="bp">+</span> <span class="mi">1</span><span class="o">,</span> <span class="bp">_⟩</span><span class="o">)</span><span class="bp">.</span><span class="n">val</span><span class="o">,</span>
+<span class="n">m_x</span> <span class="o">:</span> <span class="bp">¬</span><span class="o">((</span><span class="n">f</span> <span class="err">∘</span> <span class="n">lift_one</span> <span class="o">(</span><span class="n">m</span> <span class="bp">+</span> <span class="mi">1</span><span class="o">))</span> <span class="n">x</span><span class="o">)</span><span class="bp">.</span><span class="n">val</span> <span class="bp">=</span> <span class="o">(</span><span class="n">f</span> <span class="bp">⟨</span><span class="n">m</span> <span class="bp">+</span> <span class="mi">1</span><span class="o">,</span> <span class="bp">_⟩</span><span class="o">)</span><span class="bp">.</span><span class="n">val</span><span class="o">,</span>
+<span class="n">m_y</span> <span class="o">:</span> <span class="bp">¬</span><span class="o">((</span><span class="n">f</span> <span class="err">∘</span> <span class="n">lift_one</span> <span class="o">(</span><span class="n">m</span> <span class="bp">+</span> <span class="mi">1</span><span class="o">))</span> <span class="n">y</span><span class="o">)</span><span class="bp">.</span><span class="n">val</span> <span class="bp">=</span> <span class="o">(</span><span class="n">f</span> <span class="bp">⟨</span><span class="n">m</span> <span class="bp">+</span> <span class="mi">1</span><span class="o">,</span> <span class="bp">_⟩</span><span class="o">)</span><span class="bp">.</span><span class="n">val</span><span class="o">,</span>
+<span class="n">h1_strict</span> <span class="o">:</span> <span class="o">(</span><span class="n">f</span> <span class="bp">⟨</span><span class="n">m</span> <span class="bp">+</span> <span class="mi">1</span><span class="o">,</span> <span class="bp">_⟩</span><span class="o">)</span><span class="bp">.</span><span class="n">val</span> <span class="bp">&lt;</span> <span class="o">(</span><span class="n">f</span> <span class="o">(</span><span class="n">lift_one</span> <span class="o">(</span><span class="n">m</span> <span class="bp">+</span> <span class="mi">1</span><span class="o">)</span> <span class="n">x</span><span class="o">))</span><span class="bp">.</span><span class="n">val</span><span class="o">,</span>
+<span class="n">h2_strict</span> <span class="o">:</span> <span class="o">(</span><span class="n">f</span> <span class="bp">⟨</span><span class="n">m</span> <span class="bp">+</span> <span class="mi">1</span><span class="o">,</span> <span class="bp">_⟩</span><span class="o">)</span><span class="bp">.</span><span class="n">val</span> <span class="bp">&lt;</span> <span class="o">(</span><span class="n">f</span> <span class="o">(</span><span class="n">lift_one</span> <span class="o">(</span><span class="n">m</span> <span class="bp">+</span> <span class="mi">1</span><span class="o">)</span> <span class="n">y</span><span class="o">))</span><span class="bp">.</span><span class="n">val</span><span class="o">,</span>
+<span class="n">h</span> <span class="o">:</span>
+  <span class="bp">⟨</span><span class="o">(</span><span class="n">f</span> <span class="o">(</span><span class="n">lift_one</span> <span class="o">(</span><span class="n">m</span> <span class="bp">+</span> <span class="mi">1</span><span class="o">)</span> <span class="n">x</span><span class="o">))</span><span class="bp">.</span><span class="n">val</span> <span class="bp">-</span> <span class="mi">1</span><span class="o">,</span> <span class="bp">_⟩</span> <span class="bp">=</span>
+    <span class="n">dite</span> <span class="o">((</span><span class="n">f</span> <span class="o">(</span><span class="n">lift_one</span> <span class="o">(</span><span class="n">m</span> <span class="bp">+</span> <span class="mi">1</span><span class="o">)</span> <span class="n">y</span><span class="o">))</span><span class="bp">.</span><span class="n">val</span> <span class="bp">≤</span> <span class="o">(</span><span class="n">f</span> <span class="bp">⟨</span><span class="n">m</span> <span class="bp">+</span> <span class="mi">1</span><span class="o">,</span> <span class="bp">_⟩</span><span class="o">)</span><span class="bp">.</span><span class="n">val</span><span class="o">)</span>
+      <span class="o">(</span><span class="bp">λ</span> <span class="o">(</span><span class="n">H</span> <span class="o">:</span> <span class="o">(</span><span class="n">f</span> <span class="o">(</span><span class="n">lift_one</span> <span class="o">(</span><span class="n">m</span> <span class="bp">+</span> <span class="mi">1</span><span class="o">)</span> <span class="n">y</span><span class="o">))</span><span class="bp">.</span><span class="n">val</span> <span class="bp">≤</span> <span class="o">(</span><span class="n">f</span> <span class="bp">⟨</span><span class="n">m</span> <span class="bp">+</span> <span class="mi">1</span><span class="o">,</span> <span class="bp">_⟩</span><span class="o">)</span><span class="bp">.</span><span class="n">val</span><span class="o">),</span> <span class="bp">⟨</span><span class="o">(</span><span class="n">f</span> <span class="o">(</span><span class="n">lift_one</span> <span class="o">(</span><span class="n">m</span> <span class="bp">+</span> <span class="mi">1</span><span class="o">)</span> <span class="n">y</span><span class="o">))</span><span class="bp">.</span><span class="n">val</span><span class="o">,</span> <span class="bp">_⟩</span><span class="o">)</span>
+      <span class="o">(</span><span class="bp">λ</span> <span class="o">(</span><span class="n">H</span> <span class="o">:</span> <span class="bp">¬</span><span class="o">(</span><span class="n">f</span> <span class="o">(</span><span class="n">lift_one</span> <span class="o">(</span><span class="n">m</span> <span class="bp">+</span> <span class="mi">1</span><span class="o">)</span> <span class="n">y</span><span class="o">))</span><span class="bp">.</span><span class="n">val</span> <span class="bp">≤</span> <span class="o">(</span><span class="n">f</span> <span class="bp">⟨</span><span class="n">m</span> <span class="bp">+</span> <span class="mi">1</span><span class="o">,</span> <span class="bp">_⟩</span><span class="o">)</span><span class="bp">.</span><span class="n">val</span><span class="o">),</span> <span class="bp">⟨</span><span class="o">(</span><span class="n">f</span> <span class="o">(</span><span class="n">lift_one</span> <span class="o">(</span><span class="n">m</span> <span class="bp">+</span> <span class="mi">1</span><span class="o">)</span> <span class="n">y</span><span class="o">))</span><span class="bp">.</span><span class="n">val</span> <span class="bp">-</span> <span class="mi">1</span><span class="o">,</span> <span class="bp">_⟩</span><span class="o">)</span>
+<span class="err">⊢</span> <span class="n">x</span> <span class="bp">=</span> <span class="n">y</span>
+</code></pre></div>
+
+
+
+<a name="195675720"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113489-new%20members/topic/showing%20injectivity/near/195675720" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Adeeb K <a href="https://leanprover-community.github.io/archive/stream/113489-new-members/topic/showing.20injectivity.html#195675720">(Apr 29 2020 at 08:26)</a>:</h4>
+<p>how do I unpack the <code>if-then-else</code> pattern for <code>h</code>?</p>
+
+
+
+<a name="195675781"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113489-new%20members/topic/showing%20injectivity/near/195675781" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Kenny Lau <a href="https://leanprover-community.github.io/archive/stream/113489-new-members/topic/showing.20injectivity.html#195675781">(Apr 29 2020 at 08:27)</a>:</h4>
+<p>prove the same thing for <code>y</code> and use <code>dif_neg</code>...</p>
+
+
+
+<a name="195675925"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113489-new%20members/topic/showing%20injectivity/near/195675925" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Adeeb K <a href="https://leanprover-community.github.io/archive/stream/113489-new-members/topic/showing.20injectivity.html#195675925">(Apr 29 2020 at 08:28)</a>:</h4>
+<p>ah right right</p>
+
+
+
+<a name="195676073"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113489-new%20members/topic/showing%20injectivity/near/195676073" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Adeeb K <a href="https://leanprover-community.github.io/archive/stream/113489-new-members/topic/showing.20injectivity.html#195676073">(Apr 29 2020 at 08:30)</a>:</h4>
+<p>so if I have <code>h : ⟨(f (lift_one (m + 1) x)).val - 1, _⟩ = ⟨(f (lift_one (m + 1) y)).val - 1, _⟩,</code>, then I can conclude that <code>(f (lift_one (m + 1) x)).val - 1 = (f (lift_one (m + 1) y)).val - 1</code> by extensionality right?</p>
+
+
+
+<a name="195676207"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113489-new%20members/topic/showing%20injectivity/near/195676207" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Kenny Lau <a href="https://leanprover-community.github.io/archive/stream/113489-new-members/topic/showing.20injectivity.html#195676207">(Apr 29 2020 at 08:32)</a>:</h4>
+<p>right</p>
+
+
+
+<a name="195676546"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113489-new%20members/topic/showing%20injectivity/near/195676546" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Adeeb K <a href="https://leanprover-community.github.io/archive/stream/113489-new-members/topic/showing.20injectivity.html#195676546">(Apr 29 2020 at 08:36)</a>:</h4>
+<p>uh so at this point, I have basically that <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>q</mi><mo>−</mo><mn>1</mn><mo>=</mo><mi>r</mi><mo>−</mo><mn>1</mn></mrow><annotation encoding="application/x-tex">q - 1 = r - 1</annotation></semantics></math></span><span aria-hidden="true" class="katex-html"><span class="base"><span class="strut" style="height:0.7777700000000001em;vertical-align:-0.19444em;"></span><span class="mord mathdefault" style="margin-right:0.03588em;">q</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">−</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span></span><span class="base"><span class="strut" style="height:0.64444em;vertical-align:0em;"></span><span class="mord">1</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:0.66666em;vertical-align:-0.08333em;"></span><span class="mord mathdefault" style="margin-right:0.02778em;">r</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">−</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span></span><span class="base"><span class="strut" style="height:0.64444em;vertical-align:0em;"></span><span class="mord">1</span></span></span></span>, where <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>q</mi><mo separator="true">,</mo><mi>r</mi><mo>∈</mo><mi mathvariant="double-struck">N</mi></mrow><annotation encoding="application/x-tex">q, r \in \mathbb{N}</annotation></semantics></math></span><span aria-hidden="true" class="katex-html"><span class="base"><span class="strut" style="height:0.7335400000000001em;vertical-align:-0.19444em;"></span><span class="mord mathdefault" style="margin-right:0.03588em;">q</span><span class="mpunct">,</span><span class="mspace" style="margin-right:0.16666666666666666em;"></span><span class="mord mathdefault" style="margin-right:0.02778em;">r</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">∈</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:0.68889em;vertical-align:0em;"></span><span class="mord"><span class="mord mathbb">N</span></span></span></span></span>.  When I used <code>library_search</code>, I came up with nothing for <code>q - 1 = r - 1</code> implies <code>q = r</code>.</p>
+
+
+
+<a name="195676581"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113489-new%20members/topic/showing%20injectivity/near/195676581" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Adeeb K <a href="https://leanprover-community.github.io/archive/stream/113489-new-members/topic/showing.20injectivity.html#195676581">(Apr 29 2020 at 08:36)</a>:</h4>
+<p>Is there something small (or large) that I'm missing to make that statement?</p>
+
+
+
+<a name="195676639"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113489-new%20members/topic/showing%20injectivity/near/195676639" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Kevin Buzzard <a href="https://leanprover-community.github.io/archive/stream/113489-new-members/topic/showing.20injectivity.html#195676639">(Apr 29 2020 at 08:37)</a>:</h4>
+<p>It's not true</p>
+
+
+
+<a name="195676711"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113489-new%20members/topic/showing%20injectivity/near/195676711" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Kevin Buzzard <a href="https://leanprover-community.github.io/archive/stream/113489-new-members/topic/showing.20injectivity.html#195676711">(Apr 29 2020 at 08:38)</a>:</h4>
+<p>Using subtraction on naturals is not a good idea in general</p>
+
+
+
+<a name="195676718"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113489-new%20members/topic/showing%20injectivity/near/195676718" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Adeeb K <a href="https://leanprover-community.github.io/archive/stream/113489-new-members/topic/showing.20injectivity.html#195676718">(Apr 29 2020 at 08:38)</a>:</h4>
+<p>is it because there isn't closure in the naturals under subtraction?</p>
+
+
+
+<a name="195676739"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113489-new%20members/topic/showing%20injectivity/near/195676739" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Kevin Buzzard <a href="https://leanprover-community.github.io/archive/stream/113489-new-members/topic/showing.20injectivity.html#195676739">(Apr 29 2020 at 08:38)</a>:</h4>
+<p>No, it's because by definition there is closure in the naturals under subtraction</p>
+
+
+
+<a name="195676749"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113489-new%20members/topic/showing%20injectivity/near/195676749" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Kevin Buzzard <a href="https://leanprover-community.github.io/archive/stream/113489-new-members/topic/showing.20injectivity.html#195676749">(Apr 29 2020 at 08:38)</a>:</h4>
+<p>Which means that what you're using can't be actual subtraction</p>
+
+
+
+<a name="195676785"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113489-new%20members/topic/showing%20injectivity/near/195676785" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Kevin Buzzard <a href="https://leanprover-community.github.io/archive/stream/113489-new-members/topic/showing.20injectivity.html#195676785">(Apr 29 2020 at 08:39)</a>:</h4>
+<p>0-1=1-1=0 in the naturals</p>
+
+
+
+<a name="195676797"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113489-new%20members/topic/showing%20injectivity/near/195676797" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Kevin Buzzard <a href="https://leanprover-community.github.io/archive/stream/113489-new-members/topic/showing.20injectivity.html#195676797">(Apr 29 2020 at 08:39)</a>:</h4>
+<p>According to lean</p>
+
+
+
+<a name="195676808"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113489-new%20members/topic/showing%20injectivity/near/195676808" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Adeeb K <a href="https://leanprover-community.github.io/archive/stream/113489-new-members/topic/showing.20injectivity.html#195676808">(Apr 29 2020 at 08:39)</a>:</h4>
+<p>oh I see</p>
+
+
+
+<a name="195676873"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113489-new%20members/topic/showing%20injectivity/near/195676873" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Adeeb K <a href="https://leanprover-community.github.io/archive/stream/113489-new-members/topic/showing.20injectivity.html#195676873">(Apr 29 2020 at 08:40)</a>:</h4>
+<p>uh, so based on this step...I'm stuck then?</p>
+
+
+
+<a name="195676892"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113489-new%20members/topic/showing%20injectivity/near/195676892" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Kevin Buzzard <a href="https://leanprover-community.github.io/archive/stream/113489-new-members/topic/showing.20injectivity.html#195676892">(Apr 29 2020 at 08:40)</a>:</h4>
+<p>I haven't been following the details I'm afraid</p>
+
+
+
+<a name="195676907"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113489-new%20members/topic/showing%20injectivity/near/195676907" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Adeeb K <a href="https://leanprover-community.github.io/archive/stream/113489-new-members/topic/showing.20injectivity.html#195676907">(Apr 29 2020 at 08:40)</a>:</h4>
+<p>well basically I have this:</p>
+<div class="codehilite"><pre><span></span><code><span class="n">h</span> <span class="o">:</span> <span class="bp">⟨</span><span class="o">(</span><span class="n">f</span> <span class="o">(</span><span class="n">lift_one</span> <span class="o">(</span><span class="n">m</span> <span class="bp">+</span> <span class="mi">1</span><span class="o">)</span> <span class="n">x</span><span class="o">))</span><span class="bp">.</span><span class="n">val</span> <span class="bp">-</span> <span class="mi">1</span><span class="o">,</span> <span class="bp">_⟩.</span><span class="n">val</span> <span class="bp">=</span> <span class="bp">⟨</span><span class="o">(</span><span class="n">f</span> <span class="o">(</span><span class="n">lift_one</span> <span class="o">(</span><span class="n">m</span> <span class="bp">+</span> <span class="mi">1</span><span class="o">)</span> <span class="n">y</span><span class="o">))</span><span class="bp">.</span><span class="n">val</span> <span class="bp">-</span> <span class="mi">1</span><span class="o">,</span> <span class="bp">_⟩.</span><span class="n">val</span>
+</code></pre></div>
+
+
+
+<a name="195676940"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113489-new%20members/topic/showing%20injectivity/near/195676940" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Kevin Buzzard <a href="https://leanprover-community.github.io/archive/stream/113489-new-members/topic/showing.20injectivity.html#195676940">(Apr 29 2020 at 08:41)</a>:</h4>
+<p>I'm "at work" right now so am only glancing at the chat</p>
+
+
+
+<a name="195676950"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113489-new%20members/topic/showing%20injectivity/near/195676950" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Adeeb K <a href="https://leanprover-community.github.io/archive/stream/113489-new-members/topic/showing.20injectivity.html#195676950">(Apr 29 2020 at 08:41)</a>:</h4>
+<p>ah alright</p>
+
+
+
+<a name="195676961"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113489-new%20members/topic/showing%20injectivity/near/195676961" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Kevin Buzzard <a href="https://leanprover-community.github.io/archive/stream/113489-new-members/topic/showing.20injectivity.html#195676961">(Apr 29 2020 at 08:41)</a>:</h4>
+<p>I have a meeting in 4 minutes :-/</p>
+
+
+
+<a name="195676981"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113489-new%20members/topic/showing%20injectivity/near/195676981" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Adeeb K <a href="https://leanprover-community.github.io/archive/stream/113489-new-members/topic/showing.20injectivity.html#195676981">(Apr 29 2020 at 08:41)</a>:</h4>
+<p>ah gotcha, have fun then!</p>
+
+
+
+<a name="195677896"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113489-new%20members/topic/showing%20injectivity/near/195677896" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Adeeb K <a href="https://leanprover-community.github.io/archive/stream/113489-new-members/topic/showing.20injectivity.html#195677896">(Apr 29 2020 at 08:51)</a>:</h4>
+<p>question</p>
+
+
+
+<a name="195678048"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113489-new%20members/topic/showing%20injectivity/near/195678048" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Adeeb K <a href="https://leanprover-community.github.io/archive/stream/113489-new-members/topic/showing.20injectivity.html#195678048">(Apr 29 2020 at 08:52)</a>:</h4>
+<p>if I have <code>h : LHS = RHS</code>, how can I assign a name to the left hand side?  That is, can I have <code>have left_hand_side := LHS</code>?</p>
+
+
+
+<a name="195678157"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113489-new%20members/topic/showing%20injectivity/near/195678157" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Adeeb K <a href="https://leanprover-community.github.io/archive/stream/113489-new-members/topic/showing.20injectivity.html#195678157">(Apr 29 2020 at 08:53)</a>:</h4>
+<p>I'm trying to say <code>have LHS := ⟨(f (lift_one (m + 1) x)).val - 1, _⟩</code>, but I keep getting the following error:</p>
+<div class="codehilite"><pre><span></span><code><span class="n">invalid</span> <span class="n">constructor</span> <span class="bp">⟨...⟩</span><span class="o">,</span> <span class="n">expected</span> <span class="n">type</span> <span class="n">must</span> <span class="n">be</span> <span class="n">known</span>
+</code></pre></div>
+
+
+
 {% endraw %}
 
-<hr><p>Last updated: Apr 29 2020 at 08:04 UTC</p>
+<hr><p>Last updated: Apr 29 2020 at 09:04 UTC</p>

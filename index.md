@@ -12,7 +12,7 @@ permalink: /index.html
 
 * [new members](stream/113489-new-members/index.html) (978 topics)
 
-* [maths](stream/116395-maths/index.html) (866 topics)
+* [maths](stream/116395-maths/index.html) (867 topics)
 
 * [PR reviews](stream/144837-PR-reviews/index.html) (229 topics)
 
@@ -40,4 +40,4 @@ permalink: /index.html
 
 * [Program verification](stream/236449-Program-verification/index.html) (1 topic)
 
-<hr><p>Last updated: Apr 29 2020 at 08:04 UTC</p>
+<hr><p>Last updated: Apr 29 2020 at 09:04 UTC</p>

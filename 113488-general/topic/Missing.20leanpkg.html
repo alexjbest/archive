@@ -78,6 +78,30 @@ info: downloading installer
 
 
 
+<a name="195675085"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113488-general/topic/Missing%20leanpkg/near/195675085" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Sebastian Ullrich <a href="https://leanprover-community.github.io/archive/stream/113488-general/topic/Missing.20leanpkg.html#195675085">(Apr 29 2020 at 08:19)</a>:</h4>
+<p>There should really be a <code>set -e</code> in <code>install_debian.sh</code></p>
+
+
+
+<a name="195675490"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113488-general/topic/Missing%20leanpkg/near/195675490" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Sebastian Ullrich <a href="https://leanprover-community.github.io/archive/stream/113488-general/topic/Missing.20leanpkg.html#195675490">(Apr 29 2020 at 08:23)</a>:</h4>
+<p>By the way, what's up with this <code>wget; bash; rm</code> idiom instead of <code>curl | bash</code>?</p>
+
+
+
+<a name="195676957"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113488-general/topic/Missing%20leanpkg/near/195676957" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Patrick Massot <a href="https://leanprover-community.github.io/archive/stream/113488-general/topic/Missing.20leanpkg.html#195676957">(Apr 29 2020 at 08:41)</a>:</h4>
+<p>I think it was because wget is here by default and curl needs installing</p>
+
+
+
+<a name="195677849"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113488-general/topic/Missing%20leanpkg/near/195677849" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Sebastian Ullrich <a href="https://leanprover-community.github.io/archive/stream/113488-general/topic/Missing.20leanpkg.html#195677849">(Apr 29 2020 at 08:50)</a>:</h4>
+<p>I see. I think you can use <code>wget -O -</code> to pipe it as well.</p>
+
+
+
 {% endraw %}
 
-<hr><p>Last updated: Apr 29 2020 at 08:04 UTC</p>
+<hr><p>Last updated: Apr 29 2020 at 09:04 UTC</p>
