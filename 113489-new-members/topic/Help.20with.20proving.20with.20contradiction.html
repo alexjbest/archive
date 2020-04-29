@@ -411,6 +411,169 @@ permalink: /stream/113489-new-members/topic/Help.20with.20proving.20with.20contr
 
 
 
+<a name="195714660"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113489-new%20members/topic/Help%20with%20proving%20with%20contradiction/near/195714660" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Reid Barton <a href="https://leanprover-community.github.io/archive/stream/113489-new-members/topic/Help.20with.20proving.20with.20contradiction.html#195714660">(Apr 29 2020 at 14:08)</a>:</h4>
+<p>I'm not sure but I think there's some way a human can trigger a bot manually, using a <code>/</code> command or something? Now that I think about it I'm not sure how it is supposed to work</p>
+
+
+
+<a name="195714750"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113489-new%20members/topic/Help%20with%20proving%20with%20contradiction/near/195714750" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Rob Lewis <a href="https://leanprover-community.github.io/archive/stream/113489-new-members/topic/Help.20with.20proving.20with.20contradiction.html#195714750">(Apr 29 2020 at 14:09)</a>:</h4>
+<p>I think bots can scan the contents of posts. It should be easy to write a bot that watches for <code>#mwe</code>.</p>
+
+
+
+<a name="195714791"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113489-new%20members/topic/Help%20with%20proving%20with%20contradiction/near/195714791" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Jalex Stark <a href="https://leanprover-community.github.io/archive/stream/113489-new-members/topic/Help.20with.20proving.20with.20contradiction.html#195714791">(Apr 29 2020 at 14:09)</a>:</h4>
+<p>I think the documentation here is enough for anyone willing to give it a go:<br>
+<a href="https://zulipchat.com/api/running-bots" title="https://zulipchat.com/api/running-bots">https://zulipchat.com/api/running-bots</a></p>
+
+
+
+<a name="195715053"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113489-new%20members/topic/Help%20with%20proving%20with%20contradiction/near/195715053" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Reid Barton <a href="https://leanprover-community.github.io/archive/stream/113489-new-members/topic/Help.20with.20proving.20with.20contradiction.html#195715053">(Apr 29 2020 at 14:11)</a>:</h4>
+<p>Right, I was just wondering whether the extra noise of someone typing <code>#mwe</code> could be avoided</p>
+
+
+
+<a name="195715176"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113489-new%20members/topic/Help%20with%20proving%20with%20contradiction/near/195715176" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Reid Barton <a href="https://leanprover-community.github.io/archive/stream/113489-new-members/topic/Help.20with.20proving.20with.20contradiction.html#195715176">(Apr 29 2020 at 14:12)</a>:</h4>
+<p>maybe that's not even a good idea though</p>
+
+
+
+<a name="195715199"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113489-new%20members/topic/Help%20with%20proving%20with%20contradiction/near/195715199" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Johan Commelin <a href="https://leanprover-community.github.io/archive/stream/113489-new-members/topic/Help.20with.20proving.20with.20contradiction.html#195715199">(Apr 29 2020 at 14:12)</a>:</h4>
+<p>I was thinking we would just write</p>
+<div class="codehilite"><pre><span></span><code>please provide an #mwe
+</code></pre></div>
+
+
+
+<a name="195715234"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113489-new%20members/topic/Help%20with%20proving%20with%20contradiction/near/195715234" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Johan Commelin <a href="https://leanprover-community.github.io/archive/stream/113489-new-members/topic/Help.20with.20proving.20with.20contradiction.html#195715234">(Apr 29 2020 at 14:12)</a>:</h4>
+<p>And then Zulip would linkify <code>#mwe</code></p>
+
+
+
+<a name="195715278"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113489-new%20members/topic/Help%20with%20proving%20with%20contradiction/near/195715278" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Jalex Stark <a href="https://leanprover-community.github.io/archive/stream/113489-new-members/topic/Help.20with.20proving.20with.20contradiction.html#195715278">(Apr 29 2020 at 14:12)</a>:</h4>
+<p>Gotcha. <br>
+My model of how this works i based off of chatbots in twitch streams.</p>
+
+
+
+<a name="195715283"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113489-new%20members/topic/Help%20with%20proving%20with%20contradiction/near/195715283" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Kenny Lau <a href="https://leanprover-community.github.io/archive/stream/113489-new-members/topic/Help.20with.20proving.20with.20contradiction.html#195715283">(Apr 29 2020 at 14:12)</a>:</h4>
+<p>what is linkify? is it something admins can edit?</p>
+
+
+
+<a name="195715288"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113489-new%20members/topic/Help%20with%20proving%20with%20contradiction/near/195715288" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Johan Commelin <a href="https://leanprover-community.github.io/archive/stream/113489-new-members/topic/Help.20with.20proving.20with.20contradiction.html#195715288">(Apr 29 2020 at 14:12)</a>:</h4>
+<p>And then user clicks and gets enlightened</p>
+
+
+
+<a name="195715318"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113489-new%20members/topic/Help%20with%20proving%20with%20contradiction/near/195715318" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Jalex Stark <a href="https://leanprover-community.github.io/archive/stream/113489-new-members/topic/Help.20with.20proving.20with.20contradiction.html#195715318">(Apr 29 2020 at 14:13)</a>:</h4>
+<p>Do we have a "server meta" stream?</p>
+
+
+
+<a name="195715343"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113489-new%20members/topic/Help%20with%20proving%20with%20contradiction/near/195715343" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Reid Barton <a href="https://leanprover-community.github.io/archive/stream/113489-new-members/topic/Help.20with.20proving.20with.20contradiction.html#195715343">(Apr 29 2020 at 14:13)</a>:</h4>
+<p><span class="user-mention silent" data-user-id="112680">Johan Commelin</span> <a href="#narrow/stream/113489-new-members/topic/Help.20with.20proving.20with.20contradiction/near/195715234" title="#narrow/stream/113489-new-members/topic/Help.20with.20proving.20with.20contradiction/near/195715234">said</a>:</p>
+<blockquote>
+<p>And then Zulip would linkify <code>#mwe</code></p>
+</blockquote>
+<p>This might be better, since we can put more text on the page linked to than we would want to see a bot write out over and over.</p>
+
+
+
+<a name="195715419"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113489-new%20members/topic/Help%20with%20proving%20with%20contradiction/near/195715419" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Jalex Stark <a href="https://leanprover-community.github.io/archive/stream/113489-new-members/topic/Help.20with.20proving.20with.20contradiction.html#195715419">(Apr 29 2020 at 14:13)</a>:</h4>
+<p>I think the bot should say two-ish sentences to convince the user to click the link</p>
+
+
+
+<a name="195715429"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113489-new%20members/topic/Help%20with%20proving%20with%20contradiction/near/195715429" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Johan Commelin <a href="https://leanprover-community.github.io/archive/stream/113489-new-members/topic/Help.20with.20proving.20with.20contradiction.html#195715429">(Apr 29 2020 at 14:13)</a>:</h4>
+<p><span class="user-mention silent" data-user-id="110064">Kenny Lau</span> <a href="#narrow/stream/113489-new-members/topic/Help.20with.20proving.20with.20contradiction/near/195715283" title="#narrow/stream/113489-new-members/topic/Help.20with.20proving.20with.20contradiction/near/195715283">said</a>:</p>
+<blockquote>
+<p>what is linkify? is it something admins can edit?</p>
+</blockquote>
+<p>yes</p>
+
+
+
+<a name="195715540"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113489-new%20members/topic/Help%20with%20proving%20with%20contradiction/near/195715540" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Johan Commelin <a href="https://leanprover-community.github.io/archive/stream/113489-new-members/topic/Help.20with.20proving.20with.20contradiction.html#195715540">(Apr 29 2020 at 14:14)</a>:</h4>
+<p>We only need to ping <span class="user-mention" data-user-id="110049">@Mario Carneiro</span> and it will be done before you can say <code>#mwe</code></p>
+
+
+
+<a name="195715586"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113489-new%20members/topic/Help%20with%20proving%20with%20contradiction/near/195715586" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Kenny Lau <a href="https://leanprover-community.github.io/archive/stream/113489-new-members/topic/Help.20with.20proving.20with.20contradiction.html#195715586">(Apr 29 2020 at 14:14)</a>:</h4>
+<p>but what do we want to link it to?</p>
+
+
+
+<a name="195715659"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113489-new%20members/topic/Help%20with%20proving%20with%20contradiction/near/195715659" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Rob Lewis <a href="https://leanprover-community.github.io/archive/stream/113489-new-members/topic/Help.20with.20proving.20with.20contradiction.html#195715659">(Apr 29 2020 at 14:15)</a>:</h4>
+<p>Yeah, I was thinking the bot post would be more visible. We don't have to trust people to click <code>#mwe</code> instead of posting "what's a #mwe?"</p>
+
+
+
+<a name="195715682"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113489-new%20members/topic/Help%20with%20proving%20with%20contradiction/near/195715682" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Johan Commelin <a href="https://leanprover-community.github.io/archive/stream/113489-new-members/topic/Help.20with.20proving.20with.20contradiction.html#195715682">(Apr 29 2020 at 14:15)</a>:</h4>
+<p>If we are lazy: wiki, and otherwise a custom page hosted on <a href="http://leanprover-community.github.io" title="http://leanprover-community.github.io">leanprover-community.github.io</a></p>
+
+
+
+<a name="195715684"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113489-new%20members/topic/Help%20with%20proving%20with%20contradiction/near/195715684" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Rob Lewis <a href="https://leanprover-community.github.io/archive/stream/113489-new-members/topic/Help.20with.20proving.20with.20contradiction.html#195715684">(Apr 29 2020 at 14:15)</a>:</h4>
+<p>But either way is an improvement!</p>
+
+
+
+<a name="195716054"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113489-new%20members/topic/Help%20with%20proving%20with%20contradiction/near/195716054" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Kenny Lau <a href="https://leanprover-community.github.io/archive/stream/113489-new-members/topic/Help.20with.20proving.20with.20contradiction.html#195716054">(Apr 29 2020 at 14:17)</a>:</h4>
+<p><a href="https://github.com/leanprover-community/mathlib/wiki/Minimum-Working-Example-(MWE)" title="https://github.com/leanprover-community/mathlib/wiki/Minimum-Working-Example-(MWE)">https://github.com/leanprover-community/mathlib/wiki/Minimum-Working-Example-(MWE)</a></p>
+
+
+
+<a name="195716126"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113489-new%20members/topic/Help%20with%20proving%20with%20contradiction/near/195716126" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Jalex Stark <a href="https://leanprover-community.github.io/archive/stream/113489-new-members/topic/Help.20with.20proving.20with.20contradiction.html#195716126">(Apr 29 2020 at 14:18)</a>:</h4>
+<p>I think this discussion could profitably move here <br>
+<a href="#narrow/stream/236604-server-meta/topic/.23mwe.20bot" title="#narrow/stream/236604-server-meta/topic/.23mwe.20bot">https://leanprover.zulipchat.com/#narrow/stream/236604-server-meta/topic/.23mwe.20bot</a></p>
+
+
+
+<a name="195717461"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113489-new%20members/topic/Help%20with%20proving%20with%20contradiction/near/195717461" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Mario Carneiro <a href="https://leanprover-community.github.io/archive/stream/113489-new-members/topic/Help.20with.20proving.20with.20contradiction.html#195717461">(Apr 29 2020 at 14:27)</a>:</h4>
+<p>Just clarifying that the reason I was summoned is not the way people are planning to implement this, yes?</p>
+
+
+
+<a name="195717608"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113489-new%20members/topic/Help%20with%20proving%20with%20contradiction/near/195717608" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Johan Commelin <a href="https://leanprover-community.github.io/archive/stream/113489-new-members/topic/Help.20with.20proving.20with.20contradiction.html#195717608">(Apr 29 2020 at 14:28)</a>:</h4>
+<p>Well...</p>
+
+
+
+<a name="195717632"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113489-new%20members/topic/Help%20with%20proving%20with%20contradiction/near/195717632" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Kenny Lau <a href="https://leanprover-community.github.io/archive/stream/113489-new-members/topic/Help.20with.20proving.20with.20contradiction.html#195717632">(Apr 29 2020 at 14:29)</a>:</h4>
+<p>I don't see anything wrong with having <code>#mwe</code> link to the wiki page</p>
+
+
+
+<a name="195717642"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113489-new%20members/topic/Help%20with%20proving%20with%20contradiction/near/195717642" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Johan Commelin <a href="https://leanprover-community.github.io/archive/stream/113489-new-members/topic/Help.20with.20proving.20with.20contradiction.html#195717642">(Apr 29 2020 at 14:29)</a>:</h4>
+<p>You are an admin, so you can help us avoid it that way</p>
+
+
+
 {% endraw %}
 
-<hr><p>Last updated: Apr 29 2020 at 14:07 UTC</p>
+<hr><p>Last updated: Apr 29 2020 at 15:07 UTC</p>

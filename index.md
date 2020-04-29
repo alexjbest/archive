@@ -32,6 +32,8 @@ permalink: /index.html
 
 * [kbb](stream/141825-kbb/index.html) (13 topics)
 
+* [Zulip meta](stream/236604-Zulip-meta/index.html) (4 topics)
+
 * [concrete semantics](stream/187724-concrete-semantics/index.html) (4 topics)
 
 * [Big Proof 2019](stream/198800-Big-Proof-2019/index.html) (3 topics)
@@ -40,4 +42,4 @@ permalink: /index.html
 
 * [Program verification](stream/236449-Program-verification/index.html) (1 topic)
 
-<hr><p>Last updated: Apr 29 2020 at 14:07 UTC</p>
+<hr><p>Last updated: Apr 29 2020 at 15:07 UTC</p>

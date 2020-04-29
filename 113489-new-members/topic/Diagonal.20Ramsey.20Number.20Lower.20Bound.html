@@ -1559,6 +1559,98 @@ or<br>
 
 
 
+<a name="195716138"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113489-new%20members/topic/Diagonal%20Ramsey%20Number%20Lower%20Bound/near/195716138" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Bhavik Mehta <a href="https://leanprover-community.github.io/archive/stream/113489-new-members/topic/Diagonal.20Ramsey.20Number.20Lower.20Bound.html#195716138">(Apr 29 2020 at 14:18)</a>:</h4>
+<ol>
+<li>Yes! You can use the union operator which should take the union of the two given finsets</li>
+</ol>
+
+
+
+<a name="195716307"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113489-new%20members/topic/Diagonal%20Ramsey%20Number%20Lower%20Bound/near/195716307" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Bhavik Mehta <a href="https://leanprover-community.github.io/archive/stream/113489-new-members/topic/Diagonal.20Ramsey.20Number.20Lower.20Bound.html#195716307">(Apr 29 2020 at 14:19)</a>:</h4>
+<p>Contrived example:</p>
+<div class="codehilite"><pre><span></span><code><span class="kn">example</span> <span class="o">(</span><span class="n">s</span> <span class="n">t</span> <span class="o">:</span> <span class="n">finset</span> <span class="n">α</span><span class="o">)</span> <span class="o">:</span> <span class="n">finset</span> <span class="n">α</span> <span class="o">:=</span>
+<span class="k">begin</span>
+  <span class="k">let</span> <span class="n">new_finset</span> <span class="o">:=</span> <span class="n">s</span> <span class="err">∪</span> <span class="n">t</span><span class="o">,</span>
+  <span class="n">exact</span> <span class="n">new_finset</span>
+<span class="kn">end</span>
+</code></pre></div>
+
+
+
+<a name="195716591"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113489-new%20members/topic/Diagonal%20Ramsey%20Number%20Lower%20Bound/near/195716591" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Bhavik Mehta <a href="https://leanprover-community.github.io/archive/stream/113489-new-members/topic/Diagonal.20Ramsey.20Number.20Lower.20Bound.html#195716591">(Apr 29 2020 at 14:21)</a>:</h4>
+<p>As for 2, I did the same construction in a different way. I defined a predicate <code>red_on H c</code> which indicated when the colouring <code>c</code> was red on the particular subgraph <code>H</code></p>
+
+
+
+<a name="195716724"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113489-new%20members/topic/Diagonal%20Ramsey%20Number%20Lower%20Bound/near/195716724" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Bhavik Mehta <a href="https://leanprover-community.github.io/archive/stream/113489-new-members/topic/Diagonal.20Ramsey.20Number.20Lower.20Bound.html#195716724">(Apr 29 2020 at 14:22)</a>:</h4>
+<p>(More specifically, for the <code>K_k</code> given by the vertices of the subset <code>H</code>)</p>
+
+
+
+<a name="195716801"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113489-new%20members/topic/Diagonal%20Ramsey%20Number%20Lower%20Bound/near/195716801" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Bhavik Mehta <a href="https://leanprover-community.github.io/archive/stream/113489-new-members/topic/Diagonal.20Ramsey.20Number.20Lower.20Bound.html#195716801">(Apr 29 2020 at 14:23)</a>:</h4>
+<p>I defined <code>blue_on</code> similarly, and then <code>mono_on</code> as the "or" of those two</p>
+
+
+
+<a name="195716891"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113489-new%20members/topic/Diagonal%20Ramsey%20Number%20Lower%20Bound/near/195716891" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Bhavik Mehta <a href="https://leanprover-community.github.io/archive/stream/113489-new-members/topic/Diagonal.20Ramsey.20Number.20Lower.20Bound.html#195716891">(Apr 29 2020 at 14:23)</a>:</h4>
+<p>Then all the colourings which are monochromatic on <code>H</code> are given by filtering: <code>(colourings G).filter (mono_on H)</code></p>
+
+
+
+<a name="195717111"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113489-new%20members/topic/Diagonal%20Ramsey%20Number%20Lower%20Bound/near/195717111" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Bhavik Mehta <a href="https://leanprover-community.github.io/archive/stream/113489-new-members/topic/Diagonal.20Ramsey.20Number.20Lower.20Bound.html#195717111">(Apr 29 2020 at 14:25)</a>:</h4>
+<p>Next I defined <code>def has_mono G (s : ℕ) c : Prop := ∃ (H' ∈ powerset_len s G), mono_on H' c</code>, which says that <code>G</code> with the colouring <code>c</code> has a monochromatic <code>K_s</code> if there is a subset of the vertices of size <code>s</code> for which the colouring is monochromatic</p>
+
+
+
+<a name="195717136"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113489-new%20members/topic/Diagonal%20Ramsey%20Number%20Lower%20Bound/near/195717136" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Bhavik Mehta <a href="https://leanprover-community.github.io/archive/stream/113489-new-members/topic/Diagonal.20Ramsey.20Number.20Lower.20Bound.html#195717136">(Apr 29 2020 at 14:25)</a>:</h4>
+<p>and filtering with this predicate gives your set S</p>
+
+
+
+<a name="195717152"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113489-new%20members/topic/Diagonal%20Ramsey%20Number%20Lower%20Bound/near/195717152" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Bhavik Mehta <a href="https://leanprover-community.github.io/archive/stream/113489-new-members/topic/Diagonal.20Ramsey.20Number.20Lower.20Bound.html#195717152">(Apr 29 2020 at 14:25)</a>:</h4>
+<p><code>card ((colourings G).filter (has_mono G s))</code></p>
+
+
+
+<a name="195717349"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113489-new%20members/topic/Diagonal%20Ramsey%20Number%20Lower%20Bound/near/195717349" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Bhavik Mehta <a href="https://leanprover-community.github.io/archive/stream/113489-new-members/topic/Diagonal.20Ramsey.20Number.20Lower.20Bound.html#195717349">(Apr 29 2020 at 14:26)</a>:</h4>
+<p>(I should apologise, the code I wrote is pretty hard to understand and might not compile with newer versions of mathlib since I PR'd some lemmas at the top - if it'd be useful to you I can tidy it up)</p>
+
+
+
+<a name="195717702"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113489-new%20members/topic/Diagonal%20Ramsey%20Number%20Lower%20Bound/near/195717702" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Bhavik Mehta <a href="https://leanprover-community.github.io/archive/stream/113489-new-members/topic/Diagonal.20Ramsey.20Number.20Lower.20Bound.html#195717702">(Apr 29 2020 at 14:29)</a>:</h4>
+<p>Defining <code>S</code> in the way you suggest would be possible - I personally went straight for my way because filtering is a natural way of thinking about it to me - I don't see any immediate reason yours wouldn't work though.  An important thing you should be aware of though is that taking a union over another set as you suggest here: "union over all choice of the <code>K_k</code> subgraph" is better expressed using the <code>bind</code> operator in <code>data/finset</code></p>
+
+
+
+<a name="195717827"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113489-new%20members/topic/Diagonal%20Ramsey%20Number%20Lower%20Bound/near/195717827" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Bhavik Mehta <a href="https://leanprover-community.github.io/archive/stream/113489-new-members/topic/Diagonal.20Ramsey.20Number.20Lower.20Bound.html#195717827">(Apr 29 2020 at 14:30)</a>:</h4>
+<p>And just in case you weren't aware yet, there's some lemmas for getting the cardinality of finsets in <code>algebra/big_operator</code></p>
+
+
+
+<a name="195718215"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113489-new%20members/topic/Diagonal%20Ramsey%20Number%20Lower%20Bound/near/195718215" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Bhavik Mehta <a href="https://leanprover-community.github.io/archive/stream/113489-new-members/topic/Diagonal.20Ramsey.20Number.20Lower.20Bound.html#195718215">(Apr 29 2020 at 14:32)</a>:</h4>
+<p>Let me know if you have any questions or want me to explain my proof some more! I should say that the proofs I gave weren't "good lean" so don't take them as good practice, but you can certainly take implementation ideas - I think these were reasonably well thought out</p>
+
+
+
+<a name="195720462"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113489-new%20members/topic/Diagonal%20Ramsey%20Number%20Lower%20Bound/near/195720462" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Bhavik Mehta <a href="https://leanprover-community.github.io/archive/stream/113489-new-members/topic/Diagonal.20Ramsey.20Number.20Lower.20Bound.html#195720462">(Apr 29 2020 at 14:47)</a>:</h4>
+<p>Another piece of advice which took me too long to learn when I started doing combinatorics in lean is that your definitions should be general, and your lemmas can restrict usage. For instance, when I defined <code>def red_on (H : finset α) (c : finset (finset α)) : Prop := (edges_of H) ⊆ c</code>, I didn't insist that H was a subset of G, nor that c was actually a colouring of G, but instead these conditions are on the lemmas, eg <code>thing1</code> has the condition that H is a subset of G, and the filter ensures that c is a colouring of G. A simpler example is when we define division on naturals - the definition of division doesn't require the denominator to be non-zero, but (most of) the useful lemmas do. For combinatorics at least I've found this turns out to make things much much easier</p>
+
+
+
 {% endraw %}
 
-<hr><p>Last updated: Apr 29 2020 at 14:07 UTC</p>
+<hr><p>Last updated: Apr 29 2020 at 15:07 UTC</p>
