@@ -139,6 +139,30 @@ permalink: /stream/113488-general/topic/sorry.20does.20not.20behave.20like.20NaN
 
 
 
+<a name="195666143"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113488-general/topic/sorry%20does%20not%20behave%20like%20NaN/near/195666143" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Kevin Buzzard <a href="https://leanprover-community.github.io/archive/stream/113488-general/topic/sorry.20does.20not.20behave.20like.20NaN.html#195666143">(Apr 29 2020 at 06:38)</a>:</h4>
+<p>I don't think I ever sorried data from the day I saw Patrick's example</p>
+
+
+
+<a name="195666739"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113488-general/topic/sorry%20does%20not%20behave%20like%20NaN/near/195666739" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Mario Carneiro <a href="https://leanprover-community.github.io/archive/stream/113488-general/topic/sorry.20does.20not.20behave.20like.20NaN.html#195666739">(Apr 29 2020 at 06:47)</a>:</h4>
+<p>note that there is an easy workaround for patrick's example, which is to sorry the function after reverting everything, i.e. <code>def smooth : (real -&gt; real) -&gt; Prop := sorry</code></p>
+
+
+
+<a name="195666848"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113488-general/topic/sorry%20does%20not%20behave%20like%20NaN/near/195666848" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Mario Carneiro <a href="https://leanprover-community.github.io/archive/stream/113488-general/topic/sorry.20does.20not.20behave.20like.20NaN.html#195666848">(Apr 29 2020 at 06:48)</a>:</h4>
+<p>In fact, it would be an easy fix to the <code>sorry</code> tactic to make it call <code>revert_all</code> first</p>
+
+
+
+<a name="195666887"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113488-general/topic/sorry%20does%20not%20behave%20like%20NaN/near/195666887" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Mario Carneiro <a href="https://leanprover-community.github.io/archive/stream/113488-general/topic/sorry.20does.20not.20behave.20like.20NaN.html#195666887">(Apr 29 2020 at 06:48)</a>:</h4>
+<p>and then at least <code>def smooth (f : real -&gt; real) : Prop := by sorry</code> would have the right behavior</p>
+
+
+
 {% endraw %}
 
-<hr><p>Last updated: Apr 29 2020 at 06:04 UTC</p>
+<hr><p>Last updated: Apr 29 2020 at 07:03 UTC</p>
