@@ -9,9 +9,9 @@ permalink: /stream/113488-general/index.html
 
 ### Topics:
 
-* [transitive coercions](topic/transitive.20coercions.html) (2 messages, latest: Apr 29 2020 at 18:03)
+* [linting the core library](topic/linting.20the.20core.20library.html) (16 messages, latest: Apr 29 2020 at 18:55)
+* [transitive coercions](topic/transitive.20coercions.html) (3 messages, latest: Apr 29 2020 at 18:31)
 * [mul_action](topic/mul_action.html) (15 messages, latest: Apr 29 2020 at 17:11)
-* [linting the core library](topic/linting.20the.20core.20library.html) (13 messages, latest: Apr 29 2020 at 17:09)
 * [graphs on the website](topic/graphs.20on.20the.20website.html) (32 messages, latest: Apr 29 2020 at 16:45)
 * [is this a pattern](topic/is.20this.20a.20pattern.html) (15 messages, latest: Apr 29 2020 at 13:16)
 * [ring_aut coerce to function](topic/ring_aut.20coerce.20to.20function.html) (23 messages, latest: Apr 29 2020 at 11:38)
@@ -2731,4 +2731,4 @@ permalink: /stream/113488-general/index.html
 * [test](topic/test.html) (4 messages, latest: Feb 26 2018 at 16:22)
 * [welcome](topic/welcome.html) (1 message, latest: Feb 26 2018 at 16:02)
 
-<hr><p>Last updated: Apr 29 2020 at 18:05 UTC</p>
+<hr><p>Last updated: Apr 29 2020 at 19:04 UTC</p>
