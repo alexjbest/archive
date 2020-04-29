@@ -1,0 +1,36 @@
+---
+layout: archive
+title: Zulip Chat Archive
+permalink: /stream/113488-general/topic/transitive.20coercions.html
+---
+
+<h2>Stream: <a href="https://leanprover-community.github.io/archive/stream/113488-general/index.html">general</a></h2>
+<h3>Topic: <a href="https://leanprover-community.github.io/archive/stream/113488-general/topic/transitive.20coercions.html">transitive coercions</a></h3>
+
+<hr>
+
+<base href="https://leanprover.zulipchat.com/">
+
+<head><link href="/style.css" rel="stylesheet"></head>
+
+{% raw %}
+
+<a name="195747861"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113488-general/topic/transitive%20coercions/near/195747861" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Reid Barton <a href="https://leanprover-community.github.io/archive/stream/113488-general/topic/transitive.20coercions.html#195747861">(Apr 29 2020 at 18:02)</a>:</h4>
+<p>Here's the first thing which broke in a nontrivial way when I made <code>coe_fn_trans</code> and <code>coe_sort_trans</code> no longer instances:</p>
+<div class="codehilite"><pre><span></span><code><span class="kn">lemma</span> <span class="n">Union_range_eq_sUnion</span> <span class="o">{</span><span class="n">α</span> <span class="n">β</span> <span class="o">:</span> <span class="kt">Type</span><span class="bp">*</span><span class="o">}</span> <span class="o">(</span><span class="n">C</span> <span class="o">:</span> <span class="n">set</span> <span class="o">(</span><span class="n">set</span> <span class="n">α</span><span class="o">))</span>
+  <span class="o">{</span><span class="n">f</span> <span class="o">:</span> <span class="bp">∀</span><span class="o">(</span><span class="n">s</span> <span class="o">:</span> <span class="n">C</span><span class="o">),</span> <span class="n">β</span> <span class="bp">→</span> <span class="n">s</span><span class="o">}</span> <span class="o">(</span><span class="n">hf</span> <span class="o">:</span> <span class="bp">∀</span><span class="o">(</span><span class="n">s</span> <span class="o">:</span> <span class="n">C</span><span class="o">),</span> <span class="n">surjective</span> <span class="o">(</span><span class="n">f</span> <span class="n">s</span><span class="o">))</span> <span class="o">:</span>
+  <span class="o">(</span><span class="err">⋃</span><span class="o">(</span><span class="n">y</span> <span class="o">:</span> <span class="n">β</span><span class="o">),</span> <span class="n">range</span> <span class="o">(</span><span class="bp">λ</span><span class="o">(</span><span class="n">s</span> <span class="o">:</span> <span class="n">C</span><span class="o">),</span> <span class="o">(</span><span class="n">f</span> <span class="n">s</span> <span class="n">y</span><span class="o">)</span><span class="bp">.</span><span class="n">val</span><span class="o">))</span> <span class="bp">=</span> <span class="err">⋃₀</span> <span class="n">C</span> <span class="o">:=</span>
+</code></pre></div>
+
+
+
+<a name="195747954"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113488-general/topic/transitive%20coercions/near/195747954" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Reid Barton <a href="https://leanprover-community.github.io/archive/stream/113488-general/topic/transitive.20coercions.html#195747954">(Apr 29 2020 at 18:03)</a>:</h4>
+<p>(By "nontrivial", I mean something not directly related to transitive coercions. Obviously the fix for this example is still simple.)</p>
+
+
+
+{% endraw %}
+
+<hr><p>Last updated: Apr 29 2020 at 18:05 UTC</p>
