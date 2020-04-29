@@ -2291,6 +2291,69 @@ sorry I wasn't seeing it earlier..</p>
 
 
 
+<a name="195680611"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113489-new%20members/topic/showing%20injectivity/near/195680611" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Adeeb K <a href="https://leanprover-community.github.io/archive/stream/113489-new-members/topic/showing.20injectivity.html#195680611">(Apr 29 2020 at 09:13)</a>:</h4>
+<p>I got it</p>
+
+
+
+<a name="195680618"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113489-new%20members/topic/showing%20injectivity/near/195680618" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Adeeb K <a href="https://leanprover-community.github.io/archive/stream/113489-new-members/topic/showing.20injectivity.html#195680618">(Apr 29 2020 at 09:13)</a>:</h4>
+<p>another question though:</p>
+
+
+
+<a name="195680751"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113489-new%20members/topic/showing%20injectivity/near/195680751" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Adeeb K <a href="https://leanprover-community.github.io/archive/stream/113489-new-members/topic/showing.20injectivity.html#195680751">(Apr 29 2020 at 09:14)</a>:</h4>
+<p>Suppose I have <code>h_jump : (f (lift_one (m + 1) x)).val = (f (lift_one (m + 1) y)).val</code>.  And I also have the extensionality theorem:</p>
+<div class="codehilite"><pre><span></span><code><span class="kn">lemma</span> <span class="n">ext_iff</span> <span class="o">(</span><span class="n">n</span> <span class="o">:</span> <span class="bp">ℕ</span><span class="o">)</span> <span class="o">(</span><span class="n">a</span> <span class="n">b</span> <span class="o">:</span> <span class="n">finite_subset</span> <span class="n">n</span><span class="o">)</span> <span class="o">:</span> <span class="n">a</span> <span class="bp">=</span> <span class="n">b</span> <span class="bp">↔</span> <span class="n">a</span><span class="bp">.</span><span class="mi">1</span> <span class="bp">=</span> <span class="n">b</span><span class="bp">.</span><span class="mi">1</span> <span class="o">:=</span>
+<span class="k">begin</span>
+  <span class="n">cases</span> <span class="n">a</span><span class="o">,</span>
+  <span class="n">cases</span> <span class="n">b</span><span class="o">,</span>
+  <span class="n">split</span><span class="o">,</span>
+  <span class="o">{</span> <span class="n">intro</span> <span class="n">h</span><span class="o">,</span> <span class="n">rw</span> <span class="n">h</span><span class="o">},</span>
+  <span class="o">{</span> <span class="n">intro</span> <span class="n">h</span><span class="o">,</span> <span class="n">cases</span> <span class="n">h</span><span class="o">,</span> <span class="n">refl</span><span class="o">,}</span>
+<span class="kn">end</span>
+</code></pre></div>
+
+
+
+<a name="195680796"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113489-new%20members/topic/showing%20injectivity/near/195680796" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Adeeb K <a href="https://leanprover-community.github.io/archive/stream/113489-new-members/topic/showing.20injectivity.html#195680796">(Apr 29 2020 at 09:15)</a>:</h4>
+<p>how would I conclude that <code>(f (lift_one (m + 1) x)) = (f (lift_one (m + 1) y))</code>?</p>
+
+
+
+<a name="195680825"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113489-new%20members/topic/showing%20injectivity/near/195680825" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Kenny Lau <a href="https://leanprover-community.github.io/archive/stream/113489-new-members/topic/showing.20injectivity.html#195680825">(Apr 29 2020 at 09:15)</a>:</h4>
+<p><code>rw \l ext_iff</code></p>
+
+
+
+<a name="195680947"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113489-new%20members/topic/showing%20injectivity/near/195680947" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Adeeb K <a href="https://leanprover-community.github.io/archive/stream/113489-new-members/topic/showing.20injectivity.html#195680947">(Apr 29 2020 at 09:16)</a>:</h4>
+<p>oh, so the <code>\l</code> just says to use the implication in the other direction then?</p>
+
+
+
+<a name="195681135"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113489-new%20members/topic/showing%20injectivity/near/195681135" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Kenny Lau <a href="https://leanprover-community.github.io/archive/stream/113489-new-members/topic/showing.20injectivity.html#195681135">(Apr 29 2020 at 09:18)</a>:</h4>
+<p>right</p>
+
+
+
+<a name="195685067"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113489-new%20members/topic/showing%20injectivity/near/195685067" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Kevin Buzzard <a href="https://leanprover-community.github.io/archive/stream/113489-new-members/topic/showing.20injectivity.html#195685067">(Apr 29 2020 at 09:55)</a>:</h4>
+<p>Deleted</p>
+
+
+
+<a name="195686267"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113489-new%20members/topic/showing%20injectivity/near/195686267" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Adeeb K <a href="https://leanprover-community.github.io/archive/stream/113489-new-members/topic/showing.20injectivity.html#195686267">(Apr 29 2020 at 10:03)</a>:</h4>
+<p>thanks again for all the help!</p>
+
+
+
 {% endraw %}
 
-<hr><p>Last updated: Apr 29 2020 at 09:04 UTC</p>
+<hr><p>Last updated: Apr 29 2020 at 10:04 UTC</p>
