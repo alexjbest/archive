@@ -1390,6 +1390,137 @@ or<br>
 
 
 
+<a name="195655039"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113489-new%20members/topic/Diagonal%20Ramsey%20Number%20Lower%20Bound/near/195655039" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Reid Barton <a href="https://leanprover-community.github.io/archive/stream/113489-new-members/topic/Diagonal.20Ramsey.20Number.20Lower.20Bound.html#195655039">(Apr 29 2020 at 03:04)</a>:</h4>
+<p>How about starting with <code>apply nat.fpow_ne_zero_of_pos</code>?</p>
+
+
+
+<a name="195655283"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113489-new%20members/topic/Diagonal%20Ramsey%20Number%20Lower%20Bound/near/195655283" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Sam Raleigh <a href="https://leanprover-community.github.io/archive/stream/113489-new-members/topic/Diagonal.20Ramsey.20Number.20Lower.20Bound.html#195655283">(Apr 29 2020 at 03:09)</a>:</h4>
+<p><span class="user-mention" data-user-id="110032">@Reid Barton</span> I get </p>
+<div class="codehilite"><pre><span></span><code><span class="n">invalid</span> <span class="n">apply</span> <span class="n">tactic</span><span class="o">,</span> <span class="n">failed</span> <span class="n">to</span> <span class="n">unify</span>
+  <span class="mi">2</span> <span class="bp">^</span> <span class="err">↑</span><span class="n">a</span> <span class="bp">≠</span> <span class="mi">0</span>
+<span class="k">with</span>
+  <span class="err">↑?</span><span class="n">m_3</span> <span class="bp">^</span> <span class="err">?</span><span class="n">m_4</span> <span class="bp">≠</span> <span class="mi">0</span>
+</code></pre></div>
+
+
+
+<a name="195655435"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113489-new%20members/topic/Diagonal%20Ramsey%20Number%20Lower%20Bound/near/195655435" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Reid Barton <a href="https://leanprover-community.github.io/archive/stream/113489-new-members/topic/Diagonal.20Ramsey.20Number.20Lower.20Bound.html#195655435">(Apr 29 2020 at 03:12)</a>:</h4>
+<p>maybe <code>fpow_ne_zero_of_ne_zero</code> then? is a field a <code>group_with_zero</code>, whatever that is?</p>
+
+
+
+<a name="195655521"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113489-new%20members/topic/Diagonal%20Ramsey%20Number%20Lower%20Bound/near/195655521" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Sam Raleigh <a href="https://leanprover-community.github.io/archive/stream/113489-new-members/topic/Diagonal.20Ramsey.20Number.20Lower.20Bound.html#195655521">(Apr 29 2020 at 03:14)</a>:</h4>
+<p>What is <code>fpow_ne_zero_of_ne_zero</code>? It isnt showing up in the documentation</p>
+
+
+
+<a name="195655552"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113489-new%20members/topic/Diagonal%20Ramsey%20Number%20Lower%20Bound/near/195655552" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Reid Barton <a href="https://leanprover-community.github.io/archive/stream/113489-new-members/topic/Diagonal.20Ramsey.20Number.20Lower.20Bound.html#195655552">(Apr 29 2020 at 03:15)</a>:</h4>
+<p>It's in src/algebra/group_with_zero_power.lean</p>
+
+
+
+<a name="195655553"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113489-new%20members/topic/Diagonal%20Ramsey%20Number%20Lower%20Bound/near/195655553" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Reid Barton <a href="https://leanprover-community.github.io/archive/stream/113489-new-members/topic/Diagonal.20Ramsey.20Number.20Lower.20Bound.html#195655553">(Apr 29 2020 at 03:15)</a>:</h4>
+<p>maybe in some namespace</p>
+
+
+
+<a name="195655610"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113489-new%20members/topic/Diagonal%20Ramsey%20Number%20Lower%20Bound/near/195655610" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Sam Raleigh <a href="https://leanprover-community.github.io/archive/stream/113489-new-members/topic/Diagonal.20Ramsey.20Number.20Lower.20Bound.html#195655610">(Apr 29 2020 at 03:16)</a>:</h4>
+<p>I just <code>#check</code>'d it, I see</p>
+
+
+
+<a name="195655612"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113489-new%20members/topic/Diagonal%20Ramsey%20Number%20Lower%20Bound/near/195655612" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Sam Raleigh <a href="https://leanprover-community.github.io/archive/stream/113489-new-members/topic/Diagonal.20Ramsey.20Number.20Lower.20Bound.html#195655612">(Apr 29 2020 at 03:17)</a>:</h4>
+<p>Why doesn't it appear in the online documentation?</p>
+
+
+
+<a name="195655621"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113489-new%20members/topic/Diagonal%20Ramsey%20Number%20Lower%20Bound/near/195655621" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Reid Barton <a href="https://leanprover-community.github.io/archive/stream/113489-new-members/topic/Diagonal.20Ramsey.20Number.20Lower.20Bound.html#195655621">(Apr 29 2020 at 03:17)</a>:</h4>
+<p>No idea, is the online documentation older than April 7 maybe?</p>
+
+
+
+<a name="195655625"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113489-new%20members/topic/Diagonal%20Ramsey%20Number%20Lower%20Bound/near/195655625" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Bryan Gin-ge Chen <a href="https://leanprover-community.github.io/archive/stream/113489-new-members/topic/Diagonal.20Ramsey.20Number.20Lower.20Bound.html#195655625">(Apr 29 2020 at 03:17)</a>:</h4>
+<p>No, it's there: <a href="https://leanprover-community.github.io/mathlib_docs/algebra/group_with_zero_power.html#fpow_ne_zero_of_ne_zero" title="https://leanprover-community.github.io/mathlib_docs/algebra/group_with_zero_power.html#fpow_ne_zero_of_ne_zero">https://leanprover-community.github.io/mathlib_docs/algebra/group_with_zero_power.html#fpow_ne_zero_of_ne_zero</a></p>
+
+
+
+<a name="195655665"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113489-new%20members/topic/Diagonal%20Ramsey%20Number%20Lower%20Bound/near/195655665" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Sam Raleigh <a href="https://leanprover-community.github.io/archive/stream/113489-new-members/topic/Diagonal.20Ramsey.20Number.20Lower.20Bound.html#195655665">(Apr 29 2020 at 03:18)</a>:</h4>
+<p>Ah I see, so it's just the google search engine for the docs that was acting up again</p>
+
+
+
+<a name="195655674"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113489-new%20members/topic/Diagonal%20Ramsey%20Number%20Lower%20Bound/near/195655674" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Sam Raleigh <a href="https://leanprover-community.github.io/archive/stream/113489-new-members/topic/Diagonal.20Ramsey.20Number.20Lower.20Bound.html#195655674">(Apr 29 2020 at 03:18)</a>:</h4>
+<p>Thanks bryan</p>
+
+
+
+<a name="195655675"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113489-new%20members/topic/Diagonal%20Ramsey%20Number%20Lower%20Bound/near/195655675" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Reid Barton <a href="https://leanprover-community.github.io/archive/stream/113489-new-members/topic/Diagonal.20Ramsey.20Number.20Lower.20Bound.html#195655675">(Apr 29 2020 at 03:18)</a>:</h4>
+<p>ok, I see a field is indeed a <code>group_with_zero</code> though maybe it would be better if the documentation didn't require me to know the term "division ring".</p>
+
+
+
+<a name="195655695"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113489-new%20members/topic/Diagonal%20Ramsey%20Number%20Lower%20Bound/near/195655695" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Sam Raleigh <a href="https://leanprover-community.github.io/archive/stream/113489-new-members/topic/Diagonal.20Ramsey.20Number.20Lower.20Bound.html#195655695">(Apr 29 2020 at 03:19)</a>:</h4>
+<p>Does virtual studio have functionality that would allow me to query my local mathlib documents instead of the online documentation for theorems that I need?</p>
+
+
+
+<a name="195655704"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113489-new%20members/topic/Diagonal%20Ramsey%20Number%20Lower%20Bound/near/195655704" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Reid Barton <a href="https://leanprover-community.github.io/archive/stream/113489-new-members/topic/Diagonal.20Ramsey.20Number.20Lower.20Bound.html#195655704">(Apr 29 2020 at 03:19)</a>:</h4>
+<p>I just use <code>git grep</code></p>
+
+
+
+<a name="195655827"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113489-new%20members/topic/Diagonal%20Ramsey%20Number%20Lower%20Bound/near/195655827" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Sam Raleigh <a href="https://leanprover-community.github.io/archive/stream/113489-new-members/topic/Diagonal.20Ramsey.20Number.20Lower.20Bound.html#195655827">(Apr 29 2020 at 03:23)</a>:</h4>
+<p>IS dec_trivial a theorem or a tactic? A bit unclear on this</p>
+
+
+
+<a name="195655832"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113489-new%20members/topic/Diagonal%20Ramsey%20Number%20Lower%20Bound/near/195655832" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Sam Raleigh <a href="https://leanprover-community.github.io/archive/stream/113489-new-members/topic/Diagonal.20Ramsey.20Number.20Lower.20Bound.html#195655832">(Apr 29 2020 at 03:23)</a>:</h4>
+<p>What exactly does it do?</p>
+
+
+
+<a name="195655882"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113489-new%20members/topic/Diagonal%20Ramsey%20Number%20Lower%20Bound/near/195655882" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Sam Raleigh <a href="https://leanprover-community.github.io/archive/stream/113489-new-members/topic/Diagonal.20Ramsey.20Number.20Lower.20Bound.html#195655882">(Apr 29 2020 at 03:24)</a>:</h4>
+<p>more importantly, where is it located in the online documentation?</p>
+
+
+
+<a name="195656184"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113489-new%20members/topic/Diagonal%20Ramsey%20Number%20Lower%20Bound/near/195656184" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Bryan Gin-ge Chen <a href="https://leanprover-community.github.io/archive/stream/113489-new-members/topic/Diagonal.20Ramsey.20Number.20Lower.20Bound.html#195656184">(Apr 29 2020 at 03:32)</a>:</h4>
+<p><code>dec_trivial</code> is a term. I don't think it has a particularly useful docstring, but it's explained in (where else) <a href="https://leanprover.github.io/theorem_proving_in_lean/type_classes.html#decidable-propositions" title="https://leanprover.github.io/theorem_proving_in_lean/type_classes.html#decidable-propositions">TPiL</a>.</p>
+
+
+
+<a name="195656274"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113489-new%20members/topic/Diagonal%20Ramsey%20Number%20Lower%20Bound/near/195656274" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Sam Raleigh <a href="https://leanprover-community.github.io/archive/stream/113489-new-members/topic/Diagonal.20Ramsey.20Number.20Lower.20Bound.html#195656274">(Apr 29 2020 at 03:34)</a>:</h4>
+<p>Thanks!</p>
+
+
+
+<a name="195656462"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113489-new%20members/topic/Diagonal%20Ramsey%20Number%20Lower%20Bound/near/195656462" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Bryan Gin-ge Chen <a href="https://leanprover-community.github.io/archive/stream/113489-new-members/topic/Diagonal.20Ramsey.20Number.20Lower.20Bound.html#195656462">(Apr 29 2020 at 03:38)</a>:</h4>
+<p>(OK, technically, <code>dec_trivial</code> does call a tactic... but you use it like a term.)</p>
+
+
+
 {% endraw %}
 
-<hr><p>Last updated: Apr 29 2020 at 03:04 UTC</p>
+<hr><p>Last updated: Apr 29 2020 at 04:04 UTC</p>
