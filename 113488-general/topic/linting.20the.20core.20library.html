@@ -1,0 +1,69 @@
+---
+layout: archive
+title: Zulip Chat Archive
+permalink: /stream/113488-general/topic/linting.20the.20core.20library.html
+---
+
+<h2>Stream: <a href="https://leanprover-community.github.io/archive/stream/113488-general/index.html">general</a></h2>
+<h3>Topic: <a href="https://leanprover-community.github.io/archive/stream/113488-general/topic/linting.20the.20core.20library.html">linting the core library</a></h3>
+
+<hr>
+
+<base href="https://leanprover.zulipchat.com/">
+
+<head><link href="/style.css" rel="stylesheet"></head>
+
+{% raw %}
+
+<a name="195738547"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113488-general/topic/linting%20the%20core%20library/near/195738547" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Bryan Gin-ge Chen <a href="https://leanprover-community.github.io/archive/stream/113488-general/topic/linting.20the.20core.20library.html#195738547">(Apr 29 2020 at 16:47)</a>:</h4>
+<p>This is a thread to discuss <a href="https://github.com/leanprover-community/lean/issues/200" title="https://github.com/leanprover-community/lean/issues/200">lean#200</a>, which proposes linting the core library. I think it's a good idea. Should we have some guidelines for linting PRs? Also, any ideas for a good CI setup? <span class="user-mention" data-user-id="110043">@Gabriel Ebner</span></p>
+
+
+
+<a name="195738706"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113488-general/topic/linting%20the%20core%20library/near/195738706" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Rob Lewis <a href="https://leanprover-community.github.io/archive/stream/113488-general/topic/linting.20the.20core.20library.html#195738706">(Apr 29 2020 at 16:48)</a>:</h4>
+<p>We definitely should lint core, but it's a little tricky I think. Ideally it would be part of core CI. But do we want to move the linter framework and definitions to core?</p>
+
+
+
+<a name="195738729"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113488-general/topic/linting%20the%20core%20library/near/195738729" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Rob Lewis <a href="https://leanprover-community.github.io/archive/stream/113488-general/topic/linting.20the.20core.20library.html#195738729">(Apr 29 2020 at 16:48)</a>:</h4>
+<p>I'm not sure that's a good idea.</p>
+
+
+
+<a name="195738798"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113488-general/topic/linting%20the%20core%20library/near/195738798" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Rob Lewis <a href="https://leanprover-community.github.io/archive/stream/113488-general/topic/linting.20the.20core.20library.html#195738798">(Apr 29 2020 at 16:49)</a>:</h4>
+<p>We could expand mathlib CI to also lint core, but then new errors don't show up until the version upgrade PRs to mathlib.</p>
+
+
+
+<a name="195738979"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113488-general/topic/linting%20the%20core%20library/near/195738979" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Rob Lewis <a href="https://leanprover-community.github.io/archive/stream/113488-general/topic/linting.20the.20core.20library.html#195738979">(Apr 29 2020 at 16:50)</a>:</h4>
+<p>What do you mean by guidelines for linting PRs? There's nothing of the kind in mathlib afaik, and the <a href="https://leanprover-community.github.io/mathlib_stats/nolints.png" title="https://leanprover-community.github.io/mathlib_stats/nolints.png">graph</a> shows we're doing a reasonable job of cleaning things up anyway.</p>
+<div class="message_inline_image"><a href="https://leanprover-community.github.io/mathlib_stats/nolints.png" title="graph"><img src="https://leanprover-community.github.io/mathlib_stats/nolints.png"></a></div>
+
+
+
+<a name="195739295"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113488-general/topic/linting%20the%20core%20library/near/195739295" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Bryan Gin-ge Chen <a href="https://leanprover-community.github.io/archive/stream/113488-general/topic/linting.20the.20core.20library.html#195739295">(Apr 29 2020 at 16:53)</a>:</h4>
+<p>Yeah, I guess I'm not sure what such guidelines would look like. Maybe just some suggestions on which linting errors to prioritize?</p>
+
+
+
+<a name="195739917"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113488-general/topic/linting%20the%20core%20library/near/195739917" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Rob Lewis <a href="https://leanprover-community.github.io/archive/stream/113488-general/topic/linting.20the.20core.20library.html#195739917">(Apr 29 2020 at 16:58)</a>:</h4>
+<p>I think the easy change is just making mathlib CI also lint core. It's low effort and seems uncontroversial.</p>
+
+
+
+<a name="195740007"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113488-general/topic/linting%20the%20core%20library/near/195740007" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Rob Lewis <a href="https://leanprover-community.github.io/archive/stream/113488-general/topic/linting.20the.20core.20library.html#195740007">(Apr 29 2020 at 16:59)</a>:</h4>
+<p>For graphing purposes I'd rather keep the mathlib and core nolints files separate, but that's completely an aesthetic thing...</p>
+
+
+
+{% endraw %}
+
+<hr><p>Last updated: Apr 29 2020 at 17:04 UTC</p>
