@@ -9,7 +9,8 @@ permalink: /stream/113488-general/index.html
 
 ### Topics:
 
-* [is this a pattern](topic/is.20this.20a.20pattern.html) (5 messages, latest: Apr 29 2020 at 07:01)
+* [What's new in mathlib](topic/What's.20new.20in.20mathlib.html) (56 messages, latest: Apr 29 2020 at 08:02)
+* [is this a pattern](topic/is.20this.20a.20pattern.html) (13 messages, latest: Apr 29 2020 at 07:07)
 * [Missing leanpkg](topic/Missing.20leanpkg.html) (8 messages, latest: Apr 29 2020 at 06:50)
 * [sorry does not behave like NaN](topic/sorry.20does.20not.20behave.20like.20NaN.html) (24 messages, latest: Apr 29 2020 at 06:48)
 * [Invitation to join the Codewars Lean community, Round 2](topic/Invitation.20to.20join.20the.20Codewars.20Lean.20community.2C.20Round.202.html) (149 messages, latest: Apr 29 2020 at 03:27)
@@ -326,7 +327,6 @@ permalink: /stream/113488-general/index.html
 * [olean artifacts for PRs from other repos?](topic/olean.20artifacts.20for.20PRs.20from.20other.20repos.3F.html) (5 messages, latest: Mar 04 2020 at 19:29)
 * [Missing η](topic/Missing.20.CE.B7.html) (9 messages, latest: Mar 04 2020 at 16:49)
 * [I don't understand type class search.](topic/I.20don't.20understand.20type.20class.20search.2E.html) (62 messages, latest: Mar 04 2020 at 14:14)
-* [What's new in mathlib](topic/What's.20new.20in.20mathlib.html) (52 messages, latest: Mar 04 2020 at 03:49)
 * [Independence of statement from axioms in Lean](topic/Independence.20of.20statement.20from.20axioms.20in.20Lean.html) (8 messages, latest: Mar 03 2020 at 15:29)
 * [Speeding up compilation time for Lean project](topic/Speeding.20up.20compilation.20time.20for.20Lean.20project.html) (34 messages, latest: Mar 03 2020 at 15:04)
 * [The omega tactic](topic/The.20omega.20tactic.html) (4 messages, latest: Mar 02 2020 at 20:46)
@@ -2726,4 +2726,4 @@ permalink: /stream/113488-general/index.html
 * [test](topic/test.html) (4 messages, latest: Feb 26 2018 at 16:22)
 * [welcome](topic/welcome.html) (1 message, latest: Feb 26 2018 at 16:02)
 
-<hr><p>Last updated: Apr 29 2020 at 07:03 UTC</p>
+<hr><p>Last updated: Apr 29 2020 at 08:04 UTC</p>

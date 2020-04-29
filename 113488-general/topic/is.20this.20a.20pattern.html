@@ -54,6 +54,54 @@ permalink: /stream/113488-general/topic/is.20this.20a.20pattern.html
 
 
 
+<a name="195668182"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113488-general/topic/is%20this%20a%20pattern/near/195668182" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Mario Carneiro <a href="https://leanprover-community.github.io/archive/stream/113488-general/topic/is.20this.20a.20pattern.html#195668182">(Apr 29 2020 at 07:04)</a>:</h4>
+<p>It sort of reminds me of the equiv that stratifies a type over a function</p>
+
+
+
+<a name="195668205"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113488-general/topic/is%20this%20a%20pattern/near/195668205" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Johan Commelin <a href="https://leanprover-community.github.io/archive/stream/113488-general/topic/is.20this.20a.20pattern.html#195668205">(Apr 29 2020 at 07:04)</a>:</h4>
+<p>So, use <code>stratified = univ</code> and then <code>sum_bind</code>, and afterwards I have to prove a lot of tedious proof obligations. It feels like they don't belong in the proof of Chev-Warn. But if I factor them out, I would prefer to factor them into something reusable.</p>
+
+
+
+<a name="195668210"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113488-general/topic/is%20this%20a%20pattern/near/195668210" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Mario Carneiro <a href="https://leanprover-community.github.io/archive/stream/113488-general/topic/is.20this.20a.20pattern.html#195668210">(Apr 29 2020 at 07:04)</a>:</h4>
+<p><code>equiv.sigma_preimage_equiv</code></p>
+
+
+
+<a name="195668239"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113488-general/topic/is%20this%20a%20pattern/near/195668239" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Mario Carneiro <a href="https://leanprover-community.github.io/archive/stream/113488-general/topic/is.20this.20a.20pattern.html#195668239">(Apr 29 2020 at 07:05)</a>:</h4>
+<p>In this case, the function is the ith projection</p>
+
+
+
+<a name="195668328"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113488-general/topic/is%20this%20a%20pattern/near/195668328" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Mario Carneiro <a href="https://leanprover-community.github.io/archive/stream/113488-general/topic/is.20this.20a.20pattern.html#195668328">(Apr 29 2020 at 07:06)</a>:</h4>
+<p>You could transfer the sum over that equiv, and then break up the sum over a Sigma</p>
+
+
+
+<a name="195668395"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113488-general/topic/is%20this%20a%20pattern/near/195668395" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Johan Commelin <a href="https://leanprover-community.github.io/archive/stream/113488-general/topic/is.20this.20a.20pattern.html#195668395">(Apr 29 2020 at 07:07)</a>:</h4>
+<p>Hmm, isn't it easier to do this with finsets in the same type?</p>
+
+
+
+<a name="195668421"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113488-general/topic/is%20this%20a%20pattern/near/195668421" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Johan Commelin <a href="https://leanprover-community.github.io/archive/stream/113488-general/topic/is.20this.20a.20pattern.html#195668421">(Apr 29 2020 at 07:07)</a>:</h4>
+<p>But I can try to see what happens</p>
+
+
+
+<a name="195668467"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113488-general/topic/is%20this%20a%20pattern/near/195668467" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Mario Carneiro <a href="https://leanprover-community.github.io/archive/stream/113488-general/topic/is.20this.20a.20pattern.html#195668467">(Apr 29 2020 at 07:07)</a>:</h4>
+<p>I think you will have to prove a lot of injectivity and surjectivity things with your proof</p>
+
+
+
 {% endraw %}
 
-<hr><p>Last updated: Apr 29 2020 at 07:03 UTC</p>
+<hr><p>Last updated: Apr 29 2020 at 08:04 UTC</p>

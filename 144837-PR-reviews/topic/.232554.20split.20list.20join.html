@@ -39,6 +39,36 @@ permalink: /stream/144837-PR-reviews/topic/.232554.20split.20list.20join.html
 
 
 
+<a name="195670156"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/144837-PR%20reviews/topic/%232554%20split%20list%20join/near/195670156" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Sebastien Gouezel <a href="https://leanprover-community.github.io/archive/stream/144837-PR-reviews/topic/.232554.20split.20list.20join.html#195670156">(Apr 29 2020 at 07:27)</a>:</h4>
+<p>This definition of <code>split_wrt_composition</code> in terms of <code>of_fn</code> (as opposed to an induction on the length of the composition, say) is the one I need for the application in  <a href="https://github.com/leanprover-community/mathlib/issues/2513" title="https://github.com/leanprover-community/mathlib/issues/2513">#2513</a>, where I use multilinear functions (applied to elements of <code>fin k -&gt; E</code>). In particular, starting from <a href="https://github.com/leanprover-community/mathlib/blob/3f89f37b6a4c7c7962f276107d62b6129f53bd49/src/analysis/analytic/composition.lean#L1142" title="https://github.com/leanprover-community/mathlib/blob/3f89f37b6a4c7c7962f276107d62b6129f53bd49/src/analysis/analytic/composition.lean#L1142">https://github.com/leanprover-community/mathlib/blob/3f89f37b6a4c7c7962f276107d62b6129f53bd49/src/analysis/analytic/composition.lean#L1142</a>, there is a tricky argument where I have to fight three times DTT hell, and where I fear that changing the definition would make it much harder.</p>
+
+
+
+<a name="195670456"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/144837-PR%20reviews/topic/%232554%20split%20list%20join/near/195670456" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Mario Carneiro <a href="https://leanprover-community.github.io/archive/stream/144837-PR-reviews/topic/.232554.20split.20list.20join.html#195670456">(Apr 29 2020 at 07:31)</a>:</h4>
+<p>are you using <code>split_wrt_composition</code> in that proof currently? I can try not to break whatever applications you have</p>
+
+
+
+<a name="195670487"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/144837-PR%20reviews/topic/%232554%20split%20list%20join/near/195670487" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Mario Carneiro <a href="https://leanprover-community.github.io/archive/stream/144837-PR-reviews/topic/.232554.20split.20list.20join.html#195670487">(Apr 29 2020 at 07:31)</a>:</h4>
+<p>would it suffice to have an equality to the <code>of_fn</code> definition?</p>
+
+
+
+<a name="195670744"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/144837-PR%20reviews/topic/%232554%20split%20list%20join/near/195670744" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Sebastien Gouezel <a href="https://leanprover-community.github.io/archive/stream/144837-PR-reviews/topic/.232554.20split.20list.20join.html#195670744">(Apr 29 2020 at 07:34)</a>:</h4>
+<p>Yes, I use <code>split_wrt_composition</code> to define the change of variables in the proof, so it is there everywhere in the proof. It is not obvious to me if having an equality to the <code>of_fn</code> definition would be enough, as there are many dependent stuff so I don't know if a rewrite would work or not.</p>
+
+
+
+<a name="195671345"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/144837-PR%20reviews/topic/%232554%20split%20list%20join/near/195671345" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Sebastien Gouezel <a href="https://leanprover-community.github.io/archive/stream/144837-PR-reviews/topic/.232554.20split.20list.20join.html#195671345">(Apr 29 2020 at 07:41)</a>:</h4>
+<p>In fact I am not sure that changing the definition would break the proof. If you come up with a better definition for which <code>join_split_wrt_composition</code> becomes straightforward, can you give a gist containing it here on Zulip, and then I will check if it creates problems down the road.</p>
+
+
+
 {% endraw %}
 
-<hr><p>Last updated: Apr 29 2020 at 07:03 UTC</p>
+<hr><p>Last updated: Apr 29 2020 at 08:04 UTC</p>
