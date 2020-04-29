@@ -1250,6 +1250,119 @@ or<br>
 
 
 
+<a name="195650858"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113489-new%20members/topic/Diagonal%20Ramsey%20Number%20Lower%20Bound/near/195650858" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Sam Raleigh <a href="https://leanprover-community.github.io/archive/stream/113489-new-members/topic/Diagonal.20Ramsey.20Number.20Lower.20Bound.html#195650858">(Apr 29 2020 at 01:45)</a>:</h4>
+<div class="codehilite"><pre><span></span><code><span class="kn">lemma</span> <span class="n">core_ineq</span>
+  <span class="o">{</span><span class="n">a</span> <span class="n">b</span> <span class="n">c</span> <span class="o">:</span> <span class="bp">ℕ</span><span class="o">}</span>
+  <span class="o">(</span><span class="n">h</span> <span class="o">:</span> <span class="o">((</span><span class="mi">2</span> <span class="o">:</span> <span class="n">ℚ</span><span class="o">)</span><span class="bp">^</span><span class="o">(</span><span class="mi">1</span> <span class="bp">-</span> <span class="n">b</span> <span class="o">:</span> <span class="bp">ℤ</span><span class="o">)</span> <span class="bp">*</span> <span class="n">c</span> <span class="o">:</span> <span class="n">ℚ</span><span class="o">)</span> <span class="bp">&lt;</span> <span class="mi">1</span><span class="o">)</span> <span class="o">:</span>
+  <span class="o">((</span><span class="mi">2</span> <span class="o">:</span> <span class="n">ℚ</span><span class="o">)</span><span class="bp">^</span><span class="o">(</span><span class="n">a</span> <span class="bp">-</span> <span class="n">b</span> <span class="o">:</span> <span class="bp">ℤ</span><span class="o">)</span> <span class="bp">*</span> <span class="mi">2</span> <span class="bp">*</span> <span class="n">c</span> <span class="o">:</span> <span class="n">ℚ</span><span class="o">)</span> <span class="bp">&lt;</span> <span class="o">(</span><span class="mi">2</span><span class="o">:</span><span class="n">ℚ</span><span class="o">)</span><span class="bp">^</span><span class="o">(</span><span class="n">a</span> <span class="o">:</span> <span class="bp">ℤ</span><span class="o">)</span> <span class="o">:=</span>
+<span class="k">begin</span>
+  <span class="n">rw</span> <span class="bp">@</span><span class="n">fpow_sub</span> <span class="n">ℚ</span> <span class="bp">_</span> <span class="bp">_</span> <span class="n">two_ne_zero</span> <span class="mi">1</span> <span class="n">b</span> <span class="n">at</span> <span class="n">h</span><span class="o">,</span>
+  <span class="n">rw</span> <span class="n">pow_one</span> <span class="o">(</span><span class="mi">2</span> <span class="o">:</span> <span class="n">ℚ</span><span class="o">)</span> <span class="n">at</span> <span class="n">h</span><span class="o">,</span>
+</code></pre></div>
+
+
+<p>How do I make rw recognize the instance of the target pattern <code>(2:\Q)^1</code> in <code>h</code>? Is rw failing to do so because I've coerced <code>1</code> to <code>\Z</code>, but the <code>1</code> in <code>pow_one</code> is of type <code>\nat</code>?</p>
+
+
+
+<a name="195651012"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113489-new%20members/topic/Diagonal%20Ramsey%20Number%20Lower%20Bound/near/195651012" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Reid Barton <a href="https://leanprover-community.github.io/archive/stream/113489-new-members/topic/Diagonal.20Ramsey.20Number.20Lower.20Bound.html#195651012">(Apr 29 2020 at 01:47)</a>:</h4>
+<p>Please include imports</p>
+
+
+
+<a name="195651093"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113489-new%20members/topic/Diagonal%20Ramsey%20Number%20Lower%20Bound/near/195651093" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Kenny Lau <a href="https://leanprover-community.github.io/archive/stream/113489-new-members/topic/Diagonal.20Ramsey.20Number.20Lower.20Bound.html#195651093">(Apr 29 2020 at 01:48)</a>:</h4>
+<p>the solution is <code>rw fpow_one at h,</code></p>
+
+
+
+<a name="195651110"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113489-new%20members/topic/Diagonal%20Ramsey%20Number%20Lower%20Bound/near/195651110" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Kenny Lau <a href="https://leanprover-community.github.io/archive/stream/113489-new-members/topic/Diagonal.20Ramsey.20Number.20Lower.20Bound.html#195651110">(Apr 29 2020 at 01:49)</a>:</h4>
+<p>also all those <code>(2:\Q)</code> are redundant</p>
+
+
+
+<a name="195651294"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113489-new%20members/topic/Diagonal%20Ramsey%20Number%20Lower%20Bound/near/195651294" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Sam Raleigh <a href="https://leanprover-community.github.io/archive/stream/113489-new-members/topic/Diagonal.20Ramsey.20Number.20Lower.20Bound.html#195651294">(Apr 29 2020 at 01:52)</a>:</h4>
+<p>The imports:</p>
+<div class="codehilite"><pre><span></span><code><span class="kn">import</span> <span class="n">data</span><span class="bp">.</span><span class="n">nat</span><span class="bp">.</span><span class="n">basic</span>
+<span class="kn">import</span> <span class="n">data</span><span class="bp">.</span><span class="n">int</span><span class="bp">.</span><span class="n">basic</span>
+<span class="kn">import</span> <span class="n">data</span><span class="bp">.</span><span class="n">rat</span><span class="bp">.</span><span class="n">basic</span>
+
+<span class="kn">import</span> <span class="n">algebra</span><span class="bp">.</span><span class="n">field_power</span>
+
+<span class="kn">import</span> <span class="n">tactic</span>
+
+<span class="kn">import</span> <span class="n">data</span><span class="bp">.</span><span class="n">finset</span>
+<span class="kn">import</span> <span class="n">algebra</span><span class="bp">.</span><span class="n">big_operators</span>
+<span class="kn">import</span> <span class="n">data</span><span class="bp">.</span><span class="n">real</span><span class="bp">.</span><span class="n">basic</span>
+<span class="kn">import</span> <span class="n">data</span><span class="bp">.</span><span class="n">set</span><span class="bp">.</span><span class="n">lattice</span>
+</code></pre></div>
+
+
+
+<a name="195651301"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113489-new%20members/topic/Diagonal%20Ramsey%20Number%20Lower%20Bound/near/195651301" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Kenny Lau <a href="https://leanprover-community.github.io/archive/stream/113489-new-members/topic/Diagonal.20Ramsey.20Number.20Lower.20Bound.html#195651301">(Apr 29 2020 at 01:52)</a>:</h4>
+<div class="codehilite"><pre><span></span><code><span class="kn">import</span> <span class="n">tactic</span> <span class="n">algebra</span><span class="bp">.</span><span class="n">field_power</span> <span class="n">data</span><span class="bp">.</span><span class="n">rat</span><span class="bp">.</span><span class="n">basic</span>
+
+<span class="kn">lemma</span> <span class="n">core_ineq</span> <span class="o">{</span><span class="n">a</span> <span class="n">b</span> <span class="n">c</span> <span class="o">:</span> <span class="bp">ℕ</span><span class="o">}</span>
+  <span class="o">(</span><span class="n">h</span> <span class="o">:</span> <span class="o">(</span><span class="mi">2</span> <span class="bp">^</span> <span class="o">(</span><span class="mi">1</span> <span class="bp">-</span> <span class="n">b</span> <span class="o">:</span> <span class="bp">ℤ</span><span class="o">)</span> <span class="bp">*</span> <span class="n">c</span> <span class="o">:</span> <span class="n">ℚ</span><span class="o">)</span> <span class="bp">&lt;</span> <span class="mi">1</span><span class="o">)</span> <span class="o">:</span>
+  <span class="o">(</span><span class="mi">2</span> <span class="bp">^</span> <span class="o">(</span><span class="n">a</span> <span class="bp">-</span> <span class="n">b</span> <span class="o">:</span> <span class="bp">ℤ</span><span class="o">)</span> <span class="bp">*</span> <span class="mi">2</span> <span class="bp">*</span> <span class="n">c</span> <span class="o">:</span> <span class="n">ℚ</span><span class="o">)</span> <span class="bp">&lt;</span> <span class="mi">2</span> <span class="bp">^</span> <span class="o">(</span><span class="n">a</span> <span class="o">:</span> <span class="bp">ℤ</span><span class="o">)</span> <span class="o">:=</span>
+<span class="k">begin</span>
+  <span class="n">convert</span> <span class="n">mul_lt_mul_of_pos_left</span> <span class="n">h</span> <span class="o">(</span><span class="n">fpow_pos_of_pos</span> <span class="n">two_pos</span> <span class="n">a</span><span class="o">)</span> <span class="kn">using</span> <span class="mi">1</span><span class="o">,</span>
+  <span class="o">{</span> <span class="k">have</span> <span class="o">:</span> <span class="o">(</span><span class="mi">2</span> <span class="o">:</span> <span class="n">ℚ</span><span class="o">)</span> <span class="bp">≠</span> <span class="mi">0</span> <span class="o">:=</span> <span class="n">dec_trivial</span><span class="o">,</span>
+    <span class="n">rw</span> <span class="o">[</span><span class="n">fpow_sub</span> <span class="n">this</span><span class="o">,</span> <span class="n">fpow_sub</span> <span class="n">this</span><span class="o">,</span> <span class="n">fpow_one</span><span class="o">,</span> <span class="n">div_eq_mul_inv</span><span class="o">,</span> <span class="n">div_eq_mul_inv</span><span class="o">],</span>
+    <span class="n">simp</span> <span class="n">only</span> <span class="o">[</span><span class="n">mul_assoc</span><span class="o">,</span> <span class="n">mul_comm</span><span class="o">,</span> <span class="n">mul_left_comm</span><span class="o">]</span> <span class="o">},</span>
+  <span class="o">{</span> <span class="n">rw</span> <span class="n">mul_one</span> <span class="o">}</span>
+<span class="kn">end</span>
+</code></pre></div>
+
+
+
+<a name="195651466"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113489-new%20members/topic/Diagonal%20Ramsey%20Number%20Lower%20Bound/near/195651466" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Sam Raleigh <a href="https://leanprover-community.github.io/archive/stream/113489-new-members/topic/Diagonal.20Ramsey.20Number.20Lower.20Bound.html#195651466">(Apr 29 2020 at 01:55)</a>:</h4>
+<p>Thanks kenny, but I wasn't asking for the full proof. I want to do it myself (as ugly as that might turn out to be).</p>
+
+
+
+<a name="195651479"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113489-new%20members/topic/Diagonal%20Ramsey%20Number%20Lower%20Bound/near/195651479" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Sam Raleigh <a href="https://leanprover-community.github.io/archive/stream/113489-new-members/topic/Diagonal.20Ramsey.20Number.20Lower.20Bound.html#195651479">(Apr 29 2020 at 01:55)</a>:</h4>
+<p>Still valuable as an answer key though!</p>
+
+
+
+<a name="195651642"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113489-new%20members/topic/Diagonal%20Ramsey%20Number%20Lower%20Bound/near/195651642" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Sam Raleigh <a href="https://leanprover-community.github.io/archive/stream/113489-new-members/topic/Diagonal.20Ramsey.20Number.20Lower.20Bound.html#195651642">(Apr 29 2020 at 01:57)</a>:</h4>
+<p>I am curious as to what <code>this</code> means though</p>
+
+
+
+<a name="195651697"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113489-new%20members/topic/Diagonal%20Ramsey%20Number%20Lower%20Bound/near/195651697" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Kenny Lau <a href="https://leanprover-community.github.io/archive/stream/113489-new-members/topic/Diagonal.20Ramsey.20Number.20Lower.20Bound.html#195651697">(Apr 29 2020 at 01:58)</a>:</h4>
+<p>if you look at the tactic state you will see <code>this : 2 \ne 0</code></p>
+
+
+
+<a name="195651713"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113489-new%20members/topic/Diagonal%20Ramsey%20Number%20Lower%20Bound/near/195651713" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Kenny Lau <a href="https://leanprover-community.github.io/archive/stream/113489-new-members/topic/Diagonal.20Ramsey.20Number.20Lower.20Bound.html#195651713">(Apr 29 2020 at 01:58)</a>:</h4>
+<p>which is because I didn't specify a name for the lemma</p>
+
+
+
+<a name="195651719"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113489-new%20members/topic/Diagonal%20Ramsey%20Number%20Lower%20Bound/near/195651719" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Sam Raleigh <a href="https://leanprover-community.github.io/archive/stream/113489-new-members/topic/Diagonal.20Ramsey.20Number.20Lower.20Bound.html#195651719">(Apr 29 2020 at 01:59)</a>:</h4>
+<p>oh so it's just a default name</p>
+
+
+
+<a name="195651733"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113489-new%20members/topic/Diagonal%20Ramsey%20Number%20Lower%20Bound/near/195651733" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Sam Raleigh <a href="https://leanprover-community.github.io/archive/stream/113489-new-members/topic/Diagonal.20Ramsey.20Number.20Lower.20Bound.html#195651733">(Apr 29 2020 at 01:59)</a>:</h4>
+<p>got it, thanks!</p>
+
+
+
 {% endraw %}
 
-<hr><p>Last updated: Apr 29 2020 at 01:07 UTC</p>
+<hr><p>Last updated: Apr 29 2020 at 02:08 UTC</p>
