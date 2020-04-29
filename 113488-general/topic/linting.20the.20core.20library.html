@@ -116,6 +116,23 @@ permalink: /stream/113488-general/topic/linting.20the.20core.20library.html
 
 
 
+<a name="195755907"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113488-general/topic/linting%20the%20core%20library/near/195755907" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Gabriel Ebner <a href="https://leanprover-community.github.io/archive/stream/113488-general/topic/linting.20the.20core.20library.html#195755907">(Apr 29 2020 at 19:07)</a>:</h4>
+<p><span class="user-mention silent" data-user-id="110596">Rob Lewis</span> <a href="#narrow/stream/113488-general/topic/linting.20the.20core.20library/near/195754133" title="#narrow/stream/113488-general/topic/linting.20the.20core.20library/near/195754133">said</a>:</p>
+<blockquote>
+<p>Question: is it possible that changes to mathlib will cause linter failures in core?</p>
+</blockquote>
+<p>Yes.  That's precisely why I'd like the linter to be run in mathlib.  One concrete example: if you write a simp lemma that is already a simp lemma in core, then the duplicate lemma in core will get an linting error.  This kind of error is easy to fix, namely in mathlib.<br>
+As a general policy I would suggest that it is OK to add declarations to <code>nolints.txt</code> as long as you open a PR to fix it in core.</p>
+
+
+
+<a name="195759009"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113488-general/topic/linting%20the%20core%20library/near/195759009" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Rob Lewis <a href="https://leanprover-community.github.io/archive/stream/113488-general/topic/linting.20the.20core.20library.html#195759009">(Apr 29 2020 at 19:30)</a>:</h4>
+<p>I dunno, it doesn't really feel ergonomic. For one, it's best if people can ignore the <code>nolints</code> files completely just like they can ignore the rest of the CI stuff. It's confusing to tell people that the way to fix their PR is to edit some "read-only" file and make another PR to a different repo, no?</p>
+
+
+
 {% endraw %}
 
-<hr><p>Last updated: Apr 29 2020 at 19:04 UTC</p>
+<hr><p>Last updated: Apr 29 2020 at 20:04 UTC</p>
