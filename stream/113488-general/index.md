@@ -9,10 +9,11 @@ permalink: /stream/113488-general/index.html
 
 ### Topics:
 
-* [sorry does not behave like NaN](topic/sorry.20does.20not.20behave.20like.20NaN.html) (26 messages, latest: Apr 29 2020 at 09:57)
+* [ring_aut coerce to function](topic/ring_aut.20coerce.20to.20function.html) (12 messages, latest: Apr 29 2020 at 11:06)
+* [is this a pattern](topic/is.20this.20a.20pattern.html) (14 messages, latest: Apr 29 2020 at 10:16)
+* [sorry does not behave like NaN](topic/sorry.20does.20not.20behave.20like.20NaN.html) (29 messages, latest: Apr 29 2020 at 10:10)
 * [Missing leanpkg](topic/Missing.20leanpkg.html) (12 messages, latest: Apr 29 2020 at 08:50)
 * [What's new in mathlib](topic/What's.20new.20in.20mathlib.html) (56 messages, latest: Apr 29 2020 at 08:02)
-* [is this a pattern](topic/is.20this.20a.20pattern.html) (13 messages, latest: Apr 29 2020 at 07:07)
 * [Invitation to join the Codewars Lean community, Round 2](topic/Invitation.20to.20join.20the.20Codewars.20Lean.20community.2C.20Round.202.html) (149 messages, latest: Apr 29 2020 at 03:27)
 * [Making Libraries and Packages](topic/Making.20Libraries.20and.20Packages.html) (6 messages, latest: Apr 29 2020 at 01:11)
 * [VSCode](topic/VSCode.html) (3 messages, latest: Apr 29 2020 at 00:49)
@@ -2726,4 +2727,4 @@ permalink: /stream/113488-general/index.html
 * [test](topic/test.html) (4 messages, latest: Feb 26 2018 at 16:22)
 * [welcome](topic/welcome.html) (1 message, latest: Feb 26 2018 at 16:02)
 
-<hr><p>Last updated: Apr 29 2020 at 10:04 UTC</p>
+<hr><p>Last updated: Apr 29 2020 at 11:06 UTC</p>

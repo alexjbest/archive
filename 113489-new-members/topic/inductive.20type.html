@@ -1,0 +1,42 @@
+---
+layout: archive
+title: Zulip Chat Archive
+permalink: /stream/113489-new-members/topic/inductive.20type.html
+---
+
+<h2>Stream: <a href="https://leanprover-community.github.io/archive/stream/113489-new-members/index.html">new members</a></h2>
+<h3>Topic: <a href="https://leanprover-community.github.io/archive/stream/113489-new-members/topic/inductive.20type.html">inductive type</a></h3>
+
+<hr>
+
+<base href="https://leanprover.zulipchat.com/">
+
+<head><link href="/style.css" rel="stylesheet"></head>
+
+{% raw %}
+
+<a name="195689594"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113489-new%20members/topic/inductive%20type/near/195689594" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> jachym simon <a href="https://leanprover-community.github.io/archive/stream/113489-new-members/topic/inductive.20type.html#195689594">(Apr 29 2020 at 10:40)</a>:</h4>
+<p>Hi! <br>
+I am doing some stuff with mathematical logic in Lean and i would like to ask you the following. <br>
+I have defined logic formulas as an inductive type with implication and negation (logic atoms are represented by natural numbers) the following way. </p>
+<div class="codehilite"><pre><span></span><code>  <span class="kn">inductive</span> <span class="n">Form</span> <span class="o">:</span> <span class="kt">Type</span>
+  <span class="bp">|</span> <span class="n">p</span> <span class="o">:</span> <span class="bp">ℕ</span> <span class="bp">→</span> <span class="n">Form</span>
+  <span class="bp">|</span> <span class="n">imp</span> <span class="o">:</span> <span class="n">Form</span> <span class="bp">→</span> <span class="n">Form</span> <span class="bp">→</span> <span class="n">Form</span>
+  <span class="bp">|</span> <span class="n">neg</span> <span class="o">:</span> <span class="n">Form</span> <span class="bp">→</span> <span class="n">Form</span>
+</code></pre></div>
+
+
+<p>I would like to somehow express the fact, that some formula B is a sub-formula of some other formula A.  That means, that either A = B or that somewhere during the process of creating formula A with the inductive rules, the formula B  is used (either in implication or negation (or even as a logical atom) ). Is there some way to express that? Cheers, Jachym</p>
+
+
+
+<a name="195689656"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113489-new%20members/topic/inductive%20type/near/195689656" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Patrick Massot <a href="https://leanprover-community.github.io/archive/stream/113489-new-members/topic/inductive.20type.html#195689656">(Apr 29 2020 at 10:41)</a>:</h4>
+<p>This could be an inductively defined Prop</p>
+
+
+
+{% endraw %}
+
+<hr><p>Last updated: Apr 29 2020 at 11:06 UTC</p>

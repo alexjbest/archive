@@ -175,6 +175,27 @@ permalink: /stream/113488-general/topic/sorry.20does.20not.20behave.20like.20NaN
 
 
 
+<a name="195686522"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113488-general/topic/sorry%20does%20not%20behave%20like%20NaN/near/195686522" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Mario Carneiro <a href="https://leanprover-community.github.io/archive/stream/113488-general/topic/sorry.20does.20not.20behave.20like.20NaN.html#195686522">(Apr 29 2020 at 10:06)</a>:</h4>
+<p>When you write <code>def smooth (f : real -&gt; real) : Prop := sorry</code>, <code>sorry</code> is basically like <code>choice Prop</code>. So in particular it does not depend on <code>f</code>, and so this function, whatever it is, is a constant function.</p>
+
+
+
+<a name="195686953"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113488-general/topic/sorry%20does%20not%20behave%20like%20NaN/near/195686953" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Kenny Lau <a href="https://leanprover-community.github.io/archive/stream/113488-general/topic/sorry.20does.20not.20behave.20like.20NaN.html#195686953">(Apr 29 2020 at 10:10)</a>:</h4>
+<div class="codehilite"><pre><span></span><code><span class="n">def</span> <span class="n">smooth</span> <span class="o">(</span><span class="n">f</span> <span class="o">:</span> <span class="bp">ℕ</span> <span class="bp">→</span> <span class="bp">ℕ</span><span class="o">)</span> <span class="o">:</span> <span class="kt">Prop</span> <span class="o">:=</span> <span class="n">sorry</span>
+<span class="kn">lemma</span> <span class="n">smooth_constant</span> <span class="o">(</span><span class="n">n</span><span class="o">)</span> <span class="o">:</span> <span class="n">smooth</span> <span class="o">(</span><span class="bp">λ</span> <span class="bp">_</span><span class="o">,</span> <span class="n">n</span><span class="o">)</span> <span class="o">:=</span> <span class="n">sorry</span>
+<span class="kn">lemma</span> <span class="n">smooth_all</span> <span class="o">(</span><span class="n">f</span><span class="o">)</span> <span class="o">:</span> <span class="n">smooth</span> <span class="n">f</span> <span class="o">:=</span> <span class="n">smooth_constant</span> <span class="mi">0</span>
+</code></pre></div>
+
+
+
+<a name="195686955"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113488-general/topic/sorry%20does%20not%20behave%20like%20NaN/near/195686955" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Kenny Lau <a href="https://leanprover-community.github.io/archive/stream/113488-general/topic/sorry.20does.20not.20behave.20like.20NaN.html#195686955">(Apr 29 2020 at 10:10)</a>:</h4>
+<p>wow</p>
+
+
+
 {% endraw %}
 
-<hr><p>Last updated: Apr 29 2020 at 10:04 UTC</p>
+<hr><p>Last updated: Apr 29 2020 at 11:06 UTC</p>

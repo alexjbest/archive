@@ -9,6 +9,7 @@ permalink: /stream/113489-new-members/index.html
 
 ### Topics:
 
+* [inductive type](topic/inductive.20type.html) (2 messages, latest: Apr 29 2020 at 10:41)
 * [showing injectivity](topic/showing.20injectivity.html) (253 messages, latest: Apr 29 2020 at 10:03)
 * [noob question(s)](topic/noob.20question(s).html) (5292 messages, latest: Apr 29 2020 at 08:02)
 * [Finsets and fintypes](topic/Finsets.20and.20fintypes.html) (2 messages, latest: Apr 29 2020 at 04:30)
@@ -988,4 +989,4 @@ permalink: /stream/113489-new-members/index.html
 * [Andrew Ashworth](topic/Andrew.20Ashworth.html) (15 messages, latest: Feb 26 2018 at 16:21)
 * [onboarding](topic/onboarding.html) (1 message, latest: Feb 26 2018 at 16:02)
 
-<hr><p>Last updated: Apr 29 2020 at 10:04 UTC</p>
+<hr><p>Last updated: Apr 29 2020 at 11:06 UTC</p>
