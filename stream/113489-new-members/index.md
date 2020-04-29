@@ -9,11 +9,11 @@ permalink: /stream/113489-new-members/index.html
 
 ### Topics:
 
+* [noob question(s)](topic/noob.20question(s).html) (5302 messages, latest: Apr 29 2020 at 13:06)
+* [Diagonal Ramsey Number Lower Bound](topic/Diagonal.20Ramsey.20Number.20Lower.20Bound.html) (211 messages, latest: Apr 29 2020 at 12:46)
 * [inductive type](topic/inductive.20type.html) (2 messages, latest: Apr 29 2020 at 10:41)
 * [showing injectivity](topic/showing.20injectivity.html) (253 messages, latest: Apr 29 2020 at 10:03)
-* [noob question(s)](topic/noob.20question(s).html) (5292 messages, latest: Apr 29 2020 at 08:02)
 * [Finsets and fintypes](topic/Finsets.20and.20fintypes.html) (2 messages, latest: Apr 29 2020 at 04:30)
-* [Diagonal Ramsey Number Lower Bound](topic/Diagonal.20Ramsey.20Number.20Lower.20Bound.html) (209 messages, latest: Apr 29 2020 at 03:38)
 * [Some olympiad formalisations](topic/Some.20olympiad.20formalisations.html) (38 messages, latest: Apr 29 2020 at 00:21)
 * [Recursor](topic/Recursor.html) (18 messages, latest: Apr 29 2020 at 00:12)
 * [rw with inductive types](topic/rw.20with.20inductive.20types.html) (3 messages, latest: Apr 28 2020 at 22:05)
@@ -989,4 +989,4 @@ permalink: /stream/113489-new-members/index.html
 * [Andrew Ashworth](topic/Andrew.20Ashworth.html) (15 messages, latest: Feb 26 2018 at 16:21)
 * [onboarding](topic/onboarding.html) (1 message, latest: Feb 26 2018 at 16:02)
 
-<hr><p>Last updated: Apr 29 2020 at 12:05 UTC</p>
+<hr><p>Last updated: Apr 29 2020 at 13:09 UTC</p>

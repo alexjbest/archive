@@ -9,8 +9,8 @@ permalink: /stream/116395-maths/index.html
 
 ### Topics:
 
+* [\[finite_dimensional\]](topic/.5Bfinite_dimensional.5D.html) (5 messages, latest: Apr 29 2020 at 12:42)
 * [category/](topic/category.2F.html) (9 messages, latest: Apr 29 2020 at 12:04)
-* [\[finite_dimensional\]](topic/.5Bfinite_dimensional.5D.html) (3 messages, latest: Apr 29 2020 at 11:27)
 * [I love coersion :)](topic/I.20love.20coersion.20.3A).html) (5 messages, latest: Apr 28 2020 at 23:32)
 * [ring localization](topic/ring.20localization.html) (3 messages, latest: Apr 27 2020 at 18:37)
 * [DVRs](topic/DVRs.html) (62 messages, latest: Apr 27 2020 at 07:45)
@@ -877,4 +877,4 @@ permalink: /stream/116395-maths/index.html
 * [free group](topic/free.20group.html) (92 messages, latest: Apr 02 2018 at 05:00)
 * [Easy topological space question](topic/Easy.20topological.20space.20question.html) (18 messages, latest: Apr 02 2018 at 01:23)
 
-<hr><p>Last updated: Apr 29 2020 at 12:05 UTC</p>
+<hr><p>Last updated: Apr 29 2020 at 13:09 UTC</p>
