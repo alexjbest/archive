@@ -9,8 +9,8 @@ permalink: /stream/116395-maths/index.html
 
 ### Topics:
 
+* [category/](topic/category.2F.html) (2 messages, latest: Apr 29 2020 at 02:08)
 * [I love coersion :)](topic/I.20love.20coersion.20.3A).html) (5 messages, latest: Apr 28 2020 at 23:32)
-* [category/](topic/category.2F.html) (1 message, latest: Apr 28 2020 at 23:09)
 * [ring localization](topic/ring.20localization.html) (3 messages, latest: Apr 27 2020 at 18:37)
 * [DVRs](topic/DVRs.html) (62 messages, latest: Apr 27 2020 at 07:45)
 * [submodule map](topic/submodule.20map.html) (6 messages, latest: Apr 26 2020 at 16:22)
@@ -876,4 +876,4 @@ permalink: /stream/116395-maths/index.html
 * [free group](topic/free.20group.html) (92 messages, latest: Apr 02 2018 at 05:00)
 * [Easy topological space question](topic/Easy.20topological.20space.20question.html) (18 messages, latest: Apr 02 2018 at 01:23)
 
-<hr><p>Last updated: Apr 29 2020 at 02:08 UTC</p>
+<hr><p>Last updated: Apr 29 2020 at 03:04 UTC</p>

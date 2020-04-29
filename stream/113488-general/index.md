@@ -9,8 +9,8 @@ permalink: /stream/113488-general/index.html
 
 ### Topics:
 
-* [Invitation to join the Codewars Lean community, Round 2](topic/Invitation.20to.20join.20the.20Codewars.20Lean.20community.2C.20Round.202.html) (147 messages, latest: Apr 29 2020 at 02:06)
-* [Missing leanpkg](topic/Missing.20leanpkg.html) (4 messages, latest: Apr 29 2020 at 01:19)
+* [Missing leanpkg](topic/Missing.20leanpkg.html) (5 messages, latest: Apr 29 2020 at 02:49)
+* [Invitation to join the Codewars Lean community, Round 2](topic/Invitation.20to.20join.20the.20Codewars.20Lean.20community.2C.20Round.202.html) (148 messages, latest: Apr 29 2020 at 02:46)
 * [Making Libraries and Packages](topic/Making.20Libraries.20and.20Packages.html) (6 messages, latest: Apr 29 2020 at 01:11)
 * [VSCode](topic/VSCode.html) (3 messages, latest: Apr 29 2020 at 00:49)
 * [type ascription style](topic/type.20ascription.20style.html) (6 messages, latest: Apr 28 2020 at 22:53)
@@ -2724,4 +2724,4 @@ permalink: /stream/113488-general/index.html
 * [test](topic/test.html) (4 messages, latest: Feb 26 2018 at 16:22)
 * [welcome](topic/welcome.html) (1 message, latest: Feb 26 2018 at 16:02)
 
-<hr><p>Last updated: Apr 29 2020 at 02:08 UTC</p>
+<hr><p>Last updated: Apr 29 2020 at 03:04 UTC</p>

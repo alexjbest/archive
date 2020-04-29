@@ -1363,6 +1363,33 @@ or<br>
 
 
 
+<a name="195654836"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113489-new%20members/topic/Diagonal%20Ramsey%20Number%20Lower%20Bound/near/195654836" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Sam Raleigh <a href="https://leanprover-community.github.io/archive/stream/113489-new-members/topic/Diagonal.20Ramsey.20Number.20Lower.20Bound.html#195654836">(Apr 29 2020 at 03:01)</a>:</h4>
+<p>If my context looks like:</p>
+<div class="codehilite"><pre><span></span><code><span class="mi">1</span> <span class="n">goal</span>
+<span class="n">a</span> <span class="n">b</span> <span class="n">c</span> <span class="o">:</span> <span class="bp">ℕ</span><span class="o">,</span>
+<span class="n">h</span> <span class="o">:</span> <span class="mi">2</span> <span class="bp">/</span> <span class="mi">2</span> <span class="bp">^</span> <span class="err">↑</span><span class="n">b</span> <span class="bp">*</span> <span class="err">↑</span><span class="n">c</span> <span class="bp">&lt;</span> <span class="mi">1</span>
+<span class="err">⊢</span> <span class="mi">2</span> <span class="bp">^</span> <span class="err">↑</span><span class="n">a</span> <span class="bp">≠</span> <span class="mi">0</span>
+</code></pre></div>
+
+
+<p>How would I go about closing the goal using <code>nat.fpow_ne_zero_of_pos</code>? The online documentation says that the parameters for <code>nat.fpow_ne_zero_of_pos</code> are <code>(h : 0 &lt; p) (n : ℤ)</code>, but this seems to be inconsistent with what lean expects:</p>
+<p><code>fpow_ne_zero_of_pos : 0 &lt; ?M_3 → ∀ (n : ℤ), ↑?M_3 ^ n ≠ 0</code></p>
+
+
+
+<a name="195654919"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113489-new%20members/topic/Diagonal%20Ramsey%20Number%20Lower%20Bound/near/195654919" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Sam Raleigh <a href="https://leanprover-community.github.io/archive/stream/113489-new-members/topic/Diagonal.20Ramsey.20Number.20Lower.20Bound.html#195654919">(Apr 29 2020 at 03:02)</a>:</h4>
+<p>I want a theorem for which I can specify the exponent, not receive statement prefaced by a universal quantifier.</p>
+
+
+
+<a name="195655030"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113489-new%20members/topic/Diagonal%20Ramsey%20Number%20Lower%20Bound/near/195655030" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Kenny Lau <a href="https://leanprover-community.github.io/archive/stream/113489-new-members/topic/Diagonal.20Ramsey.20Number.20Lower.20Bound.html#195655030">(Apr 29 2020 at 03:04)</a>:</h4>
+<p>(that's the same thing)</p>
+
+
+
 {% endraw %}
 
-<hr><p>Last updated: Apr 29 2020 at 02:08 UTC</p>
+<hr><p>Last updated: Apr 29 2020 at 03:04 UTC</p>
