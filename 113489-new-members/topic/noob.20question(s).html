@@ -37093,6 +37093,210 @@ that being said I've been having a lot of fun with this</p>
 
 
 
+<a name="195640894"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113489-new%20members/topic/noob%20question%28s%29/near/195640894" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Adeeb K <a href="https://leanprover-community.github.io/archive/stream/113489-new-members/topic/noob.20question(s).html#195640894">(Apr 28 2020 at 23:15)</a>:</h4>
+<p>Question: I have equality between dependent pairs <code>&lt;x.fst, _&gt; = &lt;y.fst - 1, _&gt;</code> and an inequality <code>k - 1 &lt; y.fst - 1</code>.  How would I be able to rewrite the inequality as <code>k - 1 &lt; x.fst</code>?  The <code>change</code> tactic is saying a simple match fails.</p>
+
+
+
+<a name="195641036"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113489-new%20members/topic/noob%20question%28s%29/near/195641036" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Adeeb K <a href="https://leanprover-community.github.io/archive/stream/113489-new-members/topic/noob.20question(s).html#195641036">(Apr 28 2020 at 23:18)</a>:</h4>
+<p>Would the extensionality theorem <code>ext_iff</code>work here?</p>
+
+
+
+<a name="195641135"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113489-new%20members/topic/noob%20question%28s%29/near/195641135" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Adeeb K <a href="https://leanprover-community.github.io/archive/stream/113489-new-members/topic/noob.20question(s).html#195641135">(Apr 28 2020 at 23:19)</a>:</h4>
+<p>update - it didn't work</p>
+
+
+
+<a name="195641248"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113489-new%20members/topic/noob%20question%28s%29/near/195641248" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Adeeb K <a href="https://leanprover-community.github.io/archive/stream/113489-new-members/topic/noob.20question(s).html#195641248">(Apr 28 2020 at 23:20)</a>:</h4>
+<p>I used extensionality to say <code> &lt;x.fst, _&gt;.fst = &lt;y.fst - 1, _&gt;.fst</code>, but then <code>change k - 1 &lt; x.fst</code> failed.</p>
+
+
+
+<a name="195641435"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113489-new%20members/topic/noob%20question%28s%29/near/195641435" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Reid Barton <a href="https://leanprover-community.github.io/archive/stream/113489-new-members/topic/noob.20question(s).html#195641435">(Apr 28 2020 at 23:23)</a>:</h4>
+<p><code>change</code> only works with things that are definitionally equal.</p>
+
+
+
+<a name="195641504"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113489-new%20members/topic/noob%20question%28s%29/near/195641504" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Adeeb K <a href="https://leanprover-community.github.io/archive/stream/113489-new-members/topic/noob.20question(s).html#195641504">(Apr 28 2020 at 23:24)</a>:</h4>
+<p>ah, would there be another tactic for propositional equality?</p>
+
+
+
+<a name="195641620"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113489-new%20members/topic/noob%20question%28s%29/near/195641620" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Reid Barton <a href="https://leanprover-community.github.io/archive/stream/113489-new-members/topic/noob.20question(s).html#195641620">(Apr 28 2020 at 23:26)</a>:</h4>
+<p>You already know how to rewrite things.</p>
+
+
+
+<a name="195641770"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113489-new%20members/topic/noob%20question%28s%29/near/195641770" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Adeeb K <a href="https://leanprover-community.github.io/archive/stream/113489-new-members/topic/noob.20question(s).html#195641770">(Apr 28 2020 at 23:28)</a>:</h4>
+<p>I see</p>
+
+
+
+<a name="195641779"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113489-new%20members/topic/noob%20question%28s%29/near/195641779" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Adeeb K <a href="https://leanprover-community.github.io/archive/stream/113489-new-members/topic/noob.20question(s).html#195641779">(Apr 28 2020 at 23:28)</a>:</h4>
+<p>that being said, I still got an error:</p>
+<div class="codehilite"><pre><span></span><code><span class="n">rewrite</span> <span class="n">tactic</span> <span class="n">failed</span><span class="o">,</span> <span class="n">did</span> <span class="n">not</span> <span class="n">find</span> <span class="kn">instance</span> <span class="n">of</span> <span class="n">the</span> <span class="n">pattern</span> <span class="k">in</span> <span class="n">the</span> <span class="n">target</span> <span class="n">expression</span>
+  <span class="bp">⟨</span><span class="n">x</span><span class="bp">.</span><span class="n">fst</span><span class="o">,</span> <span class="bp">_⟩.</span><span class="n">fst</span>
+</code></pre></div>
+
+
+
+<a name="195641824"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113489-new%20members/topic/noob%20question%28s%29/near/195641824" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Adeeb K <a href="https://leanprover-community.github.io/archive/stream/113489-new-members/topic/noob.20question(s).html#195641824">(Apr 28 2020 at 23:29)</a>:</h4>
+<p>This was when I used <code>rw p2 at h4</code>, where <code>p2 : ⟨x.fst, _⟩.fst = ⟨y.fst - 1, _⟩.fst</code> and <code>h4 : k - 1 &lt; y.fst - 1</code></p>
+
+
+
+<a name="195642421"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113489-new%20members/topic/noob%20question%28s%29/near/195642421" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Adeeb K <a href="https://leanprover-community.github.io/archive/stream/113489-new-members/topic/noob.20question(s).html#195642421">(Apr 28 2020 at 23:38)</a>:</h4>
+<p>is there anything I'm missing?  Any extra things I need to verify are equal?</p>
+
+
+
+<a name="195642443"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113489-new%20members/topic/noob%20question%28s%29/near/195642443" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Adeeb K <a href="https://leanprover-community.github.io/archive/stream/113489-new-members/topic/noob.20question(s).html#195642443">(Apr 28 2020 at 23:39)</a>:</h4>
+<p>do I have to show that <code>⟨y.fst - 1, _⟩.fst = y.fst - 1</code>?</p>
+
+
+
+<a name="195642511"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113489-new%20members/topic/noob%20question%28s%29/near/195642511" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Mario Carneiro <a href="https://leanprover-community.github.io/archive/stream/113489-new-members/topic/noob.20question(s).html#195642511">(Apr 28 2020 at 23:40)</a>:</h4>
+<p><code>rfl</code></p>
+
+
+
+<a name="195642637"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113489-new%20members/topic/noob%20question%28s%29/near/195642637" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Reid Barton <a href="https://leanprover-community.github.io/archive/stream/113489-new-members/topic/noob.20question(s).html#195642637">(Apr 28 2020 at 23:42)</a>:</h4>
+<p>You can <code>change</code> <code>p2</code> into the required form for <code>rw</code>.</p>
+
+
+
+<a name="195642707"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113489-new%20members/topic/noob%20question%28s%29/near/195642707" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Adeeb K <a href="https://leanprover-community.github.io/archive/stream/113489-new-members/topic/noob.20question(s).html#195642707">(Apr 28 2020 at 23:43)</a>:</h4>
+<p>okay, I'll try the latter suggestion first since that makes more immediate sense to me</p>
+
+
+
+<a name="195642724"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113489-new%20members/topic/noob%20question%28s%29/near/195642724" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Adeeb K <a href="https://leanprover-community.github.io/archive/stream/113489-new-members/topic/noob.20question(s).html#195642724">(Apr 28 2020 at 23:43)</a>:</h4>
+<p>however, out of curiosity, how would I use <code>rfl</code> in this case <span class="user-mention" data-user-id="110049">@Mario Carneiro</span></p>
+
+
+
+<a name="195642793"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113489-new%20members/topic/noob%20question%28s%29/near/195642793" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Mario Carneiro <a href="https://leanprover-community.github.io/archive/stream/113489-new-members/topic/noob.20question(s).html#195642793">(Apr 28 2020 at 23:44)</a>:</h4>
+<p><code>have: ⟨y.fst - 1, _⟩.fst = y.fst - 1 := rfl</code>, more or less</p>
+
+
+
+<a name="195642821"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113489-new%20members/topic/noob%20question%28s%29/near/195642821" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Mario Carneiro <a href="https://leanprover-community.github.io/archive/stream/113489-new-members/topic/noob.20question(s).html#195642821">(Apr 28 2020 at 23:44)</a>:</h4>
+<p>or <code>rw show ⟨y.fst - 1, _⟩.fst = y.fst - 1, from rfl</code></p>
+
+
+
+<a name="195642909"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113489-new%20members/topic/noob%20question%28s%29/near/195642909" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Mario Carneiro <a href="https://leanprover-community.github.io/archive/stream/113489-new-members/topic/noob.20question(s).html#195642909">(Apr 28 2020 at 23:46)</a>:</h4>
+<p>change is probably easier to use in your situation</p>
+
+
+
+<a name="195643719"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113489-new%20members/topic/noob%20question%28s%29/near/195643719" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Adeeb K <a href="https://leanprover-community.github.io/archive/stream/113489-new-members/topic/noob.20question(s).html#195643719">(Apr 28 2020 at 23:54)</a>:</h4>
+<p>I see.</p>
+
+
+
+<a name="195643768"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113489-new%20members/topic/noob%20question%28s%29/near/195643768" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Adeeb K <a href="https://leanprover-community.github.io/archive/stream/113489-new-members/topic/noob.20question(s).html#195643768">(Apr 28 2020 at 23:55)</a>:</h4>
+<p>So, I have<code>h : x.fst ≤ k</code> and <code>h_4 : nat.sub k 0 &lt; x.fst</code> but <code>linearith</code> is not giving me a contradiction.</p>
+
+
+
+<a name="195643956"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113489-new%20members/topic/noob%20question%28s%29/near/195643956" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Reid Barton <a href="https://leanprover-community.github.io/archive/stream/113489-new-members/topic/noob.20question(s).html#195643956">(Apr 28 2020 at 23:57)</a>:</h4>
+<p><code>linarith</code> does not know about this silly <code>nat.sub</code>. How did you even get it?</p>
+
+
+
+<a name="195644027"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113489-new%20members/topic/noob%20question%28s%29/near/195644027" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Frank Dai <a href="https://leanprover-community.github.io/archive/stream/113489-new-members/topic/noob.20question(s).html#195644027">(Apr 28 2020 at 23:58)</a>:</h4>
+<p>How do you use the <code>let</code> tactic?</p>
+<div class="codehilite"><pre><span></span><code><span class="k">let</span> <span class="n">a</span> <span class="o">:=</span> <span class="k">begin</span> <span class="c">/-</span><span class="cm"> long proof here -/</span> <span class="kn">end</span><span class="o">,</span>
+<span class="c1">-- how do you a term of the form a = &lt;long expression&gt;?</span>
+</code></pre></div>
+
+
+
+<a name="195644093"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113489-new%20members/topic/noob%20question%28s%29/near/195644093" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Reid Barton <a href="https://leanprover-community.github.io/archive/stream/113489-new-members/topic/noob.20question(s).html#195644093">(Apr 28 2020 at 23:59)</a>:</h4>
+<p>on the other hand I suppose <code>linarith</code> does not know about <code>-</code> on <code>nat</code> either. Just get rid of it</p>
+
+
+
+<a name="195644259"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113489-new%20members/topic/noob%20question%28s%29/near/195644259" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Adeeb K <a href="https://leanprover-community.github.io/archive/stream/113489-new-members/topic/noob.20question(s).html#195644259">(Apr 29 2020 at 00:00)</a>:</h4>
+<p>I used <code>nat.le_of_pred_lt h4</code> (where <code>h4 : k - 1 &lt; x.fst</code>) to get <code> k  ≤ x.fst</code></p>
+
+
+
+<a name="195644278"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113489-new%20members/topic/noob%20question%28s%29/near/195644278" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Adeeb K <a href="https://leanprover-community.github.io/archive/stream/113489-new-members/topic/noob.20question(s).html#195644278">(Apr 29 2020 at 00:01)</a>:</h4>
+<p>except I didn't get <code>k ≤ x.fst</code></p>
+
+
+
+<a name="195644296"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113489-new%20members/topic/noob%20question%28s%29/near/195644296" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Adeeb K <a href="https://leanprover-community.github.io/archive/stream/113489-new-members/topic/noob.20question(s).html#195644296">(Apr 29 2020 at 00:01)</a>:</h4>
+<p>I got <code>nat.sub k 0 ≤ x.fst</code></p>
+
+
+
+<a name="195644342"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113489-new%20members/topic/noob%20question%28s%29/near/195644342" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Reid Barton <a href="https://leanprover-community.github.io/archive/stream/113489-new-members/topic/noob.20question(s).html#195644342">(Apr 29 2020 at 00:01)</a>:</h4>
+<p>Before you said <code>nat.sub k 0 &lt; x.fst</code></p>
+
+
+
+<a name="195644408"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113489-new%20members/topic/noob%20question%28s%29/near/195644408" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Reid Barton <a href="https://leanprover-community.github.io/archive/stream/113489-new-members/topic/noob.20question(s).html#195644408">(Apr 29 2020 at 00:02)</a>:</h4>
+<p><span class="user-mention" data-user-id="130425">@Frank Dai</span> <code>a</code> is definitionally equal to <code>&lt;long expression&gt;</code>, so you can use <code>rfl</code>.</p>
+
+
+
+<a name="195644428"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113489-new%20members/topic/noob%20question%28s%29/near/195644428" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Adeeb K <a href="https://leanprover-community.github.io/archive/stream/113489-new-members/topic/noob.20question(s).html#195644428">(Apr 29 2020 at 00:02)</a>:</h4>
+<p>oh yeah, this line is then after I split into cases where <code>nat.sub k 0 &lt; x.fst</code> or <code>nat.sub k 0 = x.fst</code></p>
+
+
+
+<a name="195644473"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113489-new%20members/topic/noob%20question%28s%29/near/195644473" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Frank Dai <a href="https://leanprover-community.github.io/archive/stream/113489-new-members/topic/noob.20question(s).html#195644473">(Apr 29 2020 at 00:02)</a>:</h4>
+<p>I can do that but that requires me to copy the giant machine-generated expression that is a</p>
+
+
+
+<a name="195644514"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113489-new%20members/topic/noob%20question%28s%29/near/195644514" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Reid Barton <a href="https://leanprover-community.github.io/archive/stream/113489-new-members/topic/noob.20question(s).html#195644514">(Apr 29 2020 at 00:03)</a>:</h4>
+<p><span class="user-mention" data-user-id="283719">@Adeeb K</span> I suggest moving your questions to a new topic.</p>
+
+
+
+<a name="195644615"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113489-new%20members/topic/noob%20question%28s%29/near/195644615" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Adeeb K <a href="https://leanprover-community.github.io/archive/stream/113489-new-members/topic/noob.20question(s).html#195644615">(Apr 29 2020 at 00:04)</a>:</h4>
+<p>sure thing, thanks</p>
+
+
+
 {% endraw %}
 
-<hr><p>Last updated: Apr 28 2020 at 23:08 UTC</p>
+<hr><p>Last updated: Apr 29 2020 at 00:07 UTC</p>

@@ -113,6 +113,22 @@ if I try <code>add n m</code> I get the right answer <code>succ succ succ succ z
 
 
 
+<a name="195644511"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113489-new%20members/topic/Recursor/near/195644511" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Brandon Brown <a href="https://leanprover-community.github.io/archive/stream/113489-new-members/topic/Recursor.html#195644511">(Apr 29 2020 at 00:03)</a>:</h4>
+<div class="codehilite"><pre><span></span><code><span class="kn">open</span> <span class="n">nat</span>
+<span class="n">def</span> <span class="n">expon2</span> <span class="o">(</span><span class="n">n</span> <span class="o">:</span> <span class="bp">ℕ</span><span class="o">)</span> <span class="o">:</span> <span class="bp">ℕ</span> <span class="o">:=</span>
+<span class="n">nat</span><span class="bp">.</span><span class="n">rec_on</span> <span class="n">n</span> <span class="o">(</span><span class="n">succ</span> <span class="n">zero</span><span class="o">)</span> <span class="o">(</span><span class="bp">λ</span> <span class="n">nminus1</span> <span class="n">fn</span><span class="o">,</span> <span class="mi">2</span> <span class="bp">*</span> <span class="n">fn</span> <span class="o">)</span>
+
+<span class="n">def</span> <span class="n">expon2&#39;</span> <span class="o">:</span> <span class="bp">ℕ</span> <span class="bp">→</span> <span class="bp">ℕ</span>
+<span class="bp">|</span> <span class="n">zero</span> <span class="o">:=</span> <span class="mi">1</span>
+<span class="bp">|</span> <span class="o">(</span><span class="n">succ</span> <span class="n">n</span><span class="o">)</span> <span class="o">:=</span> <span class="mi">2</span> <span class="bp">*</span> <span class="o">(</span><span class="n">expon2&#39;</span> <span class="n">n</span><span class="o">)</span>
+</code></pre></div>
+
+
+<p>The second style makes a lot more sense</p>
+
+
+
 {% endraw %}
 
-<hr><p>Last updated: Apr 28 2020 at 23:08 UTC</p>
+<hr><p>Last updated: Apr 29 2020 at 00:07 UTC</p>

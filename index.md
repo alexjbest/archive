@@ -12,7 +12,7 @@ permalink: /index.html
 
 * [new members](stream/113489-new-members/index.html) (977 topics)
 
-* [maths](stream/116395-maths/index.html) (865 topics)
+* [maths](stream/116395-maths/index.html) (866 topics)
 
 * [PR reviews](stream/144837-PR-reviews/index.html) (228 topics)
 
@@ -24,11 +24,11 @@ permalink: /index.html
 
 * [Lean for teaching](stream/187764-Lean-for-teaching/index.html) (20 topics)
 
+* [Machine Learning for Theorem Proving](stream/219941-Machine-Learning-for-Theorem-Proving/index.html) (16 topics)
+
 * [IMO-grand-challenge](stream/208328-IMO-grand-challenge/index.html) (15 topics)
 
 * [FoMM / Lean Together 2020](stream/218272-FoMM-/-Lean-Together-2020/index.html) (13 topics)
-
-* [Machine Learning for Theorem Proving](stream/219941-Machine-Learning-for-Theorem-Proving/index.html) (13 topics)
 
 * [kbb](stream/141825-kbb/index.html) (13 topics)
 
@@ -40,4 +40,4 @@ permalink: /index.html
 
 * [Program verification](stream/236449-Program-verification/index.html) (1 topic)
 
-<hr><p>Last updated: Apr 28 2020 at 23:08 UTC</p>
+<hr><p>Last updated: Apr 29 2020 at 00:07 UTC</p>

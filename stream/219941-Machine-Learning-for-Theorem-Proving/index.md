@@ -9,6 +9,9 @@ permalink: /stream/219941-Machine-Learning-for-Theorem-Proving/index.html
 
 ### Topics:
 
+* [Paper: Prolog Technology Reinforcement Learning Prover](topic/Paper.3A.20Prolog.20Technology.20Reinforcement.20Learning.20Prover.html) (5 messages, latest: Apr 28 2020 at 23:43)
+* [Paper: Simple Dataset for ... Isabelle/HOL](topic/Paper.3A.20Simple.20Dataset.20for.20.2E.2E.2E.20Isabelle.2FHOL.html) (4 messages, latest: Apr 28 2020 at 23:37)
+* [Paper: Stateful Premise Selection by RNNs](topic/Paper.3A.20Stateful.20Premise.20Selection.20by.20RNNs.html) (2 messages, latest: Apr 28 2020 at 23:32)
 * [Data sets: where to put them?](topic/Data.20sets.3A.20where.20to.20put.20them.3F.html) (8 messages, latest: Apr 27 2020 at 12:42)
 * [rw_hint](topic/rw_hint.html) (35 messages, latest: Apr 08 2020 at 12:46)
 * [AITP 2020](topic/AITP.202020.html) (17 messages, latest: Apr 06 2020 at 14:34)
@@ -23,4 +26,4 @@ permalink: /stream/219941-Machine-Learning-for-Theorem-Proving/index.html
 * [stream events](topic/stream.20events.html) (2 messages, latest: Jan 14 2020 at 00:58)
 * [NEVER MIND.  USE THIS STREAM NOW.](topic/NEVER.20MIND.2E.20.20USE.20THIS.20STREAM.20NOW.2E.html) (1 message, latest: Jan 14 2020 at 00:42)
 
-<hr><p>Last updated: Apr 28 2020 at 23:08 UTC</p>
+<hr><p>Last updated: Apr 29 2020 at 00:07 UTC</p>
