@@ -9,7 +9,7 @@ permalink: /stream/113488-general/index.html
 
 ### Topics:
 
-* [ring_aut coerce to function](topic/ring_aut.20coerce.20to.20function.html) (12 messages, latest: Apr 29 2020 at 11:06)
+* [ring_aut coerce to function](topic/ring_aut.20coerce.20to.20function.html) (23 messages, latest: Apr 29 2020 at 11:38)
 * [is this a pattern](topic/is.20this.20a.20pattern.html) (14 messages, latest: Apr 29 2020 at 10:16)
 * [sorry does not behave like NaN](topic/sorry.20does.20not.20behave.20like.20NaN.html) (29 messages, latest: Apr 29 2020 at 10:10)
 * [Missing leanpkg](topic/Missing.20leanpkg.html) (12 messages, latest: Apr 29 2020 at 08:50)
@@ -2727,4 +2727,4 @@ permalink: /stream/113488-general/index.html
 * [test](topic/test.html) (4 messages, latest: Feb 26 2018 at 16:22)
 * [welcome](topic/welcome.html) (1 message, latest: Feb 26 2018 at 16:02)
 
-<hr><p>Last updated: Apr 29 2020 at 11:06 UTC</p>
+<hr><p>Last updated: Apr 29 2020 at 12:05 UTC</p>

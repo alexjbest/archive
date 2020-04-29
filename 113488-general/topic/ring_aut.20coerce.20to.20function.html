@@ -101,6 +101,72 @@ permalink: /stream/113488-general/topic/ring_aut.20coerce.20to.20function.html
 
 
 
+<a name="195692321"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113488-general/topic/ring_aut%20coerce%20to%20function/near/195692321" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Kevin Buzzard <a href="https://leanprover-community.github.io/archive/stream/113488-general/topic/ring_aut.20coerce.20to.20function.html#195692321">(Apr 29 2020 at 11:06)</a>:</h4>
+<p>Can you fix it with \u= ?</p>
+
+
+
+<a name="195692584"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113488-general/topic/ring_aut%20coerce%20to%20function/near/195692584" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Kenny Lau <a href="https://leanprover-community.github.io/archive/stream/113488-general/topic/ring_aut.20coerce.20to.20function.html#195692584">(Apr 29 2020 at 11:08)</a>:</h4>
+<p>I don't think I can.</p>
+
+
+
+<a name="195693663"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113488-general/topic/ring_aut%20coerce%20to%20function/near/195693663" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Reid Barton <a href="https://leanprover-community.github.io/archive/stream/113488-general/topic/ring_aut.20coerce.20to.20function.html#195693663">(Apr 29 2020 at 11:22)</a>:</h4>
+<p>No, there isn't a coercion to fun. (I don't know why not.) An instance for a defeq type is not an instance for the original type.</p>
+
+
+
+<a name="195693690"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113488-general/topic/ring_aut%20coerce%20to%20function/near/195693690" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Kenny Lau <a href="https://leanprover-community.github.io/archive/stream/113488-general/topic/ring_aut.20coerce.20to.20function.html#195693690">(Apr 29 2020 at 11:22)</a>:</h4>
+<p>There is a coercion to fun though. It's called <code>ring_equiv.has_coe_to_fun</code></p>
+
+
+
+<a name="195693820"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113488-general/topic/ring_aut%20coerce%20to%20function/near/195693820" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Reid Barton <a href="https://leanprover-community.github.io/archive/stream/113488-general/topic/ring_aut.20coerce.20to.20function.html#195693820">(Apr 29 2020 at 11:24)</a>:</h4>
+<p>Okay, but it's not an instance for <code>ring_aut</code>.</p>
+
+
+
+<a name="195693864"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113488-general/topic/ring_aut%20coerce%20to%20function/near/195693864" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Chris Hughes <a href="https://leanprover-community.github.io/archive/stream/113488-general/topic/ring_aut.20coerce.20to.20function.html#195693864">(Apr 29 2020 at 11:25)</a>:</h4>
+<p>Should we make <code>ring_aut</code> <code>reducible</code>? That method worked okay for <code>perm</code></p>
+
+
+
+<a name="195693898"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113488-general/topic/ring_aut%20coerce%20to%20function/near/195693898" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Kenny Lau <a href="https://leanprover-community.github.io/archive/stream/113488-general/topic/ring_aut.20coerce.20to.20function.html#195693898">(Apr 29 2020 at 11:25)</a>:</h4>
+<p>oh, that's the reason</p>
+
+
+
+<a name="195694336"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113488-general/topic/ring_aut%20coerce%20to%20function/near/195694336" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Kenny Lau <a href="https://leanprover-community.github.io/archive/stream/113488-general/topic/ring_aut.20coerce.20to.20function.html#195694336">(Apr 29 2020 at 11:31)</a>:</h4>
+<p>so <code>g.to_equiv</code> is the canonical way?</p>
+
+
+
+<a name="195694431"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113488-general/topic/ring_aut%20coerce%20to%20function/near/195694431" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Chris Hughes <a href="https://leanprover-community.github.io/archive/stream/113488-general/topic/ring_aut.20coerce.20to.20function.html#195694431">(Apr 29 2020 at 11:32)</a>:</h4>
+<p>I think there isn't a canonical way right now. But making <code>ring_aut</code> reducible fixes it.</p>
+
+
+
+<a name="195694654"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113488-general/topic/ring_aut%20coerce%20to%20function/near/195694654" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Chris Hughes <a href="https://leanprover-community.github.io/archive/stream/113488-general/topic/ring_aut.20coerce.20to.20function.html#195694654">(Apr 29 2020 at 11:34)</a>:</h4>
+<p><a href="https://github.com/leanprover-community/mathlib/issues/2563" title="https://github.com/leanprover-community/mathlib/issues/2563">#2563</a></p>
+
+
+
+<a name="195694995"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113488-general/topic/ring_aut%20coerce%20to%20function/near/195694995" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Kevin Buzzard <a href="https://leanprover-community.github.io/archive/stream/113488-general/topic/ring_aut.20coerce.20to.20function.html#195694995">(Apr 29 2020 at 11:38)</a>:</h4>
+<p>Thanks</p>
+
+
+
 {% endraw %}
 
-<hr><p>Last updated: Apr 29 2020 at 11:06 UTC</p>
+<hr><p>Last updated: Apr 29 2020 at 12:05 UTC</p>
