@@ -9,10 +9,11 @@ permalink: /stream/113488-general/index.html
 
 ### Topics:
 
-* [universe bug?](topic/universe.20bug.3F.html) (19 messages, latest: Apr 30 2020 at 18:40)
+* [universe bug?](topic/universe.20bug.3F.html) (32 messages, latest: Apr 30 2020 at 20:04)
+* [Diagnosing timeout](topic/Diagnosing.20timeout.html) (72 messages, latest: Apr 30 2020 at 20:03)
+* [why does a sync command take so long in the lean server](topic/why.20does.20a.20sync.20command.20take.20so.20long.20in.20the.20lean.20server.html) (36 messages, latest: Apr 30 2020 at 19:21)
+* [seminars](topic/seminars.html) (36 messages, latest: Apr 30 2020 at 19:19)
 * [Invitation to join the Codewars Lean community, Round 2](topic/Invitation.20to.20join.20the.20Codewars.20Lean.20community.2C.20Round.202.html) (196 messages, latest: Apr 30 2020 at 18:37)
-* [seminars](topic/seminars.html) (35 messages, latest: Apr 30 2020 at 18:34)
-* [Diagnosing timeout](topic/Diagnosing.20timeout.html) (69 messages, latest: Apr 30 2020 at 18:23)
 * [big ops](topic/big.20ops.html) (26 messages, latest: Apr 30 2020 at 16:57)
 * [continuity proof](topic/continuity.20proof.html) (12 messages, latest: Apr 30 2020 at 15:12)
 * [Lean job in London](topic/Lean.20job.20in.20London.html) (8 messages, latest: Apr 30 2020 at 14:28)
@@ -59,7 +60,6 @@ permalink: /stream/113488-general/index.html
 * [Case tags](topic/Case.20tags.html) (20 messages, latest: Apr 24 2020 at 16:54)
 * [typeclass instances help](topic/typeclass.20instances.20help.html) (22 messages, latest: Apr 24 2020 at 14:09)
 * [tooltips on keywords](topic/tooltips.20on.20keywords.html) (4 messages, latest: Apr 24 2020 at 13:48)
-* [why does a sync command take so long in the lean server](topic/why.20does.20a.20sync.20command.20take.20so.20long.20in.20the.20lean.20server.html) (35 messages, latest: Apr 24 2020 at 13:31)
 * [unnecessary imports](topic/unnecessary.20imports.html) (47 messages, latest: Apr 24 2020 at 02:28)
 * [import order](topic/import.20order.html) (5 messages, latest: Apr 23 2020 at 17:33)
 * [How does one prove unit ≠ bool](topic/How.20does.20one.20prove.20unit.20.E2.89.A0.20bool.html) (11 messages, latest: Apr 23 2020 at 14:03)
@@ -2738,4 +2738,4 @@ permalink: /stream/113488-general/index.html
 * [test](topic/test.html) (4 messages, latest: Feb 26 2018 at 16:22)
 * [welcome](topic/welcome.html) (1 message, latest: Feb 26 2018 at 16:02)
 
-<hr><p>Last updated: Apr 30 2020 at 19:04 UTC</p>
+<hr><p>Last updated: Apr 30 2020 at 20:04 UTC</p>

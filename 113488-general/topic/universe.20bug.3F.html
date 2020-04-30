@@ -199,6 +199,99 @@ permalink: /stream/113488-general/topic/universe.20bug.3F.html
 
 
 
+<a name="195887000"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113488-general/topic/universe%20bug%3F/near/195887000" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Reid Barton <a href="https://leanprover-community.github.io/archive/stream/113488-general/topic/universe.20bug.3F.html#195887000">(Apr 30 2020 at 19:08)</a>:</h4>
+<p>This seems to be a recurring theme:</p>
+<div class="codehilite"><pre><span></span><code><span class="kn">import</span> <span class="n">topology</span><span class="bp">.</span><span class="n">algebra</span><span class="bp">.</span><span class="n">group</span>
+
+<span class="kn">variables</span> <span class="o">{</span><span class="n">α</span> <span class="o">:</span> <span class="kt">Type</span><span class="o">}</span> <span class="o">[</span><span class="n">topological_space</span> <span class="n">α</span><span class="o">]</span> <span class="o">[</span><span class="n">add_group</span> <span class="n">α</span><span class="o">]</span> <span class="o">[</span><span class="n">topological_add_group</span> <span class="n">α</span><span class="o">]</span>
+
+<span class="n">attribute</span> <span class="o">[</span><span class="kn">irreducible</span><span class="o">]</span> <span class="n">continuous</span>
+
+<span class="kn">set_option</span> <span class="n">pp</span><span class="bp">.</span><span class="n">universes</span> <span class="n">true</span>
+<span class="kn">example</span> <span class="o">(</span><span class="n">x</span> <span class="o">:</span> <span class="n">α</span><span class="o">)</span> <span class="o">:</span> <span class="n">true</span> <span class="o">:=</span>
+<span class="k">begin</span>
+  <span class="k">have</span> <span class="o">:=</span> <span class="n">continuous_sub</span><span class="bp">.</span><span class="n">tendsto</span><span class="o">,</span> <span class="c1">-- fine, &quot;filter.tendsto.{?l_1 ?l_1} ...&quot;</span>
+  <span class="k">have</span> <span class="o">:=</span> <span class="o">(</span><span class="n">continuous_sub</span><span class="bp">.</span><span class="n">comp</span> <span class="n">continuous_swap</span><span class="o">)</span><span class="bp">.</span><span class="n">tendsto</span><span class="o">,</span>
+  <span class="c1">-- not fine, &quot;filter.tendsto.{(max ?l_5 ?l_6) (max ?l_5 ?l_6)} ...&quot;</span>
+  <span class="k">have</span> <span class="o">:=</span> <span class="o">(</span><span class="n">continuous_sub</span><span class="bp">.</span><span class="n">comp</span> <span class="n">continuous_swap</span><span class="o">)</span><span class="bp">.</span><span class="n">tendsto</span> <span class="o">(</span><span class="n">x</span><span class="o">,</span> <span class="n">x</span><span class="o">),</span> <span class="c1">-- error</span>
+<span class="kn">end</span>
+</code></pre></div>
+
+
+
+<a name="195887021"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113488-general/topic/universe%20bug%3F/near/195887021" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Reid Barton <a href="https://leanprover-community.github.io/archive/stream/113488-general/topic/universe.20bug.3F.html#195887021">(Apr 30 2020 at 19:08)</a>:</h4>
+<p>Without <code>attribute [irreducible] continuous</code> the error goes away.</p>
+
+
+
+<a name="195890011"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113488-general/topic/universe%20bug%3F/near/195890011" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Reid Barton <a href="https://leanprover-community.github.io/archive/stream/113488-general/topic/universe.20bug.3F.html#195890011">(Apr 30 2020 at 19:32)</a>:</h4>
+<p>I don't understand the mechanism by which Lean wants to unfold <code>continuous</code> when it is not irreducible (which it seems like it must be doing, right?)</p>
+
+
+
+<a name="195890098"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113488-general/topic/universe%20bug%3F/near/195890098" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Mario Carneiro <a href="https://leanprover-community.github.io/archive/stream/113488-general/topic/universe.20bug.3F.html#195890098">(Apr 30 2020 at 19:33)</a>:</h4>
+<p>I think if you replace <code>continuous</code> with a <code>constant</code> it also works</p>
+
+
+
+<a name="195893582"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113488-general/topic/universe%20bug%3F/near/195893582" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Reid Barton <a href="https://leanprover-community.github.io/archive/stream/113488-general/topic/universe.20bug.3F.html#195893582">(Apr 30 2020 at 20:00)</a>:</h4>
+<p>Also, I had no idea the library really used filters. Oh man.</p>
+
+
+
+<a name="195893856"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113488-general/topic/universe%20bug%3F/near/195893856" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Patrick Massot <a href="https://leanprover-community.github.io/archive/stream/113488-general/topic/universe.20bug.3F.html#195893856">(Apr 30 2020 at 20:03)</a>:</h4>
+<p>What?</p>
+
+
+
+<a name="195893892"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113488-general/topic/universe%20bug%3F/near/195893892" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Reid Barton <a href="https://leanprover-community.github.io/archive/stream/113488-general/topic/universe.20bug.3F.html#195893892">(Apr 30 2020 at 20:03)</a>:</h4>
+<p>I never touched filters before. Unless you count ultrafilters...</p>
+
+
+
+<a name="195893898"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113488-general/topic/universe%20bug%3F/near/195893898" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Patrick Massot <a href="https://leanprover-community.github.io/archive/stream/113488-general/topic/universe.20bug.3F.html#195893898">(Apr 30 2020 at 20:03)</a>:</h4>
+<p>Of course it uses filters, how did you miss that?</p>
+
+
+
+<a name="195893906"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113488-general/topic/universe%20bug%3F/near/195893906" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Reid Barton <a href="https://leanprover-community.github.io/archive/stream/113488-general/topic/universe.20bug.3F.html#195893906">(Apr 30 2020 at 20:03)</a>:</h4>
+<p>This is a lot harder than I expected</p>
+
+
+
+<a name="195893952"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113488-general/topic/universe%20bug%3F/near/195893952" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Reid Barton <a href="https://leanprover-community.github.io/archive/stream/113488-general/topic/universe.20bug.3F.html#195893952">(Apr 30 2020 at 20:04)</a>:</h4>
+<p>Sure, but I thought it would only be for, like, 2 files.</p>
+
+
+
+<a name="195893954"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113488-general/topic/universe%20bug%3F/near/195893954" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Patrick Massot <a href="https://leanprover-community.github.io/archive/stream/113488-general/topic/universe.20bug.3F.html#195893954">(Apr 30 2020 at 20:04)</a>:</h4>
+<p>What, filters or refactoring?</p>
+
+
+
+<a name="195893964"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113488-general/topic/universe%20bug%3F/near/195893964" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Reid Barton <a href="https://leanprover-community.github.io/archive/stream/113488-general/topic/universe.20bug.3F.html#195893964">(Apr 30 2020 at 20:04)</a>:</h4>
+<p>Changing <code>continuous</code> to a structure</p>
+
+
+
+<a name="195893980"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113488-general/topic/universe%20bug%3F/near/195893980" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Patrick Massot <a href="https://leanprover-community.github.io/archive/stream/113488-general/topic/universe.20bug.3F.html#195893980">(Apr 30 2020 at 20:04)</a>:</h4>
+<p>Nooo, they are everywhere <span aria-label="grinning" class="emoji emoji-1f600" role="img" title="grinning">:grinning:</span></p>
+
+
+
 {% endraw %}
 
-<hr><p>Last updated: Apr 30 2020 at 19:04 UTC</p>
+<hr><p>Last updated: Apr 30 2020 at 20:04 UTC</p>
