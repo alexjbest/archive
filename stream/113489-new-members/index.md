@@ -9,6 +9,8 @@ permalink: /stream/113489-new-members/index.html
 
 ### Topics:
 
+* [real.exp_log](topic/real.2Eexp_log.html) (12 messages, latest: Apr 30 2020 at 14:56)
+* [server reloads imports?](topic/server.20reloads.20imports.3F.html) (9 messages, latest: Apr 30 2020 at 14:46)
 * [hello](topic/hello.html) (2 messages, latest: Apr 30 2020 at 10:48)
 * [Coercion issues](topic/Coercion.20issues.html) (3 messages, latest: Apr 30 2020 at 03:22)
 * [Finsets and fintypes](topic/Finsets.20and.20fintypes.html) (29 messages, latest: Apr 29 2020 at 16:02)
@@ -991,4 +993,4 @@ permalink: /stream/113489-new-members/index.html
 * [Andrew Ashworth](topic/Andrew.20Ashworth.html) (15 messages, latest: Feb 26 2018 at 16:21)
 * [onboarding](topic/onboarding.html) (1 message, latest: Feb 26 2018 at 16:02)
 
-<hr><p>Last updated: Apr 30 2020 at 14:04 UTC</p>
+<hr><p>Last updated: Apr 30 2020 at 15:04 UTC</p>

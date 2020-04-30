@@ -1,0 +1,104 @@
+---
+layout: archive
+title: Zulip Chat Archive
+permalink: /stream/113489-new-members/topic/real.2Eexp_log.html
+---
+
+<h2>Stream: <a href="https://leanprover-community.github.io/archive/stream/113489-new-members/index.html">new members</a></h2>
+<h3>Topic: <a href="https://leanprover-community.github.io/archive/stream/113489-new-members/topic/real.2Eexp_log.html">real.exp_log</a></h3>
+
+<hr>
+
+<base href="https://leanprover.zulipchat.com/">
+
+<head><link href="/style.css" rel="stylesheet"></head>
+
+{% raw %}
+
+<a name="195849618"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113489-new%20members/topic/real.exp_log/near/195849618" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Jalex Stark <a href="https://leanprover-community.github.io/archive/stream/113489-new-members/topic/real.2Eexp_log.html#195849618">(Apr 30 2020 at 14:47)</a>:</h4>
+<p>I feel like this error message is telling me that the elaborator can't unify \R with \R:</p>
+<div class="codehilite"><pre><span></span><code><span class="kn">import</span> <span class="n">analysis</span><span class="bp">.</span><span class="n">calculus</span><span class="bp">.</span><span class="n">specific_functions</span>
+
+<span class="kn">example</span> <span class="o">(</span><span class="n">x</span> <span class="o">:</span> <span class="n">ℝ</span><span class="o">)</span> <span class="o">(</span><span class="n">hx</span> <span class="o">:</span> <span class="mi">0</span> <span class="bp">&lt;</span> <span class="n">x</span><span class="o">)</span> <span class="o">:</span> <span class="n">real</span><span class="bp">.</span><span class="n">log</span> <span class="n">x</span> <span class="bp">&lt;</span> <span class="n">x</span> <span class="o">:=</span> <span class="k">begin</span>
+<span class="n">suffices</span> <span class="n">key</span> <span class="o">:</span> <span class="n">real</span><span class="bp">.</span><span class="n">log</span> <span class="n">x</span> <span class="bp">&lt;</span> <span class="n">real</span><span class="bp">.</span><span class="n">exp</span> <span class="o">(</span><span class="n">real</span><span class="bp">.</span><span class="n">log</span> <span class="n">x</span><span class="o">),</span>
+<span class="n">rw</span> <span class="n">real</span><span class="bp">.</span><span class="n">exp_log</span> <span class="n">hx</span><span class="o">,</span>
+<span class="kn">end</span>
+</code></pre></div>
+
+
+<p>(edited to make the error a bit more explicit)</p>
+
+
+
+<a name="195850182"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113489-new%20members/topic/real.exp_log/near/195850182" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Kevin Buzzard <a href="https://leanprover-community.github.io/archive/stream/113489-new-members/topic/real.2Eexp_log.html#195850182">(Apr 30 2020 at 14:52)</a>:</h4>
+<p>I think it's OK, the LHS of <code>real.exp_log hx</code> is <code>real.exp (real.log x)</code> and it can't find it in your goal (because the goal is <code>real.log x &lt; x</code>)</p>
+
+
+
+<a name="195850323"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113489-new%20members/topic/real.exp_log/near/195850323" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Kevin Buzzard <a href="https://leanprover-community.github.io/archive/stream/113489-new-members/topic/real.2Eexp_log.html#195850323">(Apr 30 2020 at 14:52)</a>:</h4>
+<p>The <code>suffices</code> puts the new goal <code>key</code> at the end, not the start, so the rewrite is still trying to work on <code>real.log x &lt; x</code> (and I think rw only works on the first goal)</p>
+
+
+
+<a name="195850431"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113489-new%20members/topic/real.exp_log/near/195850431" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Jalex Stark <a href="https://leanprover-community.github.io/archive/stream/113489-new-members/topic/real.2Eexp_log.html#195850431">(Apr 30 2020 at 14:53)</a>:</h4>
+<p>oof, thanks. maybe i need more coffee</p>
+
+
+
+<a name="195850477"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113489-new%20members/topic/real.exp_log/near/195850477" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Kevin Buzzard <a href="https://leanprover-community.github.io/archive/stream/113489-new-members/topic/real.2Eexp_log.html#195850477">(Apr 30 2020 at 14:53)</a>:</h4>
+<div class="codehilite"><pre><span></span><code>  <span class="n">suffices</span> <span class="n">key</span> <span class="o">:</span> <span class="n">real</span><span class="bp">.</span><span class="n">log</span> <span class="n">x</span> <span class="bp">&lt;</span> <span class="n">real</span><span class="bp">.</span><span class="n">exp</span> <span class="o">(</span><span class="n">real</span><span class="bp">.</span><span class="n">log</span> <span class="n">x</span><span class="o">),</span>
+  <span class="o">{</span> <span class="n">rwa</span> <span class="n">real</span><span class="bp">.</span><span class="n">exp_log</span> <span class="n">hx</span> <span class="n">at</span> <span class="n">key</span><span class="o">},</span>
+</code></pre></div>
+
+
+
+<a name="195850638"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113489-new%20members/topic/real.exp_log/near/195850638" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Kevin Buzzard <a href="https://leanprover-community.github.io/archive/stream/113489-new-members/topic/real.2Eexp_log.html#195850638">(Apr 30 2020 at 14:54)</a>:</h4>
+<p>I always think it's a bit dirty using <code>rwa</code> like that.</p>
+
+
+
+<a name="195850664"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113489-new%20members/topic/real.exp_log/near/195850664" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Jalex Stark <a href="https://leanprover-community.github.io/archive/stream/113489-new-members/topic/real.2Eexp_log.html#195850664">(Apr 30 2020 at 14:55)</a>:</h4>
+<p>because the rw and the a get applied in different places?</p>
+
+
+
+<a name="195850696"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113489-new%20members/topic/real.exp_log/near/195850696" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Kevin Buzzard <a href="https://leanprover-community.github.io/archive/stream/113489-new-members/topic/real.2Eexp_log.html#195850696">(Apr 30 2020 at 14:55)</a>:</h4>
+<p>right :-)</p>
+
+
+
+<a name="195850733"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113489-new%20members/topic/real.exp_log/near/195850733" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Kevin Buzzard <a href="https://leanprover-community.github.io/archive/stream/113489-new-members/topic/real.2Eexp_log.html#195850733">(Apr 30 2020 at 14:55)</a>:</h4>
+<p>but it's perfectly fine Lean code</p>
+
+
+
+<a name="195850774"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113489-new%20members/topic/real.exp_log/near/195850774" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Kevin Buzzard <a href="https://leanprover-community.github.io/archive/stream/113489-new-members/topic/real.2Eexp_log.html#195850774">(Apr 30 2020 at 14:55)</a>:</h4>
+<p>Maybe sneaky is a better word :-)</p>
+
+
+
+<a name="195850851"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113489-new%20members/topic/real.exp_log/near/195850851" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Jalex Stark <a href="https://leanprover-community.github.io/archive/stream/113489-new-members/topic/real.2Eexp_log.html#195850851">(Apr 30 2020 at 14:56)</a>:</h4>
+<p>yeah i agree that its better than <code>rw ... at key, exact key </code> which appears too many times in my codewars solutions</p>
+
+
+
+<a name="195850944"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113489-new%20members/topic/real.exp_log/near/195850944" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Jalex Stark <a href="https://leanprover-community.github.io/archive/stream/113489-new-members/topic/real.2Eexp_log.html#195850944">(Apr 30 2020 at 14:56)</a>:</h4>
+<p>i think i forgot about rwa when I went through a phase of leaning on nonterminal simps</p>
+
+
+
+{% endraw %}
+
+<hr><p>Last updated: Apr 30 2020 at 15:04 UTC</p>

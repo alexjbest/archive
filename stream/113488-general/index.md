@@ -9,7 +9,9 @@ permalink: /stream/113488-general/index.html
 
 ### Topics:
 
-* [Invitation to join the Codewars Lean community, Round 2](topic/Invitation.20to.20join.20the.20Codewars.20Lean.20community.2C.20Round.202.html) (155 messages, latest: Apr 30 2020 at 14:02)
+* [Invitation to join the Codewars Lean community, Round 2](topic/Invitation.20to.20join.20the.20Codewars.20Lean.20community.2C.20Round.202.html) (176 messages, latest: Apr 30 2020 at 15:03)
+* [continuity proof](topic/continuity.20proof.html) (4 messages, latest: Apr 30 2020 at 14:55)
+* [Lean job in London](topic/Lean.20job.20in.20London.html) (8 messages, latest: Apr 30 2020 at 14:28)
 * [leanproject access denied](topic/leanproject.20access.20denied.html) (18 messages, latest: Apr 30 2020 at 13:59)
 * [transitive coercions](topic/transitive.20coercions.html) (17 messages, latest: Apr 30 2020 at 13:50)
 * [graphs on the website](topic/graphs.20on.20the.20website.html) (39 messages, latest: Apr 30 2020 at 13:28)
@@ -150,7 +152,6 @@ permalink: /stream/113488-general/index.html
 * [installing elan](topic/installing.20elan.html) (16 messages, latest: Apr 11 2020 at 09:14)
 * [Vectors & matrices in Lean](topic/Vectors.20.26.20matrices.20in.20Lean.html) (32 messages, latest: Apr 11 2020 at 08:01)
 * [shadok Lean](topic/shadok.20Lean.html) (19 messages, latest: Apr 10 2020 at 20:37)
-* [Lean job in London](topic/Lean.20job.20in.20London.html) (7 messages, latest: Apr 10 2020 at 19:48)
 * [Deterministic timeout when proving a theorem](topic/Deterministic.20timeout.20when.20proving.20a.20theorem.html) (24 messages, latest: Apr 10 2020 at 17:30)
 * [new PR approval process](topic/new.20PR.20approval.20process.html) (7 messages, latest: Apr 10 2020 at 16:03)
 * [arrays and performance](topic/arrays.20and.20performance.html) (15 messages, latest: Apr 10 2020 at 13:32)
@@ -2736,4 +2737,4 @@ permalink: /stream/113488-general/index.html
 * [test](topic/test.html) (4 messages, latest: Feb 26 2018 at 16:22)
 * [welcome](topic/welcome.html) (1 message, latest: Feb 26 2018 at 16:02)
 
-<hr><p>Last updated: Apr 30 2020 at 14:04 UTC</p>
+<hr><p>Last updated: Apr 30 2020 at 15:04 UTC</p>
