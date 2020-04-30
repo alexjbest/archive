@@ -27,6 +27,97 @@ permalink: /stream/113489-new-members/topic/functions.20with.20finite.20support.
 
 
 
+<a name="195909022"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113489-new%20members/topic/functions%20with%20finite%20support/near/195909022" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Kenny Lau <a href="https://leanprover-community.github.io/archive/stream/113489-new-members/topic/functions.20with.20finite.20support.html#195909022">(Apr 30 2020 at 22:14)</a>:</h4>
+<p><a href="https://leanprover-community.github.io/mathlib_docs/data/finsupp.html" title="https://leanprover-community.github.io/mathlib_docs/data/finsupp.html"><code>data.finsupp</code></a></p>
+
+
+
+<a name="195909285"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113489-new%20members/topic/functions%20with%20finite%20support/near/195909285" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Chris Hughes <a href="https://leanprover-community.github.io/archive/stream/113489-new-members/topic/functions.20with.20finite.20support.html#195909285">(Apr 30 2020 at 22:17)</a>:</h4>
+<p>I don't think <code>finsupp</code> is really the right thing. <code>finsupp</code> is basically just free module, or direct sum, and requires <code>M</code> to have a zero.</p>
+
+
+
+<a name="195909439"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113489-new%20members/topic/functions%20with%20finite%20support/near/195909439" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Chris Hughes <a href="https://leanprover-community.github.io/archive/stream/113489-new-members/topic/functions.20with.20finite.20support.html#195909439">(Apr 30 2020 at 22:19)</a>:</h4>
+<p>I also don't think there are any examples of this really in mathlib, other than by making <code>A</code> the domain of the function. There is <code>data.pfun</code> for partial functions, but the best approach probably depends on what you want to do with it.</p>
+
+
+
+<a name="195909831"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113489-new%20members/topic/functions%20with%20finite%20support/near/195909831" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Jalex Stark <a href="https://leanprover-community.github.io/archive/stream/113489-new-members/topic/functions.20with.20finite.20support.html#195909831">(Apr 30 2020 at 22:23)</a>:</h4>
+<p>the big goal is to prove categoricity of dense linear orders without endpoints. (this was the nuke that came to mind for one of Kenny's kata, and it seemed like a good exercise regardless of whether it was appropriate)<br>
+the small goal is to talk about extending a finitely supported function by one point</p>
+
+
+
+<a name="195909996"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113489-new%20members/topic/functions%20with%20finite%20support/near/195909996" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Jalex Stark <a href="https://leanprover-community.github.io/archive/stream/113489-new-members/topic/functions.20with.20finite.20support.html#195909996">(Apr 30 2020 at 22:25)</a>:</h4>
+<p>is pfun supposed to be finsupp but replacing 0 with none?</p>
+
+
+
+<a name="195910087"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113489-new%20members/topic/functions%20with%20finite%20support/near/195910087" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Jalex Stark <a href="https://leanprover-community.github.io/archive/stream/113489-new-members/topic/functions.20with.20finite.20support.html#195910087">(Apr 30 2020 at 22:26)</a>:</h4>
+<p>that seems like a step in the right direction, I was about to enrich my target type with a "zero" by wrapping it in option and setting <code>0 = none</code></p>
+
+
+
+<a name="195910274"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113489-new%20members/topic/functions%20with%20finite%20support/near/195910274" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Reid Barton <a href="https://leanprover-community.github.io/archive/stream/113489-new-members/topic/functions.20with.20finite.20support.html#195910274">(Apr 30 2020 at 22:28)</a>:</h4>
+<p>Are you doing it only for countable orders then?</p>
+
+
+
+<a name="195910350"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113489-new%20members/topic/functions%20with%20finite%20support/near/195910350" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Reid Barton <a href="https://leanprover-community.github.io/archive/stream/113489-new-members/topic/functions.20with.20finite.20support.html#195910350">(Apr 30 2020 at 22:29)</a>:</h4>
+<p>"Finite" is not really the condition you need, right?</p>
+
+
+
+<a name="195910415"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113489-new%20members/topic/functions%20with%20finite%20support/near/195910415" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Reid Barton <a href="https://leanprover-community.github.io/archive/stream/113489-new-members/topic/functions.20with.20finite.20support.html#195910415">(Apr 30 2020 at 22:30)</a>:</h4>
+<p>Like, it's automatically finite because you've only picked finitely many things so far. So you don't also need to remember it's a <code>finset</code>.</p>
+
+
+
+<a name="195910798"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113489-new%20members/topic/functions%20with%20finite%20support/near/195910798" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Jalex Stark <a href="https://leanprover-community.github.io/archive/stream/113489-new-members/topic/functions.20with.20finite.20support.html#195910798">(Apr 30 2020 at 22:35)</a>:</h4>
+<p>yeah i just want to do it for countable orders (which should be like 80% of the work of doing it for orders in bijection with an arbitrary ordinal)</p>
+
+
+
+<a name="195910837"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113489-new%20members/topic/functions%20with%20finite%20support/near/195910837" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Jalex Stark <a href="https://leanprover-community.github.io/archive/stream/113489-new-members/topic/functions.20with.20finite.20support.html#195910837">(Apr 30 2020 at 22:35)</a>:</h4>
+<p>my plan was to do a mutual induction on two maps <code>forth : M \to N</code> and <code>back : N \to M</code></p>
+
+
+
+<a name="195910955"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113489-new%20members/topic/functions%20with%20finite%20support/near/195910955" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Reid Barton <a href="https://leanprover-community.github.io/archive/stream/113489-new-members/topic/functions.20with.20finite.20support.html#195910955">(Apr 30 2020 at 22:37)</a>:</h4>
+<p>I think you will find this tricky, and I'm curious to see what you come up with</p>
+
+
+
+<a name="195910964"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113489-new%20members/topic/functions%20with%20finite%20support/near/195910964" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Jalex Stark <a href="https://leanprover-community.github.io/archive/stream/113489-new-members/topic/functions.20with.20finite.20support.html#195910964">(Apr 30 2020 at 22:37)</a>:</h4>
+<p>yeah I agree</p>
+
+
+
+<a name="195910999"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113489-new%20members/topic/functions%20with%20finite%20support/near/195910999" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Jalex Stark <a href="https://leanprover-community.github.io/archive/stream/113489-new-members/topic/functions.20with.20finite.20support.html#195910999">(Apr 30 2020 at 22:37)</a>:</h4>
+<p>(my hope is that it ends up being a decent kata)</p>
+
+
+
+<a name="195911766"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113489-new%20members/topic/functions%20with%20finite%20support/near/195911766" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Jalex Stark <a href="https://leanprover-community.github.io/archive/stream/113489-new-members/topic/functions.20with.20finite.20support.html#195911766">(Apr 30 2020 at 22:46)</a>:</h4>
+<p>i guess it's time to see if I know how the option monad works...</p>
+
+
+
 {% endraw %}
 
-<hr><p>Last updated: Apr 30 2020 at 22:04 UTC</p>
+<hr><p>Last updated: Apr 30 2020 at 23:04 UTC</p>
