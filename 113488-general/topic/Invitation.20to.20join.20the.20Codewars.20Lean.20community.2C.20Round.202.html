@@ -1286,6 +1286,52 @@ Don't bother going through every axiom. Use Ltac instead."</p>
 
 
 
+<a name="195864283"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113488-general/topic/Invitation%20to%20join%20the%20Codewars%20Lean%20community%2C%20Round%202/near/195864283" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Donald Sebastian Leung <a href="https://leanprover-community.github.io/archive/stream/113488-general/topic/Invitation.20to.20join.20the.20Codewars.20Lean.20community.2C.20Round.202.html#195864283">(Apr 30 2020 at 16:23)</a>:</h4>
+<p><span class="user-mention silent" data-user-id="252300">Jalex Stark</span> <a href="#narrow/stream/113488-general/topic/Invitation.20to.20join.20the.20Codewars.20Lean.20community.2C.20Round.202/near/195857617" title="#narrow/stream/113488-general/topic/Invitation.20to.20join.20the.20Codewars.20Lean.20community.2C.20Round.202/near/195857617">said</a>:</p>
+<blockquote>
+<p>is it possible to make "prove <code> example {p : Prop} : ¬¬¬p → ¬p </code> without classical reasoning" a kata? maybe by disallowing certain imports?</p>
+</blockquote>
+<p>We deliberately made the Lean setup very simple and allow the usual mathematical axioms without restriction since we were told that mathematicians do not even consider the use of non-constructive axioms something worth mentioning about. If you want to author a Lean kata where these axioms matter then someone will have to implement a proper testing framework for Lean like what monadius did for Coq. This (adding a dedicated testing framework now) would also mean that the Beta phase for Lean itself on CW will most definitely have to be extended in order to allow sufficient time for us to detect and fix any errors in the testing framework so just having 50 approved kata will no longer cut it.</p>
+
+
+
+<a name="195864526"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113488-general/topic/Invitation%20to%20join%20the%20Codewars%20Lean%20community%2C%20Round%202/near/195864526" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Donald Sebastian Leung <a href="https://leanprover-community.github.io/archive/stream/113488-general/topic/Invitation.20to.20join.20the.20Codewars.20Lean.20community.2C.20Round.202.html#195864526">(Apr 30 2020 at 16:24)</a>:</h4>
+<p>An alternative would simply be to author this kata in Coq instead, where we do already have a proper testing framework for specifying allowed axioms on a per-kata basis. But, no offense, I doubt the Coq community on CW would welcome such an exercise given that it can be solved using a simple <code>tauto</code>.</p>
+
+
+
+<a name="195864571"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113488-general/topic/Invitation%20to%20join%20the%20Codewars%20Lean%20community%2C%20Round%202/near/195864571" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Mario Carneiro <a href="https://leanprover-community.github.io/archive/stream/113488-general/topic/Invitation.20to.20join.20the.20Codewars.20Lean.20community.2C.20Round.202.html#195864571">(Apr 30 2020 at 16:25)</a>:</h4>
+<p>Aren't you already testing that proofs don't include bad axioms?</p>
+
+
+
+<a name="195864779"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113488-general/topic/Invitation%20to%20join%20the%20Codewars%20Lean%20community%2C%20Round%202/near/195864779" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Donald Sebastian Leung <a href="https://leanprover-community.github.io/archive/stream/113488-general/topic/Invitation.20to.20join.20the.20Codewars.20Lean.20community.2C.20Round.202.html#195864779">(Apr 30 2020 at 16:26)</a>:</h4>
+<p>Yes, but for our current Lean setup, the set of allowed axioms is hardcoded so it cannot be customized on a per-kata basis.</p>
+
+
+
+<a name="195868032"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113488-general/topic/Invitation%20to%20join%20the%20Codewars%20Lean%20community%2C%20Round%202/near/195868032" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Steffan <a href="https://leanprover-community.github.io/archive/stream/113488-general/topic/Invitation.20to.20join.20the.20Codewars.20Lean.20community.2C.20Round.202.html#195868032">(Apr 30 2020 at 16:48)</a>:</h4>
+<p>You can't have infinite time, because if you did, then if you had an infinite loop, it would never stop running. It is inside a Docker image so it shouldn't be too hard to terminate, but it makes extra work. Who knows, you might crash Docker or something.</p>
+
+
+
+<a name="195868226"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113488-general/topic/Invitation%20to%20join%20the%20Codewars%20Lean%20community%2C%20Round%202/near/195868226" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Patrick Massot <a href="https://leanprover-community.github.io/archive/stream/113488-general/topic/Invitation.20to.20join.20the.20Codewars.20Lean.20community.2C.20Round.202.html#195868226">(Apr 30 2020 at 16:49)</a>:</h4>
+<p>Steffan, there really mean infinite here. Arbitrarily long is not enough.</p>
+
+
+
+<a name="195868495"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113488-general/topic/Invitation%20to%20join%20the%20Codewars%20Lean%20community%2C%20Round%202/near/195868495" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Steffan <a href="https://leanprover-community.github.io/archive/stream/113488-general/topic/Invitation.20to.20join.20the.20Codewars.20Lean.20community.2C.20Round.202.html#195868495">(Apr 30 2020 at 16:51)</a>:</h4>
+<p>No, I mean that on CW, it wouldn't really work to have infinite time for the reason I explained.</p>
+
+
+
 {% endraw %}
 
-<hr><p>Last updated: Apr 30 2020 at 16:04 UTC</p>
+<hr><p>Last updated: Apr 30 2020 at 17:04 UTC</p>

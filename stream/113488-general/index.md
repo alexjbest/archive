@@ -9,17 +9,17 @@ permalink: /stream/113488-general/index.html
 
 ### Topics:
 
+* [Diagnosing timeout](topic/Diagnosing.20timeout.html) (24 messages, latest: Apr 30 2020 at 17:02)
+* [big ops](topic/big.20ops.html) (26 messages, latest: Apr 30 2020 at 16:57)
+* [Invitation to join the Codewars Lean community, Round 2](topic/Invitation.20to.20join.20the.20Codewars.20Lean.20community.2C.20Round.202.html) (188 messages, latest: Apr 30 2020 at 16:51)
 * [seminars](topic/seminars.html) (12 messages, latest: Apr 30 2020 at 15:57)
-* [Diagnosing timeout](topic/Diagnosing.20timeout.html) (18 messages, latest: Apr 30 2020 at 15:56)
 * [universe bug?](topic/universe.20bug.3F.html) (18 messages, latest: Apr 30 2020 at 15:52)
-* [Invitation to join the Codewars Lean community, Round 2](topic/Invitation.20to.20join.20the.20Codewars.20Lean.20community.2C.20Round.202.html) (181 messages, latest: Apr 30 2020 at 15:48)
 * [continuity proof](topic/continuity.20proof.html) (12 messages, latest: Apr 30 2020 at 15:12)
 * [Lean job in London](topic/Lean.20job.20in.20London.html) (8 messages, latest: Apr 30 2020 at 14:28)
 * [leanproject access denied](topic/leanproject.20access.20denied.html) (18 messages, latest: Apr 30 2020 at 13:59)
 * [transitive coercions](topic/transitive.20coercions.html) (17 messages, latest: Apr 30 2020 at 13:50)
 * [graphs on the website](topic/graphs.20on.20the.20website.html) (39 messages, latest: Apr 30 2020 at 13:28)
 * [continuous integration failing](topic/continuous.20integration.20failing.html) (2 messages, latest: Apr 30 2020 at 12:50)
-* [big ops](topic/big.20ops.html) (25 messages, latest: Apr 30 2020 at 11:43)
 * [is this a pattern](topic/is.20this.20a.20pattern.html) (18 messages, latest: Apr 30 2020 at 11:13)
 * [simp linter and structure fields](topic/simp.20linter.20and.20structure.20fields.html) (9 messages, latest: Apr 30 2020 at 09:09)
 * [linting the core library](topic/linting.20the.20core.20library.html) (18 messages, latest: Apr 29 2020 at 19:30)
@@ -2738,4 +2738,4 @@ permalink: /stream/113488-general/index.html
 * [test](topic/test.html) (4 messages, latest: Feb 26 2018 at 16:22)
 * [welcome](topic/welcome.html) (1 message, latest: Feb 26 2018 at 16:02)
 
-<hr><p>Last updated: Apr 30 2020 at 16:04 UTC</p>
+<hr><p>Last updated: Apr 30 2020 at 17:04 UTC</p>

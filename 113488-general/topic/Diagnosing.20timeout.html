@@ -174,6 +174,43 @@ permalink: /stream/113488-general/topic/Diagnosing.20timeout.html
 
 
 
+<a name="195866461"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113488-general/topic/Diagnosing%20timeout/near/195866461" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Bhavik Mehta <a href="https://leanprover-community.github.io/archive/stream/113488-general/topic/Diagnosing.20timeout.html#195866461">(Apr 30 2020 at 16:39)</a>:</h4>
+<p>If I add another line (eg simp) before the <code>end</code>, it says the tactic state is <code>goals accomplished</code> and the simp fails with match failed, no goals; and this happens quickly</p>
+
+
+
+<a name="195869576"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113488-general/topic/Diagnosing%20timeout/near/195869576" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Sebastien Gouezel <a href="https://leanprover-community.github.io/archive/stream/113488-general/topic/Diagnosing.20timeout.html#195869576">(Apr 30 2020 at 16:57)</a>:</h4>
+<p>My guess is that you should try to fill in the sorry of <code>dense_prod_map_id</code>: it is not a Prop, so what you put in there is important.</p>
+<p>By the way, all these classes (<code>dense</code>, <code>closed</code>) are not Props because <code>is_iso</code> is not Prop either. Does it really create problems to turn <code>is_iso</code> into a Prop, just requiring the existence of an inverse -- and having a convenience function <code>is_iso.inverse</code> that would pull the inverse out of choice?</p>
+
+
+
+<a name="195869737"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113488-general/topic/Diagnosing%20timeout/near/195869737" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Johan Commelin <a href="https://leanprover-community.github.io/archive/stream/113488-general/topic/Diagnosing.20timeout.html#195869737">(Apr 30 2020 at 16:58)</a>:</h4>
+<p>This is the big "category_theory uses data, not Props" question...</p>
+
+
+
+<a name="195869849"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113488-general/topic/Diagnosing%20timeout/near/195869849" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Johan Commelin <a href="https://leanprover-community.github.io/archive/stream/113488-general/topic/Diagnosing.20timeout.html#195869849">(Apr 30 2020 at 16:59)</a>:</h4>
+<p>The same thing with <code>has_limits</code> etc...</p>
+
+
+
+<a name="195870021"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113488-general/topic/Diagnosing%20timeout/near/195870021" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Bhavik Mehta <a href="https://leanprover-community.github.io/archive/stream/113488-general/topic/Diagnosing.20timeout.html#195870021">(Apr 30 2020 at 17:00)</a>:</h4>
+<p>Yeah I think it has to be all or nothing - we've got to have everything as a Prop or everything as data otherwise things won't play well with each other</p>
+
+
+
+<a name="195870328"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113488-general/topic/Diagnosing%20timeout/near/195870328" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Sebastien Gouezel <a href="https://leanprover-community.github.io/archive/stream/113488-general/topic/Diagnosing.20timeout.html#195870328">(Apr 30 2020 at 17:02)</a>:</h4>
+<p>If the data is not unique, then I understand you need to keep the data and record the way it is constructed. But when the data is unique like the inverse, I don't see the point.</p>
+
+
+
 {% endraw %}
 
-<hr><p>Last updated: Apr 30 2020 at 16:04 UTC</p>
+<hr><p>Last updated: Apr 30 2020 at 17:04 UTC</p>

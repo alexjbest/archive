@@ -60,6 +60,67 @@ You can do this in a couple of ways, by setting <code>set_option pp.all true</co
 
 
 
+<a name="195862135"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113489-new%20members/topic/Coercion%20issues/near/195862135" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Jack J Garzella <a href="https://leanprover-community.github.io/archive/stream/113489-new-members/topic/Coercion.20issues.html#195862135">(Apr 30 2020 at 16:06)</a>:</h4>
+<p>Thanks so much! All of this was extremely helpful! I've now successfully proven my lemma, which looks like this:</p>
+<div class="codehilite"><pre><span></span><code><span class="kn">lemma</span> <span class="n">power_inverse</span> <span class="o">:</span>
+<span class="bp">∀</span> <span class="o">(</span><span class="n">a</span> <span class="o">:</span> <span class="n">real</span><span class="o">)</span> <span class="o">(</span><span class="n">b</span> <span class="o">:</span> <span class="n">nat</span><span class="o">)</span>
+<span class="o">(</span><span class="n">ha</span> <span class="o">:</span> <span class="mi">0</span> <span class="bp">≤</span> <span class="n">a</span><span class="o">)</span> <span class="o">(</span><span class="n">hb</span> <span class="o">:</span> <span class="o">(</span><span class="n">b</span> <span class="o">:</span> <span class="n">ℝ</span><span class="o">)</span> <span class="bp">≠</span> <span class="mi">0</span><span class="o">),</span>
+<span class="o">(</span><span class="n">a</span> <span class="bp">^</span> <span class="o">(</span><span class="mi">1</span> <span class="bp">/</span> <span class="o">(</span><span class="n">b</span> <span class="o">:</span> <span class="n">ℝ</span><span class="o">)))</span> <span class="bp">^</span> <span class="o">(</span><span class="n">b</span> <span class="o">:</span> <span class="n">ℝ</span><span class="o">)</span> <span class="bp">=</span> <span class="n">a</span> <span class="o">:=</span>
+<span class="k">begin</span>
+<span class="n">intros</span><span class="o">,</span>
+<span class="n">rw</span> <span class="o">[</span><span class="err">←</span><span class="n">real</span><span class="bp">.</span><span class="n">rpow_mul</span> <span class="n">ha</span><span class="o">],</span>
+<span class="n">simp</span><span class="o">,</span>
+<span class="k">calc</span> <span class="n">a</span> <span class="bp">^</span> <span class="o">((</span><span class="err">↑</span><span class="n">b</span><span class="o">)</span><span class="bp">⁻¹</span> <span class="bp">*</span> <span class="err">↑</span><span class="n">b</span><span class="o">)</span> <span class="bp">=</span> <span class="n">a</span> <span class="bp">^</span> <span class="o">((</span><span class="mi">1</span> <span class="o">:</span> <span class="n">ℝ</span><span class="o">))</span> <span class="o">:</span> <span class="k">by</span> <span class="n">rw</span> <span class="o">[</span><span class="n">field</span><span class="bp">.</span><span class="n">inv_mul_cancel</span> <span class="n">hb</span><span class="o">]</span>
+      <span class="bp">...</span>               <span class="bp">=</span> <span class="n">a</span> <span class="o">:</span> <span class="k">by</span> <span class="n">simp</span>
+<span class="kn">end</span>
+</code></pre></div>
+
+
+<p>The proof I used though is a bit verbose, and I'd like to make it shorter. In particular, <br>
+1) I can't figure out how to get <code>simp</code> to use the <code>field.inv_mul_cancel</code> lemma (which is marked <code>@[simp]</code>)<br>
+2) It might be nice to have <code>hb</code> be of type <code>b ≠ 0</code> rather than <code>(b : ℝ) ≠ 0</code>, but I don't know how to easily make <code>b</code> promote it's type.<br>
+How might I go about solving these?</p>
+
+
+
+<a name="195864614"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113489-new%20members/topic/Coercion%20issues/near/195864614" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Alex J. Best <a href="https://leanprover-community.github.io/archive/stream/113489-new-members/topic/Coercion.20issues.html#195864614">(Apr 30 2020 at 16:25)</a>:</h4>
+<p>Well if you want to make it short you can just use an explicit chain of rewrites in place of invoking simp, and not use a calc block (but calc blocks look nice)</p>
+<div class="codehilite"><pre><span></span><code><span class="kn">lemma</span> <span class="n">power_inverse</span> <span class="o">:</span>
+<span class="bp">∀</span> <span class="o">(</span><span class="n">a</span> <span class="o">:</span> <span class="n">real</span><span class="o">)</span> <span class="o">(</span><span class="n">b</span> <span class="o">:</span> <span class="n">nat</span><span class="o">)</span>
+<span class="o">(</span><span class="n">ha</span> <span class="o">:</span> <span class="mi">0</span> <span class="bp">≤</span> <span class="n">a</span><span class="o">)</span> <span class="o">(</span><span class="n">hb</span> <span class="o">:</span> <span class="o">(</span><span class="n">b</span> <span class="o">:</span> <span class="n">ℝ</span><span class="o">)</span> <span class="bp">≠</span> <span class="mi">0</span><span class="o">),</span>
+<span class="o">(</span><span class="n">a</span> <span class="bp">^</span> <span class="o">(</span><span class="mi">1</span> <span class="bp">/</span> <span class="o">(</span><span class="n">b</span> <span class="o">:</span> <span class="n">ℝ</span><span class="o">)))</span> <span class="bp">^</span> <span class="o">(</span><span class="n">b</span> <span class="o">:</span> <span class="n">ℝ</span><span class="o">)</span> <span class="bp">=</span> <span class="n">a</span> <span class="o">:=</span>
+<span class="k">begin</span>
+<span class="n">intros</span><span class="o">,</span>
+<span class="n">rw</span> <span class="o">[</span><span class="err">←</span><span class="n">real</span><span class="bp">.</span><span class="n">rpow_mul</span> <span class="n">ha</span><span class="o">,</span> <span class="n">one_div_eq_inv</span><span class="o">,</span> <span class="n">inv_mul_cancel</span> <span class="n">hb</span><span class="o">,</span> <span class="n">real</span><span class="bp">.</span><span class="n">rpow_one</span><span class="o">],</span>
+<span class="kn">end</span>
+</code></pre></div>
+
+
+
+<a name="195867402"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113489-new%20members/topic/Coercion%20issues/near/195867402" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Alex J. Best <a href="https://leanprover-community.github.io/archive/stream/113489-new-members/topic/Coercion.20issues.html#195867402">(Apr 30 2020 at 16:45)</a>:</h4>
+<p>If you want simp to use <code>inv_mul_cancel</code> I believe you'll need to supply <code>hb</code> to simp, </p>
+<div class="codehilite"><pre><span></span><code><span class="kn">lemma</span> <span class="n">power_inverse</span> <span class="o">:</span>
+<span class="bp">∀</span> <span class="o">(</span><span class="n">a</span> <span class="o">:</span> <span class="n">real</span><span class="o">)</span> <span class="o">(</span><span class="n">b</span> <span class="o">:</span> <span class="n">nat</span><span class="o">)</span>
+<span class="o">(</span><span class="n">ha</span> <span class="o">:</span> <span class="mi">0</span> <span class="bp">≤</span> <span class="n">a</span><span class="o">)</span> <span class="o">(</span><span class="n">hb</span> <span class="o">:</span> <span class="o">(</span><span class="n">b</span> <span class="o">:</span> <span class="n">ℝ</span><span class="o">)</span> <span class="bp">≠</span> <span class="mi">0</span><span class="o">),</span>
+<span class="o">(</span><span class="n">a</span> <span class="bp">^</span> <span class="o">(</span><span class="mi">1</span> <span class="bp">/</span> <span class="o">(</span><span class="n">b</span> <span class="o">:</span> <span class="n">ℝ</span><span class="o">)))</span> <span class="bp">^</span> <span class="o">(</span><span class="n">b</span> <span class="o">:</span> <span class="n">ℝ</span><span class="o">)</span> <span class="bp">=</span> <span class="n">a</span> <span class="o">:=</span>
+<span class="k">begin</span>
+<span class="n">intros</span><span class="o">,</span>
+<span class="n">rw</span> <span class="o">[</span><span class="err">←</span><span class="n">real</span><span class="bp">.</span><span class="n">rpow_mul</span> <span class="n">ha</span><span class="o">],</span>
+<span class="n">simp</span> <span class="o">[</span><span class="n">hb</span><span class="o">],</span>
+<span class="kn">end</span>
+</code></pre></div>
+
+
+
+<a name="195867585"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113489-new%20members/topic/Coercion%20issues/near/195867585" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Alex J. Best <a href="https://leanprover-community.github.io/archive/stream/113489-new-members/topic/Coercion.20issues.html#195867585">(Apr 30 2020 at 16:46)</a>:</h4>
+<p>Though in fact simp uses a different lemma <code>inv_mul_cancel'</code> in this case instead of the one you has in mind, which applies instead to groups with zero, rather than just division rings.</p>
+
+
+
 {% endraw %}
 
-<hr><p>Last updated: Apr 30 2020 at 16:04 UTC</p>
+<hr><p>Last updated: Apr 30 2020 at 17:04 UTC</p>
