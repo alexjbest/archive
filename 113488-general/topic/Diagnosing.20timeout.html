@@ -395,6 +395,199 @@ permalink: /stream/113488-general/topic/Diagnosing.20timeout.html
 
 
 
+<a name="195878861"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113488-general/topic/Diagnosing%20timeout/near/195878861" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Kevin Buzzard <a href="https://leanprover-community.github.io/archive/stream/113488-general/topic/Diagnosing.20timeout.html#195878861">(Apr 30 2020 at 18:09)</a>:</h4>
+<p>Oh this is interesting</p>
+
+
+
+<a name="195879038"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113488-general/topic/Diagnosing%20timeout/near/195879038" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Kevin Buzzard <a href="https://leanprover-community.github.io/archive/stream/113488-general/topic/Diagnosing.20timeout.html#195879038">(Apr 30 2020 at 18:10)</a>:</h4>
+<div class="codehilite"><pre><span></span><code><span class="n">def</span> <span class="n">sheaf_exponential</span> <span class="o">(</span><span class="n">A</span> <span class="o">:</span> <span class="n">C</span><span class="o">)</span> <span class="o">(</span><span class="n">s</span> <span class="o">:</span> <span class="n">sheaf</span> <span class="n">C</span> <span class="n">j</span><span class="o">)</span> <span class="o">:</span> <span class="n">sheaf</span> <span class="n">C</span> <span class="n">j</span> <span class="o">:=</span>
+<span class="o">{</span> <span class="n">A</span> <span class="o">:=</span> <span class="n">exp</span> <span class="n">A</span> <span class="n">s</span><span class="bp">.</span><span class="n">A</span><span class="o">,</span>
+  <span class="n">unique_extend</span> <span class="o">:=</span> <span class="bp">λ</span> <span class="n">B</span> <span class="n">B&#39;</span> <span class="n">m</span> <span class="n">f&#39;</span> <span class="n">d</span><span class="o">,</span>
+  <span class="k">begin</span>
+    <span class="n">haveI</span> <span class="o">:=</span> <span class="bp">@</span><span class="n">dense_prod_map_id</span> <span class="bp">_</span> <span class="bp">_</span> <span class="bp">_</span> <span class="bp">_</span> <span class="n">j</span> <span class="bp">_</span> <span class="n">A</span> <span class="bp">_</span> <span class="bp">_</span> <span class="n">m</span> <span class="n">d</span><span class="o">,</span>
+    <span class="n">refine</span> <span class="bp">⟨⟨⟨</span><span class="n">cchat</span> <span class="o">(</span><span class="n">s</span><span class="bp">.</span><span class="n">unique_extend</span> <span class="o">(</span><span class="n">limits</span><span class="bp">.</span><span class="n">prod</span><span class="bp">.</span><span class="n">map</span> <span class="o">(</span><span class="mi">𝟙</span> <span class="n">A</span><span class="o">)</span> <span class="n">m</span><span class="o">)</span> <span class="o">(</span><span class="n">unhat</span> <span class="n">f&#39;</span><span class="o">))</span><span class="bp">.</span><span class="mi">1</span><span class="bp">.</span><span class="mi">1</span><span class="bp">.</span><span class="mi">1</span><span class="o">,</span> <span class="bp">_⟩⟩</span><span class="o">,</span> <span class="bp">_⟩</span><span class="o">,</span>
+    <span class="o">{</span> <span class="n">rw</span> <span class="err">←</span> <span class="n">exp_transpose_natural_left</span><span class="o">,</span>
+      <span class="n">rw</span> <span class="o">(</span><span class="n">s</span><span class="bp">.</span><span class="n">unique_extend</span> <span class="o">(</span><span class="n">limits</span><span class="bp">.</span><span class="n">prod</span><span class="bp">.</span><span class="n">map</span> <span class="o">(</span><span class="mi">𝟙</span> <span class="n">A</span><span class="o">)</span> <span class="n">m</span><span class="o">)</span> <span class="o">(</span><span class="n">unhat</span> <span class="n">f&#39;</span><span class="o">))</span><span class="bp">.</span><span class="mi">1</span><span class="bp">.</span><span class="mi">1</span><span class="bp">.</span><span class="mi">2</span><span class="o">,</span>
+      <span class="n">exact</span> <span class="o">((</span><span class="n">exp</span><span class="bp">.</span><span class="n">adjunction</span> <span class="bp">_</span><span class="o">)</span><span class="bp">.</span><span class="n">hom_equiv</span> <span class="bp">_</span> <span class="bp">_</span><span class="o">)</span><span class="bp">.</span><span class="n">right_inv</span> <span class="n">f&#39;</span> <span class="o">},</span>
+    <span class="o">{</span> <span class="n">rintro</span> <span class="bp">⟨</span><span class="n">a</span><span class="o">,</span> <span class="n">ha</span><span class="bp">⟩</span><span class="o">,</span>
+      <span class="n">suffices</span> <span class="n">z</span> <span class="o">:</span> <span class="n">limits</span><span class="bp">.</span><span class="n">prod</span><span class="bp">.</span><span class="n">map</span> <span class="o">(</span><span class="mi">𝟙</span> <span class="n">A</span><span class="o">)</span> <span class="n">m</span> <span class="err">≫</span> <span class="n">unhat</span> <span class="n">a</span> <span class="bp">=</span> <span class="n">unhat</span> <span class="n">f&#39;</span><span class="o">,</span>
+        <span class="n">rw</span> <span class="err">←</span> <span class="o">(</span><span class="n">s</span><span class="bp">.</span><span class="n">unique_extend</span> <span class="o">(</span><span class="n">limits</span><span class="bp">.</span><span class="n">prod</span><span class="bp">.</span><span class="n">map</span> <span class="o">(</span><span class="mi">𝟙</span> <span class="n">A</span><span class="o">)</span> <span class="n">m</span><span class="o">)</span> <span class="o">(</span><span class="n">unhat</span> <span class="n">f&#39;</span><span class="o">))</span><span class="bp">.</span><span class="mi">2</span> <span class="bp">⟨</span><span class="n">unhat</span> <span class="n">a</span><span class="o">,</span> <span class="n">z</span><span class="bp">⟩</span><span class="o">,</span>
+        <span class="n">congr</span><span class="o">,</span>
+        <span class="n">symmetry</span><span class="o">,</span>
+        <span class="n">exact</span> <span class="o">((</span><span class="n">exp</span><span class="bp">.</span><span class="n">adjunction</span> <span class="n">A</span><span class="o">)</span><span class="bp">.</span><span class="n">hom_equiv</span> <span class="bp">_</span> <span class="bp">_</span><span class="o">)</span><span class="bp">.</span><span class="n">right_inv</span> <span class="n">a</span><span class="o">,</span>
+      <span class="n">rw</span> <span class="o">[</span><span class="err">←</span> <span class="n">exp_transpose_natural_left_symm</span> <span class="n">m</span> <span class="n">a</span><span class="o">,</span> <span class="n">ha</span><span class="o">],</span>
+      <span class="n">sorry</span><span class="o">,</span>
+    <span class="o">},</span>
+  <span class="kn">end</span>
+<span class="o">}</span>
+</code></pre></div>
+
+
+
+<a name="195879090"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113488-general/topic/Diagnosing%20timeout/near/195879090" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Kevin Buzzard <a href="https://leanprover-community.github.io/archive/stream/113488-general/topic/Diagnosing.20timeout.html#195879090">(Apr 30 2020 at 18:10)</a>:</h4>
+<div class="codehilite"><pre><span></span><code><span class="n">Tactic</span> <span class="n">State</span>
+<span class="n">goals</span> <span class="n">accomplished</span>
+<span class="n">sheaf</span><span class="bp">.</span><span class="n">lean</span><span class="o">:</span><span class="mi">184</span><span class="o">:</span><span class="mi">6</span><span class="o">:</span> <span class="n">error</span>
+<span class="n">tactic</span> <span class="n">failed</span><span class="o">,</span> <span class="n">there</span> <span class="n">are</span> <span class="n">no</span> <span class="n">goals</span> <span class="n">to</span> <span class="n">be</span> <span class="n">solved</span>
+<span class="n">state</span><span class="o">:</span>
+<span class="n">no</span> <span class="n">goals</span>
+</code></pre></div>
+
+
+
+<a name="195879130"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113488-general/topic/Diagnosing%20timeout/near/195879130" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Kevin Buzzard <a href="https://leanprover-community.github.io/archive/stream/113488-general/topic/Diagnosing.20timeout.html#195879130">(Apr 30 2020 at 18:10)</a>:</h4>
+<p>the error is on the sorry, complaining that I'm apologising when I'm all done.</p>
+
+
+
+<a name="195879171"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113488-general/topic/Diagnosing%20timeout/near/195879171" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Bhavik Mehta <a href="https://leanprover-community.github.io/archive/stream/113488-general/topic/Diagnosing.20timeout.html#195879171">(Apr 30 2020 at 18:11)</a>:</h4>
+<p>Right - this is the same as the simp thing I saw earlier</p>
+
+
+
+<a name="195879176"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113488-general/topic/Diagnosing%20timeout/near/195879176" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Bhavik Mehta <a href="https://leanprover-community.github.io/archive/stream/113488-general/topic/Diagnosing.20timeout.html#195879176">(Apr 30 2020 at 18:11)</a>:</h4>
+<p>Really weird!</p>
+
+
+
+<a name="195879180"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113488-general/topic/Diagnosing%20timeout/near/195879180" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Kevin Buzzard <a href="https://leanprover-community.github.io/archive/stream/113488-general/topic/Diagnosing.20timeout.html#195879180">(Apr 30 2020 at 18:11)</a>:</h4>
+<div class="codehilite"><pre><span></span><code><span class="n">def</span> <span class="n">sheaf_exponential</span> <span class="o">(</span><span class="n">A</span> <span class="o">:</span> <span class="n">C</span><span class="o">)</span> <span class="o">(</span><span class="n">s</span> <span class="o">:</span> <span class="n">sheaf</span> <span class="n">C</span> <span class="n">j</span><span class="o">)</span> <span class="o">:</span> <span class="n">sheaf</span> <span class="n">C</span> <span class="n">j</span> <span class="o">:=</span>
+<span class="o">{</span> <span class="n">A</span> <span class="o">:=</span> <span class="n">exp</span> <span class="n">A</span> <span class="n">s</span><span class="bp">.</span><span class="n">A</span><span class="o">,</span>
+  <span class="n">unique_extend</span> <span class="o">:=</span> <span class="bp">λ</span> <span class="n">B</span> <span class="n">B&#39;</span> <span class="n">m</span> <span class="n">f&#39;</span> <span class="n">d</span><span class="o">,</span>
+  <span class="k">begin</span>
+    <span class="n">haveI</span> <span class="o">:=</span> <span class="bp">@</span><span class="n">dense_prod_map_id</span> <span class="bp">_</span> <span class="bp">_</span> <span class="bp">_</span> <span class="bp">_</span> <span class="n">j</span> <span class="bp">_</span> <span class="n">A</span> <span class="bp">_</span> <span class="bp">_</span> <span class="n">m</span> <span class="n">d</span><span class="o">,</span>
+    <span class="n">refine</span> <span class="bp">⟨⟨⟨</span><span class="n">cchat</span> <span class="o">(</span><span class="n">s</span><span class="bp">.</span><span class="n">unique_extend</span> <span class="o">(</span><span class="n">limits</span><span class="bp">.</span><span class="n">prod</span><span class="bp">.</span><span class="n">map</span> <span class="o">(</span><span class="mi">𝟙</span> <span class="n">A</span><span class="o">)</span> <span class="n">m</span><span class="o">)</span> <span class="o">(</span><span class="n">unhat</span> <span class="n">f&#39;</span><span class="o">))</span><span class="bp">.</span><span class="mi">1</span><span class="bp">.</span><span class="mi">1</span><span class="bp">.</span><span class="mi">1</span><span class="o">,</span> <span class="bp">_⟩⟩</span><span class="o">,</span> <span class="bp">_⟩</span><span class="o">,</span>
+    <span class="o">{</span> <span class="n">rw</span> <span class="err">←</span> <span class="n">exp_transpose_natural_left</span><span class="o">,</span>
+      <span class="n">rw</span> <span class="o">(</span><span class="n">s</span><span class="bp">.</span><span class="n">unique_extend</span> <span class="o">(</span><span class="n">limits</span><span class="bp">.</span><span class="n">prod</span><span class="bp">.</span><span class="n">map</span> <span class="o">(</span><span class="mi">𝟙</span> <span class="n">A</span><span class="o">)</span> <span class="n">m</span><span class="o">)</span> <span class="o">(</span><span class="n">unhat</span> <span class="n">f&#39;</span><span class="o">))</span><span class="bp">.</span><span class="mi">1</span><span class="bp">.</span><span class="mi">1</span><span class="bp">.</span><span class="mi">2</span><span class="o">,</span>
+      <span class="n">exact</span> <span class="o">((</span><span class="n">exp</span><span class="bp">.</span><span class="n">adjunction</span> <span class="bp">_</span><span class="o">)</span><span class="bp">.</span><span class="n">hom_equiv</span> <span class="bp">_</span> <span class="bp">_</span><span class="o">)</span><span class="bp">.</span><span class="n">right_inv</span> <span class="n">f&#39;</span> <span class="o">},</span>
+    <span class="o">{</span> <span class="n">rintro</span> <span class="bp">⟨</span><span class="n">a</span><span class="o">,</span> <span class="n">ha</span><span class="bp">⟩</span><span class="o">,</span>
+      <span class="n">suffices</span> <span class="n">z</span> <span class="o">:</span> <span class="n">limits</span><span class="bp">.</span><span class="n">prod</span><span class="bp">.</span><span class="n">map</span> <span class="o">(</span><span class="mi">𝟙</span> <span class="n">A</span><span class="o">)</span> <span class="n">m</span> <span class="err">≫</span> <span class="n">unhat</span> <span class="n">a</span> <span class="bp">=</span> <span class="n">unhat</span> <span class="n">f&#39;</span><span class="o">,</span>
+        <span class="n">rw</span> <span class="err">←</span> <span class="o">(</span><span class="n">s</span><span class="bp">.</span><span class="n">unique_extend</span> <span class="o">(</span><span class="n">limits</span><span class="bp">.</span><span class="n">prod</span><span class="bp">.</span><span class="n">map</span> <span class="o">(</span><span class="mi">𝟙</span> <span class="n">A</span><span class="o">)</span> <span class="n">m</span><span class="o">)</span> <span class="o">(</span><span class="n">unhat</span> <span class="n">f&#39;</span><span class="o">))</span><span class="bp">.</span><span class="mi">2</span> <span class="bp">⟨</span><span class="n">unhat</span> <span class="n">a</span><span class="o">,</span> <span class="n">z</span><span class="bp">⟩</span><span class="o">,</span>
+        <span class="n">congr</span><span class="o">,</span>
+        <span class="n">symmetry</span><span class="o">,</span>
+        <span class="n">exact</span> <span class="o">((</span><span class="n">exp</span><span class="bp">.</span><span class="n">adjunction</span> <span class="n">A</span><span class="o">)</span><span class="bp">.</span><span class="n">hom_equiv</span> <span class="bp">_</span> <span class="bp">_</span><span class="o">)</span><span class="bp">.</span><span class="n">right_inv</span> <span class="n">a</span><span class="o">,</span>
+      <span class="n">rw</span> <span class="o">[</span><span class="err">←</span> <span class="n">exp_transpose_natural_left_symm</span> <span class="n">m</span> <span class="n">a</span><span class="o">,</span> <span class="n">ha</span><span class="o">],</span>
+    <span class="o">},</span>
+    <span class="n">sorry</span>
+  <span class="kn">end</span>
+<span class="o">}</span>
+</code></pre></div>
+
+
+<p>same error</p>
+
+
+
+<a name="195879226"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113488-general/topic/Diagnosing%20timeout/near/195879226" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Kevin Buzzard <a href="https://leanprover-community.github.io/archive/stream/113488-general/topic/Diagnosing.20timeout.html#195879226">(Apr 30 2020 at 18:11)</a>:</h4>
+<p>I've seen Lean in sort of this state before -- there are hidden goals. There's a tactic which makes them come out</p>
+
+
+
+<a name="195879347"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113488-general/topic/Diagnosing%20timeout/near/195879347" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Bhavik Mehta <a href="https://leanprover-community.github.io/archive/stream/113488-general/topic/Diagnosing.20timeout.html#195879347">(Apr 30 2020 at 18:12)</a>:</h4>
+<p>But I don't think there are hidden goals! In all the code I've written I haven't used any <code>. obviously</code> or anything</p>
+
+
+
+<a name="195879486"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113488-general/topic/Diagnosing%20timeout/near/195879486" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Kevin Buzzard <a href="https://leanprover-community.github.io/archive/stream/113488-general/topic/Diagnosing.20timeout.html#195879486">(Apr 30 2020 at 18:13)</a>:</h4>
+<p>Sometimes a tactic just leaves some hidden goals behind by accident</p>
+
+
+
+<a name="195879497"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113488-general/topic/Diagnosing%20timeout/near/195879497" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Bhavik Mehta <a href="https://leanprover-community.github.io/archive/stream/113488-general/topic/Diagnosing.20timeout.html#195879497">(Apr 30 2020 at 18:13)</a>:</h4>
+<p>True</p>
+
+
+
+<a name="195880019"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113488-general/topic/Diagnosing%20timeout/near/195880019" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Patrick Massot <a href="https://leanprover-community.github.io/archive/stream/113488-general/topic/Diagnosing.20timeout.html#195880019">(Apr 30 2020 at 18:17)</a>:</h4>
+<p><span class="user-mention silent" data-user-id="246273">Bhavik Mehta</span> <a href="#narrow/stream/113488-general/topic/Diagnosing.20timeout/near/195877025" title="#narrow/stream/113488-general/topic/Diagnosing.20timeout/near/195877025">said</a>:</p>
+<blockquote>
+<p>My current hypothesis is that Sebastian's right, and the problem happens when lean is trying to make the bytecode, so I'm currently filling in the sorry</p>
+</blockquote>
+<p>You probably mean Sébastien here. I don't know why Zulip doesn't use accents here, but the ASCII version is already enough to disambiguate between Sebastian working on Lean4 and Sebastien working on calculus and analytic functions</p>
+
+
+
+<a name="195880055"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113488-general/topic/Diagnosing%20timeout/near/195880055" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Kevin Buzzard <a href="https://leanprover-community.github.io/archive/stream/113488-general/topic/Diagnosing.20timeout.html#195880055">(Apr 30 2020 at 18:17)</a>:</h4>
+<p>I can't remember the name of the tactic which makes the hidden goals appear :-(</p>
+
+
+
+<a name="195880115"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113488-general/topic/Diagnosing%20timeout/near/195880115" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Mario Carneiro <a href="https://leanprover-community.github.io/archive/stream/113488-general/topic/Diagnosing.20timeout.html#195880115">(Apr 30 2020 at 18:18)</a>:</h4>
+<p><code>recover</code>?</p>
+
+
+
+<a name="195880263"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113488-general/topic/Diagnosing%20timeout/near/195880263" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Kevin Buzzard <a href="https://leanprover-community.github.io/archive/stream/113488-general/topic/Diagnosing.20timeout.html#195880263">(Apr 30 2020 at 18:19)</a>:</h4>
+<p>Yeah that's the one. OK I am going back to blaming the sorried data. The problem isn't the <code>exact</code>, it's when Lean is putting everything together afterwards.</p>
+
+
+
+<a name="195880299"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113488-general/topic/Diagnosing%20timeout/near/195880299" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Bhavik Mehta <a href="https://leanprover-community.github.io/archive/stream/113488-general/topic/Diagnosing.20timeout.html#195880299">(Apr 30 2020 at 18:19)</a>:</h4>
+<p><span class="user-mention silent" data-user-id="110031">Patrick Massot</span> <a href="#narrow/stream/113488-general/topic/Diagnosing.20timeout/near/195880019" title="#narrow/stream/113488-general/topic/Diagnosing.20timeout/near/195880019">said</a>:</p>
+<blockquote>
+<p><span class="user-mention silent" data-user-id="246273">Bhavik Mehta</span> <a href="#narrow/stream/113488-general/topic/Diagnosing.20timeout/near/195877025" title="#narrow/stream/113488-general/topic/Diagnosing.20timeout/near/195877025">said</a>:</p>
+<blockquote>
+<p>My current hypothesis is that Sebastian's right, and the problem happens when lean is trying to make the bytecode, so I'm currently filling in the sorry</p>
+</blockquote>
+<p>You probably mean Sébastien here. I don't know why Zulip doesn't use accents here, but the ASCII version is already enough to disambiguate between Sebastian working on Lean4 and Sebastien working on calculus and analytic functions</p>
+</blockquote>
+<p>Oops, yeah, thanks!</p>
+
+
+
+<a name="195880443"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113488-general/topic/Diagnosing%20timeout/near/195880443" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Reid Barton <a href="https://leanprover-community.github.io/archive/stream/113488-general/topic/Diagnosing.20timeout.html#195880443">(Apr 30 2020 at 18:20)</a>:</h4>
+<p>Or as I call them, Sebasti∀n and Sebasti∃n.</p>
+
+
+
+<a name="195880444"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113488-general/topic/Diagnosing%20timeout/near/195880444" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Mario Carneiro <a href="https://leanprover-community.github.io/archive/stream/113488-general/topic/Diagnosing.20timeout.html#195880444">(Apr 30 2020 at 18:20)</a>:</h4>
+<p>Maybe it should be renamed <code>#recover</code>; it's not intended for leaving in proof scripts because it's pretty expensive and usually indicates a bug in another tactic</p>
+
+
+
+<a name="195880741"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113488-general/topic/Diagnosing%20timeout/near/195880741" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Mario Carneiro <a href="https://leanprover-community.github.io/archive/stream/113488-general/topic/Diagnosing.20timeout.html#195880741">(Apr 30 2020 at 18:22)</a>:</h4>
+<p>Another Mario has appeared on the chat, so maybe I need to start going by Mário</p>
+
+
+
+<a name="195880831"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113488-general/topic/Diagnosing%20timeout/near/195880831" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Patrick Massot <a href="https://leanprover-community.github.io/archive/stream/113488-general/topic/Diagnosing.20timeout.html#195880831">(Apr 30 2020 at 18:23)</a>:</h4>
+<p>We lost track of how many Kevin we have a long time ago.</p>
+
+
+
+<a name="195880853"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113488-general/topic/Diagnosing%20timeout/near/195880853" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Bhavik Mehta <a href="https://leanprover-community.github.io/archive/stream/113488-general/topic/Diagnosing.20timeout.html#195880853">(Apr 30 2020 at 18:23)</a>:</h4>
+<p>Hopefully I'll be safe for a while</p>
+
+
+
+<a name="195880883"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113488-general/topic/Diagnosing%20timeout/near/195880883" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Bhavik Mehta <a href="https://leanprover-community.github.io/archive/stream/113488-general/topic/Diagnosing.20timeout.html#195880883">(Apr 30 2020 at 18:23)</a>:</h4>
+<p>Or maybe I should hope for the opposite</p>
+
+
+
 {% endraw %}
 
-<hr><p>Last updated: Apr 30 2020 at 18:06 UTC</p>
+<hr><p>Last updated: Apr 30 2020 at 19:04 UTC</p>

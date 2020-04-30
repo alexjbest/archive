@@ -9,9 +9,9 @@ permalink: /stream/113489-new-members/index.html
 
 ### Topics:
 
+* [noob question(s)](topic/noob.20question(s).html) (5328 messages, latest: Apr 30 2020 at 18:27)
 * [inductive type](topic/inductive.20type.html) (7 messages, latest: Apr 30 2020 at 17:33)
 * [Coercion issues](topic/Coercion.20issues.html) (8 messages, latest: Apr 30 2020 at 17:32)
-* [noob question(s)](topic/noob.20question(s).html) (5327 messages, latest: Apr 30 2020 at 16:55)
 * [real.exp_log](topic/real.2Eexp_log.html) (21 messages, latest: Apr 30 2020 at 15:18)
 * [server reloads imports?](topic/server.20reloads.20imports.3F.html) (9 messages, latest: Apr 30 2020 at 14:46)
 * [hello](topic/hello.html) (2 messages, latest: Apr 30 2020 at 10:48)
@@ -993,4 +993,4 @@ permalink: /stream/113489-new-members/index.html
 * [Andrew Ashworth](topic/Andrew.20Ashworth.html) (15 messages, latest: Feb 26 2018 at 16:21)
 * [onboarding](topic/onboarding.html) (1 message, latest: Feb 26 2018 at 16:02)
 
-<hr><p>Last updated: Apr 30 2020 at 18:06 UTC</p>
+<hr><p>Last updated: Apr 30 2020 at 19:04 UTC</p>
