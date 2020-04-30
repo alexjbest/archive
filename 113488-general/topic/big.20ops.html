@@ -81,6 +81,93 @@ permalink: /stream/113488-general/topic/big.20ops.html
 
 
 
+<a name="195819686"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113488-general/topic/big%20ops/near/195819686" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Sebastien Gouezel <a href="https://leanprover-community.github.io/archive/stream/113488-general/topic/big.20ops.html#195819686">(Apr 30 2020 at 10:12)</a>:</h4>
+<p>Would that conflict with</p>
+<div class="codehilite"><pre><span></span><code><span class="kn">notation</span> <span class="bp">`</span><span class="err">∑</span><span class="bp">`</span> <span class="n">binders</span> <span class="bp">`</span><span class="o">,</span> <span class="bp">`</span> <span class="n">r</span><span class="o">:(</span><span class="n">scoped</span> <span class="n">f</span><span class="o">,</span> <span class="n">tsum</span> <span class="n">f</span><span class="o">)</span> <span class="o">:=</span> <span class="n">r</span>
+</code></pre></div>
+
+
+<p>in <code>topology/algebra/infinite_sum</code>? (If necessary, we could also localize this one).</p>
+
+
+
+<a name="195820160"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113488-general/topic/big%20ops/near/195820160" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Patrick Massot <a href="https://leanprover-community.github.io/archive/stream/113488-general/topic/big.20ops.html#195820160">(Apr 30 2020 at 10:18)</a>:</h4>
+<p>People will probably want to use both when discussing partial sums.</p>
+
+
+
+<a name="195821357"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113488-general/topic/big%20ops/near/195821357" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Sebastien Gouezel <a href="https://leanprover-community.github.io/archive/stream/113488-general/topic/big.20ops.html#195821357">(Apr 30 2020 at 10:33)</a>:</h4>
+<p>I would be ok with <code>∑'</code> for the infinite sum, and the other notations introduced by Johan.</p>
+
+
+
+<a name="195821855"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113488-general/topic/big%20ops/near/195821855" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Johan Commelin <a href="https://leanprover-community.github.io/archive/stream/113488-general/topic/big.20ops.html#195821855">(Apr 30 2020 at 10:39)</a>:</h4>
+<p>Yes, I also thought about that, and I think the <code>'</code> version would be best.</p>
+
+
+
+<a name="195821974"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113488-general/topic/big%20ops/near/195821974" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Johan Commelin <a href="https://leanprover-community.github.io/archive/stream/113488-general/topic/big.20ops.html#195821974">(Apr 30 2020 at 10:40)</a>:</h4>
+<p>To what extent could this refactor be done with a regex? Because I fear it will be a lot of work if everything has to be done manually...</p>
+
+
+
+<a name="195822103"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113488-general/topic/big%20ops/near/195822103" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Johan Commelin <a href="https://leanprover-community.github.io/archive/stream/113488-general/topic/big.20ops.html#195822103">(Apr 30 2020 at 10:41)</a>:</h4>
+<p>One thing I noticed with my experiment is that <code>rw [finset.sum_lemma]</code> doesn't play very well with <code>abbreviation fintype.sum f := finset.sum univ f</code></p>
+
+
+
+<a name="195822165"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113488-general/topic/big%20ops/near/195822165" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Sebastien Gouezel <a href="https://leanprover-community.github.io/archive/stream/113488-general/topic/big.20ops.html#195822165">(Apr 30 2020 at 10:42)</a>:</h4>
+<p>Just using search and replace in all files in vscode, replacing <code>∑</code> with <code>∑'</code>, should do it, hopefully.</p>
+
+
+
+<a name="195822179"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113488-general/topic/big%20ops/near/195822179" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Johan Commelin <a href="https://leanprover-community.github.io/archive/stream/113488-general/topic/big.20ops.html#195822179">(Apr 30 2020 at 10:42)</a>:</h4>
+<p>But I wouldn't like restating a whole bunch of lemmas to <code>fintype.sum</code>. At the same time, I think <code>∑ x in univ, f x</code> is ugly.</p>
+
+
+
+<a name="195822191"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113488-general/topic/big%20ops/near/195822191" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Johan Commelin <a href="https://leanprover-community.github.io/archive/stream/113488-general/topic/big.20ops.html#195822191">(Apr 30 2020 at 10:42)</a>:</h4>
+<p><span class="user-mention silent" data-user-id="110050">Sebastien Gouezel</span> <a href="#narrow/stream/113488-general/topic/big.20ops/near/195822165" title="#narrow/stream/113488-general/topic/big.20ops/near/195822165">said</a>:</p>
+<blockquote>
+<p>Just using search and replace in all files in vscode, replacing <code>∑</code> with <code>∑'</code>, should do it, hopefully.</p>
+</blockquote>
+<p>No, I meant the other refactor.</p>
+
+
+
+<a name="195822213"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113488-general/topic/big%20ops/near/195822213" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Johan Commelin <a href="https://leanprover-community.github.io/archive/stream/113488-general/topic/big.20ops.html#195822213">(Apr 30 2020 at 10:43)</a>:</h4>
+<p>Replacing all <code>finset.sum s f</code> with <code>∑ x in s, f x</code></p>
+
+
+
+<a name="195822215"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113488-general/topic/big%20ops/near/195822215" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Sebastien Gouezel <a href="https://leanprover-community.github.io/archive/stream/113488-general/topic/big.20ops.html#195822215">(Apr 30 2020 at 10:43)</a>:</h4>
+<p>You don't even need to introduce the abbreviation, just the notation <code>∑</code> should be enough.</p>
+
+
+
+<a name="195822247"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113488-general/topic/big%20ops/near/195822247" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Sebastien Gouezel <a href="https://leanprover-community.github.io/archive/stream/113488-general/topic/big.20ops.html#195822247">(Apr 30 2020 at 10:43)</a>:</h4>
+<p>Ah, yes, the other refactor. Time for regexps, yes.</p>
+
+
+
+<a name="195822261"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113488-general/topic/big%20ops/near/195822261" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Johan Commelin <a href="https://leanprover-community.github.io/archive/stream/113488-general/topic/big.20ops.html#195822261">(Apr 30 2020 at 10:43)</a>:</h4>
+<p>Or do we just introduce the notation, but not use it in the file...</p>
+
+
+
 {% endraw %}
 
-<hr><p>Last updated: Apr 30 2020 at 10:04 UTC</p>
+<hr><p>Last updated: Apr 30 2020 at 11:04 UTC</p>
