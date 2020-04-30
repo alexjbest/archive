@@ -1,0 +1,86 @@
+---
+layout: archive
+title: Zulip Chat Archive
+permalink: /stream/113488-general/topic/big.20ops.html
+---
+
+<h2>Stream: <a href="https://leanprover-community.github.io/archive/stream/113488-general/index.html">general</a></h2>
+<h3>Topic: <a href="https://leanprover-community.github.io/archive/stream/113488-general/topic/big.20ops.html">big ops</a></h3>
+
+<hr>
+
+<base href="https://leanprover.zulipchat.com/">
+
+<head><link href="/style.css" rel="stylesheet"></head>
+
+{% raw %}
+
+<a name="195813899"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113488-general/topic/big%20ops/near/195813899" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Johan Commelin <a href="https://leanprover-community.github.io/archive/stream/113488-general/topic/big.20ops.html#195813899">(Apr 30 2020 at 09:07)</a>:</h4>
+<p>What do people think of</p>
+<div class="codehilite"><pre><span></span><code><span class="bp">@</span><span class="o">[</span><span class="n">to_additive</span><span class="o">]</span>
+<span class="kn">abbreviation</span> <span class="n">fintype</span><span class="bp">.</span><span class="n">prod</span> <span class="o">(</span><span class="n">f</span> <span class="o">:</span> <span class="n">α</span> <span class="bp">→</span> <span class="n">γ</span><span class="o">)</span> <span class="o">:=</span> <span class="n">finset</span><span class="bp">.</span><span class="n">univ</span><span class="bp">.</span><span class="n">prod</span> <span class="n">f</span>
+
+<span class="n">localized</span> <span class="s2">&quot;notation `∑` binders `, ` r:(scoped f, fintype.sum f) := r&quot;</span> <span class="k">in</span> <span class="n">big_operators</span>
+<span class="n">localized</span> <span class="s2">&quot;notation `∏` binders `, ` r:(scoped f, fintype.prod f) := r&quot;</span> <span class="k">in</span> <span class="n">big_operators</span>
+
+<span class="n">localized</span> <span class="s2">&quot;notation `∑` binders ` in ` s `, ` r:(scoped f, finset.sum s f) := r&quot;</span> <span class="k">in</span> <span class="n">big_operators</span>
+<span class="n">localized</span> <span class="s2">&quot;notation `∏` binders ` in ` s `, ` r:(scoped f, finset.prod s f) := r&quot;</span> <span class="k">in</span> <span class="n">big_operators</span>
+</code></pre></div>
+
+
+<p><span class="user-mention" data-user-id="110031">@Patrick Massot</span> I know that this is a very meagre substitute for the big ops library in coq. But I think it's better to wait for Lean 4 before we start a big refactor. In the mean time, this notation seems like a cheap way to improve readability.</p>
+
+
+
+<a name="195815811"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113488-general/topic/big%20ops/near/195815811" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Patrick Massot <a href="https://leanprover-community.github.io/archive/stream/113488-general/topic/big.20ops.html#195815811">(Apr 30 2020 at 09:30)</a>:</h4>
+<p>Does this actually work? I mean both the fintype and finset version at the same time.</p>
+
+
+
+<a name="195815858"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113488-general/topic/big%20ops/near/195815858" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Patrick Massot <a href="https://leanprover-community.github.io/archive/stream/113488-general/topic/big.20ops.html#195815858">(Apr 30 2020 at 09:31)</a>:</h4>
+<p>Oh I see, the notation is subtly different</p>
+
+
+
+<a name="195815872"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113488-general/topic/big%20ops/near/195815872" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Patrick Massot <a href="https://leanprover-community.github.io/archive/stream/113488-general/topic/big.20ops.html#195815872">(Apr 30 2020 at 09:31)</a>:</h4>
+<p>The question still stands, but I'm more optimistic</p>
+
+
+
+<a name="195816376"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113488-general/topic/big%20ops/near/195816376" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Johan Commelin <a href="https://leanprover-community.github.io/archive/stream/113488-general/topic/big.20ops.html#195816376">(Apr 30 2020 at 09:36)</a>:</h4>
+<p><span class="user-mention" data-user-id="110031">@Patrick Massot</span> See <a href="https://github.com/leanprover-community/mathlib/pull/1564/files/88a5f988abd92ea699824d72dd8c0fcdd5cd4ac0..60f01102933198521d31c2d58ad07651a23dccec#diff-c5bb8de7cb26ae773e9bcb3fa594be6fL57-R230" title="https://github.com/leanprover-community/mathlib/pull/1564/files/88a5f988abd92ea699824d72dd8c0fcdd5cd4ac0..60f01102933198521d31c2d58ad07651a23dccec#diff-c5bb8de7cb26ae773e9bcb3fa594be6fL57-R230">https://github.com/leanprover-community/mathlib/pull/1564/files/88a5f988abd92ea699824d72dd8c0fcdd5cd4ac0..60f01102933198521d31c2d58ad07651a23dccec#diff-c5bb8de7cb26ae773e9bcb3fa594be6fL57-R230</a> for a short proof of concept</p>
+
+
+
+<a name="195816798"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113488-general/topic/big%20ops/near/195816798" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Patrick Massot <a href="https://leanprover-community.github.io/archive/stream/113488-general/topic/big.20ops.html#195816798">(Apr 30 2020 at 09:41)</a>:</h4>
+<p>Yes, I saw, that's wonderful. My question is specifically about coexistence of the two variations. Do you use both in that file?</p>
+
+
+
+<a name="195817437"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113488-general/topic/big%20ops/near/195817437" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Johan Commelin <a href="https://leanprover-community.github.io/archive/stream/113488-general/topic/big.20ops.html#195817437">(Apr 30 2020 at 09:48)</a>:</h4>
+<p>Yes, I do.</p>
+
+
+
+<a name="195817583"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113488-general/topic/big%20ops/near/195817583" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Johan Commelin <a href="https://leanprover-community.github.io/archive/stream/113488-general/topic/big.20ops.html#195817583">(Apr 30 2020 at 09:49)</a>:</h4>
+<p><span class="user-mention" data-user-id="110031">@Patrick Massot</span> The first <code>calc</code> in the proof mixes them, for example.</p>
+
+
+
+<a name="195817681"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113488-general/topic/big%20ops/near/195817681" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Patrick Massot <a href="https://leanprover-community.github.io/archive/stream/113488-general/topic/big.20ops.html#195817681">(Apr 30 2020 at 09:50)</a>:</h4>
+<p>amazing</p>
+
+
+
+{% endraw %}
+
+<hr><p>Last updated: Apr 30 2020 at 10:04 UTC</p>

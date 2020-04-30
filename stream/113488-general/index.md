@@ -9,7 +9,8 @@ permalink: /stream/113488-general/index.html
 
 ### Topics:
 
-* [simp linter and structure fields](topic/simp.20linter.20and.20structure.20fields.html) (7 messages, latest: Apr 30 2020 at 09:05)
+* [big ops](topic/big.20ops.html) (9 messages, latest: Apr 30 2020 at 09:50)
+* [simp linter and structure fields](topic/simp.20linter.20and.20structure.20fields.html) (9 messages, latest: Apr 30 2020 at 09:09)
 * [is this a pattern](topic/is.20this.20a.20pattern.html) (17 messages, latest: Apr 30 2020 at 08:54)
 * [transitive coercions](topic/transitive.20coercions.html) (5 messages, latest: Apr 30 2020 at 08:32)
 * [linting the core library](topic/linting.20the.20core.20library.html) (18 messages, latest: Apr 29 2020 at 19:30)
@@ -2732,4 +2733,4 @@ permalink: /stream/113488-general/index.html
 * [test](topic/test.html) (4 messages, latest: Feb 26 2018 at 16:22)
 * [welcome](topic/welcome.html) (1 message, latest: Feb 26 2018 at 16:02)
 
-<hr><p>Last updated: Apr 30 2020 at 09:05 UTC</p>
+<hr><p>Last updated: Apr 30 2020 at 10:04 UTC</p>
