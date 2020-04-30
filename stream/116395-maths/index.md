@@ -9,6 +9,7 @@ permalink: /stream/116395-maths/index.html
 
 ### Topics:
 
+* [applicative ultrapower](topic/applicative.20ultrapower.html) (1 message, latest: Apr 30 2020 at 11:47)
 * [category/](topic/category.2F.html) (10 messages, latest: Apr 29 2020 at 17:37)
 * [\[finite_dimensional\]](topic/.5Bfinite_dimensional.5D.html) (6 messages, latest: Apr 29 2020 at 14:35)
 * [I love coersion :)](topic/I.20love.20coersion.20.3A).html) (5 messages, latest: Apr 28 2020 at 23:32)
@@ -877,4 +878,4 @@ permalink: /stream/116395-maths/index.html
 * [free group](topic/free.20group.html) (92 messages, latest: Apr 02 2018 at 05:00)
 * [Easy topological space question](topic/Easy.20topological.20space.20question.html) (18 messages, latest: Apr 02 2018 at 01:23)
 
-<hr><p>Last updated: Apr 30 2020 at 11:04 UTC</p>
+<hr><p>Last updated: Apr 30 2020 at 12:06 UTC</p>

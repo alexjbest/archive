@@ -1,0 +1,29 @@
+---
+layout: archive
+title: Zulip Chat Archive
+permalink: /stream/116395-maths/topic/applicative.20ultrapower.html
+---
+
+<h2>Stream: <a href="https://leanprover-community.github.io/archive/stream/116395-maths/index.html">maths</a></h2>
+<h3>Topic: <a href="https://leanprover-community.github.io/archive/stream/116395-maths/topic/applicative.20ultrapower.html">applicative ultrapower</a></h3>
+
+<hr>
+
+<base href="https://leanprover.zulipchat.com/">
+
+<head><link href="/style.css" rel="stylesheet"></head>
+
+{% raw %}
+
+<a name="195827647"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/116395-maths/topic/applicative%20ultrapower/near/195827647" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> David Wärn <a href="https://leanprover-community.github.io/archive/stream/116395-maths/topic/applicative.20ultrapower.html#195827647">(Apr 30 2020 at 11:47)</a>:</h4>
+<p>Currently if you want to lift a function / relation from the reals to the hyperreals, then there are separate functions for this depending on the arity of your function (1 or 2) and whether or not it is a relation -- see <a href="https://github.com/leanprover-community/mathlib/blob/master/src/order/filter/filter_product.lean#L40" title="https://github.com/leanprover-community/mathlib/blob/master/src/order/filter/filter_product.lean#L40">https://github.com/leanprover-community/mathlib/blob/master/src/order/filter/filter_product.lean#L40</a> .</p>
+<p>We can do this more uniformly by noting that 'taking ultrapowers' is an <code>applicative</code> functor: <a href="https://gist.github.com/dwarn/35d168349a298d3312534fe622c7f56e" title="https://gist.github.com/dwarn/35d168349a298d3312534fe622c7f56e">https://gist.github.com/dwarn/35d168349a298d3312534fe622c7f56e</a> .</p>
+<p>Can we 'lift theorems' in a similar way? <code>applicative</code> provides very nice language for turning say a <code>monoid</code> structure on <code>M</code> into a monoid structure on <code>upower M</code>, but how do we prove the monoid axioms? It seems like we need more than just the <code>applicative</code> laws here. We have internal function types, but can we define 'internal dependent products'?</p>
+<p>If Lean were a  first-order theory like ZFC, you could say "pick a universe V, and consider the elementary embedding V -&gt; *V" -- I'm trying to do something analogous to this, but it seems hard as the "theory of Lean" is fairly complicated.</p>
+
+
+
+{% endraw %}
+
+<hr><p>Last updated: Apr 30 2020 at 12:06 UTC</p>

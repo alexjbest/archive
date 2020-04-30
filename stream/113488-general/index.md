@@ -9,13 +9,13 @@ permalink: /stream/113488-general/index.html
 
 ### Topics:
 
-* [big ops](topic/big.20ops.html) (22 messages, latest: Apr 30 2020 at 10:43)
+* [big ops](topic/big.20ops.html) (25 messages, latest: Apr 30 2020 at 11:43)
+* [graphs on the website](topic/graphs.20on.20the.20website.html) (35 messages, latest: Apr 30 2020 at 11:40)
+* [is this a pattern](topic/is.20this.20a.20pattern.html) (18 messages, latest: Apr 30 2020 at 11:13)
 * [simp linter and structure fields](topic/simp.20linter.20and.20structure.20fields.html) (9 messages, latest: Apr 30 2020 at 09:09)
-* [is this a pattern](topic/is.20this.20a.20pattern.html) (17 messages, latest: Apr 30 2020 at 08:54)
 * [transitive coercions](topic/transitive.20coercions.html) (5 messages, latest: Apr 30 2020 at 08:32)
 * [linting the core library](topic/linting.20the.20core.20library.html) (18 messages, latest: Apr 29 2020 at 19:30)
 * [mul_action](topic/mul_action.html) (15 messages, latest: Apr 29 2020 at 17:11)
-* [graphs on the website](topic/graphs.20on.20the.20website.html) (32 messages, latest: Apr 29 2020 at 16:45)
 * [ring_aut coerce to function](topic/ring_aut.20coerce.20to.20function.html) (23 messages, latest: Apr 29 2020 at 11:38)
 * [sorry does not behave like NaN](topic/sorry.20does.20not.20behave.20like.20NaN.html) (29 messages, latest: Apr 29 2020 at 10:10)
 * [Missing leanpkg](topic/Missing.20leanpkg.html) (12 messages, latest: Apr 29 2020 at 08:50)
@@ -2733,4 +2733,4 @@ permalink: /stream/113488-general/index.html
 * [test](topic/test.html) (4 messages, latest: Feb 26 2018 at 16:22)
 * [welcome](topic/welcome.html) (1 message, latest: Feb 26 2018 at 16:02)
 
-<hr><p>Last updated: Apr 30 2020 at 11:04 UTC</p>
+<hr><p>Last updated: Apr 30 2020 at 12:06 UTC</p>

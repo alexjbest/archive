@@ -168,6 +168,33 @@ permalink: /stream/113488-general/topic/big.20ops.html
 
 
 
+<a name="195824749"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113488-general/topic/big%20ops/near/195824749" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Johan Commelin <a href="https://leanprover-community.github.io/archive/stream/113488-general/topic/big.20ops.html#195824749">(Apr 30 2020 at 11:12)</a>:</h4>
+<p><a href="https://github.com/leanprover-community/mathlib/issues/2571" title="https://github.com/leanprover-community/mathlib/issues/2571">#2571</a></p>
+
+
+
+<a name="195825145"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113488-general/topic/big%20ops/near/195825145" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Johan Commelin <a href="https://leanprover-community.github.io/archive/stream/113488-general/topic/big.20ops.html#195825145">(Apr 30 2020 at 11:18)</a>:</h4>
+<p>If I change the notation to</p>
+<div class="codehilite"><pre><span></span><code><span class="n">localized</span> <span class="s2">&quot;notation `∑` binders ` in ` s `, ` r:(scoped f, finset.sum s f) := r&quot;</span> <span class="k">in</span> <span class="n">big_operators</span>
+<span class="n">localized</span> <span class="s2">&quot;notation `∏` binders ` in ` s `, ` r:(scoped f, finset.prod s f) := r&quot;</span> <span class="k">in</span> <span class="n">big_operators</span>
+
+<span class="n">localized</span> <span class="s2">&quot;notation `∑` binders `, ` r:(scoped f, finset.univ.sum f) := r&quot;</span> <span class="k">in</span> <span class="n">big_operators</span>
+<span class="n">localized</span> <span class="s2">&quot;notation `∏` binders `, ` r:(scoped f, finset.univ.prod f) := r&quot;</span> <span class="k">in</span> <span class="n">big_operators</span>
+</code></pre></div>
+
+
+<p>then the second set of notation is not used in the tactic state. That's unfortunate. Is there some incantation that can move Lean to do a better job?</p>
+
+
+
+<a name="195827375"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113488-general/topic/big%20ops/near/195827375" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Johan Commelin <a href="https://leanprover-community.github.io/archive/stream/113488-general/topic/big.20ops.html#195827375">(Apr 30 2020 at 11:43)</a>:</h4>
+<p>I've never really understood how priorities work for notation. Can that be used here?</p>
+
+
+
 {% endraw %}
 
-<hr><p>Last updated: Apr 30 2020 at 11:04 UTC</p>
+<hr><p>Last updated: Apr 30 2020 at 12:06 UTC</p>
