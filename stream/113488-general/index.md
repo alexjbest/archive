@@ -9,10 +9,10 @@ permalink: /stream/113488-general/index.html
 
 ### Topics:
 
-* [Diagnosing timeout](topic/Diagnosing.20timeout.html) (24 messages, latest: Apr 30 2020 at 17:02)
+* [Diagnosing timeout](topic/Diagnosing.20timeout.html) (47 messages, latest: Apr 30 2020 at 18:05)
+* [seminars](topic/seminars.html) (26 messages, latest: Apr 30 2020 at 18:03)
+* [Invitation to join the Codewars Lean community, Round 2](topic/Invitation.20to.20join.20the.20Codewars.20Lean.20community.2C.20Round.202.html) (189 messages, latest: Apr 30 2020 at 17:35)
 * [big ops](topic/big.20ops.html) (26 messages, latest: Apr 30 2020 at 16:57)
-* [Invitation to join the Codewars Lean community, Round 2](topic/Invitation.20to.20join.20the.20Codewars.20Lean.20community.2C.20Round.202.html) (188 messages, latest: Apr 30 2020 at 16:51)
-* [seminars](topic/seminars.html) (12 messages, latest: Apr 30 2020 at 15:57)
 * [universe bug?](topic/universe.20bug.3F.html) (18 messages, latest: Apr 30 2020 at 15:52)
 * [continuity proof](topic/continuity.20proof.html) (12 messages, latest: Apr 30 2020 at 15:12)
 * [Lean job in London](topic/Lean.20job.20in.20London.html) (8 messages, latest: Apr 30 2020 at 14:28)
@@ -2738,4 +2738,4 @@ permalink: /stream/113488-general/index.html
 * [test](topic/test.html) (4 messages, latest: Feb 26 2018 at 16:22)
 * [welcome](topic/welcome.html) (1 message, latest: Feb 26 2018 at 16:02)
 
-<hr><p>Last updated: Apr 30 2020 at 17:04 UTC</p>
+<hr><p>Last updated: Apr 30 2020 at 18:06 UTC</p>
