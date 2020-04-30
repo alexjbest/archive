@@ -9,6 +9,7 @@ permalink: /stream/113489-new-members/index.html
 
 ### Topics:
 
+* [functions with finite support](topic/functions.20with.20finite.20support.html) (2 messages, latest: Apr 30 2020 at 22:03)
 * [noob question(s)](topic/noob.20question(s).html) (5331 messages, latest: Apr 30 2020 at 20:09)
 * [inductive type](topic/inductive.20type.html) (7 messages, latest: Apr 30 2020 at 17:33)
 * [Coercion issues](topic/Coercion.20issues.html) (8 messages, latest: Apr 30 2020 at 17:32)
@@ -993,4 +994,4 @@ permalink: /stream/113489-new-members/index.html
 * [Andrew Ashworth](topic/Andrew.20Ashworth.html) (15 messages, latest: Feb 26 2018 at 16:21)
 * [onboarding](topic/onboarding.html) (1 message, latest: Feb 26 2018 at 16:02)
 
-<hr><p>Last updated: Apr 30 2020 at 21:04 UTC</p>
+<hr><p>Last updated: Apr 30 2020 at 22:04 UTC</p>
