@@ -9,6 +9,7 @@ permalink: /stream/116395-maths/index.html
 
 ### Topics:
 
+* [topos](topic/topos.html) (58 messages, latest: Apr 30 2020 at 15:19)
 * [applicative ultrapower](topic/applicative.20ultrapower.html) (1 message, latest: Apr 30 2020 at 11:47)
 * [category/](topic/category.2F.html) (10 messages, latest: Apr 29 2020 at 17:37)
 * [\[finite_dimensional\]](topic/.5Bfinite_dimensional.5D.html) (6 messages, latest: Apr 29 2020 at 14:35)
@@ -74,7 +75,6 @@ permalink: /stream/116395-maths/index.html
 * [nat.sqrt in lean](topic/nat.2Esqrt.20in.20lean.html) (4 messages, latest: Mar 29 2020 at 01:10)
 * [mv_polynomial questions](topic/mv_polynomial.20questions.html) (16 messages, latest: Mar 29 2020 at 00:52)
 * [Density of orbits of an irrational rotation](topic/Density.20of.20orbits.20of.20an.20irrational.20rotation.html) (18 messages, latest: Mar 28 2020 at 01:45)
-* [topos](topic/topos.html) (57 messages, latest: Mar 27 2020 at 05:24)
 * [Speeding up Elaboration](topic/Speeding.20up.20Elaboration.html) (21 messages, latest: Mar 26 2020 at 22:46)
 * [Bourbaki's tau](topic/Bourbaki's.20tau.html) (14 messages, latest: Mar 26 2020 at 20:16)
 * [`metric_space` documentation](topic/.60metric_space.60.20documentation.html) (1 message, latest: Mar 24 2020 at 20:23)
@@ -878,4 +878,4 @@ permalink: /stream/116395-maths/index.html
 * [free group](topic/free.20group.html) (92 messages, latest: Apr 02 2018 at 05:00)
 * [Easy topological space question](topic/Easy.20topological.20space.20question.html) (18 messages, latest: Apr 02 2018 at 01:23)
 
-<hr><p>Last updated: Apr 30 2020 at 15:04 UTC</p>
+<hr><p>Last updated: Apr 30 2020 at 16:04 UTC</p>

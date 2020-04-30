@@ -49,6 +49,58 @@ permalink: /stream/113488-general/topic/continuity.20proof.html
 
 
 
+<a name="195852680"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113488-general/topic/continuity%20proof/near/195852680" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Patrick Massot <a href="https://leanprover-community.github.io/archive/stream/113488-general/topic/continuity.20proof.html#195852680">(Apr 30 2020 at 15:06)</a>:</h4>
+<p><span class="user-mention silent" data-user-id="110032">Reid Barton</span> <a href="#narrow/stream/113488-general/topic/continuity.20proof/near/195846204" title="#narrow/stream/113488-general/topic/continuity.20proof/near/195846204">said</a>:</p>
+<blockquote>
+<p>I'm in the process of making <code>continuous</code> into a class and I came across this tricky proof which dates from the creation of mathlib:</p>
+</blockquote>
+<p>Didn't we decide that trying to have the type class system proving stuff for us was a bad idea (at least in Lean3)?</p>
+
+
+
+<a name="195852712"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113488-general/topic/continuity%20proof/near/195852712" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Reid Barton <a href="https://leanprover-community.github.io/archive/stream/113488-general/topic/continuity.20proof.html#195852712">(Apr 30 2020 at 15:06)</a>:</h4>
+<p>Aah no! I mean a structure!</p>
+
+
+
+<a name="195852877"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113488-general/topic/continuity%20proof/near/195852877" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Patrick Massot <a href="https://leanprover-community.github.io/archive/stream/113488-general/topic/continuity.20proof.html#195852877">(Apr 30 2020 at 15:07)</a>:</h4>
+<p>Ok. I guess it will break a <em>lot</em> of proofs, but let's see how bad this becomes. I'm ready for changes as long as we don't bundle continuous functions.</p>
+
+
+
+<a name="195852993"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113488-general/topic/continuity%20proof/near/195852993" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Reid Barton <a href="https://leanprover-community.github.io/archive/stream/113488-general/topic/continuity.20proof.html#195852993">(Apr 30 2020 at 15:08)</a>:</h4>
+<p>It has broken a lot of proofs in minor ways, but now I suddenly encountered a mysterious universe headache</p>
+
+
+
+<a name="195853076"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113488-general/topic/continuity%20proof/near/195853076" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Patrick Massot <a href="https://leanprover-community.github.io/archive/stream/113488-general/topic/continuity.20proof.html#195853076">(Apr 30 2020 at 15:09)</a>:</h4>
+<p>Clearly you'll have to insert a lot of dots. What do you gain?</p>
+
+
+
+<a name="195853356"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113488-general/topic/continuity%20proof/near/195853356" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Reid Barton <a href="https://leanprover-community.github.io/archive/stream/113488-general/topic/continuity.20proof.html#195853356">(Apr 30 2020 at 15:11)</a>:</h4>
+<p><code>apply</code> will work</p>
+
+
+
+<a name="195853407"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113488-general/topic/continuity%20proof/near/195853407" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Patrick Massot <a href="https://leanprover-community.github.io/archive/stream/113488-general/topic/continuity.20proof.html#195853407">(Apr 30 2020 at 15:11)</a>:</h4>
+<p>Ok, that's a good reason.</p>
+
+
+
+<a name="195853458"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113488-general/topic/continuity%20proof/near/195853458" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Patrick Massot <a href="https://leanprover-community.github.io/archive/stream/113488-general/topic/continuity.20proof.html#195853458">(Apr 30 2020 at 15:12)</a>:</h4>
+<p>Especially if you then write a continuity tactic</p>
+
+
+
 {% endraw %}
 
-<hr><p>Last updated: Apr 30 2020 at 15:04 UTC</p>
+<hr><p>Last updated: Apr 30 2020 at 16:04 UTC</p>

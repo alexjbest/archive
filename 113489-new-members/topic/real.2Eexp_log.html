@@ -99,6 +99,68 @@ permalink: /stream/113489-new-members/topic/real.2Eexp_log.html
 
 
 
+<a name="195852788"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113489-new%20members/topic/real.exp_log/near/195852788" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Mario Carneiro <a href="https://leanprover-community.github.io/archive/stream/113489-new-members/topic/real.2Eexp_log.html#195852788">(Apr 30 2020 at 15:07)</a>:</h4>
+<p>I think that a "dirty" use of <code>rwa thm at h</code> would be if the assumption being referred to is not the rewritten <code>h</code></p>
+
+
+
+<a name="195852959"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113489-new%20members/topic/real.exp_log/near/195852959" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Patrick Massot <a href="https://leanprover-community.github.io/archive/stream/113489-new-members/topic/real.2Eexp_log.html#195852959">(Apr 30 2020 at 15:08)</a>:</h4>
+<p>I thought this is what they meant.</p>
+
+
+
+<a name="195853003"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113489-new%20members/topic/real.exp_log/near/195853003" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Patrick Massot <a href="https://leanprover-community.github.io/archive/stream/113489-new-members/topic/real.2Eexp_log.html#195853003">(Apr 30 2020 at 15:08)</a>:</h4>
+<p>How can you have a dirty rwa otherwise?</p>
+
+
+
+<a name="195853163"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113489-new%20members/topic/real.exp_log/near/195853163" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Mario Carneiro <a href="https://leanprover-community.github.io/archive/stream/113489-new-members/topic/real.2Eexp_log.html#195853163">(Apr 30 2020 at 15:09)</a>:</h4>
+<div class="codehilite"><pre><span></span><code><span class="kn">example</span> <span class="o">(</span><span class="n">red</span> <span class="n">herring</span> <span class="o">:</span> <span class="bp">ℕ</span><span class="o">)</span> <span class="o">(</span><span class="n">h</span> <span class="o">:</span> <span class="n">red</span> <span class="bp">=</span> <span class="mi">0</span><span class="o">)</span> <span class="o">(</span><span class="n">h2</span> <span class="o">:</span> <span class="n">red</span> <span class="bp">=</span> <span class="n">herring</span><span class="o">)</span> <span class="o">:</span> <span class="n">red</span> <span class="bp">=</span> <span class="mi">0</span> <span class="o">:=</span>
+<span class="k">by</span> <span class="n">rwa</span> <span class="n">h</span> <span class="n">at</span> <span class="n">h2</span>
+</code></pre></div>
+
+
+
+<a name="195853329"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113489-new%20members/topic/real.exp_log/near/195853329" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Reid Barton <a href="https://leanprover-community.github.io/archive/stream/113489-new-members/topic/real.2Eexp_log.html#195853329">(Apr 30 2020 at 15:10)</a>:</h4>
+<p>Then the <code>rw</code> part would be useless, right?</p>
+
+
+
+<a name="195853396"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113489-new%20members/topic/real.exp_log/near/195853396" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Mario Carneiro <a href="https://leanprover-community.github.io/archive/stream/113489-new-members/topic/real.2Eexp_log.html#195853396">(Apr 30 2020 at 15:11)</a>:</h4>
+<p>I expect that an edge case exists, but yes, in almost all cases</p>
+
+
+
+<a name="195853531"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113489-new%20members/topic/real.exp_log/near/195853531" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Mario Carneiro <a href="https://leanprover-community.github.io/archive/stream/113489-new-members/topic/real.2Eexp_log.html#195853531">(Apr 30 2020 at 15:12)</a>:</h4>
+<p>There are two ways you can use rwa normally: to rewrite a hypothesis to match the goal, or to rewrite the goal to match a hypothesis. I would call neither of these uses sneaky. I usually use the former, which is clearly marked since it uses an <code>at h</code> clause</p>
+
+
+
+<a name="195854215"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113489-new%20members/topic/real.exp_log/near/195854215" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Mario Carneiro <a href="https://leanprover-community.github.io/archive/stream/113489-new-members/topic/real.2Eexp_log.html#195854215">(Apr 30 2020 at 15:15)</a>:</h4>
+<p>Here is another sneaky use, where the hypothesis being used is <code>h</code> <em>before</em> the rewrite:</p>
+<div class="codehilite"><pre><span></span><code><span class="kn">example</span> <span class="o">(</span><span class="n">red</span> <span class="n">herring</span> <span class="o">:</span> <span class="bp">ℕ</span><span class="o">)</span> <span class="o">(</span><span class="n">h</span> <span class="o">:</span> <span class="n">red</span> <span class="bp">=</span> <span class="mi">0</span><span class="o">)</span> <span class="o">(</span><span class="n">h2</span> <span class="o">:</span> <span class="n">red</span> <span class="bp">=</span> <span class="n">herring</span><span class="o">)</span> <span class="o">(</span><span class="n">dep</span> <span class="o">:</span> <span class="n">h</span> <span class="bp">=</span> <span class="n">h</span><span class="o">)</span> <span class="o">:</span> <span class="n">red</span> <span class="bp">=</span> <span class="mi">0</span> <span class="o">:=</span>
+<span class="k">by</span> <span class="n">rwa</span> <span class="n">h2</span> <span class="n">at</span> <span class="n">h</span>
+</code></pre></div>
+
+
+<p>deleting <code>dep</code> breaks the proof</p>
+
+
+
+<a name="195854643"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113489-new%20members/topic/real.exp_log/near/195854643" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Reid Barton <a href="https://leanprover-community.github.io/archive/stream/113489-new-members/topic/real.2Eexp_log.html#195854643">(Apr 30 2020 at 15:18)</a>:</h4>
+<p>This is like a doubly red herring.</p>
+
+
+
 {% endraw %}
 
-<hr><p>Last updated: Apr 30 2020 at 15:04 UTC</p>
+<hr><p>Last updated: Apr 30 2020 at 16:04 UTC</p>
