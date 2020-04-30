@@ -1,0 +1,130 @@
+---
+layout: archive
+title: Zulip Chat Archive
+permalink: /stream/113488-general/topic/leanproject.20access.20denied.html
+---
+
+<h2>Stream: <a href="https://leanprover-community.github.io/archive/stream/113488-general/index.html">general</a></h2>
+<h3>Topic: <a href="https://leanprover-community.github.io/archive/stream/113488-general/topic/leanproject.20access.20denied.html">leanproject access denied</a></h3>
+
+<hr>
+
+<base href="https://leanprover.zulipchat.com/">
+
+<head><link href="/style.css" rel="stylesheet"></head>
+
+{% raw %}
+
+<a name="195840547"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113488-general/topic/leanproject%20access%20denied/near/195840547" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Kenny Lau <a href="https://leanprover-community.github.io/archive/stream/113488-general/topic/leanproject.20access.20denied.html#195840547">(Apr 30 2020 at 13:46)</a>:</h4>
+<div class="codehilite"><pre><span></span><code><span class="n">C</span><span class="err">:</span><span class="p">\</span><span class="n">some-repo</span><span class="p">&gt;</span> <span class="n">leanproject</span> <span class="n">up</span>
+<span class="no">[WinError 5]</span> <span class="n">Access</span> <span class="n">is</span> <span class="n">denied</span><span class="err">:</span> <span class="s1">&#39;C:\\some-repo\\_target\\deps\\mathlib\\.git\\objects\\82\\8911039fff7d6ef90ccd33eac0dbe03764acc8&#39;</span>
+</code></pre></div>
+
+
+
+<a name="195840641"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113488-general/topic/leanproject%20access%20denied/near/195840641" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Johan Commelin <a href="https://leanprover-community.github.io/archive/stream/113488-general/topic/leanproject.20access.20denied.html#195840641">(Apr 30 2020 at 13:47)</a>:</h4>
+<p>Maybe try <code>leanproject down</code>? /s</p>
+
+
+
+<a name="195840706"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113488-general/topic/leanproject%20access%20denied/near/195840706" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Johan Commelin <a href="https://leanprover-community.github.io/archive/stream/113488-general/topic/leanproject.20access.20denied.html#195840706">(Apr 30 2020 at 13:47)</a>:</h4>
+<p>Do you have read/write access to that file?</p>
+
+
+
+<a name="195840827"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113488-general/topic/leanproject%20access%20denied/near/195840827" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Johan Commelin <a href="https://leanprover-community.github.io/archive/stream/113488-general/topic/leanproject.20access.20denied.html#195840827">(Apr 30 2020 at 13:48)</a>:</h4>
+<p>As in, can you verify this using other means?</p>
+
+
+
+<a name="195840979"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113488-general/topic/leanproject%20access%20denied/near/195840979" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Kenny Lau <a href="https://leanprover-community.github.io/archive/stream/113488-general/topic/leanproject.20access.20denied.html#195840979">(Apr 30 2020 at 13:49)</a>:</h4>
+<p>well I can open it in NotePad++</p>
+
+
+
+<a name="195841108"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113488-general/topic/leanproject%20access%20denied/near/195841108" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Kenny Lau <a href="https://leanprover-community.github.io/archive/stream/113488-general/topic/leanproject.20access.20denied.html#195841108">(Apr 30 2020 at 13:50)</a>:</h4>
+<p>and I can <code>cat</code> it in the same terminal</p>
+
+
+
+<a name="195841407"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113488-general/topic/leanproject%20access%20denied/near/195841407" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Johan Commelin <a href="https://leanprover-community.github.io/archive/stream/113488-general/topic/leanproject.20access.20denied.html#195841407">(Apr 30 2020 at 13:52)</a>:</h4>
+<p>Weird...</p>
+
+
+
+<a name="195841452"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113488-general/topic/leanproject%20access%20denied/near/195841452" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Kevin Buzzard <a href="https://leanprover-community.github.io/archive/stream/113488-general/topic/leanproject.20access.20denied.html#195841452">(Apr 30 2020 at 13:52)</a>:</h4>
+<p>Can you edit it or is it read only?</p>
+
+
+
+<a name="195841506"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113488-general/topic/leanproject%20access%20denied/near/195841506" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Steffan <a href="https://leanprover-community.github.io/archive/stream/113488-general/topic/leanproject.20access.20denied.html#195841506">(Apr 30 2020 at 13:53)</a>:</h4>
+<p>open command prompt as administrator</p>
+
+
+
+<a name="195841585"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113488-general/topic/leanproject%20access%20denied/near/195841585" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Steffan <a href="https://leanprover-community.github.io/archive/stream/113488-general/topic/leanproject.20access.20denied.html#195841585">(Apr 30 2020 at 13:53)</a>:</h4>
+<p>then try again?</p>
+
+
+
+<a name="195841740"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113488-general/topic/leanproject%20access%20denied/near/195841740" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Steffan <a href="https://leanprover-community.github.io/archive/stream/113488-general/topic/leanproject.20access.20denied.html#195841740">(Apr 30 2020 at 13:54)</a>:</h4>
+<p>delete .git folder and try again, maybe?</p>
+
+
+
+<a name="195842074"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113488-general/topic/leanproject%20access%20denied/near/195842074" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Kevin Buzzard <a href="https://leanprover-community.github.io/archive/stream/113488-general/topic/leanproject.20access.20denied.html#195842074">(Apr 30 2020 at 13:57)</a>:</h4>
+<p>The risk with that is that you lose all your local branches</p>
+
+
+
+<a name="195842127"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113488-general/topic/leanproject%20access%20denied/near/195842127" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Kevin Buzzard <a href="https://leanprover-community.github.io/archive/stream/113488-general/topic/leanproject.20access.20denied.html#195842127">(Apr 30 2020 at 13:57)</a>:</h4>
+<p>When I've seen errors like that before it's been stuff like disk corruption</p>
+
+
+
+<a name="195842145"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113488-general/topic/leanproject%20access%20denied/near/195842145" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Steffan <a href="https://leanprover-community.github.io/archive/stream/113488-general/topic/leanproject.20access.20denied.html#195842145">(Apr 30 2020 at 13:57)</a>:</h4>
+<p>Yes, but if you don't care about git so much, like me</p>
+
+
+
+<a name="195842229"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113488-general/topic/leanproject%20access%20denied/near/195842229" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Kenny Lau <a href="https://leanprover-community.github.io/archive/stream/113488-general/topic/leanproject.20access.20denied.html#195842229">(Apr 30 2020 at 13:58)</a>:</h4>
+<p>very interestingly, renaming it to <code>.git_old</code> doesn't help, but moving it to another place made it work</p>
+
+
+
+<a name="195842260"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113488-general/topic/leanproject%20access%20denied/near/195842260" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Kenny Lau <a href="https://leanprover-community.github.io/archive/stream/113488-general/topic/leanproject.20access.20denied.html#195842260">(Apr 30 2020 at 13:58)</a>:</h4>
+<p>it was very strange: after I rename it to <code>.git_old</code> it gives me the same error message with <code>.git</code> replaced with <code>.git_old</code></p>
+
+
+
+<a name="195842290"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113488-general/topic/leanproject%20access%20denied/near/195842290" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Steffan <a href="https://leanprover-community.github.io/archive/stream/113488-general/topic/leanproject.20access.20denied.html#195842290">(Apr 30 2020 at 13:58)</a>:</h4>
+<p>what if you take the <code>.</code> off?</p>
+
+
+
+<a name="195842333"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113488-general/topic/leanproject%20access%20denied/near/195842333" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Kevin Buzzard <a href="https://leanprover-community.github.io/archive/stream/113488-general/topic/leanproject.20access.20denied.html#195842333">(Apr 30 2020 at 13:59)</a>:</h4>
+<p>When I've seen copying stuff to other places fixing things, it has been disk corruption</p>
+
+
+
+{% endraw %}
+
+<hr><p>Last updated: Apr 30 2020 at 14:04 UTC</p>

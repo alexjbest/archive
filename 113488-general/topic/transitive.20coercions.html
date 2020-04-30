@@ -72,6 +72,61 @@ permalink: /stream/113488-general/topic/transitive.20coercions.html
 
 
 
+<a name="195835973"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113488-general/topic/transitive%20coercions/near/195835973" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Reid Barton <a href="https://leanprover-community.github.io/archive/stream/113488-general/topic/transitive.20coercions.html#195835973">(Apr 30 2020 at 13:09)</a>:</h4>
+<p>Whoa, it builds <span aria-label="tada" class="emoji emoji-1f389" role="img" title="tada">:tada:</span> <br>
+<code> 20 files changed, 38 insertions(+), 37 deletions(-)</code></p>
+
+
+
+<a name="195836090"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113488-general/topic/transitive%20coercions/near/195836090" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Johan Commelin <a href="https://leanprover-community.github.io/archive/stream/113488-general/topic/transitive.20coercions.html#195836090">(Apr 30 2020 at 13:10)</a>:</h4>
+<p>That's actually a rather small diff</p>
+
+
+
+<a name="195836124"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113488-general/topic/transitive%20coercions/near/195836124" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Reid Barton <a href="https://leanprover-community.github.io/archive/stream/113488-general/topic/transitive.20coercions.html#195836124">(Apr 30 2020 at 13:10)</a>:</h4>
+<p>and a little bit is commenting out things that should just be deleted, so it actually saves a few lines overall</p>
+
+
+
+<a name="195836160"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113488-general/topic/transitive%20coercions/near/195836160" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Johan Commelin <a href="https://leanprover-community.github.io/archive/stream/113488-general/topic/transitive.20coercions.html#195836160">(Apr 30 2020 at 13:11)</a>:</h4>
+<p>And speeds up the build, I guess</p>
+
+
+
+<a name="195836192"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113488-general/topic/transitive%20coercions/near/195836192" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Johan Commelin <a href="https://leanprover-community.github.io/archive/stream/113488-general/topic/transitive.20coercions.html#195836192">(Apr 30 2020 at 13:11)</a>:</h4>
+<p>But probably not noticable</p>
+
+
+
+<a name="195838136"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113488-general/topic/transitive%20coercions/near/195838136" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Reid Barton <a href="https://leanprover-community.github.io/archive/stream/113488-general/topic/transitive.20coercions.html#195838136">(Apr 30 2020 at 13:28)</a>:</h4>
+<p><a href="https://github.com/leanprover-community/mathlib/commit/8ef91f54a9c689f2560b8670e573bb3a79d15940" title="https://github.com/leanprover-community/mathlib/commit/8ef91f54a9c689f2560b8670e573bb3a79d15940">Here</a> is the commit if anyone is interested; there are some bits like the <code>has_coe_to_fun_linter</code> which I don't understand yet.</p>
+
+
+
+<a name="195838160"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113488-general/topic/transitive%20coercions/near/195838160" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Reid Barton <a href="https://leanprover-community.github.io/archive/stream/113488-general/topic/transitive.20coercions.html#195838160">(Apr 30 2020 at 13:29)</a>:</h4>
+<p>I assume it doesn't build with the current version of Lean, but I suppose it might</p>
+
+
+
+<a name="195838361"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113488-general/topic/transitive%20coercions/near/195838361" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Reid Barton <a href="https://leanprover-community.github.io/archive/stream/113488-general/topic/transitive.20coercions.html#195838361">(Apr 30 2020 at 13:30)</a>:</h4>
+<p>Ah, the CI build failed immediately because of my change to <code>leanpkg.toml</code>--probably for the best <span aria-label="slight smile" class="emoji emoji-1f642" role="img" title="slight smile">:slight_smile:</span></p>
+
+
+
+<a name="195841201"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113488-general/topic/transitive%20coercions/near/195841201" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Gabriel Ebner <a href="https://leanprover-community.github.io/archive/stream/113488-general/topic/transitive.20coercions.html#195841201">(Apr 30 2020 at 13:50)</a>:</h4>
+<p>The <code>has_coe_to_fun</code> linter is supposed to check for exactly this kind of problem, where a type has a <code>has_coe</code> instance but no <code>has_coe_to_fun</code>.  If the transitive instances are gone, then the linter is no longer necessary.</p>
+
+
+
 {% endraw %}
 
-<hr><p>Last updated: Apr 30 2020 at 13:05 UTC</p>
+<hr><p>Last updated: Apr 30 2020 at 14:04 UTC</p>
