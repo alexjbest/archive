@@ -329,6 +329,94 @@ permalink: /stream/113488-general/topic/transitive.20coercions.html
 
 
 
+<a name="195971827"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113488-general/topic/transitive%20coercions/near/195971827" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Sebastien Gouezel <a href="https://leanprover-community.github.io/archive/stream/113488-general/topic/transitive.20coercions.html#195971827">(May 01 2020 at 15:24)</a>:</h4>
+<p>Since coercions are a hot topic today, let me ask again about the issue of simp and coercions. In the following code</p>
+<div class="codehilite"><pre><span></span><code><span class="kn">variable</span> <span class="o">(</span><span class="n">α</span> <span class="o">:</span> <span class="kt">Type</span><span class="bp">*</span><span class="o">)</span>
+
+<span class="kn">structure</span> <span class="n">my_equiv</span> <span class="o">:=</span>
+<span class="o">(</span><span class="n">to_fun</span> <span class="o">:</span> <span class="n">α</span> <span class="bp">→</span> <span class="n">α</span><span class="o">)</span>
+
+<span class="kn">instance</span> <span class="o">:</span> <span class="n">has_coe_to_fun</span> <span class="o">(</span><span class="n">my_equiv</span> <span class="n">α</span><span class="o">)</span> <span class="o">:=</span> <span class="bp">⟨_</span><span class="o">,</span> <span class="n">my_equiv</span><span class="bp">.</span><span class="n">to_fun</span><span class="bp">⟩</span>
+
+<span class="n">def</span> <span class="n">my_equiv1</span> <span class="o">:</span> <span class="n">my_equiv</span> <span class="n">α</span> <span class="o">:=</span>
+<span class="o">{</span> <span class="n">to_fun</span> <span class="o">:=</span> <span class="n">id</span> <span class="o">}</span>
+
+<span class="n">def</span> <span class="n">my_equiv2</span> <span class="o">:</span> <span class="n">my_equiv</span> <span class="n">α</span> <span class="o">:=</span>
+<span class="o">{</span> <span class="n">to_fun</span> <span class="o">:=</span> <span class="n">id</span> <span class="o">}</span>
+
+<span class="bp">@</span><span class="o">[</span><span class="n">simp</span><span class="o">]</span> <span class="kn">lemma</span> <span class="n">one_eq_two</span> <span class="o">:</span> <span class="n">my_equiv1</span> <span class="n">α</span> <span class="bp">=</span> <span class="n">my_equiv2</span> <span class="n">α</span> <span class="o">:=</span> <span class="n">rfl</span>
+
+<span class="bp">@</span><span class="o">[</span><span class="n">simp</span><span class="o">]</span> <span class="kn">lemma</span> <span class="n">two_apply</span> <span class="o">(</span><span class="n">x</span> <span class="o">:</span> <span class="n">α</span><span class="o">)</span> <span class="o">:</span> <span class="n">my_equiv2</span> <span class="n">α</span> <span class="n">x</span> <span class="bp">=</span> <span class="n">x</span> <span class="o">:=</span> <span class="n">rfl</span>
+
+<span class="kn">lemma</span> <span class="n">one_apply</span> <span class="o">(</span><span class="n">x</span> <span class="o">:</span> <span class="n">α</span><span class="o">)</span> <span class="o">:</span> <span class="n">my_equiv1</span> <span class="n">α</span> <span class="n">x</span> <span class="bp">=</span> <span class="n">x</span> <span class="o">:=</span> <span class="k">by</span> <span class="n">simp</span> <span class="c1">-- fails</span>
+</code></pre></div>
+
+
+<p><code>simp</code> fails in the last lemma, because it should simplify in a coercion and it is unable to do this. This is the reason why, in manifolds, I could not use coercions and I used <code>e.to_fun</code> and <code>e.inv_fun</code> all over the place. Is this something that is so deeply buried in C++ that there is no hope to fix it?</p>
+
+
+
+<a name="195973249"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113488-general/topic/transitive%20coercions/near/195973249" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Gabriel Ebner <a href="https://leanprover-community.github.io/archive/stream/113488-general/topic/transitive.20coercions.html#195973249">(May 01 2020 at 15:36)</a>:</h4>
+<p>I don't think this is something we can easily fix in mathlib.  The core problem is that <code>has_coe_to_fun</code> doesn't necessarily coerce to a function.</p>
+
+
+
+<a name="195973292"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113488-general/topic/transitive%20coercions/near/195973292" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Kevin Buzzard <a href="https://leanprover-community.github.io/archive/stream/113488-general/topic/transitive.20coercions.html#195973292">(May 01 2020 at 15:37)</a>:</h4>
+<p>Doesn't not?</p>
+
+
+
+<a name="195973313"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113488-general/topic/transitive%20coercions/near/195973313" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Kevin Buzzard <a href="https://leanprover-community.github.io/archive/stream/113488-general/topic/transitive.20coercions.html#195973313">(May 01 2020 at 15:37)</a>:</h4>
+<p>I am confused either way</p>
+
+
+
+<a name="195973771"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113488-general/topic/transitive%20coercions/near/195973771" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Gabriel Ebner <a href="https://leanprover-community.github.io/archive/stream/113488-general/topic/transitive.20coercions.html#195973771">(May 01 2020 at 15:41)</a>:</h4>
+<p>It's confusing.</p>
+
+
+
+<a name="195974163"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113488-general/topic/transitive%20coercions/near/195974163" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Reid Barton <a href="https://leanprover-community.github.io/archive/stream/113488-general/topic/transitive.20coercions.html#195974163">(May 01 2020 at 15:45)</a>:</h4>
+<p>I guess the problem is <code>my_equiv1 α x</code> means <code>coe_fn (my_equiv1 α) x</code> but <code>coe_fn</code> has a dependent type: <code>coe_fn (my_equiv1 α)</code> has type <code>has_coe_to_fun.F (my_equiv1 α)</code>. That means rewriting <code>my_equiv1 α</code> to  <code>my_equiv2 α</code> might result in a type-incorrect expression.</p>
+
+
+
+<a name="195974228"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113488-general/topic/transitive%20coercions/near/195974228" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Reid Barton <a href="https://leanprover-community.github.io/archive/stream/113488-general/topic/transitive.20coercions.html#195974228">(May 01 2020 at 15:45)</a>:</h4>
+<p>Of course in this case it does not because <code>has_coe_to_fun.F (my_equiv1 α)</code> and <code>has_coe_to_fun.F (my_equiv2 α)</code> are definitionally equal (they are both <code>α -&gt; α</code>).</p>
+
+
+
+<a name="195974349"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113488-general/topic/transitive%20coercions/near/195974349" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Reid Barton <a href="https://leanprover-community.github.io/archive/stream/113488-general/topic/transitive.20coercions.html#195974349">(May 01 2020 at 15:46)</a>:</h4>
+<p>I actually never knew about this issue because I would always abandon coercions earlier when <code>α</code> could not be inferred in <code>my_equiv1 α x</code>.</p>
+
+
+
+<a name="195974730"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113488-general/topic/transitive%20coercions/near/195974730" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Gabriel Ebner <a href="https://leanprover-community.github.io/archive/stream/113488-general/topic/transitive.20coercions.html#195974730">(May 01 2020 at 15:50)</a>:</h4>
+<p>Do we actually use dependent function coercions?  That is, 1) where <code>coe_fn a : α a → β a</code> depends on <code>a</code>, or 2) where <code>coe_fn a : ∀ x : α, β x</code> is a dependent function?</p>
+
+
+
+<a name="195974810"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113488-general/topic/transitive%20coercions/near/195974810" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Reid Barton <a href="https://leanprover-community.github.io/archive/stream/113488-general/topic/transitive.20coercions.html#195974810">(May 01 2020 at 15:51)</a>:</h4>
+<p>I wouldn't be surprised if <code>dfinsupp</code> is an example of 2</p>
+
+
+
+<a name="195974824"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113488-general/topic/transitive%20coercions/near/195974824" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Reid Barton <a href="https://leanprover-community.github.io/archive/stream/113488-general/topic/transitive.20coercions.html#195974824">(May 01 2020 at 15:51)</a>:</h4>
+<p>But 1 would be more surprising I think...</p>
+
+
+
 {% endraw %}
 
-<hr><p>Last updated: May 01 2020 at 15:05 UTC</p>
+<hr><p>Last updated: May 01 2020 at 16:05 UTC</p>
