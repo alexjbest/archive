@@ -207,6 +207,183 @@ permalink: /stream/113488-general/topic/big.20ops.html
 
 
 
+<a name="195939873"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113488-general/topic/big%20ops/near/195939873" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Anne Baanen <a href="https://leanprover-community.github.io/archive/stream/113488-general/topic/big.20ops.html#195939873">(May 01 2020 at 08:06)</a>:</h4>
+<p>In fact, according to the debugger the only notation returned for <code>finset.sum</code> is <code>Σ _ in _, _</code></p>
+
+
+
+<a name="195940127"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113488-general/topic/big%20ops/near/195940127" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Johan Commelin <a href="https://leanprover-community.github.io/archive/stream/113488-general/topic/big.20ops.html#195940127">(May 01 2020 at 08:13)</a>:</h4>
+<p>Hmm, but the other does seem to work <span aria-label="confused" class="emoji emoji-1f615" role="img" title="confused">:confused:</span></p>
+
+
+
+<a name="195940609"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113488-general/topic/big%20ops/near/195940609" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Anne Baanen <a href="https://leanprover-community.github.io/archive/stream/113488-general/topic/big.20ops.html#195940609">(May 01 2020 at 08:23)</a>:</h4>
+<p>Aha: <code>Σ := finset.univ.sum</code> gets added as notation for the symbol <code>(const lean::head_index &amp;) @0x7ffff49083b8: {m_kind = lean::expr_kind::Macro, m_name = }</code>, and <code>Σ := finset.sum</code> for <code>(const lean::head_index &amp;) @0x7fffdfffd3b8: {m_kind = lean::expr_kind::Constant, m_name = 'finset'.'sum'}</code> (and the second thing is what we probably want)</p>
+
+
+
+<a name="195940759"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113488-general/topic/big%20ops/near/195940759" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Johan Commelin <a href="https://leanprover-community.github.io/archive/stream/113488-general/topic/big.20ops.html#195940759">(May 01 2020 at 08:26)</a>:</h4>
+<p>Hmm... I have a hard time parsing this</p>
+
+
+
+<a name="195940969"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113488-general/topic/big%20ops/near/195940969" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Gabriel Ebner <a href="https://leanprover-community.github.io/archive/stream/113488-general/topic/big.20ops.html#195940969">(May 01 2020 at 08:30)</a>:</h4>
+<p>I think Anne tells you to avoid the dot notation.</p>
+
+
+
+<a name="195940982"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113488-general/topic/big%20ops/near/195940982" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Johan Commelin <a href="https://leanprover-community.github.io/archive/stream/113488-general/topic/big.20ops.html#195940982">(May 01 2020 at 08:30)</a>:</h4>
+<p>Aha.. you mean in the definition of the notation?</p>
+
+
+
+<a name="195941080"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113488-general/topic/big%20ops/near/195941080" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Gabriel Ebner <a href="https://leanprover-community.github.io/archive/stream/113488-general/topic/big.20ops.html#195941080">(May 01 2020 at 08:32)</a>:</h4>
+<p><span aria-label="+1" class="emoji emoji-1f44d" role="img" title="+1">:+1:</span></p>
+
+
+
+<a name="195941092"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113488-general/topic/big%20ops/near/195941092" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Johan Commelin <a href="https://leanprover-community.github.io/archive/stream/113488-general/topic/big.20ops.html#195941092">(May 01 2020 at 08:32)</a>:</h4>
+<p>Let me try that.</p>
+
+
+
+<a name="195941201"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113488-general/topic/big%20ops/near/195941201" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Anne Baanen <a href="https://leanprover-community.github.io/archive/stream/113488-general/topic/big.20ops.html#195941201">(May 01 2020 at 08:34)</a>:</h4>
+<p>I think you want to change <code>finset.univ.sum</code> to <code>finset.sum finset.univ</code> and put the line defining <code>finset.sum finset.univ</code> first</p>
+
+
+
+<a name="195941232"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113488-general/topic/big%20ops/near/195941232" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Johan Commelin <a href="https://leanprover-community.github.io/archive/stream/113488-general/topic/big.20ops.html#195941232">(May 01 2020 at 08:35)</a>:</h4>
+<p>Awesome</p>
+<div class="codehilite"><pre><span></span><code><span class="n">localized</span> <span class="s2">&quot;notation `∑` binders `, ` r:(scoped f, finset.sum finset.univ f) := r&quot;</span> <span class="k">in</span> <span class="n">big_operators</span>
+<span class="n">localized</span> <span class="s2">&quot;notation `∏` binders `, ` r:(scoped f, finset.prod finset.univ f) := r&quot;</span> <span class="k">in</span> <span class="n">big_operators</span>
+
+<span class="n">localized</span> <span class="s2">&quot;notation `∑` binders ` in ` s `, ` r:(scoped f, finset.sum s f) := r&quot;</span> <span class="k">in</span> <span class="n">big_operators</span>
+<span class="n">localized</span> <span class="s2">&quot;notation `∏` binders ` in ` s `, ` r:(scoped f, finset.prod s f) := r&quot;</span> <span class="k">in</span> <span class="n">big_operators</span>
+</code></pre></div>
+
+
+<p>works. And the order <em>is</em> important.</p>
+
+
+
+<a name="195941615"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113488-general/topic/big%20ops/near/195941615" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Johan Commelin <a href="https://leanprover-community.github.io/archive/stream/113488-general/topic/big.20ops.html#195941615">(May 01 2020 at 08:43)</a>:</h4>
+<p>This is great! I just fixed this in the <code>chev-warn</code> branch. Now I have some work to do to explain all of this to mathlib (-;</p>
+
+
+
+<a name="195941698"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113488-general/topic/big%20ops/near/195941698" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Anne Baanen <a href="https://leanprover-community.github.io/archive/stream/113488-general/topic/big.20ops.html#195941698">(May 01 2020 at 08:45)</a>:</h4>
+<p>The explanation, as far as I understand it: when deciding how to pretty-print an expression, Lean looks up the notations associated to the head of the expression (e.g. <code>finset.sum</code>). It tries them one by one, until it finds a notation that matches the expression, then uses that to pretty-print. The order in which they are tried is the order in which they are stored in the environment structure, which in this case is the order in which they are defined. Apparently the priority information is thrown away (typically it would be highest-priority first, then by order of definition). This is why the order matters.</p>
+<p>A notation definition is associated to the head of the expression it expands to, so <code>notation </code>∑<code> binders </code>, <code> r:(scoped f, finset.sum finset.univ f) := r</code> is associated to the head of the expansion of <code>r</code>, which is the head of <code>finset.sum finset.univ f</code>, which is <code>finset.sum</code>. But <code>finset.univ.sum</code> doesn't get expanded to <code>finset.sum finset.univ</code> at that point (maybe because it won't know if there is also a namespace <code>finset.univ</code> floating around somewhere?), so you have to write <code>finset.sum finset.univ</code> instead of <code>finset.univ.sum</code>.</p>
+
+
+
+<a name="195941766"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113488-general/topic/big%20ops/near/195941766" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Johan Commelin <a href="https://leanprover-community.github.io/archive/stream/113488-general/topic/big.20ops.html#195941766">(May 01 2020 at 08:46)</a>:</h4>
+<p>Thanks a lot for explaining this!</p>
+
+
+
+<a name="195941773"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113488-general/topic/big%20ops/near/195941773" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Patrick Massot <a href="https://leanprover-community.github.io/archive/stream/113488-general/topic/big.20ops.html#195941773">(May 01 2020 at 08:46)</a>:</h4>
+<p>Homework for Johan: write that long overdue <code>docs/extras/notations.md</code></p>
+
+
+
+<a name="195941819"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113488-general/topic/big%20ops/near/195941819" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Mario Carneiro <a href="https://leanprover-community.github.io/archive/stream/113488-general/topic/big.20ops.html#195941819">(May 01 2020 at 08:47)</a>:</h4>
+<p>notations don't go through name resolution until they are used, I think</p>
+
+
+
+<a name="195941833"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113488-general/topic/big%20ops/near/195941833" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Johan Commelin <a href="https://leanprover-community.github.io/archive/stream/113488-general/topic/big.20ops.html#195941833">(May 01 2020 at 08:47)</a>:</h4>
+<p>/me has lots of homework</p>
+
+
+
+<a name="195941888"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113488-general/topic/big%20ops/near/195941888" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Johan Commelin <a href="https://leanprover-community.github.io/archive/stream/113488-general/topic/big.20ops.html#195941888">(May 01 2020 at 08:48)</a>:</h4>
+<p>But we could start by just dumping Anne's explanation in that file. At least that would be a canonical place to find it again.</p>
+
+
+
+<a name="195941895"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113488-general/topic/big%20ops/near/195941895" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Johan Commelin <a href="https://leanprover-community.github.io/archive/stream/113488-general/topic/big.20ops.html#195941895">(May 01 2020 at 08:48)</a>:</h4>
+<p>And then we can slowly improve that file.</p>
+
+
+
+<a name="195941910"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113488-general/topic/big%20ops/near/195941910" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Patrick Massot <a href="https://leanprover-community.github.io/archive/stream/113488-general/topic/big.20ops.html#195941910">(May 01 2020 at 08:49)</a>:</h4>
+<p>Your sum notations also make great examples.</p>
+
+
+
+<a name="195942154"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113488-general/topic/big%20ops/near/195942154" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Johan Commelin <a href="https://leanprover-community.github.io/archive/stream/113488-general/topic/big.20ops.html#195942154">(May 01 2020 at 08:52)</a>:</h4>
+<p><a href="https://github.com/leanprover-community/mathlib/issues/2581" title="https://github.com/leanprover-community/mathlib/issues/2581">#2581</a></p>
+
+
+
+<a name="195942165"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113488-general/topic/big%20ops/near/195942165" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Johan Commelin <a href="https://leanprover-community.github.io/archive/stream/113488-general/topic/big.20ops.html#195942165">(May 01 2020 at 08:53)</a>:</h4>
+<p>This is not ready for merging. And I welcome everyone to contribute.</p>
+
+
+
+<a name="195942522"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113488-general/topic/big%20ops/near/195942522" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Anne Baanen <a href="https://leanprover-community.github.io/archive/stream/113488-general/topic/big.20ops.html#195942522">(May 01 2020 at 08:59)</a>:</h4>
+<p>I think there is some lookup of names going on at the point of definition though, if you define a notation before a name:</p>
+<div class="codehilite"><pre><span></span><code><span class="n">noncomputable</span> <span class="n">theory</span>
+
+<span class="kn">structure</span> <span class="n">foo</span> <span class="o">:</span> <span class="kt">Type</span>
+
+<span class="kn">notation</span> <span class="bp">`</span><span class="err">☹</span><span class="bp">`</span> <span class="o">:=</span> <span class="n">foo</span><span class="bp">.</span><span class="n">munge</span>
+
+<span class="n">def</span> <span class="n">foo</span><span class="bp">.</span><span class="n">munge</span> <span class="o">:</span> <span class="bp">ℕ</span> <span class="o">:=</span> <span class="n">nat</span><span class="bp">.</span><span class="n">zero</span>
+
+<span class="kn">notation</span> <span class="bp">`</span><span class="err">☺</span><span class="bp">`</span> <span class="o">:=</span> <span class="n">foo</span><span class="bp">.</span><span class="n">munge</span>
+
+<span class="n">def</span> <span class="n">bar1</span> <span class="o">:=</span> <span class="err">☹</span> <span class="c1">-- unknown identifier `foo.munge`</span>
+<span class="n">def</span> <span class="n">bar2</span> <span class="o">:=</span> <span class="err">☺</span>
+</code></pre></div>
+
+
+
+<a name="195942635"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113488-general/topic/big%20ops/near/195942635" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Reid Barton <a href="https://leanprover-community.github.io/archive/stream/113488-general/topic/big.20ops.html#195942635">(May 01 2020 at 09:00)</a>:</h4>
+<p><span class="user-mention silent" data-user-id="238446">Anne Baanen</span> <a href="#narrow/stream/113488-general/topic/big.20ops/near/195941698" title="#narrow/stream/113488-general/topic/big.20ops/near/195941698">said</a>:</p>
+<blockquote>
+<p>The explanation, as far as I understand it: when deciding how to pretty-print an expression, Lean looks up the notations associated to the head of the expression (e.g. <code>finset.sum</code>). It tries them one by one, until it finds a notation that matches the expression, then uses that to pretty-print. The order in which they are tried is the order in which they are stored in the environment structure, which in this case is the order in which they are defined. Apparently the priority information is thrown away (typically it would be highest-priority first, then by order of definition). This is why the order matters.</p>
+</blockquote>
+<p>This is very helpful, thanks. It explains why what I suggested at <a href="#narrow/stream/113488-general/topic/Show.20the.20objects.20for.20an.20equality.20of.20morphisms/near/194957595" title="#narrow/stream/113488-general/topic/Show.20the.20objects.20for.20an.20equality.20of.20morphisms/near/194957595">https://leanprover.zulipchat.com/#narrow/stream/113488-general/topic/Show.20the.20objects.20for.20an.20equality.20of.20morphisms/near/194957595</a> did not work.</p>
+
+
+
+<a name="195942696"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113488-general/topic/big%20ops/near/195942696" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Reid Barton <a href="https://leanprover-community.github.io/archive/stream/113488-general/topic/big.20ops.html#195942696">(May 01 2020 at 09:02)</a>:</h4>
+<p>I guess I was mixing up the method for resolving an overloaded notation (two different meanings for <code>a # b</code>) with the method for choosing a notation for the pretty-printer to display (two different notations for <code>nat.add a b</code>).</p>
+
+
+
+<a name="195942880"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113488-general/topic/big%20ops/near/195942880" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Johan Commelin <a href="https://leanprover-community.github.io/archive/stream/113488-general/topic/big.20ops.html#195942880">(May 01 2020 at 09:04)</a>:</h4>
+<p>We still need <code>tikzcd</code> integration into the Lean tactic state</p>
+
+
+
 {% endraw %}
 
-<hr><p>Last updated: May 01 2020 at 08:05 UTC</p>
+<hr><p>Last updated: May 01 2020 at 09:05 UTC</p>
