@@ -300,6 +300,311 @@ invalid structure value { ... }, field &#39;bot_le&#39; was not provided
 
 
 
+<a name="195959388"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113488-general/topic/ordered%20monoids/near/195959388" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Johan Commelin <a href="https://leanprover-community.github.io/archive/stream/113488-general/topic/ordered.20monoids.html#195959388">(May 01 2020 at 13:13)</a>:</h4>
+<p>Without <code>to_additive</code> I fear that the multiplicative and additive versions will diverge, which doesn't seem like a good idea.<br>
+Moving <code>to_additive</code> into core would be one option. But I don't really like that idea, because it will become harder to change it...</p>
+
+
+
+<a name="195959462"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113488-general/topic/ordered%20monoids/near/195959462" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Mario Carneiro <a href="https://leanprover-community.github.io/archive/stream/113488-general/topic/ordered.20monoids.html#195959462">(May 01 2020 at 13:14)</a>:</h4>
+<p>It actually was in core once</p>
+
+
+
+<a name="195959474"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113488-general/topic/ordered%20monoids/near/195959474" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Johan Commelin <a href="https://leanprover-community.github.io/archive/stream/113488-general/topic/ordered.20monoids.html#195959474">(May 01 2020 at 13:14)</a>:</h4>
+<p>Therefore I would very much prefer moving these classes out of core and into mathlib...</p>
+
+
+
+<a name="195959482"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113488-general/topic/ordered%20monoids/near/195959482" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Johan Commelin <a href="https://leanprover-community.github.io/archive/stream/113488-general/topic/ordered.20monoids.html#195959482">(May 01 2020 at 13:14)</a>:</h4>
+<p><span class="user-mention silent" data-user-id="110049">Mario Carneiro</span> <a href="#narrow/stream/113488-general/topic/ordered.20monoids/near/195959462" title="#narrow/stream/113488-general/topic/ordered.20monoids/near/195959462">said</a>:</p>
+<blockquote>
+<p>It actually was in core once</p>
+</blockquote>
+<p>I guess it was moved out of it for a reason (-;</p>
+
+
+
+<a name="195959542"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113488-general/topic/ordered%20monoids/near/195959542" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Mario Carneiro <a href="https://leanprover-community.github.io/archive/stream/113488-general/topic/ordered.20monoids.html#195959542">(May 01 2020 at 13:15)</a>:</h4>
+<p>at least, a kind of crappy version of it was, and I wrote the current version and PR'd it, and Leo said no, so there is now a massive workaround in <code>algebra.group</code> to fix all the attributes that should be in core</p>
+
+
+
+<a name="195959645"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113488-general/topic/ordered%20monoids/near/195959645" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Johan Commelin <a href="https://leanprover-community.github.io/archive/stream/113488-general/topic/ordered.20monoids.html#195959645">(May 01 2020 at 13:16)</a>:</h4>
+<p>Why does core need <code>int</code> again? Shouldn't <code>nat</code> be enough?</p>
+
+
+
+<a name="195959655"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113488-general/topic/ordered%20monoids/near/195959655" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Mario Carneiro <a href="https://leanprover-community.github.io/archive/stream/113488-general/topic/ordered.20monoids.html#195959655">(May 01 2020 at 13:16)</a>:</h4>
+<p>it has special VM support</p>
+
+
+
+<a name="195959660"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113488-general/topic/ordered%20monoids/near/195959660" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Johan Commelin <a href="https://leanprover-community.github.io/archive/stream/113488-general/topic/ordered.20monoids.html#195959660">(May 01 2020 at 13:16)</a>:</h4>
+<p>I see.</p>
+
+
+
+<a name="195959673"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113488-general/topic/ordered%20monoids/near/195959673" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Johan Commelin <a href="https://leanprover-community.github.io/archive/stream/113488-general/topic/ordered.20monoids.html#195959673">(May 01 2020 at 13:16)</a>:</h4>
+<p>And why does it need lemmas about <code>nat</code> and <code>int</code>?</p>
+
+
+
+<a name="195959695"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113488-general/topic/ordered%20monoids/near/195959695" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Johan Commelin <a href="https://leanprover-community.github.io/archive/stream/113488-general/topic/ordered.20monoids.html#195959695">(May 01 2020 at 13:17)</a>:</h4>
+<p>Or would it be enough if it knew <code>has_add nat</code>?</p>
+
+
+
+<a name="195959698"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113488-general/topic/ordered%20monoids/near/195959698" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Johan Commelin <a href="https://leanprover-community.github.io/archive/stream/113488-general/topic/ordered.20monoids.html#195959698">(May 01 2020 at 13:17)</a>:</h4>
+<p>etc..</p>
+
+
+
+<a name="195959702"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113488-general/topic/ordered%20monoids/near/195959702" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Mario Carneiro <a href="https://leanprover-community.github.io/archive/stream/113488-general/topic/ordered.20monoids.html#195959702">(May 01 2020 at 13:17)</a>:</h4>
+<p>It doesn't, I think</p>
+
+
+
+<a name="195959739"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113488-general/topic/ordered%20monoids/near/195959739" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Mario Carneiro <a href="https://leanprover-community.github.io/archive/stream/113488-general/topic/ordered.20monoids.html#195959739">(May 01 2020 at 13:17)</a>:</h4>
+<p>At least, I can't think of a reason off hand</p>
+
+
+
+<a name="195959749"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113488-general/topic/ordered%20monoids/near/195959749" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Johan Commelin <a href="https://leanprover-community.github.io/archive/stream/113488-general/topic/ordered.20monoids.html#195959749">(May 01 2020 at 13:17)</a>:</h4>
+<p>So... could we move almost all of the algebraic hierarchy out of core?</p>
+
+
+
+<a name="195959803"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113488-general/topic/ordered%20monoids/near/195959803" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Johan Commelin <a href="https://leanprover-community.github.io/archive/stream/113488-general/topic/ordered.20monoids.html#195959803">(May 01 2020 at 13:18)</a>:</h4>
+<p>Or does <code>norm_num</code> need them?</p>
+
+
+
+<a name="195959808"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113488-general/topic/ordered%20monoids/near/195959808" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Mario Carneiro <a href="https://leanprover-community.github.io/archive/stream/113488-general/topic/ordered.20monoids.html#195959808">(May 01 2020 at 13:18)</a>:</h4>
+<p>we don't need <code>ring int</code> in core, but we do need <code>ring</code> and <code>int</code> in core</p>
+
+
+
+<a name="195959821"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113488-general/topic/ordered%20monoids/near/195959821" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Johan Commelin <a href="https://leanprover-community.github.io/archive/stream/113488-general/topic/ordered.20monoids.html#195959821">(May 01 2020 at 13:18)</a>:</h4>
+<p>Why <code>ring</code>?</p>
+
+
+
+<a name="195959832"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113488-general/topic/ordered%20monoids/near/195959832" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Mario Carneiro <a href="https://leanprover-community.github.io/archive/stream/113488-general/topic/ordered.20monoids.html#195959832">(May 01 2020 at 13:18)</a>:</h4>
+<p>because it is used by <code>norm_num</code> lemmas</p>
+
+
+
+<a name="195959853"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113488-general/topic/ordered%20monoids/near/195959853" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Johan Commelin <a href="https://leanprover-community.github.io/archive/stream/113488-general/topic/ordered.20monoids.html#195959853">(May 01 2020 at 13:18)</a>:</h4>
+<p>How many lemmas does <code>norm_num</code> need?</p>
+
+
+
+<a name="195959872"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113488-general/topic/ordered%20monoids/near/195959872" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Mario Carneiro <a href="https://leanprover-community.github.io/archive/stream/113488-general/topic/ordered.20monoids.html#195959872">(May 01 2020 at 13:19)</a>:</h4>
+<p>several, but they are all quite basic</p>
+
+
+
+<a name="195959888"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113488-general/topic/ordered%20monoids/near/195959888" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Mario Carneiro <a href="https://leanprover-community.github.io/archive/stream/113488-general/topic/ordered.20monoids.html#195959888">(May 01 2020 at 13:19)</a>:</h4>
+<p>and purpose built</p>
+
+
+
+<a name="195960000"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113488-general/topic/ordered%20monoids/near/195960000" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Mario Carneiro <a href="https://leanprover-community.github.io/archive/stream/113488-general/topic/ordered.20monoids.html#195960000">(May 01 2020 at 13:20)</a>:</h4>
+<p><a href="https://github.com/leanprover-community/lean/blob/master/library/init/algebra/norm_num.lean" title="https://github.com/leanprover-community/lean/blob/master/library/init/algebra/norm_num.lean">https://github.com/leanprover-community/lean/blob/master/library/init/algebra/norm_num.lean</a></p>
+
+
+
+<a name="195960108"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113488-general/topic/ordered%20monoids/near/195960108" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Johan Commelin <a href="https://leanprover-community.github.io/archive/stream/113488-general/topic/ordered.20monoids.html#195960108">(May 01 2020 at 13:22)</a>:</h4>
+<p>Hmm... so it wants to know about <code>ordered_ring</code>s... that doesn't sound good.</p>
+
+
+
+<a name="195960148"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113488-general/topic/ordered%20monoids/near/195960148" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Mario Carneiro <a href="https://leanprover-community.github.io/archive/stream/113488-general/topic/ordered.20monoids.html#195960148">(May 01 2020 at 13:22)</a>:</h4>
+<p>it wants to know an unbounded number of things about number theoretic functions, which is why <code>norm_num</code> in mathlib is so large</p>
+
+
+
+<a name="195960170"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113488-general/topic/ordered%20monoids/near/195960170" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Mario Carneiro <a href="https://leanprover-community.github.io/archive/stream/113488-general/topic/ordered.20monoids.html#195960170">(May 01 2020 at 13:23)</a>:</h4>
+<p>it's easy to scale back and move things around there</p>
+
+
+
+<a name="195960218"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113488-general/topic/ordered%20monoids/near/195960218" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Mario Carneiro <a href="https://leanprover-community.github.io/archive/stream/113488-general/topic/ordered.20monoids.html#195960218">(May 01 2020 at 13:23)</a>:</h4>
+<p>there is an open issue in my head to rewrite <code>tactic.norm_num</code> in lean</p>
+
+
+
+<a name="195960228"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113488-general/topic/ordered%20monoids/near/195960228" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Johan Commelin <a href="https://leanprover-community.github.io/archive/stream/113488-general/topic/ordered.20monoids.html#195960228">(May 01 2020 at 13:23)</a>:</h4>
+<p>So... are there parts that could move to mathlib... or is norm_num locking it all up?</p>
+
+
+
+<a name="195960275"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113488-general/topic/ordered%20monoids/near/195960275" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Mario Carneiro <a href="https://leanprover-community.github.io/archive/stream/113488-general/topic/ordered.20monoids.html#195960275">(May 01 2020 at 13:24)</a>:</h4>
+<p>there isn't really any reason to have it in C++ except possibly efficiency</p>
+
+
+
+<a name="195960344"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113488-general/topic/ordered%20monoids/near/195960344" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Mario Carneiro <a href="https://leanprover-community.github.io/archive/stream/113488-general/topic/ordered.20monoids.html#195960344">(May 01 2020 at 13:25)</a>:</h4>
+<p>as far as I know that's about it for algebra in the C++, except for the mysterious <code>@[algebra]</code> attribute</p>
+
+
+
+<a name="195960378"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113488-general/topic/ordered%20monoids/near/195960378" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Mario Carneiro <a href="https://leanprover-community.github.io/archive/stream/113488-general/topic/ordered.20monoids.html#195960378">(May 01 2020 at 13:25)</a>:</h4>
+<p><a href="https://github.com/leanprover-community/lean/blob/master/library/init/algebra/classes.lean" title="https://github.com/leanprover-community/lean/blob/master/library/init/algebra/classes.lean">https://github.com/leanprover-community/lean/blob/master/library/init/algebra/classes.lean</a></p>
+
+
+
+<a name="195960387"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113488-general/topic/ordered%20monoids/near/195960387" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Johan Commelin <a href="https://leanprover-community.github.io/archive/stream/113488-general/topic/ordered.20monoids.html#195960387">(May 01 2020 at 13:25)</a>:</h4>
+<p>Hmm... but we want <code>norm_num</code> to be efficient, right?</p>
+
+
+
+<a name="195960465"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113488-general/topic/ordered%20monoids/near/195960465" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Mario Carneiro <a href="https://leanprover-community.github.io/archive/stream/113488-general/topic/ordered.20monoids.html#195960465">(May 01 2020 at 13:26)</a>:</h4>
+<p>It will be pretty efficient even in lean</p>
+
+
+
+<a name="195960487"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113488-general/topic/ordered%20monoids/near/195960487" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Mario Carneiro <a href="https://leanprover-community.github.io/archive/stream/113488-general/topic/ordered.20monoids.html#195960487">(May 01 2020 at 13:26)</a>:</h4>
+<p>this is not the kind of program that benefits greatly from native implementation</p>
+
+
+
+<a name="195960526"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113488-general/topic/ordered%20monoids/near/195960526" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Mario Carneiro <a href="https://leanprover-community.github.io/archive/stream/113488-general/topic/ordered.20monoids.html#195960526">(May 01 2020 at 13:27)</a>:</h4>
+<p>but we will have to do performance tests to see what the damage is</p>
+
+
+
+<a name="195960540"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113488-general/topic/ordered%20monoids/near/195960540" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Johan Commelin <a href="https://leanprover-community.github.io/archive/stream/113488-general/topic/ordered.20monoids.html#195960540">(May 01 2020 at 13:27)</a>:</h4>
+<p>How much work do you estimate this to be?</p>
+
+
+
+<a name="195960629"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113488-general/topic/ordered%20monoids/near/195960629" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Mario Carneiro <a href="https://leanprover-community.github.io/archive/stream/113488-general/topic/ordered.20monoids.html#195960629">(May 01 2020 at 13:28)</a>:</h4>
+<p>maybe 1/3 of mathlib's <code>norm_num</code></p>
+
+
+
+<a name="195960648"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113488-general/topic/ordered%20monoids/near/195960648" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Mario Carneiro <a href="https://leanprover-community.github.io/archive/stream/113488-general/topic/ordered.20monoids.html#195960648">(May 01 2020 at 13:29)</a>:</h4>
+<p>it's pretty straightforward what needs to be done</p>
+
+
+
+<a name="195960668"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113488-general/topic/ordered%20monoids/near/195960668" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Johan Commelin <a href="https://leanprover-community.github.io/archive/stream/113488-general/topic/ordered.20monoids.html#195960668">(May 01 2020 at 13:29)</a>:</h4>
+<p>I meant: is this 1 day, 1 week, 1 month?</p>
+
+
+
+<a name="195960694"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113488-general/topic/ordered%20monoids/near/195960694" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Mario Carneiro <a href="https://leanprover-community.github.io/archive/stream/113488-general/topic/ordered.20monoids.html#195960694">(May 01 2020 at 13:29)</a>:</h4>
+<p>1 day? If I actually do it on that day</p>
+
+
+
+<a name="195960767"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113488-general/topic/ordered%20monoids/near/195960767" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Johan Commelin <a href="https://leanprover-community.github.io/archive/stream/113488-general/topic/ordered.20monoids.html#195960767">(May 01 2020 at 13:30)</a>:</h4>
+<p>What do we need to do to make this issue in your head bubble to the top of your priority queue?</p>
+
+
+
+<a name="195960810"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113488-general/topic/ordered%20monoids/near/195960810" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Reid Barton <a href="https://leanprover-community.github.io/archive/stream/113488-general/topic/ordered.20monoids.html#195960810">(May 01 2020 at 13:31)</a>:</h4>
+<p>I think maybe waiting a week or so would help</p>
+
+
+
+<a name="195960889"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113488-general/topic/ordered%20monoids/near/195960889" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Johan Commelin <a href="https://leanprover-community.github.io/archive/stream/113488-general/topic/ordered.20monoids.html#195960889">(May 01 2020 at 13:32)</a>:</h4>
+<p>Because of your current refactor? Or what?</p>
+
+
+
+<a name="195963070"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113488-general/topic/ordered%20monoids/near/195963070" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Johan Commelin <a href="https://leanprover-community.github.io/archive/stream/113488-general/topic/ordered.20monoids.html#195963070">(May 01 2020 at 13:57)</a>:</h4>
+<p><span class="user-mention" data-user-id="110049">@Mario Carneiro</span> So... if I leave the definition of <code>ordered_add_comm_monoid</code> in core, do you think I can move almost all lemmas about it to mathlib?</p>
+
+
+
+<a name="195963087"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113488-general/topic/ordered%20monoids/near/195963087" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Johan Commelin <a href="https://leanprover-community.github.io/archive/stream/113488-general/topic/ordered.20monoids.html#195963087">(May 01 2020 at 13:57)</a>:</h4>
+<p>The lemmas that <code>norm_num</code> needs are all in that file you linked to?</p>
+
+
+
+<a name="195963195"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113488-general/topic/ordered%20monoids/near/195963195" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Mario Carneiro <a href="https://leanprover-community.github.io/archive/stream/113488-general/topic/ordered.20monoids.html#195963195">(May 01 2020 at 13:58)</a>:</h4>
+<p>I believe so</p>
+
+
+
+<a name="195963234"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113488-general/topic/ordered%20monoids/near/195963234" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Johan Commelin <a href="https://leanprover-community.github.io/archive/stream/113488-general/topic/ordered.20monoids.html#195963234">(May 01 2020 at 13:59)</a>:</h4>
+<p>Ok, maybe that is the easiest way forward. Then I don't have to pester you about norm_num <span aria-label="stuck out tongue wink" class="emoji emoji-1f61c" role="img" title="stuck out tongue wink">:stuck_out_tongue_wink:</span></p>
+
+
+
+<a name="195963256"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113488-general/topic/ordered%20monoids/near/195963256" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Mario Carneiro <a href="https://leanprover-community.github.io/archive/stream/113488-general/topic/ordered.20monoids.html#195963256">(May 01 2020 at 13:59)</a>:</h4>
+<p>there is an official list of definitions used by the C++</p>
+
+
+
+<a name="195963632"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113488-general/topic/ordered%20monoids/near/195963632" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Mario Carneiro <a href="https://leanprover-community.github.io/archive/stream/113488-general/topic/ordered.20monoids.html#195963632">(May 01 2020 at 14:03)</a>:</h4>
+<p><a href="https://github.com/leanprover-community/lean/blob/master/src/library/constants.txt" title="https://github.com/leanprover-community/lean/blob/master/src/library/constants.txt">https://github.com/leanprover-community/lean/blob/master/src/library/constants.txt</a></p>
+
+
+
+<a name="195963849"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113488-general/topic/ordered%20monoids/near/195963849" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Johan Commelin <a href="https://leanprover-community.github.io/archive/stream/113488-general/topic/ordered.20monoids.html#195963849">(May 01 2020 at 14:05)</a>:</h4>
+<p>Oooh cool! That will be helpful!</p>
+
+
+
+<a name="195963867"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113488-general/topic/ordered%20monoids/near/195963867" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Johan Commelin <a href="https://leanprover-community.github.io/archive/stream/113488-general/topic/ordered.20monoids.html#195963867">(May 01 2020 at 14:05)</a>:</h4>
+<p>Is it transitively closed?</p>
+
+
+
 {% endraw %}
 
-<hr><p>Last updated: May 01 2020 at 13:05 UTC</p>
+<hr><p>Last updated: May 01 2020 at 14:05 UTC</p>
