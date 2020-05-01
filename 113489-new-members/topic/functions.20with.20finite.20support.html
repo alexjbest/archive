@@ -140,6 +140,18 @@ the small goal is to talk about extending a finitely supported function by one p
 
 
 
+<a name="195921075"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113489-new%20members/topic/functions%20with%20finite%20support/near/195921075" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Mario Carneiro <a href="https://leanprover-community.github.io/archive/stream/113489-new-members/topic/functions.20with.20finite.20support.html#195921075">(May 01 2020 at 00:56)</a>:</h4>
+<p>I don't get this api at all. The structure <code>safely_applied</code> is useless, you may as well have <code>{val // f a = roption.some val}</code>  as the target type of <code>safely_apply</code>, which is more conventionally written <code>{val // val \in f a}</code>, and the proof is <code>&lt;(f a).get ha, (f a).get_mem ha&gt;</code></p>
+
+
+
+<a name="195921114"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113489-new%20members/topic/functions%20with%20finite%20support/near/195921114" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Mario Carneiro <a href="https://leanprover-community.github.io/archive/stream/113489-new-members/topic/functions.20with.20finite.20support.html#195921114">(May 01 2020 at 00:57)</a>:</h4>
+<p>that is, the <code>safely_apply</code> function is called <code>get</code></p>
+
+
+
 {% endraw %}
 
-<hr><p>Last updated: May 01 2020 at 00:08 UTC</p>
+<hr><p>Last updated: May 01 2020 at 01:06 UTC</p>

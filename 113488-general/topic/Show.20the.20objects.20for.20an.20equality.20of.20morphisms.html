@@ -103,6 +103,37 @@ permalink: /stream/113488-general/topic/Show.20the.20objects.20for.20an.20equali
 
 
 
+<a name="195919597"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113488-general/topic/Show%20the%20objects%20for%20an%20equality%20of%20morphisms/near/195919597" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Bhavik Mehta <a href="https://leanprover-community.github.io/archive/stream/113488-general/topic/Show.20the.20objects.20for.20an.20equality.20of.20morphisms.html#195919597">(May 01 2020 at 00:33)</a>:</h4>
+<p>A hack which does the job for now: <code>def tag' (n : ℕ) (A B : C) (f : A ⟶ B) : A ⟶ B := f</code></p>
+
+
+
+<a name="195919671"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113488-general/topic/Show%20the%20objects%20for%20an%20equality%20of%20morphisms/near/195919671" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Bhavik Mehta <a href="https://leanprover-community.github.io/archive/stream/113488-general/topic/Show.20the.20objects.20for.20an.20equality.20of.20morphisms.html#195919671">(May 01 2020 at 00:34)</a>:</h4>
+<p>Then when my goal is <code>pullback m₁ m₂ ⟶ pullback pullback.snd pullback.snd</code>, I can write</p>
+
+
+
+<a name="195919677"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113488-general/topic/Show%20the%20objects%20for%20an%20equality%20of%20morphisms/near/195919677" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Bhavik Mehta <a href="https://leanprover-community.github.io/archive/stream/113488-general/topic/Show.20the.20objects.20for.20an.20equality.20of.20morphisms.html#195919677">(May 01 2020 at 00:34)</a>:</h4>
+<p><code>change pullback m₁ m₂ ⟶ pullback (tag' 0 _ _ pullback.snd) (tag' 1 _ _ pullback.snd),</code></p>
+
+
+
+<a name="195919695"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113488-general/topic/Show%20the%20objects%20for%20an%20equality%20of%20morphisms/near/195919695" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Bhavik Mehta <a href="https://leanprover-community.github.io/archive/stream/113488-general/topic/Show.20the.20objects.20for.20an.20equality.20of.20morphisms.html#195919695">(May 01 2020 at 00:34)</a>:</h4>
+<p>which changes the goal to <code>pullback m₁ m₂ ⟶
+    pullback
+      (tag' 0 (pullback (mem (⊤_ C)) (prod.map (hat (m₂ ≫ prod.lift (𝟙 E) (terminal.from E))) (𝟙 (⊤_ C))))
+         (E ⨯ ⊤_ C)
+         pullback.snd)
+      (tag' 1 (pullback (mem (⊤_ C)) (prod.map (hat (m₁ ≫ prod.lift (𝟙 E) (terminal.from E))) (𝟙 (⊤_ C))))
+         (E ⨯ ⊤_ C)
+         pullback.snd)</code>, which is more helpful</p>
+
+
+
 {% endraw %}
 
-<hr><p>Last updated: May 01 2020 at 00:08 UTC</p>
+<hr><p>Last updated: May 01 2020 at 01:06 UTC</p>
