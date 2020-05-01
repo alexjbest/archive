@@ -205,6 +205,54 @@ permalink: /stream/113488-general/topic/partrec_code.html
 
 
 
+<a name="195935169"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113488-general/topic/partrec_code/near/195935169" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Gabriel Ebner <a href="https://leanprover-community.github.io/archive/stream/113488-general/topic/partrec_code.html#195935169">(May 01 2020 at 06:12)</a>:</h4>
+<p>I noticed this slowness yesterday as well.  I think there is a general problem with the coercion from integers to arbitrary rings see <a href="https://github.com/leanprover-community/mathlib/issues/2573" title="https://github.com/leanprover-community/mathlib/issues/2573">#2573</a>.  Unfortunately my PR seems to time out somewhere.</p>
+
+
+
+<a name="195935593"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113488-general/topic/partrec_code/near/195935593" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Yury G. Kudryashov <a href="https://leanprover-community.github.io/archive/stream/113488-general/topic/partrec_code.html#195935593">(May 01 2020 at 06:24)</a>:</h4>
+<p>The first "bad" commit is ffb99a338</p>
+
+
+
+<a name="195935605"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113488-general/topic/partrec_code/near/195935605" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Yury G. Kudryashov <a href="https://leanprover-community.github.io/archive/stream/113488-general/topic/partrec_code.html#195935605">(May 01 2020 at 06:25)</a>:</h4>
+<p><a href="https://github.com/leanprover-community/mathlib/issues/2363" title="https://github.com/leanprover-community/mathlib/issues/2363">#2363</a></p>
+
+
+
+<a name="195935621"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113488-general/topic/partrec_code/near/195935621" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Yury G. Kudryashov <a href="https://leanprover-community.github.io/archive/stream/113488-general/topic/partrec_code.html#195935621">(May 01 2020 at 06:25)</a>:</h4>
+<p>I have no idea why it slows down elaboration in <code>partrec_code</code>.</p>
+
+
+
+<a name="195935628"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113488-general/topic/partrec_code/near/195935628" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Yury G. Kudryashov <a href="https://leanprover-community.github.io/archive/stream/113488-general/topic/partrec_code.html#195935628">(May 01 2020 at 06:25)</a>:</h4>
+<p>But in the previous commit the elaboration is much faster.</p>
+
+
+
+<a name="195935821"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113488-general/topic/partrec_code/near/195935821" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Yury G. Kudryashov <a href="https://leanprover-community.github.io/archive/stream/113488-general/topic/partrec_code.html#195935821">(May 01 2020 at 06:30)</a>:</h4>
+<p>BTW, with an explicit <code>↑(λ n : ℕ, n.unpair.1)</code> it is 10x faster than before <a href="https://github.com/leanprover-community/mathlib/issues/2363" title="https://github.com/leanprover-community/mathlib/issues/2363">#2363</a> (and 100x faster than after <a href="https://github.com/leanprover-community/mathlib/issues/2363" title="https://github.com/leanprover-community/mathlib/issues/2363">#2363</a>).</p>
+
+
+
+<a name="195935891"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113488-general/topic/partrec_code/near/195935891" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Yury G. Kudryashov <a href="https://leanprover-community.github.io/archive/stream/113488-general/topic/partrec_code.html#195935891">(May 01 2020 at 06:32)</a>:</h4>
+<p><span class="user-mention" data-user-id="110043">@Gabriel Ebner</span> Compile failed in a <code>simp</code> lemma in <code>data.int.basic</code>. I don't know why it timed out instead of failing.</p>
+
+
+
+<a name="195936174"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113488-general/topic/partrec_code/near/195936174" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Yury G. Kudryashov <a href="https://leanprover-community.github.io/archive/stream/113488-general/topic/partrec_code.html#195936174">(May 01 2020 at 06:41)</a>:</h4>
+<p>But the whole file is still very slow compared to what we had before <a href="https://github.com/leanprover-community/mathlib/issues/2363" title="https://github.com/leanprover-community/mathlib/issues/2363">#2363</a></p>
+
+
+
 {% endraw %}
 
-<hr><p>Last updated: May 01 2020 at 06:07 UTC</p>
+<hr><p>Last updated: May 01 2020 at 07:06 UTC</p>
