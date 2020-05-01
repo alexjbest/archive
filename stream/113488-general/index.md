@@ -9,7 +9,7 @@ permalink: /stream/113488-general/index.html
 
 ### Topics:
 
-* [transitive coercions](topic/transitive.20coercions.html) (60 messages, latest: May 01 2020 at 15:51)
+* [transitive coercions](topic/transitive.20coercions.html) (61 messages, latest: May 01 2020 at 16:55)
 * [ordered monoids](topic/ordered.20monoids.html) (94 messages, latest: May 01 2020 at 14:52)
 * [Notices of the AMS paper](topic/Notices.20of.20the.20AMS.20paper.html) (97 messages, latest: May 01 2020 at 14:39)
 * [leanproject access denied](topic/leanproject.20access.20denied.html) (40 messages, latest: May 01 2020 at 14:32)
@@ -2744,4 +2744,4 @@ permalink: /stream/113488-general/index.html
 * [test](topic/test.html) (4 messages, latest: Feb 26 2018 at 16:22)
 * [welcome](topic/welcome.html) (1 message, latest: Feb 26 2018 at 16:02)
 
-<hr><p>Last updated: May 01 2020 at 16:05 UTC</p>
+<hr><p>Last updated: May 01 2020 at 17:05 UTC</p>

@@ -12,4 +12,4 @@ permalink: /stream/236446-Type-theory/index.html
 * [Modelling a Type Theory in Lean](topic/Modelling.20a.20Type.20Theory.20in.20Lean.html) (63 messages, latest: Apr 29 2020 at 14:47)
 * [stream events](topic/stream.20events.html) (1 message, latest: Apr 28 2020 at 13:07)
 
-<hr><p>Last updated: May 01 2020 at 16:05 UTC</p>
+<hr><p>Last updated: May 01 2020 at 17:05 UTC</p>
