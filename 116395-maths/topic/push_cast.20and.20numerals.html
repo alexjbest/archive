@@ -1,0 +1,26 @@
+---
+layout: archive
+title: Zulip Chat Archive
+permalink: /stream/116395-maths/topic/push_cast.20and.20numerals.html
+---
+
+<h2>Stream: <a href="https://leanprover-community.github.io/archive/stream/116395-maths/index.html">maths</a></h2>
+<h3>Topic: <a href="https://leanprover-community.github.io/archive/stream/116395-maths/topic/push_cast.20and.20numerals.html">push_cast and numerals</a></h3>
+
+<hr>
+
+<base href="https://leanprover.zulipchat.com/">
+
+<head><link href="/style.css" rel="stylesheet"></head>
+
+{% raw %}
+
+<a name="195917098"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/116395-maths/topic/push_cast%20and%20numerals/near/195917098" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Chris Hughes <a href="https://leanprover-community.github.io/archive/stream/116395-maths/topic/push_cast.20and.20numerals.html#195917098">(Apr 30 2020 at 23:57)</a>:</h4>
+<p><code>push_cast</code> with <code>((2 : nat) : int)</code> then I get <code>1 + 1</code>. Getting rid of the <code>norm_cast</code> attribute on <code>int.coe_nat_succ</code> fixes this problem, and <code>push_cast</code> gives me <code>(2 : int)</code>. I can see there's been some attempt to fix it by setting a lower priority to the <code>norm_cast</code> attribute on <code>int.coe_nat_succ</code>, but this fix is obviously not working any more. One fix I found, was to get rid of the <code>norm_cast</code> attribute on <code>int.coe_nat_succ</code> and put the attribute on <code>nat.succ_eq_add_one</code>, but this seems like it might be evil.</p>
+
+
+
+{% endraw %}
+
+<hr><p>Last updated: May 01 2020 at 00:08 UTC</p>
