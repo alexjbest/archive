@@ -9,6 +9,7 @@ permalink: /stream/116395-maths/index.html
 
 ### Topics:
 
+* [cancel_epi](topic/cancel_epi.html) (2 messages, latest: May 01 2020 at 12:29)
 * [push_cast and numerals](topic/push_cast.20and.20numerals.html) (3 messages, latest: May 01 2020 at 09:41)
 * [applicative ultrapower](topic/applicative.20ultrapower.html) (7 messages, latest: May 01 2020 at 09:31)
 * [linear map on basis](topic/linear.20map.20on.20basis.html) (3 messages, latest: May 01 2020 at 06:54)
@@ -880,4 +881,4 @@ permalink: /stream/116395-maths/index.html
 * [free group](topic/free.20group.html) (92 messages, latest: Apr 02 2018 at 05:00)
 * [Easy topological space question](topic/Easy.20topological.20space.20question.html) (18 messages, latest: Apr 02 2018 at 01:23)
 
-<hr><p>Last updated: May 01 2020 at 12:05 UTC</p>
+<hr><p>Last updated: May 01 2020 at 13:05 UTC</p>

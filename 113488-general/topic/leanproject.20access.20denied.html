@@ -275,6 +275,81 @@ PermissionError: [WinError 5] Access is denied: &#39;C:\\some-repo\\_target\\dep
 
 
 
+<a name="195956132"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113488-general/topic/leanproject%20access%20denied/near/195956132" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Sebastien Gouezel <a href="https://leanprover-community.github.io/archive/stream/113488-general/topic/leanproject.20access.20denied.html#195956132">(May 01 2020 at 12:30)</a>:</h4>
+<p>I am doing something wrong:</p>
+<div class="codehilite"><pre><span></span><code>PS C:\Users\Sebastien\Desktop\essai&gt; leanproject --version
+leanproject, version 0.0.5
+PS C:\Users\Sebastien\Desktop\essai&gt; git clone https://github.com/kckennylau/test.git
+Cloning into &#39;test&#39;...
+remote: Enumerating objects: 6, done.
+remote: Counting objects: 100% (6/6), done.
+remote: Compressing objects: 100% (3/3), done.
+remote: Total 6 (delta 0), reused 6 (delta 0), pack-reused 0
+Unpacking objects: 100% (6/6), done.
+PS C:\Users\Sebastien\Desktop\essai&gt; cd test
+PS C:\Users\Sebastien\Desktop\essai\test&gt; leanproject up
+[WinError 2] Le fichier spécifié est introuvable
+</code></pre></div>
+
+
+
+<a name="195956529"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113488-general/topic/leanproject%20access%20denied/near/195956529" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Patrick Massot <a href="https://leanprover-community.github.io/archive/stream/113488-general/topic/leanproject.20access.20denied.html#195956529">(May 01 2020 at 12:36)</a>:</h4>
+<p>This is really windows specific. I couldn't reproduce here.</p>
+
+
+
+<a name="195956574"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113488-general/topic/leanproject%20access%20denied/near/195956574" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Patrick Massot <a href="https://leanprover-community.github.io/archive/stream/113488-general/topic/leanproject.20access.20denied.html#195956574">(May 01 2020 at 12:36)</a>:</h4>
+<p>Did you try <code>leanproject --debug up</code>?</p>
+
+
+
+<a name="195956697"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113488-general/topic/leanproject%20access%20denied/near/195956697" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Sebastien Gouezel <a href="https://leanprover-community.github.io/archive/stream/113488-general/topic/leanproject.20access.20denied.html#195956697">(May 01 2020 at 12:38)</a>:</h4>
+<p>Are you asking Kenny or me?</p>
+<p>For me, I get</p>
+<div class="codehilite"><pre><span></span><code>PS C:\Users\Sebastien\Desktop\essai\test&gt; leanproject --debug up
+Traceback (most recent call last):
+  File &quot;C:\Program Files\Python37\Scripts\leanproject-script.py&quot;, line 11, in &lt;module&gt;
+    load_entry_point(&#39;mathlibtools==0.0.5&#39;, &#39;console_scripts&#39;, &#39;leanproject&#39;)()
+  File &quot;c:\program files\python37\lib\site-packages\mathlibtools\leanproject.py&quot;, line 295, in safe_cli
+    handle_exception(err, str(err))
+  File &quot;c:\program files\python37\lib\site-packages\mathlibtools\leanproject.py&quot;, line 51, in handle_exception
+    raise exc
+  File &quot;c:\program files\python37\lib\site-packages\mathlibtools\leanproject.py&quot;, line 293, in safe_cli
+    cli()
+  File &quot;c:\program files\python37\lib\site-packages\click\core.py&quot;, line 764, in __call__
+    return self.main(*args, **kwargs)
+  File &quot;c:\program files\python37\lib\site-packages\click\core.py&quot;, line 717, in main
+    rv = self.invoke(ctx)
+  File &quot;c:\program files\python37\lib\site-packages\click\core.py&quot;, line 1137, in invoke
+    return _process_result(sub_ctx.command.invoke(sub_ctx))
+  File &quot;c:\program files\python37\lib\site-packages\click\core.py&quot;, line 956, in invoke
+    return ctx.invoke(self.callback, **ctx.params)
+  File &quot;c:\program files\python37\lib\site-packages\click\core.py&quot;, line 555, in invoke
+    return callback(*args, **kwargs)
+  File &quot;c:\program files\python37\lib\site-packages\mathlibtools\leanproject.py&quot;, line 93, in upgrade_mathlib
+    proj().upgrade_mathlib()
+  File &quot;c:\program files\python37\lib\site-packages\mathlibtools\lib.py&quot;, line 592, in upgrade_mathlib
+    self.run([&#39;leanpkg&#39;, &#39;upgrade&#39;])
+  File &quot;c:\program files\python37\lib\site-packages\mathlibtools\lib.py&quot;, line 528, in run
+    check=True).stdout.decode()
+  File &quot;c:\program files\python37\lib\subprocess.py&quot;, line 472, in run
+    with Popen(*popenargs, **kwargs) as process:
+  File &quot;c:\program files\python37\lib\subprocess.py&quot;, line 775, in __init__
+    restore_signals, start_new_session)
+  File &quot;c:\program files\python37\lib\subprocess.py&quot;, line 1178, in _execute_child
+    startupinfo)
+FileNotFoundError: [WinError 2] Le fichier spécifié est introuvable
+</code></pre></div>
+
+
+<p>But I want to stress that, for my usual case (<code>leanproject up</code> in a mathlib directory), everything works perfectly.</p>
+
+
+
 {% endraw %}
 
-<hr><p>Last updated: May 01 2020 at 12:05 UTC</p>
+<hr><p>Last updated: May 01 2020 at 13:05 UTC</p>

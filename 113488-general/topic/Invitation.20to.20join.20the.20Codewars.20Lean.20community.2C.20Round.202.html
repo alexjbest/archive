@@ -1476,6 +1476,37 @@ Don't bother going through every axiom. Use Ltac instead."</p>
 
 
 
+<a name="195954558"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113488-general/topic/Invitation%20to%20join%20the%20Codewars%20Lean%20community%2C%20Round%202/near/195954558" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Jalex Stark <a href="https://leanprover-community.github.io/archive/stream/113488-general/topic/Invitation.20to.20join.20the.20Codewars.20Lean.20community.2C.20Round.202.html#195954558">(May 01 2020 at 12:07)</a>:</h4>
+<p><span class="user-mention silent" data-user-id="247064">Matt Earnshaw</span> <a href="#narrow/stream/113488-general/topic/Invitation.20to.20join.20the.20Codewars.20Lean.20community.2C.20Round.202/near/195953965" title="#narrow/stream/113488-general/topic/Invitation.20to.20join.20the.20Codewars.20Lean.20community.2C.20Round.202/near/195953965">said</a>:</p>
+<blockquote>
+<p>for the 0.999... = 1 kata I am stuck on this confusing error (omitting some potential spoiler state). I tried turning off <code>pp.notation</code> to check the terms but they really are syntactically equal</p>
+<div class="codehilite"><pre><span></span><code><span class="mi">33</span><span class="o">:</span><span class="mi">3</span><span class="o">:</span> <span class="n">rewrite</span> <span class="n">tactic</span> <span class="n">failed</span><span class="o">,</span> <span class="n">did</span> <span class="n">not</span> <span class="n">find</span> <span class="kn">instance</span> <span class="n">of</span> <span class="n">the</span> <span class="n">pattern</span> <span class="k">in</span> <span class="n">the</span> <span class="n">target</span> <span class="n">expression</span>
+  <span class="n">abs</span> <span class="o">(</span><span class="mi">9</span> <span class="bp">/</span> <span class="mi">10</span> <span class="bp">*</span> <span class="n">geom_series</span> <span class="o">(</span><span class="mi">1</span> <span class="bp">/</span> <span class="mi">10</span><span class="o">)</span> <span class="n">n</span> <span class="bp">-</span> <span class="mi">1</span><span class="o">)</span>
+<span class="n">state</span><span class="o">:</span>
+<span class="n">ε</span> <span class="o">:</span> <span class="n">ℝ</span><span class="o">,</span>
+<span class="n">n</span> <span class="o">:</span> <span class="bp">ℕ</span><span class="o">,</span>
+<span class="err">⊢</span> <span class="n">abs</span> <span class="o">(</span><span class="mi">9</span> <span class="bp">/</span> <span class="mi">10</span> <span class="bp">*</span> <span class="n">geom_series</span> <span class="o">(</span><span class="mi">1</span> <span class="bp">/</span> <span class="mi">10</span><span class="o">)</span> <span class="n">n</span> <span class="bp">-</span> <span class="mi">1</span><span class="o">)</span> <span class="bp">&lt;</span> <span class="n">ε</span>
+</code></pre></div>
+
+
+</blockquote>
+<p>probably some of those literals are getting interpreted in the integers when you wanted them in the reals or similar. If you post a <a href="https://github.com/leanprover-community/mathlib/wiki/Minimum-Working-Example-&#40;MWE&#41;" title="https://github.com/leanprover-community/mathlib/wiki/Minimum-Working-Example-&#40;MWE&#41;">#mwe</a> then maybe someone can help you.</p>
+
+
+
+<a name="195955767"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113488-general/topic/Invitation%20to%20join%20the%20Codewars%20Lean%20community%2C%20Round%202/near/195955767" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Matt Earnshaw <a href="https://leanprover-community.github.io/archive/stream/113488-general/topic/Invitation.20to.20join.20the.20Codewars.20Lean.20community.2C.20Round.202.html#195955767">(May 01 2020 at 12:25)</a>:</h4>
+<p><span class="user-mention" data-user-id="252300">@Jalex Stark</span> aha, now I see <code>set_option pp.numerals false</code> which indeed reveals a mismatch of the form you suggest. I should be able to fix it now, thanks</p>
+
+
+
+<a name="195955804"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113488-general/topic/Invitation%20to%20join%20the%20Codewars%20Lean%20community%2C%20Round%202/near/195955804" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Jalex Stark <a href="https://leanprover-community.github.io/archive/stream/113488-general/topic/Invitation.20to.20join.20the.20Codewars.20Lean.20community.2C.20Round.202.html#195955804">(May 01 2020 at 12:25)</a>:</h4>
+<p>Ooh nice! I'll try that next time I get an error like this</p>
+
+
+
 {% endraw %}
 
-<hr><p>Last updated: May 01 2020 at 12:05 UTC</p>
+<hr><p>Last updated: May 01 2020 at 13:05 UTC</p>
