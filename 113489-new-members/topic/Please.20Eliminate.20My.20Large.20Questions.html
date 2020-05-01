@@ -51,6 +51,69 @@ permalink: /stream/113489-new-members/topic/Please.20Eliminate.20My.20Large.20Qu
 
 
 
+<a name="196015631"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113489-new%20members/topic/Please%20Eliminate%20My%20Large%20Questions/near/196015631" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Brandon Brown <a href="https://leanprover-community.github.io/archive/stream/113489-new-members/topic/Please.20Eliminate.20My.20Large.20Questions.html#196015631">(May 01 2020 at 22:06)</a>:</h4>
+<p>Only the Prop type is proof irrelevant (all terms are definitionally equal) because it has to be in order to support classical reasoning - that was my understanding from the HoTT book. I asked a related question a little while ago, where I learned there are type theories that support continuation passing (e.g. exception handlers) model classical logic in a proof relevant way  (I think). As far as I know there are no proof assistants that utilize this approach for reasons unknown to me.</p>
+
+
+
+<a name="196015836"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113489-new%20members/topic/Please%20Eliminate%20My%20Large%20Questions/near/196015836" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Chris Hughes <a href="https://leanprover-community.github.io/archive/stream/113489-new-members/topic/Please.20Eliminate.20My.20Large.20Questions.html#196015836">(May 01 2020 at 22:09)</a>:</h4>
+<p>Is this the thing about callcc with type <code>(((A -&gt; B) -&gt; A) -&gt; A</code> that has some computational interpretation. I never understood that.</p>
+
+
+
+<a name="196016521"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113489-new%20members/topic/Please%20Eliminate%20My%20Large%20Questions/near/196016521" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Brandon Brown <a href="https://leanprover-community.github.io/archive/stream/113489-new-members/topic/Please.20Eliminate.20My.20Large.20Questions.html#196016521">(May 01 2020 at 22:19)</a>:</h4>
+<p>Yes. I don't understand it either. But it seems like an exciting approach since to me proof relevance and computational interpretation seem desirable. But I'm sure there's some drawback that makes it not practical or something</p>
+
+
+
+<a name="196017228"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113489-new%20members/topic/Please%20Eliminate%20My%20Large%20Questions/near/196017228" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Kevin Buzzard <a href="https://leanprover-community.github.io/archive/stream/113489-new-members/topic/Please.20Eliminate.20My.20Large.20Questions.html#196017228">(May 01 2020 at 22:29)</a>:</h4>
+<p>I think it's an interesting observation that proof irrelevance and ignoring computation, the approach used in mathlib in general, has meant that the library has grown very quickly and seems to be well on the way to covering a pure mathematics degree</p>
+
+
+
+<a name="196017788"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113489-new%20members/topic/Please%20Eliminate%20My%20Large%20Questions/near/196017788" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Brandon Brown <a href="https://leanprover-community.github.io/archive/stream/113489-new-members/topic/Please.20Eliminate.20My.20Large.20Questions.html#196017788">(May 01 2020 at 22:38)</a>:</h4>
+<p>Well I certainly wouldn't want to adopt a system that provides proof relevance at the expense of being able to do ordinary mathematics efficiently. But from my feeble understanding of the exception handling/continuation-passing style is that this wouldn't be the case. I don't see how on the surface any of what we do in Lean would be different and would slow anything down, it would just add proof relevance so that we could do interesting things with proof objects themselves.</p>
+
+
+
+<a name="196018062"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113489-new%20members/topic/Please%20Eliminate%20My%20Large%20Questions/near/196018062" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Brandon Brown <a href="https://leanprover-community.github.io/archive/stream/113489-new-members/topic/Please.20Eliminate.20My.20Large.20Questions.html#196018062">(May 01 2020 at 22:42)</a>:</h4>
+<p>There are all these different interesting ways to write a proof of the same proposition that I as a human outside the system can appreciate, but the type theory itself cannot because all the proofs are equal. It would be neat if the type theory itself could represent all the proofs and therefore have functions from one proof to another etc. You could prove things about the space of proofs for a proposition or something.</p>
+
+
+
+<a name="196018176"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113489-new%20members/topic/Please%20Eliminate%20My%20Large%20Questions/near/196018176" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Chris Hughes <a href="https://leanprover-community.github.io/archive/stream/113489-new-members/topic/Please.20Eliminate.20My.20Large.20Questions.html#196018176">(May 01 2020 at 22:44)</a>:</h4>
+<p>You not really forced to use proof irrelevance in Lean even though it's available, you can always use <code>Type</code> if you want.</p>
+
+
+
+<a name="196018344"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113489-new%20members/topic/Please%20Eliminate%20My%20Large%20Questions/near/196018344" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Brandon Brown <a href="https://leanprover-community.github.io/archive/stream/113489-new-members/topic/Please.20Eliminate.20My.20Large.20Questions.html#196018344">(May 01 2020 at 22:47)</a>:</h4>
+<p>Yes but my understanding is you're restricted to constructive logic outside of Prop</p>
+
+
+
+<a name="196018881"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113489-new%20members/topic/Please%20Eliminate%20My%20Large%20Questions/near/196018881" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Brandon Brown <a href="https://leanprover-community.github.io/archive/stream/113489-new-members/topic/Please.20Eliminate.20My.20Large.20Questions.html#196018881">(May 01 2020 at 22:56)</a>:</h4>
+<p>I think the continuation passing style would look something like this under-the-hood (mixing C++-style code with Lean)</p>
+<div class="codehilite"><pre><span></span><code><span class="kn">theorem</span> <span class="n">dne</span> <span class="o">:</span> <span class="bp">¬¬</span><span class="n">p</span> <span class="bp">→</span> <span class="n">p</span> <span class="o">:=</span>
+<span class="k">assume</span> <span class="n">h</span> <span class="o">:</span> <span class="bp">¬</span><span class="n">p</span><span class="o">,</span>
+<span class="n">try</span> <span class="o">{</span>
+   <span class="c1">-- derive contradiction, raising an exception</span>
+<span class="o">}</span> <span class="n">catch</span> <span class="n">Exception</span> <span class="n">e</span> <span class="o">{</span>
+    <span class="c1">-- something something</span>
+    <span class="n">return</span> <span class="n">hp</span> <span class="o">:</span> <span class="n">p</span>
+<span class="o">}</span>
+</code></pre></div>
+
+
+
 {% endraw %}
 
-<hr><p>Last updated: May 01 2020 at 22:04 UTC</p>
+<hr><p>Last updated: May 01 2020 at 23:04 UTC</p>
