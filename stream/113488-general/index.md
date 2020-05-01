@@ -9,11 +9,12 @@ permalink: /stream/113488-general/index.html
 
 ### Topics:
 
-* [Invitation to join the Codewars Lean community, Round 2](topic/Invitation.20to.20join.20the.20Codewars.20Lean.20community.2C.20Round.202.html) (271 messages, latest: May 01 2020 at 20:56)
+* [abel idempotence](topic/abel.20idempotence.html) (5 messages, latest: May 01 2020 at 21:59)
+* [how do I step through proofs?](topic/how.20do.20I.20step.20through.20proofs.3F.html) (76 messages, latest: May 01 2020 at 21:46)
+* [Invitation to join the Codewars Lean community, Round 2](topic/Invitation.20to.20join.20the.20Codewars.20Lean.20community.2C.20Round.202.html) (272 messages, latest: May 01 2020 at 21:39)
+* [big ops](topic/big.20ops.html) (105 messages, latest: May 01 2020 at 21:29)
 * [Specialized `ext` lemmas](topic/Specialized.20.60ext.60.20lemmas.html) (9 messages, latest: May 01 2020 at 20:41)
-* [big ops](topic/big.20ops.html) (103 messages, latest: May 01 2020 at 20:36)
 * [documenting notation](topic/documenting.20notation.html) (3 messages, latest: May 01 2020 at 20:35)
-* [abel idempotence](topic/abel.20idempotence.html) (4 messages, latest: May 01 2020 at 20:24)
 * [Diagnosing timeout](topic/Diagnosing.20timeout.html) (81 messages, latest: May 01 2020 at 20:06)
 * [sub_eq_add_neg](topic/sub_eq_add_neg.html) (13 messages, latest: May 01 2020 at 18:32)
 * [transitive coercions](topic/transitive.20coercions.html) (64 messages, latest: May 01 2020 at 18:13)
@@ -249,7 +250,6 @@ permalink: /stream/113488-general/index.html
 * [lean --make output on Windows](topic/lean.20--make.20output.20on.20Windows.html) (2 messages, latest: Mar 30 2020 at 12:41)
 * [rename a declaration](topic/rename.20a.20declaration.html) (8 messages, latest: Mar 30 2020 at 09:23)
 * [`multiplicative`: reducible or not?](topic/.60multiplicative.60.3A.20reducible.20or.20not.3F.html) (99 messages, latest: Mar 30 2020 at 09:10)
-* [how do I step through proofs?](topic/how.20do.20I.20step.20through.20proofs.3F.html) (65 messages, latest: Mar 30 2020 at 00:32)
 * [-T50000 challenge](topic/-T50000.20challenge.html) (208 messages, latest: Mar 29 2020 at 11:49)
 * [`intro` attr](topic/.60intro.60.20attr.html) (11 messages, latest: Mar 29 2020 at 11:30)
 * [Group morphism](topic/Group.20morphism.html) (34 messages, latest: Mar 29 2020 at 09:18)
@@ -2748,4 +2748,4 @@ permalink: /stream/113488-general/index.html
 * [test](topic/test.html) (4 messages, latest: Feb 26 2018 at 16:22)
 * [welcome](topic/welcome.html) (1 message, latest: Feb 26 2018 at 16:02)
 
-<hr><p>Last updated: May 01 2020 at 21:04 UTC</p>
+<hr><p>Last updated: May 01 2020 at 22:04 UTC</p>
