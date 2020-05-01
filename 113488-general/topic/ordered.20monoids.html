@@ -605,6 +605,85 @@ Moving <code>to_additive</code> into core would be one option. But I don't reall
 
 
 
+<a name="195963992"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113488-general/topic/ordered%20monoids/near/195963992" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Mario Carneiro <a href="https://leanprover-community.github.io/archive/stream/113488-general/topic/ordered.20monoids.html#195963992">(May 01 2020 at 14:06)</a>:</h4>
+<p>I don't think so</p>
+
+
+
+<a name="195964010"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113488-general/topic/ordered%20monoids/near/195964010" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Mario Carneiro <a href="https://leanprover-community.github.io/archive/stream/113488-general/topic/ordered.20monoids.html#195964010">(May 01 2020 at 14:07)</a>:</h4>
+<p>It shouldn't be</p>
+
+
+
+<a name="195964039"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113488-general/topic/ordered%20monoids/near/195964039" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Mario Carneiro <a href="https://leanprover-community.github.io/archive/stream/113488-general/topic/ordered.20monoids.html#195964039">(May 01 2020 at 14:07)</a>:</h4>
+<p>these are constants that are directly referenced somewhere in C++</p>
+
+
+
+<a name="195964133"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113488-general/topic/ordered%20monoids/near/195964133" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Johan Commelin <a href="https://leanprover-community.github.io/archive/stream/113488-general/topic/ordered.20monoids.html#195964133">(May 01 2020 at 14:08)</a>:</h4>
+<p>Ok, would you mind writing 20 lines of lean code that will print the transitive closure?</p>
+
+
+
+<a name="195964158"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113488-general/topic/ordered%20monoids/near/195964158" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Johan Commelin <a href="https://leanprover-community.github.io/archive/stream/113488-general/topic/ordered.20monoids.html#195964158">(May 01 2020 at 14:08)</a>:</h4>
+<p>It's probably almost the same as printing all the places a name is used... but not exactly</p>
+
+
+
+<a name="195964284"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113488-general/topic/ordered%20monoids/near/195964284" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Johan Commelin <a href="https://leanprover-community.github.io/archive/stream/113488-general/topic/ordered.20monoids.html#195964284">(May 01 2020 at 14:10)</a>:</h4>
+<p>In the other thread you wrote</p>
+<div class="codehilite"><pre><span></span><code><span class="kn">import</span> <span class="n">all</span>
+
+<span class="kn">open</span> <span class="n">tactic</span>
+<span class="n">run_cmd</span> <span class="n">do</span>
+  <span class="n">env</span> <span class="err">←</span> <span class="n">get_env</span><span class="o">,</span>
+  <span class="k">let</span> <span class="n">l</span> <span class="o">:=</span> <span class="n">env</span><span class="bp">.</span><span class="n">fold</span> <span class="n">mk_name_set</span> <span class="err">$</span> <span class="bp">λ</span> <span class="n">d</span> <span class="n">t</span><span class="o">,</span>
+    <span class="n">d</span><span class="bp">.</span><span class="n">value</span><span class="bp">.</span><span class="n">fold</span> <span class="n">t</span> <span class="o">(</span><span class="bp">λ</span> <span class="n">e</span> <span class="bp">_</span> <span class="n">t</span><span class="o">,</span> <span class="k">match</span> <span class="n">e</span> <span class="k">with</span>
+      <span class="bp">|</span> <span class="n">expr</span><span class="bp">.</span><span class="n">const</span> <span class="n">n</span> <span class="o">[]</span> <span class="o">:=</span>
+        <span class="k">if</span> <span class="n">n</span> <span class="bp">=</span> <span class="bp">`</span><span class="n">with_zero</span><span class="bp">.</span><span class="n">ordered_add_comm_monoid</span> <span class="k">then</span>
+          <span class="n">name_set</span><span class="bp">.</span><span class="n">insert</span> <span class="n">t</span> <span class="n">d</span><span class="bp">.</span><span class="n">to_name</span>
+        <span class="k">else</span> <span class="n">t</span>
+      <span class="bp">|</span> <span class="bp">_</span> <span class="o">:=</span> <span class="n">t</span>
+      <span class="kn">end</span><span class="o">),</span>
+  <span class="n">tactic</span><span class="bp">.</span><span class="n">trace</span> <span class="n">l</span>
+</code></pre></div>
+
+
+
+<a name="195964293"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113488-general/topic/ordered%20monoids/near/195964293" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Johan Commelin <a href="https://leanprover-community.github.io/archive/stream/113488-general/topic/ordered.20monoids.html#195964293">(May 01 2020 at 14:10)</a>:</h4>
+<p>Let me see if I can adapt that code.</p>
+
+
+
+<a name="195965364"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113488-general/topic/ordered%20monoids/near/195965364" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Gabriel Ebner <a href="https://leanprover-community.github.io/archive/stream/113488-general/topic/ordered.20monoids.html#195965364">(May 01 2020 at 14:22)</a>:</h4>
+<p><span class="user-mention silent" data-user-id="110049">Mario Carneiro</span> <a href="#narrow/stream/113488-general/topic/ordered.20monoids/near/195963256" title="#narrow/stream/113488-general/topic/ordered.20monoids/near/195963256">said</a>:</p>
+<blockquote>
+<p>there is an official list of definitions used by the C++</p>
+</blockquote>
+<p>Note that this list is far from exhaustive.  For example, most definitions that are overridden in the VM don't appear there.  Or the definitions necessary for tactics.</p>
+
+
+
+<a name="195965690"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113488-general/topic/ordered%20monoids/near/195965690" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Johan Commelin <a href="https://leanprover-community.github.io/archive/stream/113488-general/topic/ordered.20monoids.html#195965690">(May 01 2020 at 14:25)</a>:</h4>
+<p>So... is there an automated way to figure out which lemmas can be moved to mathlib?</p>
+
+
+
+<a name="195968435"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113488-general/topic/ordered%20monoids/near/195968435" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Gabriel Ebner <a href="https://leanprover-community.github.io/archive/stream/113488-general/topic/ordered.20monoids.html#195968435">(May 01 2020 at 14:52)</a>:</h4>
+<p>I think the list in <code>constants.txt</code> is pretty accurate when it comes to lemmas.  It's just very incomplete for definitions.  However, first we need to excise <code>norm_num</code>.</p>
+
+
+
 {% endraw %}
 
-<hr><p>Last updated: May 01 2020 at 14:05 UTC</p>
+<hr><p>Last updated: May 01 2020 at 15:05 UTC</p>

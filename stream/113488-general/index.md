@@ -9,9 +9,10 @@ permalink: /stream/113488-general/index.html
 
 ### Topics:
 
-* [ordered monoids](topic/ordered.20monoids.html) (84 messages, latest: May 01 2020 at 14:05)
+* [ordered monoids](topic/ordered.20monoids.html) (94 messages, latest: May 01 2020 at 14:52)
+* [Notices of the AMS paper](topic/Notices.20of.20the.20AMS.20paper.html) (97 messages, latest: May 01 2020 at 14:39)
+* [leanproject access denied](topic/leanproject.20access.20denied.html) (40 messages, latest: May 01 2020 at 14:32)
 * [sub_eq_add_neg](topic/sub_eq_add_neg.html) (8 messages, latest: May 01 2020 at 13:29)
-* [leanproject access denied](topic/leanproject.20access.20denied.html) (38 messages, latest: May 01 2020 at 13:29)
 * [transitive coercions](topic/transitive.20coercions.html) (49 messages, latest: May 01 2020 at 13:10)
 * [set_option trace.simplify.rewrite true](topic/set_option.20trace.2Esimplify.2Erewrite.20true.html) (10 messages, latest: May 01 2020 at 13:05)
 * [big ops](topic/big.20ops.html) (77 messages, latest: May 01 2020 at 12:57)
@@ -51,7 +52,6 @@ permalink: /stream/113488-general/index.html
 * [data.int.basic](topic/data.2Eint.2Ebasic.html) (6 messages, latest: Apr 28 2020 at 07:23)
 * [PRing to mathlib from forks](topic/PRing.20to.20mathlib.20from.20forks.html) (13 messages, latest: Apr 27 2020 at 23:10)
 * [wlog is slow](topic/wlog.20is.20slow.html) (15 messages, latest: Apr 27 2020 at 16:03)
-* [Notices of the AMS paper](topic/Notices.20of.20the.20AMS.20paper.html) (95 messages, latest: Apr 27 2020 at 12:16)
 * [apply bug](topic/apply.20bug.html) (23 messages, latest: Apr 27 2020 at 01:40)
 * [proofs](topic/proofs.html) (4 messages, latest: Apr 26 2020 at 23:37)
 * [to_extending](topic/to_extending.html) (18 messages, latest: Apr 26 2020 at 19:46)
@@ -2744,4 +2744,4 @@ permalink: /stream/113488-general/index.html
 * [test](topic/test.html) (4 messages, latest: Feb 26 2018 at 16:22)
 * [welcome](topic/welcome.html) (1 message, latest: Feb 26 2018 at 16:02)
 
-<hr><p>Last updated: May 01 2020 at 14:05 UTC</p>
+<hr><p>Last updated: May 01 2020 at 15:05 UTC</p>
