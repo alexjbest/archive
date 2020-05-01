@@ -9,6 +9,7 @@ permalink: /stream/113488-general/index.html
 
 ### Topics:
 
+* [big ops](topic/big.20ops.html) (27 messages, latest: May 01 2020 at 07:49)
 * [partrec_code](topic/partrec_code.html) (35 messages, latest: May 01 2020 at 06:41)
 * [tactic.converter.binders](topic/tactic.2Econverter.2Ebinders.html) (8 messages, latest: May 01 2020 at 02:12)
 * [universe bug?](topic/universe.20bug.3F.html) (45 messages, latest: May 01 2020 at 01:11)
@@ -18,7 +19,6 @@ permalink: /stream/113488-general/index.html
 * [seminars](topic/seminars.html) (37 messages, latest: Apr 30 2020 at 20:59)
 * [Diagnosing timeout](topic/Diagnosing.20timeout.html) (73 messages, latest: Apr 30 2020 at 20:04)
 * [why does a sync command take so long in the lean server](topic/why.20does.20a.20sync.20command.20take.20so.20long.20in.20the.20lean.20server.html) (36 messages, latest: Apr 30 2020 at 19:21)
-* [big ops](topic/big.20ops.html) (26 messages, latest: Apr 30 2020 at 16:57)
 * [continuity proof](topic/continuity.20proof.html) (12 messages, latest: Apr 30 2020 at 15:12)
 * [Lean job in London](topic/Lean.20job.20in.20London.html) (8 messages, latest: Apr 30 2020 at 14:28)
 * [leanproject access denied](topic/leanproject.20access.20denied.html) (18 messages, latest: Apr 30 2020 at 13:59)
@@ -2741,4 +2741,4 @@ permalink: /stream/113488-general/index.html
 * [test](topic/test.html) (4 messages, latest: Feb 26 2018 at 16:22)
 * [welcome](topic/welcome.html) (1 message, latest: Feb 26 2018 at 16:02)
 
-<hr><p>Last updated: May 01 2020 at 07:06 UTC</p>
+<hr><p>Last updated: May 01 2020 at 08:05 UTC</p>
