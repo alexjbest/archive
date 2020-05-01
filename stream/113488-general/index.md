@@ -9,9 +9,12 @@ permalink: /stream/113488-general/index.html
 
 ### Topics:
 
+* [Invitation to join the Codewars Lean community, Round 2](topic/Invitation.20to.20join.20the.20Codewars.20Lean.20community.2C.20Round.202.html) (261 messages, latest: May 01 2020 at 20:05)
+* [Specialized `ext` lemmas](topic/Specialized.20.60ext.60.20lemmas.html) (2 messages, latest: May 01 2020 at 20:04)
+* [Diagnosing timeout](topic/Diagnosing.20timeout.html) (80 messages, latest: May 01 2020 at 19:58)
+* [big ops](topic/big.20ops.html) (97 messages, latest: May 01 2020 at 19:42)
+* [abel idempotence](topic/abel.20idempotence.html) (3 messages, latest: May 01 2020 at 19:41)
 * [documenting notation](topic/documenting.20notation.html) (1 message, latest: May 01 2020 at 18:51)
-* [Diagnosing timeout](topic/Diagnosing.20timeout.html) (75 messages, latest: May 01 2020 at 18:41)
-* [big ops](topic/big.20ops.html) (90 messages, latest: May 01 2020 at 18:35)
 * [sub_eq_add_neg](topic/sub_eq_add_neg.html) (13 messages, latest: May 01 2020 at 18:32)
 * [transitive coercions](topic/transitive.20coercions.html) (64 messages, latest: May 01 2020 at 18:13)
 * [unnecessary(?) simp lemma](topic/unnecessary(.3F).20simp.20lemma.html) (4 messages, latest: May 01 2020 at 18:01)
@@ -19,7 +22,6 @@ permalink: /stream/113488-general/index.html
 * [ordered monoids](topic/ordered.20monoids.html) (94 messages, latest: May 01 2020 at 14:52)
 * [leanproject access denied](topic/leanproject.20access.20denied.html) (40 messages, latest: May 01 2020 at 14:32)
 * [set_option trace.simplify.rewrite true](topic/set_option.20trace.2Esimplify.2Erewrite.20true.html) (10 messages, latest: May 01 2020 at 13:05)
-* [Invitation to join the Codewars Lean community, Round 2](topic/Invitation.20to.20join.20the.20Codewars.20Lean.20community.2C.20Round.202.html) (208 messages, latest: May 01 2020 at 12:25)
 * [seminars](topic/seminars.html) (39 messages, latest: May 01 2020 at 11:51)
 * [simp linter and structure fields](topic/simp.20linter.20and.20structure.20fields.html) (13 messages, latest: May 01 2020 at 09:01)
 * [is this name used in mathlib](topic/is.20this.20name.20used.20in.20mathlib.html) (9 messages, latest: May 01 2020 at 09:00)
@@ -2746,4 +2748,4 @@ permalink: /stream/113488-general/index.html
 * [test](topic/test.html) (4 messages, latest: Feb 26 2018 at 16:22)
 * [welcome](topic/welcome.html) (1 message, latest: Feb 26 2018 at 16:02)
 
-<hr><p>Last updated: May 01 2020 at 19:04 UTC</p>
+<hr><p>Last updated: May 01 2020 at 20:05 UTC</p>
