@@ -9,6 +9,7 @@ permalink: /stream/113489-new-members/index.html
 
 ### Topics:
 
+* [rw with inductive types](topic/rw.20with.20inductive.20types.html) (4 messages, latest: May 01 2020 at 02:02)
 * [functions with finite support](topic/functions.20with.20finite.20support.html) (20 messages, latest: May 01 2020 at 00:57)
 * [noob question(s)](topic/noob.20question(s).html) (5334 messages, latest: Apr 30 2020 at 23:02)
 * [inductive type](topic/inductive.20type.html) (7 messages, latest: Apr 30 2020 at 17:33)
@@ -22,7 +23,6 @@ permalink: /stream/113489-new-members/index.html
 * [showing injectivity](topic/showing.20injectivity.html) (253 messages, latest: Apr 29 2020 at 10:03)
 * [Some olympiad formalisations](topic/Some.20olympiad.20formalisations.html) (38 messages, latest: Apr 29 2020 at 00:21)
 * [Recursor](topic/Recursor.html) (18 messages, latest: Apr 29 2020 at 00:12)
-* [rw with inductive types](topic/rw.20with.20inductive.20types.html) (3 messages, latest: Apr 28 2020 at 22:05)
 * [IVT](topic/IVT.html) (44 messages, latest: Apr 28 2020 at 17:59)
 * [pow_mono](topic/pow_mono.html) (28 messages, latest: Apr 28 2020 at 17:50)
 * [bezout](topic/bezout.html) (34 messages, latest: Apr 28 2020 at 08:30)
@@ -994,4 +994,4 @@ permalink: /stream/113489-new-members/index.html
 * [Andrew Ashworth](topic/Andrew.20Ashworth.html) (15 messages, latest: Feb 26 2018 at 16:21)
 * [onboarding](topic/onboarding.html) (1 message, latest: Feb 26 2018 at 16:02)
 
-<hr><p>Last updated: May 01 2020 at 01:06 UTC</p>
+<hr><p>Last updated: May 01 2020 at 02:08 UTC</p>

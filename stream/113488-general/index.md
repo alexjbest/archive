@@ -9,11 +9,12 @@ permalink: /stream/113488-general/index.html
 
 ### Topics:
 
+* [tactic.converter.binders](topic/tactic.2Econverter.2Ebinders.html) (6 messages, latest: May 01 2020 at 01:46)
+* [universe bug?](topic/universe.20bug.3F.html) (45 messages, latest: May 01 2020 at 01:11)
 * [Show the objects for an equality of morphisms](topic/Show.20the.20objects.20for.20an.20equality.20of.20morphisms.html) (15 messages, latest: May 01 2020 at 00:34)
 * [`rw` behaviour with `nat.succ`](topic/.60rw.60.20behaviour.20with.20.60nat.2Esucc.60.html) (2 messages, latest: May 01 2020 at 00:12)
 * [Invitation to join the Codewars Lean community, Round 2](topic/Invitation.20to.20join.20the.20Codewars.20Lean.20community.2C.20Round.202.html) (202 messages, latest: Apr 30 2020 at 23:28)
 * [seminars](topic/seminars.html) (37 messages, latest: Apr 30 2020 at 20:59)
-* [universe bug?](topic/universe.20bug.3F.html) (44 messages, latest: Apr 30 2020 at 20:45)
 * [Diagnosing timeout](topic/Diagnosing.20timeout.html) (73 messages, latest: Apr 30 2020 at 20:04)
 * [why does a sync command take so long in the lean server](topic/why.20does.20a.20sync.20command.20take.20so.20long.20in.20the.20lean.20server.html) (36 messages, latest: Apr 30 2020 at 19:21)
 * [big ops](topic/big.20ops.html) (26 messages, latest: Apr 30 2020 at 16:57)
@@ -2739,4 +2740,4 @@ permalink: /stream/113488-general/index.html
 * [test](topic/test.html) (4 messages, latest: Feb 26 2018 at 16:22)
 * [welcome](topic/welcome.html) (1 message, latest: Feb 26 2018 at 16:02)
 
-<hr><p>Last updated: May 01 2020 at 01:06 UTC</p>
+<hr><p>Last updated: May 01 2020 at 02:08 UTC</p>
