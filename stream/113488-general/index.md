@@ -9,9 +9,10 @@ permalink: /stream/113488-general/index.html
 
 ### Topics:
 
+* [big ops](topic/big.20ops.html) (66 messages, latest: May 01 2020 at 11:05)
+* [leanproject access denied](topic/leanproject.20access.20denied.html) (31 messages, latest: May 01 2020 at 10:58)
 * [transitive coercions](topic/transitive.20coercions.html) (34 messages, latest: May 01 2020 at 09:51)
 * [Invitation to join the Codewars Lean community, Round 2](topic/Invitation.20to.20join.20the.20Codewars.20Lean.20community.2C.20Round.202.html) (204 messages, latest: May 01 2020 at 09:50)
-* [big ops](topic/big.20ops.html) (56 messages, latest: May 01 2020 at 09:46)
 * [ordered monoids](topic/ordered.20monoids.html) (34 messages, latest: May 01 2020 at 09:29)
 * [simp linter and structure fields](topic/simp.20linter.20and.20structure.20fields.html) (13 messages, latest: May 01 2020 at 09:01)
 * [is this name used in mathlib](topic/is.20this.20name.20used.20in.20mathlib.html) (9 messages, latest: May 01 2020 at 09:00)
@@ -25,7 +26,6 @@ permalink: /stream/113488-general/index.html
 * [why does a sync command take so long in the lean server](topic/why.20does.20a.20sync.20command.20take.20so.20long.20in.20the.20lean.20server.html) (36 messages, latest: Apr 30 2020 at 19:21)
 * [continuity proof](topic/continuity.20proof.html) (12 messages, latest: Apr 30 2020 at 15:12)
 * [Lean job in London](topic/Lean.20job.20in.20London.html) (8 messages, latest: Apr 30 2020 at 14:28)
-* [leanproject access denied](topic/leanproject.20access.20denied.html) (18 messages, latest: Apr 30 2020 at 13:59)
 * [graphs on the website](topic/graphs.20on.20the.20website.html) (39 messages, latest: Apr 30 2020 at 13:28)
 * [continuous integration failing](topic/continuous.20integration.20failing.html) (2 messages, latest: Apr 30 2020 at 12:50)
 * [is this a pattern](topic/is.20this.20a.20pattern.html) (18 messages, latest: Apr 30 2020 at 11:13)
@@ -2742,4 +2742,4 @@ permalink: /stream/113488-general/index.html
 * [test](topic/test.html) (4 messages, latest: Feb 26 2018 at 16:22)
 * [welcome](topic/welcome.html) (1 message, latest: Feb 26 2018 at 16:02)
 
-<hr><p>Last updated: May 01 2020 at 10:04 UTC</p>
+<hr><p>Last updated: May 01 2020 at 11:06 UTC</p>

@@ -125,6 +125,144 @@ permalink: /stream/113488-general/topic/leanproject.20access.20denied.html
 
 
 
+<a name="195946935"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113488-general/topic/leanproject%20access%20denied/near/195946935" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Kenny Lau <a href="https://leanprover-community.github.io/archive/stream/113488-general/topic/leanproject.20access.20denied.html#195946935">(May 01 2020 at 10:06)</a>:</h4>
+<p>I have reproduced this error</p>
+
+
+
+<a name="195946954"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113488-general/topic/leanproject%20access%20denied/near/195946954" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Kenny Lau <a href="https://leanprover-community.github.io/archive/stream/113488-general/topic/leanproject.20access.20denied.html#195946954">(May 01 2020 at 10:06)</a>:</h4>
+<ol>
+<li>delete the .git folder</li>
+<li><code>leanproject up</code></li>
+<li>this works fine, and it clones mathlib</li>
+<li><code>leanproject up</code></li>
+<li>error</li>
+</ol>
+
+
+
+<a name="195946965"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113488-general/topic/leanproject%20access%20denied/near/195946965" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Kenny Lau <a href="https://leanprover-community.github.io/archive/stream/113488-general/topic/leanproject.20access.20denied.html#195946965">(May 01 2020 at 10:06)</a>:</h4>
+<p>so basically it cannot be executed twice</p>
+
+
+
+<a name="195947076"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113488-general/topic/leanproject%20access%20denied/near/195947076" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Kevin Buzzard <a href="https://leanprover-community.github.io/archive/stream/113488-general/topic/leanproject.20access.20denied.html#195947076">(May 01 2020 at 10:08)</a>:</h4>
+<p>Open an issue in the GitHub repo and Patrick will look at it when he has time. Nice sleuthing.</p>
+
+
+
+<a name="195947083"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113488-general/topic/leanproject%20access%20denied/near/195947083" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Kenny Lau <a href="https://leanprover-community.github.io/archive/stream/113488-general/topic/leanproject.20access.20denied.html#195947083">(May 01 2020 at 10:09)</a>:</h4>
+<p>the environment is in the VSCode Terminal on Windows 10</p>
+
+
+
+<a name="195947091"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113488-general/topic/leanproject%20access%20denied/near/195947091" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Kenny Lau <a href="https://leanprover-community.github.io/archive/stream/113488-general/topic/leanproject.20access.20denied.html#195947091">(May 01 2020 at 10:09)</a>:</h4>
+<p>which uses powershell</p>
+
+
+
+<a name="195947267"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113488-general/topic/leanproject%20access%20denied/near/195947267" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Kenny Lau <a href="https://leanprover-community.github.io/archive/stream/113488-general/topic/leanproject.20access.20denied.html#195947267">(May 01 2020 at 10:11)</a>:</h4>
+<p>debug:</p>
+<div class="codehilite"><pre><span></span><code>Traceback (most recent call last):
+  File &quot;c:\python-3.6.4\lib\runpy.py&quot;, line 193, in _run_module_as_main
+    &quot;__main__&quot;, mod_spec)
+  File &quot;c:\python-3.6.4\lib\runpy.py&quot;, line 85, in _run_code
+    exec(code, run_globals)
+  File &quot;C:\Python-3.6.4\Scripts\leanproject.exe\__main__.py&quot;, line 7, in &lt;module&gt;
+  File &quot;c:\python-3.6.4\lib\site-packages\mathlibtools\leanproject.py&quot;, line 256, in safe_cli
+    handle_exception(err, str(err))
+  File &quot;c:\python-3.6.4\lib\site-packages\mathlibtools\leanproject.py&quot;, line 51, in handle_exception
+    raise exc
+  File &quot;c:\python-3.6.4\lib\site-packages\mathlibtools\leanproject.py&quot;, line 254, in safe_cli
+    cli()
+  File &quot;c:\python-3.6.4\lib\site-packages\click\core.py&quot;, line 829, in __call__
+    return self.main(*args, **kwargs)
+  File &quot;c:\python-3.6.4\lib\site-packages\click\core.py&quot;, line 782, in main
+    rv = self.invoke(ctx)
+  File &quot;c:\python-3.6.4\lib\site-packages\click\core.py&quot;, line 1259, in invoke
+    return _process_result(sub_ctx.command.invoke(sub_ctx))
+  File &quot;c:\python-3.6.4\lib\site-packages\click\core.py&quot;, line 1066, in invoke
+    return ctx.invoke(self.callback, **ctx.params)
+  File &quot;c:\python-3.6.4\lib\site-packages\click\core.py&quot;, line 610, in invoke
+    return callback(*args, **kwargs)
+  File &quot;c:\python-3.6.4\lib\site-packages\mathlibtools\leanproject.py&quot;, line 92, in upgrade_mathlib
+    proj().upgrade_mathlib()
+  File &quot;c:\python-3.6.4\lib\site-packages\mathlibtools\lib.py&quot;, line 468, in upgrade_mathlib
+    shutil.rmtree(str(self.mathlib_folder))
+  File &quot;c:\python-3.6.4\lib\shutil.py&quot;, line 494, in rmtree
+    return _rmtree_unsafe(path, onerror)
+  File &quot;c:\python-3.6.4\lib\shutil.py&quot;, line 384, in _rmtree_unsafe
+    _rmtree_unsafe(fullname, onerror)
+  File &quot;c:\python-3.6.4\lib\shutil.py&quot;, line 384, in _rmtree_unsafe
+    _rmtree_unsafe(fullname, onerror)
+  File &quot;c:\python-3.6.4\lib\shutil.py&quot;, line 384, in _rmtree_unsafe
+    _rmtree_unsafe(fullname, onerror)
+  File &quot;c:\python-3.6.4\lib\shutil.py&quot;, line 389, in _rmtree_unsafe
+    onerror(os.unlink, fullname, sys.exc_info())
+  File &quot;c:\python-3.6.4\lib\shutil.py&quot;, line 387, in _rmtree_unsafe
+    os.unlink(fullname)
+PermissionError: [WinError 5] Access is denied: &#39;C:\\some-repo\\_target\\deps\\mathlib\\.git\\objects\\pack\\pack-36f591561703d876c8ad32e4cc46887e2a0bf6d2.idx&#39;
+</code></pre></div>
+
+
+
+<a name="195947420"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113488-general/topic/leanproject%20access%20denied/near/195947420" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Kenny Lau <a href="https://leanprover-community.github.io/archive/stream/113488-general/topic/leanproject.20access.20denied.html#195947420">(May 01 2020 at 10:14)</a>:</h4>
+<p><a href="https://github.com/leanprover-community/mathlib-tools/issues/46" title="https://github.com/leanprover-community/mathlib-tools/issues/46">https://github.com/leanprover-community/mathlib-tools/issues/46</a></p>
+
+
+
+<a name="195947953"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113488-general/topic/leanproject%20access%20denied/near/195947953" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Sebastien Gouezel <a href="https://leanprover-community.github.io/archive/stream/113488-general/topic/leanproject.20access.20denied.html#195947953">(May 01 2020 at 10:23)</a>:</h4>
+<p>I tried to reproduce, but you need to give more details. Here is what I did, in a folder containing a cloned copy of mathlib: I deleted the <code>.git</code> folder, and then I ran <code>leanproject up</code> several times. The output is</p>
+<div class="codehilite"><pre><span></span><code><span class="n">PS</span> <span class="n">C</span><span class="o">:</span><span class="err">\</span><span class="n">Users</span><span class="err">\</span><span class="n">Sebastien</span><span class="err">\</span><span class="n">Desktop</span><span class="err">\</span><span class="n">mathlib_klau</span><span class="bp">&gt;</span> <span class="n">leanproject</span> <span class="n">up</span>
+<span class="err">&#39;</span><span class="n">dependencies&#39;</span>
+<span class="n">PS</span> <span class="n">C</span><span class="o">:</span><span class="err">\</span><span class="n">Users</span><span class="err">\</span><span class="n">Sebastien</span><span class="err">\</span><span class="n">Desktop</span><span class="err">\</span><span class="n">mathlib_klau</span><span class="bp">&gt;</span> <span class="n">leanproject</span> <span class="n">up</span>
+<span class="err">&#39;</span><span class="n">dependencies&#39;</span>
+<span class="n">PS</span> <span class="n">C</span><span class="o">:</span><span class="err">\</span><span class="n">Users</span><span class="err">\</span><span class="n">Sebastien</span><span class="err">\</span><span class="n">Desktop</span><span class="err">\</span><span class="n">mathlib_klau</span><span class="bp">&gt;</span> <span class="n">leanproject</span> <span class="n">up</span>
+<span class="err">&#39;</span><span class="n">dependencies&#39;</span>
+</code></pre></div>
+
+
+<p>It doesn't create a <code>.git</code> folder. I am not surprised it doesn't work, because <code>leanproject up</code> is supposed to use <code>.git</code>.</p>
+
+
+
+<a name="195948055"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113488-general/topic/leanproject%20access%20denied/near/195948055" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Kenny Lau <a href="https://leanprover-community.github.io/archive/stream/113488-general/topic/leanproject.20access.20denied.html#195948055">(May 01 2020 at 10:24)</a>:</h4>
+<p>I should specify that this is in a repo using mathlib</p>
+
+
+
+<a name="195948353"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113488-general/topic/leanproject%20access%20denied/near/195948353" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Sebastien Gouezel <a href="https://leanprover-community.github.io/archive/stream/113488-general/topic/leanproject.20access.20denied.html#195948353">(May 01 2020 at 10:29)</a>:</h4>
+<p>This is still not enough for me. Details that you did not specify: is mathlib in a different directory with its own git structure, or is it in a subdirectory of your project, what does the <code>.toml</code> look like, and so on. Ideally, I would just have a github branch to clone, and then I could start experimenting.</p>
+
+
+
+<a name="195948996"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113488-general/topic/leanproject%20access%20denied/near/195948996" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Kenny Lau <a href="https://leanprover-community.github.io/archive/stream/113488-general/topic/leanproject.20access.20denied.html#195948996">(May 01 2020 at 10:38)</a>:</h4>
+<p><span class="user-mention" data-user-id="110050">@Sebastien Gouezel</span> <a href="https://github.com/kckennylau/test" title="https://github.com/kckennylau/test">https://github.com/kckennylau/test</a></p>
+
+
+
+<a name="195950443"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113488-general/topic/leanproject%20access%20denied/near/195950443" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Johan Commelin <a href="https://leanprover-community.github.io/archive/stream/113488-general/topic/leanproject.20access.20denied.html#195950443">(May 01 2020 at 10:58)</a>:</h4>
+<p><span class="user-mention silent" data-user-id="110064">Kenny Lau</span> <a href="#narrow/stream/113488-general/topic/leanproject.20access.20denied/near/195948996" title="#narrow/stream/113488-general/topic/leanproject.20access.20denied/near/195948996">said</a>:</p>
+<blockquote>
+<p><span class="user-mention silent" data-user-id="110050">Sebastien Gouezel</span> <a href="https://github.com/kckennylau/test" title="https://github.com/kckennylau/test">https://github.com/kckennylau/test</a></p>
+</blockquote>
+<p>I cloned your repo. <code>leanproject up</code> feels a bit slow when i run it (compared to when I run in mathlib). But it succeeds. Same when I run the command a 2nd time.</p>
+
+
+
 {% endraw %}
 
-<hr><p>Last updated: May 01 2020 at 10:04 UTC</p>
+<hr><p>Last updated: May 01 2020 at 11:06 UTC</p>

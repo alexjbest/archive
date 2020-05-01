@@ -408,6 +408,73 @@ permalink: /stream/113488-general/topic/big.20ops.html
 
 
 
+<a name="195949192"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113488-general/topic/big%20ops/near/195949192" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Anne Baanen <a href="https://leanprover-community.github.io/archive/stream/113488-general/topic/big.20ops.html#195949192">(May 01 2020 at 10:41)</a>:</h4>
+<p>It turns out that <code>@[priority]</code> and <code>set_option default_priority</code> don't interact with <code>notation</code>, but <code>notation [priority 1]</code> works as expected. PR made: <a href="https://github.com/leanprover-community/lean/pull/207" title="https://github.com/leanprover-community/lean/pull/207">https://github.com/leanprover-community/lean/pull/207</a></p>
+
+
+
+<a name="195950458"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113488-general/topic/big%20ops/near/195950458" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Johan Commelin <a href="https://leanprover-community.github.io/archive/stream/113488-general/topic/big.20ops.html#195950458">(May 01 2020 at 10:58)</a>:</h4>
+<p>Cool. Thanks!</p>
+
+
+
+<a name="195950565"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113488-general/topic/big%20ops/near/195950565" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Johan Commelin <a href="https://leanprover-community.github.io/archive/stream/113488-general/topic/big.20ops.html#195950565">(May 01 2020 at 11:00)</a>:</h4>
+<p><span class="user-mention" data-user-id="238446">@Anne Baanen</span> Does this also fix the problem that I currently need to write</p>
+<div class="codehilite"><pre><span></span><code><span class="o">(</span><span class="err">∏</span> <span class="n">x</span> <span class="k">in</span> <span class="n">s</span><span class="o">,</span> <span class="n">f</span> <span class="n">x</span><span class="o">)</span> <span class="bp">=</span> <span class="bp">...</span>
+</code></pre></div>
+
+
+<p>because otherwise it gets parsed as</p>
+<div class="codehilite"><pre><span></span><code><span class="err">∏</span> <span class="n">x</span> <span class="k">in</span> <span class="n">s</span><span class="o">,</span> <span class="o">(</span><span class="n">f</span> <span class="n">x</span> <span class="bp">=</span> <span class="bp">...</span><span class="o">)</span>
+</code></pre></div>
+
+
+
+<a name="195950635"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113488-general/topic/big%20ops/near/195950635" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Reid Barton <a href="https://leanprover-community.github.io/archive/stream/113488-general/topic/big.20ops.html#195950635">(May 01 2020 at 11:01)</a>:</h4>
+<p>This use of <code>in</code> in notation hurts my brain. I noticed it in some filter stuff too.</p>
+
+
+
+<a name="195950697"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113488-general/topic/big%20ops/near/195950697" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Reid Barton <a href="https://leanprover-community.github.io/archive/stream/113488-general/topic/big.20ops.html#195950697">(May 01 2020 at 11:02)</a>:</h4>
+<p>I always expect <code>in</code> to be a keyword...</p>
+
+
+
+<a name="195950760"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113488-general/topic/big%20ops/near/195950760" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Johan Commelin <a href="https://leanprover-community.github.io/archive/stream/113488-general/topic/big.20ops.html#195950760">(May 01 2020 at 11:03)</a>:</h4>
+<p>Maybe I can use <code>\mem</code>. Let me try.</p>
+
+
+
+<a name="195950840"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113488-general/topic/big%20ops/near/195950840" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Johan Commelin <a href="https://leanprover-community.github.io/archive/stream/113488-general/topic/big.20ops.html#195950840">(May 01 2020 at 11:04)</a>:</h4>
+<p>Nope... that doesn't work.</p>
+
+
+
+<a name="195950856"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113488-general/topic/big%20ops/near/195950856" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Johan Commelin <a href="https://leanprover-community.github.io/archive/stream/113488-general/topic/big.20ops.html#195950856">(May 01 2020 at 11:05)</a>:</h4>
+<p>I guess <code>binders</code> has special support for <code>\in</code> and doesn't want you to mess around with it.</p>
+
+
+
+<a name="195950878"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113488-general/topic/big%20ops/near/195950878" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Johan Commelin <a href="https://leanprover-community.github.io/archive/stream/113488-general/topic/big.20ops.html#195950878">(May 01 2020 at 11:05)</a>:</h4>
+<p><span class="user-mention" data-user-id="110032">@Reid Barton</span> Do you have another suggestion?</p>
+
+
+
+<a name="195950887"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113488-general/topic/big%20ops/near/195950887" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Reid Barton <a href="https://leanprover-community.github.io/archive/stream/113488-general/topic/big.20ops.html#195950887">(May 01 2020 at 11:05)</a>:</h4>
+<p>I don't think <code>binders</code> has <em>special</em> support for <code>\in</code> per se</p>
+
+
+
 {% endraw %}
 
-<hr><p>Last updated: May 01 2020 at 10:04 UTC</p>
+<hr><p>Last updated: May 01 2020 at 11:06 UTC</p>
