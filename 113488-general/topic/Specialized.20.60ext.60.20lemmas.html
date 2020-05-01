@@ -27,6 +27,48 @@ permalink: /stream/113488-general/topic/Specialized.20.60ext.60.20lemmas.html
 
 
 
+<a name="196003846"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113488-general/topic/Specialized%20%60ext%60%20lemmas/near/196003846" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Yury G. Kudryashov <a href="https://leanprover-community.github.io/archive/stream/113488-general/topic/Specialized.20.60ext.60.20lemmas.html#196003846">(May 01 2020 at 20:07)</a>:</h4>
+<p>I'm talking about, e.g., <code>(f g : free_group α →* G) (h : ∀ x : α, f (of x) = g (of x)) : f = g</code> or <code>(f g : nat →+ A) (h : f 1 = g 1) : f = g</code>, or <code>(p : submodule R M) (f g : p.quotient →ₗ[R] M₂) (h : ∀ x : M, f (quotient.mk x) = g (quotient.mk x)) : f = g</code>.</p>
+
+
+
+<a name="196003941"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113488-general/topic/Specialized%20%60ext%60%20lemmas/near/196003941" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Yury G. Kudryashov <a href="https://leanprover-community.github.io/archive/stream/113488-general/topic/Specialized.20.60ext.60.20lemmas.html#196003941">(May 01 2020 at 20:08)</a>:</h4>
+<p>We can use <code>ext ⟨x⟩</code> instead of the last one but not for the other lemmas.</p>
+
+
+
+<a name="196004073"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113488-general/topic/Specialized%20%60ext%60%20lemmas/near/196004073" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Yury G. Kudryashov <a href="https://leanprover-community.github.io/archive/stream/113488-general/topic/Specialized.20.60ext.60.20lemmas.html#196004073">(May 01 2020 at 20:09)</a>:</h4>
+<p>A few more: <code>(f g : (α →₀ A) →+ B) (h : ∀ a b, f (single a b) = g (single a b)) : f = g</code>, <code>(f g : monoid_algebra k G →ₐ[k] A) (h : ∀ a, f (single a 1) = g (single a 1)) : f = g</code>.</p>
+
+
+
+<a name="196004476"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113488-general/topic/Specialized%20%60ext%60%20lemmas/near/196004476" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Yury G. Kudryashov <a href="https://leanprover-community.github.io/archive/stream/113488-general/topic/Specialized.20.60ext.60.20lemmas.html#196004476">(May 01 2020 at 20:13)</a>:</h4>
+<p>Another possibility: make <code>ext</code> aware of <code>priority</code> and make all these lemmas have higher priority than generic ones. If the top-priority lemma fails, <code>ext</code> should try the next one.</p>
+
+
+
+<a name="196007076"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113488-general/topic/Specialized%20%60ext%60%20lemmas/near/196007076" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Kevin Buzzard <a href="https://leanprover-community.github.io/archive/stream/113488-general/topic/Specialized.20.60ext.60.20lemmas.html#196007076">(May 01 2020 at 20:38)</a>:</h4>
+<p>Is it clear what someone wants ext to do in practice? Do they always want the most aggressive one?</p>
+
+
+
+<a name="196007270"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113488-general/topic/Specialized%20%60ext%60%20lemmas/near/196007270" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Reid Barton <a href="https://leanprover-community.github.io/archive/stream/113488-general/topic/Specialized.20.60ext.60.20lemmas.html#196007270">(May 01 2020 at 20:40)</a>:</h4>
+<p>I wouldn't be surprised if <code>ext</code> was automatically aware of <code>priority</code>; did you try it?</p>
+
+
+
+<a name="196007340"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113488-general/topic/Specialized%20%60ext%60%20lemmas/near/196007340" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Reid Barton <a href="https://leanprover-community.github.io/archive/stream/113488-general/topic/Specialized.20.60ext.60.20lemmas.html#196007340">(May 01 2020 at 20:41)</a>:</h4>
+<p>I think I remember <span class="user-mention" data-user-id="111080">@Floris van Doorn</span> saying that some kind of enumerating over declarations with a given tag orders by priority by default</p>
+
+
+
 {% endraw %}
 
-<hr><p>Last updated: May 01 2020 at 20:05 UTC</p>
+<hr><p>Last updated: May 01 2020 at 21:04 UTC</p>
