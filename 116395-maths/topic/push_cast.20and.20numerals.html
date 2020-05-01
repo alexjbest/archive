@@ -27,6 +27,19 @@ permalink: /stream/116395-maths/topic/push_cast.20and.20numerals.html
 
 
 
+<a name="195945161"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/116395-maths/topic/push_cast%20and%20numerals/near/195945161" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Rob Lewis <a href="https://leanprover-community.github.io/archive/stream/116395-maths/topic/push_cast.20and.20numerals.html#195945161">(May 01 2020 at 09:41)</a>:</h4>
+<p><code>push_cast</code> doesn't use special handling for anything. It's just <code>simp with push_cast</code>, where <code>push_cast</code> is a simp set derived from <code>norm_cast</code> lemmas. </p>
+<p>I'm surprised that this works, why does <code>coe_nat_succ</code> match the numeral? <code>bit0</code> isn't reducible, is it?</p>
+<div class="codehilite"><pre><span></span><code><span class="kn">import</span> <span class="n">tactic</span>
+
+<span class="kn">set_option</span> <span class="n">pp</span><span class="bp">.</span><span class="n">numerals</span> <span class="n">false</span>
+
+<span class="bp">#</span><span class="n">simp</span> <span class="n">only</span> <span class="o">[</span><span class="n">int</span><span class="bp">.</span><span class="n">coe_nat_succ</span><span class="o">]</span> <span class="o">:</span> <span class="o">((</span><span class="mi">2</span> <span class="o">:</span> <span class="bp">ℕ</span><span class="o">)</span> <span class="o">:</span> <span class="bp">ℤ</span><span class="o">)</span>
+</code></pre></div>
+
+
+
 {% endraw %}
 
-<hr><p>Last updated: May 01 2020 at 09:05 UTC</p>
+<hr><p>Last updated: May 01 2020 at 10:04 UTC</p>

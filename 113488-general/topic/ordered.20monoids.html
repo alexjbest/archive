@@ -268,6 +268,38 @@ invalid structure value { ... }, field &#39;bot_le&#39; was not provided
 
 
 
+<a name="195944387"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113488-general/topic/ordered%20monoids/near/195944387" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Johan Commelin <a href="https://leanprover-community.github.io/archive/stream/113488-general/topic/ordered.20monoids.html#195944387">(May 01 2020 at 09:29)</a>:</h4>
+<p>Ordered monoids are a big mess, I think. They are partly "locked" into core. Lots of lemmas are duplicated. In core we don't have the <code>to_additive</code> machinery. Sometimes assumptions are unnecessary. Etc...</p>
+<p>It would be a big relief if this could be moved out of core and into mathlib. Is this at all an option? core probably needs that <code>nat</code> is an example of an ordered additive commutative monoid. But does that mean we need the general class in core?</p>
+<div class="codehilite"><pre><span></span><code><span class="c1">-- in core</span>
+<span class="n">class</span> <span class="n">ordered_cancel_add_comm_monoid</span> <span class="o">(</span><span class="n">α</span> <span class="o">:</span> <span class="kt">Type</span> <span class="n">u</span><span class="o">)</span>
+      <span class="kn">extends</span> <span class="n">add_comm_monoid</span> <span class="n">α</span><span class="o">,</span> <span class="n">add_left_cancel_semigroup</span> <span class="n">α</span><span class="o">,</span>
+              <span class="n">add_right_cancel_semigroup</span> <span class="n">α</span><span class="o">,</span> <span class="n">partial_order</span> <span class="n">α</span> <span class="o">:=</span>
+<span class="o">(</span><span class="n">add_le_add_left</span>       <span class="o">:</span> <span class="bp">∀</span> <span class="n">a</span> <span class="n">b</span> <span class="o">:</span> <span class="n">α</span><span class="o">,</span> <span class="n">a</span> <span class="bp">≤</span> <span class="n">b</span> <span class="bp">→</span> <span class="bp">∀</span> <span class="n">c</span> <span class="o">:</span> <span class="n">α</span><span class="o">,</span> <span class="n">c</span> <span class="bp">+</span> <span class="n">a</span> <span class="bp">≤</span> <span class="n">c</span> <span class="bp">+</span> <span class="n">b</span><span class="o">)</span>
+<span class="o">(</span><span class="n">le_of_add_le_add_left</span> <span class="o">:</span> <span class="bp">∀</span> <span class="n">a</span> <span class="n">b</span> <span class="n">c</span> <span class="o">:</span> <span class="n">α</span><span class="o">,</span> <span class="n">a</span> <span class="bp">+</span> <span class="n">b</span> <span class="bp">≤</span> <span class="n">a</span> <span class="bp">+</span> <span class="n">c</span> <span class="bp">→</span> <span class="n">b</span> <span class="bp">≤</span> <span class="n">c</span><span class="o">)</span>
+
+<span class="c1">-- #####################</span>
+
+<span class="c1">-- in mathlib (on a local branch)</span>
+<span class="c">/-</span><span class="cm">- An ordered (additive) commutative monoid is a commutative monoid</span>
+<span class="cm">  with a partial order such that addition is an order embedding, i.e.</span>
+<span class="cm">  `a + b ≤ a + c ↔ b ≤ c`. These monoids are automatically cancellative. -/</span>
+<span class="n">class</span> <span class="n">ordered_add_comm_monoid</span> <span class="o">(</span><span class="n">α</span> <span class="o">:</span> <span class="kt">Type</span><span class="bp">*</span><span class="o">)</span> <span class="kn">extends</span> <span class="n">add_comm_monoid</span> <span class="n">α</span><span class="o">,</span> <span class="n">partial_order</span> <span class="n">α</span> <span class="o">:=</span>
+<span class="o">(</span><span class="n">add_le_add_left</span>       <span class="o">:</span> <span class="bp">∀</span> <span class="n">a</span> <span class="n">b</span> <span class="o">:</span> <span class="n">α</span><span class="o">,</span> <span class="n">a</span> <span class="bp">≤</span> <span class="n">b</span> <span class="bp">→</span> <span class="bp">∀</span> <span class="n">c</span> <span class="o">:</span> <span class="n">α</span><span class="o">,</span> <span class="n">c</span> <span class="bp">+</span> <span class="n">a</span> <span class="bp">≤</span> <span class="n">c</span> <span class="bp">+</span> <span class="n">b</span><span class="o">)</span>
+<span class="o">(</span><span class="n">lt_of_add_lt_add_left</span> <span class="o">:</span> <span class="bp">∀</span> <span class="n">a</span> <span class="n">b</span> <span class="n">c</span> <span class="o">:</span> <span class="n">α</span><span class="o">,</span> <span class="n">a</span> <span class="bp">+</span> <span class="n">b</span> <span class="bp">&lt;</span> <span class="n">a</span> <span class="bp">+</span> <span class="n">c</span> <span class="bp">→</span> <span class="n">b</span> <span class="bp">&lt;</span> <span class="n">c</span><span class="o">)</span>
+
+<span class="c">/-</span><span class="cm">- An ordered commutative monoid is a commutative monoid</span>
+<span class="cm">  with a partial order such that addition is an order embedding, i.e.</span>
+<span class="cm">  `a * b ≤ a * c ↔ b ≤ c`. These monoids are automatically cancellative. -/</span>
+<span class="bp">@</span><span class="o">[</span><span class="n">to_additive</span> <span class="n">ordered_add_comm_monoid</span><span class="o">]</span>
+<span class="n">class</span> <span class="n">ordered_comm_monoid</span> <span class="o">(</span><span class="n">α</span> <span class="o">:</span> <span class="kt">Type</span><span class="bp">*</span><span class="o">)</span> <span class="kn">extends</span> <span class="n">comm_monoid</span> <span class="n">α</span><span class="o">,</span> <span class="n">partial_order</span> <span class="n">α</span> <span class="o">:=</span>
+<span class="o">(</span><span class="n">mul_le_mul_left</span>       <span class="o">:</span> <span class="bp">∀</span> <span class="n">a</span> <span class="n">b</span> <span class="o">:</span> <span class="n">α</span><span class="o">,</span> <span class="n">a</span> <span class="bp">≤</span> <span class="n">b</span> <span class="bp">→</span> <span class="bp">∀</span> <span class="n">c</span> <span class="o">:</span> <span class="n">α</span><span class="o">,</span> <span class="n">c</span> <span class="bp">*</span> <span class="n">a</span> <span class="bp">≤</span> <span class="n">c</span> <span class="bp">*</span> <span class="n">b</span><span class="o">)</span>
+<span class="o">(</span><span class="n">lt_of_mul_lt_mul_left</span> <span class="o">:</span> <span class="bp">∀</span> <span class="n">a</span> <span class="n">b</span> <span class="n">c</span> <span class="o">:</span> <span class="n">α</span><span class="o">,</span> <span class="n">a</span> <span class="bp">*</span> <span class="n">b</span> <span class="bp">&lt;</span> <span class="n">a</span> <span class="bp">*</span> <span class="n">c</span> <span class="bp">→</span> <span class="n">b</span> <span class="bp">&lt;</span> <span class="n">c</span><span class="o">)</span>
+</code></pre></div>
+
+
+
 {% endraw %}
 
-<hr><p>Last updated: May 01 2020 at 09:05 UTC</p>
+<hr><p>Last updated: May 01 2020 at 10:04 UTC</p>

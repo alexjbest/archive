@@ -9,10 +9,12 @@ permalink: /stream/113488-general/index.html
 
 ### Topics:
 
-* [big ops](topic/big.20ops.html) (52 messages, latest: May 01 2020 at 09:04)
+* [transitive coercions](topic/transitive.20coercions.html) (34 messages, latest: May 01 2020 at 09:51)
+* [Invitation to join the Codewars Lean community, Round 2](topic/Invitation.20to.20join.20the.20Codewars.20Lean.20community.2C.20Round.202.html) (204 messages, latest: May 01 2020 at 09:50)
+* [big ops](topic/big.20ops.html) (56 messages, latest: May 01 2020 at 09:46)
+* [ordered monoids](topic/ordered.20monoids.html) (34 messages, latest: May 01 2020 at 09:29)
 * [simp linter and structure fields](topic/simp.20linter.20and.20structure.20fields.html) (13 messages, latest: May 01 2020 at 09:01)
 * [is this name used in mathlib](topic/is.20this.20name.20used.20in.20mathlib.html) (9 messages, latest: May 01 2020 at 09:00)
-* [Invitation to join the Codewars Lean community, Round 2](topic/Invitation.20to.20join.20the.20Codewars.20Lean.20community.2C.20Round.202.html) (203 messages, latest: May 01 2020 at 08:39)
 * [partrec_code](topic/partrec_code.html) (35 messages, latest: May 01 2020 at 06:41)
 * [tactic.converter.binders](topic/tactic.2Econverter.2Ebinders.html) (8 messages, latest: May 01 2020 at 02:12)
 * [universe bug?](topic/universe.20bug.3F.html) (45 messages, latest: May 01 2020 at 01:11)
@@ -24,7 +26,6 @@ permalink: /stream/113488-general/index.html
 * [continuity proof](topic/continuity.20proof.html) (12 messages, latest: Apr 30 2020 at 15:12)
 * [Lean job in London](topic/Lean.20job.20in.20London.html) (8 messages, latest: Apr 30 2020 at 14:28)
 * [leanproject access denied](topic/leanproject.20access.20denied.html) (18 messages, latest: Apr 30 2020 at 13:59)
-* [transitive coercions](topic/transitive.20coercions.html) (17 messages, latest: Apr 30 2020 at 13:50)
 * [graphs on the website](topic/graphs.20on.20the.20website.html) (39 messages, latest: Apr 30 2020 at 13:28)
 * [continuous integration failing](topic/continuous.20integration.20failing.html) (2 messages, latest: Apr 30 2020 at 12:50)
 * [is this a pattern](topic/is.20this.20a.20pattern.html) (18 messages, latest: Apr 30 2020 at 11:13)
@@ -888,7 +889,6 @@ permalink: /stream/113488-general/index.html
 * [notational leakage](topic/notational.20leakage.html) (117 messages, latest: Jul 08 2019 at 10:28)
 * [Generate documentation](topic/Generate.20documentation.html) (33 messages, latest: Jul 07 2019 at 21:24)
 * [Using `assoc_rw`](topic/Using.20.60assoc_rw.60.html) (3 messages, latest: Jul 07 2019 at 15:43)
-* [ordered monoids](topic/ordered.20monoids.html) (33 messages, latest: Jul 06 2019 at 19:35)
 * [head-based instance resolution](topic/head-based.20instance.20resolution.html) (4 messages, latest: Jul 06 2019 at 16:00)
 * [quotient.lift_on elaboration](topic/quotient.2Elift_on.20elaboration.html) (3 messages, latest: Jul 06 2019 at 04:54)
 * [names](topic/names.html) (53 messages, latest: Jul 05 2019 at 20:04)
@@ -2742,4 +2742,4 @@ permalink: /stream/113488-general/index.html
 * [test](topic/test.html) (4 messages, latest: Feb 26 2018 at 16:22)
 * [welcome](topic/welcome.html) (1 message, latest: Feb 26 2018 at 16:02)
 
-<hr><p>Last updated: May 01 2020 at 09:05 UTC</p>
+<hr><p>Last updated: May 01 2020 at 10:04 UTC</p>

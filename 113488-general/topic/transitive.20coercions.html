@@ -127,6 +127,114 @@ permalink: /stream/113488-general/topic/transitive.20coercions.html
 
 
 
+<a name="195944511"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113488-general/topic/transitive%20coercions/near/195944511" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Reid Barton <a href="https://leanprover-community.github.io/archive/stream/113488-general/topic/transitive.20coercions.html#195944511">(May 01 2020 at 09:31)</a>:</h4>
+<p>So here's my proposal (<a href="https://github.com/leanprover-community/mathlib/compare/rwbarton-no-trans" title="https://github.com/leanprover-community/mathlib/compare/rwbarton-no-trans">https://github.com/leanprover-community/mathlib/compare/rwbarton-no-trans</a>):</p>
+<ol>
+<li>Remove <code>coe_fn_trans</code> and <code>coe_sort_trans</code> as instances from core, turning them into <code>@[reducible] def</code>s (so that they can be used as the definitions of instances, and will still be transparent to instance search).</li>
+<li>Remove the related simp lemmas (even though I guess we could keep them, they don't seem to be useful any more), library notes, linter in mathlib.</li>
+<li>Add back instances <code>instance {α : Sort*} [has_coe_to_fun α] (p : α → Prop) : has_coe_to_fun (subtype p)</code>, <code> instance {α : Sort*} [has_coe_to_sort α] (p : α → Prop) : has_coe_to_sort (subtype p)</code> to core. (Currently they are in my mathlib patch rather than core but that is only out of laziness.) These are Haskell 98-style instances so they should not cause any trouble--there's exactly one way to treat <code>x : subtype p</code> as a function/sort, namely by treating <code>x.val</code> as a function/sort.</li>
+<li>Add back <code>has_coe_to_sort</code>/<code>has_coe_to_fun</code> instances for things like <code>lie_subalgebra</code>, <code>M ≃L[R] M₂</code> (whatever this is), etc.--there's a fairly small number of these.</li>
+</ol>
+
+
+
+<a name="195944601"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113488-general/topic/transitive%20coercions/near/195944601" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Reid Barton <a href="https://leanprover-community.github.io/archive/stream/113488-general/topic/transitive.20coercions.html#195944601">(May 01 2020 at 09:32)</a>:</h4>
+<p>Actually I guess in 4, all the <code>has_coe_to_fun</code> instances already existed (thanks to the linter) but I had to reimplement some of them to not rely on the transitive instance.</p>
+
+
+
+<a name="195944624"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113488-general/topic/transitive%20coercions/near/195944624" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Reid Barton <a href="https://leanprover-community.github.io/archive/stream/113488-general/topic/transitive.20coercions.html#195944624">(May 01 2020 at 09:33)</a>:</h4>
+<p>Or more precisely: not rely on <code>coe_fn_trans</code> being an instance (now they invoke it by name).</p>
+
+
+
+<a name="195944662"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113488-general/topic/transitive%20coercions/near/195944662" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Reid Barton <a href="https://leanprover-community.github.io/archive/stream/113488-general/topic/transitive.20coercions.html#195944662">(May 01 2020 at 09:34)</a>:</h4>
+<p>Overall, the change seems like a simplification, besides fixing the strange coercion of <code>nat</code> to <code>nat -&gt; real</code> (though I haven't actually tested this).</p>
+
+
+
+<a name="195944771"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113488-general/topic/transitive%20coercions/near/195944771" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Reid Barton <a href="https://leanprover-community.github.io/archive/stream/113488-general/topic/transitive.20coercions.html#195944771">(May 01 2020 at 09:35)</a>:</h4>
+<p>The alternative as I see it is to be a lot more judicious with the choice between <code>has_coe</code> and <code>has_coe_t</code>--in principle this seems better as it generalizes what I did for <code>subtype</code> specifically, but I'm not sure whether we can be trusted to choose wisely. Maybe <span class="user-mention" data-user-id="110043">@Gabriel Ebner</span>'s linter from <a href="https://github.com/leanprover-community/mathlib/issues/2573" title="https://github.com/leanprover-community/mathlib/issues/2573">#2573</a> will help with that though?</p>
+
+
+
+<a name="195944986"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113488-general/topic/transitive%20coercions/near/195944986" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Gabriel Ebner <a href="https://leanprover-community.github.io/archive/stream/113488-general/topic/transitive.20coercions.html#195944986">(May 01 2020 at 09:38)</a>:</h4>
+<p><a href="https://github.com/leanprover-community/mathlib/issues/2573" title="https://github.com/leanprover-community/mathlib/issues/2573">#2573</a> moves some coercions (<code>ℕ → α</code>, etc.) to <code>has_coe_t</code>.  These will hence no longer participate in function coercion.  Not sure if this was the problem here.</p>
+
+
+
+<a name="195945034"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113488-general/topic/transitive%20coercions/near/195945034" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Reid Barton <a href="https://leanprover-community.github.io/archive/stream/113488-general/topic/transitive.20coercions.html#195945034">(May 01 2020 at 09:39)</a>:</h4>
+<p>I think it was <code>int → α</code> that was involved here.</p>
+
+
+
+<a name="195945162"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113488-general/topic/transitive%20coercions/near/195945162" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Gabriel Ebner <a href="https://leanprover-community.github.io/archive/stream/113488-general/topic/transitive.20coercions.html#195945162">(May 01 2020 at 09:41)</a>:</h4>
+<p>I have mixed feelings about the proposed change here.  I detest transitive coercions as much as everyone here, and would remove them today if it helped.  But I fear that these instances will just come back in a few months.</p>
+
+
+
+<a name="195945310"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113488-general/topic/transitive%20coercions/near/195945310" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Reid Barton <a href="https://leanprover-community.github.io/archive/stream/113488-general/topic/transitive.20coercions.html#195945310">(May 01 2020 at 09:43)</a>:</h4>
+<p>By "these instances" do you mean ones like <code>int → α</code>? Or <code>coe_fn_trans</code> as a global instance? Or ones like those I added for <code>subtype</code>?</p>
+
+
+
+<a name="195945379"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113488-general/topic/transitive%20coercions/near/195945379" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Gabriel Ebner <a href="https://leanprover-community.github.io/archive/stream/113488-general/topic/transitive.20coercions.html#195945379">(May 01 2020 at 09:44)</a>:</h4>
+<p><code>coe_fn_trans</code></p>
+
+
+
+<a name="195945405"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113488-general/topic/transitive%20coercions/near/195945405" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Gabriel Ebner <a href="https://leanprover-community.github.io/archive/stream/113488-general/topic/transitive.20coercions.html#195945405">(May 01 2020 at 09:44)</a>:</h4>
+<p>The others are in mathlib, we can remove or change them as much as we want.</p>
+
+
+
+<a name="195945436"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113488-general/topic/transitive%20coercions/near/195945436" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Reid Barton <a href="https://leanprover-community.github.io/archive/stream/113488-general/topic/transitive.20coercions.html#195945436">(May 01 2020 at 09:45)</a>:</h4>
+<p>Ohh, you mean in Lean 4.</p>
+
+
+
+<a name="195945456"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113488-general/topic/transitive%20coercions/near/195945456" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Reid Barton <a href="https://leanprover-community.github.io/archive/stream/113488-general/topic/transitive.20coercions.html#195945456">(May 01 2020 at 09:45)</a>:</h4>
+<p>I thought you meant the feature creep of people adding more and more instances because they look nice, and then it falls apart.</p>
+
+
+
+<a name="195945672"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113488-general/topic/transitive%20coercions/near/195945672" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Reid Barton <a href="https://leanprover-community.github.io/archive/stream/113488-general/topic/transitive.20coercions.html#195945672">(May 01 2020 at 09:48)</a>:</h4>
+<p>I am also happy with your approach in <a href="https://github.com/leanprover-community/mathlib/issues/2573" title="https://github.com/leanprover-community/mathlib/issues/2573">#2573</a> as long as we can communicate clearly how to decide whether to use <code>has_coe</code> or <code>has_coe_t</code> and enforce it.</p>
+
+
+
+<a name="195945729"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113488-general/topic/transitive%20coercions/near/195945729" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Reid Barton <a href="https://leanprover-community.github.io/archive/stream/113488-general/topic/transitive.20coercions.html#195945729">(May 01 2020 at 09:49)</a>:</h4>
+<p>Indeed I already thought when writing those <code>subtype</code> instances that they could be part of a more general system, and then realized the general system already existed but we were not using it correctly.</p>
+
+
+
+<a name="195945903"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113488-general/topic/transitive%20coercions/near/195945903" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Reid Barton <a href="https://leanprover-community.github.io/archive/stream/113488-general/topic/transitive.20coercions.html#195945903">(May 01 2020 at 09:51)</a>:</h4>
+<p>We can have linters that see all modules at once, to check for things like cycles, right?</p>
+
+
+
+<a name="195945908"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113488-general/topic/transitive%20coercions/near/195945908" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Gabriel Ebner <a href="https://leanprover-community.github.io/archive/stream/113488-general/topic/transitive.20coercions.html#195945908">(May 01 2020 at 09:51)</a>:</h4>
+<p>The fixes in <a href="https://github.com/leanprover-community/mathlib/issues/2573" title="https://github.com/leanprover-community/mathlib/issues/2573">#2573</a> are necessary irrespective of whether we remove <code>coe_fn_trans</code> and <code>coe_sort_trans</code> or not.  The issues already pop up with regular coercions.  My one-size-fits-all solution for enforcement and communication is of course a linter, which the PR includes.</p>
+
+
+
 {% endraw %}
 
-<hr><p>Last updated: May 01 2020 at 09:05 UTC</p>
+<hr><p>Last updated: May 01 2020 at 10:04 UTC</p>
