@@ -152,6 +152,61 @@ the small goal is to talk about extending a finitely supported function by one p
 
 
 
+<a name="195925134"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113489-new%20members/topic/functions%20with%20finite%20support/near/195925134" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Jalex Stark <a href="https://leanprover-community.github.io/archive/stream/113489-new-members/topic/functions.20with.20finite.20support.html#195925134">(May 01 2020 at 02:12)</a>:</h4>
+<p>hmm now I realize I don't know how to do what I want with either <code>safely_apply</code> or get. How would you fix this?</p>
+<div class="codehilite"><pre><span></span><code><span class="kn">variables</span> <span class="o">{</span><span class="n">M</span> <span class="n">N</span> <span class="o">:</span> <span class="kt">Type</span> <span class="n">u</span><span class="o">}</span>
+<span class="n">def</span> <span class="n">partial_embedding</span> <span class="o">(</span><span class="n">f</span> <span class="o">:</span> <span class="n">M</span> <span class="bp">→.</span> <span class="n">N</span><span class="o">)</span> <span class="o">{</span><span class="n">a</span> <span class="n">b</span> <span class="o">:</span> <span class="n">M</span><span class="o">}</span> <span class="o">(</span><span class="n">ha</span> <span class="o">:</span> <span class="n">a</span> <span class="err">∈</span> <span class="n">dom</span> <span class="n">f</span><span class="o">)</span> <span class="o">(</span><span class="n">hb</span> <span class="o">:</span> <span class="n">b</span> <span class="err">∈</span> <span class="n">dom</span> <span class="n">f</span><span class="o">)</span> <span class="o">:</span> <span class="kt">Prop</span>
+<span class="o">:=</span> <span class="o">(</span> <span class="n">a</span> <span class="bp">≤</span> <span class="n">b</span> <span class="bp">↔</span> <span class="n">f</span> <span class="n">a</span> <span class="bp">≤</span> <span class="n">f</span> <span class="n">b</span> <span class="o">)</span>
+</code></pre></div>
+
+
+
+<a name="195925169"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113489-new%20members/topic/functions%20with%20finite%20support/near/195925169" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Jalex Stark <a href="https://leanprover-community.github.io/archive/stream/113489-new-members/topic/functions.20with.20finite.20support.html#195925169">(May 01 2020 at 02:13)</a>:</h4>
+<p>where the problem is that i've asked about the order between two terms of type <code>roption N</code> instead of <code>N</code></p>
+
+
+
+<a name="195925236"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113489-new%20members/topic/functions%20with%20finite%20support/near/195925236" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Mario Carneiro <a href="https://leanprover-community.github.io/archive/stream/113489-new-members/topic/functions.20with.20finite.20support.html#195925236">(May 01 2020 at 02:15)</a>:</h4>
+<div class="codehilite"><pre><span></span><code><span class="kn">variables</span> <span class="o">{</span><span class="n">M</span> <span class="n">N</span> <span class="o">:</span> <span class="kt">Type</span> <span class="n">u</span><span class="o">}</span>
+<span class="n">def</span> <span class="n">partial_embedding</span> <span class="o">(</span><span class="n">f</span> <span class="o">:</span> <span class="n">M</span> <span class="bp">→.</span> <span class="n">N</span><span class="o">)</span> <span class="o">{</span><span class="n">a</span> <span class="n">b</span> <span class="o">:</span> <span class="n">M</span><span class="o">}</span> <span class="o">(</span><span class="n">ha</span> <span class="o">:</span> <span class="n">a</span> <span class="err">∈</span> <span class="n">dom</span> <span class="n">f</span><span class="o">)</span> <span class="o">(</span><span class="n">hb</span> <span class="o">:</span> <span class="n">b</span> <span class="err">∈</span> <span class="n">dom</span> <span class="n">f</span><span class="o">)</span> <span class="o">:</span> <span class="kt">Prop</span>
+<span class="o">:=</span> <span class="o">(</span> <span class="n">a</span> <span class="bp">≤</span> <span class="n">b</span> <span class="bp">↔</span> <span class="o">(</span><span class="n">f</span> <span class="n">a</span><span class="o">)</span><span class="bp">.</span><span class="n">get</span> <span class="n">ha</span> <span class="bp">≤</span> <span class="o">(</span><span class="n">f</span> <span class="n">b</span><span class="o">)</span><span class="bp">.</span><span class="n">get</span> <span class="n">hb</span> <span class="o">)</span>
+</code></pre></div>
+
+
+
+<a name="195925240"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113489-new%20members/topic/functions%20with%20finite%20support/near/195925240" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Jalex Stark <a href="https://leanprover-community.github.io/archive/stream/113489-new-members/topic/functions.20with.20finite.20support.html#195925240">(May 01 2020 at 02:15)</a>:</h4>
+<p>I wanted to replace <code>f a</code> with something like <code>get (f a) ha</code> or <code>(safely_apply f a).val</code>, but I didn't seem to understand the error messages when I tried using each of those</p>
+
+
+
+<a name="195925253"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113489-new%20members/topic/functions%20with%20finite%20support/near/195925253" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Jalex Stark <a href="https://leanprover-community.github.io/archive/stream/113489-new-members/topic/functions.20with.20finite.20support.html#195925253">(May 01 2020 at 02:15)</a>:</h4>
+<p>Thank you!</p>
+
+
+
+<a name="195925308"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113489-new%20members/topic/functions%20with%20finite%20support/near/195925308" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Mario Carneiro <a href="https://leanprover-community.github.io/archive/stream/113489-new-members/topic/functions.20with.20finite.20support.html#195925308">(May 01 2020 at 02:16)</a>:</h4>
+<p>If you don't use dot notation you have to write <code>roption.get (f a) ha</code> or open <code>roption</code></p>
+
+
+
+<a name="195925317"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113489-new%20members/topic/functions%20with%20finite%20support/near/195925317" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Jalex Stark <a href="https://leanprover-community.github.io/archive/stream/113489-new-members/topic/functions.20with.20finite.20support.html#195925317">(May 01 2020 at 02:16)</a>:</h4>
+<p>dot notation is great</p>
+
+
+
+<a name="195925410"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113489-new%20members/topic/functions%20with%20finite%20support/near/195925410" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Jalex Stark <a href="https://leanprover-community.github.io/archive/stream/113489-new-members/topic/functions.20with.20finite.20support.html#195925410">(May 01 2020 at 02:19)</a>:</h4>
+<p>I'll have to study the definition of roption.get to figure out why my attempt to call <code>.val</code> on my structure failed</p>
+
+
+
 {% endraw %}
 
-<hr><p>Last updated: May 01 2020 at 02:08 UTC</p>
+<hr><p>Last updated: May 01 2020 at 03:05 UTC</p>
