@@ -9,11 +9,13 @@ permalink: /stream/113488-general/index.html
 
 ### Topics:
 
+* [documenting notation](topic/documenting.20notation.html) (1 message, latest: May 01 2020 at 18:51)
+* [Diagnosing timeout](topic/Diagnosing.20timeout.html) (75 messages, latest: May 01 2020 at 18:41)
+* [big ops](topic/big.20ops.html) (90 messages, latest: May 01 2020 at 18:35)
+* [sub_eq_add_neg](topic/sub_eq_add_neg.html) (13 messages, latest: May 01 2020 at 18:32)
+* [transitive coercions](topic/transitive.20coercions.html) (64 messages, latest: May 01 2020 at 18:13)
 * [unnecessary(?) simp lemma](topic/unnecessary(.3F).20simp.20lemma.html) (4 messages, latest: May 01 2020 at 18:01)
 * [Notices of the AMS paper](topic/Notices.20of.20the.20AMS.20paper.html) (98 messages, latest: May 01 2020 at 17:58)
-* [big ops](topic/big.20ops.html) (85 messages, latest: May 01 2020 at 17:55)
-* [transitive coercions](topic/transitive.20coercions.html) (63 messages, latest: May 01 2020 at 17:48)
-* [sub_eq_add_neg](topic/sub_eq_add_neg.html) (11 messages, latest: May 01 2020 at 17:37)
 * [ordered monoids](topic/ordered.20monoids.html) (94 messages, latest: May 01 2020 at 14:52)
 * [leanproject access denied](topic/leanproject.20access.20denied.html) (40 messages, latest: May 01 2020 at 14:32)
 * [set_option trace.simplify.rewrite true](topic/set_option.20trace.2Esimplify.2Erewrite.20true.html) (10 messages, latest: May 01 2020 at 13:05)
@@ -26,7 +28,6 @@ permalink: /stream/113488-general/index.html
 * [universe bug?](topic/universe.20bug.3F.html) (45 messages, latest: May 01 2020 at 01:11)
 * [Show the objects for an equality of morphisms](topic/Show.20the.20objects.20for.20an.20equality.20of.20morphisms.html) (15 messages, latest: May 01 2020 at 00:34)
 * [`rw` behaviour with `nat.succ`](topic/.60rw.60.20behaviour.20with.20.60nat.2Esucc.60.html) (2 messages, latest: May 01 2020 at 00:12)
-* [Diagnosing timeout](topic/Diagnosing.20timeout.html) (73 messages, latest: Apr 30 2020 at 20:04)
 * [why does a sync command take so long in the lean server](topic/why.20does.20a.20sync.20command.20take.20so.20long.20in.20the.20lean.20server.html) (36 messages, latest: Apr 30 2020 at 19:21)
 * [continuity proof](topic/continuity.20proof.html) (12 messages, latest: Apr 30 2020 at 15:12)
 * [Lean job in London](topic/Lean.20job.20in.20London.html) (8 messages, latest: Apr 30 2020 at 14:28)
@@ -2745,4 +2746,4 @@ permalink: /stream/113488-general/index.html
 * [test](topic/test.html) (4 messages, latest: Feb 26 2018 at 16:22)
 * [welcome](topic/welcome.html) (1 message, latest: Feb 26 2018 at 16:02)
 
-<hr><p>Last updated: May 01 2020 at 18:06 UTC</p>
+<hr><p>Last updated: May 01 2020 at 19:04 UTC</p>
