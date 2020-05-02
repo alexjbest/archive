@@ -9,10 +9,10 @@ permalink: /stream/113488-general/index.html
 
 ### Topics:
 
-* [first argument of minimal_polynomial necessary](topic/first.20argument.20of.20minimal_polynomial.20necessary.html) (5 messages, latest: May 02 2020 at 07:48)
-* [transitive coercions](topic/transitive.20coercions.html) (65 messages, latest: May 02 2020 at 07:32)
+* [big ops](topic/big.20ops.html) (107 messages, latest: May 02 2020 at 09:00)
+* [first argument of minimal_polynomial necessary](topic/first.20argument.20of.20minimal_polynomial.20necessary.html) (8 messages, latest: May 02 2020 at 08:32)
+* [transitive coercions](topic/transitive.20coercions.html) (69 messages, latest: May 02 2020 at 08:31)
 * [linter for instance names](topic/linter.20for.20instance.20names.html) (1 message, latest: May 02 2020 at 06:41)
-* [big ops](topic/big.20ops.html) (106 messages, latest: May 02 2020 at 05:14)
 * [Diagnosing timeout](topic/Diagnosing.20timeout.html) (89 messages, latest: May 02 2020 at 01:21)
 * [Invitation to join the Codewars Lean community, Round 2](topic/Invitation.20to.20join.20the.20Codewars.20Lean.20community.2C.20Round.202.html) (276 messages, latest: May 02 2020 at 01:03)
 * [how do I step through proofs?](topic/how.20do.20I.20step.20through.20proofs.3F.html) (87 messages, latest: May 02 2020 at 00:30)
@@ -2750,4 +2750,4 @@ permalink: /stream/113488-general/index.html
 * [test](topic/test.html) (4 messages, latest: Feb 26 2018 at 16:22)
 * [welcome](topic/welcome.html) (1 message, latest: Feb 26 2018 at 16:02)
 
-<hr><p>Last updated: May 02 2020 at 08:07 UTC</p>
+<hr><p>Last updated: May 02 2020 at 09:09 UTC</p>
