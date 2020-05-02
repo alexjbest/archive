@@ -297,6 +297,189 @@ the small goal is to talk about extending a finitely supported function by one p
 
 
 
+<a name="196029652"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113489-new%20members/topic/functions%20with%20finite%20support/near/196029652" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Mario Carneiro <a href="https://leanprover-community.github.io/archive/stream/113489-new-members/topic/functions.20with.20finite.20support.html#196029652">(May 02 2020 at 03:05)</a>:</h4>
+<p><a href="https://github.com/leanprover-community/mathlib/wiki/Minimum-Working-Example-&#40;MWE&#41;" title="https://github.com/leanprover-community/mathlib/wiki/Minimum-Working-Example-&#40;MWE&#41;">#mwe</a></p>
+
+
+
+<a name="196029751"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113489-new%20members/topic/functions%20with%20finite%20support/near/196029751" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Jalex Stark <a href="https://leanprover-community.github.io/archive/stream/113489-new-members/topic/functions.20with.20finite.20support.html#196029751">(May 02 2020 at 03:08)</a>:</h4>
+<p>fixed, thanks</p>
+
+
+
+<a name="196029761"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113489-new%20members/topic/functions%20with%20finite%20support/near/196029761" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Mario Carneiro <a href="https://leanprover-community.github.io/archive/stream/113489-new-members/topic/functions.20with.20finite.20support.html#196029761">(May 02 2020 at 03:08)</a>:</h4>
+<p>what is <code>(set.finite dom f)</code> doing?</p>
+
+
+
+<a name="196029764"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113489-new%20members/topic/functions%20with%20finite%20support/near/196029764" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Mario Carneiro <a href="https://leanprover-community.github.io/archive/stream/113489-new-members/topic/functions.20with.20finite.20support.html#196029764">(May 02 2020 at 03:09)</a>:</h4>
+<p>That looks like a malformed binder</p>
+
+
+
+<a name="196029768"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113489-new%20members/topic/functions%20with%20finite%20support/near/196029768" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Mario Carneiro <a href="https://leanprover-community.github.io/archive/stream/113489-new-members/topic/functions.20with.20finite.20support.html#196029768">(May 02 2020 at 03:09)</a>:</h4>
+<p>in any case <code>set.finite</code> isn't imported</p>
+
+
+
+<a name="196029771"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113489-new%20members/topic/functions%20with%20finite%20support/near/196029771" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Mario Carneiro <a href="https://leanprover-community.github.io/archive/stream/113489-new-members/topic/functions.20with.20finite.20support.html#196029771">(May 02 2020 at 03:09)</a>:</h4>
+<p>and <code>dom</code> doesn't exist either</p>
+
+
+
+<a name="196029884"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113489-new%20members/topic/functions%20with%20finite%20support/near/196029884" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Jalex Stark <a href="https://leanprover-community.github.io/archive/stream/113489-new-members/topic/functions.20with.20finite.20support.html#196029884">(May 02 2020 at 03:13)</a>:</h4>
+<p>added an import for <code>set</code>. </p>
+<p><code>#check dom</code> works for me? it's <code>pfun.dom</code> which comes from <code>import data.pfun</code></p>
+
+
+
+<a name="196029937"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113489-new%20members/topic/functions%20with%20finite%20support/near/196029937" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Reid Barton <a href="https://leanprover-community.github.io/archive/stream/113489-new-members/topic/functions.20with.20finite.20support.html#196029937">(May 02 2020 at 03:14)</a>:</h4>
+<p>I think more newlines might help.</p>
+
+
+
+<a name="196029958"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113489-new%20members/topic/functions%20with%20finite%20support/near/196029958" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Jalex Stark <a href="https://leanprover-community.github.io/archive/stream/113489-new-members/topic/functions.20with.20finite.20support.html#196029958">(May 02 2020 at 03:14)</a>:</h4>
+<p>ah, the malformed binder is why I couldn't tell that <code>set.finite</code> was missing</p>
+
+
+
+<a name="196030043"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113489-new%20members/topic/functions%20with%20finite%20support/near/196030043" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Jalex Stark <a href="https://leanprover-community.github.io/archive/stream/113489-new-members/topic/functions.20with.20finite.20support.html#196030043">(May 02 2020 at 03:16)</a>:</h4>
+<p>Okay, this works now. I guess I will try to recognize malformed binders in the future.</p>
+<div class="codehilite"><pre><span></span><code><span class="kn">import</span> <span class="n">data</span><span class="bp">.</span><span class="n">pfun</span>
+<span class="kn">import</span> <span class="n">data</span><span class="bp">.</span><span class="n">set</span>
+<span class="kn">open</span> <span class="n">pfun</span>
+
+<span class="kn">universe</span> <span class="n">u</span>
+<span class="kn">variables</span> <span class="o">{</span><span class="n">M</span> <span class="n">N</span> <span class="o">:</span> <span class="kt">Type</span> <span class="n">u</span><span class="o">}</span> <span class="o">[</span><span class="n">preorder</span> <span class="n">M</span><span class="o">]</span> <span class="o">[</span><span class="n">preorder</span> <span class="n">N</span><span class="o">]</span>
+
+<span class="n">def</span> <span class="n">partial_embedding</span> <span class="o">(</span><span class="n">f</span> <span class="o">:</span> <span class="n">M</span> <span class="bp">→.</span> <span class="n">N</span><span class="o">)</span> <span class="o">:</span> <span class="kt">Prop</span> <span class="o">:=</span>
+<span class="bp">∀</span> <span class="n">a</span> <span class="n">b</span> <span class="n">ha</span> <span class="n">hb</span><span class="o">,</span> <span class="n">a</span> <span class="bp">≤</span> <span class="n">b</span> <span class="bp">↔</span> <span class="o">(</span><span class="n">f</span> <span class="n">a</span><span class="o">)</span><span class="bp">.</span><span class="n">get</span> <span class="n">ha</span> <span class="bp">≤</span> <span class="o">(</span><span class="n">f</span> <span class="n">b</span><span class="o">)</span><span class="bp">.</span><span class="n">get</span> <span class="n">hb</span>
+
+<span class="kn">structure</span> <span class="n">embedding_extension</span> <span class="o">(</span><span class="n">f</span> <span class="o">:</span> <span class="n">M</span> <span class="bp">→.</span> <span class="n">N</span><span class="o">)</span> <span class="o">(</span><span class="n">hf</span> <span class="o">:</span> <span class="n">partial_embedding</span> <span class="n">f</span><span class="o">)</span> <span class="o">(</span><span class="n">x</span> <span class="o">:</span> <span class="n">M</span><span class="o">)</span> <span class="o">:=</span> <span class="n">mk</span> <span class="bp">::</span> <span class="o">(</span><span class="n">F</span> <span class="o">:</span> <span class="n">M</span> <span class="bp">→.</span> <span class="n">N</span><span class="o">)</span> <span class="o">(</span><span class="n">embedding</span> <span class="o">:</span> <span class="n">partial_embedding</span> <span class="n">F</span><span class="o">)</span> <span class="o">(</span><span class="n">extension</span> <span class="o">:</span> <span class="n">dom</span> <span class="n">f</span> <span class="bp">≤</span> <span class="n">dom</span> <span class="n">F</span><span class="o">)</span> <span class="o">(</span><span class="n">supports_x</span> <span class="o">:</span> <span class="n">x</span> <span class="err">∈</span> <span class="n">dom</span> <span class="n">F</span><span class="o">)</span>
+<span class="bp">#</span><span class="kn">check</span> <span class="n">dom</span>
+
+<span class="n">def</span> <span class="n">finite_embedding_extension</span> <span class="o">(</span><span class="n">f</span> <span class="o">:</span> <span class="n">M</span> <span class="bp">→.</span> <span class="n">N</span><span class="o">)</span> <span class="o">(</span><span class="n">hf</span> <span class="o">:</span> <span class="n">partial_embedding</span> <span class="n">f</span><span class="o">)</span> <span class="o">(</span><span class="n">x</span> <span class="o">:</span> <span class="n">M</span><span class="o">)</span> <span class="o">(</span><span class="n">h</span> <span class="o">:</span> <span class="n">set</span><span class="bp">.</span><span class="n">finite</span> <span class="o">(</span><span class="n">dom</span> <span class="n">f</span><span class="o">)</span> <span class="o">)</span> <span class="o">:</span> <span class="n">embedding_extension</span> <span class="n">f</span> <span class="n">hf</span> <span class="n">x</span> <span class="o">:=</span> <span class="n">sorry</span>
+</code></pre></div>
+
+
+
+<a name="196030105"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113489-new%20members/topic/functions%20with%20finite%20support/near/196030105" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Mario Carneiro <a href="https://leanprover-community.github.io/archive/stream/113489-new-members/topic/functions.20with.20finite.20support.html#196030105">(May 02 2020 at 03:18)</a>:</h4>
+<div class="codehilite"><pre><span></span><code><span class="kn">structure</span> <span class="n">embedding_extension</span> <span class="o">(</span><span class="n">f</span> <span class="o">:</span> <span class="n">M</span> <span class="bp">→.</span> <span class="n">N</span><span class="o">)</span> <span class="o">(</span><span class="n">hf</span> <span class="o">:</span> <span class="n">partial_embedding</span> <span class="n">f</span><span class="o">)</span> <span class="o">(</span><span class="n">x</span> <span class="o">:</span> <span class="n">M</span><span class="o">)</span> <span class="o">:=</span>
+<span class="o">(</span><span class="n">F</span> <span class="o">:</span> <span class="n">M</span> <span class="bp">→.</span> <span class="n">N</span><span class="o">)</span>
+<span class="o">(</span><span class="n">embedding</span> <span class="o">:</span> <span class="n">partial_embedding</span> <span class="n">F</span><span class="o">)</span>
+<span class="o">(</span><span class="n">extension</span> <span class="o">:</span> <span class="n">dom</span> <span class="n">f</span> <span class="bp">≤</span> <span class="n">dom</span> <span class="n">F</span><span class="o">)</span>
+<span class="o">(</span><span class="n">supports_x</span> <span class="o">:</span> <span class="n">x</span> <span class="err">∈</span> <span class="n">dom</span> <span class="n">F</span><span class="o">)</span>
+</code></pre></div>
+
+
+
+<a name="196030106"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113489-new%20members/topic/functions%20with%20finite%20support/near/196030106" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Mario Carneiro <a href="https://leanprover-community.github.io/archive/stream/113489-new-members/topic/functions.20with.20finite.20support.html#196030106">(May 02 2020 at 03:18)</a>:</h4>
+<p>put fields one per line, and skip <code>mk ::</code></p>
+
+
+
+<a name="196030113"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113489-new%20members/topic/functions%20with%20finite%20support/near/196030113" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Jalex Stark <a href="https://leanprover-community.github.io/archive/stream/113489-new-members/topic/functions.20with.20finite.20support.html#196030113">(May 02 2020 at 03:19)</a>:</h4>
+<p>okay, thanks. Is there a style guide somewhere?</p>
+
+
+
+<a name="196030138"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113489-new%20members/topic/functions%20with%20finite%20support/near/196030138" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Mario Carneiro <a href="https://leanprover-community.github.io/archive/stream/113489-new-members/topic/functions.20with.20finite.20support.html#196030138">(May 02 2020 at 03:20)</a>:</h4>
+<p><a href="https://github.com/leanprover-community/mathlib/blob/master/docs/contribute/style.md" title="https://github.com/leanprover-community/mathlib/blob/master/docs/contribute/style.md">https://github.com/leanprover-community/mathlib/blob/master/docs/contribute/style.md</a> but I wouldn't be surprised if it's missing something</p>
+
+
+
+<a name="196030173"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113489-new%20members/topic/functions%20with%20finite%20support/near/196030173" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Mario Carneiro <a href="https://leanprover-community.github.io/archive/stream/113489-new-members/topic/functions.20with.20finite.20support.html#196030173">(May 02 2020 at 03:20)</a>:</h4>
+<p><code>mk ::</code> is unnecessary since <code>mk</code> is the default</p>
+
+
+
+<a name="196030182"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113489-new%20members/topic/functions%20with%20finite%20support/near/196030182" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Mario Carneiro <a href="https://leanprover-community.github.io/archive/stream/113489-new-members/topic/functions.20with.20finite.20support.html#196030182">(May 02 2020 at 03:20)</a>:</h4>
+<p>Mostly, look at mathlib sources to get a feel for the style</p>
+
+
+
+<a name="196030199"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113489-new%20members/topic/functions%20with%20finite%20support/near/196030199" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Mario Carneiro <a href="https://leanprover-community.github.io/archive/stream/113489-new-members/topic/functions.20with.20finite.20support.html#196030199">(May 02 2020 at 03:21)</a>:</h4>
+<p>also be kind to people who have 80-100 character wide screens</p>
+
+
+
+<a name="196030202"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113489-new%20members/topic/functions%20with%20finite%20support/near/196030202" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Jalex Stark <a href="https://leanprover-community.github.io/archive/stream/113489-new-members/topic/functions.20with.20finite.20support.html#196030202">(May 02 2020 at 03:21)</a>:</h4>
+<p><span class="user-mention silent" data-user-id="110049">Mario Carneiro</span> <a href="#narrow/stream/113489-new-members/topic/functions.20with.20finite.20support/near/196030173" title="#narrow/stream/113489-new-members/topic/functions.20with.20finite.20support/near/196030173">said</a>:</p>
+<blockquote>
+<p><code>mk ::</code> is unnecessary since <code>mk</code> is the default</p>
+</blockquote>
+<p>I have no idea what that means, I just copied <code>structure </code> blocks from other places enough times for me to memorize that <code>mk ::</code> is a thing to type</p>
+
+
+
+<a name="196030237"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113489-new%20members/topic/functions%20with%20finite%20support/near/196030237" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Mario Carneiro <a href="https://leanprover-community.github.io/archive/stream/113489-new-members/topic/functions.20with.20finite.20support.html#196030237">(May 02 2020 at 03:22)</a>:</h4>
+<p>the <code>name ::</code> at the beginning of a structure is a (rarely used) feature to allow you to change the name of the single constructor for the structure</p>
+
+
+
+<a name="196030263"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113489-new%20members/topic/functions%20with%20finite%20support/near/196030263" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Jalex Stark <a href="https://leanprover-community.github.io/archive/stream/113489-new-members/topic/functions.20with.20finite.20support.html#196030263">(May 02 2020 at 03:22)</a>:</h4>
+<p>hmm okay</p>
+
+
+
+<a name="196030267"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113489-new%20members/topic/functions%20with%20finite%20support/near/196030267" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Mario Carneiro <a href="https://leanprover-community.github.io/archive/stream/113489-new-members/topic/functions.20with.20finite.20support.html#196030267">(May 02 2020 at 03:22)</a>:</h4>
+<p>the default is <code>mk</code> and most structures go with that, but sometimes you might want a custom constructor with that name so you will see <code>mk' ::</code> sometimes</p>
+
+
+
+<a name="196030286"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113489-new%20members/topic/functions%20with%20finite%20support/near/196030286" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Mario Carneiro <a href="https://leanprover-community.github.io/archive/stream/113489-new-members/topic/functions.20with.20finite.20support.html#196030286">(May 02 2020 at 03:23)</a>:</h4>
+<p>it's because a structure is sugar for an inductive type like this:</p>
+<div class="codehilite"><pre><span></span><code><span class="kn">inductive</span> <span class="n">embedding_extension</span> <span class="o">(</span><span class="n">f</span> <span class="o">:</span> <span class="n">M</span> <span class="bp">→.</span> <span class="n">N</span><span class="o">)</span> <span class="o">(</span><span class="n">hf</span> <span class="o">:</span> <span class="n">partial_embedding</span> <span class="n">f</span><span class="o">)</span> <span class="o">(</span><span class="n">x</span> <span class="o">:</span> <span class="n">M</span><span class="o">)</span>
+<span class="bp">|</span> <span class="n">mk</span> <span class="o">:</span> <span class="bp">∀</span>
+  <span class="o">(</span><span class="n">F</span> <span class="o">:</span> <span class="n">M</span> <span class="bp">→.</span> <span class="n">N</span><span class="o">)</span>
+  <span class="o">(</span><span class="n">embedding</span> <span class="o">:</span> <span class="n">partial_embedding</span> <span class="n">F</span><span class="o">)</span>
+  <span class="o">(</span><span class="n">extension</span> <span class="o">:</span> <span class="n">dom</span> <span class="n">f</span> <span class="bp">≤</span> <span class="n">dom</span> <span class="n">F</span><span class="o">)</span>
+  <span class="o">(</span><span class="n">supports_x</span> <span class="o">:</span> <span class="n">x</span> <span class="err">∈</span> <span class="n">dom</span> <span class="n">F</span><span class="o">),</span>
+  <span class="n">embedding_extension</span>
+</code></pre></div>
+
+
+
+<a name="196030348"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113489-new%20members/topic/functions%20with%20finite%20support/near/196030348" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Mario Carneiro <a href="https://leanprover-community.github.io/archive/stream/113489-new-members/topic/functions.20with.20finite.20support.html#196030348">(May 02 2020 at 03:24)</a>:</h4>
+<p>anyway, I missed what the question is</p>
+
+
+
+<a name="196030350"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113489-new%20members/topic/functions%20with%20finite%20support/near/196030350" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Mario Carneiro <a href="https://leanprover-community.github.io/archive/stream/113489-new-members/topic/functions.20with.20finite.20support.html#196030350">(May 02 2020 at 03:25)</a>:</h4>
+<p>the code you sent seems to work</p>
+
+
+
+<a name="196030426"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113489-new%20members/topic/functions%20with%20finite%20support/near/196030426" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Jalex Stark <a href="https://leanprover-community.github.io/archive/stream/113489-new-members/topic/functions.20with.20finite.20support.html#196030426">(May 02 2020 at 03:27)</a>:</h4>
+<p>Yeah, I agree, I was just trying to express that I incorporated the solution. I prefaced it with "this works now". Sorry for causing extra copy-paste-compiles.</p>
+
+
+
 {% endraw %}
 
-<hr><p>Last updated: May 02 2020 at 03:05 UTC</p>
+<hr><p>Last updated: May 02 2020 at 04:09 UTC</p>
