@@ -726,6 +726,60 @@ permalink: /stream/113488-general/topic/Diagnosing.20timeout.html
 
 
 
+<a name="196051962"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113488-general/topic/Diagnosing%20timeout/near/196051962" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Bhavik Mehta <a href="https://leanprover-community.github.io/archive/stream/113488-general/topic/Diagnosing.20timeout.html#196051962">(May 02 2020 at 13:35)</a>:</h4>
+<p>I didn't realise the <code>def</code> was underlined blue! That's the one with the long trace - and it fits with the idea that there's an issue creating the term</p>
+
+
+
+<a name="196052002"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113488-general/topic/Diagnosing%20timeout/near/196052002" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Bhavik Mehta <a href="https://leanprover-community.github.io/archive/stream/113488-general/topic/Diagnosing.20timeout.html#196052002">(May 02 2020 at 13:36)</a>:</h4>
+<p>I can't figure out what the issue is though</p>
+
+
+
+<a name="196052012"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113488-general/topic/Diagnosing%20timeout/near/196052012" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Bhavik Mehta <a href="https://leanprover-community.github.io/archive/stream/113488-general/topic/Diagnosing.20timeout.html#196052012">(May 02 2020 at 13:36)</a>:</h4>
+<p>Here's the trace: <a href="https://gist.github.com/b-mehta/88525a9eb2c41c23e414d9bb30c650fb" title="https://gist.github.com/b-mehta/88525a9eb2c41c23e414d9bb30c650fb">https://gist.github.com/b-mehta/88525a9eb2c41c23e414d9bb30c650fb</a></p>
+
+
+
+<a name="196052027"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113488-general/topic/Diagnosing%20timeout/near/196052027" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Reid Barton <a href="https://leanprover-community.github.io/archive/stream/113488-general/topic/Diagnosing.20timeout.html#196052027">(May 02 2020 at 13:37)</a>:</h4>
+<p>The question is whether, when you run Lean from the command line, you get trace output continuously or whether it just stops at some point.</p>
+
+
+
+<a name="196052035"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113488-general/topic/Diagnosing%20timeout/near/196052035" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Reid Barton <a href="https://leanprover-community.github.io/archive/stream/113488-general/topic/Diagnosing.20timeout.html#196052035">(May 02 2020 at 13:37)</a>:</h4>
+<p>If it just stops, clearly it is doing something and the game is to figure out what trace option will make it print more stuff.</p>
+
+
+
+<a name="196052096"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113488-general/topic/Diagnosing%20timeout/near/196052096" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Bhavik Mehta <a href="https://leanprover-community.github.io/archive/stream/113488-general/topic/Diagnosing.20timeout.html#196052096">(May 02 2020 at 13:39)</a>:</h4>
+<p>In vscode it stops and says deterministic timeout, I'm running on command line now</p>
+
+
+
+<a name="196052417"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113488-general/topic/Diagnosing%20timeout/near/196052417" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Bhavik Mehta <a href="https://leanprover-community.github.io/archive/stream/113488-general/topic/Diagnosing.20timeout.html#196052417">(May 02 2020 at 13:47)</a>:</h4>
+<p>Ah! It runs for a while and then stops</p>
+
+
+
+<a name="196052482"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113488-general/topic/Diagnosing%20timeout/near/196052482" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Bhavik Mehta <a href="https://leanprover-community.github.io/archive/stream/113488-general/topic/Diagnosing.20timeout.html#196052482">(May 02 2020 at 13:49)</a>:</h4>
+<p>and my memory  gets filled up</p>
+
+
+
+<a name="196052955"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113488-general/topic/Diagnosing%20timeout/near/196052955" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Bhavik Mehta <a href="https://leanprover-community.github.io/archive/stream/113488-general/topic/Diagnosing.20timeout.html#196052955">(May 02 2020 at 13:58)</a>:</h4>
+<p>Is there a list of what each trace option does?</p>
+
+
+
 {% endraw %}
 
-<hr><p>Last updated: May 02 2020 at 13:07 UTC</p>
+<hr><p>Last updated: May 02 2020 at 14:06 UTC</p>
