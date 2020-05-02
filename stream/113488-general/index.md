@@ -9,6 +9,7 @@ permalink: /stream/113488-general/index.html
 
 ### Topics:
 
+* [Lean 3.10](topic/Lean.203.2E10.html) (9 messages, latest: May 02 2020 at 10:00)
 * [big ops](topic/big.20ops.html) (107 messages, latest: May 02 2020 at 09:00)
 * [first argument of minimal_polynomial necessary](topic/first.20argument.20of.20minimal_polynomial.20necessary.html) (8 messages, latest: May 02 2020 at 08:32)
 * [transitive coercions](topic/transitive.20coercions.html) (69 messages, latest: May 02 2020 at 08:31)
@@ -2750,4 +2751,4 @@ permalink: /stream/113488-general/index.html
 * [test](topic/test.html) (4 messages, latest: Feb 26 2018 at 16:22)
 * [welcome](topic/welcome.html) (1 message, latest: Feb 26 2018 at 16:02)
 
-<hr><p>Last updated: May 02 2020 at 09:09 UTC</p>
+<hr><p>Last updated: May 02 2020 at 10:04 UTC</p>
