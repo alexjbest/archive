@@ -103,6 +103,70 @@ permalink: /stream/113489-new-members/topic/norm_num.2F.20ring.20doesn't.20solve
 
 
 
+<a name="196067993"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113489-new%20members/topic/norm_num/%20ring%20doesn%27t%20solve%20this%3F/near/196067993" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Vaibhav Karve <a href="https://leanprover-community.github.io/archive/stream/113489-new-members/topic/norm_num.2F.20ring.20doesn't.20solve.20this.3F.html#196067993">(May 02 2020 at 20:07)</a>:</h4>
+<p>Why does <code>refl</code> solve <code>n + 1 = nat.succ n</code>?  <span aria-label="confused" class="emoji emoji-1f615" role="img" title="confused">:confused:</span></p>
+
+
+
+<a name="196068034"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113489-new%20members/topic/norm_num/%20ring%20doesn%27t%20solve%20this%3F/near/196068034" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Patrick Massot <a href="https://leanprover-community.github.io/archive/stream/113489-new-members/topic/norm_num.2F.20ring.20doesn't.20solve.20this.3F.html#196068034">(May 02 2020 at 20:08)</a>:</h4>
+<p>Because that's the definition</p>
+
+
+
+<a name="196068037"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113489-new%20members/topic/norm_num/%20ring%20doesn%27t%20solve%20this%3F/near/196068037" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Vaibhav Karve <a href="https://leanprover-community.github.io/archive/stream/113489-new-members/topic/norm_num.2F.20ring.20doesn't.20solve.20this.3F.html#196068037">(May 02 2020 at 20:08)</a>:</h4>
+<p>I mean to ask, if it is something so simple that <code>refl</code> can make this rewrite then naively I would think that <code>ring</code> can do that rewrite too?</p>
+
+
+
+<a name="196068213"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113489-new%20members/topic/norm_num/%20ring%20doesn%27t%20solve%20this%3F/near/196068213" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Kevin Buzzard <a href="https://leanprover-community.github.io/archive/stream/113489-new-members/topic/norm_num.2F.20ring.20doesn't.20solve.20this.3F.html#196068213">(May 02 2020 at 20:13)</a>:</h4>
+<p>It's not <code>ring</code>s job to do rewrites.</p>
+
+
+
+<a name="196068270"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113489-new%20members/topic/norm_num/%20ring%20doesn%27t%20solve%20this%3F/near/196068270" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Kevin Buzzard <a href="https://leanprover-community.github.io/archive/stream/113489-new-members/topic/norm_num.2F.20ring.20doesn't.20solve.20this.3F.html#196068270">(May 02 2020 at 20:15)</a>:</h4>
+<p>Tactics have clear domains where they work, and <code>ring</code>'s job is to prove equalities which are true in arbitrary rings, not to guess which rewrites the user wants to do first.</p>
+
+
+
+<a name="196068274"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113489-new%20members/topic/norm_num/%20ring%20doesn%27t%20solve%20this%3F/near/196068274" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Jalex Stark <a href="https://leanprover-community.github.io/archive/stream/113489-new-members/topic/norm_num.2F.20ring.20doesn't.20solve.20this.3F.html#196068274">(May 02 2020 at 20:15)</a>:</h4>
+<p>If every tactic calls every other tactic then you never prove anything, or at least not in say 20 seconds</p>
+
+
+
+<a name="196068340"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113489-new%20members/topic/norm_num/%20ring%20doesn%27t%20solve%20this%3F/near/196068340" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Vaibhav Karve <a href="https://leanprover-community.github.io/archive/stream/113489-new-members/topic/norm_num.2F.20ring.20doesn't.20solve.20this.3F.html#196068340">(May 02 2020 at 20:16)</a>:</h4>
+<p>Thanks. I should start looking more carefully into what tactics (can/can't) do instead of treating them like a black box.</p>
+
+
+
+<a name="196068341"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113489-new%20members/topic/norm_num/%20ring%20doesn%27t%20solve%20this%3F/near/196068341" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Kevin Buzzard <a href="https://leanprover-community.github.io/archive/stream/113489-new-members/topic/norm_num.2F.20ring.20doesn't.20solve.20this.3F.html#196068341">(May 02 2020 at 20:17)</a>:</h4>
+<p><code>ring</code> <em>will</em> prove theorems about <code>nat.succ n</code> because it will treat it as an atom. There might be cases when you want to treat something like it as an atom, rather than applying some rewrite.</p>
+
+
+
+<a name="196068347"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113489-new%20members/topic/norm_num/%20ring%20doesn%27t%20solve%20this%3F/near/196068347" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Kevin Buzzard <a href="https://leanprover-community.github.io/archive/stream/113489-new-members/topic/norm_num.2F.20ring.20doesn't.20solve.20this.3F.html#196068347">(May 02 2020 at 20:17)</a>:</h4>
+<div class="codehilite"><pre><span></span><code><span class="kn">import</span> <span class="n">tactic</span>
+
+<span class="kn">example</span> <span class="o">(</span><span class="n">n</span> <span class="o">:</span> <span class="bp">ℕ</span><span class="o">)</span> <span class="o">:</span> <span class="o">(</span><span class="n">nat</span><span class="bp">.</span><span class="n">succ</span> <span class="n">n</span><span class="o">)</span><span class="bp">^</span><span class="mi">2</span> <span class="bp">=</span> <span class="o">(</span><span class="n">nat</span><span class="bp">.</span><span class="n">succ</span> <span class="n">n</span><span class="o">)</span> <span class="bp">*</span> <span class="n">nat</span><span class="bp">.</span><span class="n">succ</span> <span class="n">n</span> <span class="o">:=</span>
+<span class="k">by</span> <span class="n">ring</span>
+</code></pre></div>
+
+
+
+<a name="196068485"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113489-new%20members/topic/norm_num/%20ring%20doesn%27t%20solve%20this%3F/near/196068485" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Jalex Stark <a href="https://leanprover-community.github.io/archive/stream/113489-new-members/topic/norm_num.2F.20ring.20doesn't.20solve.20this.3F.html#196068485">(May 02 2020 at 20:20)</a>:</h4>
+<p>to be fair, you can learn a lot about which goals a tactic can solve while not understanding anything about its implementation</p>
+
+
+
 {% endraw %}
 
-<hr><p>Last updated: May 02 2020 at 20:05 UTC</p>
+<hr><p>Last updated: May 02 2020 at 21:08 UTC</p>

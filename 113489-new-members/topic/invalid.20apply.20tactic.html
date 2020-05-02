@@ -1,0 +1,65 @@
+---
+layout: archive
+title: Zulip Chat Archive
+permalink: /stream/113489-new-members/topic/invalid.20apply.20tactic.html
+---
+
+<h2>Stream: <a href="https://leanprover-community.github.io/archive/stream/113489-new-members/index.html">new members</a></h2>
+<h3>Topic: <a href="https://leanprover-community.github.io/archive/stream/113489-new-members/topic/invalid.20apply.20tactic.html">invalid apply tactic</a></h3>
+
+<hr>
+
+<base href="https://leanprover.zulipchat.com/">
+
+<head><link href="/style.css" rel="stylesheet"></head>
+
+{% raw %}
+
+<a name="196068850"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113489-new%20members/topic/invalid%20apply%20tactic/near/196068850" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Paul van Wamelen <a href="https://leanprover-community.github.io/archive/stream/113489-new-members/topic/invalid.20apply.20tactic.html#196068850">(May 02 2020 at 20:30)</a>:</h4>
+<p>I'm getting </p>
+<div class="codehilite"><pre><span></span><code><span class="n">failed</span> <span class="n">to</span> <span class="n">unify</span>
+  <span class="n">k</span> <span class="err">∣</span> <span class="n">multiset</span><span class="bp">.</span><span class="n">count</span> <span class="n">q</span> <span class="o">(</span><span class="n">factors&#39;</span> <span class="n">a0</span> <span class="n">hz</span><span class="o">)</span>
+<span class="k">with</span>
+  <span class="n">k</span> <span class="err">∣</span> <span class="n">multiset</span><span class="bp">.</span><span class="n">count</span> <span class="n">q</span> <span class="o">(</span><span class="n">factors&#39;</span> <span class="n">a0</span> <span class="n">hz</span><span class="o">)</span>
+</code></pre></div>
+
+
+<p>from this:</p>
+<div class="codehilite"><pre><span></span><code><span class="kn">import</span> <span class="n">ring_theory</span><span class="bp">.</span><span class="n">unique_factorization_domain</span>
+
+<span class="n">noncomputable</span> <span class="n">theory</span>
+<span class="n">open_locale</span> <span class="n">classical</span>
+
+<span class="kn">variables</span> <span class="o">{</span><span class="n">α</span> <span class="o">:</span> <span class="kt">Type</span><span class="bp">*</span><span class="o">}</span>
+
+<span class="kn">namespace</span> <span class="n">associates</span>
+<span class="n">local</span> <span class="n">attribute</span> <span class="o">[</span><span class="kn">instance</span><span class="o">]</span> <span class="n">associated</span><span class="bp">.</span><span class="n">setoid</span>
+
+<span class="n">open_locale</span> <span class="n">add_monoid</span>
+
+<span class="kn">lemma</span> <span class="n">multiset_mul</span> <span class="o">(</span><span class="n">s</span> <span class="o">:</span> <span class="n">multiset</span> <span class="n">α</span><span class="o">)</span> <span class="o">{</span><span class="n">k</span> <span class="o">:</span> <span class="bp">ℕ</span><span class="o">}</span> <span class="o">:</span>
+  <span class="o">(</span><span class="bp">∀</span><span class="o">(</span><span class="n">a</span> <span class="o">:</span> <span class="n">α</span><span class="o">),</span> <span class="n">k</span> <span class="err">∣</span> <span class="n">multiset</span><span class="bp">.</span><span class="n">count</span> <span class="n">a</span> <span class="n">s</span><span class="o">)</span> <span class="bp">→</span> <span class="bp">∃</span><span class="o">(</span><span class="n">u</span> <span class="o">:</span> <span class="n">multiset</span> <span class="n">α</span><span class="o">),</span> <span class="n">s</span> <span class="bp">=</span> <span class="n">k</span> <span class="err">•</span> <span class="n">u</span> <span class="o">:=</span> <span class="k">by</span> <span class="n">sorry</span>
+
+<span class="kn">open</span> <span class="n">unique_factorization_domain</span> <span class="n">associated</span> <span class="n">lattice</span>
+<span class="kn">variables</span> <span class="o">[</span><span class="n">integral_domain</span> <span class="n">α</span><span class="o">]</span> <span class="o">[</span><span class="n">unique_factorization_domain</span> <span class="n">α</span><span class="o">]</span> <span class="o">[</span><span class="n">decidable_eq</span> <span class="o">(</span><span class="n">associates</span> <span class="n">α</span><span class="o">)]</span>
+
+<span class="c1">-- set_option pp.all true</span>
+<span class="kn">theorem</span> <span class="n">power_of_count&#39;</span> <span class="o">(</span><span class="n">a0</span> <span class="o">:</span> <span class="n">α</span><span class="o">)</span> <span class="o">(</span><span class="n">hz</span> <span class="o">:</span> <span class="n">a0</span> <span class="bp">≠</span> <span class="mi">0</span><span class="o">)</span> <span class="o">(</span><span class="n">k</span> <span class="o">:</span> <span class="bp">ℕ</span><span class="o">)</span>
+  <span class="o">(</span><span class="n">hp</span> <span class="o">:</span> <span class="bp">∀</span> <span class="o">(</span><span class="n">p</span> <span class="o">:</span> <span class="o">{</span><span class="n">a</span> <span class="bp">//</span> <span class="kn">irreducible</span> <span class="n">a</span><span class="o">}),</span> <span class="n">k</span> <span class="err">∣</span> <span class="n">multiset</span><span class="bp">.</span><span class="n">count</span> <span class="n">p</span> <span class="o">(</span><span class="n">factors&#39;</span> <span class="n">a0</span> <span class="n">hz</span><span class="o">))</span>
+  <span class="o">:</span> <span class="bp">∃</span><span class="n">u</span><span class="o">,</span> <span class="o">(</span><span class="n">factors&#39;</span> <span class="n">a0</span> <span class="n">hz</span><span class="o">)</span> <span class="bp">=</span> <span class="n">k</span> <span class="err">•</span> <span class="n">u</span> <span class="o">:=</span>
+<span class="k">begin</span>
+  <span class="n">apply</span> <span class="n">multiset_mul</span> <span class="o">(</span><span class="n">factors&#39;</span> <span class="n">a0</span> <span class="n">hz</span><span class="o">),</span>
+  <span class="n">intro</span> <span class="n">q</span><span class="o">,</span>
+  <span class="n">apply</span> <span class="n">hp</span> <span class="n">q</span><span class="o">,</span>
+<span class="kn">end</span>
+</code></pre></div>
+
+
+<p>I'm sure the <code>set_option pp.all true</code> is telling me what is wrong, but I haven't been able to figure it out. Something to do with <code>decidable_eq (associates α)</code>?</p>
+
+
+
+{% endraw %}
+
+<hr><p>Last updated: May 02 2020 at 21:08 UTC</p>
