@@ -9,6 +9,8 @@ permalink: /stream/113488-general/index.html
 
 ### Topics:
 
+* [first argument of minimal_polynomial necessary](topic/first.20argument.20of.20minimal_polynomial.20necessary.html) (5 messages, latest: May 02 2020 at 07:48)
+* [transitive coercions](topic/transitive.20coercions.html) (65 messages, latest: May 02 2020 at 07:32)
 * [linter for instance names](topic/linter.20for.20instance.20names.html) (1 message, latest: May 02 2020 at 06:41)
 * [big ops](topic/big.20ops.html) (106 messages, latest: May 02 2020 at 05:14)
 * [Diagnosing timeout](topic/Diagnosing.20timeout.html) (89 messages, latest: May 02 2020 at 01:21)
@@ -18,7 +20,6 @@ permalink: /stream/113488-general/index.html
 * [Specialized `ext` lemmas](topic/Specialized.20.60ext.60.20lemmas.html) (9 messages, latest: May 01 2020 at 20:41)
 * [documenting notation](topic/documenting.20notation.html) (3 messages, latest: May 01 2020 at 20:35)
 * [sub_eq_add_neg](topic/sub_eq_add_neg.html) (13 messages, latest: May 01 2020 at 18:32)
-* [transitive coercions](topic/transitive.20coercions.html) (64 messages, latest: May 01 2020 at 18:13)
 * [unnecessary(?) simp lemma](topic/unnecessary(.3F).20simp.20lemma.html) (4 messages, latest: May 01 2020 at 18:01)
 * [Notices of the AMS paper](topic/Notices.20of.20the.20AMS.20paper.html) (98 messages, latest: May 01 2020 at 17:58)
 * [ordered monoids](topic/ordered.20monoids.html) (94 messages, latest: May 01 2020 at 14:52)
@@ -2749,4 +2750,4 @@ permalink: /stream/113488-general/index.html
 * [test](topic/test.html) (4 messages, latest: Feb 26 2018 at 16:22)
 * [welcome](topic/welcome.html) (1 message, latest: Feb 26 2018 at 16:02)
 
-<hr><p>Last updated: May 02 2020 at 07:06 UTC</p>
+<hr><p>Last updated: May 02 2020 at 08:07 UTC</p>

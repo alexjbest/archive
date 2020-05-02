@@ -467,6 +467,27 @@ they talk about benefits of proof irrelevance in 11.2 and 11.4.</p>
 
 
 
+<a name="196039027"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113489-new%20members/topic/Please%20Eliminate%20My%20Large%20Questions/near/196039027" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> David Wärn <a href="https://leanprover-community.github.io/archive/stream/113489-new-members/topic/Please.20Eliminate.20My.20Large.20Questions.html#196039027">(May 02 2020 at 07:44)</a>:</h4>
+<p><span class="user-mention silent" data-user-id="243102">Brandon Brown</span> <a href="#narrow/stream/113489-new-members/topic/Please.20Eliminate.20My.20Large.20Questions/near/196023907" title="#narrow/stream/113489-new-members/topic/Please.20Eliminate.20My.20Large.20Questions/near/196023907">said</a>:</p>
+<blockquote>
+<p>I'm saying sometimes I care about computation sometimes I only care about type correctness</p>
+</blockquote>
+<p>I think you underestimate the complexity of type checking with <em>dependent</em> types. Consider the following:</p>
+<div class="codehilite"><pre><span></span><code><span class="n">def</span> <span class="n">a</span> <span class="o">:</span> <span class="bp">ℕ</span> <span class="o">:=</span> <span class="mi">3</span>
+<span class="n">def</span> <span class="n">b</span> <span class="o">:</span> <span class="bp">ℕ</span> <span class="o">:=</span> <span class="mi">5</span>
+
+<span class="bp">#</span><span class="kn">check</span> <span class="o">(</span><span class="n">rfl</span> <span class="o">:</span> <span class="n">a</span> <span class="bp">=</span> <span class="mi">3</span><span class="o">)</span> <span class="c1">-- type checks</span>
+<span class="c1">-- #check (rfl : b = 3) -- does not type check</span>
+</code></pre></div>
+
+
+<p>Here <code>a</code> and <code>b</code> have the same type, but they are not interchangeable.</p>
+<p>Another example: suppose I've defined a function <code>exp : ℝ → ℝ</code>, and now I want to prove that <code>exp</code> is increasing. My proof of this will certainly rely on the definition of <code>exp</code>, not just its type! But I'm not really 'computing' with <code>exp</code>; I'm only doing proofs.</p>
+<p>So you should always be careful with how you define "data" like <code>exp</code>, but by Proof Irrelevance there is no need to worry about how you prove theorems</p>
+
+
+
 {% endraw %}
 
-<hr><p>Last updated: May 02 2020 at 07:06 UTC</p>
+<hr><p>Last updated: May 02 2020 at 08:07 UTC</p>
