@@ -9,6 +9,7 @@ permalink: /stream/187764-Lean-for-teaching/index.html
 
 ### Topics:
 
+* [from algorithms to proofs](topic/from.20algorithms.20to.20proofs.html) (4 messages, latest: May 02 2020 at 15:58)
 * [Logipedia Club of Teachers](topic/Logipedia.20Club.20of.20Teachers.html) (6 messages, latest: Mar 02 2020 at 13:02)
 * [Hints?](topic/Hints.3F.html) (12 messages, latest: Feb 15 2020 at 08:03)
 * [natural number game](topic/natural.20number.20game.html) (26 messages, latest: Feb 13 2020 at 00:08)
@@ -30,4 +31,4 @@ permalink: /stream/187764-Lean-for-teaching/index.html
 * [Discrete Mathematics - Kevin Sullivan](topic/Discrete.20Mathematics.20-.20Kevin.20Sullivan.html) (1 message, latest: Mar 01 2019 at 00:16)
 * [hello](topic/hello.html) (1 message, latest: Feb 28 2019 at 21:02)
 
-<hr><p>Last updated: May 02 2020 at 15:08 UTC</p>
+<hr><p>Last updated: May 02 2020 at 16:07 UTC</p>

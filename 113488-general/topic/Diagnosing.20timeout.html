@@ -925,6 +925,76 @@ permalink: /stream/113488-general/topic/Diagnosing.20timeout.html
 
 
 
+<a name="196056895"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113488-general/topic/Diagnosing%20timeout/near/196056895" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Bryan Gin-ge Chen <a href="https://leanprover-community.github.io/archive/stream/113488-general/topic/Diagnosing.20timeout.html#196056895">(May 02 2020 at 15:32)</a>:</h4>
+<p>I tried to get <code>gdb</code> running on macOS and had no luck. You can use <code>lldb</code> though. The steps are very similar to what Reid suggested with <code>gdb</code>.</p>
+
+
+
+<a name="196057023"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113488-general/topic/Diagnosing%20timeout/near/196057023" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Bryan Gin-ge Chen <a href="https://leanprover-community.github.io/archive/stream/113488-general/topic/Diagnosing.20timeout.html#196057023">(May 02 2020 at 15:35)</a>:</h4>
+<p>The <code>lldb</code> experience is a bit inferior right now since you can't use <a href="https://github.com/leanprover-community/lean/blob/ec1613aef1eee72e601f192b16740629c6d49690/bin/lean-gdb.py" title="https://github.com/leanprover-community/lean/blob/ec1613aef1eee72e601f192b16740629c6d49690/bin/lean-gdb.py">this pretty-printing script</a>.</p>
+
+
+
+<a name="196057258"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113488-general/topic/Diagnosing%20timeout/near/196057258" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Reid Barton <a href="https://leanprover-community.github.io/archive/stream/113488-general/topic/Diagnosing.20timeout.html#196057258">(May 02 2020 at 15:41)</a>:</h4>
+<p>Ah thanks Bryan, I should have remembered that lldb is OSX for gdb.</p>
+
+
+
+<a name="196057390"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113488-general/topic/Diagnosing%20timeout/near/196057390" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Alex J. Best <a href="https://leanprover-community.github.io/archive/stream/113488-general/topic/Diagnosing.20timeout.html#196057390">(May 02 2020 at 15:44)</a>:</h4>
+<p>What didn't work for you <span class="user-mention" data-user-id="123965">@Bryan Gin-ge Chen</span> ? The codesigning  or something else? I just followed <a href="https://gist.github.com/hlissner/898b7dfc0a3b63824a70e15cd0180154" title="https://gist.github.com/hlissner/898b7dfc0a3b63824a70e15cd0180154">https://gist.github.com/hlissner/898b7dfc0a3b63824a70e15cd0180154</a> and it worked (I had to sudo killall taskgated in step 9) but other than that my gdb no longer complains.</p>
+
+
+
+<a name="196057605"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113488-general/topic/Diagnosing%20timeout/near/196057605" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Bryan Gin-ge Chen <a href="https://leanprover-community.github.io/archive/stream/113488-general/topic/Diagnosing.20timeout.html#196057605">(May 02 2020 at 15:50)</a>:</h4>
+<p>I'm using 10.14 so when I went through this in July, I tried the 10.12 and later instructions that are linked at the top of that gist. I don't remember what failed exactly, but it seems like there are various modifications people suggest in the comments which I might try <del>now</del> eventually.</p>
+
+
+
+<a name="196057683"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113488-general/topic/Diagnosing%20timeout/near/196057683" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Alex J. Best <a href="https://leanprover-community.github.io/archive/stream/113488-general/topic/Diagnosing.20timeout.html#196057683">(May 02 2020 at 15:52)</a>:</h4>
+<p>Ah, 10.13 here.</p>
+
+
+
+<a name="196058185"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113488-general/topic/Diagnosing%20timeout/near/196058185" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Bhavik Mehta <a href="https://leanprover-community.github.io/archive/stream/113488-general/topic/Diagnosing.20timeout.html#196058185">(May 02 2020 at 16:02)</a>:</h4>
+<div class="codehilite"><pre><span></span><code><span class="err">$</span> <span class="n">lldb</span> <span class="c1">-- lean ./src/sheaf.lean</span>
+<span class="o">(</span><span class="n">lldb</span><span class="o">)</span> <span class="n">target</span> <span class="n">create</span> <span class="s2">&quot;lean&quot;</span>
+<span class="n">Current</span> <span class="n">executable</span> <span class="n">set</span> <span class="n">to</span> <span class="err">&#39;</span><span class="n">lean&#39;</span> <span class="o">(</span><span class="n">x86_64</span><span class="o">)</span><span class="bp">.</span>
+<span class="o">(</span><span class="n">lldb</span><span class="o">)</span> <span class="n">settings</span> <span class="n">set</span> <span class="c1">-- target.run-args  &quot;./src/sheaf.lean&quot;</span>
+<span class="o">(</span><span class="n">lldb</span><span class="o">)</span> <span class="n">r</span>
+<span class="n">Process</span> <span class="mi">36768</span> <span class="n">launched</span><span class="o">:</span> <span class="err">&#39;</span><span class="bp">/</span><span class="n">Users</span><span class="bp">/</span><span class="n">bmehta</span><span class="bp">/.</span><span class="n">elan</span><span class="bp">/</span><span class="n">bin</span><span class="bp">/</span><span class="n">lean&#39;</span> <span class="o">(</span><span class="n">x86_64</span><span class="o">)</span>
+<span class="n">Process</span> <span class="mi">36768</span> <span class="n">stopped</span>
+<span class="bp">*</span> <span class="n">thread</span> <span class="bp">#</span><span class="mi">2</span><span class="o">,</span> <span class="n">stop</span> <span class="n">reason</span> <span class="bp">=</span> <span class="n">exec</span>
+    <span class="n">frame</span> <span class="bp">#</span><span class="mi">0</span><span class="o">:</span> <span class="mi">0</span><span class="n">x0000000100c5f19c</span> <span class="n">dyld</span><span class="bp">`_</span><span class="n">dyld_start</span>
+</code></pre></div>
+
+
+<p>Presumably I'm misunderstanding how to do something here...</p>
+
+
+
+<a name="196058296"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113488-general/topic/Diagnosing%20timeout/near/196058296" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Bhavik Mehta <a href="https://leanprover-community.github.io/archive/stream/113488-general/topic/Diagnosing.20timeout.html#196058296">(May 02 2020 at 16:05)</a>:</h4>
+<p><span class="user-mention silent" data-user-id="110038">Kevin Buzzard</span> <a href="#narrow/stream/113488-general/topic/Diagnosing.20timeout/near/195994444" title="#narrow/stream/113488-general/topic/Diagnosing.20timeout/near/195994444">said</a>:</p>
+<blockquote>
+<p>This is worth more investigation. I've had quite a busy day today and I've got another one tomorrow but I hope to find the time to look at this again, it's not like anything I've seen before which is why I find it interesting. Can you make a branch with the error so it doesn't get lost?</p>
+</blockquote>
+<p>I'll move my work to a different branch, and keep that branch fixed. That is, the error is (and will remain) <a href="https://github.com/b-mehta/topos/blob/sheaf/src/sheaf.lean#L261" title="https://github.com/b-mehta/topos/blob/sheaf/src/sheaf.lean#L261">https://github.com/b-mehta/topos/blob/sheaf/src/sheaf.lean#L261</a></p>
+
+
+
+<a name="196058362"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113488-general/topic/Diagnosing%20timeout/near/196058362" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Bryan Gin-ge Chen <a href="https://leanprover-community.github.io/archive/stream/113488-general/topic/Diagnosing.20timeout.html#196058362">(May 02 2020 at 16:06)</a>:</h4>
+<p><span class="user-mention" data-user-id="246273">@Bhavik Mehta</span> enter <code>r</code> again after that. For whatever reason <code>lldb</code> immediately pauses the program when it starts.</p>
+
+
+
 {% endraw %}
 
-<hr><p>Last updated: May 02 2020 at 15:08 UTC</p>
+<hr><p>Last updated: May 02 2020 at 16:07 UTC</p>

@@ -1,0 +1,56 @@
+---
+layout: archive
+title: Zulip Chat Archive
+permalink: /stream/113489-new-members/topic/instance.20of.20decidable_set_is_empty.html
+---
+
+<h2>Stream: <a href="https://leanprover-community.github.io/archive/stream/113489-new-members/index.html">new members</a></h2>
+<h3>Topic: <a href="https://leanprover-community.github.io/archive/stream/113489-new-members/topic/instance.20of.20decidable_set_is_empty.html">instance of decidable_set_is_empty</a></h3>
+
+<hr>
+
+<base href="https://leanprover.zulipchat.com/">
+
+<head><link href="/style.css" rel="stylesheet"></head>
+
+{% raw %}
+
+<a name="196057696"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113489-new%20members/topic/instance%20of%20decidable_set_is_empty/near/196057696" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Ciprian Teodorov <a href="https://leanprover-community.github.io/archive/stream/113489-new-members/topic/instance.20of.20decidable_set_is_empty.html#196057696">(May 02 2020 at 15:52)</a>:</h4>
+<p>Hi all, <br>
+is it possible to create an instance of decidable if a set is empty ?</p>
+<div class="codehilite"><pre><span></span><code><span class="kn">instance</span> <span class="n">decidable_is_empty</span>
+    <span class="o">(</span><span class="n">α</span> <span class="o">:</span> <span class="kt">Type</span><span class="o">)</span>
+    <span class="o">[</span><span class="n">H₀</span><span class="o">:</span> <span class="n">decidable_eq</span> <span class="n">α</span><span class="o">]</span>
+    <span class="o">[</span><span class="n">H₁</span><span class="o">:</span> <span class="n">fintype</span> <span class="n">α</span><span class="o">]</span>
+<span class="o">:</span> <span class="bp">Π</span> <span class="o">(</span><span class="n">S</span> <span class="o">:</span> <span class="n">set</span> <span class="n">α</span><span class="o">),</span> <span class="n">decidable</span> <span class="o">(</span><span class="n">S</span> <span class="bp">=</span> <span class="err">∅</span><span class="o">)</span> <span class="o">:=</span> <span class="n">sorry</span>
+</code></pre></div>
+
+
+
+<a name="196057781"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113489-new%20members/topic/instance%20of%20decidable_set_is_empty/near/196057781" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Reid Barton <a href="https://leanprover-community.github.io/archive/stream/113489-new-members/topic/instance.20of.20decidable_set_is_empty.html#196057781">(May 02 2020 at 15:54)</a>:</h4>
+<p>Assuming you want to do it constructively, you also need to assume <code>decidable_pred S</code>.</p>
+
+
+
+<a name="196058312"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113489-new%20members/topic/instance%20of%20decidable_set_is_empty/near/196058312" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Ciprian Teodorov <a href="https://leanprover-community.github.io/archive/stream/113489-new-members/topic/instance.20of.20decidable_set_is_empty.html#196058312">(May 02 2020 at 16:05)</a>:</h4>
+<p><span class="user-mention silent" data-user-id="110032">Reid Barton</span> <a href="#narrow/stream/113489-new-members/topic/instance.20of.20decidable_set_is_empty/near/196057781" title="#narrow/stream/113489-new-members/topic/instance.20of.20decidable_set_is_empty/near/196057781">said</a>:</p>
+<blockquote>
+<p>Assuming you want to do it constructively, you also need to assume <code>decidable_pred S</code>.</p>
+</blockquote>
+<p>ok, but still I have no idea where to start, after intros I get one goal that I don't know how to tackle</p>
+<div class="codehilite"><pre><span></span><code><span class="mi">1</span> <span class="n">goal</span>
+<span class="n">H₀</span> <span class="o">:</span> <span class="n">decidable_eq</span> <span class="n">α</span><span class="o">,</span>
+<span class="n">H₁</span> <span class="o">:</span> <span class="n">fintype</span> <span class="n">α</span><span class="o">,</span>
+<span class="n">S</span> <span class="o">:</span> <span class="n">set</span> <span class="n">α</span><span class="o">,</span>
+<span class="n">H₂</span> <span class="o">:</span> <span class="n">decidable_pred</span> <span class="n">S</span>
+<span class="err">⊢</span> <span class="n">decidable</span> <span class="o">(</span><span class="n">S</span> <span class="bp">=</span> <span class="err">∅</span><span class="o">)</span>
+</code></pre></div>
+
+
+
+{% endraw %}
+
+<hr><p>Last updated: May 02 2020 at 16:07 UTC</p>

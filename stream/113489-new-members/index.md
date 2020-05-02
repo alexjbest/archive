@@ -9,6 +9,7 @@ permalink: /stream/113489-new-members/index.html
 
 ### Topics:
 
+* [instance of decidable_set_is_empty](topic/instance.20of.20decidable_set_is_empty.html) (3 messages, latest: May 02 2020 at 16:05)
 * [functions with finite support](topic/functions.20with.20finite.20support.html) (62 messages, latest: May 02 2020 at 11:06)
 * [noob question(s)](topic/noob.20question(s).html) (5420 messages, latest: May 02 2020 at 08:57)
 * [Please Eliminate My Large Questions](topic/Please.20Eliminate.20My.20Large.20Questions.html) (71 messages, latest: May 02 2020 at 07:44)
@@ -995,4 +996,4 @@ permalink: /stream/113489-new-members/index.html
 * [Andrew Ashworth](topic/Andrew.20Ashworth.html) (15 messages, latest: Feb 26 2018 at 16:21)
 * [onboarding](topic/onboarding.html) (1 message, latest: Feb 26 2018 at 16:02)
 
-<hr><p>Last updated: May 02 2020 at 15:08 UTC</p>
+<hr><p>Last updated: May 02 2020 at 16:07 UTC</p>
