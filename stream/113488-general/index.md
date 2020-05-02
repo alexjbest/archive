@@ -9,8 +9,8 @@ permalink: /stream/113488-general/index.html
 
 ### Topics:
 
+* [Invitation to join the Codewars Lean community, Round 2](topic/Invitation.20to.20join.20the.20Codewars.20Lean.20community.2C.20Round.202.html) (275 messages, latest: May 01 2020 at 23:33)
 * [how do I step through proofs?](topic/how.20do.20I.20step.20through.20proofs.3F.html) (85 messages, latest: May 01 2020 at 22:40)
-* [Invitation to join the Codewars Lean community, Round 2](topic/Invitation.20to.20join.20the.20Codewars.20Lean.20community.2C.20Round.202.html) (274 messages, latest: May 01 2020 at 22:36)
 * [abel idempotence](topic/abel.20idempotence.html) (6 messages, latest: May 01 2020 at 22:27)
 * [big ops](topic/big.20ops.html) (105 messages, latest: May 01 2020 at 21:29)
 * [Specialized `ext` lemmas](topic/Specialized.20.60ext.60.20lemmas.html) (9 messages, latest: May 01 2020 at 20:41)
@@ -2748,4 +2748,4 @@ permalink: /stream/113488-general/index.html
 * [test](topic/test.html) (4 messages, latest: Feb 26 2018 at 16:22)
 * [welcome](topic/welcome.html) (1 message, latest: Feb 26 2018 at 16:02)
 
-<hr><p>Last updated: May 01 2020 at 23:04 UTC</p>
+<hr><p>Last updated: May 02 2020 at 00:08 UTC</p>
