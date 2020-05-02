@@ -9,9 +9,10 @@ permalink: /stream/113488-general/index.html
 
 ### Topics:
 
-* [Diagnosing timeout](topic/Diagnosing.20timeout.html) (98 messages, latest: May 02 2020 at 13:58)
+* [simp hole command](topic/simp.20hole.20command.html) (8 messages, latest: May 02 2020 at 15:06)
+* [Diagnosing timeout](topic/Diagnosing.20timeout.html) (115 messages, latest: May 02 2020 at 14:47)
+* [seminars](topic/seminars.html) (63 messages, latest: May 02 2020 at 14:27)
 * [big ops](topic/big.20ops.html) (108 messages, latest: May 02 2020 at 13:51)
-* [seminars](topic/seminars.html) (60 messages, latest: May 02 2020 at 12:35)
 * [linter for instance names](topic/linter.20for.20instance.20names.html) (2 messages, latest: May 02 2020 at 11:11)
 * [Lean 3.10](topic/Lean.203.2E10.html) (19 messages, latest: May 02 2020 at 10:39)
 * [first argument of minimal_polynomial necessary](topic/first.20argument.20of.20minimal_polynomial.20necessary.html) (8 messages, latest: May 02 2020 at 08:32)
@@ -2751,4 +2752,4 @@ permalink: /stream/113488-general/index.html
 * [test](topic/test.html) (4 messages, latest: Feb 26 2018 at 16:22)
 * [welcome](topic/welcome.html) (1 message, latest: Feb 26 2018 at 16:02)
 
-<hr><p>Last updated: May 02 2020 at 14:06 UTC</p>
+<hr><p>Last updated: May 02 2020 at 15:08 UTC</p>

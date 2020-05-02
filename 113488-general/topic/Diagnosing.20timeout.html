@@ -780,6 +780,151 @@ permalink: /stream/113488-general/topic/Diagnosing.20timeout.html
 
 
 
+<a name="196053542"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113488-general/topic/Diagnosing%20timeout/near/196053542" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Reid Barton <a href="https://leanprover-community.github.io/archive/stream/113488-general/topic/Diagnosing.20timeout.html#196053542">(May 02 2020 at 14:12)</a>:</h4>
+<p>Well, there's the autocomplete menu...</p>
+
+
+
+<a name="196053548"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113488-general/topic/Diagnosing%20timeout/near/196053548" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Reid Barton <a href="https://leanprover-community.github.io/archive/stream/113488-general/topic/Diagnosing.20timeout.html#196053548">(May 02 2020 at 14:12)</a>:</h4>
+<p>I would just run it in a debugger at this point</p>
+
+
+
+<a name="196053563"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113488-general/topic/Diagnosing%20timeout/near/196053563" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Bhavik Mehta <a href="https://leanprover-community.github.io/archive/stream/113488-general/topic/Diagnosing.20timeout.html#196053563">(May 02 2020 at 14:13)</a>:</h4>
+<p>The autocomplete menu doesn't give information about what the difference between each trace option is though</p>
+
+
+
+<a name="196053569"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113488-general/topic/Diagnosing%20timeout/near/196053569" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Reid Barton <a href="https://leanprover-community.github.io/archive/stream/113488-general/topic/Diagnosing.20timeout.html#196053569">(May 02 2020 at 14:13)</a>:</h4>
+<p>oh, I guess only some things are documented then</p>
+
+
+
+<a name="196053571"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113488-general/topic/Diagnosing%20timeout/near/196053571" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Bhavik Mehta <a href="https://leanprover-community.github.io/archive/stream/113488-general/topic/Diagnosing.20timeout.html#196053571">(May 02 2020 at 14:13)</a>:</h4>
+<p><span class="user-mention silent" data-user-id="110032">Reid Barton</span> <a href="#narrow/stream/113488-general/topic/Diagnosing.20timeout/near/196053548" title="#narrow/stream/113488-general/topic/Diagnosing.20timeout/near/196053548">said</a>:</p>
+<blockquote>
+<p>I would just run it in a debugger at this point</p>
+</blockquote>
+<p>How do I go about doing this? I'm not familiar with gdb</p>
+
+
+
+<a name="196053650"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113488-general/topic/Diagnosing%20timeout/near/196053650" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Reid Barton <a href="https://leanprover-community.github.io/archive/stream/113488-general/topic/Diagnosing.20timeout.html#196053650">(May 02 2020 at 14:14)</a>:</h4>
+<p>Probably something like <code>gdb --args lean myfile.lean</code>, then type <code>r</code> and ctrl-C when it starts thinking for a long time</p>
+
+
+
+<a name="196053665"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113488-general/topic/Diagnosing%20timeout/near/196053665" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Reid Barton <a href="https://leanprover-community.github.io/archive/stream/113488-general/topic/Diagnosing.20timeout.html#196053665">(May 02 2020 at 14:15)</a>:</h4>
+<p>then <code>bt</code> to see the stack trace</p>
+
+
+
+<a name="196053757"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113488-general/topic/Diagnosing%20timeout/near/196053757" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Bhavik Mehta <a href="https://leanprover-community.github.io/archive/stream/113488-general/topic/Diagnosing.20timeout.html#196053757">(May 02 2020 at 14:17)</a>:</h4>
+<div class="codehilite"><pre><span></span><code><span class="err">$</span> <span class="n">gdb</span> <span class="c1">--args lean ./src/sheaf.lean</span>
+<span class="n">GNU</span> <span class="n">gdb</span> <span class="o">(</span><span class="n">GDB</span><span class="o">)</span> <span class="mi">8</span><span class="bp">.</span><span class="mi">3</span>
+<span class="n">Copyright</span> <span class="o">(</span><span class="n">C</span><span class="o">)</span> <span class="mi">2019</span> <span class="n">Free</span> <span class="n">Software</span> <span class="n">Foundation</span><span class="o">,</span> <span class="n">Inc</span><span class="bp">.</span>
+<span class="n">License</span> <span class="n">GPLv3</span><span class="bp">+</span><span class="o">:</span> <span class="n">GNU</span> <span class="n">GPL</span> <span class="n">version</span> <span class="mi">3</span> <span class="n">or</span> <span class="n">later</span> <span class="bp">&lt;</span><span class="n">http</span><span class="o">:</span><span class="bp">//</span><span class="n">gnu</span><span class="bp">.</span><span class="n">org</span><span class="bp">/</span><span class="n">licenses</span><span class="bp">/</span><span class="n">gpl</span><span class="bp">.</span><span class="n">html</span><span class="bp">&gt;</span>
+<span class="n">This</span> <span class="n">is</span> <span class="n">free</span> <span class="n">software</span><span class="o">:</span> <span class="n">you</span> <span class="n">are</span> <span class="n">free</span> <span class="n">to</span> <span class="n">change</span> <span class="n">and</span> <span class="n">redistribute</span> <span class="n">it</span><span class="bp">.</span>
+<span class="n">There</span> <span class="n">is</span> <span class="n">NO</span> <span class="n">WARRANTY</span><span class="o">,</span> <span class="n">to</span> <span class="n">the</span> <span class="n">extent</span> <span class="n">permitted</span> <span class="k">by</span> <span class="n">law</span><span class="bp">.</span>
+<span class="kt">Type</span> <span class="s2">&quot;show copying&quot;</span> <span class="n">and</span> <span class="s2">&quot;show warranty&quot;</span> <span class="n">for</span> <span class="n">details</span><span class="bp">.</span>
+<span class="n">This</span> <span class="n">GDB</span> <span class="n">was</span> <span class="n">configured</span> <span class="n">as</span> <span class="s2">&quot;x86_64-apple-darwin17.7.0&quot;</span><span class="bp">.</span>
+<span class="kt">Type</span> <span class="s2">&quot;show configuration&quot;</span> <span class="n">for</span> <span class="n">configuration</span> <span class="n">details</span><span class="bp">.</span>
+<span class="n">For</span> <span class="n">bug</span> <span class="n">reporting</span> <span class="n">instructions</span><span class="o">,</span> <span class="n">please</span> <span class="n">see</span><span class="o">:</span>
+<span class="bp">&lt;</span><span class="n">http</span><span class="o">:</span><span class="bp">//</span><span class="n">www</span><span class="bp">.</span><span class="n">gnu</span><span class="bp">.</span><span class="n">org</span><span class="bp">/</span><span class="n">software</span><span class="bp">/</span><span class="n">gdb</span><span class="bp">/</span><span class="n">bugs</span><span class="bp">/&gt;.</span>
+<span class="n">Find</span> <span class="n">the</span> <span class="n">GDB</span> <span class="n">manual</span> <span class="n">and</span> <span class="n">other</span> <span class="n">documentation</span> <span class="n">resources</span> <span class="n">online</span> <span class="n">at</span><span class="o">:</span>
+    <span class="bp">&lt;</span><span class="n">http</span><span class="o">:</span><span class="bp">//</span><span class="n">www</span><span class="bp">.</span><span class="n">gnu</span><span class="bp">.</span><span class="n">org</span><span class="bp">/</span><span class="n">software</span><span class="bp">/</span><span class="n">gdb</span><span class="bp">/</span><span class="n">documentation</span><span class="bp">/&gt;.</span>
+
+<span class="n">For</span> <span class="kn">help</span><span class="o">,</span> <span class="n">type</span> <span class="s2">&quot;help&quot;</span><span class="bp">.</span>
+<span class="kt">Type</span> <span class="s2">&quot;apropos word&quot;</span> <span class="n">to</span> <span class="n">search</span> <span class="n">for</span> <span class="n">commands</span> <span class="n">related</span> <span class="n">to</span> <span class="s2">&quot;word&quot;</span><span class="bp">...</span>
+<span class="n">Reading</span> <span class="n">symbols</span> <span class="k">from</span> <span class="n">lean</span><span class="bp">...</span>
+
+<span class="n">warning</span><span class="o">:</span> <span class="n">Could</span> <span class="n">not</span> <span class="kn">open</span> <span class="n">OSO</span> <span class="n">archive</span> <span class="n">file</span> <span class="s2">&quot;/Users/travis/.rustup/toolchains/stable-x86_64-apple-darwin/lib/rustlib/x86_64-apple-darwin/lib/liballoc-089d48ff1bba5f70.rlib&quot;</span>
+
+<span class="n">warning</span><span class="o">:</span> <span class="n">Could</span> <span class="n">not</span> <span class="kn">open</span> <span class="n">OSO</span> <span class="n">archive</span> <span class="n">file</span> <span class="s2">&quot;/Users/travis/.rustup/toolchains/stable-x86_64-apple-darwin/lib/rustlib/x86_64-apple-darwin/lib/libbacktrace_sys-b0895307a49d7b98.rlib&quot;</span>
+
+<span class="n">warning</span><span class="o">:</span> <span class="n">Could</span> <span class="n">not</span> <span class="kn">open</span> <span class="n">OSO</span> <span class="n">archive</span> <span class="n">file</span> <span class="s2">&quot;/Users/travis/.rustup/toolchains/stable-x86_64-apple-darwin/lib/rustlib/x86_64-apple-darwin/lib/libcompiler_builtins-35232c4af1148867.rlib&quot;</span>
+
+<span class="n">warning</span><span class="o">:</span> <span class="n">Could</span> <span class="n">not</span> <span class="kn">open</span> <span class="n">OSO</span> <span class="n">archive</span> <span class="n">file</span> <span class="s2">&quot;/Users/travis/.rustup/toolchains/stable-x86_64-apple-darwin/lib/rustlib/x86_64-apple-darwin/lib/libcore-f948d62f596dcd3d.rlib&quot;</span>
+
+<span class="n">warning</span><span class="o">:</span> <span class="n">Could</span> <span class="n">not</span> <span class="kn">open</span> <span class="n">OSO</span> <span class="n">archive</span> <span class="n">file</span> <span class="s2">&quot;/Users/travis/.rustup/toolchains/stable-x86_64-apple-darwin/lib/rustlib/x86_64-apple-darwin/lib/libpanic_unwind-cb02f3c2aa14313b.rlib&quot;</span>
+
+<span class="n">warning</span><span class="o">:</span> <span class="n">Could</span> <span class="n">not</span> <span class="kn">open</span> <span class="n">OSO</span> <span class="n">archive</span> <span class="n">file</span> <span class="s2">&quot;/Users/travis/.rustup/toolchains/stable-x86_64-apple-darwin/lib/rustlib/x86_64-apple-darwin/lib/librustc_demangle-136c67c44acb8989.rlib&quot;</span>
+
+<span class="n">warning</span><span class="o">:</span> <span class="n">Could</span> <span class="n">not</span> <span class="kn">open</span> <span class="n">OSO</span> <span class="n">archive</span> <span class="n">file</span> <span class="s2">&quot;/Users/travis/.rustup/toolchains/stable-x86_64-apple-darwin/lib/rustlib/x86_64-apple-darwin/lib/libstd-d4fbe66ddea5f3ce.rlib&quot;</span>
+
+<span class="n">warning</span><span class="o">:</span> <span class="n">Could</span> <span class="n">not</span> <span class="kn">open</span> <span class="n">OSO</span> <span class="n">archive</span> <span class="n">file</span> <span class="s2">&quot;/Users/travis/.rustup/toolchains/stable-x86_64-apple-darwin/lib/rustlib/x86_64-apple-darwin/lib/libunwind-5751ec7e6e80fbea.rlib&quot;</span>
+<span class="o">(</span><span class="n">No</span> <span class="n">debugging</span> <span class="n">symbols</span> <span class="n">found</span> <span class="k">in</span> <span class="n">lean</span><span class="o">)</span>
+<span class="o">(</span><span class="n">gdb</span><span class="o">)</span>
+</code></pre></div>
+
+
+
+<a name="196053899"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113488-general/topic/Diagnosing%20timeout/near/196053899" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Reid Barton <a href="https://leanprover-community.github.io/archive/stream/113488-general/topic/Diagnosing.20timeout.html#196053899">(May 02 2020 at 14:21)</a>:</h4>
+<p>that's probably okay, type <code>r</code> anyways</p>
+
+
+
+<a name="196053911"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113488-general/topic/Diagnosing%20timeout/near/196053911" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Bhavik Mehta <a href="https://leanprover-community.github.io/archive/stream/113488-general/topic/Diagnosing.20timeout.html#196053911">(May 02 2020 at 14:21)</a>:</h4>
+<div class="codehilite"><pre><span></span><code><span class="o">(</span><span class="n">gdb</span><span class="o">)</span> <span class="n">r</span>
+<span class="n">Starting</span> <span class="n">program</span><span class="o">:</span> <span class="bp">/</span><span class="n">Users</span><span class="bp">/</span><span class="n">bmehta</span><span class="bp">/.</span><span class="n">elan</span><span class="bp">/</span><span class="n">bin</span><span class="bp">/</span><span class="n">lean</span> <span class="bp">./</span><span class="n">src</span><span class="bp">/</span><span class="n">sheaf</span><span class="bp">.</span><span class="n">lean</span>
+<span class="n">Unable</span> <span class="n">to</span> <span class="n">find</span> <span class="n">Mach</span> <span class="n">task</span> <span class="n">port</span> <span class="n">for</span> <span class="n">process</span><span class="bp">-</span><span class="n">id</span> <span class="mi">31753</span><span class="o">:</span> <span class="o">(</span><span class="n">os</span><span class="bp">/</span><span class="n">kern</span><span class="o">)</span> <span class="n">failure</span> <span class="o">(</span><span class="mi">0</span><span class="n">x5</span><span class="o">)</span><span class="bp">.</span>
+ <span class="o">(</span><span class="n">please</span> <span class="kn">check</span> <span class="n">gdb</span> <span class="n">is</span> <span class="n">codesigned</span> <span class="bp">-</span> <span class="n">see</span> <span class="n">taskgated</span><span class="o">(</span><span class="mi">8</span><span class="o">))</span>
+</code></pre></div>
+
+
+
+<a name="196053920"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113488-general/topic/Diagnosing%20timeout/near/196053920" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Reid Barton <a href="https://leanprover-community.github.io/archive/stream/113488-general/topic/Diagnosing.20timeout.html#196053920">(May 02 2020 at 14:21)</a>:</h4>
+<p>oh maybe your OS is broken</p>
+
+
+
+<a name="196053921"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113488-general/topic/Diagnosing%20timeout/near/196053921" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Reid Barton <a href="https://leanprover-community.github.io/archive/stream/113488-general/topic/Diagnosing.20timeout.html#196053921">(May 02 2020 at 14:21)</a>:</h4>
+<p>Rough luck</p>
+
+
+
+<a name="196053961"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113488-general/topic/Diagnosing%20timeout/near/196053961" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Bhavik Mehta <a href="https://leanprover-community.github.io/archive/stream/113488-general/topic/Diagnosing.20timeout.html#196053961">(May 02 2020 at 14:22)</a>:</h4>
+<p>uh oh</p>
+
+
+
+<a name="196053978"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113488-general/topic/Diagnosing%20timeout/near/196053978" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Reid Barton <a href="https://leanprover-community.github.io/archive/stream/113488-general/topic/Diagnosing.20timeout.html#196053978">(May 02 2020 at 14:22)</a>:</h4>
+<p>I mean, this error is probably by design</p>
+
+
+
+<a name="196054148"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113488-general/topic/Diagnosing%20timeout/near/196054148" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Reid Barton <a href="https://leanprover-community.github.io/archive/stream/113488-general/topic/Diagnosing.20timeout.html#196054148">(May 02 2020 at 14:26)</a>:</h4>
+<p>but it seems to be preventing you from what you want to do</p>
+
+
+
+<a name="196054540"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113488-general/topic/Diagnosing%20timeout/near/196054540" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Reid Barton <a href="https://leanprover-community.github.io/archive/stream/113488-general/topic/Diagnosing.20timeout.html#196054540">(May 02 2020 at 14:36)</a>:</h4>
+<p>Is there some way you can make Lean's life easier by breaking up the definition?</p>
+
+
+
+<a name="196054901"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113488-general/topic/Diagnosing%20timeout/near/196054901" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Alex J. Best <a href="https://leanprover-community.github.io/archive/stream/113488-general/topic/Diagnosing.20timeout.html#196054901">(May 02 2020 at 14:47)</a>:</h4>
+<p>You can (and need to) codesign gdb on osx, there should be instructions online.</p>
+
+
+
 {% endraw %}
 
-<hr><p>Last updated: May 02 2020 at 14:06 UTC</p>
+<hr><p>Last updated: May 02 2020 at 15:08 UTC</p>

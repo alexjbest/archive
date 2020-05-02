@@ -1,0 +1,68 @@
+---
+layout: archive
+title: Zulip Chat Archive
+permalink: /stream/113488-general/topic/simp.20hole.20command.html
+---
+
+<h2>Stream: <a href="https://leanprover-community.github.io/archive/stream/113488-general/index.html">general</a></h2>
+<h3>Topic: <a href="https://leanprover-community.github.io/archive/stream/113488-general/topic/simp.20hole.20command.html">simp hole command</a></h3>
+
+<hr>
+
+<base href="https://leanprover.zulipchat.com/">
+
+<head><link href="/style.css" rel="stylesheet"></head>
+
+{% raw %}
+
+<a name="196054090"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113488-general/topic/simp%20hole%20command/near/196054090" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Johan Commelin <a href="https://leanprover-community.github.io/archive/stream/113488-general/topic/simp.20hole.20command.html#196054090">(May 02 2020 at 14:25)</a>:</h4>
+<p>I saw that <code>squeeze_simp</code> now has a hole command that allows you to replace it with its output. Could we also add a hole command to regular <code>simp</code> that will say "replace me by <code>squeeze_simp</code>, and after that by the output of <code>squeeze_simp</code>"?</p>
+
+
+
+<a name="196054900"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113488-general/topic/simp%20hole%20command/near/196054900" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Gabriel Ebner <a href="https://leanprover-community.github.io/archive/stream/113488-general/topic/simp.20hole.20command.html#196054900">(May 02 2020 at 14:47)</a>:</h4>
+<p>Do you mean "code action" by "hole command"?  (Hole commands are <code>{!!}</code>.)</p>
+
+
+
+<a name="196055331"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113488-general/topic/simp%20hole%20command/near/196055331" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Johan Commelin <a href="https://leanprover-community.github.io/archive/stream/113488-general/topic/simp.20hole.20command.html#196055331">(May 02 2020 at 14:59)</a>:</h4>
+<p>I guess I mean "code action". The thing that gives you a <span aria-label="bulb" class="emoji emoji-1f4a1" role="img" title="bulb">:bulb:</span> in VScode</p>
+
+
+
+<a name="196055336"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113488-general/topic/simp%20hole%20command/near/196055336" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Johan Commelin <a href="https://leanprover-community.github.io/archive/stream/113488-general/topic/simp.20hole.20command.html#196055336">(May 02 2020 at 14:59)</a>:</h4>
+<p>I guess hole commands are a special case?</p>
+
+
+
+<a name="196055340"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113488-general/topic/simp%20hole%20command/near/196055340" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Johan Commelin <a href="https://leanprover-community.github.io/archive/stream/113488-general/topic/simp.20hole.20command.html#196055340">(May 02 2020 at 14:59)</a>:</h4>
+<p>Or one is implemented via the other?</p>
+
+
+
+<a name="196055559"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113488-general/topic/simp%20hole%20command/near/196055559" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Gabriel Ebner <a href="https://leanprover-community.github.io/archive/stream/113488-general/topic/simp.20hole.20command.html#196055559">(May 02 2020 at 15:04)</a>:</h4>
+<p>There is a code action for hole commands (<code>{!!}</code>).</p>
+
+
+
+<a name="196055593"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113488-general/topic/simp%20hole%20command/near/196055593" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Gabriel Ebner <a href="https://leanprover-community.github.io/archive/stream/113488-general/topic/simp.20hole.20command.html#196055593">(May 02 2020 at 15:05)</a>:</h4>
+<p>You could add a code action that checks if the word <code>simp</code> is under the cursor and then prompts to prepend <code>squeeze_</code>.</p>
+
+
+
+<a name="196055657"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113488-general/topic/simp%20hole%20command/near/196055657" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Johan Commelin <a href="https://leanprover-community.github.io/archive/stream/113488-general/topic/simp.20hole.20command.html#196055657">(May 02 2020 at 15:06)</a>:</h4>
+<p>But could it do both in one go?</p>
+
+
+
+{% endraw %}
+
+<hr><p>Last updated: May 02 2020 at 15:08 UTC</p>
