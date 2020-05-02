@@ -674,6 +674,58 @@ permalink: /stream/113488-general/topic/Diagnosing.20timeout.html
 
 
 
+<a name="196025676"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113488-general/topic/Diagnosing%20timeout/near/196025676" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Mario Carneiro <a href="https://leanprover-community.github.io/archive/stream/113488-general/topic/Diagnosing.20timeout.html#196025676">(May 02 2020 at 01:12)</a>:</h4>
+<p>I am guessing the term is bad in some way, and the kernel has decided to unfold everything as a result</p>
+
+
+
+<a name="196025757"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113488-general/topic/Diagnosing%20timeout/near/196025757" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Bhavik Mehta <a href="https://leanprover-community.github.io/archive/stream/113488-general/topic/Diagnosing.20timeout.html#196025757">(May 02 2020 at 01:13)</a>:</h4>
+<p><span class="user-mention silent" data-user-id="110038">Kevin Buzzard</span> <a href="#narrow/stream/113488-general/topic/Diagnosing.20timeout/near/195879130" title="#narrow/stream/113488-general/topic/Diagnosing.20timeout/near/195879130">said</a>:</p>
+<blockquote>
+<p>the error is on the sorry, complaining that I'm apologising when I'm all done.</p>
+</blockquote>
+<p>How does that explain this?</p>
+
+
+
+<a name="196025804"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113488-general/topic/Diagnosing%20timeout/near/196025804" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Reid Barton <a href="https://leanprover-community.github.io/archive/stream/113488-general/topic/Diagnosing.20timeout.html#196025804">(May 02 2020 at 01:14)</a>:</h4>
+<p>Writing <code>sorry</code> when there are no goals is an error, right?</p>
+
+
+
+<a name="196025808"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113488-general/topic/Diagnosing%20timeout/near/196025808" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Reid Barton <a href="https://leanprover-community.github.io/archive/stream/113488-general/topic/Diagnosing.20timeout.html#196025808">(May 02 2020 at 01:14)</a>:</h4>
+<p>I didn't follow what Kevin was seeing in his video.</p>
+
+
+
+<a name="196025829"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113488-general/topic/Diagnosing%20timeout/near/196025829" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Reid Barton <a href="https://leanprover-community.github.io/archive/stream/113488-general/topic/Diagnosing.20timeout.html#196025829">(May 02 2020 at 01:15)</a>:</h4>
+<p>In particular, it looks like the tactic block is succeeding but then the resulting term is somehow defective.</p>
+
+
+
+<a name="196026020"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113488-general/topic/Diagnosing%20timeout/near/196026020" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Reid Barton <a href="https://leanprover-community.github.io/archive/stream/113488-general/topic/Diagnosing.20timeout.html#196026020">(May 02 2020 at 01:20)</a>:</h4>
+<p>I suggested <code>set_option trace.type_context.is_def_eq true</code> before but I think it really should have been the one with <code>detail</code>.</p>
+
+
+
+<a name="196026023"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113488-general/topic/Diagnosing%20timeout/near/196026023" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Reid Barton <a href="https://leanprover-community.github.io/archive/stream/113488-general/topic/Diagnosing.20timeout.html#196026023">(May 02 2020 at 01:20)</a>:</h4>
+<p>Try turning that on and running lean on your file from the command line</p>
+
+
+
+<a name="196026044"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113488-general/topic/Diagnosing%20timeout/near/196026044" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Reid Barton <a href="https://leanprover-community.github.io/archive/stream/113488-general/topic/Diagnosing.20timeout.html#196026044">(May 02 2020 at 01:21)</a>:</h4>
+<p>I used these flags today and I think <code>is_def_eq</code> only displays the unification problems, not the trace of trying to solve them.</p>
+
+
+
 {% endraw %}
 
-<hr><p>Last updated: May 02 2020 at 01:09 UTC</p>
+<hr><p>Last updated: May 02 2020 at 02:07 UTC</p>
