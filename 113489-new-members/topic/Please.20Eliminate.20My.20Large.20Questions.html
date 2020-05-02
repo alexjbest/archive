@@ -302,6 +302,159 @@ they talk about benefits of proof irrelevance in 11.2 and 11.4.</p>
 
 
 
+<a name="196023308"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113489-new%20members/topic/Please%20Eliminate%20My%20Large%20Questions/near/196023308" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Brandon Brown <a href="https://leanprover-community.github.io/archive/stream/113489-new-members/topic/Please.20Eliminate.20My.20Large.20Questions.html#196023308">(May 02 2020 at 00:10)</a>:</h4>
+<p>In terms of using Lean for mathematics, we really only need the type checker right?. We don't actually need to compute with values. So technically the type of functions <code>ℕ → ℕ</code> is a theorem and I can "prove" it by constructing e.g. <code>theorem add2 (n : ℕ) : ℕ := n + 2</code> or <code>theorem mul2 (n : ℕ) : ℕ := 2 * n</code> and if I have some downstream theorem that depends on there being a proof of ℕ → ℕ then I could give it <code>add2</code> or <code>mul2</code> and it shouldn't care. Now if I want to use Lean to like crunch numbers for data analysis then I absolutely care whether I'm using <code>add2</code> or <code>mul2</code></p>
+
+
+
+<a name="196023599"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113489-new%20members/topic/Please%20Eliminate%20My%20Large%20Questions/near/196023599" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Reid Barton <a href="https://leanprover-community.github.io/archive/stream/113489-new-members/topic/Please.20Eliminate.20My.20Large.20Questions.html#196023599">(May 02 2020 at 00:16)</a>:</h4>
+<p>If you use the keyword <code>theorem</code> then you cannot use the function defined computationally, and we do not call these theorems nor their definitions proofs.</p>
+
+
+
+<a name="196023614"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113489-new%20members/topic/Please%20Eliminate%20My%20Large%20Questions/near/196023614" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Reid Barton <a href="https://leanprover-community.github.io/archive/stream/113489-new-members/topic/Please.20Eliminate.20My.20Large.20Questions.html#196023614">(May 02 2020 at 00:17)</a>:</h4>
+<p>Of course, Lean is not "definition-irrelevant"!</p>
+
+
+
+<a name="196023634"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113489-new%20members/topic/Please%20Eliminate%20My%20Large%20Questions/near/196023634" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Brandon Brown <a href="https://leanprover-community.github.io/archive/stream/113489-new-members/topic/Please.20Eliminate.20My.20Large.20Questions.html#196023634">(May 02 2020 at 00:18)</a>:</h4>
+<p>But I can compute with the theorem. <code>#reduce mul2 5 -- 10</code></p>
+
+
+
+<a name="196023664"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113489-new%20members/topic/Please%20Eliminate%20My%20Large%20Questions/near/196023664" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Reid Barton <a href="https://leanprover-community.github.io/archive/stream/113489-new-members/topic/Please.20Eliminate.20My.20Large.20Questions.html#196023664">(May 02 2020 at 00:18)</a>:</h4>
+<p><span class="user-mention silent" data-user-id="243102">Brandon Brown</span> <a href="#narrow/stream/113489-new-members/topic/Please.20Eliminate.20My.20Large.20Questions/near/196023025" title="#narrow/stream/113489-new-members/topic/Please.20Eliminate.20My.20Large.20Questions/near/196023025">said</a>:</p>
+<blockquote>
+<p>But even if it changes the proof term I don't see how it should affect anything downstream. It just needs to type check right?</p>
+</blockquote>
+<p>If changing a proof term does not affect anything downstream, it exactly means that you have proof irrelevance.</p>
+
+
+
+<a name="196023697"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113489-new%20members/topic/Please%20Eliminate%20My%20Large%20Questions/near/196023697" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Reid Barton <a href="https://leanprover-community.github.io/archive/stream/113489-new-members/topic/Please.20Eliminate.20My.20Large.20Questions.html#196023697">(May 02 2020 at 00:19)</a>:</h4>
+<p>Okay, but you can't use <code>#eval</code> or <code>lean --run</code> and this is clearly not the way the language is meant to be used.</p>
+
+
+
+<a name="196023767"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113489-new%20members/topic/Please%20Eliminate%20My%20Large%20Questions/near/196023767" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Brandon Brown <a href="https://leanprover-community.github.io/archive/stream/113489-new-members/topic/Please.20Eliminate.20My.20Large.20Questions.html#196023767">(May 02 2020 at 00:21)</a>:</h4>
+<p>But I assume that's just an efficiency thing, no need to generate code for things that won't be used for computation. There's no fundamental reason <code>theorem</code> couldn't simply be an alias for <code>def</code>  , I guess except for the fact that non-constructive proofs won't be computable</p>
+
+
+
+<a name="196023831"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113489-new%20members/topic/Please%20Eliminate%20My%20Large%20Questions/near/196023831" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Reid Barton <a href="https://leanprover-community.github.io/archive/stream/113489-new-members/topic/Please.20Eliminate.20My.20Large.20Questions.html#196023831">(May 02 2020 at 00:23)</a>:</h4>
+<p>I'm increasingly lost here.</p>
+
+
+
+<a name="196023889"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113489-new%20members/topic/Please%20Eliminate%20My%20Large%20Questions/near/196023889" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Reid Barton <a href="https://leanprover-community.github.io/archive/stream/113489-new-members/topic/Please.20Eliminate.20My.20Large.20Questions.html#196023889">(May 02 2020 at 00:24)</a>:</h4>
+<p>Didn't you just suggest that you want to use <code>add2</code> or <code>mul2</code> for computation?</p>
+
+
+
+<a name="196023907"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113489-new%20members/topic/Please%20Eliminate%20My%20Large%20Questions/near/196023907" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Brandon Brown <a href="https://leanprover-community.github.io/archive/stream/113489-new-members/topic/Please.20Eliminate.20My.20Large.20Questions.html#196023907">(May 02 2020 at 00:24)</a>:</h4>
+<p>I'm saying sometimes I care about computation sometimes I only care about type correctness</p>
+
+
+
+<a name="196023915"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113489-new%20members/topic/Please%20Eliminate%20My%20Large%20Questions/near/196023915" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Reid Barton <a href="https://leanprover-community.github.io/archive/stream/113489-new-members/topic/Please.20Eliminate.20My.20Large.20Questions.html#196023915">(May 02 2020 at 00:24)</a>:</h4>
+<p>If you don't want to distinguish between <code>theorem</code> and <code>def</code> then fine: we call something a "theorem" when its type is a Prop, and a "definition" otherwise.</p>
+
+
+
+<a name="196023923"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113489-new%20members/topic/Please%20Eliminate%20My%20Large%20Questions/near/196023923" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Reid Barton <a href="https://leanprover-community.github.io/archive/stream/113489-new-members/topic/Please.20Eliminate.20My.20Large.20Questions.html#196023923">(May 02 2020 at 00:25)</a>:</h4>
+<p>Great, so use Prop when you only care about proving and don't use it when you care about computation.</p>
+
+
+
+<a name="196023929"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113489-new%20members/topic/Please%20Eliminate%20My%20Large%20Questions/near/196023929" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Reid Barton <a href="https://leanprover-community.github.io/archive/stream/113489-new-members/topic/Please.20Eliminate.20My.20Large.20Questions.html#196023929">(May 02 2020 at 00:25)</a>:</h4>
+<p>By proof we mean some <code>p</code> where the type of <code>p</code> is a Prop.</p>
+
+
+
+<a name="196023935"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113489-new%20members/topic/Please%20Eliminate%20My%20Large%20Questions/near/196023935" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Reid Barton <a href="https://leanprover-community.github.io/archive/stream/113489-new-members/topic/Please.20Eliminate.20My.20Large.20Questions.html#196023935">(May 02 2020 at 00:25)</a>:</h4>
+<p>Then, proof irrelevance is what we want because we don't intend to compute with such <code>p</code> anyways.</p>
+
+
+
+<a name="196024167"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113489-new%20members/topic/Please%20Eliminate%20My%20Large%20Questions/near/196024167" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Reid Barton <a href="https://leanprover-community.github.io/archive/stream/113489-new-members/topic/Please.20Eliminate.20My.20Large.20Questions.html#196024167">(May 02 2020 at 00:32)</a>:</h4>
+<p>We don't use the word "proof" for things like <code>add2</code>. I think other sources (e.g., the HoTT book?) may use the term in a sense which includes things like <code>add2</code>.</p>
+
+
+
+<a name="196024285"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113489-new%20members/topic/Please%20Eliminate%20My%20Large%20Questions/near/196024285" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Brandon Brown <a href="https://leanprover-community.github.io/archive/stream/113489-new-members/topic/Please.20Eliminate.20My.20Large.20Questions.html#196024285">(May 02 2020 at 00:35)</a>:</h4>
+<p>But that's just a convention</p>
+
+
+
+<a name="196024353"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113489-new%20members/topic/Please%20Eliminate%20My%20Large%20Questions/near/196024353" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Brandon Brown <a href="https://leanprover-community.github.io/archive/stream/113489-new-members/topic/Please.20Eliminate.20My.20Large.20Questions.html#196024353">(May 02 2020 at 00:37)</a>:</h4>
+<p>Anyway, I think I need to sit on this for awhile before I can come back with anything more interesting. I can see that proof irrelevance (just using the type checker) is all we need for ordinary mathematics. Perhaps there is no benefit if all theorems had computable terms, but I still haven't ruled it out and it's something I want to think about more.</p>
+
+
+
+<a name="196024354"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113489-new%20members/topic/Please%20Eliminate%20My%20Large%20Questions/near/196024354" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Chris Hughes <a href="https://leanprover-community.github.io/archive/stream/113489-new-members/topic/Please.20Eliminate.20My.20Large.20Questions.html#196024354">(May 02 2020 at 00:37)</a>:</h4>
+<p>Is callcc consistent with funext? It seems like the implementation could return different thing for extensionally equal functions as input.</p>
+
+
+
+<a name="196024358"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113489-new%20members/topic/Please%20Eliminate%20My%20Large%20Questions/near/196024358" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Reid Barton <a href="https://leanprover-community.github.io/archive/stream/113489-new-members/topic/Please.20Eliminate.20My.20Large.20Questions.html#196024358">(May 02 2020 at 00:37)</a>:</h4>
+<p>Of course, but it is the convention we are using in the context of the term "proof irrelevance"</p>
+
+
+
+<a name="196024645"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113489-new%20members/topic/Please%20Eliminate%20My%20Large%20Questions/near/196024645" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Reid Barton <a href="https://leanprover-community.github.io/archive/stream/113489-new-members/topic/Please.20Eliminate.20My.20Large.20Questions.html#196024645">(May 02 2020 at 00:44)</a>:</h4>
+<p>Well <code>((A -&gt; B) -&gt; A) -&gt; A</code> can be constructed using <code>choice</code>, right? The problem only begins when you want to start asserting equations about it</p>
+
+
+
+<a name="196024860"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113489-new%20members/topic/Please%20Eliminate%20My%20Large%20Questions/near/196024860" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Chris Hughes <a href="https://leanprover-community.github.io/archive/stream/113489-new-members/topic/Please.20Eliminate.20My.20Large.20Questions.html#196024860">(May 02 2020 at 00:49)</a>:</h4>
+<p>Does this application of callcc terminate? The term of type <code>A</code> I returned used the function <code>A -&gt; B</code> that doesn't exist.</p>
+<div class="codehilite"><pre><span></span><code><span class="kn">axiom</span> <span class="n">callcc</span> <span class="o">(</span><span class="n">α</span> <span class="n">β</span> <span class="o">:</span> <span class="kt">Prop</span><span class="o">)</span> <span class="o">:</span> <span class="o">((</span><span class="n">α</span> <span class="bp">→</span> <span class="n">β</span><span class="o">)</span> <span class="bp">→</span> <span class="n">α</span><span class="o">)</span> <span class="bp">→</span> <span class="n">α</span>
+
+<span class="kn">example</span> <span class="o">{</span><span class="n">p</span> <span class="o">:</span> <span class="kt">Prop</span><span class="o">}</span> <span class="o">:</span> <span class="n">p</span> <span class="bp">∨</span> <span class="bp">¬</span> <span class="n">p</span> <span class="o">:=</span>
+<span class="n">callcc</span> <span class="bp">_</span> <span class="n">false</span> <span class="o">(</span><span class="bp">λ</span> <span class="n">h</span><span class="o">,</span> <span class="n">or</span><span class="bp">.</span><span class="n">inr</span> <span class="o">(</span><span class="n">h</span> <span class="err">∘</span> <span class="n">or</span><span class="bp">.</span><span class="n">inl</span><span class="o">))</span>
+</code></pre></div>
+
+
+
+<a name="196024932"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113489-new%20members/topic/Please%20Eliminate%20My%20Large%20Questions/near/196024932" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Chris Hughes <a href="https://leanprover-community.github.io/archive/stream/113489-new-members/topic/Please.20Eliminate.20My.20Large.20Questions.html#196024932">(May 02 2020 at 00:50)</a>:</h4>
+<p>I might have misunderstood what it does.</p>
+
+
+
+<a name="196025270"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113489-new%20members/topic/Please%20Eliminate%20My%20Large%20Questions/near/196025270" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Reid Barton <a href="https://leanprover-community.github.io/archive/stream/113489-new-members/topic/Please.20Eliminate.20My.20Large.20Questions.html#196025270">(May 02 2020 at 00:59)</a>:</h4>
+<p>I think any function you can write using <code>callcc</code> will terminate, but certainly this one does. Moreover, if you compose it with <code>p ∨ ¬ p -&gt; bool</code> defined in the obvious way, it will produce <code>ff</code>.</p>
+
+
+
+<a name="196025322"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113489-new%20members/topic/Please%20Eliminate%20My%20Large%20Questions/near/196025322" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Reid Barton <a href="https://leanprover-community.github.io/archive/stream/113489-new-members/topic/Please.20Eliminate.20My.20Large.20Questions.html#196025322">(May 02 2020 at 01:00)</a>:</h4>
+<p>Operationally this is because the <code>p ∨ ¬ p -&gt; bool</code> function doesn't inspect the proof of <code>¬ p</code>, which is where the continuation is stored, so execution will follow the normal path</p>
+
+
+
 {% endraw %}
 
-<hr><p>Last updated: May 02 2020 at 00:08 UTC</p>
+<hr><p>Last updated: May 02 2020 at 01:09 UTC</p>
