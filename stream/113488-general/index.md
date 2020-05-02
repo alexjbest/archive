@@ -9,11 +9,11 @@ permalink: /stream/113488-general/index.html
 
 ### Topics:
 
+* [big ops](topic/big.20ops.html) (106 messages, latest: May 02 2020 at 05:14)
 * [Diagnosing timeout](topic/Diagnosing.20timeout.html) (89 messages, latest: May 02 2020 at 01:21)
 * [Invitation to join the Codewars Lean community, Round 2](topic/Invitation.20to.20join.20the.20Codewars.20Lean.20community.2C.20Round.202.html) (276 messages, latest: May 02 2020 at 01:03)
 * [how do I step through proofs?](topic/how.20do.20I.20step.20through.20proofs.3F.html) (87 messages, latest: May 02 2020 at 00:30)
 * [abel idempotence](topic/abel.20idempotence.html) (6 messages, latest: May 01 2020 at 22:27)
-* [big ops](topic/big.20ops.html) (105 messages, latest: May 01 2020 at 21:29)
 * [Specialized `ext` lemmas](topic/Specialized.20.60ext.60.20lemmas.html) (9 messages, latest: May 01 2020 at 20:41)
 * [documenting notation](topic/documenting.20notation.html) (3 messages, latest: May 01 2020 at 20:35)
 * [sub_eq_add_neg](topic/sub_eq_add_neg.html) (13 messages, latest: May 01 2020 at 18:32)
@@ -2748,4 +2748,4 @@ permalink: /stream/113488-general/index.html
 * [test](topic/test.html) (4 messages, latest: Feb 26 2018 at 16:22)
 * [welcome](topic/welcome.html) (1 message, latest: Feb 26 2018 at 16:02)
 
-<hr><p>Last updated: May 02 2020 at 05:07 UTC</p>
+<hr><p>Last updated: May 02 2020 at 06:06 UTC</p>
