@@ -9,6 +9,7 @@ permalink: /stream/113488-general/index.html
 
 ### Topics:
 
+* [seminars](topic/seminars.html) (60 messages, latest: May 02 2020 at 12:35)
 * [linter for instance names](topic/linter.20for.20instance.20names.html) (2 messages, latest: May 02 2020 at 11:11)
 * [Lean 3.10](topic/Lean.203.2E10.html) (19 messages, latest: May 02 2020 at 10:39)
 * [big ops](topic/big.20ops.html) (107 messages, latest: May 02 2020 at 09:00)
@@ -26,7 +27,6 @@ permalink: /stream/113488-general/index.html
 * [ordered monoids](topic/ordered.20monoids.html) (94 messages, latest: May 01 2020 at 14:52)
 * [leanproject access denied](topic/leanproject.20access.20denied.html) (40 messages, latest: May 01 2020 at 14:32)
 * [set_option trace.simplify.rewrite true](topic/set_option.20trace.2Esimplify.2Erewrite.20true.html) (10 messages, latest: May 01 2020 at 13:05)
-* [seminars](topic/seminars.html) (39 messages, latest: May 01 2020 at 11:51)
 * [simp linter and structure fields](topic/simp.20linter.20and.20structure.20fields.html) (13 messages, latest: May 01 2020 at 09:01)
 * [is this name used in mathlib](topic/is.20this.20name.20used.20in.20mathlib.html) (9 messages, latest: May 01 2020 at 09:00)
 * [partrec_code](topic/partrec_code.html) (35 messages, latest: May 01 2020 at 06:41)
@@ -2751,4 +2751,4 @@ permalink: /stream/113488-general/index.html
 * [test](topic/test.html) (4 messages, latest: Feb 26 2018 at 16:22)
 * [welcome](topic/welcome.html) (1 message, latest: Feb 26 2018 at 16:02)
 
-<hr><p>Last updated: May 02 2020 at 12:06 UTC</p>
+<hr><p>Last updated: May 02 2020 at 13:07 UTC</p>

@@ -253,6 +253,144 @@ permalink: /stream/113488-general/topic/seminars.html
 
 
 
+<a name="196048802"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113488-general/topic/seminars/near/196048802" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Valery Isaev <a href="https://leanprover-community.github.io/archive/stream/113488-general/topic/seminars.html#196048802">(May 02 2020 at 12:08)</a>:</h4>
+<p>Hi everyone! Just found this thread. I want to address Mario's concern about the core. I mentioned in the talk that it is that large primarily because of efficiency considerations. I thought about implementing a smaller version of the core and a translator between them. It should be easy to eliminate some of the features (like insert missing clauses or replace p.m. with J). I think eliminating subtyping for classes might be a big problem for the efficiency though because every instance of a subclass should be recreated when it is passed to a function that expects the super class. This means that there will be several copies of the same expression and if the expression is large this will be a problem. I think there can be some exponential blow ups.</p>
+
+
+
+<a name="196048881"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113488-general/topic/seminars/near/196048881" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Valery Isaev <a href="https://leanprover-community.github.io/archive/stream/113488-general/topic/seminars.html#196048881">(May 02 2020 at 12:11)</a>:</h4>
+<p><span class="user-mention silent" data-user-id="110049">Mario Carneiro</span> <a href="#narrow/stream/113488-general/topic/seminars/near/195501361" title="#narrow/stream/113488-general/topic/seminars/near/195501361">said</a>:</p>
+<blockquote>
+<p>they also have eta for structures which might be part of why this works</p>
+</blockquote>
+<p>I think subtyping is also essential for this feature. Btw, did you mean lean doesn't have eta for structures?</p>
+
+
+
+<a name="196049004"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113488-general/topic/seminars/near/196049004" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Johan Commelin <a href="https://leanprover-community.github.io/archive/stream/113488-general/topic/seminars.html#196049004">(May 02 2020 at 12:15)</a>:</h4>
+<p>Nope.</p>
+
+
+
+<a name="196049006"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113488-general/topic/seminars/near/196049006" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Johan Commelin <a href="https://leanprover-community.github.io/archive/stream/113488-general/topic/seminars.html#196049006">(May 02 2020 at 12:15)</a>:</h4>
+<p>We have lots of <code>cases X; cases Y; congr</code> proofs.</p>
+
+
+
+<a name="196049013"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113488-general/topic/seminars/near/196049013" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Johan Commelin <a href="https://leanprover-community.github.io/archive/stream/113488-general/topic/seminars.html#196049013">(May 02 2020 at 12:15)</a>:</h4>
+<p>And <code>p</code> is not defeq to <code>(p.1, p.2)</code>.</p>
+
+
+
+<a name="196049073"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113488-general/topic/seminars/near/196049073" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Valery Isaev <a href="https://leanprover-community.github.io/archive/stream/113488-general/topic/seminars.html#196049073">(May 02 2020 at 12:17)</a>:</h4>
+<p>What about eta for <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi mathvariant="normal">Π</mi></mrow><annotation encoding="application/x-tex">\Pi</annotation></semantics></math></span><span aria-hidden="true" class="katex-html"><span class="base"><span class="strut" style="height:0.68333em;vertical-align:0em;"></span><span class="mord">Π</span></span></span></span>-types?</p>
+
+
+
+<a name="196049202"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113488-general/topic/seminars/near/196049202" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Johan Commelin <a href="https://leanprover-community.github.io/archive/stream/113488-general/topic/seminars.html#196049202">(May 02 2020 at 12:20)</a>:</h4>
+<p>Hmm, I wouldn't know. I'm not an expert. But I think we have very little <code>eta</code>.</p>
+
+
+
+<a name="196049207"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113488-general/topic/seminars/near/196049207" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Johan Commelin <a href="https://leanprover-community.github.io/archive/stream/113488-general/topic/seminars.html#196049207">(May 02 2020 at 12:21)</a>:</h4>
+<p>Wait, you mean <code>f = \lambda x, f x</code>?</p>
+
+
+
+<a name="196049208"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113488-general/topic/seminars/near/196049208" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Johan Commelin <a href="https://leanprover-community.github.io/archive/stream/113488-general/topic/seminars.html#196049208">(May 02 2020 at 12:21)</a>:</h4>
+<p>We have that one</p>
+
+
+
+<a name="196049273"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113488-general/topic/seminars/near/196049273" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Valery Isaev <a href="https://leanprover-community.github.io/archive/stream/113488-general/topic/seminars.html#196049273">(May 02 2020 at 12:22)</a>:</h4>
+<p><span class="user-mention silent" data-user-id="112680">Johan Commelin</span> <a href="#narrow/stream/113488-general/topic/seminars/near/196049207" title="#narrow/stream/113488-general/topic/seminars/near/196049207">said</a>:</p>
+<blockquote>
+<p>Wait, you mean <code>f = \lambda x, f x</code>?</p>
+</blockquote>
+<p>Yes, this one.</p>
+
+
+
+<a name="196049283"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113488-general/topic/seminars/near/196049283" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Johan Commelin <a href="https://leanprover-community.github.io/archive/stream/113488-general/topic/seminars.html#196049283">(May 02 2020 at 12:23)</a>:</h4>
+<p>Ok, that one is fine.</p>
+
+
+
+<a name="196049354"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113488-general/topic/seminars/near/196049354" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Kevin Buzzard <a href="https://leanprover-community.github.io/archive/stream/113488-general/topic/seminars.html#196049354">(May 02 2020 at 12:25)</a>:</h4>
+<p>It's not defeq though, it's a theorem, right?</p>
+
+
+
+<a name="196049358"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113488-general/topic/seminars/near/196049358" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Kevin Buzzard <a href="https://leanprover-community.github.io/archive/stream/113488-general/topic/seminars.html#196049358">(May 02 2020 at 12:25)</a>:</h4>
+<p>Like eta for structures is a theorem</p>
+
+
+
+<a name="196049423"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113488-general/topic/seminars/near/196049423" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Valery Isaev <a href="https://leanprover-community.github.io/archive/stream/113488-general/topic/seminars.html#196049423">(May 02 2020 at 12:27)</a>:</h4>
+<p>If it's a theorem, then it's not eta.</p>
+
+
+
+<a name="196049535"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113488-general/topic/seminars/near/196049535" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Marc Huisinga <a href="https://leanprover-community.github.io/archive/stream/113488-general/topic/seminars.html#196049535">(May 02 2020 at 12:28)</a>:</h4>
+<p>if i am reading mario's master thesis right, then eta is defeq</p>
+
+
+
+<a name="196049539"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113488-general/topic/seminars/near/196049539" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Marc Huisinga <a href="https://leanprover-community.github.io/archive/stream/113488-general/topic/seminars.html#196049539">(May 02 2020 at 12:29)</a>:</h4>
+<p>there's an eta rule in 2.2</p>
+
+
+
+<a name="196049545"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113488-general/topic/seminars/near/196049545" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Marc Huisinga <a href="https://leanprover-community.github.io/archive/stream/113488-general/topic/seminars.html#196049545">(May 02 2020 at 12:29)</a>:</h4>
+<p>(<a href="https://github.com/digama0/lean-type-theory/releases/download/v1.0/main.pdf" title="https://github.com/digama0/lean-type-theory/releases/download/v1.0/main.pdf">https://github.com/digama0/lean-type-theory/releases/download/v1.0/main.pdf</a>)</p>
+
+
+
+<a name="196049746"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113488-general/topic/seminars/near/196049746" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Chris Hughes <a href="https://leanprover-community.github.io/archive/stream/113488-general/topic/seminars.html#196049746">(May 02 2020 at 12:34)</a>:</h4>
+<p><code>f = \la x, f x</code> is a defeq. I'm not sure it would even be provable if it wasn't a defeq.</p>
+
+
+
+<a name="196049768"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113488-general/topic/seminars/near/196049768" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Johan Commelin <a href="https://leanprover-community.github.io/archive/stream/113488-general/topic/seminars.html#196049768">(May 02 2020 at 12:35)</a>:</h4>
+<p>It's provable by <code>funext</code> and <code>beta</code>? (Misa very much out of comfort zone, now)</p>
+
+
+
+<a name="196049771"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113488-general/topic/seminars/near/196049771" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Valery Isaev <a href="https://leanprover-community.github.io/archive/stream/113488-general/topic/seminars.html#196049771">(May 02 2020 at 12:35)</a>:</h4>
+<p><span class="user-mention silent" data-user-id="110044">Chris Hughes</span> <a href="#narrow/stream/113488-general/topic/seminars/near/196049746" title="#narrow/stream/113488-general/topic/seminars/near/196049746">said</a>:</p>
+<blockquote>
+<p><code>f = \la x, f x</code> is a defeq. I'm not sure it would even be provable if it wasn't a defeq.</p>
+</blockquote>
+<p>You can always add it as an axiom :)</p>
+
+
+
+<a name="196049774"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113488-general/topic/seminars/near/196049774" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Chris Hughes <a href="https://leanprover-community.github.io/archive/stream/113488-general/topic/seminars.html#196049774">(May 02 2020 at 12:35)</a>:</h4>
+<p>You need it to prove <code>funext</code> I think.</p>
+
+
+
 {% endraw %}
 
-<hr><p>Last updated: May 02 2020 at 12:06 UTC</p>
+<hr><p>Last updated: May 02 2020 at 13:07 UTC</p>

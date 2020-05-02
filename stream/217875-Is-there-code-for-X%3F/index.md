@@ -9,7 +9,7 @@ permalink: /stream/217875-Is-there-code-for-X%3F/index.html
 
 ### Topics:
 
-* [basis of free module `X -> R` with \[fintype X\]?](topic/basis.20of.20free.20module.20.60X.20-.3E.20R.60.20with.20.5Bfintype.20X.5D.3F.html) (3 messages, latest: May 02 2020 at 12:06)
+* [basis of free module `X -> R` with \[fintype X\]?](topic/basis.20of.20free.20module.20.60X.20-.3E.20R.60.20with.20.5Bfintype.20X.5D.3F.html) (4 messages, latest: May 02 2020 at 12:08)
 * [projectors](topic/projectors.html) (13 messages, latest: Apr 30 2020 at 23:27)
 * [real powers of positive reals?](topic/real.20powers.20of.20positive.20reals.3F.html) (17 messages, latest: Apr 30 2020 at 15:01)
 * [bnot (a && b) = (bnot a) \|\| (bnot b)](topic/bnot.20(a.20.26.26.20b).20.3D.20(bnot.20a).20.7C.7C.20(bnot.20b).html) (27 messages, latest: Apr 25 2020 at 19:48)
@@ -42,4 +42,4 @@ permalink: /stream/217875-Is-there-code-for-X%3F/index.html
 * [Super vector space](topic/Super.20vector.20space.html) (1 message, latest: Dec 22 2019 at 14:10)
 * [stream events](topic/stream.20events.html) (1 message, latest: Dec 22 2019 at 14:08)
 
-<hr><p>Last updated: May 02 2020 at 12:06 UTC</p>
+<hr><p>Last updated: May 02 2020 at 13:07 UTC</p>
