@@ -207,6 +207,96 @@ the small goal is to talk about extending a finitely supported function by one p
 
 
 
+<a name="196028887"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113489-new%20members/topic/functions%20with%20finite%20support/near/196028887" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Jalex Stark <a href="https://leanprover-community.github.io/archive/stream/113489-new-members/topic/functions.20with.20finite.20support.html#196028887">(May 02 2020 at 02:43)</a>:</h4>
+<p>Okay I think I'm still missing something fundamental. I want to define a term <code>def partial_embedding (f : M →. N) : Prop </code> which morally means "whenever <code>f a</code> and <code>f b</code> are defined, we have <code>a \le b \iff f a \le f b</code>"</p>
+
+
+
+<a name="196028888"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113489-new%20members/topic/functions%20with%20finite%20support/near/196028888" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Jalex Stark <a href="https://leanprover-community.github.io/archive/stream/113489-new-members/topic/functions.20with.20finite.20support.html#196028888">(May 02 2020 at 02:43)</a>:</h4>
+<p>This is what I came up with, and I think it is bad in a way that means I'm missing something fundamental</p>
+<div class="codehilite"><pre><span></span><code><span class="kn">import</span> <span class="n">data</span><span class="bp">.</span><span class="n">pfun</span>
+<span class="kn">open</span> <span class="n">pfun</span>
+
+<span class="kn">variables</span> <span class="o">{</span><span class="n">M</span> <span class="n">N</span> <span class="o">:</span> <span class="kt">Type</span> <span class="n">u</span><span class="o">}</span> <span class="o">[</span><span class="n">DLO</span> <span class="n">M</span><span class="o">]</span> <span class="o">[</span><span class="n">DLO</span> <span class="n">N</span><span class="o">]</span>
+
+<span class="n">def</span> <span class="n">partial_embedding_at_points</span> <span class="o">(</span><span class="n">f</span> <span class="o">:</span> <span class="n">M</span> <span class="bp">→.</span> <span class="n">N</span><span class="o">)</span> <span class="o">{</span><span class="n">a</span> <span class="n">b</span> <span class="o">:</span> <span class="n">M</span><span class="o">}</span> <span class="o">(</span><span class="n">ha</span> <span class="o">:</span> <span class="n">a</span> <span class="err">∈</span> <span class="n">dom</span> <span class="n">f</span><span class="o">)</span> <span class="o">(</span><span class="n">hb</span> <span class="o">:</span> <span class="n">b</span> <span class="err">∈</span> <span class="n">dom</span> <span class="n">f</span><span class="o">)</span> <span class="o">:</span> <span class="kt">Prop</span>
+<span class="o">:=</span> <span class="o">(</span> <span class="n">a</span> <span class="bp">≤</span> <span class="n">b</span> <span class="bp">↔</span> <span class="o">(</span><span class="n">f</span> <span class="n">a</span><span class="o">)</span><span class="bp">.</span><span class="n">get</span> <span class="n">ha</span> <span class="bp">≤</span> <span class="o">(</span><span class="n">f</span> <span class="n">b</span><span class="o">)</span><span class="bp">.</span><span class="n">get</span> <span class="n">hb</span> <span class="o">)</span>
+
+<span class="n">def</span> <span class="n">partial_embedding_aux</span> <span class="o">(</span><span class="n">f</span> <span class="o">:</span> <span class="n">M</span> <span class="bp">→.</span> <span class="n">N</span><span class="o">)</span> <span class="o">(</span><span class="n">a</span> <span class="n">b</span> <span class="o">:</span> <span class="n">M</span><span class="o">)</span> <span class="o">:</span> <span class="kt">Prop</span> <span class="o">:=</span>
+<span class="k">begin</span>
+<span class="n">by_cases</span> <span class="n">a</span> <span class="err">∈</span> <span class="n">dom</span> <span class="n">f</span><span class="o">,</span>
+    <span class="n">swap</span><span class="o">,</span> <span class="n">exact</span> <span class="n">true</span><span class="o">,</span> <span class="n">rename</span> <span class="n">h</span> <span class="n">ha</span><span class="o">,</span>
+<span class="n">by_cases</span> <span class="n">b</span> <span class="err">∈</span> <span class="n">dom</span> <span class="n">f</span><span class="o">,</span>
+    <span class="n">swap</span><span class="o">,</span> <span class="n">exact</span> <span class="n">true</span><span class="o">,</span> <span class="n">rename</span> <span class="n">h</span> <span class="n">hb</span><span class="o">,</span>
+<span class="n">exact</span> <span class="n">partial_embedding_at_points</span> <span class="n">f</span> <span class="n">ha</span> <span class="n">hb</span><span class="o">,</span>
+<span class="kn">end</span>
+
+<span class="n">def</span> <span class="n">partial_embedding</span> <span class="o">(</span><span class="n">f</span> <span class="o">:</span> <span class="n">M</span> <span class="bp">→.</span> <span class="n">N</span><span class="o">)</span> <span class="o">:</span> <span class="kt">Prop</span> <span class="o">:=</span> <span class="bp">∀</span> <span class="n">a</span> <span class="n">b</span> <span class="o">:</span> <span class="n">M</span><span class="o">,</span> <span class="n">partial_embedding_aux</span> <span class="n">f</span> <span class="n">a</span> <span class="n">b</span>
+</code></pre></div>
+
+
+
+<a name="196028894"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113489-new%20members/topic/functions%20with%20finite%20support/near/196028894" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Jalex Stark <a href="https://leanprover-community.github.io/archive/stream/113489-new-members/topic/functions.20with.20finite.20support.html#196028894">(May 02 2020 at 02:43)</a>:</h4>
+<p>(oof I did not mean to have "press enter to send" checked)</p>
+
+
+
+<a name="196029019"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113489-new%20members/topic/functions%20with%20finite%20support/near/196029019" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Mario Carneiro <a href="https://leanprover-community.github.io/archive/stream/113489-new-members/topic/functions.20with.20finite.20support.html#196029019">(May 02 2020 at 02:46)</a>:</h4>
+<div class="codehilite"><pre><span></span><code><span class="n">def</span> <span class="n">partial_embedding</span> <span class="o">(</span><span class="n">f</span> <span class="o">:</span> <span class="n">M</span> <span class="bp">→.</span> <span class="n">N</span><span class="o">)</span> <span class="o">:</span> <span class="kt">Prop</span> <span class="o">:=</span>
+<span class="bp">∀</span> <span class="n">a</span> <span class="n">b</span> <span class="n">ha</span> <span class="n">hb</span><span class="o">,</span> <span class="bp">@</span><span class="n">partial_embedding_at_points</span> <span class="bp">_</span> <span class="bp">_</span> <span class="bp">_</span> <span class="bp">_</span> <span class="n">f</span> <span class="n">a</span> <span class="n">b</span> <span class="n">ha</span> <span class="n">hb</span>
+</code></pre></div>
+
+
+
+<a name="196029028"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113489-new%20members/topic/functions%20with%20finite%20support/near/196029028" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Jalex Stark <a href="https://leanprover-community.github.io/archive/stream/113489-new-members/topic/functions.20with.20finite.20support.html#196029028">(May 02 2020 at 02:47)</a>:</h4>
+<p>oh i didn't know you could leave the type unspecified in a quantifier. that's great!</p>
+
+
+
+<a name="196029066"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113489-new%20members/topic/functions%20with%20finite%20support/near/196029066" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Mario Carneiro <a href="https://leanprover-community.github.io/archive/stream/113489-new-members/topic/functions.20with.20finite.20support.html#196029066">(May 02 2020 at 02:48)</a>:</h4>
+<div class="codehilite"><pre><span></span><code><span class="kn">import</span> <span class="n">data</span><span class="bp">.</span><span class="n">pfun</span>
+<span class="kn">open</span> <span class="n">pfun</span>
+
+<span class="kn">universe</span> <span class="n">u</span>
+<span class="kn">variables</span> <span class="o">{</span><span class="n">M</span> <span class="n">N</span> <span class="o">:</span> <span class="kt">Type</span> <span class="n">u</span><span class="o">}</span> <span class="o">[</span><span class="n">preorder</span> <span class="n">M</span><span class="o">]</span> <span class="o">[</span><span class="n">preorder</span> <span class="n">N</span><span class="o">]</span>
+
+<span class="n">def</span> <span class="n">partial_embedding</span> <span class="o">(</span><span class="n">f</span> <span class="o">:</span> <span class="n">M</span> <span class="bp">→.</span> <span class="n">N</span><span class="o">)</span> <span class="o">:</span> <span class="kt">Prop</span> <span class="o">:=</span>
+<span class="bp">∀</span> <span class="n">a</span> <span class="n">b</span> <span class="n">ha</span> <span class="n">hb</span><span class="o">,</span> <span class="n">a</span> <span class="bp">≤</span> <span class="n">b</span> <span class="bp">↔</span> <span class="o">(</span><span class="n">f</span> <span class="n">a</span><span class="o">)</span><span class="bp">.</span><span class="n">get</span> <span class="n">ha</span> <span class="bp">≤</span> <span class="o">(</span><span class="n">f</span> <span class="n">b</span><span class="o">)</span><span class="bp">.</span><span class="n">get</span> <span class="n">hb</span>
+</code></pre></div>
+
+
+
+<a name="196029289"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113489-new%20members/topic/functions%20with%20finite%20support/near/196029289" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Jalex Stark <a href="https://leanprover-community.github.io/archive/stream/113489-new-members/topic/functions.20with.20finite.20support.html#196029289">(May 02 2020 at 02:54)</a>:</h4>
+<p>The next broken bit is this:</p>
+<div class="codehilite"><pre><span></span><code><span class="kn">structure</span> <span class="n">embedding_extension</span> <span class="o">(</span><span class="n">f</span> <span class="o">:</span> <span class="n">M</span> <span class="bp">→.</span> <span class="n">N</span><span class="o">)</span> <span class="o">(</span><span class="n">hf</span> <span class="o">:</span> <span class="n">partial_embedding</span> <span class="n">f</span><span class="o">)</span> <span class="o">(</span><span class="n">x</span> <span class="o">:</span> <span class="n">M</span><span class="o">)</span> <span class="o">:=</span> <span class="n">mk</span> <span class="bp">::</span> <span class="o">(</span><span class="n">F</span> <span class="o">:</span> <span class="n">M</span> <span class="bp">→.</span> <span class="n">N</span><span class="o">)</span> <span class="o">(</span><span class="n">embedding</span> <span class="o">:</span> <span class="n">partial_embedding</span> <span class="n">F</span><span class="o">)</span> <span class="o">(</span><span class="n">extension</span> <span class="o">:</span> <span class="n">dom</span> <span class="n">f</span> <span class="bp">≤</span> <span class="n">dom</span> <span class="n">F</span><span class="o">)</span> <span class="o">(</span><span class="n">supports_x</span> <span class="o">:</span> <span class="n">x</span> <span class="err">∈</span> <span class="n">dom</span> <span class="n">F</span><span class="o">)</span>
+
+<span class="n">def</span> <span class="n">finite_embedding_extension</span> <span class="o">(</span><span class="n">f</span> <span class="o">:</span> <span class="n">M</span> <span class="bp">→.</span> <span class="n">N</span><span class="o">)</span> <span class="o">(</span><span class="n">hf</span> <span class="o">:</span> <span class="n">partial_embedding</span> <span class="n">f</span><span class="o">)</span> <span class="o">(</span><span class="n">x</span> <span class="o">:</span> <span class="n">M</span><span class="o">)</span> <span class="o">(</span><span class="n">set</span><span class="bp">.</span><span class="n">finite</span> <span class="n">dom</span> <span class="n">f</span><span class="o">)</span> <span class="o">:</span> <span class="n">embedding_extension</span> <span class="n">f</span> <span class="n">hf</span> <span class="n">x</span> <span class="o">:=</span> <span class="n">sorry</span>
+</code></pre></div>
+
+
+<p>The problem is that the type signature of the second term doesn't compile. The error message looks to me like it says it doesn't know <code>partial_embedding f = partial_embedding f</code></p>
+<div class="codehilite"><pre><span></span><code><span class="n">type</span> <span class="n">mismatch</span> <span class="n">at</span> <span class="n">application</span>
+  <span class="n">embedding_extension</span> <span class="n">f</span> <span class="n">hf</span>
+<span class="n">term</span>
+  <span class="n">hf</span>
+<span class="n">has</span> <span class="n">type</span>
+  <span class="bp">@</span><span class="n">partial_embedding</span> <span class="n">M</span> <span class="n">N</span> <span class="bp">_</span><span class="n">inst_1</span> <span class="bp">_</span><span class="n">inst_2</span> <span class="n">f</span>
+<span class="n">but</span> <span class="n">is</span> <span class="n">expected</span> <span class="n">to</span> <span class="k">have</span> <span class="n">type</span>
+  <span class="bp">@</span><span class="n">partial_embedding</span> <span class="err">?</span><span class="n">m_1</span> <span class="err">?</span><span class="n">m_2</span> <span class="err">?</span><span class="n">m_3</span> <span class="err">?</span><span class="n">m_4</span> <span class="n">f</span>
+</code></pre></div>
+
+
+<p>or maybe like it's upset that it got concrete variables when it expected metavariables?</p>
+
+
+
 {% endraw %}
 
-<hr><p>Last updated: May 02 2020 at 02:07 UTC</p>
+<hr><p>Last updated: May 02 2020 at 03:05 UTC</p>
