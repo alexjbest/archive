@@ -9,7 +9,7 @@ permalink: /stream/116395-maths/index.html
 
 ### Topics:
 
-* [golfing challenge](topic/golfing.20challenge.html) (1 message, latest: May 02 2020 at 17:03)
+* [golfing challenge](topic/golfing.20challenge.html) (2 messages, latest: May 02 2020 at 18:15)
 * [applicative ultrapower](topic/applicative.20ultrapower.html) (16 messages, latest: May 02 2020 at 11:18)
 * [inv_neg](topic/inv_neg.html) (5 messages, latest: May 02 2020 at 11:16)
 * [cancel_epi](topic/cancel_epi.html) (2 messages, latest: May 01 2020 at 12:29)
@@ -883,4 +883,4 @@ permalink: /stream/116395-maths/index.html
 * [free group](topic/free.20group.html) (92 messages, latest: Apr 02 2018 at 05:00)
 * [Easy topological space question](topic/Easy.20topological.20space.20question.html) (18 messages, latest: Apr 02 2018 at 01:23)
 
-<hr><p>Last updated: May 02 2020 at 18:09 UTC</p>
+<hr><p>Last updated: May 02 2020 at 19:08 UTC</p>
