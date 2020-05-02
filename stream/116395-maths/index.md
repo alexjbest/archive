@@ -9,6 +9,7 @@ permalink: /stream/116395-maths/index.html
 
 ### Topics:
 
+* [Analytic functions](topic/Analytic.20functions.html) (4 messages, latest: May 02 2020 at 22:39)
 * [golfing challenge](topic/golfing.20challenge.html) (3 messages, latest: May 02 2020 at 20:42)
 * [applicative ultrapower](topic/applicative.20ultrapower.html) (16 messages, latest: May 02 2020 at 11:18)
 * [inv_neg](topic/inv_neg.html) (5 messages, latest: May 02 2020 at 11:16)
@@ -24,7 +25,6 @@ permalink: /stream/116395-maths/index.html
 * [submodule map](topic/submodule.20map.html) (6 messages, latest: Apr 26 2020 at 16:22)
 * [legendre symbols](topic/legendre.20symbols.html) (42 messages, latest: Apr 26 2020 at 09:25)
 * [Coersion and composition](topic/Coersion.20and.20composition.html) (30 messages, latest: Apr 25 2020 at 16:19)
-* [Analytic functions](topic/Analytic.20functions.html) (2 messages, latest: Apr 25 2020 at 07:31)
 * [finite sum](topic/finite.20sum.html) (20 messages, latest: Apr 24 2020 at 07:12)
 * [Hedetniemi](topic/Hedetniemi.html) (322 messages, latest: Apr 23 2020 at 18:45)
 * [absurd](topic/absurd.html) (5 messages, latest: Apr 22 2020 at 19:44)
@@ -883,4 +883,4 @@ permalink: /stream/116395-maths/index.html
 * [free group](topic/free.20group.html) (92 messages, latest: Apr 02 2018 at 05:00)
 * [Easy topological space question](topic/Easy.20topological.20space.20question.html) (18 messages, latest: Apr 02 2018 at 01:23)
 
-<hr><p>Last updated: May 02 2020 at 22:05 UTC</p>
+<hr><p>Last updated: May 02 2020 at 23:05 UTC</p>

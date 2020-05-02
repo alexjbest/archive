@@ -9,10 +9,10 @@ permalink: /stream/113489-new-members/index.html
 
 ### Topics:
 
-* [Subtypes](topic/Subtypes.html) (1 message, latest: May 02 2020 at 21:57)
+* [invalid apply tactic](topic/invalid.20apply.20tactic.html) (4 messages, latest: May 02 2020 at 22:55)
+* [Subtypes](topic/Subtypes.html) (8 messages, latest: May 02 2020 at 22:33)
+* [noob question(s)](topic/noob.20question(s).html) (5426 messages, latest: May 02 2020 at 22:18)
 * [norm_num/ ring doesn't solve this?](topic/norm_num.2F.20ring.20doesn't.20solve.20this.3F.html) (25 messages, latest: May 02 2020 at 21:23)
-* [invalid apply tactic](topic/invalid.20apply.20tactic.html) (3 messages, latest: May 02 2020 at 21:21)
-* [noob question(s)](topic/noob.20question(s).html) (5425 messages, latest: May 02 2020 at 21:19)
 * [vector type](topic/vector.20type.html) (12 messages, latest: May 02 2020 at 20:49)
 * [where is % defined?](topic/where.20is.20.25.20defined.3F.html) (6 messages, latest: May 02 2020 at 19:44)
 * [instance of decidable_set_is_empty](topic/instance.20of.20decidable_set_is_empty.html) (30 messages, latest: May 02 2020 at 18:49)
@@ -1001,4 +1001,4 @@ permalink: /stream/113489-new-members/index.html
 * [Andrew Ashworth](topic/Andrew.20Ashworth.html) (15 messages, latest: Feb 26 2018 at 16:21)
 * [onboarding](topic/onboarding.html) (1 message, latest: Feb 26 2018 at 16:02)
 
-<hr><p>Last updated: May 02 2020 at 22:05 UTC</p>
+<hr><p>Last updated: May 02 2020 at 23:05 UTC</p>
