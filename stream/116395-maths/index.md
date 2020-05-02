@@ -9,8 +9,8 @@ permalink: /stream/116395-maths/index.html
 
 ### Topics:
 
-* [inv_neg](topic/inv_neg.html) (4 messages, latest: May 02 2020 at 09:34)
-* [applicative ultrapower](topic/applicative.20ultrapower.html) (15 messages, latest: May 02 2020 at 05:17)
+* [applicative ultrapower](topic/applicative.20ultrapower.html) (16 messages, latest: May 02 2020 at 11:18)
+* [inv_neg](topic/inv_neg.html) (5 messages, latest: May 02 2020 at 11:16)
 * [cancel_epi](topic/cancel_epi.html) (2 messages, latest: May 01 2020 at 12:29)
 * [push_cast and numerals](topic/push_cast.20and.20numerals.html) (3 messages, latest: May 01 2020 at 09:41)
 * [linear map on basis](topic/linear.20map.20on.20basis.html) (3 messages, latest: May 01 2020 at 06:54)
@@ -882,4 +882,4 @@ permalink: /stream/116395-maths/index.html
 * [free group](topic/free.20group.html) (92 messages, latest: Apr 02 2018 at 05:00)
 * [Easy topological space question](topic/Easy.20topological.20space.20question.html) (18 messages, latest: Apr 02 2018 at 01:23)
 
-<hr><p>Last updated: May 02 2020 at 11:06 UTC</p>
+<hr><p>Last updated: May 02 2020 at 12:06 UTC</p>

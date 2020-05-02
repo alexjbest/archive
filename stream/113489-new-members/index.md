@@ -9,8 +9,8 @@ permalink: /stream/113489-new-members/index.html
 
 ### Topics:
 
+* [functions with finite support](topic/functions.20with.20finite.20support.html) (62 messages, latest: May 02 2020 at 11:06)
 * [noob question(s)](topic/noob.20question(s).html) (5420 messages, latest: May 02 2020 at 08:57)
-* [functions with finite support](topic/functions.20with.20finite.20support.html) (61 messages, latest: May 02 2020 at 07:59)
 * [Please Eliminate My Large Questions](topic/Please.20Eliminate.20My.20Large.20Questions.html) (71 messages, latest: May 02 2020 at 07:44)
 * [server reloads imports?](topic/server.20reloads.20imports.3F.html) (10 messages, latest: May 02 2020 at 03:20)
 * [rw with inductive types](topic/rw.20with.20inductive.20types.html) (16 messages, latest: May 01 2020 at 02:56)
@@ -995,4 +995,4 @@ permalink: /stream/113489-new-members/index.html
 * [Andrew Ashworth](topic/Andrew.20Ashworth.html) (15 messages, latest: Feb 26 2018 at 16:21)
 * [onboarding](topic/onboarding.html) (1 message, latest: Feb 26 2018 at 16:02)
 
-<hr><p>Last updated: May 02 2020 at 11:06 UTC</p>
+<hr><p>Last updated: May 02 2020 at 12:06 UTC</p>
