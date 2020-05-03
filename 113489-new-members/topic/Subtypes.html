@@ -101,6 +101,57 @@ permalink: /stream/113489-new-members/topic/Subtypes.html
 
 
 
+<a name="196081150"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113489-new%20members/topic/Subtypes/near/196081150" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Jalex Stark <a href="https://leanprover-community.github.io/archive/stream/113489-new-members/topic/Subtypes.html#196081150">(May 03 2020 at 02:44)</a>:</h4>
+<p>If you want lists of fixed length, you could use vectors :P<br>
+If you're doing it with lists, you probably want something like </p>
+<div class="codehilite"><pre><span></span><code><span class="kn">example</span> <span class="o">{</span><span class="n">α</span> <span class="o">:</span> <span class="kt">Type</span><span class="o">}</span> <span class="o">(</span><span class="n">a</span> <span class="n">b</span> <span class="o">:</span> <span class="n">list</span> <span class="n">α</span><span class="o">)</span> <span class="o">(</span><span class="n">length_eq</span> <span class="o">:</span> <span class="n">list</span><span class="bp">.</span><span class="n">length</span> <span class="n">a</span> <span class="bp">=</span> <span class="n">list</span><span class="bp">.</span><span class="n">length</span> <span class="n">b</span><span class="o">)</span> <span class="o">:</span> <span class="n">list</span> <span class="n">α</span> <span class="o">:=</span> <span class="n">sorry</span>
+</code></pre></div>
+
+
+
+<a name="196081359"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113489-new%20members/topic/Subtypes/near/196081359" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Shing Tak Lam <a href="https://leanprover-community.github.io/archive/stream/113489-new-members/topic/Subtypes.html#196081359">(May 03 2020 at 02:51)</a>:</h4>
+<p>If you want to define it for vectors, it'd look something like this:</p>
+<div class="codehilite"><pre><span></span><code><span class="kn">import</span> <span class="n">data</span><span class="bp">.</span><span class="n">vector</span>
+
+<span class="n">def</span> <span class="n">add_vecs</span> <span class="o">{</span><span class="n">α</span> <span class="o">:</span> <span class="kt">Type</span><span class="o">}</span> <span class="o">[</span><span class="n">has_add</span> <span class="n">α</span><span class="o">]</span> <span class="o">{</span><span class="n">n</span> <span class="o">:</span> <span class="bp">ℕ</span><span class="o">}</span> <span class="o">:</span> <span class="n">vector</span> <span class="n">α</span> <span class="n">n</span> <span class="bp">→</span> <span class="n">vector</span> <span class="n">α</span> <span class="n">n</span> <span class="bp">→</span> <span class="n">vector</span> <span class="n">α</span> <span class="n">n</span> <span class="o">:=</span> <span class="n">sorry</span>
+</code></pre></div>
+
+
+
+<a name="196081415"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113489-new%20members/topic/Subtypes/near/196081415" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Brandon Brown <a href="https://leanprover-community.github.io/archive/stream/113489-new-members/topic/Subtypes.html#196081415">(May 03 2020 at 02:53)</a>:</h4>
+<p>Yeah I should do this with vectors I don't know why I'm using lists</p>
+
+
+
+<a name="196081530"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113489-new%20members/topic/Subtypes/near/196081530" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Shing Tak Lam <a href="https://leanprover-community.github.io/archive/stream/113489-new-members/topic/Subtypes.html#196081530">(May 03 2020 at 02:56)</a>:</h4>
+<p>Although if you want to define your function by pattern matching/recursion, it may be a bit more complicated than by just using lists.</p>
+
+
+
+<a name="196081658"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113489-new%20members/topic/Subtypes/near/196081658" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Shing Tak Lam <a href="https://leanprover-community.github.io/archive/stream/113489-new-members/topic/Subtypes.html#196081658">(May 03 2020 at 03:01)</a>:</h4>
+<p>and when you try to call the function,  <code>vector</code>s is not as nice to use compared to <code>list</code>s.</p>
+
+
+
+<a name="196081698"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113489-new%20members/topic/Subtypes/near/196081698" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Brandon Brown <a href="https://leanprover-community.github.io/archive/stream/113489-new-members/topic/Subtypes.html#196081698">(May 03 2020 at 03:02)</a>:</h4>
+<p>Actually this works pretty well even for non-equal lists. </p>
+<div class="codehilite"><pre><span></span><code><span class="n">def</span> <span class="n">list_add</span> <span class="o">{</span><span class="n">α</span> <span class="o">:</span> <span class="kt">Type</span> <span class="n">u</span><span class="o">}</span> <span class="o">[</span><span class="n">has_add</span> <span class="n">α</span><span class="o">]</span> <span class="o">:</span> <span class="n">list</span> <span class="n">α</span> <span class="bp">→</span> <span class="n">list</span> <span class="n">α</span> <span class="bp">→</span> <span class="n">list</span> <span class="n">α</span>
+<span class="bp">|</span> <span class="n">list</span><span class="bp">.</span><span class="n">nil</span> <span class="n">l2</span> <span class="o">:=</span> <span class="n">l2</span>
+<span class="bp">|</span> <span class="n">l1</span> <span class="n">list</span><span class="bp">.</span><span class="n">nil</span> <span class="o">:=</span> <span class="n">l1</span>
+<span class="bp">|</span> <span class="o">(</span><span class="n">h1</span> <span class="bp">::</span> <span class="n">t1</span><span class="o">)</span> <span class="o">(</span><span class="n">h2</span> <span class="bp">::</span> <span class="n">t2</span><span class="o">)</span> <span class="o">:=</span> <span class="o">(</span><span class="n">h1</span> <span class="bp">+</span> <span class="n">h2</span><span class="o">)</span> <span class="bp">::</span> <span class="o">(</span><span class="n">list_add</span> <span class="n">t1</span> <span class="n">t2</span><span class="o">)</span>
+
+<span class="bp">#</span><span class="n">reduce</span> <span class="n">list_add</span> <span class="o">[</span><span class="mi">5</span><span class="o">,</span><span class="mi">1</span><span class="o">]</span> <span class="o">[</span><span class="mi">5</span><span class="o">,</span><span class="mi">2</span><span class="o">]</span> <span class="c1">-- [10, 3]</span>
+<span class="bp">#</span><span class="n">reduce</span> <span class="n">list_add</span> <span class="o">[</span><span class="mi">1</span><span class="o">,</span><span class="mi">3</span><span class="o">]</span> <span class="o">[</span><span class="mi">2</span><span class="o">,</span><span class="mi">3</span><span class="o">,</span><span class="mi">3</span><span class="o">]</span> <span class="c1">-- [3, 6, 3]</span>
+</code></pre></div>
+
+
+
 {% endraw %}
 
-<hr><p>Last updated: May 03 2020 at 02:07 UTC</p>
+<hr><p>Last updated: May 03 2020 at 03:08 UTC</p>
