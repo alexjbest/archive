@@ -9,6 +9,7 @@ permalink: /stream/113488-general/index.html
 
 ### Topics:
 
+* [Lean job in London](topic/Lean.20job.20in.20London.html) (11 messages, latest: May 03 2020 at 15:05)
 * [noncomputable card](topic/noncomputable.20card.html) (18 messages, latest: May 03 2020 at 13:26)
 * [tracking down dependency chains](topic/tracking.20down.20dependency.20chains.html) (6 messages, latest: May 03 2020 at 13:12)
 * [Diagnosing timeout](topic/Diagnosing.20timeout.html) (150 messages, latest: May 03 2020 at 12:59)
@@ -42,7 +43,6 @@ permalink: /stream/113488-general/index.html
 * [`rw` behaviour with `nat.succ`](topic/.60rw.60.20behaviour.20with.20.60nat.2Esucc.60.html) (2 messages, latest: May 01 2020 at 00:12)
 * [why does a sync command take so long in the lean server](topic/why.20does.20a.20sync.20command.20take.20so.20long.20in.20the.20lean.20server.html) (36 messages, latest: Apr 30 2020 at 19:21)
 * [continuity proof](topic/continuity.20proof.html) (12 messages, latest: Apr 30 2020 at 15:12)
-* [Lean job in London](topic/Lean.20job.20in.20London.html) (8 messages, latest: Apr 30 2020 at 14:28)
 * [graphs on the website](topic/graphs.20on.20the.20website.html) (39 messages, latest: Apr 30 2020 at 13:28)
 * [continuous integration failing](topic/continuous.20integration.20failing.html) (2 messages, latest: Apr 30 2020 at 12:50)
 * [is this a pattern](topic/is.20this.20a.20pattern.html) (18 messages, latest: Apr 30 2020 at 11:13)
@@ -2756,4 +2756,4 @@ permalink: /stream/113488-general/index.html
 * [test](topic/test.html) (4 messages, latest: Feb 26 2018 at 16:22)
 * [welcome](topic/welcome.html) (1 message, latest: Feb 26 2018 at 16:02)
 
-<hr><p>Last updated: May 03 2020 at 14:07 UTC</p>
+<hr><p>Last updated: May 03 2020 at 15:06 UTC</p>

@@ -9,6 +9,7 @@ permalink: /stream/224796-Geographic-locality/index.html
 
 ### Topics:
 
+* [Karlsruhe, DE](topic/Karlsruhe.2C.20DE.html) (4 messages, latest: May 03 2020 at 14:53)
 * [Urbana-Champaign, IL, USA](topic/Urbana-Champaign.2C.20IL.2C.20USA.html) (2 messages, latest: May 03 2020 at 03:31)
 * [Pittsburgh, PA](topic/Pittsburgh.2C.20PA.html) (3 messages, latest: Apr 14 2020 at 20:06)
 * [Sydney, AU](topic/Sydney.2C.20AU.html) (3 messages, latest: Apr 14 2020 at 12:06)
@@ -36,7 +37,6 @@ permalink: /stream/224796-Geographic-locality/index.html
 * [Zurich, CH](topic/Zurich.2C.20CH.html) (1 message, latest: Apr 12 2020 at 13:14)
 * [Chattanooga TN](topic/Chattanooga.20TN.html) (1 message, latest: Apr 12 2020 at 13:06)
 * [Moscow, RU](topic/Moscow.2C.20RU.html) (1 message, latest: Apr 12 2020 at 12:48)
-* [Karlsruhe, DE](topic/Karlsruhe.2C.20DE.html) (3 messages, latest: Apr 12 2020 at 12:44)
 * [Munich, DE and Amsterdam, NL](topic/Munich.2C.20DE.20and.20Amsterdam.2C.20NL.html) (1 message, latest: Apr 12 2020 at 12:25)
 * [Cambridge, UK](topic/Cambridge.2C.20UK.html) (3 messages, latest: Mar 04 2020 at 08:43)
 * [London, England](topic/London.2C.20England.html) (1 message, latest: Feb 28 2020 at 07:57)
@@ -44,4 +44,4 @@ permalink: /stream/224796-Geographic-locality/index.html
 * [Freiburg, DE](topic/Freiburg.2C.20DE.html) (1 message, latest: Feb 28 2020 at 05:14)
 * [stream events](topic/stream.20events.html) (1 message, latest: Feb 28 2020 at 03:37)
 
-<hr><p>Last updated: May 03 2020 at 14:07 UTC</p>
+<hr><p>Last updated: May 03 2020 at 15:06 UTC</p>
