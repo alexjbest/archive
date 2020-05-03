@@ -9,9 +9,9 @@ permalink: /stream/113488-general/index.html
 
 ### Topics:
 
-* [tracking down dependency chains](topic/tracking.20down.20dependency.20chains.html) (2 messages, latest: May 03 2020 at 13:06)
+* [noncomputable card](topic/noncomputable.20card.html) (18 messages, latest: May 03 2020 at 13:26)
+* [tracking down dependency chains](topic/tracking.20down.20dependency.20chains.html) (6 messages, latest: May 03 2020 at 13:12)
 * [Diagnosing timeout](topic/Diagnosing.20timeout.html) (150 messages, latest: May 03 2020 at 12:59)
-* [noncomputable card](topic/noncomputable.20card.html) (13 messages, latest: May 03 2020 at 12:57)
 * [congr'](topic/congr'.html) (5 messages, latest: May 03 2020 at 12:44)
 * [cardinal](topic/cardinal.html) (12 messages, latest: May 03 2020 at 02:24)
 * [simp hole command](topic/simp.20hole.20command.html) (19 messages, latest: May 02 2020 at 21:00)
@@ -2756,4 +2756,4 @@ permalink: /stream/113488-general/index.html
 * [test](topic/test.html) (4 messages, latest: Feb 26 2018 at 16:22)
 * [welcome](topic/welcome.html) (1 message, latest: Feb 26 2018 at 16:02)
 
-<hr><p>Last updated: May 03 2020 at 13:07 UTC</p>
+<hr><p>Last updated: May 03 2020 at 14:07 UTC</p>
