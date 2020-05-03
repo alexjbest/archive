@@ -9,7 +9,7 @@ permalink: /stream/113488-general/index.html
 
 ### Topics:
 
-* [cardinal](topic/cardinal.html) (8 messages, latest: May 03 2020 at 00:30)
+* [cardinal](topic/cardinal.html) (11 messages, latest: May 03 2020 at 01:22)
 * [simp hole command](topic/simp.20hole.20command.html) (19 messages, latest: May 02 2020 at 21:00)
 * [@\[ext\] subtype.eq](topic/.40.5Bext.5D.20subtype.2Eeq.html) (6 messages, latest: May 02 2020 at 20:41)
 * [Lean 3.10](topic/Lean.203.2E10.html) (21 messages, latest: May 02 2020 at 19:34)
@@ -2754,4 +2754,4 @@ permalink: /stream/113488-general/index.html
 * [test](topic/test.html) (4 messages, latest: Feb 26 2018 at 16:22)
 * [welcome](topic/welcome.html) (1 message, latest: Feb 26 2018 at 16:02)
 
-<hr><p>Last updated: May 03 2020 at 01:10 UTC</p>
+<hr><p>Last updated: May 03 2020 at 02:07 UTC</p>
