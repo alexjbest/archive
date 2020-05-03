@@ -9,7 +9,8 @@ permalink: /stream/113489-new-members/index.html
 
 ### Topics:
 
-* [invalid apply tactic](topic/invalid.20apply.20tactic.html) (19 messages, latest: May 03 2020 at 08:39)
+* [Euclid's Elements](topic/Euclid's.20Elements.html) (2 messages, latest: May 03 2020 at 09:43)
+* [invalid apply tactic](topic/invalid.20apply.20tactic.html) (20 messages, latest: May 03 2020 at 09:36)
 * [Subtypes](topic/Subtypes.html) (41 messages, latest: May 03 2020 at 05:19)
 * [noob question(s)](topic/noob.20question(s).html) (5426 messages, latest: May 02 2020 at 22:18)
 * [norm_num/ ring doesn't solve this?](topic/norm_num.2F.20ring.20doesn't.20solve.20this.3F.html) (25 messages, latest: May 02 2020 at 21:23)
@@ -1001,4 +1002,4 @@ permalink: /stream/113489-new-members/index.html
 * [Andrew Ashworth](topic/Andrew.20Ashworth.html) (15 messages, latest: Feb 26 2018 at 16:21)
 * [onboarding](topic/onboarding.html) (1 message, latest: Feb 26 2018 at 16:02)
 
-<hr><p>Last updated: May 03 2020 at 09:07 UTC</p>
+<hr><p>Last updated: May 03 2020 at 10:07 UTC</p>

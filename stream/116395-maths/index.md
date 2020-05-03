@@ -9,9 +9,10 @@ permalink: /stream/116395-maths/index.html
 
 ### Topics:
 
+* [Type vs Set](topic/Type.20vs.20Set.html) (6 messages, latest: May 03 2020 at 09:14)
+* [witt vectors](topic/witt.20vectors.html) (274 messages, latest: May 03 2020 at 09:14)
 * [Analytic functions](topic/Analytic.20functions.html) (16 messages, latest: May 03 2020 at 08:36)
 * [linear_ordered_semiring theorems](topic/linear_ordered_semiring.20theorems.html) (2 messages, latest: May 03 2020 at 06:22)
-* [Type vs Set](topic/Type.20vs.20Set.html) (5 messages, latest: May 03 2020 at 05:23)
 * [golfing challenge](topic/golfing.20challenge.html) (3 messages, latest: May 02 2020 at 20:42)
 * [applicative ultrapower](topic/applicative.20ultrapower.html) (16 messages, latest: May 02 2020 at 11:18)
 * [inv_neg](topic/inv_neg.html) (5 messages, latest: May 02 2020 at 11:16)
@@ -387,7 +388,6 @@ permalink: /stream/116395-maths/index.html
 * [Return type of `finset.sup`](topic/Return.20type.20of.20.60finset.2Esup.60.html) (10 messages, latest: Jun 28 2019 at 13:08)
 * [induced neighborhoods](topic/induced.20neighborhoods.html) (114 messages, latest: Jun 27 2019 at 20:47)
 * [category_theory.category_struct.comp arguments](topic/category_theory.2Ecategory_struct.2Ecomp.20arguments.html) (25 messages, latest: Jun 27 2019 at 18:23)
-* [witt vectors](topic/witt.20vectors.html) (272 messages, latest: Jun 27 2019 at 12:08)
 * [Function product](topic/Function.20product.html) (19 messages, latest: Jun 26 2019 at 10:33)
 * [complete (distrib) lattice](topic/complete.20(distrib).20lattice.html) (24 messages, latest: Jun 26 2019 at 08:16)
 * [sheaves and sites](topic/sheaves.20and.20sites.html) (674 messages, latest: Jun 24 2019 at 12:51)
@@ -885,4 +885,4 @@ permalink: /stream/116395-maths/index.html
 * [free group](topic/free.20group.html) (92 messages, latest: Apr 02 2018 at 05:00)
 * [Easy topological space question](topic/Easy.20topological.20space.20question.html) (18 messages, latest: Apr 02 2018 at 01:23)
 
-<hr><p>Last updated: May 03 2020 at 09:07 UTC</p>
+<hr><p>Last updated: May 03 2020 at 10:07 UTC</p>
