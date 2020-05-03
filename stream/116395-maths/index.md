@@ -9,7 +9,8 @@ permalink: /stream/116395-maths/index.html
 
 ### Topics:
 
-* [witt vectors](topic/witt.20vectors.html) (289 messages, latest: May 03 2020 at 18:10)
+* [sober spaces](topic/sober.20spaces.html) (4 messages, latest: May 03 2020 at 21:03)
+* [witt vectors](topic/witt.20vectors.html) (291 messages, latest: May 03 2020 at 20:25)
 * [Type vs Set](topic/Type.20vs.20Set.html) (6 messages, latest: May 03 2020 at 09:14)
 * [Analytic functions](topic/Analytic.20functions.html) (16 messages, latest: May 03 2020 at 08:36)
 * [linear_ordered_semiring theorems](topic/linear_ordered_semiring.20theorems.html) (2 messages, latest: May 03 2020 at 06:22)
@@ -148,7 +149,6 @@ permalink: /stream/116395-maths/index.html
 * [composition of algebra structures?](topic/composition.20of.20algebra.20structures.3F.html) (4 messages, latest: Feb 09 2020 at 23:03)
 * ["trivial" R-algebra hom construction](topic/.22trivial.22.20R-algebra.20hom.20construction.html) (6 messages, latest: Feb 08 2020 at 15:03)
 * [Lean for the curious mathematician](topic/Lean.20for.20the.20curious.20mathematician.html) (13 messages, latest: Feb 07 2020 at 19:04)
-* [sober spaces](topic/sober.20spaces.html) (2 messages, latest: Feb 06 2020 at 20:10)
 * [bundled kernels for add_comm_groups?](topic/bundled.20kernels.20for.20add_comm_groups.3F.html) (9 messages, latest: Feb 06 2020 at 11:34)
 * [`simp` lemmas for `matrix.mul` vs `has_mul.mul`](topic/.60simp.60.20lemmas.20for.20.60matrix.2Emul.60.20vs.20.60has_mul.2Emul.60.html) (11 messages, latest: Feb 05 2020 at 10:29)
 * [Unifying `tangent_cone_at` and `pos_tangent_cone_at`](topic/Unifying.20.60tangent_cone_at.60.20and.20.60pos_tangent_cone_at.60.html) (4 messages, latest: Feb 05 2020 at 07:45)
@@ -885,4 +885,4 @@ permalink: /stream/116395-maths/index.html
 * [free group](topic/free.20group.html) (92 messages, latest: Apr 02 2018 at 05:00)
 * [Easy topological space question](topic/Easy.20topological.20space.20question.html) (18 messages, latest: Apr 02 2018 at 01:23)
 
-<hr><p>Last updated: May 03 2020 at 20:05 UTC</p>
+<hr><p>Last updated: May 03 2020 at 21:06 UTC</p>
