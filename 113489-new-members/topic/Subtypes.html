@@ -269,6 +269,33 @@ If you're doing it with lists, you probably want something like </p>
 
 
 
+<a name="196084363"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113489-new%20members/topic/Subtypes/near/196084363" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Brandon Brown <a href="https://leanprover-community.github.io/archive/stream/113489-new-members/topic/Subtypes.html#196084363">(May 03 2020 at 04:43)</a>:</h4>
+<p>Just found this definition of vector in the standard library<br>
+<code>def vector (α : Type u) (n : ℕ) := { l : list α // l.length = n }</code><br>
+That seems quite elegant compared to the one in TPIL</p>
+
+
+
+<a name="196084894"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113489-new%20members/topic/Subtypes/near/196084894" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Mario Carneiro <a href="https://leanprover-community.github.io/archive/stream/113489-new-members/topic/Subtypes.html#196084894">(May 03 2020 at 05:00)</a>:</h4>
+<p>a lot of people think the dependent family version is better, because it makes it easier to define functions by induction on vectors</p>
+
+
+
+<a name="196084905"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113489-new%20members/topic/Subtypes/near/196084905" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Mario Carneiro <a href="https://leanprover-community.github.io/archive/stream/113489-new-members/topic/Subtypes.html#196084905">(May 03 2020 at 05:01)</a>:</h4>
+<p>however, the example in TPIL is mostly there as an example of a dependent type family</p>
+
+
+
+<a name="196085027"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113489-new%20members/topic/Subtypes/near/196085027" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Brandon Brown <a href="https://leanprover-community.github.io/archive/stream/113489-new-members/topic/Subtypes.html#196085027">(May 03 2020 at 05:05)</a>:</h4>
+<p>It's weird that in order to create a vector using the subtype version, you have to provide a list along with a proof that it is the right length; which makes me like the TPIL one better now.<br>
+<code>def myvec : vector ℕ 2 := ⟨[1,2], dec_trivial⟩</code></p>
+
+
+
 {% endraw %}
 
-<hr><p>Last updated: May 03 2020 at 04:05 UTC</p>
+<hr><p>Last updated: May 03 2020 at 05:07 UTC</p>
