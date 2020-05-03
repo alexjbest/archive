@@ -296,6 +296,36 @@ That seems quite elegant compared to the one in TPIL</p>
 
 
 
+<a name="196085144"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113489-new%20members/topic/Subtypes/near/196085144" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Mario Carneiro <a href="https://leanprover-community.github.io/archive/stream/113489-new-members/topic/Subtypes.html#196085144">(May 03 2020 at 05:08)</a>:</h4>
+<p>You can still create a vector using a <code>cons</code> function with the same type as the TPIL one so that you don't need a side proof</p>
+
+
+
+<a name="196085149"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113489-new%20members/topic/Subtypes/near/196085149" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Mario Carneiro <a href="https://leanprover-community.github.io/archive/stream/113489-new-members/topic/Subtypes.html#196085149">(May 03 2020 at 05:08)</a>:</h4>
+<p>it's just a definition now instead of a constructor</p>
+
+
+
+<a name="196085328"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113489-new%20members/topic/Subtypes/near/196085328" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Brandon Brown <a href="https://leanprover-community.github.io/archive/stream/113489-new-members/topic/Subtypes.html#196085328">(May 03 2020 at 05:15)</a>:</h4>
+<p>How do you do that?</p>
+
+
+
+<a name="196085331"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113489-new%20members/topic/Subtypes/near/196085331" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Mario Carneiro <a href="https://leanprover-community.github.io/archive/stream/113489-new-members/topic/Subtypes.html#196085331">(May 03 2020 at 05:15)</a>:</h4>
+<p>Look up the definition of <code>vector.cons</code> in the core library</p>
+
+
+
+<a name="196085459"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113489-new%20members/topic/Subtypes/near/196085459" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Brandon Brown <a href="https://leanprover-community.github.io/archive/stream/113489-new-members/topic/Subtypes.html#196085459">(May 03 2020 at 05:19)</a>:</h4>
+<p>Ah I see, nice. <code>def myvec2 (n : vector ℕ 0): vector ℕ 2 := vector.cons 1 (vector.cons 2 n)</code></p>
+
+
+
 {% endraw %}
 
-<hr><p>Last updated: May 03 2020 at 05:07 UTC</p>
+<hr><p>Last updated: May 03 2020 at 06:06 UTC</p>
