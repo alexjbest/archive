@@ -9,7 +9,10 @@ permalink: /stream/113488-general/index.html
 
 ### Topics:
 
-* [Diagnosing timeout](topic/Diagnosing.20timeout.html) (149 messages, latest: May 03 2020 at 05:50)
+* [tracking down dependency chains](topic/tracking.20down.20dependency.20chains.html) (2 messages, latest: May 03 2020 at 13:06)
+* [Diagnosing timeout](topic/Diagnosing.20timeout.html) (150 messages, latest: May 03 2020 at 12:59)
+* [noncomputable card](topic/noncomputable.20card.html) (13 messages, latest: May 03 2020 at 12:57)
+* [congr'](topic/congr'.html) (5 messages, latest: May 03 2020 at 12:44)
 * [cardinal](topic/cardinal.html) (12 messages, latest: May 03 2020 at 02:24)
 * [simp hole command](topic/simp.20hole.20command.html) (19 messages, latest: May 02 2020 at 21:00)
 * [@\[ext\] subtype.eq](topic/.40.5Bext.5D.20subtype.2Eeq.html) (6 messages, latest: May 02 2020 at 20:41)
@@ -2335,7 +2338,6 @@ permalink: /stream/113488-general/index.html
 * [local notation for fin (n+1)](topic/local.20notation.20for.20fin.20(n.2B1).html) (37 messages, latest: May 24 2018 at 18:26)
 * [assertion violation](topic/assertion.20violation.html) (10 messages, latest: May 23 2018 at 20:12)
 * [minimum of finite set](topic/minimum.20of.20finite.20set.html) (71 messages, latest: May 23 2018 at 16:38)
-* [congr'](topic/congr'.html) (4 messages, latest: May 23 2018 at 10:52)
 * [function to pi type](topic/function.20to.20pi.20type.html) (248 messages, latest: May 23 2018 at 09:59)
 * [unfolding issue](topic/unfolding.20issue.html) (25 messages, latest: May 23 2018 at 01:59)
 * [Are elements of a subtype determined by their value?](topic/Are.20elements.20of.20a.20subtype.20determined.20by.20their.20value.3F.html) (35 messages, latest: May 22 2018 at 12:56)
@@ -2754,4 +2756,4 @@ permalink: /stream/113488-general/index.html
 * [test](topic/test.html) (4 messages, latest: Feb 26 2018 at 16:22)
 * [welcome](topic/welcome.html) (1 message, latest: Feb 26 2018 at 16:02)
 
-<hr><p>Last updated: May 03 2020 at 12:07 UTC</p>
+<hr><p>Last updated: May 03 2020 at 13:07 UTC</p>
