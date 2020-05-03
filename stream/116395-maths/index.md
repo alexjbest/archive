@@ -9,7 +9,7 @@ permalink: /stream/116395-maths/index.html
 
 ### Topics:
 
-* [Analytic functions](topic/Analytic.20functions.html) (14 messages, latest: May 03 2020 at 07:55)
+* [Analytic functions](topic/Analytic.20functions.html) (16 messages, latest: May 03 2020 at 08:36)
 * [linear_ordered_semiring theorems](topic/linear_ordered_semiring.20theorems.html) (2 messages, latest: May 03 2020 at 06:22)
 * [Type vs Set](topic/Type.20vs.20Set.html) (5 messages, latest: May 03 2020 at 05:23)
 * [golfing challenge](topic/golfing.20challenge.html) (3 messages, latest: May 02 2020 at 20:42)
@@ -885,4 +885,4 @@ permalink: /stream/116395-maths/index.html
 * [free group](topic/free.20group.html) (92 messages, latest: Apr 02 2018 at 05:00)
 * [Easy topological space question](topic/Easy.20topological.20space.20question.html) (18 messages, latest: Apr 02 2018 at 01:23)
 
-<hr><p>Last updated: May 03 2020 at 08:06 UTC</p>
+<hr><p>Last updated: May 03 2020 at 09:07 UTC</p>
