@@ -9,6 +9,8 @@ permalink: /stream/113489-new-members/index.html
 
 ### Topics:
 
+* [Finsets and fintypes](topic/Finsets.20and.20fintypes.html) (31 messages, latest: May 03 2020 at 10:52)
+* [instance of decidable_set_is_empty](topic/instance.20of.20decidable_set_is_empty.html) (31 messages, latest: May 03 2020 at 10:50)
 * [Euclid's Elements](topic/Euclid's.20Elements.html) (2 messages, latest: May 03 2020 at 09:43)
 * [invalid apply tactic](topic/invalid.20apply.20tactic.html) (20 messages, latest: May 03 2020 at 09:36)
 * [Subtypes](topic/Subtypes.html) (41 messages, latest: May 03 2020 at 05:19)
@@ -16,7 +18,6 @@ permalink: /stream/113489-new-members/index.html
 * [norm_num/ ring doesn't solve this?](topic/norm_num.2F.20ring.20doesn't.20solve.20this.3F.html) (25 messages, latest: May 02 2020 at 21:23)
 * [vector type](topic/vector.20type.html) (12 messages, latest: May 02 2020 at 20:49)
 * [where is % defined?](topic/where.20is.20.25.20defined.3F.html) (6 messages, latest: May 02 2020 at 19:44)
-* [instance of decidable_set_is_empty](topic/instance.20of.20decidable_set_is_empty.html) (30 messages, latest: May 02 2020 at 18:49)
 * [functions with finite support](topic/functions.20with.20finite.20support.html) (62 messages, latest: May 02 2020 at 11:06)
 * [Please Eliminate My Large Questions](topic/Please.20Eliminate.20My.20Large.20Questions.html) (71 messages, latest: May 02 2020 at 07:44)
 * [server reloads imports?](topic/server.20reloads.20imports.3F.html) (10 messages, latest: May 02 2020 at 03:20)
@@ -25,7 +26,6 @@ permalink: /stream/113489-new-members/index.html
 * [Coercion issues](topic/Coercion.20issues.html) (8 messages, latest: Apr 30 2020 at 17:32)
 * [real.exp_log](topic/real.2Eexp_log.html) (21 messages, latest: Apr 30 2020 at 15:18)
 * [hello](topic/hello.html) (2 messages, latest: Apr 30 2020 at 10:48)
-* [Finsets and fintypes](topic/Finsets.20and.20fintypes.html) (29 messages, latest: Apr 29 2020 at 16:02)
 * [Diagonal Ramsey Number Lower Bound](topic/Diagonal.20Ramsey.20Number.20Lower.20Bound.html) (227 messages, latest: Apr 29 2020 at 15:29)
 * [Help with proving with contradiction](topic/Help.20with.20proving.20with.20contradiction.html) (51 messages, latest: Apr 29 2020 at 14:29)
 * [showing injectivity](topic/showing.20injectivity.html) (253 messages, latest: Apr 29 2020 at 10:03)
@@ -1002,4 +1002,4 @@ permalink: /stream/113489-new-members/index.html
 * [Andrew Ashworth](topic/Andrew.20Ashworth.html) (15 messages, latest: Feb 26 2018 at 16:21)
 * [onboarding](topic/onboarding.html) (1 message, latest: Feb 26 2018 at 16:02)
 
-<hr><p>Last updated: May 03 2020 at 10:07 UTC</p>
+<hr><p>Last updated: May 03 2020 at 11:07 UTC</p>
