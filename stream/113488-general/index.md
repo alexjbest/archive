@@ -9,10 +9,10 @@ permalink: /stream/113488-general/index.html
 
 ### Topics:
 
+* [tracking down dependency chains](topic/tracking.20down.20dependency.20chains.html) (11 messages, latest: May 03 2020 at 17:58)
 * [how to eliminate a chain of exists](topic/how.20to.20eliminate.20a.20chain.20of.20exists.html) (4 messages, latest: May 03 2020 at 15:42)
 * [Lean job in London](topic/Lean.20job.20in.20London.html) (20 messages, latest: May 03 2020 at 15:34)
 * [noncomputable card](topic/noncomputable.20card.html) (18 messages, latest: May 03 2020 at 13:26)
-* [tracking down dependency chains](topic/tracking.20down.20dependency.20chains.html) (6 messages, latest: May 03 2020 at 13:12)
 * [Diagnosing timeout](topic/Diagnosing.20timeout.html) (150 messages, latest: May 03 2020 at 12:59)
 * [congr'](topic/congr'.html) (5 messages, latest: May 03 2020 at 12:44)
 * [cardinal](topic/cardinal.html) (12 messages, latest: May 03 2020 at 02:24)
@@ -2757,4 +2757,4 @@ permalink: /stream/113488-general/index.html
 * [test](topic/test.html) (4 messages, latest: Feb 26 2018 at 16:22)
 * [welcome](topic/welcome.html) (1 message, latest: Feb 26 2018 at 16:02)
 
-<hr><p>Last updated: May 03 2020 at 17:06 UTC</p>
+<hr><p>Last updated: May 03 2020 at 18:07 UTC</p>

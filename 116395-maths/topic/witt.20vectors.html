@@ -2369,6 +2369,189 @@ You could try porting it to Lean 3 (using this version: <a href="https://github.
 
 
 
+<a name="196112965"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/116395-maths/topic/witt%20vectors/near/196112965" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Bryan Gin-ge Chen <a href="https://leanprover-community.github.io/archive/stream/116395-maths/topic/witt.20vectors.html#196112965">(May 03 2020 at 17:11)</a>:</h4>
+<p>I have no understanding of the underlying code here but I just applied the suggested changes on top of 3.10.0c and they seem to solve the issue in Mario's example. Here's the PR: <a href="https://github.com/leanprover-community/lean/issues/211" title="https://github.com/leanprover-community/lean/issues/211">lean#211</a>.</p>
+
+
+
+<a name="196113042"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/116395-maths/topic/witt%20vectors/near/196113042" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Johan Commelin <a href="https://leanprover-community.github.io/archive/stream/116395-maths/topic/witt.20vectors.html#196113042">(May 03 2020 at 17:13)</a>:</h4>
+<p>Fantastic! What time does it need now?</p>
+
+
+
+<a name="196113051"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/116395-maths/topic/witt%20vectors/near/196113051" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Johan Commelin <a href="https://leanprover-community.github.io/archive/stream/116395-maths/topic/witt.20vectors.html#196113051">(May 03 2020 at 17:13)</a>:</h4>
+<p>Note that the "23s" is still in your test code:</p>
+
+
+
+<a name="196113054"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/116395-maths/topic/witt%20vectors/near/196113054" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Johan Commelin <a href="https://leanprover-community.github.io/archive/stream/116395-maths/topic/witt.20vectors.html#196113054">(May 03 2020 at 17:14)</a>:</h4>
+<p><a href="https://github.com/leanprover-community/lean/pull/211/files#diff-40e3406d4b81ffee1556ec817f06e661R17" title="https://github.com/leanprover-community/lean/pull/211/files#diff-40e3406d4b81ffee1556ec817f06e661R17">https://github.com/leanprover-community/lean/pull/211/files#diff-40e3406d4b81ffee1556ec817f06e661R17</a></p>
+
+
+
+<a name="196113278"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/116395-maths/topic/witt%20vectors/near/196113278" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Bryan Gin-ge Chen <a href="https://leanprover-community.github.io/archive/stream/116395-maths/topic/witt.20vectors.html#196113278">(May 03 2020 at 17:18)</a>:</h4>
+<p>Yeah, the test file probably needs more work (how do I wrap the whole thing in <code>try_for</code>?).</p>
+<p>Here's a trace from 3.10.0c (<code>tactic execution took 6s</code>):</p>
+<div class="codehilite"><pre><span></span><code>$ elan run leanprover-community-lean-3.10.0 lean tests/lean/run/mario_type_context.lean
+parsing took 0.211ms
+elaboration of bar took 0.0243ms
+type checking of bar took 0.0118ms
+/Users/chb/Documents/lean/lean/tests/lean/run/mario_type_context.lean:4:0: warning: declaration &#39;bar&#39; uses sorry
+compilation of bar took 0.172ms
+decl post-processing of bar took 0.241ms
+parsing took 0.567ms
+type checking of foo took 0.0638ms
+compilation of foo took 0.00106ms
+decl post-processing of foo took 0.00109ms
+elaboration: tactic compilation took 30.3ms
+[bar α = bar α, bar α = bar α, eq.refl (bar α = bar α), h]
+elaboration: tactic execution took 6s
+num. allocated objects:  55
+num. allocated closures: 55
+ 5998ms   100.0%   _interaction._lambda_3
+ 5998ms   100.0%   scope_trace
+ 5998ms   100.0%   tactic.mk_mapp
+ 5998ms   100.0%   _interaction._lambda_2
+ 5998ms   100.0%   tactic.istep._lambda_1
+ 5998ms   100.0%   tactic.istep
+ 5998ms   100.0%   tactic.step
+ 5998ms   100.0%   _interaction
+elaboration of foo took 6.97s
+/Users/chb/Documents/lean/lean/tests/lean/run/mario_type_context.lean:6:0: warning: declaration &#39;foo&#39; uses sorry
+cumulative profiling times:
+        compilation 0.172ms
+        decl post-processing 0.241ms
+        elaboration 6.97s
+        elaboration: tactic compilation 30.3ms
+        elaboration: tactic execution 6s
+        parsing 0.778ms
+        type checking 0.0749ms
+</code></pre></div>
+
+
+<p>Here's a trace from the PR branch (<code>elaboration: tactic execution took 6ms</code>):</p>
+<div class="codehilite"><pre><span></span><code>$ elan run local lean tests/lean/run/mario_type_context.lean
+parsing took 1.64ms
+elaboration of bar took 0.488ms
+type checking of bar took 0.0185ms
+/Users/chb/Documents/lean/lean/tests/lean/run/mario_type_context.lean:4:0: warning: declaration &#39;bar&#39; uses sorry
+compilation of bar took 1.08ms
+decl post-processing of bar took 0.678ms
+parsing took 1.41ms
+type checking of foo took 0.0687ms
+compilation of foo took 0.00192ms
+decl post-processing of foo took 0.00173ms
+elaboration: tactic compilation took 40ms
+[bar α = bar α, bar α = bar α, eq.refl (bar α = bar α), h]
+elaboration: tactic execution took 6ms
+num. allocated objects:  55
+num. allocated closures: 55
+    6ms   100.0%   _interaction._lambda_3
+    6ms   100.0%   scope_trace
+    6ms   100.0%   tactic.mk_mapp
+    6ms   100.0%   _interaction._lambda_2
+    6ms   100.0%   tactic.istep._lambda_1
+    6ms   100.0%   tactic.istep
+    6ms   100.0%   tactic.step
+    6ms   100.0%   _interaction
+elaboration of foo took 78.4ms
+/Users/chb/Documents/lean/lean/tests/lean/run/mario_type_context.lean:6:0: warning: declaration &#39;foo&#39; uses sorry
+cumulative profiling times:
+        compilation 1.08ms
+        decl post-processing 0.679ms
+        elaboration 78.9ms
+        elaboration: tactic compilation 40ms
+        elaboration: tactic execution 6ms
+        parsing 3.05ms
+        type checking 0.086ms
+</code></pre></div>
+
+
+
+<a name="196113486"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/116395-maths/topic/witt%20vectors/near/196113486" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Gabriel Ebner <a href="https://leanprover-community.github.io/archive/stream/116395-maths/topic/witt.20vectors.html#196113486">(May 03 2020 at 17:24)</a>:</h4>
+<p><span class="user-mention" data-user-id="123965">@Bryan Gin-ge Chen</span> Can you build mathlib with this change to see if it breaks anything?</p>
+
+
+
+<a name="196113490"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/116395-maths/topic/witt%20vectors/near/196113490" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Bryan Gin-ge Chen <a href="https://leanprover-community.github.io/archive/stream/116395-maths/topic/witt.20vectors.html#196113490">(May 03 2020 at 17:25)</a>:</h4>
+<p>Yes, let me try.</p>
+
+
+
+<a name="196114301"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/116395-maths/topic/witt%20vectors/near/196114301" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Bryan Gin-ge Chen <a href="https://leanprover-community.github.io/archive/stream/116395-maths/topic/witt.20vectors.html#196114301">(May 03 2020 at 17:46)</a>:</h4>
+<p>Sadly, it does seem to break mathlib. The first error is:</p>
+<div class="codehilite"><pre><span></span><code>mathlib/src/algebra/opposites.lean:117:4: error: invalid &#39;or.cases_on&#39; application, elaborator has special support for this kind of application (it is handled as an &quot;eliminator&quot;), but term
+  eq_zero_or_eq_zero_of_mul_eq_zero (op_inj H)
+must not contain metavariables because it is used to compute the motive
+</code></pre></div>
+
+
+
+<a name="196114376"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/116395-maths/topic/witt%20vectors/near/196114376" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Sebastien Gouezel <a href="https://leanprover-community.github.io/archive/stream/116395-maths/topic/witt.20vectors.html#196114376">(May 03 2020 at 17:48)</a>:</h4>
+<p>Does it break badly, or is it just a few lemmas?</p>
+
+
+
+<a name="196114528"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/116395-maths/topic/witt%20vectors/near/196114528" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Kevin Buzzard <a href="https://leanprover-community.github.io/archive/stream/116395-maths/topic/witt.20vectors.html#196114528">(May 03 2020 at 17:52)</a>:</h4>
+<p>You might be able to just comment out that instance and the one after it...</p>
+
+
+
+<a name="196114529"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/116395-maths/topic/witt%20vectors/near/196114529" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Kevin Buzzard <a href="https://leanprover-community.github.io/archive/stream/116395-maths/topic/witt.20vectors.html#196114529">(May 03 2020 at 17:53)</a>:</h4>
+<p>(just to see how badly it breaks)</p>
+
+
+
+<a name="196114638"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/116395-maths/topic/witt%20vectors/near/196114638" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Bryan Gin-ge Chen <a href="https://leanprover-community.github.io/archive/stream/116395-maths/topic/witt.20vectors.html#196114638">(May 03 2020 at 17:55)</a>:</h4>
+<p>Good idea. Let me take a look.</p>
+
+
+
+<a name="196114916"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/116395-maths/topic/witt%20vectors/near/196114916" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Bryan Gin-ge Chen <a href="https://leanprover-community.github.io/archive/stream/116395-maths/topic/witt.20vectors.html#196114916">(May 03 2020 at 18:01)</a>:</h4>
+<p>The next two errors pop up at some <code>erw</code>s in <code>category_theory.opposites</code>, e.g.:</p>
+<div class="codehilite"><pre><span></span><code>mathlib/src/category_theory/opposites.lean:192:29: error: rewrite tactic failed, did not find instance of the pattern in the target expression
+  (functor.op F).map ?m_3 ≫ α.app ?m_2
+state:
+C : Type u₁,
+_inst_1 : category C,
+D : Type u₂,
+_inst_2 : category D,
+F G : C ⥤ D,
+α : functor.op F ⟶ functor.op G,
+X Y : C,
+f : X ⟶ Y
+⊢ G.map f ≫ has_hom.hom.unop (α.app (opposite.op Y)) = has_hom.hom.unop (α.app (opposite.op X)) ≫ F.map f
+</code></pre></div>
+
+
+<p>cf.</p>
+<div class="codehilite"><pre><span></span><code><span class="bp">@</span><span class="o">[</span><span class="n">simps</span><span class="o">]</span> <span class="kn">protected</span> <span class="kn">definition</span> <span class="n">unop</span> <span class="o">(</span><span class="n">α</span> <span class="o">:</span> <span class="n">F</span><span class="bp">.</span><span class="n">op</span> <span class="err">⟶</span> <span class="n">G</span><span class="bp">.</span><span class="n">op</span><span class="o">)</span> <span class="o">:</span> <span class="n">G</span> <span class="err">⟶</span> <span class="n">F</span> <span class="o">:=</span>
+<span class="o">{</span> <span class="n">app</span>         <span class="o">:=</span> <span class="bp">λ</span> <span class="n">X</span><span class="o">,</span> <span class="o">(</span><span class="n">α</span><span class="bp">.</span><span class="n">app</span> <span class="o">(</span><span class="n">op</span> <span class="n">X</span><span class="o">))</span><span class="bp">.</span><span class="n">unop</span><span class="o">,</span>
+  <span class="n">naturality&#39;</span> <span class="o">:=</span> <span class="k">begin</span> <span class="n">tidy</span><span class="o">,</span> <span class="n">erw</span> <span class="n">α</span><span class="bp">.</span><span class="n">naturality</span><span class="o">,</span> <span class="n">refl</span><span class="o">,</span> <span class="kn">end</span> <span class="o">}</span>
+<span class="c1">----------------------------^ error here</span>
+</code></pre></div>
+
+
+
+<a name="196115032"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/116395-maths/topic/witt%20vectors/near/196115032" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Kevin Buzzard <a href="https://leanprover-community.github.io/archive/stream/116395-maths/topic/witt.20vectors.html#196115032">(May 03 2020 at 18:03)</a>:</h4>
+<p>Clearly we have to choose between Witt vectors and opposites...</p>
+
+
+
 {% endraw %}
 
-<hr><p>Last updated: May 03 2020 at 17:06 UTC</p>
+<hr><p>Last updated: May 03 2020 at 18:07 UTC</p>
