@@ -332,6 +332,74 @@ permalink: /stream/144837-PR-reviews/topic/.232554.20split.20list.20join.html
 
 
 
+<a name="196230246"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/144837-PR%20reviews/topic/%232554%20split%20list%20join/near/196230246" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Sebastien Gouezel <a href="https://leanprover-community.github.io/archive/stream/144837-PR-reviews/topic/.232554.20split.20list.20join.html#196230246">(May 04 2020 at 19:41)</a>:</h4>
+<p>OK, the kids are in bed, I'm back. The following works.</p>
+<div class="codehilite"><pre><span></span><code><span class="n">def</span> <span class="n">composition</span><span class="bp">.</span><span class="n">blocks_fin_equiv</span> <span class="o">{</span><span class="n">n</span> <span class="o">:</span> <span class="bp">ℕ</span><span class="o">}</span> <span class="o">(</span><span class="n">c</span> <span class="o">:</span> <span class="n">composition</span> <span class="n">n</span><span class="o">)</span> <span class="o">:</span>
+  <span class="o">(</span><span class="err">Σ</span> <span class="n">i</span> <span class="o">:</span> <span class="n">fin</span> <span class="n">c</span><span class="bp">.</span><span class="n">length</span><span class="o">,</span> <span class="n">fin</span> <span class="o">(</span><span class="n">c</span><span class="bp">.</span><span class="n">blocks_fun</span> <span class="n">i</span><span class="o">))</span> <span class="err">≃</span> <span class="n">fin</span> <span class="n">n</span> <span class="o">:=</span>
+<span class="o">{</span> <span class="n">to_fun</span> <span class="o">:=</span> <span class="bp">λ</span> <span class="n">x</span><span class="o">,</span> <span class="n">c</span><span class="bp">.</span><span class="n">embedding</span> <span class="n">x</span><span class="bp">.</span><span class="mi">1</span> <span class="n">x</span><span class="bp">.</span><span class="mi">2</span><span class="o">,</span>
+  <span class="n">inv_fun</span> <span class="o">:=</span> <span class="bp">λ</span> <span class="n">j</span><span class="o">,</span> <span class="bp">⟨</span><span class="n">c</span><span class="bp">.</span><span class="n">index</span> <span class="n">j</span><span class="o">,</span> <span class="n">c</span><span class="bp">.</span><span class="n">inv_embedding</span> <span class="n">j</span><span class="bp">⟩</span><span class="o">,</span>
+  <span class="n">left_inv</span> <span class="o">:=</span> <span class="bp">λ</span> <span class="n">x</span><span class="o">,</span> <span class="k">begin</span>
+    <span class="n">rcases</span> <span class="n">x</span> <span class="k">with</span> <span class="bp">⟨</span><span class="n">i</span><span class="o">,</span> <span class="n">y</span><span class="bp">⟩</span><span class="o">,</span>
+    <span class="k">have</span> <span class="n">A</span> <span class="o">:</span> <span class="n">composition</span><span class="bp">.</span><span class="n">index</span> <span class="n">c</span> <span class="o">(</span><span class="n">composition</span><span class="bp">.</span><span class="n">embedding</span> <span class="n">c</span> <span class="n">i</span> <span class="n">y</span><span class="o">)</span> <span class="bp">=</span> <span class="n">i</span><span class="o">,</span>
+    <span class="o">{</span> <span class="n">symmetry</span><span class="o">,</span>
+      <span class="n">rw</span> <span class="err">←</span> <span class="n">composition</span><span class="bp">.</span><span class="n">mem_range_embedding_iff&#39;</span><span class="o">,</span>
+      <span class="n">apply</span> <span class="n">set</span><span class="bp">.</span><span class="n">mem_range_self</span> <span class="o">},</span>
+    <span class="n">dsimp</span><span class="o">,</span>
+    <span class="n">congr</span><span class="o">,</span> <span class="o">{</span> <span class="n">exact</span> <span class="n">A</span> <span class="o">},</span>
+    <span class="n">rw</span> <span class="n">fin</span><span class="bp">.</span><span class="n">heq_ext_iff</span><span class="o">,</span>
+    <span class="o">{</span> <span class="n">simp</span> <span class="n">only</span> <span class="o">[</span><span class="n">composition</span><span class="bp">.</span><span class="n">inv_embedding</span><span class="o">,</span> <span class="n">A</span><span class="o">],</span>
+      <span class="n">simp</span> <span class="o">[</span><span class="n">composition</span><span class="bp">.</span><span class="n">embedding</span><span class="o">,</span> <span class="n">fin</span><span class="bp">.</span><span class="n">coe_eq_val</span><span class="o">,</span> <span class="n">A</span><span class="o">]</span> <span class="o">},</span>
+    <span class="o">{</span> <span class="n">rw</span> <span class="n">A</span> <span class="o">}</span>
+  <span class="kn">end</span><span class="o">,</span>
+  <span class="n">right_inv</span> <span class="o">:=</span> <span class="bp">λ</span> <span class="n">j</span><span class="o">,</span> <span class="o">(</span><span class="n">c</span><span class="bp">.</span><span class="n">embedding_comp_inv</span> <span class="n">j</span><span class="o">)</span><span class="bp">.</span><span class="n">symm</span> <span class="o">}</span>
+</code></pre></div>
+
+
+<p>I already needed the right inv, so the lemma is already available. I will probably extract one or two lemmas for the left inv. Can I start from your branch, or do you have some work in progress?</p>
+
+
+
+<a name="196230964"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/144837-PR%20reviews/topic/%232554%20split%20list%20join/near/196230964" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Johan Commelin <a href="https://leanprover-community.github.io/archive/stream/144837-PR-reviews/topic/.232554.20split.20list.20join.html#196230964">(May 04 2020 at 19:47)</a>:</h4>
+<p><span class="user-mention" data-user-id="110050">@Sebastien Gouezel</span> You can use my branch, but you can also pull my branch into yours.</p>
+
+
+
+<a name="196231044"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/144837-PR%20reviews/topic/%232554%20split%20list%20join/near/196231044" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Johan Commelin <a href="https://leanprover-community.github.io/archive/stream/144837-PR-reviews/topic/.232554.20split.20list.20join.html#196231044">(May 04 2020 at 19:47)</a>:</h4>
+<p>Just run <code>git merge jmc_blabla</code> when you have your branch checked out</p>
+
+
+
+<a name="196231112"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/144837-PR%20reviews/topic/%232554%20split%20list%20join/near/196231112" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Johan Commelin <a href="https://leanprover-community.github.io/archive/stream/144837-PR-reviews/topic/.232554.20split.20list.20join.html#196231112">(May 04 2020 at 19:48)</a>:</h4>
+<p>Possibly after <code>git fetch jmc_blabla</code></p>
+
+
+
+<a name="196232271"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/144837-PR%20reviews/topic/%232554%20split%20list%20join/near/196232271" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Yury G. Kudryashov <a href="https://leanprover-community.github.io/archive/stream/144837-PR-reviews/topic/.232554.20split.20list.20join.html#196232271">(May 04 2020 at 19:57)</a>:</h4>
+<p>Don't <code>embedding_inj</code> and <code>right_inv</code> imply <code>left_inv</code>?</p>
+
+
+
+<a name="196232560"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/144837-PR%20reviews/topic/%232554%20split%20list%20join/near/196232560" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Yury G. Kudryashov <a href="https://leanprover-community.github.io/archive/stream/144837-PR-reviews/topic/.232554.20split.20list.20join.html#196232560">(May 04 2020 at 19:59)</a>:</h4>
+<p>BTW, LHS of <code>embedding_comp_inv</code> is simpler than RHS.</p>
+
+
+
+<a name="196234392"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/144837-PR%20reviews/topic/%232554%20split%20list%20join/near/196234392" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Patrick Massot <a href="https://leanprover-community.github.io/archive/stream/144837-PR-reviews/topic/.232554.20split.20list.20join.html#196234392">(May 04 2020 at 20:14)</a>:</h4>
+<p><span class="user-mention silent" data-user-id="110050">Sebastien Gouezel</span> <a href="#narrow/stream/144837-PR-reviews/topic/.232554.20split.20list.20join/near/196218624" title="#narrow/stream/144837-PR-reviews/topic/.232554.20split.20list.20join/near/196218624">said</a>:</p>
+<blockquote>
+<p>Yes, I don't have a reference except for Bourbaki (in this fascicule where they don't give proofs). My goal is the analytic local inverse theorem, in its most general version (over any non-discrete normed field), for which I didn't find a reference either (and the various proofs of particular cases in the literature do not work for the general case, or have bootstrapping issues -- you need to know it over complex numbers to obtain it over general fields, and over complex numbers you use the fact that analytic is equivalent to <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msup><mi>C</mi><mn>1</mn></msup></mrow><annotation encoding="application/x-tex">C^1</annotation></semantics></math></span><span aria-hidden="true" class="katex-html"><span class="base"><span class="strut" style="height:0.8141079999999999em;vertical-align:0em;"></span><span class="mord"><span class="mord mathdefault" style="margin-right:0.07153em;">C</span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.8141079999999999em;"><span style="top:-3.063em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight">1</span></span></span></span></span></span></span></span></span></span></span> and rely on the <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msup><mi>C</mi><mn>1</mn></msup></mrow><annotation encoding="application/x-tex">C^1</annotation></semantics></math></span><span aria-hidden="true" class="katex-html"><span class="base"><span class="strut" style="height:0.8141079999999999em;vertical-align:0em;"></span><span class="mord"><span class="mord mathdefault" style="margin-right:0.07153em;">C</span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.8141079999999999em;"><span style="top:-3.063em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight">1</span></span></span></span></span></span></span></span></span></span></span> local inverse theorem). So I came up with another direct proof, for which I won't have a reference either.</p>
+</blockquote>
+<p>Doing local inverse theorem for complex analytic functions using the <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msup><mi>C</mi><mn>1</mn></msup></mrow><annotation encoding="application/x-tex">C^1</annotation></semantics></math></span><span aria-hidden="true" class="katex-html"><span class="base"><span class="strut" style="height:0.8141079999999999em;vertical-align:0em;"></span><span class="mord"><span class="mord mathdefault" style="margin-right:0.07153em;">C</span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.8141079999999999em;"><span style="top:-3.063em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight">1</span></span></span></span></span></span></span></span></span></span></span> version is non-sense. I'm sure Newton had a proof in the analytic case long before non-analytic functions became functions. Ok, maybe not Newton, but certainly people in the early 19th century.</p>
+
+
+
 {% endraw %}
 
-<hr><p>Last updated: May 04 2020 at 19:05 UTC</p>
+<hr><p>Last updated: May 04 2020 at 20:16 UTC</p>

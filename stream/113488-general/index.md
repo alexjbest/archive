@@ -9,7 +9,7 @@ permalink: /stream/113488-general/index.html
 
 ### Topics:
 
-* [did finish get faster?](topic/did.20finish.20get.20faster.3F.html) (8 messages, latest: May 04 2020 at 18:54)
+* [did finish get faster?](topic/did.20finish.20get.20faster.3F.html) (9 messages, latest: May 04 2020 at 19:05)
 * [Notices of the AMS paper](topic/Notices.20of.20the.20AMS.20paper.html) (99 messages, latest: May 04 2020 at 17:02)
 * [May the 4th](topic/May.20the.204th.html) (3 messages, latest: May 04 2020 at 16:53)
 * [alien mathematics](topic/alien.20mathematics.html) (1 message, latest: May 04 2020 at 15:04)
@@ -2760,4 +2760,4 @@ permalink: /stream/113488-general/index.html
 * [test](topic/test.html) (4 messages, latest: Feb 26 2018 at 16:22)
 * [welcome](topic/welcome.html) (1 message, latest: Feb 26 2018 at 16:02)
 
-<hr><p>Last updated: May 04 2020 at 19:05 UTC</p>
+<hr><p>Last updated: May 04 2020 at 20:16 UTC</p>
