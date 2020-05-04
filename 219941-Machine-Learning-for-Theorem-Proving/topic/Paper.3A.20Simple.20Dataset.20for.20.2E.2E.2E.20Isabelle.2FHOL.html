@@ -42,6 +42,28 @@ permalink: /stream/219941-Machine-Learning-for-Theorem-Proving/topic/Paper.3A.20
 
 
 
+<a name="196135857"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/219941-Machine%20Learning%20for%20Theorem%20Proving/topic/Paper%3A%20Simple%20Dataset%20for%20...%20Isabelle/HOL/near/196135857" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Jason Rute <a href="https://leanprover-community.github.io/archive/stream/219941-Machine-Learning-for-Theorem-Proving/topic/Paper.3A.20Simple.20Dataset.20for.20.2E.2E.2E.20Isabelle.2FHOL.html#196135857">(May 04 2020 at 02:59)</a>:</h4>
+<p>So I read this paper.  It's not really a paper at all, but a short description and motivation for a dataset.  So let me briefly describe the dataset.</p>
+<ul>
+<li>It is the dataset used to build <a href="https://doi.org/10.1145/3238147.3238210" title="https://doi.org/10.1145/3238147.3238210">PaMpeR</a>, a proof method recommendation system for Isabelle/HOL by the same author.  The idea is very simple: predict the <em>proof method</em> (the Isabelle word for tactic) for a given goal (and context).  The author already has a system for doing this (PaMpeR), but I think they are looking for assistance (or competition) in improving their prediction algorithm.</li>
+<li>The dataset is very simple.  It is the simplest dataset for theorem proving that I know of, and the hope is that it will attract “machine learning researchers” to this area.  The dataset is just 382,801 lines of this:</li>
+</ul>
+<div class="codehilite"><pre><span></span><code>~/shared/afp-2018-02-26_eval/thys/Incompleteness/Coding_Predicates.thy722 auto 1,0,0,0,1,1,0,1,0,0,0,0,0,1,1,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,1,1,0,0,1,0,0,0,0,0,1,1,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,1,1,0,1,0,0,0,0,0,0,0,1,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+</code></pre></div>
+
+
+<p>You may say: I see the proof method (<code>auto</code> in this case), but where is the goal?  Also what are all those 0s and 1s?  That is where the simplicity comes in.  They have already gone through the difficult step of turning the goal (and context) into 108 (I count 113 actually) Boolean attributes.  This has both significant plusses and minuses.</p>
+
+
+
+<a name="196135913"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/219941-Machine%20Learning%20for%20Theorem%20Proving/topic/Paper%3A%20Simple%20Dataset%20for%20...%20Isabelle/HOL/near/196135913" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Jason Rute <a href="https://leanprover-community.github.io/archive/stream/219941-Machine-Learning-for-Theorem-Proving/topic/Paper.3A.20Simple.20Dataset.20for.20.2E.2E.2E.20Isabelle.2FHOL.html#196135913">(May 04 2020 at 03:01)</a>:</h4>
+<p>On the minus side, I doubt it will attract serious ML researchers.  This sort of thing is basically a solved problem (or at least is no harder than a number of other standard datasets).  Also, by holding the “feature extraction” constant, they limit the possible improvements.  It is very possible that the largest gains in accuracy would come from a better feature extractor.  I would say much of the current research on ML for theorem proving is focused on feature extraction for formulas (especially for premises selection).</p>
+<p>On the plus side this dataset is pretty easy to work with.  If you are looking to try out machine learning and want a (theorem proving) dataset to start with, this one is a good first project.</p>
+
+
+
 {% endraw %}
 
-<hr><p>Last updated: May 04 2020 at 02:08 UTC</p>
+<hr><p>Last updated: May 04 2020 at 03:04 UTC</p>

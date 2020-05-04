@@ -9,6 +9,7 @@ permalink: /stream/113488-general/index.html
 
 ### Topics:
 
+* [Induction on list](topic/Induction.20on.20list.html) (2 messages, latest: May 04 2020 at 02:56)
 * [Invitation to join the Codewars Lean community, Round 2](topic/Invitation.20to.20join.20the.20Codewars.20Lean.20community.2C.20Round.202.html) (277 messages, latest: May 04 2020 at 01:56)
 * [noncomputable card](topic/noncomputable.20card.html) (19 messages, latest: May 04 2020 at 01:37)
 * [Diagnosing timeout](topic/Diagnosing.20timeout.html) (155 messages, latest: May 04 2020 at 00:10)
@@ -2757,4 +2758,4 @@ permalink: /stream/113488-general/index.html
 * [test](topic/test.html) (4 messages, latest: Feb 26 2018 at 16:22)
 * [welcome](topic/welcome.html) (1 message, latest: Feb 26 2018 at 16:02)
 
-<hr><p>Last updated: May 04 2020 at 02:08 UTC</p>
+<hr><p>Last updated: May 04 2020 at 03:04 UTC</p>
