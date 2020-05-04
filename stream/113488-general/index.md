@@ -9,6 +9,8 @@ permalink: /stream/113488-general/index.html
 
 ### Topics:
 
+* [Notices of the AMS paper](topic/Notices.20of.20the.20AMS.20paper.html) (99 messages, latest: May 04 2020 at 17:02)
+* [May the 4th](topic/May.20the.204th.html) (3 messages, latest: May 04 2020 at 16:53)
 * [alien mathematics](topic/alien.20mathematics.html) (1 message, latest: May 04 2020 at 15:04)
 * [ordered monoids](topic/ordered.20monoids.html) (110 messages, latest: May 04 2020 at 08:31)
 * [Invitation to join the Codewars Lean community, Round 2](topic/Invitation.20to.20join.20the.20Codewars.20Lean.20community.2C.20Round.202.html) (279 messages, latest: May 04 2020 at 04:34)
@@ -34,7 +36,6 @@ permalink: /stream/113488-general/index.html
 * [documenting notation](topic/documenting.20notation.html) (3 messages, latest: May 01 2020 at 20:35)
 * [sub_eq_add_neg](topic/sub_eq_add_neg.html) (13 messages, latest: May 01 2020 at 18:32)
 * [unnecessary(?) simp lemma](topic/unnecessary(.3F).20simp.20lemma.html) (4 messages, latest: May 01 2020 at 18:01)
-* [Notices of the AMS paper](topic/Notices.20of.20the.20AMS.20paper.html) (98 messages, latest: May 01 2020 at 17:58)
 * [leanproject access denied](topic/leanproject.20access.20denied.html) (40 messages, latest: May 01 2020 at 14:32)
 * [set_option trace.simplify.rewrite true](topic/set_option.20trace.2Esimplify.2Erewrite.20true.html) (10 messages, latest: May 01 2020 at 13:05)
 * [simp linter and structure fields](topic/simp.20linter.20and.20structure.20fields.html) (13 messages, latest: May 01 2020 at 09:01)
@@ -1089,7 +1090,6 @@ permalink: /stream/113488-general/index.html
 * [olean-rs](topic/olean-rs.html) (47 messages, latest: May 06 2019 at 21:11)
 * [category theory](topic/category.20theory.html) (7 messages, latest: May 04 2019 at 22:59)
 * [free_comm_ring](topic/free_comm_ring.html) (58 messages, latest: May 04 2019 at 12:13)
-* [May the 4th](topic/May.20the.204th.html) (1 message, latest: May 04 2019 at 05:48)
 * [olean-rs on Travis is verbose](topic/olean-rs.20on.20Travis.20is.20verbose.html) (103 messages, latest: May 03 2019 at 22:23)
 * [New record](topic/New.20record.html) (20 messages, latest: May 03 2019 at 20:20)
 * [squeeze_dsimp?](topic/squeeze_dsimp.3F.html) (14 messages, latest: May 03 2019 at 18:43)
@@ -2759,4 +2759,4 @@ permalink: /stream/113488-general/index.html
 * [test](topic/test.html) (4 messages, latest: Feb 26 2018 at 16:22)
 * [welcome](topic/welcome.html) (1 message, latest: Feb 26 2018 at 16:02)
 
-<hr><p>Last updated: May 04 2020 at 16:06 UTC</p>
+<hr><p>Last updated: May 04 2020 at 17:06 UTC</p>
