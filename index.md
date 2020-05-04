@@ -38,8 +38,8 @@ permalink: /index.html
 
 * [Big Proof 2019](stream/198800-Big-Proof-2019/index.html) (3 topics)
 
+* [Program verification](stream/236449-Program-verification/index.html) (2 topics)
+
 * [Type theory](stream/236446-Type-theory/index.html) (2 topics)
 
-* [Program verification](stream/236449-Program-verification/index.html) (1 topic)
-
-<hr><p>Last updated: May 04 2020 at 11:05 UTC</p>
+<hr><p>Last updated: May 04 2020 at 12:08 UTC</p>
