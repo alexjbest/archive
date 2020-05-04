@@ -111,6 +111,60 @@ permalink: /stream/144837-PR-reviews/topic/.232554.20split.20list.20join.html
 
 
 
+<a name="196157313"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/144837-PR%20reviews/topic/%232554%20split%20list%20join/near/196157313" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Mario Carneiro <a href="https://leanprover-community.github.io/archive/stream/144837-PR-reviews/topic/.232554.20split.20list.20join.html#196157313">(May 04 2020 at 09:15)</a>:</h4>
+<p>Pushed</p>
+
+
+
+<a name="196157457"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/144837-PR%20reviews/topic/%232554%20split%20list%20join/near/196157457" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Mario Carneiro <a href="https://leanprover-community.github.io/archive/stream/144837-PR-reviews/topic/.232554.20split.20list.20join.html#196157457">(May 04 2020 at 09:17)</a>:</h4>
+<p>I deleted <code>nth_le_split_wrt_composition</code> but you weren't using it. Let me know if you want it restored</p>
+
+
+
+<a name="196158514"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/144837-PR%20reviews/topic/%232554%20split%20list%20join/near/196158514" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Sebastien Gouezel <a href="https://leanprover-community.github.io/archive/stream/144837-PR-reviews/topic/.232554.20split.20list.20join.html#196158514">(May 04 2020 at 09:30)</a>:</h4>
+<p>Did you check if it breaks <a href="https://github.com/leanprover-community/mathlib/issues/2513" title="https://github.com/leanprover-community/mathlib/issues/2513">#2513</a>? (You would just need to check if the file <a href="https://github.com/leanprover-community/mathlib/blob/sgouezel_series_composition/src/analysis/analytic/composition.lean" title="https://github.com/leanprover-community/mathlib/blob/sgouezel_series_composition/src/analysis/analytic/composition.lean">https://github.com/leanprover-community/mathlib/blob/sgouezel_series_composition/src/analysis/analytic/composition.lean</a> compiles on your branch)</p>
+
+
+
+<a name="196158566"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/144837-PR%20reviews/topic/%232554%20split%20list%20join/near/196158566" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Mario Carneiro <a href="https://leanprover-community.github.io/archive/stream/144837-PR-reviews/topic/.232554.20split.20list.20join.html#196158566">(May 04 2020 at 09:31)</a>:</h4>
+<p>yes</p>
+
+
+
+<a name="196158580"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/144837-PR%20reviews/topic/%232554%20split%20list%20join/near/196158580" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Mario Carneiro <a href="https://leanprover-community.github.io/archive/stream/144837-PR-reviews/topic/.232554.20split.20list.20join.html#196158580">(May 04 2020 at 09:31)</a>:</h4>
+<p>er, no it doesn't break</p>
+
+
+
+<a name="196158587"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/144837-PR%20reviews/topic/%232554%20split%20list%20join/near/196158587" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Mario Carneiro <a href="https://leanprover-community.github.io/archive/stream/144837-PR-reviews/topic/.232554.20split.20list.20join.html#196158587">(May 04 2020 at 09:31)</a>:</h4>
+<p>yes it works</p>
+
+
+
+<a name="196158606"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/144837-PR%20reviews/topic/%232554%20split%20list%20join/near/196158606" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Sebastien Gouezel <a href="https://leanprover-community.github.io/archive/stream/144837-PR-reviews/topic/.232554.20split.20list.20join.html#196158606">(May 04 2020 at 09:31)</a>:</h4>
+<p>Then that's great, thanks a lot. Your definition is definitely better!</p>
+
+
+
+<a name="196160339"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/144837-PR%20reviews/topic/%232554%20split%20list%20join/near/196160339" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Johan Commelin <a href="https://leanprover-community.github.io/archive/stream/144837-PR-reviews/topic/.232554.20split.20list.20join.html#196160339">(May 04 2020 at 09:50)</a>:</h4>
+<p><span class="user-mention" data-user-id="110049">@Mario Carneiro</span> Thanks!</p>
+
+
+
+<a name="196160405"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/144837-PR%20reviews/topic/%232554%20split%20list%20join/near/196160405" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Johan Commelin <a href="https://leanprover-community.github.io/archive/stream/144837-PR-reviews/topic/.232554.20split.20list.20join.html#196160405">(May 04 2020 at 09:51)</a>:</h4>
+<p><span class="user-mention" data-user-id="110050">@Sebastien Gouezel</span> I think the last two theorems should be tagged <code>simp</code>. Otherwise, Let's Get This Merged.</p>
+
+
+
 {% endraw %}
 
-<hr><p>Last updated: May 04 2020 at 09:05 UTC</p>
+<hr><p>Last updated: May 04 2020 at 10:06 UTC</p>
