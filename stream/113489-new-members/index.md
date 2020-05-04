@@ -9,6 +9,7 @@ permalink: /stream/113489-new-members/index.html
 
 ### Topics:
 
+* [Is fin injective?](topic/Is.20fin.20injective.3F.html) (3 messages, latest: May 04 2020 at 04:02)
 * [Tutorials update](topic/Tutorials.20update.html) (2 messages, latest: May 03 2020 at 21:12)
 * [instance of decidable_set_is_empty](topic/instance.20of.20decidable_set_is_empty.html) (33 messages, latest: May 03 2020 at 11:16)
 * [Finsets and fintypes](topic/Finsets.20and.20fintypes.html) (31 messages, latest: May 03 2020 at 10:52)
@@ -1003,4 +1004,4 @@ permalink: /stream/113489-new-members/index.html
 * [Andrew Ashworth](topic/Andrew.20Ashworth.html) (15 messages, latest: Feb 26 2018 at 16:21)
 * [onboarding](topic/onboarding.html) (1 message, latest: Feb 26 2018 at 16:02)
 
-<hr><p>Last updated: May 04 2020 at 03:04 UTC</p>
+<hr><p>Last updated: May 04 2020 at 04:05 UTC</p>

@@ -9,8 +9,9 @@ permalink: /stream/113488-general/index.html
 
 ### Topics:
 
-* [Induction on list](topic/Induction.20on.20list.html) (2 messages, latest: May 04 2020 at 02:56)
-* [Invitation to join the Codewars Lean community, Round 2](topic/Invitation.20to.20join.20the.20Codewars.20Lean.20community.2C.20Round.202.html) (277 messages, latest: May 04 2020 at 01:56)
+* [Invitation to join the Codewars Lean community, Round 2](topic/Invitation.20to.20join.20the.20Codewars.20Lean.20community.2C.20Round.202.html) (278 messages, latest: May 04 2020 at 04:05)
+* [how do I step through proofs?](topic/how.20do.20I.20step.20through.20proofs.3F.html) (88 messages, latest: May 04 2020 at 03:57)
+* [Induction on list](topic/Induction.20on.20list.html) (3 messages, latest: May 04 2020 at 03:40)
 * [noncomputable card](topic/noncomputable.20card.html) (19 messages, latest: May 04 2020 at 01:37)
 * [Diagnosing timeout](topic/Diagnosing.20timeout.html) (155 messages, latest: May 04 2020 at 00:10)
 * [tracking down dependency chains](topic/tracking.20down.20dependency.20chains.html) (14 messages, latest: May 03 2020 at 19:48)
@@ -26,7 +27,6 @@ permalink: /stream/113488-general/index.html
 * [linter for instance names](topic/linter.20for.20instance.20names.html) (2 messages, latest: May 02 2020 at 11:11)
 * [first argument of minimal_polynomial necessary](topic/first.20argument.20of.20minimal_polynomial.20necessary.html) (8 messages, latest: May 02 2020 at 08:32)
 * [transitive coercions](topic/transitive.20coercions.html) (69 messages, latest: May 02 2020 at 08:31)
-* [how do I step through proofs?](topic/how.20do.20I.20step.20through.20proofs.3F.html) (87 messages, latest: May 02 2020 at 00:30)
 * [abel idempotence](topic/abel.20idempotence.html) (6 messages, latest: May 01 2020 at 22:27)
 * [Specialized `ext` lemmas](topic/Specialized.20.60ext.60.20lemmas.html) (9 messages, latest: May 01 2020 at 20:41)
 * [documenting notation](topic/documenting.20notation.html) (3 messages, latest: May 01 2020 at 20:35)
@@ -2758,4 +2758,4 @@ permalink: /stream/113488-general/index.html
 * [test](topic/test.html) (4 messages, latest: Feb 26 2018 at 16:22)
 * [welcome](topic/welcome.html) (1 message, latest: Feb 26 2018 at 16:02)
 
-<hr><p>Last updated: May 04 2020 at 03:04 UTC</p>
+<hr><p>Last updated: May 04 2020 at 04:05 UTC</p>
