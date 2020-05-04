@@ -1,0 +1,59 @@
+---
+layout: archive
+title: Zulip Chat Archive
+permalink: /stream/113489-new-members/topic/rational.20coertion.html
+---
+
+<h2>Stream: <a href="https://leanprover-community.github.io/archive/stream/113489-new-members/index.html">new members</a></h2>
+<h3>Topic: <a href="https://leanprover-community.github.io/archive/stream/113489-new-members/topic/rational.20coertion.html">rational coertion</a></h3>
+
+<hr>
+
+<base href="https://leanprover.zulipchat.com/">
+
+<head><link href="/style.css" rel="stylesheet"></head>
+
+{% raw %}
+
+<a name="196246519"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113489-new%20members/topic/rational%20coertion/near/196246519" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Sayantan Majumdar <a href="https://leanprover-community.github.io/archive/stream/113489-new-members/topic/rational.20coertion.html#196246519">(May 04 2020 at 22:17)</a>:</h4>
+<p>having some trouble prooving this </p>
+<div class="codehilite"><pre><span></span><code><span class="kn">theorem</span> <span class="n">simple_01</span> <span class="o">(</span><span class="n">p</span> <span class="o">:</span> <span class="n">ℚ</span><span class="o">)</span> <span class="o">:</span>  <span class="mi">2</span> <span class="bp">*</span> <span class="err">↑</span><span class="o">(</span><span class="n">p</span><span class="bp">.</span><span class="n">num</span> <span class="bp">*</span> <span class="n">p</span><span class="bp">.</span><span class="n">num</span><span class="o">)</span> <span class="bp">=</span> <span class="mi">2</span> <span class="bp">*</span> <span class="err">↑</span><span class="o">(</span><span class="n">p</span><span class="bp">.</span><span class="n">num</span><span class="o">)</span> <span class="bp">*</span> <span class="err">↑</span><span class="o">(</span><span class="n">p</span><span class="bp">.</span><span class="n">num</span><span class="o">)</span> <span class="o">:=</span> <span class="n">rfl</span>
+</code></pre></div>
+
+
+<p>there is some coercion problem</p>
+
+
+
+<a name="196247115"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113489-new%20members/topic/rational%20coertion/near/196247115" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Kevin Buzzard <a href="https://leanprover-community.github.io/archive/stream/113489-new-members/topic/rational.20coertion.html#196247115">(May 04 2020 at 22:23)</a>:</h4>
+<p><a href="https://github.com/leanprover-community/mathlib/wiki/Minimum-Working-Example-&#40;MWE&#41;" title="https://github.com/leanprover-community/mathlib/wiki/Minimum-Working-Example-&#40;MWE&#41;">#mwe</a>? This doesn't compile for me. Did you try <code>by norm_cast</code>?</p>
+
+
+
+<a name="196247209"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113489-new%20members/topic/rational%20coertion/near/196247209" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Sayantan Majumdar <a href="https://leanprover-community.github.io/archive/stream/113489-new-members/topic/rational.20coertion.html#196247209">(May 04 2020 at 22:24)</a>:</h4>
+<p>no, will now<br>
+I was trying to prove</p>
+<div class="codehilite"><pre><span></span><code><span class="kn">example</span> <span class="o">:</span> <span class="bp">¬</span><span class="o">(</span><span class="bp">∃</span> <span class="n">p</span> <span class="o">:</span> <span class="n">ℚ</span><span class="o">,</span> <span class="n">p</span> <span class="bp">*</span> <span class="n">p</span> <span class="bp">=</span> <span class="mi">2</span><span class="o">)</span> <span class="o">:=</span> <span class="n">sorry</span>
+</code></pre></div>
+
+
+
+<a name="196247509"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113489-new%20members/topic/rational%20coertion/near/196247509" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Sayantan Majumdar <a href="https://leanprover-community.github.io/archive/stream/113489-new-members/topic/rational.20coertion.html#196247509">(May 04 2020 at 22:26)</a>:</h4>
+<p>it talks about class_instance resolution dept<br>
+have to increase class.instance_max_dept</p>
+
+
+
+<a name="196247681"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113489-new%20members/topic/rational%20coertion/near/196247681" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Sayantan Majumdar <a href="https://leanprover-community.github.io/archive/stream/113489-new-members/topic/rational.20coertion.html#196247681">(May 04 2020 at 22:28)</a>:</h4>
+<p><code>rat.cast_mul</code></p>
+
+
+
+{% endraw %}
+
+<hr><p>Last updated: May 04 2020 at 22:34 UTC</p>

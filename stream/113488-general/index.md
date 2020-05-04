@@ -9,6 +9,7 @@ permalink: /stream/113488-general/index.html
 
 ### Topics:
 
+* [coe_fn and class instances](topic/coe_fn.20and.20class.20instances.html) (24 messages, latest: May 04 2020 at 22:32)
 * [did finish get faster?](topic/did.20finish.20get.20faster.3F.html) (9 messages, latest: May 04 2020 at 19:05)
 * [Notices of the AMS paper](topic/Notices.20of.20the.20AMS.20paper.html) (99 messages, latest: May 04 2020 at 17:02)
 * [May the 4th](topic/May.20the.204th.html) (3 messages, latest: May 04 2020 at 16:53)
@@ -439,7 +440,6 @@ permalink: /stream/113488-general/index.html
 * [Bundled `sub*` and `center`](topic/Bundled.20.60sub*.60.20and.20.60center.60.html) (2 messages, latest: Feb 15 2020 at 20:53)
 * [`meta` questions](topic/.60meta.60.20questions.html) (18 messages, latest: Feb 15 2020 at 19:54)
 * [Dataset of “info” command over all of mathlib](topic/Dataset.20of.20.E2.80.9Cinfo.E2.80.9D.20command.20over.20all.20of.20mathlib.html) (9 messages, latest: Feb 15 2020 at 15:55)
-* [coe_fn and class instances](topic/coe_fn.20and.20class.20instances.html) (23 messages, latest: Feb 15 2020 at 14:56)
 * [Let assumptions in theorems](topic/Let.20assumptions.20in.20theorems.html) (7 messages, latest: Feb 14 2020 at 20:12)
 * [nested comment blocks](topic/nested.20comment.20blocks.html) (6 messages, latest: Feb 14 2020 at 05:42)
 * [lean codeblocks in docstrings](topic/lean.20codeblocks.20in.20docstrings.html) (8 messages, latest: Feb 14 2020 at 03:20)
@@ -2760,4 +2760,4 @@ permalink: /stream/113488-general/index.html
 * [test](topic/test.html) (4 messages, latest: Feb 26 2018 at 16:22)
 * [welcome](topic/welcome.html) (1 message, latest: Feb 26 2018 at 16:02)
 
-<hr><p>Last updated: May 04 2020 at 21:20 UTC</p>
+<hr><p>Last updated: May 04 2020 at 22:34 UTC</p>
