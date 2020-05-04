@@ -12,7 +12,7 @@ permalink: /index.html
 
 * [new members](stream/113489-new-members/index.html) (998 topics)
 
-* [maths](stream/116395-maths/index.html) (875 topics)
+* [maths](stream/116395-maths/index.html) (876 topics)
 
 * [PR reviews](stream/144837-PR-reviews/index.html) (234 topics)
 
@@ -42,4 +42,4 @@ permalink: /index.html
 
 * [Type theory](stream/236446-Type-theory/index.html) (2 topics)
 
-<hr><p>Last updated: May 04 2020 at 13:08 UTC</p>
+<hr><p>Last updated: May 04 2020 at 14:05 UTC</p>

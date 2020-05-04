@@ -9,7 +9,7 @@ permalink: /stream/113489-new-members/index.html
 
 ### Topics:
 
-* [Jalex Stark (introduction)](topic/Jalex.20Stark.20(introduction).html) (11 messages, latest: May 04 2020 at 13:07)
+* [Jalex Stark (introduction)](topic/Jalex.20Stark.20(introduction).html) (36 messages, latest: May 04 2020 at 13:24)
 * [`leanproject get` do not stop](topic/.60leanproject.20get.60.20do.20not.20stop.html) (9 messages, latest: May 04 2020 at 09:55)
 * [Aram Bingham (hello world)](topic/Aram.20Bingham.20(hello.20world).html) (5 messages, latest: May 04 2020 at 08:24)
 * [instance of decidable_set_is_empty](topic/instance.20of.20decidable_set_is_empty.html) (34 messages, latest: May 04 2020 at 07:47)
@@ -1008,4 +1008,4 @@ permalink: /stream/113489-new-members/index.html
 * [Andrew Ashworth](topic/Andrew.20Ashworth.html) (15 messages, latest: Feb 26 2018 at 16:21)
 * [onboarding](topic/onboarding.html) (1 message, latest: Feb 26 2018 at 16:02)
 
-<hr><p>Last updated: May 04 2020 at 13:08 UTC</p>
+<hr><p>Last updated: May 04 2020 at 14:05 UTC</p>

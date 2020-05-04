@@ -9,7 +9,7 @@ permalink: /stream/144837-PR-reviews/index.html
 
 ### Topics:
 
-* [#2554 split list join](topic/.232554.20split.20list.20join.html) (29 messages, latest: May 04 2020 at 12:30)
+* [#2554 split list join](topic/.232554.20split.20list.20join.html) (30 messages, latest: May 04 2020 at 13:18)
 * [#2589 norm_num](topic/.232589.20norm_num.html) (50 messages, latest: May 04 2020 at 05:18)
 * [#2590 finite fields](topic/.232590.20finite.20fields.html) (12 messages, latest: May 02 2020 at 21:47)
 * [#2578 free_monoid_product](topic/.232578.20free_monoid_product.html) (11 messages, latest: May 01 2020 at 08:58)
@@ -244,4 +244,4 @@ permalink: /stream/144837-PR-reviews/index.html
 * [documentation PRs](topic/documentation.20PRs.html) (2 messages, latest: Oct 07 2018 at 11:21)
 * [hello](topic/hello.html) (1 message, latest: Oct 07 2018 at 10:24)
 
-<hr><p>Last updated: May 04 2020 at 13:08 UTC</p>
+<hr><p>Last updated: May 04 2020 at 14:05 UTC</p>
