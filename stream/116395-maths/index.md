@@ -9,7 +9,7 @@ permalink: /stream/116395-maths/index.html
 
 ### Topics:
 
-* [witt vectors](topic/witt.20vectors.html) (293 messages, latest: May 04 2020 at 04:37)
+* [witt vectors](topic/witt.20vectors.html) (295 messages, latest: May 04 2020 at 05:48)
 * [sober spaces](topic/sober.20spaces.html) (10 messages, latest: May 04 2020 at 04:36)
 * [Type vs Set](topic/Type.20vs.20Set.html) (6 messages, latest: May 03 2020 at 09:14)
 * [Analytic functions](topic/Analytic.20functions.html) (16 messages, latest: May 03 2020 at 08:36)
@@ -885,4 +885,4 @@ permalink: /stream/116395-maths/index.html
 * [free group](topic/free.20group.html) (92 messages, latest: Apr 02 2018 at 05:00)
 * [Easy topological space question](topic/Easy.20topological.20space.20question.html) (18 messages, latest: Apr 02 2018 at 01:23)
 
-<hr><p>Last updated: May 04 2020 at 05:06 UTC</p>
+<hr><p>Last updated: May 04 2020 at 06:05 UTC</p>
