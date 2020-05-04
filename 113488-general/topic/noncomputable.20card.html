@@ -123,6 +123,13 @@ permalink: /stream/113488-general/topic/noncomputable.20card.html
 
 
 
+<a name="196133036"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113488-general/topic/noncomputable%20card/near/196133036" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Jeremy Avigad <a href="https://leanprover-community.github.io/archive/stream/113488-general/topic/noncomputable.20card.html#196133036">(May 04 2020 at 01:37)</a>:</h4>
+<p>In Lean 2, we had a nonconstructive cast from <code>set</code> to <code>finset</code> which mapped any infinite set to the empty set. So we had <code>set.card s = finset.card (s.to_finset)</code>. The cardinality of the empty set still comes out to zero, and it is easy to translate <code>finset</code> theorems (e.g. about <code>card</code> and <code>sum</code>) to <code>set</code> theorems. </p>
+<p>The advantage to having <code>card</code> and <code>sum</code> map infinite sets to <code>0</code> is that lots of identities hold without preconditions. It makes it much more convenient to work with them. Isabelle follows that approach as well.</p>
+
+
+
 {% endraw %}
 
-<hr><p>Last updated: May 04 2020 at 01:07 UTC</p>
+<hr><p>Last updated: May 04 2020 at 02:08 UTC</p>

@@ -9,11 +9,12 @@ permalink: /stream/113488-general/index.html
 
 ### Topics:
 
+* [Invitation to join the Codewars Lean community, Round 2](topic/Invitation.20to.20join.20the.20Codewars.20Lean.20community.2C.20Round.202.html) (277 messages, latest: May 04 2020 at 01:56)
+* [noncomputable card](topic/noncomputable.20card.html) (19 messages, latest: May 04 2020 at 01:37)
 * [Diagnosing timeout](topic/Diagnosing.20timeout.html) (155 messages, latest: May 04 2020 at 00:10)
 * [tracking down dependency chains](topic/tracking.20down.20dependency.20chains.html) (14 messages, latest: May 03 2020 at 19:48)
 * [how to eliminate a chain of exists](topic/how.20to.20eliminate.20a.20chain.20of.20exists.html) (4 messages, latest: May 03 2020 at 15:42)
 * [Lean job in London](topic/Lean.20job.20in.20London.html) (20 messages, latest: May 03 2020 at 15:34)
-* [noncomputable card](topic/noncomputable.20card.html) (18 messages, latest: May 03 2020 at 13:26)
 * [congr'](topic/congr'.html) (5 messages, latest: May 03 2020 at 12:44)
 * [cardinal](topic/cardinal.html) (12 messages, latest: May 03 2020 at 02:24)
 * [simp hole command](topic/simp.20hole.20command.html) (19 messages, latest: May 02 2020 at 21:00)
@@ -24,7 +25,6 @@ permalink: /stream/113488-general/index.html
 * [linter for instance names](topic/linter.20for.20instance.20names.html) (2 messages, latest: May 02 2020 at 11:11)
 * [first argument of minimal_polynomial necessary](topic/first.20argument.20of.20minimal_polynomial.20necessary.html) (8 messages, latest: May 02 2020 at 08:32)
 * [transitive coercions](topic/transitive.20coercions.html) (69 messages, latest: May 02 2020 at 08:31)
-* [Invitation to join the Codewars Lean community, Round 2](topic/Invitation.20to.20join.20the.20Codewars.20Lean.20community.2C.20Round.202.html) (276 messages, latest: May 02 2020 at 01:03)
 * [how do I step through proofs?](topic/how.20do.20I.20step.20through.20proofs.3F.html) (87 messages, latest: May 02 2020 at 00:30)
 * [abel idempotence](topic/abel.20idempotence.html) (6 messages, latest: May 01 2020 at 22:27)
 * [Specialized `ext` lemmas](topic/Specialized.20.60ext.60.20lemmas.html) (9 messages, latest: May 01 2020 at 20:41)
@@ -2757,4 +2757,4 @@ permalink: /stream/113488-general/index.html
 * [test](topic/test.html) (4 messages, latest: Feb 26 2018 at 16:22)
 * [welcome](topic/welcome.html) (1 message, latest: Feb 26 2018 at 16:02)
 
-<hr><p>Last updated: May 04 2020 at 01:07 UTC</p>
+<hr><p>Last updated: May 04 2020 at 02:08 UTC</p>
