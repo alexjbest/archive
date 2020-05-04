@@ -83,6 +83,27 @@ Directory tutorials already exists
 
 
 
+<a name="196187539"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113489-new%20members/topic/%60leanproject%20get%60%20do%20not%20stop/near/196187539" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Utensil Song <a href="https://leanprover-community.github.io/archive/stream/113489-new-members/topic/.60leanproject.20get.60.20do.20not.20stop.html#196187539">(May 04 2020 at 14:28)</a>:</h4>
+<p>Hi, Jiekai, you may try:</p>
+<div class="codehilite"><pre><span></span><code>git clone git@github.com:leanprover-community/tutorials.git
+<span class="nb">cd</span> tutorials
+mkdir -p _target/deps/mathlib
+<span class="nb">cd</span> _target/deps/mathlib
+git init
+git remote add origin git@github.com:leanprover-community/mathlib.git
+git fetch --depth <span class="m">1</span> origin 2fc9b15898020df81bc1ec96b6820f5700956a62
+git checkout FETCH_HEAD
+<span class="nb">cd</span> ../../../
+<span class="c1"># Before executing the following, change the https url in `tutorials/leanpkg.toml` to `git@github.com:leanprover-community/mathlib.git`</span>
+leanpkg configure
+</code></pre></div>
+
+
+<p>The above will check out a shallow clone that contains no history but only the commit specified in <code>tutorials/leanpkg.toml</code>. This way saves most of the <code>git clone</code> traffic so it works under a peculiar internet connection.</p>
+
+
+
 {% endraw %}
 
-<hr><p>Last updated: May 04 2020 at 14:05 UTC</p>
+<hr><p>Last updated: May 04 2020 at 15:05 UTC</p>
