@@ -684,6 +684,109 @@ Moving <code>to_additive</code> into core would be one option. But I don't reall
 
 
 
+<a name="196148724"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113488-general/topic/ordered%20monoids/near/196148724" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Mario Carneiro <a href="https://leanprover-community.github.io/archive/stream/113488-general/topic/ordered.20monoids.html#196148724">(May 04 2020 at 07:34)</a>:</h4>
+<p>What do you think about adding a <code>@[magic]</code> attribute (naming TBD) that is required on all definitions or lemmas referenced in C++? It should be possible to check this from the C++ file that <code>constants.txt</code> generates, as well as in <code>DECLARE_VM_BUILTIN</code> and other macros that construct bindings</p>
+
+
+
+<a name="196149602"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113488-general/topic/ordered%20monoids/near/196149602" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Gabriel Ebner <a href="https://leanprover-community.github.io/archive/stream/113488-general/topic/ordered.20monoids.html#196149602">(May 04 2020 at 07:45)</a>:</h4>
+<p>I'm not enthusiastic.  This sounds like a lot of work.  If it's just about moving stuff to mathlib, the easiest approach is delete-test-move-back.  Tactics written in Lean also reference definitions and lemmas, should these be tagged with magic as well?</p>
+
+
+
+<a name="196149747"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113488-general/topic/ordered%20monoids/near/196149747" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Mario Carneiro <a href="https://leanprover-community.github.io/archive/stream/113488-general/topic/ordered.20monoids.html#196149747">(May 04 2020 at 07:47)</a>:</h4>
+<p>no, this is just so that the lean code has a visible marker that its behavior is affected in some way by C++</p>
+
+
+
+<a name="196149840"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113488-general/topic/ordered%20monoids/near/196149840" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Mario Carneiro <a href="https://leanprover-community.github.io/archive/stream/113488-general/topic/ordered.20monoids.html#196149840">(May 04 2020 at 07:48)</a>:</h4>
+<p>I really don't like that there is no evidence in the file that <code>nat.add</code> does something different than its definition and <code>mynat.add</code> is mysteriously much worse</p>
+
+
+
+<a name="196150047"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113488-general/topic/ordered%20monoids/near/196150047" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Mario Carneiro <a href="https://leanprover-community.github.io/archive/stream/113488-general/topic/ordered.20monoids.html#196150047">(May 04 2020 at 07:51)</a>:</h4>
+<p>(the answer to the second question is no)</p>
+
+
+
+<a name="196150091"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113488-general/topic/ordered%20monoids/near/196150091" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Mario Carneiro <a href="https://leanprover-community.github.io/archive/stream/113488-general/topic/ordered.20monoids.html#196150091">(May 04 2020 at 07:51)</a>:</h4>
+<p>maybe <code>@[extern_cpp]</code> is a better name</p>
+
+
+
+<a name="196150201"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113488-general/topic/ordered%20monoids/near/196150201" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Jannis Limperg <a href="https://leanprover-community.github.io/archive/stream/113488-general/topic/ordered.20monoids.html#196150201">(May 04 2020 at 07:53)</a>:</h4>
+<p>Agda has something like that; they use the syntax <code>{-# BUILTIN #-}</code>. This allows the standard library to be a separate project from Agda itself (though with Lean's current release cadence, there'd be little benefit to that).</p>
+
+
+
+<a name="196150228"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113488-general/topic/ordered%20monoids/near/196150228" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Mario Carneiro <a href="https://leanprover-community.github.io/archive/stream/113488-general/topic/ordered.20monoids.html#196150228">(May 04 2020 at 07:53)</a>:</h4>
+<p>I don't know of any language that doesn't have some sigil on builtins except lean</p>
+
+
+
+<a name="196150235"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113488-general/topic/ordered%20monoids/near/196150235" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Gabriel Ebner <a href="https://leanprover-community.github.io/archive/stream/113488-general/topic/ordered.20monoids.html#196150235">(May 04 2020 at 07:53)</a>:</h4>
+<p>Lean 4 uses <code>@[extern]</code>:</p>
+<div class="codehilite"><pre><span></span><code><span class="c">/-</span><span class="cm"> Nat basic instances -/</span>
+<span class="bp">@</span><span class="o">[</span><span class="n">extern</span> <span class="s2">&quot;lean_nat_add&quot;</span><span class="o">]</span>
+<span class="kn">protected</span> <span class="n">def</span> <span class="n">Nat</span><span class="bp">.</span><span class="n">add</span> <span class="o">:</span> <span class="o">(</span><span class="bp">@&amp;</span> <span class="n">Nat</span><span class="o">)</span> <span class="bp">→</span> <span class="o">(</span><span class="bp">@&amp;</span> <span class="n">Nat</span><span class="o">)</span> <span class="bp">→</span> <span class="n">Nat</span>
+<span class="bp">|</span> <span class="n">a</span><span class="o">,</span> <span class="n">Nat</span><span class="bp">.</span><span class="n">zero</span>   <span class="bp">=&gt;</span> <span class="n">a</span>
+<span class="bp">|</span> <span class="n">a</span><span class="o">,</span> <span class="n">Nat</span><span class="bp">.</span><span class="n">succ</span> <span class="n">b</span> <span class="bp">=&gt;</span> <span class="n">Nat</span><span class="bp">.</span><span class="n">succ</span> <span class="o">(</span><span class="n">Nat</span><span class="bp">.</span><span class="n">add</span> <span class="n">a</span> <span class="n">b</span><span class="o">)</span>
+</code></pre></div>
+
+
+<p>I'd be oke with moving closer to Lean 4.</p>
+
+
+
+<a name="196150312"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113488-general/topic/ordered%20monoids/near/196150312" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Mario Carneiro <a href="https://leanprover-community.github.io/archive/stream/113488-general/topic/ordered.20monoids.html#196150312">(May 04 2020 at 07:54)</a>:</h4>
+<p>although I am also interested in extending this beyond just VM builtins to things like lemmas with external linkage to C++</p>
+
+
+
+<a name="196150342"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113488-general/topic/ordered%20monoids/near/196150342" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Mario Carneiro <a href="https://leanprover-community.github.io/archive/stream/113488-general/topic/ordered.20monoids.html#196150342">(May 04 2020 at 07:55)</a>:</h4>
+<p>perhaps that should be a separate attribute</p>
+
+
+
+<a name="196150435"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113488-general/topic/ordered%20monoids/near/196150435" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Mario Carneiro <a href="https://leanprover-community.github.io/archive/stream/113488-general/topic/ordered.20monoids.html#196150435">(May 04 2020 at 07:56)</a>:</h4>
+<p>I don't know whether it is necessary or useful to put the C++ name of the extern function in the attribute. Unlike lean 4, you can't really use those names to call the function in lean 3</p>
+
+
+
+<a name="196150467"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113488-general/topic/ordered%20monoids/near/196150467" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Mario Carneiro <a href="https://leanprover-community.github.io/archive/stream/113488-general/topic/ordered.20monoids.html#196150467">(May 04 2020 at 07:56)</a>:</h4>
+<p>so you would still need the <code>DECLARE_VM_BUILTIN</code> macro, and the best you could do is double check that the names declared in both places match</p>
+
+
+
+<a name="196150474"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113488-general/topic/ordered%20monoids/near/196150474" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Gabriel Ebner <a href="https://leanprover-community.github.io/archive/stream/113488-general/topic/ordered.20monoids.html#196150474">(May 04 2020 at 07:57)</a>:</h4>
+<p>I think <code>@[extern]</code> without c++ function name would be fine.</p>
+
+
+
+<a name="196150876"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113488-general/topic/ordered%20monoids/near/196150876" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Mario Carneiro <a href="https://leanprover-community.github.io/archive/stream/113488-general/topic/ordered.20monoids.html#196150876">(May 04 2020 at 08:01)</a>:</h4>
+<p><span class="user-mention silent" data-user-id="256311">Jannis Limperg</span> <a href="#narrow/stream/113488-general/topic/ordered.20monoids/near/196150201" title="#narrow/stream/113488-general/topic/ordered.20monoids/near/196150201">said</a>:</p>
+<blockquote>
+<p>Agda has something like that; they use the syntax <code>{-# BUILTIN #-}</code>. This allows the standard library to be a separate project from Agda itself (though with Lean's current release cadence, there'd be little benefit to that).</p>
+</blockquote>
+<p>Well, there seems to be good reason to move core theorems and definitions to mathlib. I think the main blocker to moving builtins out of core is that it would break the tests. How does Agda do tests?</p>
+
+
+
 {% endraw %}
 
-<hr><p>Last updated: May 04 2020 at 07:05 UTC</p>
+<hr><p>Last updated: May 04 2020 at 08:05 UTC</p>

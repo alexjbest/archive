@@ -9,11 +9,11 @@ permalink: /stream/113489-new-members/index.html
 
 ### Topics:
 
-* [Walter Moreira (introduction)](topic/Walter.20Moreira.20(introduction).html) (2 messages, latest: May 04 2020 at 05:13)
+* [instance of decidable_set_is_empty](topic/instance.20of.20decidable_set_is_empty.html) (34 messages, latest: May 04 2020 at 07:47)
+* [Aram Bingham (hello world)](topic/Aram.20Bingham.20(hello.20world).html) (2 messages, latest: May 04 2020 at 07:38)
+* [Walter Moreira (introduction)](topic/Walter.20Moreira.20(introduction).html) (3 messages, latest: May 04 2020 at 07:38)
 * [Is fin injective?](topic/Is.20fin.20injective.3F.html) (5 messages, latest: May 04 2020 at 04:55)
-* [Aram Bingham (hello world)](topic/Aram.20Bingham.20(hello.20world).html) (1 message, latest: May 04 2020 at 04:34)
 * [Tutorials update](topic/Tutorials.20update.html) (2 messages, latest: May 03 2020 at 21:12)
-* [instance of decidable_set_is_empty](topic/instance.20of.20decidable_set_is_empty.html) (33 messages, latest: May 03 2020 at 11:16)
 * [Finsets and fintypes](topic/Finsets.20and.20fintypes.html) (31 messages, latest: May 03 2020 at 10:52)
 * [Euclid's Elements](topic/Euclid's.20Elements.html) (2 messages, latest: May 03 2020 at 09:43)
 * [invalid apply tactic](topic/invalid.20apply.20tactic.html) (20 messages, latest: May 03 2020 at 09:36)
@@ -1006,4 +1006,4 @@ permalink: /stream/113489-new-members/index.html
 * [Andrew Ashworth](topic/Andrew.20Ashworth.html) (15 messages, latest: Feb 26 2018 at 16:21)
 * [onboarding](topic/onboarding.html) (1 message, latest: Feb 26 2018 at 16:02)
 
-<hr><p>Last updated: May 04 2020 at 07:05 UTC</p>
+<hr><p>Last updated: May 04 2020 at 08:05 UTC</p>
