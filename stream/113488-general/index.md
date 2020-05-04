@@ -9,7 +9,7 @@ permalink: /stream/113488-general/index.html
 
 ### Topics:
 
-* [ordered monoids](topic/ordered.20monoids.html) (109 messages, latest: May 04 2020 at 08:01)
+* [ordered monoids](topic/ordered.20monoids.html) (110 messages, latest: May 04 2020 at 08:31)
 * [Invitation to join the Codewars Lean community, Round 2](topic/Invitation.20to.20join.20the.20Codewars.20Lean.20community.2C.20Round.202.html) (279 messages, latest: May 04 2020 at 04:34)
 * [how do I step through proofs?](topic/how.20do.20I.20step.20through.20proofs.3F.html) (88 messages, latest: May 04 2020 at 03:57)
 * [Induction on list](topic/Induction.20on.20list.html) (3 messages, latest: May 04 2020 at 03:40)
@@ -2758,4 +2758,4 @@ permalink: /stream/113488-general/index.html
 * [test](topic/test.html) (4 messages, latest: Feb 26 2018 at 16:22)
 * [welcome](topic/welcome.html) (1 message, latest: Feb 26 2018 at 16:02)
 
-<hr><p>Last updated: May 04 2020 at 08:05 UTC</p>
+<hr><p>Last updated: May 04 2020 at 09:05 UTC</p>
