@@ -9,6 +9,7 @@ permalink: /stream/113488-general/index.html
 
 ### Topics:
 
+* [linear programming](topic/linear.20programming.html) (6 messages, latest: May 05 2020 at 06:49)
 * [idea for a small project](topic/idea.20for.20a.20small.20project.html) (4 messages, latest: May 05 2020 at 04:34)
 * [Invitation to join the Codewars Lean community, Round 2](topic/Invitation.20to.20join.20the.20Codewars.20Lean.20community.2C.20Round.202.html) (291 messages, latest: May 05 2020 at 03:59)
 * [coe_fn and class instances](topic/coe_fn.20and.20class.20instances.html) (24 messages, latest: May 04 2020 at 22:32)
@@ -2760,4 +2761,4 @@ permalink: /stream/113488-general/index.html
 * [test](topic/test.html) (4 messages, latest: Feb 26 2018 at 16:22)
 * [welcome](topic/welcome.html) (1 message, latest: Feb 26 2018 at 16:02)
 
-<hr><p>Last updated: May 05 2020 at 06:07 UTC</p>
+<hr><p>Last updated: May 05 2020 at 07:07 UTC</p>
