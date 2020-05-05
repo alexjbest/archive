@@ -66,6 +66,65 @@ have to increase class.instance_max_dept</p>
 
 
 
+<a name="196253649"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113489-new%20members/topic/rational%20coertion/near/196253649" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Sayantan Majumdar <a href="https://leanprover-community.github.io/archive/stream/113489-new-members/topic/rational.20coertion.html#196253649">(May 04 2020 at 23:51)</a>:</h4>
+<p>they are taking them to <code>\Q</code></p>
+
+
+
+<a name="196253743"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113489-new%20members/topic/rational%20coertion/near/196253743" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Sayantan Majumdar <a href="https://leanprover-community.github.io/archive/stream/113489-new-members/topic/rational.20coertion.html#196253743">(May 04 2020 at 23:52)</a>:</h4>
+<p>I was trying to prove these but there is some issue</p>
+<div class="codehilite"><pre><span></span><code><span class="kn">example</span> <span class="o">:</span> <span class="bp">¬</span><span class="o">(</span><span class="bp">∃</span> <span class="n">p</span> <span class="o">:</span> <span class="n">ℚ</span><span class="o">,</span> <span class="n">p</span> <span class="bp">*</span> <span class="n">p</span> <span class="bp">=</span> <span class="mi">2</span><span class="o">)</span> <span class="o">:=</span>
+<span class="k">begin</span>
+    <span class="k">assume</span> <span class="n">h</span><span class="o">,</span>
+    <span class="n">apply</span> <span class="n">exists</span><span class="bp">.</span><span class="n">elim</span> <span class="n">h</span><span class="o">,</span>
+    <span class="k">assume</span> <span class="n">p</span><span class="o">,</span>
+    <span class="k">assume</span> <span class="n">h₀</span><span class="o">,</span>
+    <span class="k">have</span> <span class="n">h₁</span> <span class="o">:</span> <span class="o">(</span><span class="n">p</span> <span class="bp">*</span> <span class="n">p</span><span class="o">)</span> <span class="bp">*</span> <span class="o">(</span><span class="n">p</span> <span class="bp">*</span> <span class="n">p</span><span class="o">)</span><span class="bp">.</span><span class="n">denom</span> <span class="bp">=</span> <span class="mi">2</span> <span class="bp">*</span> <span class="o">(</span><span class="n">p</span> <span class="bp">*</span> <span class="n">p</span><span class="o">)</span><span class="bp">.</span><span class="n">denom</span><span class="o">,</span> <span class="k">from</span> <span class="o">(</span><span class="bp">@</span><span class="n">congr_arg</span> <span class="n">ℚ</span> <span class="n">ℚ</span> <span class="o">(</span><span class="n">p</span> <span class="bp">*</span> <span class="n">p</span><span class="o">)</span> <span class="o">(</span><span class="mi">2</span> <span class="o">:</span> <span class="bp">ℤ</span><span class="o">)</span> <span class="o">(</span><span class="bp">λ</span> <span class="n">x</span> <span class="o">:</span> <span class="n">ℚ</span><span class="o">,</span> <span class="n">x</span> <span class="bp">*</span> <span class="o">(</span><span class="n">p</span> <span class="bp">*</span> <span class="n">p</span><span class="o">)</span><span class="bp">.</span><span class="n">denom</span><span class="o">)</span> <span class="n">h₀</span><span class="o">),</span>
+    <span class="n">rewrite</span> <span class="n">rat</span><span class="bp">.</span><span class="n">mul_own_denom_eq_num</span> <span class="n">at</span> <span class="n">h₁</span><span class="o">,</span>
+    <span class="n">rewrite</span> <span class="n">rat</span><span class="bp">.</span><span class="n">mul_self_denom</span> <span class="n">at</span> <span class="n">h₁</span><span class="o">,</span>
+    <span class="n">rewrite</span> <span class="n">rat</span><span class="bp">.</span><span class="n">mul_self_num</span> <span class="n">at</span> <span class="n">h₁</span><span class="o">,</span>
+    <span class="n">rewrite</span> <span class="o">(</span><span class="n">int</span><span class="bp">.</span><span class="n">cast_mul</span><span class="o">)</span> <span class="n">at</span> <span class="n">h₁</span><span class="o">,</span>
+    <span class="n">rewrite</span> <span class="o">(</span><span class="n">nat</span><span class="bp">.</span><span class="n">cast_mul</span><span class="o">)</span> <span class="n">at</span> <span class="n">h₁</span><span class="o">,</span>
+    <span class="k">have</span> <span class="n">h₂</span> <span class="o">:</span> <span class="mi">2</span> <span class="err">∣</span> <span class="o">(</span><span class="err">↑</span><span class="n">p</span><span class="bp">.</span><span class="n">num</span> <span class="bp">*</span> <span class="err">↑</span><span class="n">p</span><span class="bp">.</span><span class="n">num</span><span class="o">),</span> <span class="k">from</span> <span class="o">(</span><span class="n">dvd</span><span class="bp">.</span><span class="n">intro</span> <span class="o">(</span><span class="n">p</span><span class="bp">.</span><span class="n">denom</span> <span class="bp">*</span> <span class="n">p</span><span class="bp">.</span><span class="n">denom</span><span class="o">)</span> <span class="o">(</span><span class="n">eq</span><span class="bp">.</span><span class="n">symm</span> <span class="n">h₁</span><span class="o">)),</span>
+    <span class="c1">-- have h₃ : 2 ∣ ↑p.num, from nat.coprime.mul_dvd_of_dvd_of_dvd</span>
+    <span class="c1">-- have h₂ : p.num * p.num = 2 * (p.denom * p.denom),</span>
+    <span class="c1">-- have h₂ : 2 ∣ (↑p.num * ↑p.num), from @dvd.intro _ _ 2 ↑(p.num * p.num) ↑(p.denom * p.denom) (eq.symm h₁),</span>
+    <span class="c1">-- have a₀ : 2 ∣ (p * p).num, from @dvd.intro ℤ _ 2 (p * p).num (p * p).denom (eq.symm h₁),</span>
+    <span class="c1">-- have a₀ : ↑(p * p).denom ∣ ↑(p * p).num, from dvd.intro_left 2 (eq.symm h₁),</span>
+    <span class="c1">-- have a₁, from rat.cop (p * p),</span>
+
+    <span class="c1">-- have h₃ : 2 ∣ p.num, from dvd.</span>
+    <span class="c1">-- sorry</span>
+<span class="kn">end</span>
+</code></pre></div>
+
+
+<p><code>h₂</code> sometimes compiles but sometimes it timesout</p>
+
+
+
+<a name="196253815"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113489-new%20members/topic/rational%20coertion/near/196253815" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Sayantan Majumdar <a href="https://leanprover-community.github.io/archive/stream/113489-new-members/topic/rational.20coertion.html#196253815">(May 04 2020 at 23:53)</a>:</h4>
+<p>it did compile a few minutes ago but it has timed out the next few times</p>
+
+
+
+<a name="196253949"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113489-new%20members/topic/rational%20coertion/near/196253949" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Sayantan Majumdar <a href="https://leanprover-community.github.io/archive/stream/113489-new-members/topic/rational.20coertion.html#196253949">(May 04 2020 at 23:55)</a>:</h4>
+<p>the multiplication in <code>h₁</code> is taking everything to <code>ℚ</code></p>
+
+
+
+<a name="196254543"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113489-new%20members/topic/rational%20coertion/near/196254543" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Sayantan Majumdar <a href="https://leanprover-community.github.io/archive/stream/113489-new-members/topic/rational.20coertion.html#196254543">(May 05 2020 at 00:03)</a>:</h4>
+<p>this helped</p>
+<div class="codehilite"><pre><span></span><code><span class="k">have</span> <span class="n">h₂</span> <span class="o">:</span> <span class="mi">2</span> <span class="err">∣</span> <span class="o">((</span><span class="err">↑</span><span class="n">p</span><span class="bp">.</span><span class="n">num</span> <span class="bp">*</span> <span class="err">↑</span><span class="n">p</span><span class="bp">.</span><span class="n">num</span><span class="o">)</span> <span class="o">:</span> <span class="n">ℚ</span><span class="o">),</span> <span class="k">from</span> <span class="o">(</span><span class="n">dvd</span><span class="bp">.</span><span class="n">intro</span> <span class="o">(</span><span class="n">p</span><span class="bp">.</span><span class="n">denom</span> <span class="bp">*</span> <span class="n">p</span><span class="bp">.</span><span class="n">denom</span><span class="o">)</span> <span class="o">(</span><span class="n">eq</span><span class="bp">.</span><span class="n">symm</span> <span class="n">h₁</span><span class="o">)),</span>
+</code></pre></div>
+
+
+
 {% endraw %}
 
-<hr><p>Last updated: May 04 2020 at 23:18 UTC</p>
+<hr><p>Last updated: May 05 2020 at 02:05 UTC</p>
