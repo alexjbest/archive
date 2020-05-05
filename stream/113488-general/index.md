@@ -9,6 +9,7 @@ permalink: /stream/113488-general/index.html
 
 ### Topics:
 
+* [VScode extension](topic/VScode.20extension.html) (504 messages, latest: May 05 2020 at 20:29)
 * [instance max depth](topic/instance.20max.20depth.html) (18 messages, latest: May 05 2020 at 19:48)
 * [nat.pow](topic/nat.2Epow.html) (4 messages, latest: May 05 2020 at 17:45)
 * [Getting witnesses used in existential proofs?](topic/Getting.20witnesses.20used.20in.20existential.20proofs.3F.html) (5 messages, latest: May 05 2020 at 11:12)
@@ -158,7 +159,6 @@ permalink: /stream/113488-general/index.html
 * [Invitation to join the Codewars Lean community, Round 1](topic/Invitation.20to.20join.20the.20Codewars.20Lean.20community.2C.20Round.201.html) (141 messages, latest: Apr 13 2020 at 14:25)
 * [Haskell is inconsistent???](topic/Haskell.20is.20inconsistent.3F.3F.3F.html) (5 messages, latest: Apr 13 2020 at 13:24)
 * [linter doc_blame with old_structure_cmd](topic/linter.20doc_blame.20with.20old_structure_cmd.html) (26 messages, latest: Apr 13 2020 at 11:40)
-* [VScode extension](topic/VScode.20extension.html) (502 messages, latest: Apr 13 2020 at 09:56)
 * [Tactic for nonlinear integer arithmetic](topic/Tactic.20for.20nonlinear.20integer.20arithmetic.html) (9 messages, latest: Apr 13 2020 at 09:55)
 * [obtain with \|](topic/obtain.20with.20.7C.html) (15 messages, latest: Apr 13 2020 at 07:49)
 * [notation command](topic/notation.20command.html) (5 messages, latest: Apr 13 2020 at 07:11)
@@ -2765,4 +2765,4 @@ permalink: /stream/113488-general/index.html
 * [test](topic/test.html) (4 messages, latest: Feb 26 2018 at 16:22)
 * [welcome](topic/welcome.html) (1 message, latest: Feb 26 2018 at 16:02)
 
-<hr><p>Last updated: May 05 2020 at 20:05 UTC</p>
+<hr><p>Last updated: May 05 2020 at 21:05 UTC</p>
