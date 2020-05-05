@@ -9,6 +9,7 @@ permalink: /stream/113489-new-members/index.html
 
 ### Topics:
 
+* [proving a lemma about infinite sets](topic/proving.20a.20lemma.20about.20infinite.20sets.html) (1 message, latest: May 05 2020 at 14:46)
 * [natural number game - add left cancel](topic/natural.20number.20game.20-.20add.20left.20cancel.html) (9 messages, latest: May 05 2020 at 11:24)
 * [Natural number game, excluded middle](topic/Natural.20number.20game.2C.20excluded.20middle.html) (16 messages, latest: May 05 2020 at 09:54)
 * [polynomial ring over a field](topic/polynomial.20ring.20over.20a.20field.html) (2 messages, latest: May 05 2020 at 03:30)
@@ -1013,4 +1014,4 @@ permalink: /stream/113489-new-members/index.html
 * [Andrew Ashworth](topic/Andrew.20Ashworth.html) (15 messages, latest: Feb 26 2018 at 16:21)
 * [onboarding](topic/onboarding.html) (1 message, latest: Feb 26 2018 at 16:02)
 
-<hr><p>Last updated: May 05 2020 at 14:07 UTC</p>
+<hr><p>Last updated: May 05 2020 at 15:07 UTC</p>
