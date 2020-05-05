@@ -610,6 +610,241 @@ Putting the context into the term from the start is not really equivalent, since
 
 
 
+<a name="196300768"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/236446-Type%20theory/topic/Modelling%20a%20Type%20Theory%20in%20Lean/near/196300768" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Mario Carneiro <a href="https://leanprover-community.github.io/archive/stream/236446-Type-theory/topic/Modelling.20a.20Type.20Theory.20in.20Lean.html#196300768">(May 05 2020 at 12:31)</a>:</h4>
+<p>It's called an inaccessible pattern. It is almost never used in lean/mathlib because in basically every case you can use <code>_</code> instead</p>
+
+
+
+<a name="196300838"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/236446-Type%20theory/topic/Modelling%20a%20Type%20Theory%20in%20Lean/near/196300838" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Mario Carneiro <a href="https://leanprover-community.github.io/archive/stream/236446-Type-theory/topic/Modelling.20a.20Type.20Theory.20in.20Lean.html#196300838">(May 05 2020 at 12:31)</a>:</h4>
+<p>If you want to name the parameters, you should do so in the constructor <code>var Γ A Δ</code>, possibly using <code>@var more names Γ A Δ</code></p>
+
+
+
+<a name="196300929"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/236446-Type%20theory/topic/Modelling%20a%20Type%20Theory%20in%20Lean/near/196300929" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Mario Carneiro <a href="https://leanprover-community.github.io/archive/stream/236446-Type-theory/topic/Modelling.20a.20Type.20Theory.20in.20Lean.html#196300929">(May 05 2020 at 12:32)</a>:</h4>
+<p>Anyway, you've just hit DTT hell in that error there</p>
+
+
+
+<a name="196300982"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/236446-Type%20theory/topic/Modelling%20a%20Type%20Theory%20in%20Lean/near/196300982" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Mario Carneiro <a href="https://leanprover-community.github.io/archive/stream/236446-Type-theory/topic/Modelling.20a.20Type.20Theory.20in.20Lean.html#196300982">(May 05 2020 at 12:32)</a>:</h4>
+<p>You should definitely not have this constructor</p>
+<div class="codehilite"><pre><span></span><code><span class="bp">|</span> <span class="n">var</span> <span class="o">(</span><span class="err">Γ</span> <span class="n">A</span> <span class="err">Δ</span><span class="o">)</span> <span class="o">:</span> <span class="n">term</span> <span class="o">(</span><span class="n">list</span><span class="bp">.</span><span class="n">append</span> <span class="err">Γ</span> <span class="o">(</span><span class="n">A</span><span class="bp">::</span><span class="err">Δ</span><span class="o">))</span> <span class="n">A</span>
+</code></pre></div>
+
+
+<p>because the term will usually not have this form</p>
+
+
+
+<a name="196301015"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/236446-Type%20theory/topic/Modelling%20a%20Type%20Theory%20in%20Lean/near/196301015" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Mario Carneiro <a href="https://leanprover-community.github.io/archive/stream/236446-Type-theory/topic/Modelling.20a.20Type.20Theory.20in.20Lean.html#196301015">(May 05 2020 at 12:33)</a>:</h4>
+<p>Instead you can use <code>| var (Γ A) : A \in Γ -&gt; term Γ A</code></p>
+
+
+
+<a name="196301127"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/236446-Type%20theory/topic/Modelling%20a%20Type%20Theory%20in%20Lean/near/196301127" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Billy Price <a href="https://leanprover-community.github.io/archive/stream/236446-Type-theory/topic/Modelling.20a.20Type.20Theory.20in.20Lean.html#196301127">(May 05 2020 at 12:34)</a>:</h4>
+<p>But then how can I possibly tell which type in the context list my var is constructing?</p>
+
+
+
+<a name="196301141"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/236446-Type%20theory/topic/Modelling%20a%20Type%20Theory%20in%20Lean/near/196301141" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Mario Carneiro <a href="https://leanprover-community.github.io/archive/stream/236446-Type-theory/topic/Modelling.20a.20Type.20Theory.20in.20Lean.html#196301141">(May 05 2020 at 12:34)</a>:</h4>
+<p>or <code>| var {Γ i A} : list.nth Γ i = some A -&gt; term Γ A</code></p>
+
+
+
+<a name="196301170"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/236446-Type%20theory/topic/Modelling%20a%20Type%20Theory%20in%20Lean/near/196301170" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Mario Carneiro <a href="https://leanprover-community.github.io/archive/stream/236446-Type-theory/topic/Modelling.20a.20Type.20Theory.20in.20Lean.html#196301170">(May 05 2020 at 12:34)</a>:</h4>
+<p>that one gives you a de bruijn index</p>
+
+
+
+<a name="196301243"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/236446-Type%20theory/topic/Modelling%20a%20Type%20Theory%20in%20Lean/near/196301243" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Billy Price <a href="https://leanprover-community.github.io/archive/stream/236446-Type-theory/topic/Modelling.20a.20Type.20Theory.20in.20Lean.html#196301243">(May 05 2020 at 12:35)</a>:</h4>
+<p>Am I not achieving the same thing by stacking a context below and a context above <code>A</code> in <code>var \Gamma A \Delta</code>?</p>
+
+
+
+<a name="196301302"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/236446-Type%20theory/topic/Modelling%20a%20Type%20Theory%20in%20Lean/near/196301302" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Mario Carneiro <a href="https://leanprover-community.github.io/archive/stream/236446-Type-theory/topic/Modelling.20a.20Type.20Theory.20in.20Lean.html#196301302">(May 05 2020 at 12:36)</a>:</h4>
+<p>"the same thing" up to equality but not up to defeq</p>
+
+
+
+<a name="196301338"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/236446-Type%20theory/topic/Modelling%20a%20Type%20Theory%20in%20Lean/near/196301338" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Mario Carneiro <a href="https://leanprover-community.github.io/archive/stream/236446-Type-theory/topic/Modelling.20a.20Type.20Theory.20in.20Lean.html#196301338">(May 05 2020 at 12:36)</a>:</h4>
+<p>and the reason defeq is coming up is because you have a dependent type</p>
+
+
+
+<a name="196301376"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/236446-Type%20theory/topic/Modelling%20a%20Type%20Theory%20in%20Lean/near/196301376" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Billy Price <a href="https://leanprover-community.github.io/archive/stream/236446-Type-theory/topic/Modelling.20a.20Type.20Theory.20in.20Lean.html#196301376">(May 05 2020 at 12:37)</a>:</h4>
+<p>defeq meaning definitional equality?</p>
+
+
+
+<a name="196301387"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/236446-Type%20theory/topic/Modelling%20a%20Type%20Theory%20in%20Lean/near/196301387" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Mario Carneiro <a href="https://leanprover-community.github.io/archive/stream/236446-Type-theory/topic/Modelling.20a.20Type.20Theory.20in.20Lean.html#196301387">(May 05 2020 at 12:37)</a>:</h4>
+<p><code>term (list.append Γ (A :: list.append Δ β)) A</code> and <code>term (list.append (list.append Γ (A :: Δ)) β) A</code> are distinct types, so you have to insert a cast between them and this will make everything harder</p>
+
+
+
+<a name="196301478"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/236446-Type%20theory/topic/Modelling%20a%20Type%20Theory%20in%20Lean/near/196301478" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Mario Carneiro <a href="https://leanprover-community.github.io/archive/stream/236446-Type-theory/topic/Modelling.20a.20Type.20Theory.20in.20Lean.html#196301478">(May 05 2020 at 12:38)</a>:</h4>
+<p>(this is the issue I was predicting when I originally recommended to use a weakly typed <code>term</code> syntax + a well formedness judgment)</p>
+
+
+
+<a name="196301480"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/236446-Type%20theory/topic/Modelling%20a%20Type%20Theory%20in%20Lean/near/196301480" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Billy Price <a href="https://leanprover-community.github.io/archive/stream/236446-Type-theory/topic/Modelling.20a.20Type.20Theory.20in.20Lean.html#196301480">(May 05 2020 at 12:38)</a>:</h4>
+<p>ooh that's odd, I would have expected them to reduce to the same thing by unwrapping the definition of list.append?</p>
+
+
+
+<a name="196301493"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/236446-Type%20theory/topic/Modelling%20a%20Type%20Theory%20in%20Lean/near/196301493" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Mario Carneiro <a href="https://leanprover-community.github.io/archive/stream/236446-Type-theory/topic/Modelling.20a.20Type.20Theory.20in.20Lean.html#196301493">(May 05 2020 at 12:38)</a>:</h4>
+<p>You can't because <code>Γ</code> is a variable</p>
+
+
+
+<a name="196301521"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/236446-Type%20theory/topic/Modelling%20a%20Type%20Theory%20in%20Lean/near/196301521" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Mario Carneiro <a href="https://leanprover-community.github.io/archive/stream/236446-Type-theory/topic/Modelling.20a.20Type.20Theory.20in.20Lean.html#196301521">(May 05 2020 at 12:39)</a>:</h4>
+<p>For every concrete term for <code>Γ</code> these two are defeq, but for variable <code>Γ</code> you have to prove it by induction</p>
+
+
+
+<a name="196301562"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/236446-Type%20theory/topic/Modelling%20a%20Type%20Theory%20in%20Lean/near/196301562" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Billy Price <a href="https://leanprover-community.github.io/archive/stream/236446-Type-theory/topic/Modelling.20a.20Type.20Theory.20in.20Lean.html#196301562">(May 05 2020 at 12:39)</a>:</h4>
+<p>that's pretty interesting</p>
+
+
+
+<a name="196301632"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/236446-Type%20theory/topic/Modelling%20a%20Type%20Theory%20in%20Lean/near/196301632" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Reid Barton <a href="https://leanprover-community.github.io/archive/stream/236446-Type-theory/topic/Modelling.20a.20Type.20Theory.20in.20Lean.html#196301632">(May 05 2020 at 12:40)</a>:</h4>
+<p>Obviously you should use a difference list for your context <em>flees</em></p>
+
+
+
+<a name="196301805"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/236446-Type%20theory/topic/Modelling%20a%20Type%20Theory%20in%20Lean/near/196301805" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Billy Price <a href="https://leanprover-community.github.io/archive/stream/236446-Type-theory/topic/Modelling.20a.20Type.20Theory.20in.20Lean.html#196301805">(May 05 2020 at 12:42)</a>:</h4>
+<p>You might have seen before I was trying to go with your original suggestion, but was struggling  to define the well-formedness predicate and was kinda lead back into well-typing it from the start.</p>
+
+
+
+<a name="196301876"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/236446-Type%20theory/topic/Modelling%20a%20Type%20Theory%20in%20Lean/near/196301876" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Mario Carneiro <a href="https://leanprover-community.github.io/archive/stream/236446-Type-theory/topic/Modelling.20a.20Type.20Theory.20in.20Lean.html#196301876">(May 05 2020 at 12:43)</a>:</h4>
+<p>The well formedness predicate can be done with either <code>inductive</code> or <code>def</code>. <a href="#narrow/stream/236446-Type-theory/topic/Modelling.20a.20Type.20Theory.20in.20Lean/near/195713258" title="#narrow/stream/236446-Type-theory/topic/Modelling.20a.20Type.20Theory.20in.20Lean/near/195713258">https://leanprover.zulipchat.com/#narrow/stream/236446-Type-theory/topic/Modelling.20a.20Type.20Theory.20in.20Lean/near/195713258</a> &lt;- this looks okay</p>
+
+
+
+<a name="196301920"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/236446-Type%20theory/topic/Modelling%20a%20Type%20Theory%20in%20Lean/near/196301920" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Mario Carneiro <a href="https://leanprover-community.github.io/archive/stream/236446-Type-theory/topic/Modelling.20a.20Type.20Theory.20in.20Lean.html#196301920">(May 05 2020 at 12:43)</a>:</h4>
+<p><code>inductive</code> gives you a bit more freedom to not be strictly recursive</p>
+
+
+
+<a name="196302102"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/236446-Type%20theory/topic/Modelling%20a%20Type%20Theory%20in%20Lean/near/196302102" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Mario Carneiro <a href="https://leanprover-community.github.io/archive/stream/236446-Type-theory/topic/Modelling.20a.20Type.20Theory.20in.20Lean.html#196302102">(May 05 2020 at 12:45)</a>:</h4>
+<p>it's also more natural when proving theorems by induction on well formed terms, so the sort of thing that the dependent type would give you</p>
+
+
+
+<a name="196302198"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/236446-Type%20theory/topic/Modelling%20a%20Type%20Theory%20in%20Lean/near/196302198" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Mario Carneiro <a href="https://leanprover-community.github.io/archive/stream/236446-Type-theory/topic/Modelling.20a.20Type.20Theory.20in.20Lean.html#196302198">(May 05 2020 at 12:46)</a>:</h4>
+<p>the <code>def</code> is what you would want for implementing a type checker, or a proof that the typing judgment is decidable</p>
+
+
+
+<a name="196302262"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/236446-Type%20theory/topic/Modelling%20a%20Type%20Theory%20in%20Lean/near/196302262" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Mario Carneiro <a href="https://leanprover-community.github.io/archive/stream/236446-Type-theory/topic/Modelling.20a.20Type.20Theory.20in.20Lean.html#196302262">(May 05 2020 at 12:47)</a>:</h4>
+<p>but you can have both versions and prove equivalence so there isn't a loss in picking one method over the other at first</p>
+
+
+
+<a name="196302406"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/236446-Type%20theory/topic/Modelling%20a%20Type%20Theory%20in%20Lean/near/196302406" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Billy Price <a href="https://leanprover-community.github.io/archive/stream/236446-Type-theory/topic/Modelling.20a.20Type.20Theory.20in.20Lean.html#196302406">(May 05 2020 at 12:48)</a>:</h4>
+<p>I see the issues with using my non-defeq context-terms, but given your constructor<code> | var {Γ i A} : list.nth Γ i = some A -&gt; term Γ A</code>, would that suffer from similar issues?</p>
+
+
+
+<a name="196302557"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/236446-Type%20theory/topic/Modelling%20a%20Type%20Theory%20in%20Lean/near/196302557" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Mario Carneiro <a href="https://leanprover-community.github.io/archive/stream/236446-Type-theory/topic/Modelling.20a.20Type.20Theory.20in.20Lean.html#196302557">(May 05 2020 at 12:49)</a>:</h4>
+<p>that will solve the problem you have with unifying the context, because <code>var</code> can have any context, and the content is shifted to the hypothesis, which is a Prop and hence has no issues with defeq</p>
+
+
+
+<a name="196302653"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/236446-Type%20theory/topic/Modelling%20a%20Type%20Theory%20in%20Lean/near/196302653" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Mario Carneiro <a href="https://leanprover-community.github.io/archive/stream/236446-Type-theory/topic/Modelling.20a.20Type.20Theory.20in.20Lean.html#196302653">(May 05 2020 at 12:50)</a>:</h4>
+<p>your original <code>var</code> constructor only supports contexts of the form <code>Γ ++ A :: Δ</code></p>
+
+
+
+<a name="196302878"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/236446-Type%20theory/topic/Modelling%20a%20Type%20Theory%20in%20Lean/near/196302878" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Billy Price <a href="https://leanprover-community.github.io/archive/stream/236446-Type-theory/topic/Modelling.20a.20Type.20Theory.20in.20Lean.html#196302878">(May 05 2020 at 12:52)</a>:</h4>
+<p>Yep, but given that improvement, am I naive to think that fixes everything and using a WF predicate on weakly-typed terms is overly complicated?</p>
+
+
+
+<a name="196303010"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/236446-Type%20theory/topic/Modelling%20a%20Type%20Theory%20in%20Lean/near/196303010" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Mario Carneiro <a href="https://leanprover-community.github.io/archive/stream/236446-Type-theory/topic/Modelling.20a.20Type.20Theory.20in.20Lean.html#196303010">(May 05 2020 at 12:54)</a>:</h4>
+<p>With the inductive version you can set it up so that it looks almost the same. It's only about twice as long because you have two definitions instead of one (the terms, and the well formedness inductive type)</p>
+
+
+
+<a name="196303088"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/236446-Type%20theory/topic/Modelling%20a%20Type%20Theory%20in%20Lean/near/196303088" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Mario Carneiro <a href="https://leanprover-community.github.io/archive/stream/236446-Type-theory/topic/Modelling.20a.20Type.20Theory.20in.20Lean.html#196303088">(May 05 2020 at 12:54)</a>:</h4>
+<p>but feel free to continue with dependent types, I've hopefully unstuck you on that issue and there are fixes or workarounds for most of the other problems that will arise</p>
+
+
+
+<a name="196303162"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/236446-Type%20theory/topic/Modelling%20a%20Type%20Theory%20in%20Lean/near/196303162" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Billy Price <a href="https://leanprover-community.github.io/archive/stream/236446-Type-theory/topic/Modelling.20a.20Type.20Theory.20in.20Lean.html#196303162">(May 05 2020 at 12:55)</a>:</h4>
+<p>I really appreciate the help in getting me started.</p>
+
+
+
+<a name="196304258"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/236446-Type%20theory/topic/Modelling%20a%20Type%20Theory%20in%20Lean/near/196304258" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Mario Carneiro <a href="https://leanprover-community.github.io/archive/stream/236446-Type-theory/topic/Modelling.20a.20Type.20Theory.20in.20Lean.html#196304258">(May 05 2020 at 13:04)</a>:</h4>
+<p>Here's the inductive-ification of the <a href="#narrow/stream/236446-Type-theory/topic/Modelling.20a.20Type.20Theory.20in.20Lean/near/196264720" title="#narrow/stream/236446-Type-theory/topic/Modelling.20a.20Type.20Theory.20in.20Lean/near/196264720">original dependent type</a>:</p>
+<div class="codehilite"><pre><span></span><code><span class="kn">inductive</span> <span class="n">term</span> <span class="o">:</span> <span class="kt">Type</span>
+<span class="bp">|</span> <span class="n">var</span> <span class="o">:</span> <span class="bp">ℕ</span> <span class="bp">→</span> <span class="n">term</span>
+<span class="bp">|</span> <span class="n">comp</span> <span class="o">:</span> <span class="n">type</span> <span class="bp">→</span> <span class="n">term</span> <span class="bp">→</span> <span class="n">term</span>
+<span class="bp">|</span> <span class="n">all</span>  <span class="o">:</span> <span class="n">type</span> <span class="bp">→</span> <span class="n">term</span> <span class="bp">→</span> <span class="n">term</span>
+<span class="bp">|</span> <span class="n">ex</span>   <span class="o">:</span> <span class="n">type</span> <span class="bp">→</span> <span class="n">term</span> <span class="bp">→</span> <span class="n">term</span>
+<span class="bp">|</span> <span class="n">star</span> <span class="o">:</span> <span class="n">term</span>
+<span class="bp">|</span> <span class="n">top</span>  <span class="o">:</span> <span class="n">term</span>
+<span class="bp">|</span> <span class="n">bot</span>  <span class="o">:</span> <span class="n">term</span>
+<span class="bp">|</span> <span class="n">prod</span> <span class="o">:</span> <span class="n">term</span> <span class="bp">→</span> <span class="n">term</span> <span class="bp">→</span> <span class="n">term</span>
+<span class="bp">|</span> <span class="n">elem</span> <span class="o">:</span> <span class="n">term</span> <span class="bp">→</span> <span class="n">term</span> <span class="bp">→</span> <span class="n">term</span>
+<span class="bp">|</span> <span class="n">and</span>  <span class="o">:</span> <span class="n">term</span> <span class="bp">→</span> <span class="n">term</span> <span class="bp">→</span> <span class="n">term</span>
+<span class="bp">|</span> <span class="n">or</span>   <span class="o">:</span> <span class="n">term</span> <span class="bp">→</span> <span class="n">term</span> <span class="bp">→</span> <span class="n">term</span>
+<span class="bp">|</span> <span class="n">imp</span>  <span class="o">:</span> <span class="n">term</span> <span class="bp">→</span> <span class="n">term</span> <span class="bp">→</span> <span class="n">term</span>
+
+
+<span class="kn">inductive</span> <span class="n">WF</span> <span class="o">:</span> <span class="kn">context</span> <span class="bp">→</span> <span class="n">term</span> <span class="bp">→</span> <span class="n">type</span> <span class="bp">→</span> <span class="kt">Prop</span>
+<span class="bp">|</span> <span class="n">var</span> <span class="o">(</span><span class="err">Γ</span> <span class="n">A</span> <span class="err">Δ</span><span class="o">)</span> <span class="o">:</span> <span class="n">WF</span> <span class="o">(</span><span class="n">list</span><span class="bp">.</span><span class="n">append</span> <span class="err">Γ</span> <span class="o">(</span><span class="n">A</span><span class="bp">::</span><span class="err">Δ</span><span class="o">))</span> <span class="o">(</span><span class="n">term</span><span class="bp">.</span><span class="n">var</span> <span class="o">(</span><span class="n">list</span><span class="bp">.</span><span class="n">length</span> <span class="err">Γ</span><span class="o">))</span> <span class="n">A</span>
+<span class="bp">|</span> <span class="n">comp</span> <span class="o">{</span><span class="err">Γ</span> <span class="n">e</span><span class="o">}</span> <span class="o">:</span> <span class="bp">Π</span> <span class="n">A</span> <span class="o">:</span> <span class="n">type</span><span class="o">,</span> <span class="n">WF</span> <span class="o">(</span><span class="n">A</span><span class="bp">::</span><span class="err">Γ</span><span class="o">)</span> <span class="n">e</span> <span class="err">Ω</span> <span class="bp">→</span> <span class="n">WF</span> <span class="err">Γ</span> <span class="o">(</span><span class="n">term</span><span class="bp">.</span><span class="n">comp</span> <span class="n">A</span> <span class="n">e</span><span class="o">)</span> <span class="o">(</span><span class="err">𝒫</span> <span class="n">A</span><span class="o">)</span>
+<span class="bp">|</span> <span class="n">all</span>  <span class="o">{</span><span class="err">Γ</span> <span class="n">e</span><span class="o">}</span> <span class="o">:</span> <span class="bp">Π</span> <span class="n">A</span> <span class="o">:</span> <span class="n">type</span><span class="o">,</span> <span class="n">WF</span> <span class="o">(</span><span class="n">A</span><span class="bp">::</span><span class="err">Γ</span><span class="o">)</span> <span class="n">e</span> <span class="err">Ω</span> <span class="bp">→</span> <span class="n">WF</span> <span class="err">Γ</span> <span class="o">(</span><span class="n">term</span><span class="bp">.</span><span class="n">all</span> <span class="n">A</span> <span class="n">e</span><span class="o">)</span> <span class="err">Ω</span>
+<span class="bp">|</span> <span class="n">ex</span>   <span class="o">{</span><span class="err">Γ</span> <span class="n">e</span><span class="o">}</span> <span class="o">:</span> <span class="bp">Π</span> <span class="n">A</span> <span class="o">:</span> <span class="n">type</span><span class="o">,</span> <span class="n">WF</span> <span class="o">(</span><span class="n">A</span><span class="bp">::</span><span class="err">Γ</span><span class="o">)</span> <span class="n">e</span> <span class="err">Ω</span> <span class="bp">→</span> <span class="n">WF</span> <span class="err">Γ</span> <span class="o">(</span><span class="n">term</span><span class="bp">.</span><span class="n">all</span> <span class="n">A</span> <span class="n">e</span><span class="o">)</span> <span class="err">Ω</span>
+<span class="bp">|</span> <span class="n">star</span> <span class="o">{</span><span class="err">Γ</span><span class="o">}</span> <span class="o">:</span> <span class="n">WF</span> <span class="err">Γ</span> <span class="n">term</span><span class="bp">.</span><span class="n">star</span> <span class="mi">𝟙</span>
+<span class="bp">|</span> <span class="n">top</span>  <span class="o">{</span><span class="err">Γ</span><span class="o">}</span> <span class="o">:</span> <span class="n">WF</span> <span class="err">Γ</span> <span class="n">term</span><span class="bp">.</span><span class="n">top</span> <span class="err">Ω</span>
+<span class="bp">|</span> <span class="n">bot</span>  <span class="o">{</span><span class="err">Γ</span><span class="o">}</span> <span class="o">:</span> <span class="n">WF</span> <span class="err">Γ</span> <span class="n">term</span><span class="bp">.</span><span class="n">bot</span> <span class="err">Ω</span>
+<span class="bp">|</span> <span class="n">prod</span> <span class="o">{</span><span class="err">Γ</span> <span class="n">e₁</span> <span class="n">e₂</span><span class="o">}</span> <span class="o">:</span> <span class="bp">Π</span> <span class="o">{</span><span class="n">A</span> <span class="n">B</span> <span class="o">:</span> <span class="n">type</span><span class="o">},</span> <span class="n">WF</span> <span class="err">Γ</span> <span class="n">e₁</span> <span class="n">A</span> <span class="bp">→</span> <span class="n">WF</span> <span class="err">Γ</span> <span class="n">e₂</span> <span class="n">B</span> <span class="bp">→</span> <span class="n">WF</span> <span class="err">Γ</span> <span class="o">(</span><span class="n">term</span><span class="bp">.</span><span class="n">prod</span> <span class="n">e₁</span> <span class="n">e₂</span><span class="o">)</span> <span class="o">(</span><span class="n">A</span> <span class="bp">××</span> <span class="n">B</span><span class="o">)</span>
+<span class="bp">|</span> <span class="n">elem</span> <span class="o">{</span><span class="err">Γ</span> <span class="n">e₁</span> <span class="n">e₂</span><span class="o">}</span> <span class="o">:</span> <span class="bp">Π</span> <span class="o">{</span><span class="n">A</span> <span class="o">:</span> <span class="n">type</span><span class="o">},</span> <span class="n">WF</span> <span class="err">Γ</span> <span class="n">e₁</span> <span class="n">A</span> <span class="bp">→</span> <span class="n">WF</span> <span class="err">Γ</span> <span class="n">e₂</span> <span class="o">(</span><span class="err">𝒫</span> <span class="n">A</span><span class="o">)</span> <span class="bp">→</span> <span class="n">WF</span> <span class="err">Γ</span> <span class="o">(</span><span class="n">term</span><span class="bp">.</span><span class="n">elem</span> <span class="n">e₁</span> <span class="n">e₂</span><span class="o">)</span> <span class="err">Ω</span>
+<span class="bp">|</span> <span class="n">and</span>  <span class="o">{</span><span class="err">Γ</span> <span class="n">e₁</span> <span class="n">e₂</span><span class="o">}</span> <span class="o">:</span> <span class="n">WF</span> <span class="err">Γ</span> <span class="n">e₁</span> <span class="err">Ω</span> <span class="bp">→</span> <span class="n">WF</span> <span class="err">Γ</span> <span class="n">e₁</span> <span class="err">Ω</span> <span class="bp">→</span> <span class="n">WF</span> <span class="err">Γ</span> <span class="o">(</span><span class="n">term</span><span class="bp">.</span><span class="n">and</span> <span class="n">e₁</span> <span class="n">e₂</span><span class="o">)</span> <span class="err">Ω</span>
+<span class="bp">|</span> <span class="n">or</span>   <span class="o">{</span><span class="err">Γ</span> <span class="n">e₁</span> <span class="n">e₂</span><span class="o">}</span> <span class="o">:</span> <span class="n">WF</span> <span class="err">Γ</span> <span class="n">e₁</span> <span class="err">Ω</span> <span class="bp">→</span> <span class="n">WF</span> <span class="err">Γ</span> <span class="n">e₁</span> <span class="err">Ω</span> <span class="bp">→</span> <span class="n">WF</span> <span class="err">Γ</span> <span class="o">(</span><span class="n">term</span><span class="bp">.</span><span class="n">or</span> <span class="n">e₁</span> <span class="n">e₂</span><span class="o">)</span> <span class="err">Ω</span>
+<span class="bp">|</span> <span class="n">imp</span>  <span class="o">{</span><span class="err">Γ</span> <span class="n">e₁</span> <span class="n">e₂</span><span class="o">}</span> <span class="o">:</span> <span class="n">WF</span> <span class="err">Γ</span> <span class="n">e₁</span> <span class="err">Ω</span> <span class="bp">→</span> <span class="n">WF</span> <span class="err">Γ</span> <span class="n">e₁</span> <span class="err">Ω</span> <span class="bp">→</span> <span class="n">WF</span> <span class="err">Γ</span> <span class="o">(</span><span class="n">term</span><span class="bp">.</span><span class="n">imp</span> <span class="n">e₁</span> <span class="n">e₂</span><span class="o">)</span> <span class="err">Ω</span>
+</code></pre></div>
+
+
+<p>there is actually an algorithm to perform these sort of translations, although I took the liberty of using a nat for the variable and otherwise removing unnecessary arguments from <code>term</code>, which is not obvious to the straightforward algorithm.</p>
+
+
+
 {% endraw %}
 
-<hr><p>Last updated: May 05 2020 at 12:07 UTC</p>
+<hr><p>Last updated: May 05 2020 at 13:06 UTC</p>

@@ -9,8 +9,8 @@ permalink: /stream/144837-PR-reviews/index.html
 
 ### Topics:
 
+* [lean#211 don't unfold irred defs](topic/lean.23211.20don't.20unfold.20irred.20defs.html) (119 messages, latest: May 05 2020 at 12:34)
 * [#2513 formal assoc](topic/.232513.20formal.20assoc.html) (3 messages, latest: May 05 2020 at 12:05)
-* [lean#211 don't unfold irred defs](topic/lean.23211.20don't.20unfold.20irred.20defs.html) (117 messages, latest: May 05 2020 at 11:49)
 * [lean#212 renaming tactic combinators](topic/lean.23212.20renaming.20tactic.20combinators.html) (4 messages, latest: May 05 2020 at 11:18)
 * [#2554 split list join](topic/.232554.20split.20list.20join.html) (68 messages, latest: May 05 2020 at 09:13)
 * [#2589 norm_num](topic/.232589.20norm_num.html) (52 messages, latest: May 04 2020 at 17:32)
@@ -247,4 +247,4 @@ permalink: /stream/144837-PR-reviews/index.html
 * [documentation PRs](topic/documentation.20PRs.html) (2 messages, latest: Oct 07 2018 at 11:21)
 * [hello](topic/hello.html) (1 message, latest: Oct 07 2018 at 10:24)
 
-<hr><p>Last updated: May 05 2020 at 12:07 UTC</p>
+<hr><p>Last updated: May 05 2020 at 13:06 UTC</p>
