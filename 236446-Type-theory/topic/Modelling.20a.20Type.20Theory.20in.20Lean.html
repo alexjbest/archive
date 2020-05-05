@@ -845,6 +845,49 @@ Putting the context into the term from the start is not really equivalent, since
 
 
 
+<a name="196305815"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/236446-Type%20theory/topic/Modelling%20a%20Type%20Theory%20in%20Lean/near/196305815" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Billy Price <a href="https://leanprover-community.github.io/archive/stream/236446-Type-theory/topic/Modelling.20a.20Type.20Theory.20in.20Lean.html#196305815">(May 05 2020 at 13:17)</a>:</h4>
+<p>Wow that was definitely non-obvious to me that you could take the types off term's as well. From then on, as I understand, instead of talking about terms, you'd talk about proofs that terms are well-formed? (as if its the term itself)</p>
+
+
+
+<a name="196305984"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/236446-Type%20theory/topic/Modelling%20a%20Type%20Theory%20in%20Lean/near/196305984" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Billy Price <a href="https://leanprover-community.github.io/archive/stream/236446-Type-theory/topic/Modelling.20a.20Type.20Theory.20in.20Lean.html#196305984">(May 05 2020 at 13:18)</a>:</h4>
+<p>So a sequent is constructed from two WF's proofs, rather than from two terms?</p>
+
+
+
+<a name="196306020"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/236446-Type%20theory/topic/Modelling%20a%20Type%20Theory%20in%20Lean/near/196306020" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Mario Carneiro <a href="https://leanprover-community.github.io/archive/stream/236446-Type-theory/topic/Modelling.20a.20Type.20Theory.20in.20Lean.html#196306020">(May 05 2020 at 13:18)</a>:</h4>
+<p>No, a sequent is still just two terms</p>
+
+
+
+<a name="196306072"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/236446-Type%20theory/topic/Modelling%20a%20Type%20Theory%20in%20Lean/near/196306072" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Mario Carneiro <a href="https://leanprover-community.github.io/archive/stream/236446-Type-theory/topic/Modelling.20a.20Type.20Theory.20in.20Lean.html#196306072">(May 05 2020 at 13:19)</a>:</h4>
+<p>But the inductive defining the proof relation will contain WF hypotheses</p>
+
+
+
+<a name="196307014"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/236446-Type%20theory/topic/Modelling%20a%20Type%20Theory%20in%20Lean/near/196307014" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Billy Price <a href="https://leanprover-community.github.io/archive/stream/236446-Type-theory/topic/Modelling.20a.20Type.20Theory.20in.20Lean.html#196307014">(May 05 2020 at 13:26)</a>:</h4>
+<p>Ah, I just wrote down the type and realised of course you must introduce the term objects themselves to talk about their WF'ness<br>
+<code>inductive proof : Π {Γ:context} {φ: term} {ψ : term}, WF Γ φ Ω  → WF Γ ψ Ω → Type</code></p>
+
+
+
+<a name="196307359"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/236446-Type%20theory/topic/Modelling%20a%20Type%20Theory%20in%20Lean/near/196307359" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Billy Price <a href="https://leanprover-community.github.io/archive/stream/236446-Type-theory/topic/Modelling.20a.20Type.20Theory.20in.20Lean.html#196307359">(May 05 2020 at 13:29)</a>:</h4>
+<p>In what sense did you mean a proof/sequent is just two terms?</p>
+
+
+
+<a name="196307375"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/236446-Type%20theory/topic/Modelling%20a%20Type%20Theory%20in%20Lean/near/196307375" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Mario Carneiro <a href="https://leanprover-community.github.io/archive/stream/236446-Type-theory/topic/Modelling.20a.20Type.20Theory.20in.20Lean.html#196307375">(May 05 2020 at 13:29)</a>:</h4>
+<p>You can write the <code>proof : context -&gt; term -&gt; term -&gt; Prop</code> relation such that <code>proof Γ φ ψ -&gt;  WF Γ φ Ω  /\ WF Γ ψ Ω</code>, although I would actually suggest <code>WF Γ φ Ω -&gt; proof Γ φ ψ -&gt;  WF Γ ψ Ω</code> instead</p>
+
+
+
 {% endraw %}
 
-<hr><p>Last updated: May 05 2020 at 13:06 UTC</p>
+<hr><p>Last updated: May 05 2020 at 14:07 UTC</p>

@@ -808,6 +808,148 @@ sys     7m46.827s
 
 
 
+<a name="196306280"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/144837-PR%20reviews/topic/lean%23211%20don%27t%20unfold%20irred%20defs/near/196306280" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Johan Commelin <a href="https://leanprover-community.github.io/archive/stream/144837-PR-reviews/topic/lean.23211.20don't.20unfold.20irred.20defs.html#196306280">(May 05 2020 at 13:20)</a>:</h4>
+<div class="codehilite"><pre><span></span><code><span class="nb">time</span> nice leanpkg build <span class="c1">### building with lean-3.10.0</span>
+real    45m12.958s
+user    571m15.583s
+sys     7m42.585s
+</code></pre></div>
+
+
+
+<a name="196306314"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/144837-PR%20reviews/topic/lean%23211%20don%27t%20unfold%20irred%20defs/near/196306314" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Johan Commelin <a href="https://leanprover-community.github.io/archive/stream/144837-PR-reviews/topic/lean.23211.20don't.20unfold.20irred.20defs.html#196306314">(May 05 2020 at 13:21)</a>:</h4>
+<p>So the build times seem very similar. I have no idea how big the noise factor is.</p>
+
+
+
+<a name="196306332"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/144837-PR%20reviews/topic/lean%23211%20don%27t%20unfold%20irred%20defs/near/196306332" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Johan Commelin <a href="https://leanprover-community.github.io/archive/stream/144837-PR-reviews/topic/lean.23211.20don't.20unfold.20irred.20defs.html#196306332">(May 05 2020 at 13:21)</a>:</h4>
+<p>But we do seem to get a tiny slowdown</p>
+
+
+
+<a name="196306394"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/144837-PR%20reviews/topic/lean%23211%20don%27t%20unfold%20irred%20defs/near/196306394" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Johan Commelin <a href="https://leanprover-community.github.io/archive/stream/144837-PR-reviews/topic/lean.23211.20don't.20unfold.20irred.20defs.html#196306394">(May 05 2020 at 13:21)</a>:</h4>
+<p>I would have expected that lean is trying less stuff, more conservative. So would it have been crazy to actually see a slight speedup instead?</p>
+
+
+
+<a name="196306406"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/144837-PR%20reviews/topic/lean%23211%20don%27t%20unfold%20irred%20defs/near/196306406" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Mario Carneiro <a href="https://leanprover-community.github.io/archive/stream/144837-PR-reviews/topic/lean.23211.20don't.20unfold.20irred.20defs.html#196306406">(May 05 2020 at 13:21)</a>:</h4>
+<p>I'm surprised it's not a speedup</p>
+
+
+
+<a name="196306963"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/144837-PR%20reviews/topic/lean%23211%20don%27t%20unfold%20irred%20defs/near/196306963" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Johan Commelin <a href="https://leanprover-community.github.io/archive/stream/144837-PR-reviews/topic/lean.23211.20don't.20unfold.20irred.20defs.html#196306963">(May 05 2020 at 13:26)</a>:</h4>
+<p>2.3% ... are we willing to sacrifice that?</p>
+
+
+
+<a name="196307381"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/144837-PR%20reviews/topic/lean%23211%20don%27t%20unfold%20irred%20defs/near/196307381" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Johan Commelin <a href="https://leanprover-community.github.io/archive/stream/144837-PR-reviews/topic/lean.23211.20don't.20unfold.20irred.20defs.html#196307381">(May 05 2020 at 13:29)</a>:</h4>
+<p>Maybe we should include witt vectors in the comparison?</p>
+
+
+
+<a name="196307481"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/144837-PR%20reviews/topic/lean%23211%20don%27t%20unfold%20irred%20defs/near/196307481" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Johan Commelin <a href="https://leanprover-community.github.io/archive/stream/144837-PR-reviews/topic/lean.23211.20don't.20unfold.20irred.20defs.html#196307481">(May 05 2020 at 13:30)</a>:</h4>
+<p>But more seriously... is there anything we can say about the noise? Or whether or not this should have been a speedup?</p>
+
+
+
+<a name="196307517"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/144837-PR%20reviews/topic/lean%23211%20don%27t%20unfold%20irred%20defs/near/196307517" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Johan Commelin <a href="https://leanprover-community.github.io/archive/stream/144837-PR-reviews/topic/lean.23211.20don't.20unfold.20irred.20defs.html#196307517">(May 05 2020 at 13:30)</a>:</h4>
+<p><span class="user-mention" data-user-id="110024">@Sebastian Ullrich</span> Do you have some wise words to say?</p>
+
+
+
+<a name="196307609"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/144837-PR%20reviews/topic/lean%23211%20don%27t%20unfold%20irred%20defs/near/196307609" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Gabriel Ebner <a href="https://leanprover-community.github.io/archive/stream/144837-PR-reviews/topic/lean.23211.20don't.20unfold.20irred.20defs.html#196307609">(May 05 2020 at 13:31)</a>:</h4>
+<p>I bet if you build mathlib five times, you'll see a larger variance.</p>
+
+
+
+<a name="196307640"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/144837-PR%20reviews/topic/lean%23211%20don%27t%20unfold%20irred%20defs/near/196307640" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Gabriel Ebner <a href="https://leanprover-community.github.io/archive/stream/144837-PR-reviews/topic/lean.23211.20don't.20unfold.20irred.20defs.html#196307640">(May 05 2020 at 13:31)</a>:</h4>
+<p>Also how did you build lean?  Compiler version, build type (debug/release)?</p>
+
+
+
+<a name="196307665"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/144837-PR%20reviews/topic/lean%23211%20don%27t%20unfold%20irred%20defs/near/196307665" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Johan Commelin <a href="https://leanprover-community.github.io/archive/stream/144837-PR-reviews/topic/lean.23211.20don't.20unfold.20irred.20defs.html#196307665">(May 05 2020 at 13:31)</a>:</h4>
+<p>Aaah, does that matter?</p>
+
+
+
+<a name="196307740"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/144837-PR%20reviews/topic/lean%23211%20don%27t%20unfold%20irred%20defs/near/196307740" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Gabriel Ebner <a href="https://leanprover-community.github.io/archive/stream/144837-PR-reviews/topic/lean.23211.20don't.20unfold.20irred.20defs.html#196307740">(May 05 2020 at 13:32)</a>:</h4>
+<p>It matters about one or two percent, I would imagine.</p>
+
+
+
+<a name="196307766"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/144837-PR%20reviews/topic/lean%23211%20don%27t%20unfold%20irred%20defs/near/196307766" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Johan Commelin <a href="https://leanprover-community.github.io/archive/stream/144837-PR-reviews/topic/lean.23211.20don't.20unfold.20irred.20defs.html#196307766">(May 05 2020 at 13:32)</a>:</h4>
+<p>I see. I just followed the build instructions. Is there some config file you would want to see?</p>
+
+
+
+<a name="196307834"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/144837-PR%20reviews/topic/lean%23211%20don%27t%20unfold%20irred%20defs/near/196307834" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Johan Commelin <a href="https://leanprover-community.github.io/archive/stream/144837-PR-reviews/topic/lean.23211.20don't.20unfold.20irred.20defs.html#196307834">(May 05 2020 at 13:33)</a>:</h4>
+<p>If you want, I can run a number of builds tonight. But maybe we just decide that this PR is going to get merged anyway?</p>
+
+
+
+<a name="196307847"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/144837-PR%20reviews/topic/lean%23211%20don%27t%20unfold%20irred%20defs/near/196307847" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Gabriel Ebner <a href="https://leanprover-community.github.io/archive/stream/144837-PR-reviews/topic/lean.23211.20don't.20unfold.20irred.20defs.html#196307847">(May 05 2020 at 13:33)</a>:</h4>
+<p>I vote for merge.</p>
+
+
+
+<a name="196307897"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/144837-PR%20reviews/topic/lean%23211%20don%27t%20unfold%20irred%20defs/near/196307897" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Sebastian Ullrich <a href="https://leanprover-community.github.io/archive/stream/144837-PR-reviews/topic/lean.23211.20don't.20unfold.20irred.20defs.html#196307897">(May 05 2020 at 13:33)</a>:</h4>
+<p>Yeah, there really isn't any conceivable reason to defend the old behavior</p>
+
+
+
+<a name="196307960"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/144837-PR%20reviews/topic/lean%23211%20don%27t%20unfold%20irred%20defs/near/196307960" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Johan Commelin <a href="https://leanprover-community.github.io/archive/stream/144837-PR-reviews/topic/lean.23211.20don't.20unfold.20irred.20defs.html#196307960">(May 05 2020 at 13:34)</a>:</h4>
+<p>Unless it would be significantly faster</p>
+
+
+
+<a name="196308000"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/144837-PR%20reviews/topic/lean%23211%20don%27t%20unfold%20irred%20defs/near/196308000" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Sebastian Ullrich <a href="https://leanprover-community.github.io/archive/stream/144837-PR-reviews/topic/lean.23211.20don't.20unfold.20irred.20defs.html#196308000">(May 05 2020 at 13:34)</a>:</h4>
+<p>Well, then obviously something else must be broken to make it slower!</p>
+
+
+
+<a name="196308491"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/144837-PR%20reviews/topic/lean%23211%20don%27t%20unfold%20irred%20defs/near/196308491" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Sebastian Ullrich <a href="https://leanprover-community.github.io/archive/stream/144837-PR-reviews/topic/lean.23211.20don't.20unfold.20irred.20defs.html#196308491">(May 05 2020 at 13:38)</a>:</h4>
+<p>Btw, you might already be aware of <a href="http://speedcenter.informatik.kit.edu/lean/" title="http://speedcenter.informatik.kit.edu/lean/">http://speedcenter.informatik.kit.edu/lean/</a>. I can't really recommend this particular software to use for benchmarking other projects such as mathlib, but we have some students who are working on an actually usable alternative, so maybe soon...</p>
+
+
+
+<a name="196308684"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/144837-PR%20reviews/topic/lean%23211%20don%27t%20unfold%20irred%20defs/near/196308684" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Johan Commelin <a href="https://leanprover-community.github.io/archive/stream/144837-PR-reviews/topic/lean.23211.20don't.20unfold.20irred.20defs.html#196308684">(May 05 2020 at 13:40)</a>:</h4>
+<p>I was not aware of it</p>
+
+
+
+<a name="196308694"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/144837-PR%20reviews/topic/lean%23211%20don%27t%20unfold%20irred%20defs/near/196308694" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Johan Commelin <a href="https://leanprover-community.github.io/archive/stream/144837-PR-reviews/topic/lean.23211.20don't.20unfold.20irred.20defs.html#196308694">(May 05 2020 at 13:40)</a>:</h4>
+<p>So, thanks (-;</p>
+
+
+
+<a name="196309157"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/144837-PR%20reviews/topic/lean%23211%20don%27t%20unfold%20irred%20defs/near/196309157" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Johan Commelin <a href="https://leanprover-community.github.io/archive/stream/144837-PR-reviews/topic/lean.23211.20don't.20unfold.20irred.20defs.html#196309157">(May 05 2020 at 13:44)</a>:</h4>
+<p>When the usable alternative is there, it would be cool to add these stats to the community website</p>
+
+
+
 {% endraw %}
 
-<hr><p>Last updated: May 05 2020 at 13:06 UTC</p>
+<hr><p>Last updated: May 05 2020 at 14:07 UTC</p>
