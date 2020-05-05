@@ -700,6 +700,98 @@ Here, on the topic of some technical PR, people discuss Witt vectors<br>
 
 
 
+<a name="196294195"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/144837-PR%20reviews/topic/lean%23211%20don%27t%20unfold%20irred%20defs/near/196294195" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Johan Commelin <a href="https://leanprover-community.github.io/archive/stream/144837-PR-reviews/topic/lean.23211.20don't.20unfold.20irred.20defs.html#196294195">(May 05 2020 at 11:16)</a>:</h4>
+<p><span aria-label="tada" class="emoji emoji-1f389" role="img" title="tada">:tada:</span> <span aria-label="fencing" class="emoji emoji-1f93a" role="img" title="fencing">:fencing:</span> <span aria-label="thumbs up" class="emoji emoji-1f44d" role="img" title="thumbs up">:thumbs_up:</span> <br>
+Mathlib builds for me.</p>
+
+
+
+<a name="196294207"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/144837-PR%20reviews/topic/lean%23211%20don%27t%20unfold%20irred%20defs/near/196294207" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Johan Commelin <a href="https://leanprover-community.github.io/archive/stream/144837-PR-reviews/topic/lean.23211.20don't.20unfold.20irred.20defs.html#196294207">(May 05 2020 at 11:17)</a>:</h4>
+<p>I just pushed</p>
+
+
+
+<a name="196294232"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/144837-PR%20reviews/topic/lean%23211%20don%27t%20unfold%20irred%20defs/near/196294232" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Kevin Buzzard <a href="https://leanprover-community.github.io/archive/stream/144837-PR-reviews/topic/lean.23211.20don't.20unfold.20irred.20defs.html#196294232">(May 05 2020 at 11:17)</a>:</h4>
+<p>Does this mean Witt vectors are back on?</p>
+
+
+
+<a name="196294386"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/144837-PR%20reviews/topic/lean%23211%20don%27t%20unfold%20irred%20defs/near/196294386" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Johan Commelin <a href="https://leanprover-community.github.io/archive/stream/144837-PR-reviews/topic/lean.23211.20don't.20unfold.20irred.20defs.html#196294386">(May 05 2020 at 11:19)</a>:</h4>
+<p>The total number of changes aren't even too big:<br>
+<a href="https://github.com/leanprover-community/mathlib/compare/lean_pr_211?expand=1" title="https://github.com/leanprover-community/mathlib/compare/lean_pr_211?expand=1">https://github.com/leanprover-community/mathlib/compare/lean_pr_211?expand=1</a></p>
+
+
+
+<a name="196294416"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/144837-PR%20reviews/topic/lean%23211%20don%27t%20unfold%20irred%20defs/near/196294416" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Johan Commelin <a href="https://leanprover-community.github.io/archive/stream/144837-PR-reviews/topic/lean.23211.20don't.20unfold.20irred.20defs.html#196294416">(May 05 2020 at 11:19)</a>:</h4>
+<p><span class="user-mention silent" data-user-id="110038">Kevin Buzzard</span> <a href="#narrow/stream/144837-PR-reviews/topic/lean.23211.20don't.20unfold.20irred.20defs/near/196294232" title="#narrow/stream/144837-PR-reviews/topic/lean.23211.20don't.20unfold.20irred.20defs/near/196294232">said</a>:</p>
+<blockquote>
+<p>Does this mean Witt vectors are back on?</p>
+</blockquote>
+<p>Well, first we need to get <a href="https://github.com/leanprover-community/lean/issues/211" title="https://github.com/leanprover-community/lean/issues/211">lean#211</a> merged, and then released and then this PR has to be merged into mathlib.</p>
+
+
+
+<a name="196294510"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/144837-PR%20reviews/topic/lean%23211%20don%27t%20unfold%20irred%20defs/near/196294510" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Kevin Buzzard <a href="https://leanprover-community.github.io/archive/stream/144837-PR-reviews/topic/lean.23211.20don't.20unfold.20irred.20defs.html#196294510">(May 05 2020 at 11:20)</a>:</h4>
+<p>But it means you are unblocked, right? :D</p>
+
+
+
+<a name="196294951"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/144837-PR%20reviews/topic/lean%23211%20don%27t%20unfold%20irred%20defs/near/196294951" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Reid Barton <a href="https://leanprover-community.github.io/archive/stream/144837-PR-reviews/topic/lean.23211.20don't.20unfold.20irred.20defs.html#196294951">(May 05 2020 at 11:25)</a>:</h4>
+<p>Not yet though. Maybe you should formalize sober spaces while you wait.</p>
+
+
+
+<a name="196295136"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/144837-PR%20reviews/topic/lean%23211%20don%27t%20unfold%20irred%20defs/near/196295136" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Reid Barton <a href="https://leanprover-community.github.io/archive/stream/144837-PR-reviews/topic/lean.23211.20don't.20unfold.20irred.20defs.html#196295136">(May 05 2020 at 11:27)</a>:</h4>
+<p>Soooo, what about also having Lean not unfold proofs of lemmas.</p>
+
+
+
+<a name="196295259"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/144837-PR%20reviews/topic/lean%23211%20don%27t%20unfold%20irred%20defs/near/196295259" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Reid Barton <a href="https://leanprover-community.github.io/archive/stream/144837-PR-reviews/topic/lean.23211.20don't.20unfold.20irred.20defs.html#196295259">(May 05 2020 at 11:28)</a>:</h4>
+<p>Currently I'm forced to admit that definitional proof irrelevance is "an obscure feature that nobody really understands".</p>
+
+
+
+<a name="196295289"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/144837-PR%20reviews/topic/lean%23211%20don%27t%20unfold%20irred%20defs/near/196295289" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Reid Barton <a href="https://leanprover-community.github.io/archive/stream/144837-PR-reviews/topic/lean.23211.20don't.20unfold.20irred.20defs.html#196295289">(May 05 2020 at 11:29)</a>:</h4>
+<p>Or, wait. Is this change fixing that too?</p>
+
+
+
+<a name="196295692"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/144837-PR%20reviews/topic/lean%23211%20don%27t%20unfold%20irred%20defs/near/196295692" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Patrick Massot <a href="https://leanprover-community.github.io/archive/stream/144837-PR-reviews/topic/lean.23211.20don't.20unfold.20irred.20defs.html#196295692">(May 05 2020 at 11:34)</a>:</h4>
+<p>Do we have any performance benchmark here?</p>
+
+
+
+<a name="196295965"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/144837-PR%20reviews/topic/lean%23211%20don%27t%20unfold%20irred%20defs/near/196295965" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Johan Commelin <a href="https://leanprover-community.github.io/archive/stream/144837-PR-reviews/topic/lean.23211.20don't.20unfold.20irred.20defs.html#196295965">(May 05 2020 at 11:38)</a>:</h4>
+<p>It didn't feel like Lean was slower, when compiling mathlib</p>
+
+
+
+<a name="196296305"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/144837-PR%20reviews/topic/lean%23211%20don%27t%20unfold%20irred%20defs/near/196296305" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Johan Commelin <a href="https://leanprover-community.github.io/archive/stream/144837-PR-reviews/topic/lean.23211.20don't.20unfold.20irred.20defs.html#196296305">(May 05 2020 at 11:42)</a>:</h4>
+<p>I am now running <code>time nice leanpkg build</code> on this mathlib.<br>
+When I'm done, I'll also run it on regular mathlib.<br>
+Check back in ~ 4 hours (-;</p>
+
+
+
+<a name="196296866"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/144837-PR%20reviews/topic/lean%23211%20don%27t%20unfold%20irred%20defs/near/196296866" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Reid Barton <a href="https://leanprover-community.github.io/archive/stream/144837-PR-reviews/topic/lean.23211.20don't.20unfold.20irred.20defs.html#196296866">(May 05 2020 at 11:49)</a>:</h4>
+<p>Another thing I am a bit confused about: In general, the proofs of lemmas may not be immediately available. If unification wants to unfold one of these proofs, does that mean it joins on the task computing the proof?</p>
+
+
+
 {% endraw %}
 
-<hr><p>Last updated: May 05 2020 at 11:07 UTC</p>
+<hr><p>Last updated: May 05 2020 at 12:07 UTC</p>

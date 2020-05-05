@@ -573,6 +573,43 @@ Putting the context into the term from the start is not really equivalent, since
 
 
 
+<a name="196293916"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/236446-Type%20theory/topic/Modelling%20a%20Type%20Theory%20in%20Lean/near/196293916" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Mario Carneiro <a href="https://leanprover-community.github.io/archive/stream/236446-Type-theory/topic/Modelling.20a.20Type.20Theory.20in.20Lean.html#196293916">(May 05 2020 at 11:12)</a>:</h4>
+<p>You should leave the first two arguments blank, they are inferred from the third</p>
+
+
+
+<a name="196294018"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/236446-Type%20theory/topic/Modelling%20a%20Type%20Theory%20in%20Lean/near/196294018" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Mario Carneiro <a href="https://leanprover-community.github.io/archive/stream/236446-Type-theory/topic/Modelling.20a.20Type.20Theory.20in.20Lean.html#196294018">(May 05 2020 at 11:14)</a>:</h4>
+<p>Alternatively you should be able to put a dot before them like</p>
+<div class="codehilite"><pre><span></span><code><span class="n">def</span> <span class="n">add_junk</span> <span class="o">(</span><span class="n">β</span> <span class="o">:</span> <span class="kn">context</span><span class="o">)</span> <span class="o">:</span> <span class="bp">Π</span> <span class="o">(</span><span class="err">Γ</span><span class="o">:</span> <span class="kn">context</span><span class="o">)</span> <span class="o">(</span><span class="n">A</span><span class="o">:</span> <span class="n">type</span><span class="o">),</span> <span class="n">term</span> <span class="err">Γ</span> <span class="n">A</span> <span class="bp">→</span> <span class="n">term</span> <span class="o">(</span><span class="n">list</span><span class="bp">.</span><span class="n">append</span> <span class="err">Γ</span> <span class="n">β</span><span class="o">)</span> <span class="n">A</span>
+<span class="bp">|</span> <span class="bp">.</span><span class="o">(</span><span class="n">list</span><span class="bp">.</span><span class="n">append</span> <span class="err">Γ</span> <span class="o">(</span><span class="n">A</span><span class="bp">::</span><span class="err">Δ</span><span class="o">))</span> <span class="bp">.</span><span class="o">(</span><span class="n">A</span><span class="o">)</span> <span class="o">(</span><span class="n">var</span> <span class="err">Γ</span> <span class="n">A</span> <span class="err">Δ</span><span class="o">)</span> <span class="o">:=</span> <span class="n">var</span> <span class="err">Γ</span> <span class="n">A</span> <span class="o">(</span><span class="n">list</span><span class="bp">.</span><span class="n">append</span> <span class="err">Δ</span> <span class="n">β</span><span class="o">)</span>
+</code></pre></div>
+
+
+<p>and it will mark those positions as "inacessible" meaning that it won't try to split on the first argument and figure out why <code>list.append Γ (A::Δ)</code> is a constructor (because it's not)</p>
+
+
+
+<a name="196297051"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/236446-Type%20theory/topic/Modelling%20a%20Type%20Theory%20in%20Lean/near/196297051" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Billy Price <a href="https://leanprover-community.github.io/archive/stream/236446-Type-theory/topic/Modelling.20a.20Type.20Theory.20in.20Lean.html#196297051">(May 05 2020 at 11:51)</a>:</h4>
+<p>That results in this error</p>
+<div class="codehilite"><pre><span></span><code><span class="n">equation</span> <span class="n">type</span> <span class="n">mismatch</span><span class="o">,</span> <span class="n">term</span>
+  <span class="n">var</span> <span class="err">Γ</span> <span class="n">A</span> <span class="o">(</span><span class="n">list</span><span class="bp">.</span><span class="n">append</span> <span class="err">Δ</span> <span class="n">β</span><span class="o">)</span>
+<span class="n">has</span> <span class="n">type</span>
+  <span class="n">term</span> <span class="o">(</span><span class="n">list</span><span class="bp">.</span><span class="n">append</span> <span class="err">Γ</span> <span class="o">(</span><span class="n">A</span> <span class="bp">::</span> <span class="n">list</span><span class="bp">.</span><span class="n">append</span> <span class="err">Δ</span> <span class="n">β</span><span class="o">))</span> <span class="n">A</span>
+<span class="n">but</span> <span class="n">is</span> <span class="n">expected</span> <span class="n">to</span> <span class="k">have</span> <span class="n">type</span>
+  <span class="n">term</span> <span class="o">(</span><span class="n">list</span><span class="bp">.</span><span class="n">append</span> <span class="bp">.</span> <span class="o">(</span><span class="n">list</span><span class="bp">.</span><span class="n">append</span> <span class="err">Γ</span> <span class="o">(</span><span class="n">A</span> <span class="bp">::</span> <span class="err">Δ</span><span class="o">))</span> <span class="n">β</span><span class="o">)</span> <span class="bp">.</span><span class="n">A</span>
+</code></pre></div>
+
+
+
+<a name="196297202"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/236446-Type%20theory/topic/Modelling%20a%20Type%20Theory%20in%20Lean/near/196297202" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Billy Price <a href="https://leanprover-community.github.io/archive/stream/236446-Type-theory/topic/Modelling.20a.20Type.20Theory.20in.20Lean.html#196297202">(May 05 2020 at 11:53)</a>:</h4>
+<p>Also what is the . syntax called so I can find it in the documentation?</p>
+
+
+
 {% endraw %}
 
-<hr><p>Last updated: May 05 2020 at 11:07 UTC</p>
+<hr><p>Last updated: May 05 2020 at 12:07 UTC</p>

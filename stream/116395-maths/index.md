@@ -9,7 +9,8 @@ permalink: /stream/116395-maths/index.html
 
 ### Topics:
 
-* [Define bundled homs using `calc`](topic/Define.20bundled.20homs.20using.20.60calc.60.html) (5 messages, latest: May 05 2020 at 05:18)
+* [Sqrt of 2 is irrational](topic/Sqrt.20of.202.20is.20irrational.html) (8 messages, latest: May 05 2020 at 12:04)
+* [Define bundled homs using `calc`](topic/Define.20bundled.20homs.20using.20.60calc.60.html) (9 messages, latest: May 05 2020 at 11:30)
 * [lie groups](topic/lie.20groups.html) (21 messages, latest: May 04 2020 at 17:01)
 * [mathy may 4th](topic/mathy.20may.204th.html) (1 message, latest: May 04 2020 at 16:03)
 * [witt vectors](topic/witt.20vectors.html) (299 messages, latest: May 04 2020 at 06:33)
@@ -888,4 +889,4 @@ permalink: /stream/116395-maths/index.html
 * [free group](topic/free.20group.html) (92 messages, latest: Apr 02 2018 at 05:00)
 * [Easy topological space question](topic/Easy.20topological.20space.20question.html) (18 messages, latest: Apr 02 2018 at 01:23)
 
-<hr><p>Last updated: May 05 2020 at 11:07 UTC</p>
+<hr><p>Last updated: May 05 2020 at 12:07 UTC</p>
