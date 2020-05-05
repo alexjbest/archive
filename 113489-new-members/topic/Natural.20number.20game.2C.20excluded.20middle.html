@@ -70,6 +70,60 @@ permalink: /stream/113489-new-members/topic/Natural.20number.20game.2C.20exclude
 
 
 
+<a name="196265927"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113489-new%20members/topic/Natural%20number%20game%2C%20excluded%20middle/near/196265927" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Heather Macbeth <a href="https://leanprover-community.github.io/archive/stream/113489-new-members/topic/Natural.20number.20game.2C.20excluded.20middle.html#196265927">(May 05 2020 at 04:08)</a>:</h4>
+<p><span class="user-mention" data-user-id="266440">@Shing Tak Lam</span> Thank you for reproducing the error!  <span class="user-mention" data-user-id="110025">@Andrew Ashworth</span>, I know the lemma is not needed to solve the level (I've solved it).  But I'm suggesting that the lemma be imported in the source code for the level, to allow for experimentation along the lines suggested in the level's narrative.</p>
+
+
+
+<a name="196265955"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113489-new%20members/topic/Natural%20number%20game%2C%20excluded%20middle/near/196265955" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Heather Macbeth <a href="https://leanprover-community.github.io/archive/stream/113489-new-members/topic/Natural.20number.20game.2C.20excluded.20middle.html#196265955">(May 05 2020 at 04:09)</a>:</h4>
+<p>The lemma is from a previous level, <a href="https://github.com/ImperialCollegeLondon/natural_number_game/blob/master/src/game/world6/level8.lean" title="https://github.com/ImperialCollegeLondon/natural_number_game/blob/master/src/game/world6/level8.lean"><code>game.world6.level8</code></a>.</p>
+
+
+
+<a name="196266022"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113489-new%20members/topic/Natural%20number%20game%2C%20excluded%20middle/near/196266022" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Andrew Ashworth <a href="https://leanprover-community.github.io/archive/stream/113489-new-members/topic/Natural.20number.20game.2C.20excluded.20middle.html#196266022">(May 05 2020 at 04:11)</a>:</h4>
+<p>well, surely they would be interested in a contribution fixing this. If you go to the file listing for world 7 level 9 and click on the edit button, you can cut and paste <code>lemma not_iff_imp_false (P : Prop) : ¬ P ↔ P → false := iff.rfl -- hide</code> somewhere near the top. Or if you are not so familiar with github, somebody here with commit rights can do it for you</p>
+
+
+
+<a name="196266072"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113489-new%20members/topic/Natural%20number%20game%2C%20excluded%20middle/near/196266072" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Heather Macbeth <a href="https://leanprover-community.github.io/archive/stream/113489-new-members/topic/Natural.20number.20game.2C.20excluded.20middle.html#196266072">(May 05 2020 at 04:12)</a>:</h4>
+<p>It'd be great if someone could propose this edit.  I would have, but I don't have a github account.</p>
+
+
+
+<a name="196266251"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113489-new%20members/topic/Natural%20number%20game%2C%20excluded%20middle/near/196266251" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Andrew Ashworth <a href="https://leanprover-community.github.io/archive/stream/113489-new-members/topic/Natural.20number.20game.2C.20excluded.20middle.html#196266251">(May 05 2020 at 04:16)</a>:</h4>
+<p>I am not sure who can commit to this repository or propose pull requests. <span class="user-mention" data-user-id="110038">@Kevin Buzzard</span></p>
+
+
+
+<a name="196266259"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113489-new%20members/topic/Natural%20number%20game%2C%20excluded%20middle/near/196266259" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Shing Tak Lam <a href="https://leanprover-community.github.io/archive/stream/113489-new-members/topic/Natural.20number.20game.2C.20excluded.20middle.html#196266259">(May 05 2020 at 04:17)</a>:</h4>
+<p>You can fork then PR? (I'm doing it now)</p>
+
+
+
+<a name="196266268"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113489-new%20members/topic/Natural%20number%20game%2C%20excluded%20middle/near/196266268" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Andrew Ashworth <a href="https://leanprover-community.github.io/archive/stream/113489-new-members/topic/Natural.20number.20game.2C.20excluded.20middle.html#196266268">(May 05 2020 at 04:17)</a>:</h4>
+<p>that works too</p>
+
+
+
+<a name="196266440"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113489-new%20members/topic/Natural%20number%20game%2C%20excluded%20middle/near/196266440" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Shing Tak Lam <a href="https://leanprover-community.github.io/archive/stream/113489-new-members/topic/Natural.20number.20game.2C.20excluded.20middle.html#196266440">(May 05 2020 at 04:20)</a>:</h4>
+<p><a href="https://github.com/ImperialCollegeLondon/natural_number_game/pull/79" title="https://github.com/ImperialCollegeLondon/natural_number_game/pull/79">done</a></p>
+
+
+
+<a name="196266635"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113489-new%20members/topic/Natural%20number%20game%2C%20excluded%20middle/near/196266635" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Heather Macbeth <a href="https://leanprover-community.github.io/archive/stream/113489-new-members/topic/Natural.20number.20game.2C.20excluded.20middle.html#196266635">(May 05 2020 at 04:24)</a>:</h4>
+<p>Thanks!</p>
+
+
+
 {% endraw %}
 
-<hr><p>Last updated: May 05 2020 at 04:07 UTC</p>
+<hr><p>Last updated: May 05 2020 at 05:08 UTC</p>

@@ -1,0 +1,50 @@
+---
+layout: archive
+title: Zulip Chat Archive
+permalink: /stream/116395-maths/topic/Define.20bundled.20homs.20using.20.60calc.60.html
+---
+
+<h2>Stream: <a href="https://leanprover-community.github.io/archive/stream/116395-maths/index.html">maths</a></h2>
+<h3>Topic: <a href="https://leanprover-community.github.io/archive/stream/116395-maths/topic/Define.20bundled.20homs.20using.20.60calc.60.html">Define bundled homs using `calc`</a></h3>
+
+<hr>
+
+<base href="https://leanprover.zulipchat.com/">
+
+<head><link href="/style.css" rel="stylesheet"></head>
+
+{% raw %}
+
+<a name="196267636"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/116395-maths/topic/Define%20bundled%20homs%20using%20%60calc%60/near/196267636" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Yury G. Kudryashov <a href="https://leanprover-community.github.io/archive/stream/116395-maths/topic/Define.20bundled.20homs.20using.20.60calc.60.html#196267636">(May 05 2020 at 04:50)</a>:</h4>
+<p>If <code>monoid_hom.comp</code> was using another order of arguments, it would be possible to write something like</p>
+<div class="codehilite"><pre><span></span><code><span class="k">calc</span> <span class="n">M</span> <span class="bp">→*</span> <span class="n">N</span> <span class="o">:</span> <span class="n">f</span>
+<span class="bp">...</span> <span class="bp">→*</span> <span class="n">P</span> <span class="o">:</span> <span class="n">g</span>
+</code></pre></div>
+
+
+<p>Can I make <code>monoid_hom.comp</code> usable for <code>calc</code> without changing order of arguments?</p>
+
+
+
+<a name="196267657"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/116395-maths/topic/Define%20bundled%20homs%20using%20%60calc%60/near/196267657" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Yury G. Kudryashov <a href="https://leanprover-community.github.io/archive/stream/116395-maths/topic/Define.20bundled.20homs.20using.20.60calc.60.html#196267657">(May 05 2020 at 04:51)</a>:</h4>
+<p>Right now I want to define a <code>linear_map</code> as a long composition of <code>linear_map</code>s and <code>linear_equiv</code>s, and <code>calc</code> would make the definition much more readable.</p>
+
+
+
+<a name="196267711"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/116395-maths/topic/Define%20bundled%20homs%20using%20%60calc%60/near/196267711" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Johan Commelin <a href="https://leanprover-community.github.io/archive/stream/116395-maths/topic/Define.20bundled.20homs.20using.20.60calc.60.html#196267711">(May 05 2020 at 04:52)</a>:</h4>
+<p>Maybe we need to introduce <code>cocalc</code> that will swap the order of the arguments....</p>
+
+
+
+<a name="196267928"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/116395-maths/topic/Define%20bundled%20homs%20using%20%60calc%60/near/196267928" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Yury G. Kudryashov <a href="https://leanprover-community.github.io/archive/stream/116395-maths/topic/Define.20bundled.20homs.20using.20.60calc.60.html#196267928">(May 05 2020 at 04:58)</a>:</h4>
+<p>Or wait till those who chose the order of arguments in <code>category_struct.comp</code> will come and tell us to use it everywhere ;-)</p>
+
+
+
+{% endraw %}
+
+<hr><p>Last updated: May 05 2020 at 05:08 UTC</p>

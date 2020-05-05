@@ -9,7 +9,7 @@ permalink: /stream/113489-new-members/index.html
 
 ### Topics:
 
-* [Natural number game, excluded middle](topic/Natural.20number.20game.2C.20excluded.20middle.html) (6 messages, latest: May 05 2020 at 04:07)
+* [Natural number game, excluded middle](topic/Natural.20number.20game.2C.20excluded.20middle.html) (15 messages, latest: May 05 2020 at 04:24)
 * [polynomial ring over a field](topic/polynomial.20ring.20over.20a.20field.html) (2 messages, latest: May 05 2020 at 03:30)
 * [rational coertion](topic/rational.20coertion.html) (12 messages, latest: May 05 2020 at 00:03)
 * [Mathieu Guay-Paquet (introduction)](topic/Mathieu.20Guay-Paquet.20(introduction).html) (3 messages, latest: May 04 2020 at 21:33)
@@ -1012,4 +1012,4 @@ permalink: /stream/113489-new-members/index.html
 * [Andrew Ashworth](topic/Andrew.20Ashworth.html) (15 messages, latest: Feb 26 2018 at 16:21)
 * [onboarding](topic/onboarding.html) (1 message, latest: Feb 26 2018 at 16:02)
 
-<hr><p>Last updated: May 05 2020 at 04:07 UTC</p>
+<hr><p>Last updated: May 05 2020 at 05:08 UTC</p>

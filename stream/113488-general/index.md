@@ -9,6 +9,7 @@ permalink: /stream/113488-general/index.html
 
 ### Topics:
 
+* [idea for a small project](topic/idea.20for.20a.20small.20project.html) (4 messages, latest: May 05 2020 at 04:34)
 * [Invitation to join the Codewars Lean community, Round 2](topic/Invitation.20to.20join.20the.20Codewars.20Lean.20community.2C.20Round.202.html) (291 messages, latest: May 05 2020 at 03:59)
 * [coe_fn and class instances](topic/coe_fn.20and.20class.20instances.html) (24 messages, latest: May 04 2020 at 22:32)
 * [did finish get faster?](topic/did.20finish.20get.20faster.3F.html) (9 messages, latest: May 04 2020 at 19:05)
@@ -150,7 +151,6 @@ permalink: /stream/113488-general/index.html
 * [sin = cos timeout](topic/sin.20.3D.20cos.20timeout.html) (24 messages, latest: Apr 13 2020 at 19:15)
 * [meta-variable war?](topic/meta-variable.20war.3F.html) (11 messages, latest: Apr 13 2020 at 16:24)
 * [Invitation to join the Codewars Lean community, Round 1](topic/Invitation.20to.20join.20the.20Codewars.20Lean.20community.2C.20Round.201.html) (141 messages, latest: Apr 13 2020 at 14:25)
-* [idea for a small project](topic/idea.20for.20a.20small.20project.html) (2 messages, latest: Apr 13 2020 at 13:28)
 * [Haskell is inconsistent???](topic/Haskell.20is.20inconsistent.3F.3F.3F.html) (5 messages, latest: Apr 13 2020 at 13:24)
 * [linter doc_blame with old_structure_cmd](topic/linter.20doc_blame.20with.20old_structure_cmd.html) (26 messages, latest: Apr 13 2020 at 11:40)
 * [VScode extension](topic/VScode.20extension.html) (502 messages, latest: Apr 13 2020 at 09:56)
@@ -2760,4 +2760,4 @@ permalink: /stream/113488-general/index.html
 * [test](topic/test.html) (4 messages, latest: Feb 26 2018 at 16:22)
 * [welcome](topic/welcome.html) (1 message, latest: Feb 26 2018 at 16:02)
 
-<hr><p>Last updated: May 05 2020 at 04:07 UTC</p>
+<hr><p>Last updated: May 05 2020 at 05:08 UTC</p>
