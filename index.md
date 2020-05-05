@@ -42,4 +42,4 @@ permalink: /index.html
 
 * [Type theory](stream/236446-Type-theory/index.html) (2 topics)
 
-<hr><p>Last updated: May 05 2020 at 16:09 UTC</p>
+<hr><p>Last updated: May 05 2020 at 17:08 UTC</p>

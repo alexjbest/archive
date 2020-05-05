@@ -38,6 +38,37 @@ permalink: /stream/113489-new-members/topic/proving.20a.20lemma.20about.20infini
 
 
 
+<a name="196330307"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113489-new%20members/topic/proving%20a%20lemma%20about%20infinite%20sets/near/196330307" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Anas Himmi <a href="https://leanprover-community.github.io/archive/stream/113489-new-members/topic/proving.20a.20lemma.20about.20infinite.20sets.html#196330307">(May 05 2020 at 16:16)</a>:</h4>
+<p>of course</p>
+<div class="codehilite"><pre><span></span><code><span class="kn">lemma</span> <span class="n">exists_neq_of_infinite</span> <span class="o">{</span><span class="n">α</span> <span class="o">:</span> <span class="kt">Type</span> <span class="n">u</span><span class="o">}</span> <span class="o">{</span><span class="n">U</span><span class="o">:</span> <span class="n">set</span> <span class="n">α</span><span class="o">}</span> <span class="o">(</span><span class="n">h</span><span class="o">:</span><span class="n">set</span><span class="bp">.</span><span class="n">infinite</span> <span class="n">U</span><span class="o">)</span> <span class="o">(</span><span class="n">x</span><span class="o">:</span> <span class="n">α</span><span class="o">)</span>  <span class="o">:</span> <span class="bp">∃</span> <span class="n">z</span><span class="err">∈</span><span class="n">U</span><span class="o">,</span><span class="n">z</span><span class="bp">≠</span><span class="n">x</span> <span class="o">:=</span>
+<span class="n">or</span><span class="bp">.</span><span class="n">elim</span> <span class="o">(</span><span class="n">classical</span><span class="bp">.</span><span class="n">em</span> <span class="o">(</span><span class="n">x</span><span class="err">∈</span><span class="n">U</span><span class="o">))</span>
+<span class="o">(</span><span class="bp">λ</span> <span class="n">ho</span><span class="o">,</span><span class="k">let</span> <span class="bp">⟨</span><span class="n">y</span><span class="o">,</span><span class="n">hy</span><span class="o">,</span><span class="n">hy&#39;</span><span class="bp">⟩</span><span class="o">:=</span><span class="n">exists_of_ssubset</span> <span class="o">(</span><span class="n">ssubset_iff_subset_ne</span><span class="bp">.</span><span class="n">mpr</span> <span class="bp">⟨</span><span class="n">singleton_subset_iff</span><span class="bp">.</span><span class="n">mpr</span> <span class="n">ho</span><span class="o">,</span><span class="bp">λ</span> <span class="n">hh</span><span class="o">,(</span><span class="n">hh</span><span class="bp">.</span><span class="n">symm</span> <span class="bp">▸</span> <span class="n">h</span><span class="o">)</span> <span class="o">(</span><span class="n">finite_singleton</span> <span class="n">x</span><span class="o">)</span><span class="bp">⟩</span><span class="o">)</span>
+<span class="k">in</span> <span class="bp">⟨</span><span class="n">y</span><span class="o">,</span><span class="n">hy</span><span class="o">,</span><span class="n">finset</span><span class="bp">.</span><span class="n">not_mem_singleton</span><span class="bp">.</span><span class="n">mp</span> <span class="n">hy&#39;</span><span class="bp">⟩</span><span class="o">)</span>
+<span class="o">(</span><span class="bp">λ</span> <span class="n">ho</span><span class="o">,</span><span class="k">have</span> <span class="n">hh</span><span class="o">:</span><span class="n">U</span><span class="bp">.</span><span class="n">nonempty</span><span class="o">,</span><span class="k">from</span> <span class="n">or</span><span class="bp">.</span><span class="n">elim</span> <span class="o">(</span><span class="n">eq_empty_or_nonempty</span> <span class="n">U</span><span class="o">)</span> <span class="o">(</span><span class="bp">λ</span> <span class="n">hh</span><span class="o">,</span><span class="k">by</span> <span class="n">rw</span> <span class="n">hh</span> <span class="n">at</span> <span class="n">h</span><span class="bp">;</span><span class="n">exact</span> <span class="o">(</span><span class="n">false</span><span class="bp">.</span><span class="n">elim</span> <span class="o">(</span><span class="n">h</span> <span class="n">finite_empty</span><span class="o">)))</span> <span class="n">id</span><span class="o">,</span><span class="n">exists</span><span class="bp">.</span><span class="n">elim</span> <span class="n">hh</span>
+<span class="o">(</span><span class="bp">λ</span> <span class="n">y</span> <span class="n">hy</span><span class="o">,</span><span class="bp">⟨</span><span class="n">y</span><span class="o">,</span><span class="n">hy</span><span class="o">,</span><span class="k">by</span> <span class="n">finish</span><span class="bp">⟩</span><span class="o">))</span>
+</code></pre></div>
+
+
+
+<a name="196330503"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113489-new%20members/topic/proving%20a%20lemma%20about%20infinite%20sets/near/196330503" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Anas Himmi <a href="https://leanprover-community.github.io/archive/stream/113489-new-members/topic/proving.20a.20lemma.20about.20infinite.20sets.html#196330503">(May 05 2020 at 16:18)</a>:</h4>
+<p>honestly i was surprised to find so few lemmas about infinite sets in mathlib</p>
+
+
+
+<a name="196331265"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113489-new%20members/topic/proving%20a%20lemma%20about%20infinite%20sets/near/196331265" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Kevin Buzzard <a href="https://leanprover-community.github.io/archive/stream/113489-new-members/topic/proving.20a.20lemma.20about.20infinite.20sets.html#196331265">(May 05 2020 at 16:25)</a>:</h4>
+<p>Finite sets are the important sets in mathematics. You can't prove anything without some sort of control over your objects</p>
+
+
+
+<a name="196332069"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113489-new%20members/topic/proving%20a%20lemma%20about%20infinite%20sets/near/196332069" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Anas Himmi <a href="https://leanprover-community.github.io/archive/stream/113489-new-members/topic/proving.20a.20lemma.20about.20infinite.20sets.html#196332069">(May 05 2020 at 16:30)</a>:</h4>
+<p>i see</p>
+
+
+
 {% endraw %}
 
-<hr><p>Last updated: May 05 2020 at 16:09 UTC</p>
+<hr><p>Last updated: May 05 2020 at 17:08 UTC</p>
