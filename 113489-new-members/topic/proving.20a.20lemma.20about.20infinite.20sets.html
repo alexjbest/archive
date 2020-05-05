@@ -69,6 +69,84 @@ permalink: /stream/113489-new-members/topic/proving.20a.20lemma.20about.20infini
 
 
 
+<a name="196338919"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113489-new%20members/topic/proving%20a%20lemma%20about%20infinite%20sets/near/196338919" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Jalex Stark <a href="https://leanprover-community.github.io/archive/stream/113489-new-members/topic/proving.20a.20lemma.20about.20infinite.20sets.html#196338919">(May 05 2020 at 17:23)</a>:</h4>
+<p>i bet there are lemmas about infinite sets in flypitch?</p>
+
+
+
+<a name="196340708"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113489-new%20members/topic/proving%20a%20lemma%20about%20infinite%20sets/near/196340708" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Mario Carneiro <a href="https://leanprover-community.github.io/archive/stream/113489-new-members/topic/proving.20a.20lemma.20about.20infinite.20sets.html#196340708">(May 05 2020 at 17:38)</a>:</h4>
+<p>flypitch is mostly doing transfinite set theory, which isn't quite the same</p>
+
+
+
+<a name="196340785"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113489-new%20members/topic/proving%20a%20lemma%20about%20infinite%20sets/near/196340785" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Mario Carneiro <a href="https://leanprover-community.github.io/archive/stream/113489-new-members/topic/proving.20a.20lemma.20about.20infinite.20sets.html#196340785">(May 05 2020 at 17:39)</a>:</h4>
+<p><code>set.infinite</code> is best understood as the negation of <code>set.finite</code>. Try to prove this theorem by contrapositive</p>
+
+
+
+<a name="196341056"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113489-new%20members/topic/proving%20a%20lemma%20about%20infinite%20sets/near/196341056" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Jalex Stark <a href="https://leanprover-community.github.io/archive/stream/113489-new-members/topic/proving.20a.20lemma.20about.20infinite.20sets.html#196341056">(May 05 2020 at 17:41)</a>:</h4>
+<p>I see, so the proof I had in mind would look like "use choice, you're in bijection with an infinite cardinal, use facts about cardinals", but that's obviously overkill</p>
+
+
+
+<a name="196341165"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113489-new%20members/topic/proving%20a%20lemma%20about%20infinite%20sets/near/196341165" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Mario Carneiro <a href="https://leanprover-community.github.io/archive/stream/113489-new-members/topic/proving.20a.20lemma.20about.20infinite.20sets.html#196341165">(May 05 2020 at 17:42)</a>:</h4>
+<p>Those theorems should be there in <code>set_theory.cardinal</code> if you want to go that route though</p>
+
+
+
+<a name="196341843"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113489-new%20members/topic/proving%20a%20lemma%20about%20infinite%20sets/near/196341843" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Mario Carneiro <a href="https://leanprover-community.github.io/archive/stream/113489-new-members/topic/proving.20a.20lemma.20about.20infinite.20sets.html#196341843">(May 05 2020 at 17:48)</a>:</h4>
+<div class="codehilite"><pre><span></span><code><span class="kn">lemma</span> <span class="n">exists_neq_of_infinite</span> <span class="o">{</span><span class="n">α</span><span class="o">}</span> <span class="o">{</span><span class="n">U</span> <span class="o">:</span> <span class="n">set</span> <span class="n">α</span><span class="o">}</span> <span class="o">(</span><span class="n">h</span> <span class="o">:</span> <span class="n">set</span><span class="bp">.</span><span class="n">infinite</span> <span class="n">U</span><span class="o">)</span> <span class="o">(</span><span class="n">x</span> <span class="o">:</span> <span class="n">α</span><span class="o">)</span> <span class="o">:</span> <span class="bp">∃</span> <span class="n">z</span> <span class="err">∈</span> <span class="n">U</span><span class="o">,</span> <span class="n">z</span> <span class="bp">≠</span> <span class="n">x</span> <span class="o">:=</span>
+<span class="k">begin</span>
+  <span class="n">classical</span><span class="o">,</span> <span class="n">by_contra</span> <span class="n">H</span><span class="o">,</span> <span class="n">apply</span> <span class="n">h</span><span class="o">,</span>
+  <span class="n">apply</span> <span class="n">set</span><span class="bp">.</span><span class="n">finite_subset</span> <span class="o">(</span><span class="n">set</span><span class="bp">.</span><span class="n">finite_singleton</span> <span class="n">x</span><span class="o">),</span>
+  <span class="n">push_neg</span> <span class="n">at</span> <span class="n">H</span><span class="o">,</span> <span class="n">simpa</span> <span class="o">[</span><span class="n">set</span><span class="bp">.</span><span class="n">subset_def</span><span class="o">]</span> <span class="kn">using</span> <span class="n">H</span>
+<span class="kn">end</span>
+</code></pre></div>
+
+
+
+<a name="196341964"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113489-new%20members/topic/proving%20a%20lemma%20about%20infinite%20sets/near/196341964" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Mario Carneiro <a href="https://leanprover-community.github.io/archive/stream/113489-new-members/topic/proving.20a.20lemma.20about.20infinite.20sets.html#196341964">(May 05 2020 at 17:49)</a>:</h4>
+<p>Can I vote for <code>by_contra!</code> to do contradiction without a decidable assumption?</p>
+
+
+
+<a name="196343796"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113489-new%20members/topic/proving%20a%20lemma%20about%20infinite%20sets/near/196343796" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Gabriel Ebner <a href="https://leanprover-community.github.io/archive/stream/113489-new-members/topic/proving.20a.20lemma.20about.20infinite.20sets.html#196343796">(May 05 2020 at 18:04)</a>:</h4>
+<p>There is also <code>by_cases!</code>.  Or as I would like to call it, <code>by_cases</code>.</p>
+
+
+
+<a name="196343824"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113489-new%20members/topic/proving%20a%20lemma%20about%20infinite%20sets/near/196343824" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Gabriel Ebner <a href="https://leanprover-community.github.io/archive/stream/113489-new-members/topic/proving.20a.20lemma.20about.20infinite.20sets.html#196343824">(May 05 2020 at 18:04)</a>:</h4>
+<p>If somebody submits a PR to core, I think we should this.</p>
+
+
+
+<a name="196343956"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113489-new%20members/topic/proving%20a%20lemma%20about%20infinite%20sets/near/196343956" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Mario Carneiro <a href="https://leanprover-community.github.io/archive/stream/113489-new-members/topic/proving.20a.20lemma.20about.20infinite.20sets.html#196343956">(May 05 2020 at 18:05)</a>:</h4>
+<p>Would it be too expensive to search for a decidable instance first, and then fall back on a classical proof?</p>
+
+
+
+<a name="196344073"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113489-new%20members/topic/proving%20a%20lemma%20about%20infinite%20sets/near/196344073" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Mario Carneiro <a href="https://leanprover-community.github.io/archive/stream/113489-new-members/topic/proving.20a.20lemma.20about.20infinite.20sets.html#196344073">(May 05 2020 at 18:06)</a>:</h4>
+<p>I'm not usually a fan of exploratory typeclass inference because it's a waste of time if the search is going to fail</p>
+
+
+
+<a name="196344190"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113489-new%20members/topic/proving%20a%20lemma%20about%20infinite%20sets/near/196344190" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Mario Carneiro <a href="https://leanprover-community.github.io/archive/stream/113489-new-members/topic/proving.20a.20lemma.20about.20infinite.20sets.html#196344190">(May 05 2020 at 18:07)</a>:</h4>
+<p>How about renaming <code>by_cases!</code> to <code>by_cases</code> and <code>by_cases</code> to <code>if</code>?</p>
+
+
+
 {% endraw %}
 
-<hr><p>Last updated: May 05 2020 at 17:08 UTC</p>
+<hr><p>Last updated: May 05 2020 at 18:08 UTC</p>

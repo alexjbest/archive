@@ -8,15 +8,15 @@ permalink: /index.html
 
 ## Streams:
 
-* [general](stream/113488-general/index.html) (2753 topics)
+* [general](stream/113488-general/index.html) (2755 topics)
 
 * [new members](stream/113489-new-members/index.html) (1004 topics)
 
 * [maths](stream/116395-maths/index.html) (879 topics)
 
-* [PR reviews](stream/144837-PR-reviews/index.html) (237 topics)
+* [PR reviews](stream/144837-PR-reviews/index.html) (238 topics)
 
-* [Geographic locality](stream/224796-Geographic-locality/index.html) (34 topics)
+* [Geographic locality](stream/224796-Geographic-locality/index.html) (35 topics)
 
 * [Is there code for X?](stream/217875-Is-there-code-for-X%3F/index.html) (33 topics)
 
@@ -42,4 +42,4 @@ permalink: /index.html
 
 * [Type theory](stream/236446-Type-theory/index.html) (2 topics)
 
-<hr><p>Last updated: May 05 2020 at 17:08 UTC</p>
+<hr><p>Last updated: May 05 2020 at 18:08 UTC</p>
