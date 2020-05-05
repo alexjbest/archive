@@ -583,6 +583,123 @@ Here, on the topic of some technical PR, people discuss Witt vectors<br>
 
 
 
+<a name="196288566"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/144837-PR%20reviews/topic/lean%23211%20don%27t%20unfold%20irred%20defs/near/196288566" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Gabriel Ebner <a href="https://leanprover-community.github.io/archive/stream/144837-PR-reviews/topic/lean.23211.20don't.20unfold.20irred.20defs.html#196288566">(May 05 2020 at 10:05)</a>:</h4>
+<p><code>category_theory/limits/shapes/constructions/limits_of_products_and_equalizers.lean</code> uses <code>pi.lift c.app : X ⟶ ∏ F.obj</code> to fill in a goal of type <code>unop X ⟶ ∏ F.obj</code>.  I guess <span class="user-mention" data-user-id="110087">@Scott Morrison</span> needs to fix this properly.</p>
+
+
+
+<a name="196288570"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/144837-PR%20reviews/topic/lean%23211%20don%27t%20unfold%20irred%20defs/near/196288570" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Johan Commelin <a href="https://leanprover-community.github.io/archive/stream/144837-PR-reviews/topic/lean.23211.20don't.20unfold.20irred.20defs.html#196288570">(May 05 2020 at 10:05)</a>:</h4>
+<p><span class="user-mention" data-user-id="110043">@Gabriel Ebner</span> I see that you also just locally mark things reducible?</p>
+
+
+
+<a name="196288634"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/144837-PR%20reviews/topic/lean%23211%20don%27t%20unfold%20irred%20defs/near/196288634" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Johan Commelin <a href="https://leanprover-community.github.io/archive/stream/144837-PR-reviews/topic/lean.23211.20don't.20unfold.20irred.20defs.html#196288634">(May 05 2020 at 10:06)</a>:</h4>
+<p>I just pushed a fix of <code>geometry/manifold/real_instances</code>. It's quite dirty again.</p>
+
+
+
+<a name="196288664"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/144837-PR%20reviews/topic/lean%23211%20don%27t%20unfold%20irred%20defs/near/196288664" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Johan Commelin <a href="https://leanprover-community.github.io/archive/stream/144837-PR-reviews/topic/lean.23211.20don't.20unfold.20irred.20defs.html#196288664">(May 05 2020 at 10:06)</a>:</h4>
+<div class="codehilite"><pre><span></span><code><span class="gd">--- a/src/geometry/manifold/real_instances.lean</span>
+<span class="gi">+++ b/src/geometry/manifold/real_instances.lean</span>
+<span class="gu">@@ -213,8 +213,10 @@ def Icc_left_chart (x y : ℝ) [fact (x &lt; y)] :</span>
+   end,
+   open_target := begin
+     have : is_open {z : ℝ | z &lt; y - x} := is_open_Iio,
+<span class="gd">-    have : is_open {z : fin 1 → ℝ | z 0 &lt; y - x} :=</span>
+<span class="gd">-      (continuous_apply 0) _ this,</span>
+<span class="gi">+    have : is_open {z : fin 1 → ℝ | z 0 &lt; y - x},</span>
+<span class="gi">+    { have key : _ → _ := @continuous_apply (fin 1) (λ _, ℝ) _ 0,</span>
+<span class="gi">+      dsimp at key,</span>
+<span class="gi">+      exact key _ this },</span>
+     exact continuous_subtype_val _ this
+   end,
+   continuous_to_fun := begin
+</code></pre></div>
+
+
+
+<a name="196288684"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/144837-PR%20reviews/topic/lean%23211%20don%27t%20unfold%20irred%20defs/near/196288684" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Gabriel Ebner <a href="https://leanprover-community.github.io/archive/stream/144837-PR-reviews/topic/lean.23211.20don't.20unfold.20irred.20defs.html#196288684">(May 05 2020 at 10:07)</a>:</h4>
+<p>If I don't see a better solution, then yes, I just mark them reducible.</p>
+
+
+
+<a name="196288734"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/144837-PR%20reviews/topic/lean%23211%20don%27t%20unfold%20irred%20defs/near/196288734" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Kenny Lau <a href="https://leanprover-community.github.io/archive/stream/144837-PR-reviews/topic/lean.23211.20don't.20unfold.20irred.20defs.html#196288734">(May 05 2020 at 10:07)</a>:</h4>
+<p>wow, <code>diff</code> is a language?</p>
+
+
+
+<a name="196288786"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/144837-PR%20reviews/topic/lean%23211%20don%27t%20unfold%20irred%20defs/near/196288786" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Johan Commelin <a href="https://leanprover-community.github.io/archive/stream/144837-PR-reviews/topic/lean.23211.20don't.20unfold.20irred.20defs.html#196288786">(May 05 2020 at 10:08)</a>:</h4>
+<p>Well, you can syntax highlight them... makes sense right?</p>
+
+
+
+<a name="196288806"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/144837-PR%20reviews/topic/lean%23211%20don%27t%20unfold%20irred%20defs/near/196288806" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Kenny Lau <a href="https://leanprover-community.github.io/archive/stream/144837-PR-reviews/topic/lean.23211.20don't.20unfold.20irred.20defs.html#196288806">(May 05 2020 at 10:08)</a>:</h4>
+<p>it looks like magic</p>
+
+
+
+<a name="196288830"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/144837-PR%20reviews/topic/lean%23211%20don%27t%20unfold%20irred%20defs/near/196288830" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Johan Commelin <a href="https://leanprover-community.github.io/archive/stream/144837-PR-reviews/topic/lean.23211.20don't.20unfold.20irred.20defs.html#196288830">(May 05 2020 at 10:08)</a>:</h4>
+<blockquote>
+<p>pygments doesn't do magic<br>
+                            — eastern wisdom</p>
+</blockquote>
+
+
+
+<a name="196289265"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/144837-PR%20reviews/topic/lean%23211%20don%27t%20unfold%20irred%20defs/near/196289265" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Johan Commelin <a href="https://leanprover-community.github.io/archive/stream/144837-PR-reviews/topic/lean.23211.20don't.20unfold.20irred.20defs.html#196289265">(May 05 2020 at 10:13)</a>:</h4>
+<p>/me <span aria-label="fencing" class="emoji emoji-1f93a" role="img" title="fencing">:fencing:</span> and it's looking good so far</p>
+
+
+
+<a name="196289637"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/144837-PR%20reviews/topic/lean%23211%20don%27t%20unfold%20irred%20defs/near/196289637" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Johan Commelin <a href="https://leanprover-community.github.io/archive/stream/144837-PR-reviews/topic/lean.23211.20don't.20unfold.20irred.20defs.html#196289637">(May 05 2020 at 10:18)</a>:</h4>
+<p>Fixed bochner integration</p>
+
+
+
+<a name="196289902"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/144837-PR%20reviews/topic/lean%23211%20don%27t%20unfold%20irred%20defs/near/196289902" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Gabriel Ebner <a href="https://leanprover-community.github.io/archive/stream/144837-PR-reviews/topic/lean.23211.20don't.20unfold.20irred.20defs.html#196289902">(May 05 2020 at 10:22)</a>:</h4>
+<div class="codehilite"><pre><span></span><code><span class="gd">--- a/src/geometry/manifold/real_instances.lean</span>
+<span class="gi">+++ b/src/geometry/manifold/real_instances.lean</span>
+<span class="gu">@@ -213,10 +213,8 @@ def Icc_left_chart (x y : ℝ) [fact (x &lt; y)] :</span>
+   end,
+   open_target := begin
+     have : is_open {z : ℝ | z &lt; y - x} := is_open_Iio,
+<span class="gd">-    have : is_open {z : fin 1 → ℝ | z 0 &lt; y - x},</span>
+<span class="gd">-    { have key : _ → _ := @continuous_apply (fin 1) (λ _, ℝ) _ 0,</span>
+<span class="gd">-      dsimp at key,</span>
+<span class="gd">-      exact key _ this },</span>
+<span class="gi">+    have : is_open {z : fin 1 → ℝ | z 0 &lt; y - x} :=</span>
+<span class="gi">+      @continuous_apply (fin 1) (λ _, ℝ) _ 0 _ this,</span>
+     exact continuous_subtype_val _ this
+   end,
+   continuous_to_fun := begin
+</code></pre></div>
+
+
+
+<a name="196292738"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/144837-PR%20reviews/topic/lean%23211%20don%27t%20unfold%20irred%20defs/near/196292738" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Johan Commelin <a href="https://leanprover-community.github.io/archive/stream/144837-PR-reviews/topic/lean.23211.20don't.20unfold.20irred.20defs.html#196292738">(May 05 2020 at 10:58)</a>:</h4>
+<p><span class="user-mention" data-user-id="110043">@Gabriel Ebner</span> I thought I tried that!</p>
+
+
+
+<a name="196292761"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/144837-PR%20reviews/topic/lean%23211%20don%27t%20unfold%20irred%20defs/near/196292761" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Johan Commelin <a href="https://leanprover-community.github.io/archive/stream/144837-PR-reviews/topic/lean.23211.20don't.20unfold.20irred.20defs.html#196292761">(May 05 2020 at 10:58)</a>:</h4>
+<p>It seems that this stuff is subtle/fragile... <span aria-label="sad" class="emoji emoji-2639" role="img" title="sad">:sad:</span></p>
+
+
+
 {% endraw %}
 
-<hr><p>Last updated: May 05 2020 at 10:05 UTC</p>
+<hr><p>Last updated: May 05 2020 at 11:07 UTC</p>
