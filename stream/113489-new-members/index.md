@@ -9,11 +9,11 @@ permalink: /stream/113489-new-members/index.html
 
 ### Topics:
 
+* [Mathieu Guay-Paquet (introduction)](topic/Mathieu.20Guay-Paquet.20(introduction).html) (5 messages, latest: May 05 2020 at 19:27)
 * [proving a lemma about infinite sets](topic/proving.20a.20lemma.20about.20infinite.20sets.html) (22 messages, latest: May 05 2020 at 18:10)
 * [Jalex Stark (introduction)](topic/Jalex.20Stark.20(introduction).html) (46 messages, latest: May 05 2020 at 18:03)
 * [rational coertion](topic/rational.20coertion.html) (13 messages, latest: May 05 2020 at 16:58)
 * [natural number game - add left cancel](topic/natural.20number.20game.20-.20add.20left.20cancel.html) (10 messages, latest: May 05 2020 at 16:54)
-* [Mathieu Guay-Paquet (introduction)](topic/Mathieu.20Guay-Paquet.20(introduction).html) (4 messages, latest: May 05 2020 at 16:30)
 * [Natural number game, excluded middle](topic/Natural.20number.20game.2C.20excluded.20middle.html) (16 messages, latest: May 05 2020 at 09:54)
 * [polynomial ring over a field](topic/polynomial.20ring.20over.20a.20field.html) (2 messages, latest: May 05 2020 at 03:30)
 * [Tutorials update](topic/Tutorials.20update.html) (3 messages, latest: May 04 2020 at 21:01)
@@ -1014,4 +1014,4 @@ permalink: /stream/113489-new-members/index.html
 * [Andrew Ashworth](topic/Andrew.20Ashworth.html) (15 messages, latest: Feb 26 2018 at 16:21)
 * [onboarding](topic/onboarding.html) (1 message, latest: Feb 26 2018 at 16:02)
 
-<hr><p>Last updated: May 05 2020 at 19:12 UTC</p>
+<hr><p>Last updated: May 05 2020 at 20:05 UTC</p>
