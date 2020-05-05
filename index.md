@@ -16,7 +16,7 @@ permalink: /index.html
 
 * [PR reviews](stream/144837-PR-reviews/index.html) (238 topics)
 
-* [Geographic locality](stream/224796-Geographic-locality/index.html) (35 topics)
+* [Geographic locality](stream/224796-Geographic-locality/index.html) (36 topics)
 
 * [Is there code for X?](stream/217875-Is-there-code-for-X%3F/index.html) (33 topics)
 
@@ -42,4 +42,4 @@ permalink: /index.html
 
 * [Type theory](stream/236446-Type-theory/index.html) (2 topics)
 
-<hr><p>Last updated: May 05 2020 at 22:07 UTC</p>
+<hr><p>Last updated: May 05 2020 at 23:06 UTC</p>
