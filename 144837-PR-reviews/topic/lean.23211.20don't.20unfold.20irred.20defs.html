@@ -448,6 +448,141 @@ Here, on the topic of some technical PR, people discuss Witt vectors<br>
 
 
 
+<a name="196283945"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/144837-PR%20reviews/topic/lean%23211%20don%27t%20unfold%20irred%20defs/near/196283945" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Johan Commelin <a href="https://leanprover-community.github.io/archive/stream/144837-PR-reviews/topic/lean.23211.20don't.20unfold.20irred.20defs.html#196283945">(May 05 2020 at 09:11)</a>:</h4>
+<p>Fixed the hyperreals</p>
+
+
+
+<a name="196284288"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/144837-PR%20reviews/topic/lean%23211%20don%27t%20unfold%20irred%20defs/near/196284288" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Johan Commelin <a href="https://leanprover-community.github.io/archive/stream/144837-PR-reviews/topic/lean.23211.20don't.20unfold.20irred.20defs.html#196284288">(May 05 2020 at 09:15)</a>:</h4>
+<p><span class="user-mention" data-user-id="110043">@Gabriel Ebner</span> Could this also be implemented via <code>set_option standard_reducibility blabla</code>?</p>
+
+
+
+<a name="196284352"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/144837-PR%20reviews/topic/lean%23211%20don%27t%20unfold%20irred%20defs/near/196284352" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Johan Commelin <a href="https://leanprover-community.github.io/archive/stream/144837-PR-reviews/topic/lean.23211.20don't.20unfold.20irred.20defs.html#196284352">(May 05 2020 at 09:16)</a>:</h4>
+<p>Then I could just switch that option on in the witt vector file, and the rest of mathlib doesn't have to care.</p>
+
+
+
+<a name="196284428"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/144837-PR%20reviews/topic/lean%23211%20don%27t%20unfold%20irred%20defs/near/196284428" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Gabriel Ebner <a href="https://leanprover-community.github.io/archive/stream/144837-PR-reviews/topic/lean.23211.20don't.20unfold.20irred.20defs.html#196284428">(May 05 2020 at 09:17)</a>:</h4>
+<p>I think it's the right default.  Irreducible definitions should not be unfolded, that's the explicit intention behind marking them as such.  Besides, that's how it's going to be in <span aria-label="four leaf clover" class="emoji emoji-1f340" role="img" title="four leaf clover">:four_leaf_clover:</span>, so we might as well get used to it now.</p>
+
+
+
+<a name="196285353"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/144837-PR%20reviews/topic/lean%23211%20don%27t%20unfold%20irred%20defs/near/196285353" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Johan Commelin <a href="https://leanprover-community.github.io/archive/stream/144837-PR-reviews/topic/lean.23211.20don't.20unfold.20irred.20defs.html#196285353">(May 05 2020 at 09:27)</a>:</h4>
+<p>Ok... I'll try to fix as much as I can.</p>
+
+
+
+<a name="196285434"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/144837-PR%20reviews/topic/lean%23211%20don%27t%20unfold%20irred%20defs/near/196285434" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Johan Commelin <a href="https://leanprover-community.github.io/archive/stream/144837-PR-reviews/topic/lean.23211.20don't.20unfold.20irred.20defs.html#196285434">(May 05 2020 at 09:28)</a>:</h4>
+<p>Note that in one of my fixes I cheated: I locally marked the definition as semireducible. But in my opinion the file was building API for the definition, so then it should be fine.</p>
+
+
+
+<a name="196285710"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/144837-PR%20reviews/topic/lean%23211%20don%27t%20unfold%20irred%20defs/near/196285710" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Johan Commelin <a href="https://leanprover-community.github.io/archive/stream/144837-PR-reviews/topic/lean.23211.20don't.20unfold.20irred.20defs.html#196285710">(May 05 2020 at 09:31)</a>:</h4>
+<p>But some of the failure doesn't seem to have anything to do with irreducible defs.</p>
+
+
+
+<a name="196285769"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/144837-PR%20reviews/topic/lean%23211%20don%27t%20unfold%20irred%20defs/near/196285769" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Johan Commelin <a href="https://leanprover-community.github.io/archive/stream/144837-PR-reviews/topic/lean.23211.20don't.20unfold.20irred.20defs.html#196285769">(May 05 2020 at 09:32)</a>:</h4>
+<p>Ooh, wait. It does.</p>
+
+
+
+<a name="196285781"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/144837-PR%20reviews/topic/lean%23211%20don%27t%20unfold%20irred%20defs/near/196285781" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Johan Commelin <a href="https://leanprover-community.github.io/archive/stream/144837-PR-reviews/topic/lean.23211.20don't.20unfold.20irred.20defs.html#196285781">(May 05 2020 at 09:32)</a>:</h4>
+<p>There was an <code>op</code> somewhere <span aria-label="expressionless" class="emoji emoji-1f611" role="img" title="expressionless">:expressionless:</span></p>
+
+
+
+<a name="196285829"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/144837-PR%20reviews/topic/lean%23211%20don%27t%20unfold%20irred%20defs/near/196285829" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Gabriel Ebner <a href="https://leanprover-community.github.io/archive/stream/144837-PR-reviews/topic/lean.23211.20don't.20unfold.20irred.20defs.html#196285829">(May 05 2020 at 09:32)</a>:</h4>
+<p>Lemmas are also irreducible. <span aria-label="smile" class="emoji emoji-263a" role="img" title="smile">:smile:</span>  In some cases, Lean was able to infer arguments by unifying proofs of lemmas...</p>
+
+
+
+<a name="196286227"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/144837-PR%20reviews/topic/lean%23211%20don%27t%20unfold%20irred%20defs/near/196286227" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Johan Commelin <a href="https://leanprover-community.github.io/archive/stream/144837-PR-reviews/topic/lean.23211.20don't.20unfold.20irred.20defs.html#196286227">(May 05 2020 at 09:37)</a>:</h4>
+<p>It broke on <code>refine blabla _ _</code>...</p>
+
+
+
+<a name="196286511"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/144837-PR%20reviews/topic/lean%23211%20don%27t%20unfold%20irred%20defs/near/196286511" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Johan Commelin <a href="https://leanprover-community.github.io/archive/stream/144837-PR-reviews/topic/lean.23211.20don't.20unfold.20irred.20defs.html#196286511">(May 05 2020 at 09:40)</a>:</h4>
+<p><code>simp</code> no longer solves</p>
+<div class="codehilite"><pre><span></span><code><span class="o">((</span><span class="n">cones_hom</span> <span class="n">F</span> <span class="err">≫</span> <span class="n">cones_inv</span> <span class="n">F</span><span class="o">)</span><span class="bp">.</span><span class="n">app</span> <span class="n">X</span> <span class="n">c</span><span class="o">)</span><span class="bp">.</span><span class="n">app</span> <span class="n">limits</span><span class="bp">.</span><span class="n">walking_parallel_pair</span><span class="bp">.</span><span class="n">zero</span> <span class="err">≫</span>
+      <span class="n">limits</span><span class="bp">.</span><span class="n">limit</span><span class="bp">.</span><span class="n">π</span> <span class="o">(</span><span class="n">functor</span><span class="bp">.</span><span class="n">of_function</span> <span class="n">F</span><span class="bp">.</span><span class="n">obj</span><span class="o">)</span> <span class="n">j</span> <span class="bp">=</span>
+    <span class="o">((</span><span class="mi">𝟙</span> <span class="o">(</span><span class="n">functor</span><span class="bp">.</span><span class="n">cones</span> <span class="o">(</span><span class="n">diagram</span> <span class="n">F</span><span class="o">)))</span><span class="bp">.</span><span class="n">app</span> <span class="n">X</span> <span class="n">c</span><span class="o">)</span><span class="bp">.</span><span class="n">app</span> <span class="n">limits</span><span class="bp">.</span><span class="n">walking_parallel_pair</span><span class="bp">.</span><span class="n">zero</span> <span class="err">≫</span>
+      <span class="n">limits</span><span class="bp">.</span><span class="n">limit</span><span class="bp">.</span><span class="n">π</span> <span class="o">(</span><span class="n">functor</span><span class="bp">.</span><span class="n">of_function</span> <span class="n">F</span><span class="bp">.</span><span class="n">obj</span><span class="o">)</span> <span class="n">j</span>
+</code></pre></div>
+
+
+
+<a name="196286581"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/144837-PR%20reviews/topic/lean%23211%20don%27t%20unfold%20irred%20defs/near/196286581" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Johan Commelin <a href="https://leanprover-community.github.io/archive/stream/144837-PR-reviews/topic/lean.23211.20don't.20unfold.20irred.20defs.html#196286581">(May 05 2020 at 09:41)</a>:</h4>
+<p>We probably need some help from <span class="user-mention" data-user-id="110087">@Scott Morrison</span></p>
+
+
+
+<a name="196286622"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/144837-PR%20reviews/topic/lean%23211%20don%27t%20unfold%20irred%20defs/near/196286622" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Gabriel Ebner <a href="https://leanprover-community.github.io/archive/stream/144837-PR-reviews/topic/lean.23211.20don't.20unfold.20irred.20defs.html#196286622">(May 05 2020 at 09:41)</a>:</h4>
+<p>Which file is this in?</p>
+
+
+
+<a name="196286779"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/144837-PR%20reviews/topic/lean%23211%20don%27t%20unfold%20irred%20defs/near/196286779" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Johan Commelin <a href="https://leanprover-community.github.io/archive/stream/144837-PR-reviews/topic/lean.23211.20don't.20unfold.20irred.20defs.html#196286779">(May 05 2020 at 09:43)</a>:</h4>
+<p><code>category_theory/limits/shapes/constructions/limits_of_products_and_equalizers.lean</code></p>
+
+
+
+<a name="196286824"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/144837-PR%20reviews/topic/lean%23211%20don%27t%20unfold%20irred%20defs/near/196286824" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Johan Commelin <a href="https://leanprover-community.github.io/archive/stream/144837-PR-reviews/topic/lean.23211.20don't.20unfold.20irred.20defs.html#196286824">(May 05 2020 at 09:43)</a>:</h4>
+<p>It seems that <code>convert</code> is brutal enough to replace the more refined <code>refine</code>. But the problem just shifts to the next line.</p>
+
+
+
+<a name="196286864"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/144837-PR%20reviews/topic/lean%23211%20don%27t%20unfold%20irred%20defs/near/196286864" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Johan Commelin <a href="https://leanprover-community.github.io/archive/stream/144837-PR-reviews/topic/lean.23211.20don't.20unfold.20irred.20defs.html#196286864">(May 05 2020 at 09:44)</a>:</h4>
+<p>And there even <code>convert</code> gives up.</p>
+
+
+
+<a name="196287076"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/144837-PR%20reviews/topic/lean%23211%20don%27t%20unfold%20irred%20defs/near/196287076" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Johan Commelin <a href="https://leanprover-community.github.io/archive/stream/144837-PR-reviews/topic/lean.23211.20don't.20unfold.20irred.20defs.html#196287076">(May 05 2020 at 09:46)</a>:</h4>
+<p>Which is not a surprise, because we went from 2 goals to 11 goals...</p>
+
+
+
+<a name="196287231"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/144837-PR%20reviews/topic/lean%23211%20don%27t%20unfold%20irred%20defs/near/196287231" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Johan Commelin <a href="https://leanprover-community.github.io/archive/stream/144837-PR-reviews/topic/lean.23211.20don't.20unfold.20irred.20defs.html#196287231">(May 05 2020 at 09:48)</a>:</h4>
+<p><span class="user-mention silent" data-user-id="110043">Gabriel Ebner</span> <a href="#narrow/stream/144837-PR-reviews/topic/lean.23211.20don't.20unfold.20irred.20defs/near/196285829" title="#narrow/stream/144837-PR-reviews/topic/lean.23211.20don't.20unfold.20irred.20defs/near/196285829">said</a>:</p>
+<blockquote>
+<p>Lemmas are also irreducible. <span aria-label="smile" class="emoji emoji-263a" role="img" title="smile">:smile:</span>  In some cases, Lean was able to infer arguments by unifying proofs of lemmas...</p>
+</blockquote>
+<p>So secretly we could actually pull of the mathematicians trick of "by the object constructed in the proof of Theorem 5.4"...</p>
+
+
+
+<a name="196287283"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/144837-PR%20reviews/topic/lean%23211%20don%27t%20unfold%20irred%20defs/near/196287283" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Johan Commelin <a href="https://leanprover-community.github.io/archive/stream/144837-PR-reviews/topic/lean.23211.20don't.20unfold.20irred.20defs.html#196287283">(May 05 2020 at 09:49)</a>:</h4>
+<p>We could even do it without saying anything!</p>
+
+
+
+<a name="196287573"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/144837-PR%20reviews/topic/lean%23211%20don%27t%20unfold%20irred%20defs/near/196287573" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Sebastien Gouezel <a href="https://leanprover-community.github.io/archive/stream/144837-PR-reviews/topic/lean.23211.20don't.20unfold.20irred.20defs.html#196287573">(May 05 2020 at 09:52)</a>:</h4>
+<p>That's not just a trick, that's a very dirty trick.</p>
+
+
+
 {% endraw %}
 
-<hr><p>Last updated: May 05 2020 at 09:07 UTC</p>
+<hr><p>Last updated: May 05 2020 at 10:05 UTC</p>

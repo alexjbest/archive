@@ -1,0 +1,55 @@
+---
+layout: archive
+title: Zulip Chat Archive
+permalink: /stream/113488-general/topic/suggest.html
+---
+
+<h2>Stream: <a href="https://leanprover-community.github.io/archive/stream/113488-general/index.html">general</a></h2>
+<h3>Topic: <a href="https://leanprover-community.github.io/archive/stream/113488-general/topic/suggest.html">suggest</a></h3>
+
+<hr>
+
+<base href="https://leanprover.zulipchat.com/">
+
+<head><link href="/style.css" rel="stylesheet"></head>
+
+{% raw %}
+
+<a name="196286414"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113488-general/topic/suggest/near/196286414" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Johan Commelin <a href="https://leanprover-community.github.io/archive/stream/113488-general/topic/suggest.html#196286414">(May 05 2020 at 09:39)</a>:</h4>
+<p>These lemmas seem to always drift to the top of <code>suggest</code>:</p>
+<div class="codehilite"><pre><span></span><code><span class="n">Try</span> <span class="n">this</span><span class="o">:</span> <span class="n">refine</span> <span class="n">eq</span><span class="bp">.</span><span class="n">symm</span> <span class="bp">_</span>
+<span class="n">Try</span> <span class="n">this</span><span class="o">:</span> <span class="n">refine</span> <span class="n">eq_comm</span><span class="bp">.</span><span class="n">mp</span> <span class="bp">_</span>
+<span class="n">Try</span> <span class="n">this</span><span class="o">:</span> <span class="n">refine</span> <span class="n">eq_of_heq</span> <span class="bp">_</span>
+<span class="n">Try</span> <span class="n">this</span><span class="o">:</span> <span class="n">refine</span> <span class="n">heq_iff_eq</span><span class="bp">.</span><span class="n">mp</span> <span class="bp">_</span>
+<span class="n">Try</span> <span class="n">this</span><span class="o">:</span> <span class="n">refine</span> <span class="n">plift</span><span class="bp">.</span><span class="n">up</span><span class="bp">.</span><span class="n">inj</span> <span class="bp">_</span>
+<span class="n">Try</span> <span class="n">this</span><span class="o">:</span> <span class="n">refine</span> <span class="n">ulift</span><span class="bp">.</span><span class="n">up</span><span class="bp">.</span><span class="n">inj</span> <span class="bp">_</span>
+</code></pre></div>
+
+
+<p>That's probably because the don't need anything (hypothesis-wise), but they also accomplish "nothing" (goal-wise).<br>
+Could <code>suggest</code> have a "blacklist" of lemmas that it will only suggest if they actually close the goal?</p>
+
+
+
+<a name="196287863"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113488-general/topic/suggest/near/196287863" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Kevin Buzzard <a href="https://leanprover-community.github.io/archive/stream/113488-general/topic/suggest.html#196287863">(May 05 2020 at 09:56)</a>:</h4>
+<p>good luck closing a goal with <code>eq.symm</code> :-) Actually, I guess <code>eq.symm zero_add</code> might solve something, but would <code>suggest</code> spot this?</p>
+
+
+
+<a name="196288237"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113488-general/topic/suggest/near/196288237" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Johan Commelin <a href="https://leanprover-community.github.io/archive/stream/113488-general/topic/suggest.html#196288237">(May 05 2020 at 10:01)</a>:</h4>
+<p>If you have assumption <code>h : x = y</code>, and goal <code>y = x</code>, then <code>suggest</code> should reply <code>exact eq.symm h</code>.</p>
+
+
+
+<a name="196288266"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113488-general/topic/suggest/near/196288266" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Johan Commelin <a href="https://leanprover-community.github.io/archive/stream/113488-general/topic/suggest.html#196288266">(May 05 2020 at 10:01)</a>:</h4>
+<p>But if you don't have such a hypothesis, it should not reply <code>refine eq.symm _</code></p>
+
+
+
+{% endraw %}
+
+<hr><p>Last updated: May 05 2020 at 10:05 UTC</p>
