@@ -9,10 +9,10 @@ permalink: /stream/113488-general/index.html
 
 ### Topics:
 
-* [summer program for undergrads](topic/summer.20program.20for.20undergrads.html) (6 messages, latest: May 06 2020 at 11:46)
+* [dcongr](topic/dcongr.html) (2 messages, latest: May 06 2020 at 13:01)
+* [summer program for undergrads](topic/summer.20program.20for.20undergrads.html) (8 messages, latest: May 06 2020 at 13:00)
 * [leanproject access denied](topic/leanproject.20access.20denied.html) (48 messages, latest: May 06 2020 at 09:07)
 * [Survey: who uses `leanproject up`?](topic/Survey.3A.20who.20uses.20.60leanproject.20up.60.3F.html) (20 messages, latest: May 06 2020 at 08:57)
-* [dcongr](topic/dcongr.html) (1 message, latest: May 06 2020 at 07:55)
 * [which tactics change behavior based on the environment?](topic/which.20tactics.20change.20behavior.20based.20on.20the.20environment.3F.html) (9 messages, latest: May 06 2020 at 04:19)
 * [Invitation to join the Codewars Lean community, Round 2](topic/Invitation.20to.20join.20the.20Codewars.20Lean.20community.2C.20Round.202.html) (292 messages, latest: May 06 2020 at 03:23)
 * [suggest](topic/suggest.html) (12 messages, latest: May 05 2020 at 23:22)
@@ -2768,4 +2768,4 @@ permalink: /stream/113488-general/index.html
 * [test](topic/test.html) (4 messages, latest: Feb 26 2018 at 16:22)
 * [welcome](topic/welcome.html) (1 message, latest: Feb 26 2018 at 16:02)
 
-<hr><p>Last updated: May 06 2020 at 12:08 UTC</p>
+<hr><p>Last updated: May 06 2020 at 13:08 UTC</p>
