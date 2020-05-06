@@ -9,7 +9,8 @@ permalink: /stream/113488-general/index.html
 
 ### Topics:
 
-* [which tactics change behavior based on the environment?](topic/which.20tactics.20change.20behavior.20based.20on.20the.20environment.3F.html) (5 messages, latest: May 06 2020 at 02:26)
+* [which tactics change behavior based on the environment?](topic/which.20tactics.20change.20behavior.20based.20on.20the.20environment.3F.html) (8 messages, latest: May 06 2020 at 03:49)
+* [Invitation to join the Codewars Lean community, Round 2](topic/Invitation.20to.20join.20the.20Codewars.20Lean.20community.2C.20Round.202.html) (292 messages, latest: May 06 2020 at 03:23)
 * [suggest](topic/suggest.html) (12 messages, latest: May 05 2020 at 23:22)
 * [VScode extension](topic/VScode.20extension.html) (504 messages, latest: May 05 2020 at 20:29)
 * [instance max depth](topic/instance.20max.20depth.html) (18 messages, latest: May 05 2020 at 19:48)
@@ -17,7 +18,6 @@ permalink: /stream/113488-general/index.html
 * [Getting witnesses used in existential proofs?](topic/Getting.20witnesses.20used.20in.20existential.20proofs.3F.html) (5 messages, latest: May 05 2020 at 11:12)
 * [linear programming](topic/linear.20programming.html) (10 messages, latest: May 05 2020 at 09:04)
 * [idea for a small project](topic/idea.20for.20a.20small.20project.html) (4 messages, latest: May 05 2020 at 04:34)
-* [Invitation to join the Codewars Lean community, Round 2](topic/Invitation.20to.20join.20the.20Codewars.20Lean.20community.2C.20Round.202.html) (291 messages, latest: May 05 2020 at 03:59)
 * [coe_fn and class instances](topic/coe_fn.20and.20class.20instances.html) (24 messages, latest: May 04 2020 at 22:32)
 * [did finish get faster?](topic/did.20finish.20get.20faster.3F.html) (9 messages, latest: May 04 2020 at 19:05)
 * [Notices of the AMS paper](topic/Notices.20of.20the.20AMS.20paper.html) (99 messages, latest: May 04 2020 at 17:02)
@@ -2766,4 +2766,4 @@ permalink: /stream/113488-general/index.html
 * [test](topic/test.html) (4 messages, latest: Feb 26 2018 at 16:22)
 * [welcome](topic/welcome.html) (1 message, latest: Feb 26 2018 at 16:02)
 
-<hr><p>Last updated: May 06 2020 at 03:05 UTC</p>
+<hr><p>Last updated: May 06 2020 at 04:08 UTC</p>
