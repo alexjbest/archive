@@ -42,4 +42,6 @@ permalink: /index.html
 
 * [Type theory](stream/236446-Type-theory/index.html) (2 topics)
 
-<hr><p>Last updated: May 06 2020 at 16:06 UTC</p>
+* [Xena Summer Projects](stream/237759-Xena-Summer-Projects/index.html) (1 topic)
+
+<hr><p>Last updated: May 06 2020 at 17:07 UTC</p>
