@@ -27,6 +27,36 @@ permalink: /stream/113488-general/topic/dcongr.html
 
 
 
+<a name="196633114"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113488-general/topic/dcongr/near/196633114" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Scott Morrison <a href="https://leanprover-community.github.io/archive/stream/113488-general/topic/dcongr.html#196633114">(May 06 2020 at 13:21)</a>:</h4>
+<p>the alternative is to produce goals that look like <code>_ = eq.rec _ _</code>, and leave it to the user to deal with the <code>eq.rec</code> instead of the <code>heq</code>.</p>
+
+
+
+<a name="196633697"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113488-general/topic/dcongr/near/196633697" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Chris Hughes <a href="https://leanprover-community.github.io/archive/stream/113488-general/topic/dcongr.html#196633697">(May 06 2020 at 13:25)</a>:</h4>
+<p>Another alternative is to not go any deeper if it's going to make an <code>heq</code> goal.</p>
+
+
+
+<a name="196633779"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113488-general/topic/dcongr/near/196633779" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Chris Hughes <a href="https://leanprover-community.github.io/archive/stream/113488-general/topic/dcongr.html#196633779">(May 06 2020 at 13:26)</a>:</h4>
+<p>But it should check if it can apply <code>heq_of_eq</code> to the new <code>heq</code> goal.</p>
+
+
+
+<a name="196634028"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113488-general/topic/dcongr/near/196634028" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Chris Hughes <a href="https://leanprover-community.github.io/archive/stream/113488-general/topic/dcongr.html#196634028">(May 06 2020 at 13:28)</a>:</h4>
+<p>Or you could give theorems of the form <code>A = B -&gt; equiv (F A) (F B)</code> an attribute and use the equiv to state the <code>heq</code> goal.</p>
+
+
+
+<a name="196638435"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113488-general/topic/dcongr/near/196638435" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Johan Commelin <a href="https://leanprover-community.github.io/archive/stream/113488-general/topic/dcongr.html#196638435">(May 06 2020 at 13:59)</a>:</h4>
+<p><span aria-label="up" class="emoji emoji-2b06" role="img" title="up">:up:</span> something like what Chris is suggesting sounds good.</p>
+
+
+
 {% endraw %}
 
-<hr><p>Last updated: May 06 2020 at 13:08 UTC</p>
+<hr><p>Last updated: May 06 2020 at 14:07 UTC</p>

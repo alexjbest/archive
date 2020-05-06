@@ -9,7 +9,7 @@ permalink: /stream/217875-Is-there-code-for-X%3F/index.html
 
 ### Topics:
 
-* [subtype.property'](topic/subtype.2Eproperty'.html) (1 message, latest: May 06 2020 at 12:59)
+* [subtype.property'](topic/subtype.2Eproperty'.html) (2 messages, latest: May 06 2020 at 13:18)
 * [probability](topic/probability.html) (14 messages, latest: May 05 2020 at 04:33)
 * [basis of free module `X -> R` with \[fintype X\]?](topic/basis.20of.20free.20module.20.60X.20-.3E.20R.60.20with.20.5Bfintype.20X.5D.3F.html) (4 messages, latest: May 02 2020 at 12:08)
 * [projectors](topic/projectors.html) (13 messages, latest: Apr 30 2020 at 23:27)
@@ -44,4 +44,4 @@ permalink: /stream/217875-Is-there-code-for-X%3F/index.html
 * [Super vector space](topic/Super.20vector.20space.html) (1 message, latest: Dec 22 2019 at 14:10)
 * [stream events](topic/stream.20events.html) (1 message, latest: Dec 22 2019 at 14:08)
 
-<hr><p>Last updated: May 06 2020 at 13:08 UTC</p>
+<hr><p>Last updated: May 06 2020 at 14:07 UTC</p>
