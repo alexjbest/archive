@@ -89,6 +89,18 @@ permalink: /stream/219941-Machine-Learning-for-Theorem-Proving/topic/Paper.3A.20
 
 
 
+<a name="196709140"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/219941-Machine%20Learning%20for%20Theorem%20Proving/topic/Paper%3A%20Simple%20Dataset%20for%20...%20Isabelle/HOL/near/196709140" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Jason Rute <a href="https://leanprover-community.github.io/archive/stream/219941-Machine-Learning-for-Theorem-Proving/topic/Paper.3A.20Simple.20Dataset.20for.20.2E.2E.2E.20Isabelle.2FHOL.html#196709140">(May 06 2020 at 23:07)</a>:</h4>
+<p><span class="user-mention" data-user-id="246156">@Brando Miranda</span> See <a href="https://colab.research.google.com/drive/1tbq976M3XaFxqXTgDGuTXKvKkd9_5gUJ#scrollTo=y7iUy2RmYxA4" title="https://colab.research.google.com/drive/1tbq976M3XaFxqXTgDGuTXKvKkd9_5gUJ#scrollTo=y7iUy2RmYxA4">this colab notebook</a> for some initial results.  I tried a number of basic models (that would be easy to code in Standard ML since that is what PaMPeR is written it).  I've done absolutely no hyper parameter tuning or cross-validation, etc.  You are welcome to take this and turn it into something useful (I've sort of got interested in other things right now).  Here are a few TODOs I intended to do before loosing interest:</p>
+<ul>
+<li>hyperparameter tuning (manually and/or automatically, for example try different regularization types and amounts for logistic regression)</li>
+<li>k-fold cross-validation (the dataset is fast to train on, so it should be possible to do say 10-fold CV)</li>
+<li>contact Yutaka Nagashima and get his thoughts.  (Better, get him involved here on Zulip!)</li>
+<li>I think a better version of CV would be to split the training set up by the file hierarchy into 10-100 roughly equal sections where for example <code>/shared/afp-2018-02-26_eval/thys/Integration</code> is a section.  Then one would train on all the other sections and validate on this one.  I think this is really important, because if tools like this are to be useful, it is important to apply them to other mathematical theories.  This is my largest pet peeve against the ML for TP research.  It doesn't taking the user workflow into account, leading to inflated accuracy numbers.</li>
+</ul>
+
+
+
 {% endraw %}
 
-<hr><p>Last updated: May 06 2020 at 22:06 UTC</p>
+<hr><p>Last updated: May 06 2020 at 23:07 UTC</p>

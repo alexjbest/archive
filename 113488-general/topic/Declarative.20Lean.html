@@ -448,6 +448,84 @@ permalink: /stream/113488-general/topic/Declarative.20Lean.html
 
 
 
+<a name="196704571"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113488-general/topic/Declarative%20Lean/near/196704571" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Mario Carneiro <a href="https://leanprover-community.github.io/archive/stream/113488-general/topic/Declarative.20Lean.html#196704571">(May 06 2020 at 22:07)</a>:</h4>
+<p>Put another way, I think you would have a hard time beating lean at its own game, that is, an alternate lean typechecker. If you change the game then you can get huge (orders of magnitude) wins, but you won't see that with e.g. better allocation strategies</p>
+
+
+
+<a name="196705249"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113488-general/topic/Declarative%20Lean/near/196705249" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Mario Carneiro <a href="https://leanprover-community.github.io/archive/stream/113488-general/topic/Declarative.20Lean.html#196705249">(May 06 2020 at 22:14)</a>:</h4>
+<p><span class="user-mention silent" data-user-id="256311">Jannis Limperg</span> <a href="#narrow/stream/113488-general/topic/Declarative.20Lean/near/196703844" title="#narrow/stream/113488-general/topic/Declarative.20Lean/near/196703844">said</a>:</p>
+<blockquote>
+<p><span class="user-mention silent" data-user-id="110049">Mario Carneiro</span> <a href="#narrow/stream/113488-general/topic/Declarative.20Lean/near/196703124" title="#narrow/stream/113488-general/topic/Declarative.20Lean/near/196703124">said</a>:</p>
+<blockquote>
+<p>Lean is <em>surprisingly</em> fast when you look at how much it is doing</p>
+</blockquote>
+<p>Is there any evidence for this? Coq also does typeclasses and tactic-based metaprogramming, and while Lean is not particularly slow, it also hasn't struck me as particularly fast. The mathlib compile times aren't great, but there is no direct comparison, so it's hard to evaluate these claims.</p>
+</blockquote>
+<p>Note that I include busywork in this sense of "how much it is doing". E.g. superman took 2 hours to cross the town, which doesn't sound fast until you realize he circled the world a hundred times first</p>
+
+
+
+<a name="196705335"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113488-general/topic/Declarative%20Lean/near/196705335" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Mario Carneiro <a href="https://leanprover-community.github.io/archive/stream/113488-general/topic/Declarative.20Lean.html#196705335">(May 06 2020 at 22:15)</a>:</h4>
+<p>The gains in lean 4 for typeclass inference are solidly in the realm of "eliminating busywork"</p>
+
+
+
+<a name="196705440"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113488-general/topic/Declarative%20Lean/near/196705440" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Jannis Limperg <a href="https://leanprover-community.github.io/archive/stream/113488-general/topic/Declarative.20Lean.html#196705440">(May 06 2020 at 22:16)</a>:</h4>
+<p>On typeclasses, it would be interesting to know how Coq fares on similarly sized problems. Afaict, their algorithms are very similar, at least until we get the tabled stuff.</p>
+<p>On tactics, Lean also delegates to C++ quite a bit; after all, the standard tactics library consists mainly of thin wrappers around C++. The big Coq projects (e.g. anything by Chiplala) also have a ton of custom Ltac, some of it very complex, so I'm not sure Lean is unique in this regard.</p>
+<p>I'm not saying that Lean is slow, and I certainly couldn't develop a faster Lean typechecker. But in the absence of evidence, I'll remain skeptical that it's significantly faster than the competition at similar tasks.</p>
+
+
+
+<a name="196705571"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113488-general/topic/Declarative%20Lean/near/196705571" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Mario Carneiro <a href="https://leanprover-community.github.io/archive/stream/113488-general/topic/Declarative.20Lean.html#196705571">(May 06 2020 at 22:18)</a>:</h4>
+<p>Coq doesn't use typeclasses nearly as pervasively as mathlib. math-comp uses canonical instances instead, which solve the problem in a different way with more up front work for the user and a better asymptotic behavior for the problems generated</p>
+
+
+
+<a name="196705654"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113488-general/topic/Declarative%20Lean/near/196705654" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Mario Carneiro <a href="https://leanprover-community.github.io/archive/stream/113488-general/topic/Declarative.20Lean.html#196705654">(May 06 2020 at 22:19)</a>:</h4>
+<p>I would bet that if you ported mathlib to coq, using coq typeclasses, lean would outperform coq</p>
+
+
+
+<a name="196706090"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113488-general/topic/Declarative%20Lean/near/196706090" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Mario Carneiro <a href="https://leanprover-community.github.io/archive/stream/113488-general/topic/Declarative.20Lean.html#196706090">(May 06 2020 at 22:24)</a>:</h4>
+<p>Lean's tactic mode is also seemingly more flexible than Coq's. In Coq you just start every proof in tactic mode, term proofs seem to be rare, and they are built right into the grammar. By contrast, in lean a begin end block can be anywhere in the term, and when it hits one it translates the tactic block into a term (running the tactic parsers in the VM), typechecks the term, then evaluates the result (also in the VM), eventually calling back in to C++. This setup is a lot more flexible but it comes at a noticeable performance cost</p>
+
+
+
+<a name="196706229"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113488-general/topic/Declarative%20Lean/near/196706229" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Mario Carneiro <a href="https://leanprover-community.github.io/archive/stream/113488-general/topic/Declarative.20Lean.html#196706229">(May 06 2020 at 22:26)</a>:</h4>
+<p>In any case, I'm just speculating, and I don't have enough experience with coq to make a strong argument</p>
+
+
+
+<a name="196707774"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113488-general/topic/Declarative%20Lean/near/196707774" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Brando Miranda <a href="https://leanprover-community.github.io/archive/stream/113488-general/topic/Declarative.20Lean.html#196707774">(May 06 2020 at 22:47)</a>:</h4>
+<p>Thanks for performance discussion! Very interesting for me as an ML person but back to declarative languages. </p>
+<p>I was asking because Isabelle has sledgehammers and they often suggest Isar proofs. Which seem to outline the general shape of proofs + are more readable which made me think that perhaps declarative languages are just as easy to proof search. Which lead to this discussion. Is that true for Lean too? Why are Isar proofs so readily avaiable by the sledgehammer?</p>
+
+
+
+<a name="196708183"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113488-general/topic/Declarative%20Lean/near/196708183" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Jannis Limperg <a href="https://leanprover-community.github.io/archive/stream/113488-general/topic/Declarative.20Lean.html#196708183">(May 06 2020 at 22:52)</a>:</h4>
+<p>Sorry Brando, I'll stop hijacking your thread now. ;)</p>
+<p>For Sledgehammer, I'll try to summon <span class="user-mention" data-user-id="121058">@Jasmin Blanchette</span>; he can probably tell you whether Isar makes this sort of thing easier.</p>
+
+
+
+<a name="196709087"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113488-general/topic/Declarative%20Lean/near/196709087" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Mario Carneiro <a href="https://leanprover-community.github.io/archive/stream/113488-general/topic/Declarative.20Lean.html#196709087">(May 06 2020 at 23:06)</a>:</h4>
+<p>As they say, when all you have is a hammer, everything looks like a nail. I think it finds declarative proofs because that's the way isabelle is designed to present proofs. The things the ATPs are solving are full proofs anyway; you can present those proofs however you like.</p>
+
+
+
 {% endraw %}
 
-<hr><p>Last updated: May 06 2020 at 22:06 UTC</p>
+<hr><p>Last updated: May 06 2020 at 23:07 UTC</p>
