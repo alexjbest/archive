@@ -368,6 +368,57 @@ FileNotFoundError: [WinError 2] Le fichier spécifié est introuvable
 
 
 
+<a name="196605635"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113488-general/topic/leanproject%20access%20denied/near/196605635" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Rob Lewis <a href="https://leanprover-community.github.io/archive/stream/113488-general/topic/leanproject.20access.20denied.html#196605635">(May 06 2020 at 09:02)</a>:</h4>
+<p>I just ran into this in practice. The <code>.idx</code> file does indeed seem to be read-only, which prevents <code>shutil.rmtree</code> from deleting it.</p>
+
+
+
+<a name="196605673"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113488-general/topic/leanproject%20access%20denied/near/196605673" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Rob Lewis <a href="https://leanprover-community.github.io/archive/stream/113488-general/topic/leanproject.20access.20denied.html#196605673">(May 06 2020 at 09:02)</a>:</h4>
+<p>One workaround: <a href="https://stackoverflow.com/questions/21261132/shutil-rmtree-to-remove-readonly-files" title="https://stackoverflow.com/questions/21261132/shutil-rmtree-to-remove-readonly-files">https://stackoverflow.com/questions/21261132/shutil-rmtree-to-remove-readonly-files</a> although blindly deleting read-only stuff is maybe not the smartest thing to do.</p>
+
+
+
+<a name="196605936"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113488-general/topic/leanproject%20access%20denied/near/196605936" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Patrick Massot <a href="https://leanprover-community.github.io/archive/stream/113488-general/topic/leanproject.20access.20denied.html#196605936">(May 06 2020 at 09:05)</a>:</h4>
+<p>What is this .idx file?</p>
+
+
+
+<a name="196606021"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113488-general/topic/leanproject%20access%20denied/near/196606021" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Patrick Massot <a href="https://leanprover-community.github.io/archive/stream/113488-general/topic/leanproject.20access.20denied.html#196606021">(May 06 2020 at 09:05)</a>:</h4>
+<p>Oh, in git?</p>
+
+
+
+<a name="196606033"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113488-general/topic/leanproject%20access%20denied/near/196606033" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Patrick Massot <a href="https://leanprover-community.github.io/archive/stream/113488-general/topic/leanproject.20access.20denied.html#196606033">(May 06 2020 at 09:05)</a>:</h4>
+<p>Windows is so weird</p>
+
+
+
+<a name="196606100"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113488-general/topic/leanproject%20access%20denied/near/196606100" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Rob Lewis <a href="https://leanprover-community.github.io/archive/stream/113488-general/topic/leanproject.20access.20denied.html#196606100">(May 06 2020 at 09:06)</a>:</h4>
+<div class="codehilite"><pre><span></span><code>robyl@DESKTOP-SMPP1GQ MINGW64 /d/lean/doc-gen <span class="o">(</span>master<span class="o">)</span>
+$ leanproject up
+<span class="o">[</span>WinError <span class="m">5</span><span class="o">]</span> Access is denied: <span class="s1">&#39;D:\\lean\\doc-gen\\_target\\deps\\mathlib\\.git\\objects\\pack\\pack-1be031bb56944e0cd6652e34e4ab97cadbe780f9.idx&#39;</span>
+</code></pre></div>
+
+
+
+<a name="196606191"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113488-general/topic/leanproject%20access%20denied/near/196606191" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Patrick Massot <a href="https://leanprover-community.github.io/archive/stream/113488-general/topic/leanproject.20access.20denied.html#196606191">(May 06 2020 at 09:06)</a>:</h4>
+<p>If this is only .idx files in .git we can have a rule for them instead of blindly deleting read-only files</p>
+
+
+
+<a name="196606206"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113488-general/topic/leanproject%20access%20denied/near/196606206" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Patrick Massot <a href="https://leanprover-community.github.io/archive/stream/113488-general/topic/leanproject.20access.20denied.html#196606206">(May 06 2020 at 09:07)</a>:</h4>
+<p>Feel free to submit a patch to leanproject.</p>
+
+
+
 {% endraw %}
 
-<hr><p>Last updated: May 06 2020 at 08:06 UTC</p>
+<hr><p>Last updated: May 06 2020 at 09:12 UTC</p>
