@@ -8,7 +8,7 @@ permalink: /index.html
 
 ## Streams:
 
-* [general](stream/113488-general/index.html) (2758 topics)
+* [general](stream/113488-general/index.html) (2759 topics)
 
 * [new members](stream/113489-new-members/index.html) (1005 topics)
 
@@ -42,6 +42,6 @@ permalink: /index.html
 
 * [Type theory](stream/236446-Type-theory/index.html) (2 topics)
 
-* [Xena Summer Projects](stream/237759-Xena-Summer-Projects/index.html) (1 topic)
+* [Xena Summer Projects](stream/237759-Xena-Summer-Projects/index.html) (2 topics)
 
-<hr><p>Last updated: May 06 2020 at 17:07 UTC</p>
+<hr><p>Last updated: May 06 2020 at 18:08 UTC</p>

@@ -9,6 +9,7 @@ permalink: /stream/113488-general/index.html
 
 ### Topics:
 
+* [Declarative Lean](topic/Declarative.20Lean.html) (11 messages, latest: May 06 2020 at 18:00)
 * [dcongr](topic/dcongr.html) (19 messages, latest: May 06 2020 at 15:16)
 * [summer program for undergrads](topic/summer.20program.20for.20undergrads.html) (11 messages, latest: May 06 2020 at 14:53)
 * [Invitation to join the Codewars Lean community, Round 2](topic/Invitation.20to.20join.20the.20Codewars.20Lean.20community.2C.20Round.202.html) (293 messages, latest: May 06 2020 at 14:20)
@@ -2768,4 +2769,4 @@ permalink: /stream/113488-general/index.html
 * [test](topic/test.html) (4 messages, latest: Feb 26 2018 at 16:22)
 * [welcome](topic/welcome.html) (1 message, latest: Feb 26 2018 at 16:02)
 
-<hr><p>Last updated: May 06 2020 at 17:07 UTC</p>
+<hr><p>Last updated: May 06 2020 at 18:08 UTC</p>
