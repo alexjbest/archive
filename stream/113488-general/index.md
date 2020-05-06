@@ -9,6 +9,7 @@ permalink: /stream/113488-general/index.html
 
 ### Topics:
 
+* [summer program for undergrads](topic/summer.20program.20for.20undergrads.html) (3 messages, latest: May 06 2020 at 10:48)
 * [leanproject access denied](topic/leanproject.20access.20denied.html) (48 messages, latest: May 06 2020 at 09:07)
 * [Survey: who uses `leanproject up`?](topic/Survey.3A.20who.20uses.20.60leanproject.20up.60.3F.html) (20 messages, latest: May 06 2020 at 08:57)
 * [dcongr](topic/dcongr.html) (1 message, latest: May 06 2020 at 07:55)
@@ -461,7 +462,6 @@ permalink: /stream/113488-general/index.html
 * [typeclass paper](topic/typeclass.20paper.html) (168 messages, latest: Feb 11 2020 at 17:36)
 * [POPLmark challenge](topic/POPLmark.20challenge.html) (99 messages, latest: Feb 11 2020 at 17:19)
 * [moving mathlib to 3.5c](topic/moving.20mathlib.20to.203.2E5c.html) (76 messages, latest: Feb 11 2020 at 10:48)
-* [summer program for undergrads](topic/summer.20program.20for.20undergrads.html) (1 message, latest: Feb 10 2020 at 18:20)
 * [SO structure question](topic/SO.20structure.20question.html) (4 messages, latest: Feb 10 2020 at 17:17)
 * [Induction on predicate with arity greater than 1](topic/Induction.20on.20predicate.20with.20arity.20greater.20than.201.html) (3 messages, latest: Feb 10 2020 at 03:37)
 * [???](topic/.3F.3F.3F.html) (6 messages, latest: Feb 09 2020 at 16:55)
@@ -2768,4 +2768,4 @@ permalink: /stream/113488-general/index.html
 * [test](topic/test.html) (4 messages, latest: Feb 26 2018 at 16:22)
 * [welcome](topic/welcome.html) (1 message, latest: Feb 26 2018 at 16:02)
 
-<hr><p>Last updated: May 06 2020 at 10:09 UTC</p>
+<hr><p>Last updated: May 06 2020 at 11:05 UTC</p>
