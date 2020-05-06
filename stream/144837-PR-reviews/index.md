@@ -9,7 +9,7 @@ permalink: /stream/144837-PR-reviews/index.html
 
 ### Topics:
 
-* [#2513 formal assoc](topic/.232513.20formal.20assoc.html) (8 messages, latest: May 06 2020 at 15:15)
+* [#2513 formal assoc](topic/.232513.20formal.20assoc.html) (9 messages, latest: May 06 2020 at 18:54)
 * [lean#211 don't unfold irred defs](topic/lean.23211.20don't.20unfold.20irred.20defs.html) (157 messages, latest: May 06 2020 at 00:11)
 * [#2605 turing](topic/.232605.20turing.html) (2 messages, latest: May 05 2020 at 17:55)
 * [#2589 norm_num](topic/.232589.20norm_num.html) (57 messages, latest: May 05 2020 at 14:43)
@@ -248,4 +248,4 @@ permalink: /stream/144837-PR-reviews/index.html
 * [documentation PRs](topic/documentation.20PRs.html) (2 messages, latest: Oct 07 2018 at 11:21)
 * [hello](topic/hello.html) (1 message, latest: Oct 07 2018 at 10:24)
 
-<hr><p>Last updated: May 06 2020 at 18:08 UTC</p>
+<hr><p>Last updated: May 06 2020 at 19:06 UTC</p>
