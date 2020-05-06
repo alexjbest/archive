@@ -9,6 +9,7 @@ permalink: /stream/113488-general/index.html
 
 ### Topics:
 
+* [which tactics change behavior based on the environment?](topic/which.20tactics.20change.20behavior.20based.20on.20the.20environment.3F.html) (5 messages, latest: May 06 2020 at 02:26)
 * [suggest](topic/suggest.html) (12 messages, latest: May 05 2020 at 23:22)
 * [VScode extension](topic/VScode.20extension.html) (504 messages, latest: May 05 2020 at 20:29)
 * [instance max depth](topic/instance.20max.20depth.html) (18 messages, latest: May 05 2020 at 19:48)
@@ -2765,4 +2766,4 @@ permalink: /stream/113488-general/index.html
 * [test](topic/test.html) (4 messages, latest: Feb 26 2018 at 16:22)
 * [welcome](topic/welcome.html) (1 message, latest: Feb 26 2018 at 16:02)
 
-<hr><p>Last updated: May 06 2020 at 02:07 UTC</p>
+<hr><p>Last updated: May 06 2020 at 03:05 UTC</p>
