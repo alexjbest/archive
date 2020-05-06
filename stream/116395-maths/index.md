@@ -9,6 +9,7 @@ permalink: /stream/116395-maths/index.html
 
 ### Topics:
 
+* [Equivalence of algebras](topic/Equivalence.20of.20algebras.html) (21 messages, latest: May 06 2020 at 19:39)
 * [Sqrt of 2 is irrational](topic/Sqrt.20of.202.20is.20irrational.html) (9 messages, latest: May 05 2020 at 12:09)
 * [Define bundled homs using `calc`](topic/Define.20bundled.20homs.20using.20.60calc.60.html) (9 messages, latest: May 05 2020 at 11:30)
 * [lie groups](topic/lie.20groups.html) (21 messages, latest: May 04 2020 at 17:01)
@@ -889,4 +890,4 @@ permalink: /stream/116395-maths/index.html
 * [free group](topic/free.20group.html) (92 messages, latest: Apr 02 2018 at 05:00)
 * [Easy topological space question](topic/Easy.20topological.20space.20question.html) (18 messages, latest: Apr 02 2018 at 01:23)
 
-<hr><p>Last updated: May 06 2020 at 19:06 UTC</p>
+<hr><p>Last updated: May 06 2020 at 20:06 UTC</p>

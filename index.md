@@ -12,7 +12,7 @@ permalink: /index.html
 
 * [new members](stream/113489-new-members/index.html) (1005 topics)
 
-* [maths](stream/116395-maths/index.html) (879 topics)
+* [maths](stream/116395-maths/index.html) (880 topics)
 
 * [PR reviews](stream/144837-PR-reviews/index.html) (238 topics)
 
@@ -44,4 +44,4 @@ permalink: /index.html
 
 * [Xena Summer Projects](stream/237759-Xena-Summer-Projects/index.html) (2 topics)
 
-<hr><p>Last updated: May 06 2020 at 19:06 UTC</p>
+<hr><p>Last updated: May 06 2020 at 20:06 UTC</p>
