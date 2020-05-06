@@ -57,6 +57,67 @@ permalink: /stream/113488-general/topic/dcongr.html
 
 
 
+<a name="196641376"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113488-general/topic/dcongr/near/196641376" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Mario Carneiro <a href="https://leanprover-community.github.io/archive/stream/113488-general/topic/dcongr.html#196641376">(May 06 2020 at 14:22)</a>:</h4>
+<p>I don't know when this is ever actually a good proof strategy though. I like the idea of <code>congr</code> just giving up and falling back to a stricter version if it can't get rid of the <code>heq</code>s, but these pathover style goals are just an indication that you've messed up</p>
+
+
+
+<a name="196641550"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113488-general/topic/dcongr/near/196641550" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Mario Carneiro <a href="https://leanprover-community.github.io/archive/stream/113488-general/topic/dcongr.html#196641550">(May 06 2020 at 14:23)</a>:</h4>
+<p>Another possibility is to produce an equality of dependent pairs. This is the most concise way I know to represent an equality of telescopes (dependent values), but it only yields one subgoal and in a sense you can say it hasn't made progress</p>
+
+
+
+<a name="196641914"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113488-general/topic/dcongr/near/196641914" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Mario Carneiro <a href="https://leanprover-community.github.io/archive/stream/113488-general/topic/dcongr.html#196641914">(May 06 2020 at 14:26)</a>:</h4>
+<p>also, the proposed fallback doesn't really work either. Either the first argument is defeq so congr will automatically make an eq on the second argument, or the first argument is not defeq in which case congr can't do anything. (It can't apply the stricter congruence lemma because the first arguments are not defeq). So really the only alternative is to fail outright</p>
+
+
+
+<a name="196642006"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113488-general/topic/dcongr/near/196642006" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Sebastien Gouezel <a href="https://leanprover-community.github.io/archive/stream/113488-general/topic/dcongr.html#196642006">(May 06 2020 at 14:27)</a>:</h4>
+<p>I use several times the "<code>congr</code> to break a dependent pair, and then get rid of the <code>heq</code> using another lemma" approach in <a href="https://github.com/leanprover-community/mathlib/issues/2513" title="https://github.com/leanprover-community/mathlib/issues/2513">#2513</a>. If <code>congr</code> stopped working in this kind of situation things would be much more cumbersome.</p>
+
+
+
+<a name="196642253"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113488-general/topic/dcongr/near/196642253" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Sebastien Gouezel <a href="https://leanprover-community.github.io/archive/stream/113488-general/topic/dcongr.html#196642253">(May 06 2020 at 14:29)</a>:</h4>
+<p>See around <a href="https://github.com/leanprover-community/mathlib/blob/429356860f556eaeff04f0aa00d47d530ff3ffed/src/analysis/analytic/composition.lean#L1122" title="https://github.com/leanprover-community/mathlib/blob/429356860f556eaeff04f0aa00d47d530ff3ffed/src/analysis/analytic/composition.lean#L1122">https://github.com/leanprover-community/mathlib/blob/429356860f556eaeff04f0aa00d47d530ff3ffed/src/analysis/analytic/composition.lean#L1122</a> for instance</p>
+
+
+
+<a name="196642324"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113488-general/topic/dcongr/near/196642324" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Mario Carneiro <a href="https://leanprover-community.github.io/archive/stream/113488-general/topic/dcongr.html#196642324">(May 06 2020 at 14:29)</a>:</h4>
+<p>I'm not sure how useful it would be, but one option is to have <code>f x y = f z w</code> become <code>|- x = y</code> and <code>h : x = y |- f x y = f z w</code>, with the second goal only generated if it's masking some heqs</p>
+
+
+
+<a name="196642472"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113488-general/topic/dcongr/near/196642472" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Mario Carneiro <a href="https://leanprover-community.github.io/archive/stream/113488-general/topic/dcongr.html#196642472">(May 06 2020 at 14:30)</a>:</h4>
+<p>of course this is just <code>have</code>, but <code>congr</code> is doing the dirty work to find out what the right assumption is</p>
+
+
+
+<a name="196643375"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113488-general/topic/dcongr/near/196643375" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Johan Commelin <a href="https://leanprover-community.github.io/archive/stream/113488-general/topic/dcongr.html#196643375">(May 06 2020 at 14:36)</a>:</h4>
+<p>Right, I want <code>congr</code> to do some dirty work</p>
+
+
+
+<a name="196644135"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113488-general/topic/dcongr/near/196644135" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Mario Carneiro <a href="https://leanprover-community.github.io/archive/stream/113488-general/topic/dcongr.html#196644135">(May 06 2020 at 14:41)</a>:</h4>
+<p>Actually, congr can do a bit better on the second goal. If <code>x</code> or <code>y</code> is a variable, or if it can be generalized to a variable without making the goal type incorrect, then it can generalize and then subst that side, resulting in a goal <code>|- f x z = f x w</code>, and it can then try to do <code>congr</code> again, presumably progressing to <code>|- z = w</code> as desired</p>
+
+
+
+<a name="196645194"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113488-general/topic/dcongr/near/196645194" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Mario Carneiro <a href="https://leanprover-community.github.io/archive/stream/113488-general/topic/dcongr.html#196645194">(May 06 2020 at 14:49)</a>:</h4>
+<p>Where it gets interesting is when both <code>x</code> and <code>y</code> are complicated terms and <code>f</code> also contains references to subterms of it. For example, maybe <code>f : \forall n, fin (g n) -&gt; A</code>, <code>g h : nat -&gt; nat</code>, and <code>g (h x)</code> is defeq to <code>x</code>, and you want to prove <code>x y : nat, z : fin x, w : fin y |- f (h x) z = f (h y) w</code>, assuming <code>x = y</code> is provable.</p>
+<p>Here if we apply <code>congr 1</code> once we get the first subgoal <code>h x = h y</code>, but it will not help us to solve the second goal <code>z : fin x, w : fin y, h' : h x = h y |- f (h x) z = f (h y) w</code> because we need to subst using <code>x = y</code> instead.</p>
+
+
+
 {% endraw %}
 
-<hr><p>Last updated: May 06 2020 at 14:07 UTC</p>
+<hr><p>Last updated: May 06 2020 at 15:07 UTC</p>

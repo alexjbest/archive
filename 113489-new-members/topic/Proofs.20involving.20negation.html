@@ -1,0 +1,112 @@
+---
+layout: archive
+title: Zulip Chat Archive
+permalink: /stream/113489-new-members/topic/Proofs.20involving.20negation.html
+---
+
+<h2>Stream: <a href="https://leanprover-community.github.io/archive/stream/113489-new-members/index.html">new members</a></h2>
+<h3>Topic: <a href="https://leanprover-community.github.io/archive/stream/113489-new-members/topic/Proofs.20involving.20negation.html">Proofs involving negation</a></h3>
+
+<hr>
+
+<base href="https://leanprover.zulipchat.com/">
+
+<head><link href="/style.css" rel="stylesheet"></head>
+
+{% raw %}
+
+<a name="196642544"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113489-new%20members/topic/Proofs%20involving%20negation/near/196642544" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Noob <a href="https://leanprover-community.github.io/archive/stream/113489-new-members/topic/Proofs.20involving.20negation.html#196642544">(May 06 2020 at 14:30)</a>:</h4>
+<p>Hi all,<br>
+I'm going through "Logic and Proof" and "Theorem Proving in Lean" exercises and got stuck on the ones that make use of negation.<br>
+Could someone outline the line of reasoning ivolved in proving something like</p>
+<div class="codehilite"><pre><span></span><code><span class="kn">variables</span> <span class="n">A</span> <span class="n">B</span> <span class="o">:</span> <span class="kt">Prop</span>
+<span class="kn">example</span> <span class="o">(</span><span class="n">h</span><span class="o">:</span> <span class="bp">¬</span><span class="n">A</span> <span class="bp">∧</span> <span class="bp">¬</span><span class="n">B</span><span class="o">)</span> <span class="o">:</span> <span class="bp">¬</span><span class="o">(</span><span class="n">A</span> <span class="bp">∨</span> <span class="n">B</span><span class="o">)</span> <span class="o">:=</span> <span class="n">sorry</span>
+</code></pre></div>
+
+
+<p>?<br>
+With conjunction, disjunction and implication I usually start with a corresponding introduction rule and the rest follows naturally, but can't wrap my head around how to apply the same strategy to negation.</p>
+
+
+
+<a name="196642629"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113489-new%20members/topic/Proofs%20involving%20negation/near/196642629" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Kevin Buzzard <a href="https://leanprover-community.github.io/archive/stream/113489-new-members/topic/Proofs.20involving.20negation.html#196642629">(May 06 2020 at 14:31)</a>:</h4>
+<p><code>not X</code> is just syntax sugar for <code>X -&gt; false</code> if that helps</p>
+
+
+
+<a name="196642803"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113489-new%20members/topic/Proofs%20involving%20negation/near/196642803" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Kevin Buzzard <a href="https://leanprover-community.github.io/archive/stream/113489-new-members/topic/Proofs.20involving.20negation.html#196642803">(May 06 2020 at 14:32)</a>:</h4>
+<div class="codehilite"><pre><span></span><code><span class="kn">variables</span> <span class="n">A</span> <span class="n">B</span> <span class="o">:</span> <span class="kt">Prop</span>
+<span class="kn">example</span> <span class="o">(</span><span class="n">h</span><span class="o">:</span> <span class="bp">¬</span><span class="n">A</span> <span class="bp">∧</span> <span class="bp">¬</span><span class="n">B</span><span class="o">)</span> <span class="o">:</span> <span class="bp">¬</span><span class="o">(</span><span class="n">A</span> <span class="bp">∨</span> <span class="n">B</span><span class="o">)</span> <span class="o">:=</span>
+<span class="k">begin</span>
+  <span class="n">cases</span> <span class="n">h</span> <span class="k">with</span> <span class="n">hnA</span> <span class="n">hnB</span><span class="o">,</span>
+  <span class="n">intro</span> <span class="n">hAB</span><span class="o">,</span>
+  <span class="n">cases</span> <span class="n">hAB</span> <span class="k">with</span> <span class="n">hA</span> <span class="n">hB</span><span class="o">,</span>
+  <span class="o">{</span> <span class="n">contradiction</span><span class="o">},</span>
+  <span class="o">{</span> <span class="n">contradiction</span><span class="o">},</span>
+<span class="kn">end</span>
+</code></pre></div>
+
+
+
+<a name="196642841"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113489-new%20members/topic/Proofs%20involving%20negation/near/196642841" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Patrick Massot <a href="https://leanprover-community.github.io/archive/stream/113489-new-members/topic/Proofs.20involving.20negation.html#196642841">(May 06 2020 at 14:32)</a>:</h4>
+<p>If you don't mind using tactics then you can follow the tutorials project. It has several files about negation, starting with <a href="https://github.com/leanprover-community/tutorials/blob/master/src/exercises/07_first_negations.lean" title="https://github.com/leanprover-community/tutorials/blob/master/src/exercises/07_first_negations.lean">https://github.com/leanprover-community/tutorials/blob/master/src/exercises/07_first_negations.lean</a></p>
+
+
+
+<a name="196642950"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113489-new%20members/topic/Proofs%20involving%20negation/near/196642950" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Kevin Buzzard <a href="https://leanprover-community.github.io/archive/stream/113489-new-members/topic/Proofs.20involving.20negation.html#196642950">(May 06 2020 at 14:33)</a>:</h4>
+<div class="codehilite"><pre><span></span><code><span class="kn">variables</span> <span class="n">A</span> <span class="n">B</span> <span class="o">:</span> <span class="kt">Prop</span>
+<span class="kn">example</span> <span class="o">(</span><span class="n">h</span><span class="o">:</span> <span class="bp">¬</span><span class="n">A</span> <span class="bp">∧</span> <span class="bp">¬</span><span class="n">B</span><span class="o">)</span> <span class="o">:</span> <span class="bp">¬</span><span class="o">(</span><span class="n">A</span> <span class="bp">∨</span> <span class="n">B</span><span class="o">)</span> <span class="o">:=</span>
+<span class="n">h</span><span class="bp">.</span><span class="n">elim</span> <span class="err">$</span> <span class="bp">λ</span> <span class="n">hnA</span> <span class="n">hnB</span> <span class="n">hAB</span><span class="o">,</span> <span class="n">hAB</span><span class="bp">.</span><span class="n">elim</span> <span class="n">hnA</span> <span class="n">hnB</span>
+</code></pre></div>
+
+
+
+<a name="196644900"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113489-new%20members/topic/Proofs%20involving%20negation/near/196644900" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Noob <a href="https://leanprover-community.github.io/archive/stream/113489-new-members/topic/Proofs.20involving.20negation.html#196644900">(May 06 2020 at 14:47)</a>:</h4>
+<p>I'm not familiar with the cases and intro syntax yet, but I suppose it's equavalent to</p>
+<div class="codehilite"><pre><span></span><code>  <span class="kn">example</span> <span class="o">(</span><span class="n">h</span><span class="o">:</span> <span class="bp">¬</span><span class="n">A</span> <span class="bp">∧</span> <span class="bp">¬</span><span class="n">B</span><span class="o">)</span> <span class="o">:</span> <span class="bp">¬</span><span class="o">(</span><span class="n">A</span> <span class="bp">∨</span> <span class="n">B</span><span class="o">)</span> <span class="o">:=</span>
+    <span class="k">have</span> <span class="n">hnA</span> <span class="o">:</span> <span class="bp">¬</span><span class="n">A</span><span class="o">,</span> <span class="k">from</span> <span class="n">h</span><span class="bp">.</span><span class="n">left</span><span class="o">,</span>
+    <span class="k">have</span> <span class="n">hnB</span> <span class="o">:</span> <span class="bp">¬</span><span class="n">B</span><span class="o">,</span> <span class="k">from</span> <span class="n">h</span><span class="bp">.</span><span class="n">right</span><span class="o">,</span>
+    <span class="bp">λ</span> <span class="n">hAB</span> <span class="o">:</span> <span class="n">A</span> <span class="bp">∧</span> <span class="n">B</span><span class="o">,</span>
+</code></pre></div>
+
+
+<p>Is that correct?</p>
+
+
+
+<a name="196645220"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113489-new%20members/topic/Proofs%20involving%20negation/near/196645220" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Noob <a href="https://leanprover-community.github.io/archive/stream/113489-new-members/topic/Proofs.20involving.20negation.html#196645220">(May 06 2020 at 14:49)</a>:</h4>
+<p>I'd prefer not use tactics at this point, but do everything manually. Want to understand what is really going on.</p>
+
+
+
+<a name="196645418"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113489-new%20members/topic/Proofs%20involving%20negation/near/196645418" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Marc Huisinga <a href="https://leanprover-community.github.io/archive/stream/113489-new-members/topic/Proofs.20involving.20negation.html#196645418">(May 06 2020 at 14:51)</a>:</h4>
+<p>you probably meant <code>λ hAB : A ∨ B,</code>, but other than that you're right.</p>
+
+
+
+<a name="196647568"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113489-new%20members/topic/Proofs%20involving%20negation/near/196647568" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Noob <a href="https://leanprover-community.github.io/archive/stream/113489-new-members/topic/Proofs.20involving.20negation.html#196647568">(May 06 2020 at 15:04)</a>:</h4>
+<p>Correct. So here</p>
+<div class="codehilite"><pre><span></span><code>  <span class="kn">example</span> <span class="o">(</span><span class="n">h</span><span class="o">:</span> <span class="bp">¬</span><span class="n">A</span> <span class="bp">∧</span> <span class="bp">¬</span><span class="n">B</span><span class="o">)</span> <span class="o">:</span> <span class="bp">¬</span><span class="o">(</span><span class="n">A</span> <span class="bp">∨</span> <span class="n">B</span><span class="o">)</span> <span class="o">:=</span>
+    <span class="k">have</span> <span class="n">hnA</span> <span class="o">:</span> <span class="bp">¬</span><span class="n">A</span><span class="o">,</span> <span class="k">from</span> <span class="n">h</span><span class="bp">.</span><span class="n">left</span><span class="o">,</span>
+    <span class="k">have</span> <span class="n">hnB</span> <span class="o">:</span> <span class="bp">¬</span><span class="n">B</span><span class="o">,</span> <span class="k">from</span> <span class="n">h</span><span class="bp">.</span><span class="n">right</span><span class="o">,</span>
+    <span class="bp">λ</span> <span class="n">hAB</span> <span class="o">:</span> <span class="n">A</span> <span class="bp">∨</span> <span class="n">B</span><span class="o">,</span>
+</code></pre></div>
+
+
+<p>we have destructured our hypothesis such that each part can be referred to individually, we introduced a new hypothesis which is a negation of what needs to be proven.<br>
+Do we need the new hypothesis so we can arrive at a contradiction? I don't see how if so.</p>
+
+
+
+{% endraw %}
+
+<hr><p>Last updated: May 06 2020 at 15:07 UTC</p>
