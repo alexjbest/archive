@@ -9,7 +9,7 @@ permalink: /stream/113489-new-members/index.html
 
 ### Topics:
 
-* [Proofs involving negation](topic/Proofs.20involving.20negation.html) (9 messages, latest: May 06 2020 at 15:04)
+* [Proofs involving negation](topic/Proofs.20involving.20negation.html) (14 messages, latest: May 06 2020 at 16:01)
 * [polynomial ring over a field](topic/polynomial.20ring.20over.20a.20field.html) (5 messages, latest: May 06 2020 at 03:36)
 * [Mathieu Guay-Paquet (introduction)](topic/Mathieu.20Guay-Paquet.20(introduction).html) (5 messages, latest: May 05 2020 at 19:27)
 * [proving a lemma about infinite sets](topic/proving.20a.20lemma.20about.20infinite.20sets.html) (22 messages, latest: May 05 2020 at 18:10)
@@ -1015,4 +1015,4 @@ permalink: /stream/113489-new-members/index.html
 * [Andrew Ashworth](topic/Andrew.20Ashworth.html) (15 messages, latest: Feb 26 2018 at 16:21)
 * [onboarding](topic/onboarding.html) (1 message, latest: Feb 26 2018 at 16:02)
 
-<hr><p>Last updated: May 06 2020 at 15:07 UTC</p>
+<hr><p>Last updated: May 06 2020 at 16:06 UTC</p>

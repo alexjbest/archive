@@ -107,6 +107,70 @@ Do we need the new hypothesis so we can arrive at a contradiction? I don't see h
 
 
 
+<a name="196648051"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113489-new%20members/topic/Proofs%20involving%20negation/near/196648051" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Marc Huisinga <a href="https://leanprover-community.github.io/archive/stream/113489-new-members/topic/Proofs.20involving.20negation.html#196648051">(May 06 2020 at 15:07)</a>:</h4>
+<p>try eliminating <code>hAB</code> and see if you can then derive <code>false</code> in both cases of the elimination.</p>
+
+
+
+<a name="196649196"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113489-new%20members/topic/Proofs%20involving%20negation/near/196649196" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Kevin Buzzard <a href="https://leanprover-community.github.io/archive/stream/113489-new-members/topic/Proofs.20involving.20negation.html#196649196">(May 06 2020 at 15:14)</a>:</h4>
+<p>I wrote <code>hAB.elim</code> but this is using some cunning dot notation. You can also write <code>or.elim hAB</code></p>
+
+
+
+<a name="196652953"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113489-new%20members/topic/Proofs%20involving%20negation/near/196652953" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Noob <a href="https://leanprover-community.github.io/archive/stream/113489-new-members/topic/Proofs.20involving.20negation.html#196652953">(May 06 2020 at 15:38)</a>:</h4>
+<p>Thanks for the hints, I managed to prove it like this:</p>
+<div class="codehilite"><pre><span></span><code>  <span class="kn">example</span> <span class="o">(</span><span class="n">h</span><span class="o">:</span> <span class="bp">¬</span><span class="n">A</span> <span class="bp">∧</span> <span class="bp">¬</span><span class="n">B</span><span class="o">)</span> <span class="o">:</span> <span class="bp">¬</span><span class="o">(</span><span class="n">A</span> <span class="bp">∨</span> <span class="n">B</span><span class="o">)</span> <span class="o">:=</span>
+    <span class="k">have</span> <span class="n">hnA</span> <span class="o">:</span> <span class="bp">¬</span><span class="n">A</span><span class="o">,</span> <span class="k">from</span> <span class="n">h</span><span class="bp">.</span><span class="n">left</span><span class="o">,</span>
+    <span class="k">have</span> <span class="n">hnB</span> <span class="o">:</span> <span class="bp">¬</span><span class="n">B</span><span class="o">,</span> <span class="k">from</span> <span class="n">h</span><span class="bp">.</span><span class="n">right</span><span class="o">,</span>
+    <span class="bp">λ</span> <span class="n">hAB</span> <span class="o">:</span> <span class="n">A</span> <span class="bp">∨</span> <span class="n">B</span><span class="o">,</span>
+      <span class="n">or</span><span class="bp">.</span><span class="n">elim</span> <span class="n">hAB</span>
+        <span class="o">(</span><span class="bp">λ</span> <span class="n">hA</span><span class="o">,</span> <span class="n">absurd</span> <span class="n">hA</span> <span class="n">hnA</span><span class="o">)</span>
+        <span class="o">(</span><span class="bp">λ</span> <span class="n">hB</span><span class="o">,</span> <span class="n">absurd</span> <span class="n">hB</span> <span class="n">hnB</span><span class="o">)</span>
+</code></pre></div>
+
+
+<p>Still can't figure out why this</p>
+<div class="codehilite"><pre><span></span><code>  <span class="kn">example</span> <span class="o">(</span><span class="n">h</span><span class="o">:</span> <span class="bp">¬</span><span class="n">A</span> <span class="bp">∧</span> <span class="bp">¬</span><span class="n">B</span><span class="o">)</span> <span class="o">:</span> <span class="bp">¬</span><span class="o">(</span><span class="n">A</span> <span class="bp">∨</span> <span class="n">B</span><span class="o">)</span> <span class="o">:=</span>
+    <span class="k">have</span> <span class="n">hnA</span> <span class="o">:</span> <span class="bp">¬</span><span class="n">A</span><span class="o">,</span> <span class="k">from</span> <span class="n">h</span><span class="bp">.</span><span class="n">left</span><span class="o">,</span>
+    <span class="k">have</span> <span class="n">hnB</span> <span class="o">:</span> <span class="bp">¬</span><span class="n">B</span><span class="o">,</span> <span class="k">from</span> <span class="n">h</span><span class="bp">.</span><span class="n">right</span><span class="o">,</span>
+    <span class="bp">λ</span> <span class="n">hAB</span> <span class="o">:</span> <span class="n">A</span> <span class="bp">∨</span> <span class="n">B</span><span class="o">,</span>
+      <span class="n">or</span><span class="bp">.</span><span class="n">elim</span> <span class="n">hAB</span>
+        <span class="o">(</span><span class="bp">λ</span> <span class="n">hA</span> <span class="o">:</span> <span class="n">A</span><span class="o">,</span> <span class="n">false</span><span class="bp">.</span><span class="n">elim</span> <span class="o">(</span><span class="n">hnA</span> <span class="n">hA</span><span class="o">))</span>
+        <span class="o">(</span><span class="bp">λ</span> <span class="n">hB</span> <span class="o">:</span> <span class="n">B</span><span class="o">,</span> <span class="n">false</span><span class="bp">.</span><span class="n">elim</span> <span class="o">(</span><span class="n">hnB</span> <span class="n">hB</span><span class="o">))</span>
+</code></pre></div>
+
+
+<p>doesn't work - it looks the same to me.</p>
+
+
+
+<a name="196654837"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113489-new%20members/topic/Proofs%20involving%20negation/near/196654837" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Marc Huisinga <a href="https://leanprover-community.github.io/archive/stream/113489-new-members/topic/Proofs.20involving.20negation.html#196654837">(May 06 2020 at 15:52)</a>:</h4>
+<p>works for me. note that you don't actually need <code>false.elim</code> or <code>absurd</code> because you're trying to prove <code>false</code> itself.</p>
+
+
+
+<a name="196656356"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113489-new%20members/topic/Proofs%20involving%20negation/near/196656356" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Noob <a href="https://leanprover-community.github.io/archive/stream/113489-new-members/topic/Proofs.20involving.20negation.html#196656356">(May 06 2020 at 16:01)</a>:</h4>
+<p>Actually, it works for me too - VS Code got me confused.<br>
+With your latest suggestion the proof looks like this:</p>
+<div class="codehilite"><pre><span></span><code>  <span class="kn">example</span> <span class="o">(</span><span class="n">h</span><span class="o">:</span> <span class="bp">¬</span><span class="n">A</span> <span class="bp">∧</span> <span class="bp">¬</span><span class="n">B</span><span class="o">)</span> <span class="o">:</span> <span class="bp">¬</span><span class="o">(</span><span class="n">A</span> <span class="bp">∨</span> <span class="n">B</span><span class="o">)</span> <span class="o">:=</span>
+    <span class="k">have</span> <span class="n">hnA</span> <span class="o">:</span> <span class="bp">¬</span><span class="n">A</span><span class="o">,</span> <span class="k">from</span> <span class="n">h</span><span class="bp">.</span><span class="n">left</span><span class="o">,</span>
+    <span class="k">have</span> <span class="n">hnB</span> <span class="o">:</span> <span class="bp">¬</span><span class="n">B</span><span class="o">,</span> <span class="k">from</span> <span class="n">h</span><span class="bp">.</span><span class="n">right</span><span class="o">,</span>
+    <span class="bp">λ</span> <span class="n">hAB</span> <span class="o">:</span> <span class="n">A</span> <span class="bp">∨</span> <span class="n">B</span><span class="o">,</span>
+      <span class="n">or</span><span class="bp">.</span><span class="n">elim</span> <span class="n">hAB</span>
+        <span class="o">(</span><span class="bp">λ</span> <span class="n">hA</span><span class="o">,</span> <span class="n">hnA</span> <span class="n">hA</span><span class="o">)</span>
+        <span class="o">(</span><span class="bp">λ</span> <span class="n">hB</span><span class="o">,</span> <span class="n">hnB</span> <span class="n">hB</span><span class="o">)</span>
+</code></pre></div>
+
+
+<p>Thanks a lot for the help!</p>
+
+
+
 {% endraw %}
 
-<hr><p>Last updated: May 06 2020 at 15:07 UTC</p>
+<hr><p>Last updated: May 06 2020 at 16:06 UTC</p>
