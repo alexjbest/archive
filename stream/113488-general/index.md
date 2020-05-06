@@ -9,8 +9,8 @@ permalink: /stream/113488-general/index.html
 
 ### Topics:
 
-* [rw: equality is not an equality](topic/rw.3A.20equality.20is.20not.20an.20equality.html) (41 messages, latest: May 06 2020 at 21:01)
-* [Declarative Lean](topic/Declarative.20Lean.html) (14 messages, latest: May 06 2020 at 20:57)
+* [Declarative Lean](topic/Declarative.20Lean.html) (60 messages, latest: May 06 2020 at 22:05)
+* [rw: equality is not an equality](topic/rw.3A.20equality.20is.20not.20an.20equality.html) (44 messages, latest: May 06 2020 at 21:25)
 * [`subset` on `finset`](topic/.60subset.60.20on.20.60finset.60.html) (21 messages, latest: May 06 2020 at 20:38)
 * [dcongr](topic/dcongr.html) (19 messages, latest: May 06 2020 at 15:16)
 * [summer program for undergrads](topic/summer.20program.20for.20undergrads.html) (11 messages, latest: May 06 2020 at 14:53)
@@ -2770,4 +2770,4 @@ permalink: /stream/113488-general/index.html
 * [test](topic/test.html) (4 messages, latest: Feb 26 2018 at 16:22)
 * [welcome](topic/welcome.html) (1 message, latest: Feb 26 2018 at 16:02)
 
-<hr><p>Last updated: May 06 2020 at 21:05 UTC</p>
+<hr><p>Last updated: May 06 2020 at 22:06 UTC</p>

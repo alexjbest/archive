@@ -10,13 +10,13 @@ permalink: /index.html
 
 * [general](stream/113488-general/index.html) (2760 topics)
 
-* [new members](stream/113489-new-members/index.html) (1005 topics)
+* [new members](stream/113489-new-members/index.html) (1006 topics)
 
 * [maths](stream/116395-maths/index.html) (880 topics)
 
 * [PR reviews](stream/144837-PR-reviews/index.html) (238 topics)
 
-* [Geographic locality](stream/224796-Geographic-locality/index.html) (36 topics)
+* [Geographic locality](stream/224796-Geographic-locality/index.html) (37 topics)
 
 * [Is there code for X?](stream/217875-Is-there-code-for-X%3F/index.html) (34 topics)
 
@@ -44,4 +44,4 @@ permalink: /index.html
 
 * [Xena Summer Projects](stream/237759-Xena-Summer-Projects/index.html) (2 topics)
 
-<hr><p>Last updated: May 06 2020 at 21:05 UTC</p>
+<hr><p>Last updated: May 06 2020 at 22:06 UTC</p>
