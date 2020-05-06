@@ -119,6 +119,36 @@ permalink: /stream/113488-general/topic/.60subset.60.20on.20.60finset.60.html
 
 
 
+<a name="196693063"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113488-general/topic/%60subset%60%20on%20%60finset%60/near/196693063" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Yury G. Kudryashov <a href="https://leanprover-community.github.io/archive/stream/113488-general/topic/.60subset.60.20on.20.60finset.60.html#196693063">(May 06 2020 at 20:32)</a>:</h4>
+<p>I've started moving <code>finset</code> to <code>le/lt</code> and realized that for <code>multiset</code> we have both <code>subset</code> and <code>le</code>, and they have different meaning.</p>
+
+
+
+<a name="196693140"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113488-general/topic/%60subset%60%20on%20%60finset%60/near/196693140" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Kevin Buzzard <a href="https://leanprover-community.github.io/archive/stream/113488-general/topic/.60subset.60.20on.20.60finset.60.html#196693140">(May 06 2020 at 20:33)</a>:</h4>
+<p>Why not just leave <code>multiset</code> alone?</p>
+
+
+
+<a name="196693364"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113488-general/topic/%60subset%60%20on%20%60finset%60/near/196693364" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Kevin Buzzard <a href="https://leanprover-community.github.io/archive/stream/113488-general/topic/.60subset.60.20on.20.60finset.60.html#196693364">(May 06 2020 at 20:34)</a>:</h4>
+<p>I guess that with <code>subset</code>, multisets aren't a partial order (and hence not a lattice), because they don't satisfy antisymmetry</p>
+
+
+
+<a name="196693801"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113488-general/topic/%60subset%60%20on%20%60finset%60/near/196693801" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Yury G. Kudryashov <a href="https://leanprover-community.github.io/archive/stream/113488-general/topic/.60subset.60.20on.20.60finset.60.html#196693801">(May 06 2020 at 20:38)</a>:</h4>
+<p>But it is transitive...</p>
+
+
+
+<a name="196693843"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113488-general/topic/%60subset%60%20on%20%60finset%60/near/196693843" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Kevin Buzzard <a href="https://leanprover-community.github.io/archive/stream/113488-general/topic/.60subset.60.20on.20.60finset.60.html#196693843">(May 06 2020 at 20:38)</a>:</h4>
+<p>right, it's a preorder. But I thought the idea was that we should use &lt;= for lattices, even when mathematicians use <code>\subseteq</code></p>
+
+
+
 {% endraw %}
 
-<hr><p>Last updated: May 06 2020 at 20:06 UTC</p>
+<hr><p>Last updated: May 06 2020 at 21:05 UTC</p>

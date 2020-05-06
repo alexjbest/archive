@@ -9,7 +9,9 @@ permalink: /stream/113488-general/index.html
 
 ### Topics:
 
-* [Declarative Lean](topic/Declarative.20Lean.html) (11 messages, latest: May 06 2020 at 18:00)
+* [rw: equality is not an equality](topic/rw.3A.20equality.20is.20not.20an.20equality.html) (41 messages, latest: May 06 2020 at 21:01)
+* [Declarative Lean](topic/Declarative.20Lean.html) (14 messages, latest: May 06 2020 at 20:57)
+* [`subset` on `finset`](topic/.60subset.60.20on.20.60finset.60.html) (21 messages, latest: May 06 2020 at 20:38)
 * [dcongr](topic/dcongr.html) (19 messages, latest: May 06 2020 at 15:16)
 * [summer program for undergrads](topic/summer.20program.20for.20undergrads.html) (11 messages, latest: May 06 2020 at 14:53)
 * [Invitation to join the Codewars Lean community, Round 2](topic/Invitation.20to.20join.20the.20Codewars.20Lean.20community.2C.20Round.202.html) (293 messages, latest: May 06 2020 at 14:20)
@@ -88,7 +90,6 @@ permalink: /stream/113488-general/index.html
 * [proofs](topic/proofs.html) (4 messages, latest: Apr 26 2020 at 23:37)
 * [to_extending](topic/to_extending.html) (18 messages, latest: Apr 26 2020 at 19:46)
 * [Proposal: `fix x` for `assume x`](topic/Proposal.3A.20.60fix.20x.60.20for.20.60assume.20x.60.html) (126 messages, latest: Apr 26 2020 at 17:41)
-* [`subset` on `finset`](topic/.60subset.60.20on.20.60finset.60.html) (16 messages, latest: Apr 26 2020 at 17:07)
 * [unfreezeI](topic/unfreezeI.html) (8 messages, latest: Apr 25 2020 at 18:28)
 * [class instances in definition of Prop](topic/class.20instances.20in.20definition.20of.20Prop.html) (16 messages, latest: Apr 25 2020 at 16:37)
 * [a + succ b syntactically succ(a+b)?](topic/a.20.2B.20succ.20b.20syntactically.20succ(a.2Bb).3F.html) (3 messages, latest: Apr 25 2020 at 16:27)
@@ -2769,4 +2770,4 @@ permalink: /stream/113488-general/index.html
 * [test](topic/test.html) (4 messages, latest: Feb 26 2018 at 16:22)
 * [welcome](topic/welcome.html) (1 message, latest: Feb 26 2018 at 16:02)
 
-<hr><p>Last updated: May 06 2020 at 20:06 UTC</p>
+<hr><p>Last updated: May 06 2020 at 21:05 UTC</p>
