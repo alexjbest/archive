@@ -9,6 +9,8 @@ permalink: /stream/113489-new-members/index.html
 
 ### Topics:
 
+* [lean for coq users?](topic/lean.20for.20coq.20users.3F.html) (3 messages, latest: May 07 2020 at 21:58)
+* [noob question(s)](topic/noob.20question(s).html) (5455 messages, latest: May 07 2020 at 21:19)
 * [getting started](topic/getting.20started.html) (11 messages, latest: May 07 2020 at 20:58)
 * [how is log defined in lean?](topic/how.20is.20log.20defined.20in.20lean.3F.html) (21 messages, latest: May 07 2020 at 20:11)
 * [Recursive function](topic/Recursive.20function.html) (12 messages, latest: May 07 2020 at 19:37)
@@ -22,7 +24,6 @@ permalink: /stream/113489-new-members/index.html
 * [iterate over a multiset/finset](topic/iterate.20over.20a.20multiset.2Ffinset.html) (43 messages, latest: May 07 2020 at 03:30)
 * [Importing Packages](topic/Importing.20Packages.html) (5 messages, latest: May 07 2020 at 02:25)
 * [polynomial ring over a field](topic/polynomial.20ring.20over.20a.20field.html) (6 messages, latest: May 07 2020 at 00:08)
-* [noob question(s)](topic/noob.20question(s).html) (5454 messages, latest: May 06 2020 at 23:25)
 * [Proofs involving negation](topic/Proofs.20involving.20negation.html) (15 messages, latest: May 06 2020 at 17:20)
 * [Mathieu Guay-Paquet (introduction)](topic/Mathieu.20Guay-Paquet.20(introduction).html) (5 messages, latest: May 05 2020 at 19:27)
 * [proving a lemma about infinite sets](topic/proving.20a.20lemma.20about.20infinite.20sets.html) (22 messages, latest: May 05 2020 at 18:10)
@@ -1026,4 +1027,4 @@ permalink: /stream/113489-new-members/index.html
 * [Andrew Ashworth](topic/Andrew.20Ashworth.html) (15 messages, latest: Feb 26 2018 at 16:21)
 * [onboarding](topic/onboarding.html) (1 message, latest: Feb 26 2018 at 16:02)
 
-<hr><p>Last updated: May 07 2020 at 21:05 UTC</p>
+<hr><p>Last updated: May 07 2020 at 22:08 UTC</p>
