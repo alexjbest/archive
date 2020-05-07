@@ -9,9 +9,9 @@ permalink: /stream/113488-general/index.html
 
 ### Topics:
 
-* [Invitation to join the Codewars Lean community, Round 2](topic/Invitation.20to.20join.20the.20Codewars.20Lean.20community.2C.20Round.202.html) (298 messages, latest: May 07 2020 at 14:54)
+* [widget](topic/widget.html) (43 messages, latest: May 07 2020 at 16:06)
+* [Invitation to join the Codewars Lean community, Round 2](topic/Invitation.20to.20join.20the.20Codewars.20Lean.20community.2C.20Round.202.html) (299 messages, latest: May 07 2020 at 15:24)
 * [pretty printer in to_string](topic/pretty.20printer.20in.20to_string.html) (5 messages, latest: May 07 2020 at 14:05)
-* [widget](topic/widget.html) (23 messages, latest: May 07 2020 at 13:31)
 * [to_expr mystery](topic/to_expr.20mystery.html) (16 messages, latest: May 07 2020 at 12:09)
 * [function namespace](topic/function.20namespace.html) (16 messages, latest: May 07 2020 at 08:22)
 * [Declarative Lean](topic/Declarative.20Lean.html) (78 messages, latest: May 07 2020 at 07:50)
@@ -2777,4 +2777,4 @@ permalink: /stream/113488-general/index.html
 * [test](topic/test.html) (4 messages, latest: Feb 26 2018 at 16:22)
 * [welcome](topic/welcome.html) (1 message, latest: Feb 26 2018 at 16:02)
 
-<hr><p>Last updated: May 07 2020 at 15:07 UTC</p>
+<hr><p>Last updated: May 07 2020 at 16:10 UTC</p>
