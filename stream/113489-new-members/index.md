@@ -9,8 +9,9 @@ permalink: /stream/113489-new-members/index.html
 
 ### Topics:
 
+* [Product of continuous functions](topic/Product.20of.20continuous.20functions.html) (5 messages, latest: May 07 2020 at 05:06)
+* [noncomputable](topic/noncomputable.html) (45 messages, latest: May 07 2020 at 04:09)
 * [iterate over a multiset/finset](topic/iterate.20over.20a.20multiset.2Ffinset.html) (43 messages, latest: May 07 2020 at 03:30)
-* [noncomputable](topic/noncomputable.html) (44 messages, latest: May 07 2020 at 02:53)
 * [fun with pfun and dite](topic/fun.20with.20pfun.20and.20dite.html) (33 messages, latest: May 07 2020 at 02:43)
 * [Confused with double "exists"](topic/Confused.20with.20double.20.22exists.22.html) (4 messages, latest: May 07 2020 at 02:29)
 * [Importing Packages](topic/Importing.20Packages.html) (5 messages, latest: May 07 2020 at 02:25)
@@ -1020,4 +1021,4 @@ permalink: /stream/113489-new-members/index.html
 * [Andrew Ashworth](topic/Andrew.20Ashworth.html) (15 messages, latest: Feb 26 2018 at 16:21)
 * [onboarding](topic/onboarding.html) (1 message, latest: Feb 26 2018 at 16:02)
 
-<hr><p>Last updated: May 07 2020 at 04:08 UTC</p>
+<hr><p>Last updated: May 07 2020 at 05:12 UTC</p>

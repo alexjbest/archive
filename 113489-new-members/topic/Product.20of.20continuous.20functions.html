@@ -1,0 +1,51 @@
+---
+layout: archive
+title: Zulip Chat Archive
+permalink: /stream/113489-new-members/topic/Product.20of.20continuous.20functions.html
+---
+
+<h2>Stream: <a href="https://leanprover-community.github.io/archive/stream/113489-new-members/index.html">new members</a></h2>
+<h3>Topic: <a href="https://leanprover-community.github.io/archive/stream/113489-new-members/topic/Product.20of.20continuous.20functions.html">Product of continuous functions</a></h3>
+
+<hr>
+
+<base href="https://leanprover.zulipchat.com/">
+
+<head><link href="/style.css" rel="stylesheet"></head>
+
+{% raw %}
+
+<a name="196727375"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113489-new%20members/topic/Product%20of%20continuous%20functions/near/196727375" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Heather Macbeth <a href="https://leanprover-community.github.io/archive/stream/113489-new-members/topic/Product.20of.20continuous.20functions.html#196727375">(May 07 2020 at 05:00)</a>:</h4>
+<p>Hello, I am still finding my way around mathlib.  Where would I find that the product of two continuous functions from R to R (or in whatever greater generality) is continuous?</p>
+
+
+
+<a name="196727531"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113489-new%20members/topic/Product%20of%20continuous%20functions/near/196727531" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Johan Commelin <a href="https://leanprover-community.github.io/archive/stream/113489-new-members/topic/Product.20of.20continuous.20functions.html#196727531">(May 07 2020 at 05:04)</a>:</h4>
+<p>I think it's called <code>continuous_mul</code></p>
+
+
+
+<a name="196727548"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113489-new%20members/topic/Product%20of%20continuous%20functions/near/196727548" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Johan Commelin <a href="https://leanprover-community.github.io/archive/stream/113489-new-members/topic/Product.20of.20continuous.20functions.html#196727548">(May 07 2020 at 05:05)</a>:</h4>
+<div class="codehilite"><pre><span></span><code><span class="n">src</span><span class="bp">/</span><span class="n">topology</span><span class="bp">/</span><span class="n">algebra</span><span class="bp">/</span><span class="n">monoid</span><span class="bp">.</span><span class="n">lean</span><span class="o">:</span><span class="kn">lemma</span> <span class="n">continuous</span><span class="bp">.</span><span class="n">mul</span> <span class="o">[</span><span class="n">topological_space</span> <span class="n">β</span><span class="o">]</span> <span class="o">{</span><span class="n">f</span> <span class="o">:</span> <span class="n">β</span> <span class="bp">→</span> <span class="n">α</span><span class="o">}</span> <span class="o">{</span><span class="n">g</span> <span class="o">:</span> <span class="n">β</span> <span class="bp">→</span> <span class="n">α</span><span class="o">}</span>
+</code></pre></div>
+
+
+
+<a name="196727550"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113489-new%20members/topic/Product%20of%20continuous%20functions/near/196727550" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Johan Commelin <a href="https://leanprover-community.github.io/archive/stream/113489-new-members/topic/Product.20of.20continuous.20functions.html#196727550">(May 07 2020 at 05:05)</a>:</h4>
+<p><span class="user-mention" data-user-id="260507">@Heather Macbeth</span> It has a <code>.</code> in the name now...</p>
+
+
+
+<a name="196727600"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113489-new%20members/topic/Product%20of%20continuous%20functions/near/196727600" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Johan Commelin <a href="https://leanprover-community.github.io/archive/stream/113489-new-members/topic/Product.20of.20continuous.20functions.html#196727600">(May 07 2020 at 05:06)</a>:</h4>
+<p>You would use it as <code>hf.mul hg</code>, where <code>hf : continuous f</code> and <code>hg : continuous g</code>.</p>
+
+
+
+{% endraw %}
+
+<hr><p>Last updated: May 07 2020 at 05:12 UTC</p>
