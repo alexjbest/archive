@@ -9,6 +9,7 @@ permalink: /stream/113488-general/index.html
 
 ### Topics:
 
+* [function namespace](topic/function.20namespace.html) (1 message, latest: May 07 2020 at 07:05)
 * [Declarative Lean](topic/Declarative.20Lean.html) (77 messages, latest: May 07 2020 at 05:17)
 * [Is {...} a tactic?](topic/Is.20.7B.2E.2E.2E.7D.20a.20tactic.3F.html) (5 messages, latest: May 07 2020 at 03:14)
 * [inf_le_inf_left](topic/inf_le_inf_left.html) (6 messages, latest: May 07 2020 at 01:10)
@@ -2773,4 +2774,4 @@ permalink: /stream/113488-general/index.html
 * [test](topic/test.html) (4 messages, latest: Feb 26 2018 at 16:22)
 * [welcome](topic/welcome.html) (1 message, latest: Feb 26 2018 at 16:02)
 
-<hr><p>Last updated: May 07 2020 at 06:09 UTC</p>
+<hr><p>Last updated: May 07 2020 at 07:10 UTC</p>
