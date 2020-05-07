@@ -1,0 +1,60 @@
+---
+layout: archive
+title: Zulip Chat Archive
+permalink: /stream/116395-maths/topic/with_bot.html
+---
+
+<h2>Stream: <a href="https://leanprover-community.github.io/archive/stream/116395-maths/index.html">maths</a></h2>
+<h3>Topic: <a href="https://leanprover-community.github.io/archive/stream/116395-maths/topic/with_bot.html">with_bot</a></h3>
+
+<hr>
+
+<base href="https://leanprover.zulipchat.com/">
+
+<head><link href="/style.css" rel="stylesheet"></head>
+
+{% raw %}
+
+<a name="196812378"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/116395-maths/topic/with_bot/near/196812378" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> orlando <a href="https://leanprover-community.github.io/archive/stream/116395-maths/topic/with_bot.html#196812378">(May 07 2020 at 18:33)</a>:</h4>
+<p>Hello, <br>
+I'm reading a little the theory of degree in <code>data.polynomial</code> and there is a strange object : <code> with_bot \N</code> <span aria-label="sweat smile" class="emoji emoji-1f605" role="img" title="sweat smile">:sweat_smile:</span> </p>
+<p>Do you have an idea to deal with bot ?  For example !  </p>
+<div class="codehilite"><pre><span></span><code><span class="kn">import</span> <span class="n">order</span>
+<span class="kn">open</span> <span class="n">with_bot</span>
+<span class="kn">example</span>  <span class="o">(</span><span class="n">a</span> <span class="n">b</span> <span class="o">:</span> <span class="n">with_bot</span> <span class="bp">ℕ</span>  <span class="o">)</span> <span class="o">:</span> <span class="n">a</span> <span class="bp">≤</span> <span class="n">b</span> <span class="bp">→</span> <span class="n">a</span><span class="bp">+</span><span class="mi">1</span> <span class="bp">≤</span> <span class="n">b</span><span class="bp">+</span><span class="mi">1</span> <span class="o">:=</span> <span class="k">begin</span>
+    <span class="n">intros</span><span class="o">,</span>
+<span class="kn">end</span>
+</code></pre></div>
+
+
+
+<a name="196813746"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/116395-maths/topic/with_bot/near/196813746" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Mario Carneiro <a href="https://leanprover-community.github.io/archive/stream/116395-maths/topic/with_bot.html#196813746">(May 07 2020 at 18:43)</a>:</h4>
+<p>what is <code>bot+1</code> supposed to be in this statement?</p>
+
+
+
+<a name="196813805"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/116395-maths/topic/with_bot/near/196813805" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Mario Carneiro <a href="https://leanprover-community.github.io/archive/stream/116395-maths/topic/with_bot.html#196813805">(May 07 2020 at 18:43)</a>:</h4>
+<p>That's true as long as you are talking about nats, and nats embed in <code>with_bot nat</code></p>
+
+
+
+<a name="196816320"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/116395-maths/topic/with_bot/near/196816320" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> orlando <a href="https://leanprover-community.github.io/archive/stream/116395-maths/topic/with_bot.html#196816320">(May 07 2020 at 19:02)</a>:</h4>
+<p>Hello Mario, </p>
+<p>For me  <code>bot + 1 =  bot </code>  so i each case it ok !  <br>
+But i don't understand who to deal in lean ?   Is there is a file where this arithmetic property are state ?</p>
+
+
+
+<a name="196816795"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/116395-maths/topic/with_bot/near/196816795" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Kevin Buzzard <a href="https://leanprover-community.github.io/archive/stream/116395-maths/topic/with_bot.html#196816795">(May 07 2020 at 19:06)</a>:</h4>
+<p>Just do cases on a and b?</p>
+
+
+
+{% endraw %}
+
+<hr><p>Last updated: May 07 2020 at 19:08 UTC</p>

@@ -9,7 +9,8 @@ permalink: /stream/116395-maths/index.html
 
 ### Topics:
 
-* [from le to ge by duality?](topic/from.20le.20to.20ge.20by.20duality.3F.html) (14 messages, latest: May 07 2020 at 18:05)
+* [with_bot](topic/with_bot.html) (5 messages, latest: May 07 2020 at 19:06)
+* [from le to ge by duality?](topic/from.20le.20to.20ge.20by.20duality.3F.html) (16 messages, latest: May 07 2020 at 18:24)
 * [Equivalence of algebras](topic/Equivalence.20of.20algebras.html) (32 messages, latest: May 07 2020 at 17:35)
 * [Number theory over function fields](topic/Number.20theory.20over.20function.20fields.html) (7 messages, latest: May 07 2020 at 17:25)
 * [Continuity of pointwise tensor product](topic/Continuity.20of.20pointwise.20tensor.20product.html) (19 messages, latest: May 07 2020 at 16:04)
@@ -893,4 +894,4 @@ permalink: /stream/116395-maths/index.html
 * [free group](topic/free.20group.html) (92 messages, latest: Apr 02 2018 at 05:00)
 * [Easy topological space question](topic/Easy.20topological.20space.20question.html) (18 messages, latest: Apr 02 2018 at 01:23)
 
-<hr><p>Last updated: May 07 2020 at 18:06 UTC</p>
+<hr><p>Last updated: May 07 2020 at 19:08 UTC</p>
