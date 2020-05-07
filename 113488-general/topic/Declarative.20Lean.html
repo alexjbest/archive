@@ -526,6 +526,43 @@ permalink: /stream/113488-general/topic/Declarative.20Lean.html
 
 
 
+<a name="196710438"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113488-general/topic/Declarative%20Lean/near/196710438" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Jason Rute <a href="https://leanprover-community.github.io/archive/stream/113488-general/topic/Declarative.20Lean.html#196710438">(May 06 2020 at 23:26)</a>:</h4>
+<p>Does <span class="user-mention" data-user-id="110043">@Gabriel Ebner</span>'s Lean-hammer supply proofs?  What do those look like?</p>
+
+
+
+<a name="196711009"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113488-general/topic/Declarative%20Lean/near/196711009" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Jason Rute <a href="https://leanprover-community.github.io/archive/stream/113488-general/topic/Declarative.20Lean.html#196711009">(May 06 2020 at 23:34)</a>:</h4>
+<p>I think from the point of view of AI, Lean has certain advantages and disadvantages:<br>
+Advantages:</p>
+<ul>
+<li>It is very popular, partly because it has a lot of nice features which make proving things easy, and because it has a great active community.</li>
+<li>Lean has a lot of built in tools (like a tactic language, an io interface, a parser and a server) which make proof recording and interaction possible (not as nice as I'd like, but possible) without hacking the C++ code.</li>
+<li>It has a reasonable size library.</li>
+</ul>
+<p>Disadvanatages</p>
+<ul>
+<li>All those "nice" features make Lean hard to parse.  You can have <code>by</code> blocks in term mode in <code>calc</code> mode in <code>begin...end</code> blocks.  This makes proof recording and other data-gathering tasks difficult.  </li>
+<li>Also the behavior of tactics can change depending on attributes attached to theorems.</li>
+<li>There is nothing like it now, so it needs to be built from scratch.</li>
+<li>Everyone is telling me to wait for Lean 4 <span aria-label="slight smile" class="emoji emoji-1f642" role="img" title="slight smile">:slight_smile:</span> but I don't listen.</li>
+</ul>
+
+
+
+<a name="196711440"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113488-general/topic/Declarative%20Lean/near/196711440" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Jason Rute <a href="https://leanprover-community.github.io/archive/stream/113488-general/topic/Declarative.20Lean.html#196711440">(May 06 2020 at 23:41)</a>:</h4>
+<p>Also, this is really off-topic now, but as for speed and AI, I think I've found a performant way to interact with Lean as a gym environment and to call a trained AI from within Lean as a tactic.  I'm playing around with it more, but it requires some more engineering.  I think I'll have a prototype (only a subset of Lean tactics) in about 2 weeks.</p>
+
+
+
+<a name="196711679"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113488-general/topic/Declarative%20Lean/near/196711679" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Jason Rute <a href="https://leanprover-community.github.io/archive/stream/113488-general/topic/Declarative.20Lean.html#196711679">(May 06 2020 at 23:44)</a>:</h4>
+<p>Ok, I think that last paragraph promises more than I intend.  I won't have DeepHOL for Lean (or even TacticToe for Lean) anytime soon, but I'm saying I think I've found a path to making them and I'll create a small demo of that path soon.</p>
+
+
+
 {% endraw %}
 
-<hr><p>Last updated: May 06 2020 at 23:07 UTC</p>
+<hr><p>Last updated: May 07 2020 at 00:09 UTC</p>

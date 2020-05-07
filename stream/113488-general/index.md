@@ -9,7 +9,8 @@ permalink: /stream/113488-general/index.html
 
 ### Topics:
 
-* [Declarative Lean](topic/Declarative.20Lean.html) (71 messages, latest: May 06 2020 at 23:06)
+* [Typechecking expressions in an arbitrary context](topic/Typechecking.20expressions.20in.20an.20arbitrary.20context.html) (5 messages, latest: May 06 2020 at 23:53)
+* [Declarative Lean](topic/Declarative.20Lean.html) (75 messages, latest: May 06 2020 at 23:44)
 * [rw: equality is not an equality](topic/rw.3A.20equality.20is.20not.20an.20equality.html) (45 messages, latest: May 06 2020 at 22:34)
 * [`subset` on `finset`](topic/.60subset.60.20on.20.60finset.60.html) (21 messages, latest: May 06 2020 at 20:38)
 * [dcongr](topic/dcongr.html) (19 messages, latest: May 06 2020 at 15:16)
@@ -2770,4 +2771,4 @@ permalink: /stream/113488-general/index.html
 * [test](topic/test.html) (4 messages, latest: Feb 26 2018 at 16:22)
 * [welcome](topic/welcome.html) (1 message, latest: Feb 26 2018 at 16:02)
 
-<hr><p>Last updated: May 06 2020 at 23:07 UTC</p>
+<hr><p>Last updated: May 07 2020 at 00:09 UTC</p>
