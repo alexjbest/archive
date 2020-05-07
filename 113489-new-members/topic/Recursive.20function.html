@@ -1,0 +1,80 @@
+---
+layout: archive
+title: Zulip Chat Archive
+permalink: /stream/113489-new-members/topic/Recursive.20function.html
+---
+
+<h2>Stream: <a href="https://leanprover-community.github.io/archive/stream/113489-new-members/index.html">new members</a></h2>
+<h3>Topic: <a href="https://leanprover-community.github.io/archive/stream/113489-new-members/topic/Recursive.20function.html">Recursive function</a></h3>
+
+<hr>
+
+<base href="https://leanprover.zulipchat.com/">
+
+<head><link href="/style.css" rel="stylesheet"></head>
+
+{% raw %}
+
+<a name="196806708"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113489-new%20members/topic/Recursive%20function/near/196806708" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Patrick Stevens <a href="https://leanprover-community.github.io/archive/stream/113489-new-members/topic/Recursive.20function.html#196806708">(May 07 2020 at 17:49)</a>:</h4>
+<p>I want to encode the following chain - you can probably ignore everything up til the final definition <code>computes</code> whose structure is quite clear. Basically, I say state A "computes to" state B if either A = B, or there is C such that A ~ C and C computes to B (for some fixed known notion of <code>~</code>).</p>
+<p>How can I specify this type? Lean lacks the usual phrasing of recursive functions that I would normally reach for in a programming language, so the following doesn't compile. Am I going to have to parameterise my type on the length of the chain and then define it by induction?</p>
+<div class="codehilite"><pre><span></span><code><span class="kn">import</span> <span class="n">data</span><span class="bp">.</span><span class="n">pfun</span>
+<span class="kn">import</span> <span class="n">computability</span><span class="bp">.</span><span class="n">turing_machine</span>
+<span class="kn">import</span> <span class="n">data</span><span class="bp">.</span><span class="n">zmod</span><span class="bp">.</span><span class="n">basic</span>
+<span class="kn">import</span> <span class="n">data</span><span class="bp">.</span><span class="n">option</span><span class="bp">.</span><span class="n">basic</span>
+
+<span class="kn">structure</span> <span class="n">modular_machine</span> <span class="o">:=</span>
+  <span class="o">(</span><span class="n">M</span> <span class="o">:</span> <span class="n">nat</span><span class="o">)</span>
+  <span class="o">(</span><span class="n">mBig</span> <span class="o">:</span> <span class="mi">1</span> <span class="bp">&lt;</span> <span class="n">M</span><span class="o">)</span>
+  <span class="o">(</span><span class="n">steps</span> <span class="o">:</span> <span class="o">(</span><span class="n">fin</span> <span class="n">M</span><span class="o">)</span> <span class="bp">-&gt;</span> <span class="o">(</span><span class="n">fin</span> <span class="n">M</span><span class="o">)</span> <span class="bp">-&gt;</span> <span class="n">option</span> <span class="o">(</span><span class="n">prod</span> <span class="o">(</span><span class="n">fin</span> <span class="o">(</span><span class="n">M</span> <span class="bp">^</span> <span class="mi">2</span><span class="o">))</span> <span class="n">turing</span><span class="bp">.</span><span class="n">dir</span><span class="o">))</span>
+
+<span class="n">def</span> <span class="n">reduces</span>
+  <span class="o">(</span><span class="n">m</span> <span class="o">:</span> <span class="n">modular_machine</span><span class="o">)</span>
+  <span class="o">(</span><span class="n">fromState</span> <span class="o">:</span> <span class="n">nat</span> <span class="bp">×</span> <span class="n">nat</span><span class="o">)</span> <span class="c1">-- α , β , u m + a, v m + b</span>
+  <span class="o">(</span><span class="n">toState</span> <span class="o">:</span> <span class="n">nat</span> <span class="bp">×</span> <span class="n">nat</span><span class="o">)</span> <span class="c1">-- α1 , β1 ,</span>
+  <span class="o">:=</span>
+  <span class="bp">∃</span> <span class="n">c</span> <span class="bp">&lt;</span> <span class="n">m</span><span class="bp">.</span><span class="n">M</span><span class="o">,</span>
+  <span class="c1">-- α1 = u m^2 + c , β1 = v</span>
+  <span class="c1">-- α1 = u , β1 = v m^2 + c</span>
+  <span class="o">(</span><span class="n">toState</span><span class="bp">.</span><span class="n">fst</span> <span class="bp">=</span> <span class="o">(</span><span class="n">fromState</span><span class="bp">.</span><span class="n">fst</span> <span class="bp">/</span> <span class="n">m</span><span class="bp">.</span><span class="n">M</span><span class="o">)</span> <span class="bp">*</span> <span class="n">m</span><span class="bp">.</span><span class="n">M</span> <span class="bp">*</span> <span class="n">m</span><span class="bp">.</span><span class="n">M</span> <span class="bp">+</span> <span class="n">c</span> <span class="bp">∧</span> <span class="n">toState</span><span class="bp">.</span><span class="n">snd</span> <span class="bp">=</span> <span class="n">fromState</span><span class="bp">.</span><span class="n">snd</span> <span class="bp">/</span> <span class="n">m</span><span class="bp">.</span><span class="n">M</span><span class="o">)</span>
+  <span class="bp">∨</span>
+  <span class="o">(</span><span class="n">toState</span><span class="bp">.</span><span class="n">fst</span> <span class="bp">=</span> <span class="n">fromState</span><span class="bp">.</span><span class="n">fst</span> <span class="bp">/</span> <span class="n">m</span><span class="bp">.</span><span class="n">M</span> <span class="bp">∧</span> <span class="n">toState</span><span class="bp">.</span><span class="n">snd</span> <span class="bp">=</span> <span class="o">(</span><span class="n">fromState</span><span class="bp">.</span><span class="n">snd</span> <span class="bp">/</span> <span class="n">m</span><span class="bp">.</span><span class="n">M</span><span class="o">)</span> <span class="bp">*</span> <span class="n">m</span><span class="bp">.</span><span class="n">M</span> <span class="bp">*</span> <span class="n">m</span><span class="bp">.</span><span class="n">M</span> <span class="bp">+</span> <span class="n">c</span><span class="o">)</span>
+
+<span class="n">def</span> <span class="n">computes</span>
+  <span class="o">(</span><span class="n">m</span> <span class="o">:</span> <span class="n">modular_machine</span><span class="o">)</span>
+  <span class="o">(</span><span class="n">fromState</span> <span class="o">:</span> <span class="n">nat</span> <span class="bp">×</span> <span class="n">nat</span><span class="o">)</span>
+  <span class="o">(</span><span class="n">toState</span> <span class="o">:</span> <span class="n">nat</span> <span class="bp">×</span> <span class="n">nat</span><span class="o">)</span>
+  <span class="o">:=</span>
+  <span class="n">fromState</span> <span class="bp">=</span> <span class="n">toState</span> <span class="bp">∨</span> <span class="o">(</span><span class="bp">∃</span> <span class="n">c</span><span class="o">,</span> <span class="o">(</span><span class="n">reduces</span> <span class="n">m</span> <span class="n">fromState</span> <span class="n">c</span> <span class="bp">∧</span> <span class="n">computes</span> <span class="n">m</span> <span class="n">c</span> <span class="n">toState</span><span class="o">)</span>
+</code></pre></div>
+
+
+
+<a name="196807121"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113489-new%20members/topic/Recursive%20function/near/196807121" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Patrick Stevens <a href="https://leanprover-community.github.io/archive/stream/113489-new-members/topic/Recursive.20function.html#196807121">(May 07 2020 at 17:53)</a>:</h4>
+<p>(by the way, this is in aid of supplying an alternative Turing-complete form of computation which is fundamental to the proof I know of the unsolvability of the word problem in groups, see <a href="https://www.patrickstevens.co.uk/misc/ModularMachines/EmbedMMIntoTuringMachine.pdf" title="https://www.patrickstevens.co.uk/misc/ModularMachines/EmbedMMIntoTuringMachine.pdf">https://www.patrickstevens.co.uk/misc/ModularMachines/EmbedMMIntoTuringMachine.pdf</a> if interested)</p>
+
+
+
+<a name="196807791"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113489-new%20members/topic/Recursive%20function/near/196807791" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Reid Barton <a href="https://leanprover-community.github.io/archive/stream/113489-new-members/topic/Recursive.20function.html#196807791">(May 07 2020 at 17:58)</a>:</h4>
+<p>The usual way to construct this is as an inductive proposition. In fact it already exists as <a href="https://leanprover-community.github.io/mathlib_docs/logic/relation.html#relation.refl_trans_gen" title="https://leanprover-community.github.io/mathlib_docs/logic/relation.html#relation.refl_trans_gen">https://leanprover-community.github.io/mathlib_docs/logic/relation.html#relation.refl_trans_gen</a></p>
+
+
+
+<a name="196807850"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113489-new%20members/topic/Recursive%20function/near/196807850" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Reid Barton <a href="https://leanprover-community.github.io/archive/stream/113489-new-members/topic/Recursive.20function.html#196807850">(May 07 2020 at 17:58)</a>:</h4>
+<p>(and I see that <code>computability.turing_machine</code> uses it, for example)</p>
+
+
+
+<a name="196808141"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113489-new%20members/topic/Recursive%20function/near/196808141" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Reid Barton <a href="https://leanprover-community.github.io/archive/stream/113489-new-members/topic/Recursive.20function.html#196808141">(May 07 2020 at 18:00)</a>:</h4>
+<p>Your "definition" is not really a definition at all as it stands--if we treat it as an equation, then the constant "true" relation also satisfies it. You need to say that <code>computes</code> is the smallest relation with this property, and that's what an inductive proposition is.</p>
+
+
+
+{% endraw %}
+
+<hr><p>Last updated: May 07 2020 at 18:06 UTC</p>

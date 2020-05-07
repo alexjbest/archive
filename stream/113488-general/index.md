@@ -9,7 +9,7 @@ permalink: /stream/113488-general/index.html
 
 ### Topics:
 
-* [widget](topic/widget.html) (46 messages, latest: May 07 2020 at 16:30)
+* [widget](topic/widget.html) (47 messages, latest: May 07 2020 at 18:02)
 * [Invitation to join the Codewars Lean community, Round 2](topic/Invitation.20to.20join.20the.20Codewars.20Lean.20community.2C.20Round.202.html) (299 messages, latest: May 07 2020 at 15:24)
 * [pretty printer in to_string](topic/pretty.20printer.20in.20to_string.html) (5 messages, latest: May 07 2020 at 14:05)
 * [to_expr mystery](topic/to_expr.20mystery.html) (16 messages, latest: May 07 2020 at 12:09)
@@ -2777,4 +2777,4 @@ permalink: /stream/113488-general/index.html
 * [test](topic/test.html) (4 messages, latest: Feb 26 2018 at 16:22)
 * [welcome](topic/welcome.html) (1 message, latest: Feb 26 2018 at 16:02)
 
-<hr><p>Last updated: May 07 2020 at 17:10 UTC</p>
+<hr><p>Last updated: May 07 2020 at 18:06 UTC</p>

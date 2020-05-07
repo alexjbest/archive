@@ -9,6 +9,9 @@ permalink: /stream/113489-new-members/index.html
 
 ### Topics:
 
+* [Recursive function](topic/Recursive.20function.html) (5 messages, latest: May 07 2020 at 18:00)
+* [how is log defined in lean?](topic/how.20is.20log.20defined.20in.20lean.3F.html) (17 messages, latest: May 07 2020 at 17:58)
+* [fun with pfun and dite](topic/fun.20with.20pfun.20and.20dite.html) (34 messages, latest: May 07 2020 at 17:23)
 * [Zulipchat search question](topic/Zulipchat.20search.20question.html) (4 messages, latest: May 07 2020 at 17:07)
 * [Heather Macbeth (introduction)](topic/Heather.20Macbeth.20(introduction).html) (3 messages, latest: May 07 2020 at 17:00)
 * [noncomputable](topic/noncomputable.html) (46 messages, latest: May 07 2020 at 12:53)
@@ -16,7 +19,6 @@ permalink: /stream/113489-new-members/index.html
 * [Confused with double "exists"](topic/Confused.20with.20double.20.22exists.22.html) (5 messages, latest: May 07 2020 at 08:00)
 * [Product of continuous functions](topic/Product.20of.20continuous.20functions.html) (16 messages, latest: May 07 2020 at 05:57)
 * [iterate over a multiset/finset](topic/iterate.20over.20a.20multiset.2Ffinset.html) (43 messages, latest: May 07 2020 at 03:30)
-* [fun with pfun and dite](topic/fun.20with.20pfun.20and.20dite.html) (33 messages, latest: May 07 2020 at 02:43)
 * [Importing Packages](topic/Importing.20Packages.html) (5 messages, latest: May 07 2020 at 02:25)
 * [polynomial ring over a field](topic/polynomial.20ring.20over.20a.20field.html) (6 messages, latest: May 07 2020 at 00:08)
 * [noob question(s)](topic/noob.20question(s).html) (5454 messages, latest: May 06 2020 at 23:25)
@@ -1023,4 +1025,4 @@ permalink: /stream/113489-new-members/index.html
 * [Andrew Ashworth](topic/Andrew.20Ashworth.html) (15 messages, latest: Feb 26 2018 at 16:21)
 * [onboarding](topic/onboarding.html) (1 message, latest: Feb 26 2018 at 16:02)
 
-<hr><p>Last updated: May 07 2020 at 17:10 UTC</p>
+<hr><p>Last updated: May 07 2020 at 18:06 UTC</p>

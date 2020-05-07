@@ -203,6 +203,17 @@ permalink: /stream/116395-maths/topic/Equivalence.20of.20algebras.html
 
 
 
+<a name="196804796"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/116395-maths/topic/Equivalence%20of%20algebras/near/196804796" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Yury G. Kudryashov <a href="https://leanprover-community.github.io/archive/stream/116395-maths/topic/Equivalence.20of.20algebras.html#196804796">(May 07 2020 at 17:35)</a>:</h4>
+<p>We definitely need a tactic to import lemmas from a substructure while replacing <code>coe_fn</code> instance. I often find out that this or that structure extending <code>equiv</code> lacks a lemma like <code>apply_symm_apply</code>. In the meantime, <span class="user-mention" data-user-id="240862">@Oliver Nash</span>  could you please add (some of) the following lemmas to your PR:</p>
+<ul>
+<li><code>map_add</code>, <code>map_zero</code>, <code>map_mul</code>, <code>map_one</code>, <code>map_neg</code>, <code>map_sub</code>, <code>commutes</code>;</li>
+<li><code>apply_symm_apply</code>, <code>symm_apply_apply</code>, <code>injective</code>, <code>bijective</code>, <code>surjective</code>;</li>
+<li>coercion to <code>alg_hom</code> with a <code>norm_cast</code> lemma?</li>
+</ul>
+
+
+
 {% endraw %}
 
-<hr><p>Last updated: May 07 2020 at 17:10 UTC</p>
+<hr><p>Last updated: May 07 2020 at 18:06 UTC</p>
