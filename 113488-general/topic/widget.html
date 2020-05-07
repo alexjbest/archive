@@ -346,6 +346,70 @@ Also massive thanks to <span class="user-mention" data-user-id="123965">@Bryan G
 
 
 
+<a name="196794342"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113488-general/topic/widget/near/196794342" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Edward Ayers <a href="https://leanprover-community.github.io/archive/stream/113488-general/topic/widget.html#196794342">(May 07 2020 at 16:14)</a>:</h4>
+<p>It would make things easier</p>
+
+
+
+<a name="196795998"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113488-general/topic/widget/near/196795998" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Edward Ayers <a href="https://leanprover-community.github.io/archive/stream/113488-general/topic/widget.html#196795998">(May 07 2020 at 16:27)</a>:</h4>
+<p>Ok I fixed the pp bug, I'll update the site when the emscripten build finishes</p>
+
+
+
+<a name="196796360"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113488-general/topic/widget/near/196796360" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Gabriel Ebner <a href="https://leanprover-community.github.io/archive/stream/113488-general/topic/widget.html#196796360">(May 07 2020 at 16:30)</a>:</h4>
+<p>While I still think we should disable the universes check for <code>meta inductive</code>, here is a workaround:</p>
+<div class="codehilite"><pre><span></span><code><span class="n">universes</span> <span class="n">u</span> <span class="n">v</span>
+
+<span class="n">def</span> <span class="n">attr&#39;</span> <span class="o">(</span><span class="n">html</span> <span class="o">:</span> <span class="kt">Type</span> <span class="bp">→</span> <span class="kt">Type</span><span class="o">)</span> <span class="o">:</span> <span class="kt">Type</span> <span class="bp">→</span> <span class="kt">Type</span> <span class="o">:=</span> <span class="n">id</span> <span class="c1">-- fill in</span>
+
+<span class="kn">structure</span> <span class="n">element&#39;</span> <span class="o">(</span><span class="n">html</span> <span class="o">:</span> <span class="kt">Type</span> <span class="bp">→</span> <span class="kt">Type</span><span class="o">)</span> <span class="o">(</span><span class="n">α</span> <span class="o">:</span> <span class="kt">Type</span><span class="o">)</span> <span class="o">:</span> <span class="kt">Type</span> <span class="o">:=</span>
+<span class="o">(</span><span class="n">tag</span> <span class="o">:</span> <span class="n">string</span><span class="o">)</span>
+<span class="o">(</span><span class="n">attributes</span> <span class="o">:</span> <span class="n">list</span> <span class="o">(</span><span class="n">attr&#39;</span> <span class="n">html</span> <span class="n">α</span><span class="o">))</span>
+<span class="o">(</span><span class="n">children</span> <span class="o">:</span> <span class="n">list</span> <span class="o">(</span><span class="n">html</span> <span class="n">α</span><span class="o">))</span>
+
+<span class="kn">structure</span> <span class="n">component&#39;</span> <span class="o">(</span><span class="n">html</span> <span class="o">:</span> <span class="kt">Type</span> <span class="bp">→</span> <span class="kt">Type</span><span class="o">)</span> <span class="o">(</span><span class="n">Props</span> <span class="n">Action</span> <span class="o">:</span> <span class="kt">Type</span><span class="o">)</span> <span class="o">:=</span>
+<span class="o">(</span><span class="n">InnerAction</span> <span class="o">:</span> <span class="kt">Type</span><span class="o">)</span>
+<span class="o">(</span><span class="n">State</span> <span class="o">:</span> <span class="kt">Type</span><span class="o">)</span>
+<span class="o">(</span><span class="n">init</span> <span class="o">:</span> <span class="n">Props</span> <span class="bp">→</span> <span class="n">option</span> <span class="n">State</span> <span class="bp">→</span> <span class="n">State</span><span class="o">)</span>
+<span class="o">(</span><span class="n">update</span> <span class="o">:</span> <span class="n">Props</span> <span class="bp">→</span> <span class="n">State</span> <span class="bp">→</span> <span class="n">InnerAction</span> <span class="bp">→</span> <span class="n">State</span> <span class="bp">×</span> <span class="n">option</span> <span class="n">Action</span><span class="o">)</span>
+<span class="o">(</span><span class="n">view</span> <span class="o">:</span> <span class="n">Props</span> <span class="bp">→</span> <span class="n">State</span> <span class="bp">→</span> <span class="n">html</span> <span class="n">InnerAction</span><span class="o">)</span>
+
+<span class="kn">section</span> <span class="n">uchange</span>
+
+<span class="c">/-</span><span class="cm">- Like `unchecked_cast`, but across universes. -/</span>
+<span class="bp">@</span><span class="o">[</span><span class="kn">inline</span><span class="o">,</span> <span class="kn">irreducible</span><span class="o">]</span>
+<span class="n">meta</span> <span class="n">def</span> <span class="n">unchecked_cast&#39;</span> <span class="o">{</span><span class="n">α</span> <span class="o">:</span> <span class="kt">Type</span> <span class="n">u</span><span class="o">}</span> <span class="o">{</span><span class="n">β</span> <span class="o">:</span> <span class="kt">Type</span> <span class="n">v</span><span class="o">}</span> <span class="o">:</span> <span class="n">α</span> <span class="bp">→</span> <span class="n">β</span> <span class="o">:=</span>
+<span class="o">(</span><span class="n">cast</span> <span class="n">undefined</span> <span class="o">(</span><span class="bp">λ</span> <span class="bp">_</span> <span class="n">a</span><span class="o">,</span> <span class="n">a</span> <span class="o">:</span> <span class="n">β</span> <span class="bp">→</span> <span class="n">α</span> <span class="bp">→</span> <span class="n">α</span><span class="o">)</span> <span class="o">:</span> <span class="n">β</span> <span class="bp">→</span> <span class="n">α</span> <span class="bp">→</span> <span class="n">β</span><span class="o">)</span> <span class="o">(</span><span class="n">cast</span> <span class="n">undefined</span> <span class="n">punit</span><span class="bp">.</span><span class="n">star</span><span class="o">)</span>
+
+<span class="n">meta</span> <span class="n">def</span> <span class="n">uchange</span> <span class="o">(</span><span class="n">α</span> <span class="o">:</span> <span class="kt">Type</span> <span class="n">v</span><span class="o">)</span> <span class="o">:</span> <span class="kt">Type</span> <span class="n">u</span> <span class="o">:=</span>
+<span class="n">unchecked_cast&#39;</span> <span class="n">α</span>
+
+<span class="n">meta</span> <span class="n">def</span> <span class="n">uchange</span><span class="bp">.</span><span class="n">down</span> <span class="o">{</span><span class="n">α</span><span class="o">}</span> <span class="o">(</span><span class="n">a</span> <span class="o">:</span> <span class="n">α</span><span class="o">)</span> <span class="o">:</span> <span class="n">uchange</span> <span class="n">α</span> <span class="o">:=</span>
+<span class="n">unchecked_cast&#39;</span> <span class="n">a</span>
+
+<span class="n">meta</span> <span class="n">def</span> <span class="n">uchange</span><span class="bp">.</span><span class="n">up</span> <span class="o">{</span><span class="n">α</span><span class="o">}</span> <span class="o">(</span><span class="n">a</span> <span class="o">:</span> <span class="n">uchange</span> <span class="n">α</span><span class="o">)</span> <span class="o">:</span> <span class="n">α</span> <span class="o">:=</span>
+<span class="n">unchecked_cast&#39;</span> <span class="n">a</span>
+
+<span class="kn">end</span> <span class="n">uchange</span>
+
+<span class="n">meta</span> <span class="kn">inductive</span> <span class="n">html&#39;</span> <span class="o">(</span><span class="n">html</span> <span class="o">:</span> <span class="kt">Type</span> <span class="bp">→</span> <span class="kt">Type</span><span class="o">)</span> <span class="o">(</span><span class="n">Action</span> <span class="o">:</span> <span class="kt">Type</span><span class="o">)</span> <span class="o">:</span> <span class="kt">Type</span>
+<span class="bp">|</span> <span class="n">of_element</span> <span class="o">:</span> <span class="n">element&#39;</span> <span class="n">html</span> <span class="n">Action</span> <span class="bp">→</span> <span class="n">html&#39;</span>
+<span class="bp">|</span> <span class="n">of_string</span> <span class="o">:</span> <span class="n">string</span> <span class="bp">→</span> <span class="n">html&#39;</span>
+<span class="bp">|</span> <span class="n">of_component</span> <span class="o">:</span> <span class="n">uchange</span><span class="bp">.</span><span class="o">{</span><span class="mi">0</span><span class="o">}</span> <span class="o">(</span><span class="err">Σ</span> <span class="n">Props</span> <span class="o">(</span><span class="n">p</span> <span class="o">:</span> <span class="n">Props</span><span class="o">),</span> <span class="n">component&#39;</span> <span class="n">html</span> <span class="n">Props</span> <span class="n">Action</span><span class="o">)</span> <span class="bp">→</span> <span class="n">html&#39;</span>
+
+<span class="n">meta</span> <span class="n">def</span> <span class="n">html</span> <span class="o">:=</span> <span class="n">html&#39;</span> <span class="n">html</span>
+<span class="n">meta</span> <span class="n">def</span> <span class="n">component</span> <span class="o">:=</span> <span class="n">component&#39;</span> <span class="n">html</span>
+<span class="n">meta</span> <span class="n">def</span> <span class="n">element</span> <span class="o">:=</span> <span class="n">element&#39;</span> <span class="n">html</span>
+<span class="n">meta</span> <span class="n">def</span> <span class="n">attr</span> <span class="o">:=</span> <span class="n">attr&#39;</span> <span class="n">html</span>
+
+<span class="n">meta</span> <span class="kn">example</span> <span class="o">:</span> <span class="n">html</span> <span class="n">unit</span> <span class="o">:=</span> <span class="n">html&#39;</span><span class="bp">.</span><span class="n">of_component</span> <span class="o">(</span><span class="n">uchange</span><span class="bp">.</span><span class="n">down</span> <span class="bp">⟨</span><span class="n">unit</span><span class="o">,</span> <span class="o">(),</span> <span class="bp">_</span><span class="o">,</span> <span class="bp">_</span><span class="o">,</span> <span class="bp">_</span><span class="o">,</span> <span class="bp">_</span><span class="o">,</span> <span class="bp">_⟩</span><span class="o">)</span>
+</code></pre></div>
+
+
+
 {% endraw %}
 
-<hr><p>Last updated: May 07 2020 at 16:10 UTC</p>
+<hr><p>Last updated: May 07 2020 at 17:10 UTC</p>

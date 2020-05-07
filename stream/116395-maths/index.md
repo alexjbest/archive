@@ -9,6 +9,7 @@ permalink: /stream/116395-maths/index.html
 
 ### Topics:
 
+* [Number theory over function fields](topic/Number.20theory.20over.20function.20fields.html) (5 messages, latest: May 07 2020 at 17:01)
 * [Continuity of pointwise tensor product](topic/Continuity.20of.20pointwise.20tensor.20product.html) (19 messages, latest: May 07 2020 at 16:04)
 * [Equivalence of algebras](topic/Equivalence.20of.20algebras.html) (31 messages, latest: May 07 2020 at 13:32)
 * [Sqrt of 2 is irrational](topic/Sqrt.20of.202.20is.20irrational.html) (9 messages, latest: May 05 2020 at 12:09)
@@ -891,4 +892,4 @@ permalink: /stream/116395-maths/index.html
 * [free group](topic/free.20group.html) (92 messages, latest: Apr 02 2018 at 05:00)
 * [Easy topological space question](topic/Easy.20topological.20space.20question.html) (18 messages, latest: Apr 02 2018 at 01:23)
 
-<hr><p>Last updated: May 07 2020 at 16:10 UTC</p>
+<hr><p>Last updated: May 07 2020 at 17:10 UTC</p>

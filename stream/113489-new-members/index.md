@@ -9,6 +9,8 @@ permalink: /stream/113489-new-members/index.html
 
 ### Topics:
 
+* [Zulipchat search question](topic/Zulipchat.20search.20question.html) (4 messages, latest: May 07 2020 at 17:07)
+* [Heather Macbeth (introduction)](topic/Heather.20Macbeth.20(introduction).html) (3 messages, latest: May 07 2020 at 17:00)
 * [noncomputable](topic/noncomputable.html) (46 messages, latest: May 07 2020 at 12:53)
 * [hitchhiker's guide](topic/hitchhiker's.20guide.html) (8 messages, latest: May 07 2020 at 09:28)
 * [Confused with double "exists"](topic/Confused.20with.20double.20.22exists.22.html) (5 messages, latest: May 07 2020 at 08:00)
@@ -1021,4 +1023,4 @@ permalink: /stream/113489-new-members/index.html
 * [Andrew Ashworth](topic/Andrew.20Ashworth.html) (15 messages, latest: Feb 26 2018 at 16:21)
 * [onboarding](topic/onboarding.html) (1 message, latest: Feb 26 2018 at 16:02)
 
-<hr><p>Last updated: May 07 2020 at 16:10 UTC</p>
+<hr><p>Last updated: May 07 2020 at 17:10 UTC</p>
