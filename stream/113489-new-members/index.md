@@ -9,8 +9,8 @@ permalink: /stream/113489-new-members/index.html
 
 ### Topics:
 
-* [Recursive function](topic/Recursive.20function.html) (11 messages, latest: May 07 2020 at 18:40)
-* [how is log defined in lean?](topic/how.20is.20log.20defined.20in.20lean.3F.html) (17 messages, latest: May 07 2020 at 17:58)
+* [Recursive function](topic/Recursive.20function.html) (12 messages, latest: May 07 2020 at 19:37)
+* [how is log defined in lean?](topic/how.20is.20log.20defined.20in.20lean.3F.html) (20 messages, latest: May 07 2020 at 19:21)
 * [fun with pfun and dite](topic/fun.20with.20pfun.20and.20dite.html) (34 messages, latest: May 07 2020 at 17:23)
 * [Zulipchat search question](topic/Zulipchat.20search.20question.html) (4 messages, latest: May 07 2020 at 17:07)
 * [Heather Macbeth (introduction)](topic/Heather.20Macbeth.20(introduction).html) (3 messages, latest: May 07 2020 at 17:00)
@@ -1025,4 +1025,4 @@ permalink: /stream/113489-new-members/index.html
 * [Andrew Ashworth](topic/Andrew.20Ashworth.html) (15 messages, latest: Feb 26 2018 at 16:21)
 * [onboarding](topic/onboarding.html) (1 message, latest: Feb 26 2018 at 16:02)
 
-<hr><p>Last updated: May 07 2020 at 19:08 UTC</p>
+<hr><p>Last updated: May 07 2020 at 20:06 UTC</p>

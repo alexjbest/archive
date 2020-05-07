@@ -9,8 +9,9 @@ permalink: /stream/116395-maths/index.html
 
 ### Topics:
 
-* [with_bot](topic/with_bot.html) (5 messages, latest: May 07 2020 at 19:06)
-* [from le to ge by duality?](topic/from.20le.20to.20ge.20by.20duality.3F.html) (16 messages, latest: May 07 2020 at 18:24)
+* [with_bot](topic/with_bot.html) (15 messages, latest: May 07 2020 at 20:06)
+* [witt vectors](topic/witt.20vectors.html) (304 messages, latest: May 07 2020 at 19:49)
+* [from le to ge by duality?](topic/from.20le.20to.20ge.20by.20duality.3F.html) (18 messages, latest: May 07 2020 at 19:43)
 * [Equivalence of algebras](topic/Equivalence.20of.20algebras.html) (32 messages, latest: May 07 2020 at 17:35)
 * [Number theory over function fields](topic/Number.20theory.20over.20function.20fields.html) (7 messages, latest: May 07 2020 at 17:25)
 * [Continuity of pointwise tensor product](topic/Continuity.20of.20pointwise.20tensor.20product.html) (19 messages, latest: May 07 2020 at 16:04)
@@ -18,7 +19,6 @@ permalink: /stream/116395-maths/index.html
 * [Define bundled homs using `calc`](topic/Define.20bundled.20homs.20using.20.60calc.60.html) (9 messages, latest: May 05 2020 at 11:30)
 * [lie groups](topic/lie.20groups.html) (21 messages, latest: May 04 2020 at 17:01)
 * [mathy may 4th](topic/mathy.20may.204th.html) (1 message, latest: May 04 2020 at 16:03)
-* [witt vectors](topic/witt.20vectors.html) (299 messages, latest: May 04 2020 at 06:33)
 * [sober spaces](topic/sober.20spaces.html) (10 messages, latest: May 04 2020 at 04:36)
 * [Type vs Set](topic/Type.20vs.20Set.html) (6 messages, latest: May 03 2020 at 09:14)
 * [Analytic functions](topic/Analytic.20functions.html) (16 messages, latest: May 03 2020 at 08:36)
@@ -894,4 +894,4 @@ permalink: /stream/116395-maths/index.html
 * [free group](topic/free.20group.html) (92 messages, latest: Apr 02 2018 at 05:00)
 * [Easy topological space question](topic/Easy.20topological.20space.20question.html) (18 messages, latest: Apr 02 2018 at 01:23)
 
-<hr><p>Last updated: May 07 2020 at 19:08 UTC</p>
+<hr><p>Last updated: May 07 2020 at 20:06 UTC</p>

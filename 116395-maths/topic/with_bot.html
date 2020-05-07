@@ -55,6 +55,88 @@ But i don't understand who to deal in lean ?   Is there is a file where this ari
 
 
 
+<a name="196818498"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/116395-maths/topic/with_bot/near/196818498" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> orlando <a href="https://leanprover-community.github.io/archive/stream/116395-maths/topic/with_bot.html#196818498">(May 07 2020 at 19:20)</a>:</h4>
+<p>Yep i can cases ... but but but <span aria-label="sweat smile" class="emoji emoji-1f605" role="img" title="sweat smile">:sweat_smile:</span> </p>
+<div class="codehilite"><pre><span></span><code><span class="kn">example</span>  <span class="o">(</span><span class="n">a</span> <span class="n">b</span> <span class="o">:</span> <span class="n">with_bot</span> <span class="bp">ℕ</span>  <span class="o">)</span> <span class="o">:</span> <span class="n">a</span> <span class="bp">≤</span> <span class="n">b</span> <span class="bp">→</span> <span class="n">a</span><span class="bp">+</span><span class="mi">1</span> <span class="bp">≤</span> <span class="n">b</span><span class="bp">+</span><span class="mi">1</span> <span class="o">:=</span> <span class="k">begin</span>
+    <span class="n">rcases</span>  <span class="n">b</span><span class="o">,</span> <span class="n">intros</span><span class="o">,</span> <span class="n">rcases</span> <span class="n">a</span><span class="o">,</span> <span class="n">exact</span> <span class="n">le_refl</span> <span class="o">(</span><span class="n">none</span> <span class="bp">+</span><span class="mi">1</span><span class="o">),</span>
+     <span class="n">rw</span> <span class="n">none_eq_bot</span>  <span class="n">at</span> <span class="bp">*</span><span class="o">,</span> <span class="n">rw</span> <span class="n">some_eq_coe</span> <span class="n">at</span> <span class="bp">*</span><span class="o">,</span><span class="n">rw</span>  <span class="n">le_bot_iff</span> <span class="n">at</span> <span class="n">a_1</span><span class="o">,</span>
+     <span class="n">rw</span> <span class="n">a_1</span><span class="o">,</span> <span class="n">refine</span> <span class="n">le_refl</span> <span class="bp">_</span><span class="o">,</span>
+     <span class="n">rcases</span> <span class="n">a</span><span class="o">,</span> <span class="n">rw</span> <span class="n">none_eq_bot</span>  <span class="n">at</span> <span class="bp">*</span><span class="o">,</span> <span class="n">rw</span> <span class="n">some_eq_coe</span> <span class="n">at</span> <span class="bp">*</span><span class="o">,</span>
+     <span class="n">intros</span><span class="o">,</span> <span class="n">exact</span> <span class="n">bot_le</span><span class="o">,</span> <span class="n">rcases</span> <span class="n">a</span><span class="o">,</span> <span class="n">intros</span><span class="o">,</span>
+     <span class="n">rw</span> <span class="n">some_eq_coe</span> <span class="n">at</span> <span class="bp">*</span><span class="o">,</span> <span class="n">erw</span> <span class="n">zero_add</span><span class="o">,</span>
+   <span class="n">not</span> <span class="n">finish</span>
+</code></pre></div>
+
+
+
+<a name="196818556"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/116395-maths/topic/with_bot/near/196818556" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Johan Commelin <a href="https://leanprover-community.github.io/archive/stream/116395-maths/topic/with_bot.html#196818556">(May 07 2020 at 19:21)</a>:</h4>
+<p><span class="user-mention" data-user-id="270476">@orlando</span> Note that there is also <code>nat_degree</code>.</p>
+
+
+
+<a name="196818568"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/116395-maths/topic/with_bot/near/196818568" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Johan Commelin <a href="https://leanprover-community.github.io/archive/stream/116395-maths/topic/with_bot.html#196818568">(May 07 2020 at 19:21)</a>:</h4>
+<p>They are the same, except for the zero polynomial</p>
+
+
+
+<a name="196818965"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/116395-maths/topic/with_bot/near/196818965" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> orlando <a href="https://leanprover-community.github.io/archive/stream/116395-maths/topic/with_bot.html#196818965">(May 07 2020 at 19:24)</a>:</h4>
+<p>Yep Johan, but a  try to use   the theorem   : in    <span class="tex-error">$$ \C $$</span> all polynomial of  <code>0 &lt; degree </code> have roots ... and i have   to deal i little with <code> degree</code>  <span aria-label="confused" class="emoji emoji-1f615" role="img" title="confused">:confused:</span></p>
+
+
+
+<a name="196821297"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/116395-maths/topic/with_bot/near/196821297" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> orlando <a href="https://leanprover-community.github.io/archive/stream/116395-maths/topic/with_bot.html#196821297">(May 07 2020 at 19:44)</a>:</h4>
+<p>I little better </p>
+<div class="codehilite"><pre><span></span><code><span class="kn">example</span>  <span class="o">(</span><span class="n">a</span> <span class="n">b</span> <span class="o">:</span> <span class="n">with_bot</span> <span class="bp">ℕ</span>  <span class="o">)</span> <span class="o">:</span> <span class="n">a</span> <span class="bp">≤</span> <span class="n">b</span> <span class="bp">→</span> <span class="n">a</span><span class="bp">+</span><span class="mi">1</span> <span class="bp">≤</span> <span class="n">b</span><span class="bp">+</span><span class="mi">1</span> <span class="o">:=</span> <span class="k">begin</span>
+    <span class="n">intros</span><span class="o">,</span>
+    <span class="n">rcases</span>  <span class="n">b</span><span class="o">,</span> <span class="n">intros</span><span class="o">,</span> <span class="n">rcases</span> <span class="n">a</span><span class="o">,</span>
+    <span class="n">exact</span> <span class="n">le_refl</span> <span class="o">(</span><span class="n">none</span> <span class="bp">+</span><span class="mi">1</span><span class="o">),</span>
+    <span class="n">erw</span>  <span class="n">le_bot_iff</span> <span class="n">at</span> <span class="n">a_1</span><span class="o">,</span> <span class="n">rw</span> <span class="n">a_1</span><span class="o">,</span>
+    <span class="n">refine</span> <span class="n">le_refl</span> <span class="bp">_</span><span class="o">,</span>
+    <span class="n">rcases</span> <span class="n">a</span><span class="o">,</span>
+    <span class="n">exact</span> <span class="n">bot_le</span><span class="o">,</span>
+    <span class="n">apply</span>  <span class="n">some_le_some</span><span class="bp">.</span><span class="n">mpr</span><span class="o">,</span> <span class="n">apply</span> <span class="n">add_le_add</span><span class="o">,</span>
+    <span class="n">apply</span> <span class="n">some_le_some</span><span class="bp">.</span><span class="n">mp</span> <span class="n">a_1</span><span class="o">,</span> <span class="n">exact</span> <span class="n">le_refl</span> <span class="mi">1</span><span class="o">,</span>
+<span class="kn">end</span>
+</code></pre></div>
+
+
+
+<a name="196821301"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/116395-maths/topic/with_bot/near/196821301" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Johan Commelin <a href="https://leanprover-community.github.io/archive/stream/116395-maths/topic/with_bot.html#196821301">(May 07 2020 at 19:44)</a>:</h4>
+<p><span class="user-mention" data-user-id="270476">@orlando</span> There is a lemma <code>degree_eq_nat_degree</code>, which is probably useful</p>
+
+
+
+<a name="196821384"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/116395-maths/topic/with_bot/near/196821384" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Johan Commelin <a href="https://leanprover-community.github.io/archive/stream/116395-maths/topic/with_bot.html#196821384">(May 07 2020 at 19:45)</a>:</h4>
+<p>Of course it comes with the assumption that the polynomial is not zero</p>
+
+
+
+<a name="196822402"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/116395-maths/topic/with_bot/near/196822402" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> orlando <a href="https://leanprover-community.github.io/archive/stream/116395-maths/topic/with_bot.html#196822402">(May 07 2020 at 19:54)</a>:</h4>
+<p>perhaps it help me ! I'm trying to make caracteristic polynomial of a matrix. And i  have to proof that the degree of the polynomial is equal to the dimension of the matrix.</p>
+
+
+
+<a name="196823659"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/116395-maths/topic/with_bot/near/196823659" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Reid Barton <a href="https://leanprover-community.github.io/archive/stream/116395-maths/topic/with_bot.html#196823659">(May 07 2020 at 20:05)</a>:</h4>
+<p>where is this <code>+</code> even defined?</p>
+
+
+
+<a name="196823757"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/116395-maths/topic/with_bot/near/196823757" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Kevin Buzzard <a href="https://leanprover-community.github.io/archive/stream/116395-maths/topic/with_bot.html#196823757">(May 07 2020 at 20:06)</a>:</h4>
+<div class="codehilite"><pre><span></span><code><span class="kn">instance</span> <span class="o">[</span><span class="n">add_semigroup</span> <span class="n">α</span><span class="o">]</span> <span class="o">:</span> <span class="n">add_semigroup</span> <span class="o">(</span><span class="n">with_bot</span> <span class="n">α</span><span class="o">)</span> <span class="o">:=</span> <span class="n">with_top</span><span class="bp">.</span><span class="n">add_semigroup</span>
+</code></pre></div>
+
+
+
 {% endraw %}
 
-<hr><p>Last updated: May 07 2020 at 19:08 UTC</p>
+<hr><p>Last updated: May 07 2020 at 20:06 UTC</p>
