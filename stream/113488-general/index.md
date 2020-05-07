@@ -9,9 +9,9 @@ permalink: /stream/113488-general/index.html
 
 ### Topics:
 
-* [widget](topic/widget.html) (20 messages, latest: May 07 2020 at 12:57)
+* [pretty printer in to_string](topic/pretty.20printer.20in.20to_string.html) (5 messages, latest: May 07 2020 at 14:05)
+* [widget](topic/widget.html) (23 messages, latest: May 07 2020 at 13:31)
 * [to_expr mystery](topic/to_expr.20mystery.html) (16 messages, latest: May 07 2020 at 12:09)
-* [pretty printer in to_string](topic/pretty.20printer.20in.20to_string.html) (4 messages, latest: May 07 2020 at 09:12)
 * [function namespace](topic/function.20namespace.html) (16 messages, latest: May 07 2020 at 08:22)
 * [Declarative Lean](topic/Declarative.20Lean.html) (78 messages, latest: May 07 2020 at 07:50)
 * [Is {...} a tactic?](topic/Is.20.7B.2E.2E.2E.7D.20a.20tactic.3F.html) (5 messages, latest: May 07 2020 at 03:14)
@@ -2777,4 +2777,4 @@ permalink: /stream/113488-general/index.html
 * [test](topic/test.html) (4 messages, latest: Feb 26 2018 at 16:22)
 * [welcome](topic/welcome.html) (1 message, latest: Feb 26 2018 at 16:02)
 
-<hr><p>Last updated: May 07 2020 at 13:07 UTC</p>
+<hr><p>Last updated: May 07 2020 at 14:10 UTC</p>
