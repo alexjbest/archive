@@ -108,6 +108,57 @@ Also massive thanks to <span class="user-mention" data-user-id="123965">@Bryan G
 
 
 
+<a name="196763830"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113488-general/topic/widget/near/196763830" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Jason Rute <a href="https://leanprover-community.github.io/archive/stream/113488-general/topic/widget.html#196763830">(May 07 2020 at 12:41)</a>:</h4>
+<blockquote>
+<p>This means that it is possible to make an interactive UI for tactic states (eg you could click on a goal and it would give you a list of available tactics) entirely within lean, without having to write any javascript or C++.</p>
+</blockquote>
+<p>To flesh this out a little more, how would you implement this "available tactics" example?  Would you write a  "widget" (formally a function of type <code>component tactic_state string</code>) in lean similar to your <code>counter</code> example, but which looks at the tactic_state and then figures out which tactics are applicable (sort of a like many of the current tactics which generate <code>Try it:</code>s).  Then the result of that widget tactic would be printed on the right?</p>
+
+
+
+<a name="196764012"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113488-general/topic/widget/near/196764012" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Jason Rute <a href="https://leanprover-community.github.io/archive/stream/113488-general/topic/widget.html#196764012">(May 07 2020 at 12:43)</a>:</h4>
+<p>I'm mixing up my types a little.  Can you call tactics from within your widgets (again, functions of type <code>component tactic_state string</code>)?  Maybe you would directly apply the tactic to the tactic_state?</p>
+
+
+
+<a name="196764591"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113488-general/topic/widget/near/196764591" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Edward Ayers <a href="https://leanprover-community.github.io/archive/stream/113488-general/topic/widget.html#196764591">(May 07 2020 at 12:48)</a>:</h4>
+<p>Yes that's the rough idea. Since <code>tactic a := tactic_state -&gt; interaction_monad (tactic_state x a)</code> (OWTTE) you can run tactics inside the 'view' method of a component. But you can't output a tactic_state to anywhere, instead you have to get the component to emit a string (as it does in the <code>counter</code> example) which is a command in the begin/end block.</p>
+
+
+
+<a name="196765005"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113488-general/topic/widget/near/196765005" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Edward Ayers <a href="https://leanprover-community.github.io/archive/stream/113488-general/topic/widget.html#196765005">(May 07 2020 at 12:52)</a>:</h4>
+<p>There is a helper def <code>widget.mk_tactic_widget</code> for making widgets which use tactics</p>
+
+
+
+<a name="196765030"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113488-general/topic/widget/near/196765030" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Jason Rute <a href="https://leanprover-community.github.io/archive/stream/113488-general/topic/widget.html#196765030">(May 07 2020 at 12:52)</a>:</h4>
+<p>Yes I just found that.  Makes more sense.</p>
+
+
+
+<a name="196765223"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113488-general/topic/widget/near/196765223" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Jason Rute <a href="https://leanprover-community.github.io/archive/stream/113488-general/topic/widget.html#196765223">(May 07 2020 at 12:53)</a>:</h4>
+<p>Also, one big advantage of this over just adding a tactic at the end of your block is that you can delay running this "suggest" tactic (which might be expensive) until the user clicks on the goal (or some button which says "find relevant tactics").  Is that the idea?</p>
+
+
+
+<a name="196765485"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113488-general/topic/widget/near/196765485" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Edward Ayers <a href="https://leanprover-community.github.io/archive/stream/113488-general/topic/widget.html#196765485">(May 07 2020 at 12:55)</a>:</h4>
+<p>Yes. Eg the contents of the type tooltip is not computed until you click on it</p>
+
+
+
+<a name="196765673"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113488-general/topic/widget/near/196765673" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Edward Ayers <a href="https://leanprover-community.github.io/archive/stream/113488-general/topic/widget.html#196765673">(May 07 2020 at 12:57)</a>:</h4>
+<p>currently  there is no support for having a long-running computation in a <code>task a</code> and having the UI update when it is done, so the user experience is not going to be great if there is a long-running comp that is needed before showing the UI</p>
+
+
+
 {% endraw %}
 
-<hr><p>Last updated: May 07 2020 at 12:09 UTC</p>
+<hr><p>Last updated: May 07 2020 at 13:07 UTC</p>
