@@ -9,7 +9,10 @@ permalink: /stream/113489-new-members/index.html
 
 ### Topics:
 
-* [Importing Packages](topic/Importing.20Packages.html) (3 messages, latest: May 07 2020 at 00:12)
+* [noncomputable](topic/noncomputable.html) (26 messages, latest: May 07 2020 at 02:09)
+* [iterate over a multiset/finset](topic/iterate.20over.20a.20multiset.2Ffinset.html) (1 message, latest: May 07 2020 at 02:08)
+* [Confused with double "exists"](topic/Confused.20with.20double.20.22exists.22.html) (2 messages, latest: May 07 2020 at 02:05)
+* [Importing Packages](topic/Importing.20Packages.html) (4 messages, latest: May 07 2020 at 01:39)
 * [polynomial ring over a field](topic/polynomial.20ring.20over.20a.20field.html) (6 messages, latest: May 07 2020 at 00:08)
 * [noob question(s)](topic/noob.20question(s).html) (5454 messages, latest: May 06 2020 at 23:25)
 * [hitchhiker's guide](topic/hitchhiker's.20guide.html) (5 messages, latest: May 06 2020 at 21:39)
@@ -252,7 +255,6 @@ permalink: /stream/113489-new-members/index.html
 * [VSCode](topic/VSCode.html) (8 messages, latest: Feb 17 2020 at 21:39)
 * [Standard well-founded tactics on later argument](topic/Standard.20well-founded.20tactics.20on.20later.20argument.html) (12 messages, latest: Feb 17 2020 at 21:33)
 * [Tactic Proof not Responding. Overflow?](topic/Tactic.20Proof.20not.20Responding.2E.20Overflow.3F.html) (71 messages, latest: Feb 17 2020 at 20:09)
-* [noncomputable](topic/noncomputable.html) (6 messages, latest: Feb 17 2020 at 17:16)
 * [Defining a symmetric function](topic/Defining.20a.20symmetric.20function.html) (17 messages, latest: Feb 17 2020 at 02:38)
 * [Brackets after unification symbol?](topic/Brackets.20after.20unification.20symbol.3F.html) (6 messages, latest: Feb 16 2020 at 16:23)
 * [Trouble Installing Mathlib](topic/Trouble.20Installing.20Mathlib.html) (6 messages, latest: Feb 14 2020 at 20:36)
@@ -1017,4 +1019,4 @@ permalink: /stream/113489-new-members/index.html
 * [Andrew Ashworth](topic/Andrew.20Ashworth.html) (15 messages, latest: Feb 26 2018 at 16:21)
 * [onboarding](topic/onboarding.html) (1 message, latest: Feb 26 2018 at 16:02)
 
-<hr><p>Last updated: May 07 2020 at 01:07 UTC</p>
+<hr><p>Last updated: May 07 2020 at 02:09 UTC</p>

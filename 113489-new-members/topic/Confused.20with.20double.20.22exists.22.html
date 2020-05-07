@@ -1,0 +1,39 @@
+---
+layout: archive
+title: Zulip Chat Archive
+permalink: /stream/113489-new-members/topic/Confused.20with.20double.20.22exists.22.html
+---
+
+<h2>Stream: <a href="https://leanprover-community.github.io/archive/stream/113489-new-members/index.html">new members</a></h2>
+<h3>Topic: <a href="https://leanprover-community.github.io/archive/stream/113489-new-members/topic/Confused.20with.20double.20.22exists.22.html">Confused with double "exists"</a></h3>
+
+<hr>
+
+<base href="https://leanprover.zulipchat.com/">
+
+<head><link href="/style.css" rel="stylesheet"></head>
+
+{% raw %}
+
+<a name="196719355"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113489-new%20members/topic/Confused%20with%20double%20%22exists%22/near/196719355" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Walter Moreira <a href="https://leanprover-community.github.io/archive/stream/113489-new-members/topic/Confused.20with.20double.20.22exists.22.html#196719355">(May 07 2020 at 01:50)</a>:</h4>
+<p>I'm going over the tutorial proposed by <span class="user-mention" data-user-id="110031">@Patrick Massot</span> . I'm confused about what it means the double "exists" in a judgement like</p>
+<div class="codehilite"><pre><span></span><code><span class="n">key</span> <span class="o">:</span> <span class="bp">∀</span> <span class="o">(</span><span class="n">n</span> <span class="o">:</span> <span class="bp">ℕ</span><span class="o">),</span> <span class="bp">∃</span> <span class="o">(</span><span class="n">a</span> <span class="o">:</span> <span class="n">ℝ</span><span class="o">)</span> <span class="o">(</span><span class="n">H</span> <span class="o">:</span> <span class="n">a</span> <span class="err">∈</span> <span class="n">A</span><span class="o">),</span> <span class="n">a</span> <span class="bp">&lt;</span> <span class="n">x</span> <span class="bp">+</span> <span class="mi">1</span> <span class="bp">/</span> <span class="o">(</span><span class="err">↑</span><span class="n">n</span> <span class="bp">+</span> <span class="mi">1</span><span class="o">)</span>
+</code></pre></div>
+
+
+<p>How does that notation translates into bare <code>Exists</code>?  Is it a way to ask Lean to display the unfolding of the definition?</p>
+
+
+
+<a name="196720048"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113489-new%20members/topic/Confused%20with%20double%20%22exists%22/near/196720048" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Reid Barton <a href="https://leanprover-community.github.io/archive/stream/113489-new-members/topic/Confused.20with.20double.20.22exists.22.html#196720048">(May 07 2020 at 02:05)</a>:</h4>
+<p>It means</p>
+<div class="codehilite"><pre><span></span><code><span class="n">key</span> <span class="o">:</span> <span class="bp">∀</span> <span class="o">(</span><span class="n">n</span> <span class="o">:</span> <span class="bp">ℕ</span><span class="o">),</span> <span class="bp">∃</span> <span class="o">(</span><span class="n">a</span> <span class="o">:</span> <span class="n">ℝ</span><span class="o">),</span> <span class="bp">∃</span> <span class="o">(</span><span class="n">H</span> <span class="o">:</span> <span class="n">a</span> <span class="err">∈</span> <span class="n">A</span><span class="o">),</span> <span class="n">a</span> <span class="bp">&lt;</span> <span class="n">x</span> <span class="bp">+</span> <span class="mi">1</span> <span class="bp">/</span> <span class="o">(</span><span class="err">↑</span><span class="n">n</span> <span class="bp">+</span> <span class="mi">1</span><span class="o">)</span>
+</code></pre></div>
+
+
+
+{% endraw %}
+
+<hr><p>Last updated: May 07 2020 at 02:09 UTC</p>

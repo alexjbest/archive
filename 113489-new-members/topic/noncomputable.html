@@ -60,6 +60,197 @@ Thanks again! (I must say I'm blown away by the support here...)</p>
 
 
 
+<a name="196719006"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113489-new%20members/topic/noncomputable/near/196719006" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Alexandre Rademaker <a href="https://leanprover-community.github.io/archive/stream/113489-new-members/topic/noncomputable.html#196719006">(May 07 2020 at 01:42)</a>:</h4>
+<p>Why for such simple theorems I need the <code>noncomputable</code> in front of the theorems? </p>
+<div class="codehilite"><pre><span></span><code><span class="kn">constant</span> <span class="n">Class</span> <span class="o">:</span> <span class="kt">Type</span>
+
+<span class="c1">-- SUMO immediateSubclass</span>
+<span class="kn">constant</span> <span class="n">subClass</span> <span class="o">:</span> <span class="n">Class</span> <span class="bp">→</span> <span class="n">Class</span> <span class="bp">→</span> <span class="kt">Type</span>
+
+<span class="c1">-- SUMO subclass</span>
+<span class="kn">constant</span> <span class="n">Inherits</span> <span class="o">:</span> <span class="n">Class</span> <span class="bp">→</span> <span class="n">Class</span> <span class="bp">→</span> <span class="kt">Type</span>
+
+<span class="kn">constant</span> <span class="n">inhz</span> <span class="o">(</span><span class="n">c</span> <span class="o">:</span> <span class="n">Class</span><span class="o">)</span> <span class="o">:</span> <span class="n">Inherits</span> <span class="n">c</span> <span class="n">c</span>
+<span class="kn">constant</span> <span class="n">inhs</span> <span class="o">(</span><span class="n">c1</span> <span class="n">c2</span> <span class="n">c3</span> <span class="o">:</span> <span class="n">Class</span><span class="o">)</span> <span class="o">:</span> <span class="n">subClass</span> <span class="n">c1</span> <span class="n">c2</span> <span class="bp">→</span> <span class="n">Inherits</span> <span class="n">c2</span> <span class="n">c3</span> <span class="bp">→</span> <span class="n">Inherits</span> <span class="n">c1</span> <span class="n">c3</span>
+
+<span class="kn">constants</span> <span class="n">Human</span> <span class="n">Hominid</span> <span class="n">Entity</span> <span class="o">:</span> <span class="n">Class</span>
+
+<span class="kn">constant</span> <span class="n">human_hominid</span> <span class="o">:</span> <span class="n">subClass</span> <span class="n">Human</span> <span class="n">Hominid</span>
+<span class="kn">constant</span> <span class="n">hominid_entity</span> <span class="o">:</span> <span class="n">subClass</span> <span class="n">Hominid</span> <span class="n">Entity</span>
+
+<span class="n">noncomputable</span> <span class="kn">theorem</span> <span class="n">test1</span> <span class="o">:</span> <span class="n">Inherits</span> <span class="n">Human</span> <span class="n">Hominid</span> <span class="o">:=</span>
+ <span class="n">inhs</span> <span class="n">Human</span> <span class="n">Hominid</span> <span class="n">Hominid</span> <span class="n">human_hominid</span> <span class="o">(</span><span class="n">inhz</span> <span class="n">Hominid</span><span class="o">)</span>
+
+<span class="n">noncomputable</span> <span class="kn">theorem</span> <span class="n">test2</span> <span class="o">:</span> <span class="n">Inherits</span> <span class="n">Human</span> <span class="n">Entity</span> <span class="o">:=</span>
+ <span class="n">inhs</span> <span class="n">Human</span> <span class="n">Hominid</span> <span class="n">Entity</span> <span class="n">human_hominid</span> <span class="o">(</span><span class="n">inhs</span> <span class="n">Hominid</span> <span class="n">Entity</span> <span class="n">Entity</span> <span class="n">hominid_entity</span> <span class="o">(</span><span class="n">inhz</span> <span class="n">Entity</span><span class="o">))</span>
+</code></pre></div>
+
+
+<p>Is it possible, using some tactics, to let Lean come up of the proof terms automatically? That is, to synthesize the proof term?</p>
+
+
+
+<a name="196719042"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113489-new%20members/topic/noncomputable/near/196719042" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Mario Carneiro <a href="https://leanprover-community.github.io/archive/stream/113489-new-members/topic/noncomputable.html#196719042">(May 07 2020 at 01:43)</a>:</h4>
+<p><code>noncomputable</code> has nothing to do with computation in this sense</p>
+
+
+
+<a name="196719112"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113489-new%20members/topic/noncomputable/near/196719112" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Mario Carneiro <a href="https://leanprover-community.github.io/archive/stream/113489-new-members/topic/noncomputable.html#196719112">(May 07 2020 at 01:44)</a>:</h4>
+<p>it's <code>noncomputable</code> because you can't directly execute the proofs because they use undefined constants</p>
+
+
+
+<a name="196719141"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113489-new%20members/topic/noncomputable/near/196719141" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Alexandre Rademaker <a href="https://leanprover-community.github.io/archive/stream/113489-new-members/topic/noncomputable.html#196719141">(May 07 2020 at 01:45)</a>:</h4>
+<p>undefined constants? but in my example, they are all defined.</p>
+
+
+
+<a name="196719144"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113489-new%20members/topic/noncomputable/near/196719144" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Mario Carneiro <a href="https://leanprover-community.github.io/archive/stream/113489-new-members/topic/noncomputable.html#196719144">(May 07 2020 at 01:45)</a>:</h4>
+<p><code>noncomputable theorem</code> is an indication that you have incorrectly marked a <code>def</code> as a theorem, or you have a type where you wanted a prop. Are <code>subClass</code> and <code>Inherits</code> supposed to be propositions? They are named like such</p>
+
+
+
+<a name="196719145"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113489-new%20members/topic/noncomputable/near/196719145" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Mario Carneiro <a href="https://leanprover-community.github.io/archive/stream/113489-new-members/topic/noncomputable.html#196719145">(May 07 2020 at 01:45)</a>:</h4>
+<p><code>constant</code> is the same as <code>axiom</code></p>
+
+
+
+<a name="196719208"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113489-new%20members/topic/noncomputable/near/196719208" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Alexandre Rademaker <a href="https://leanprover-community.github.io/archive/stream/113489-new-members/topic/noncomputable.html#196719208">(May 07 2020 at 01:46)</a>:</h4>
+<p>No, subClass is supposed to be a dependent type and Inherits a function.</p>
+
+
+
+<a name="196719236"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113489-new%20members/topic/noncomputable/near/196719236" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Mario Carneiro <a href="https://leanprover-community.github.io/archive/stream/113489-new-members/topic/noncomputable.html#196719236">(May 07 2020 at 01:47)</a>:</h4>
+<p>You may want to consider using <code>variable</code> or <code>parameter</code> here</p>
+
+
+
+<a name="196719239"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113489-new%20members/topic/noncomputable/near/196719239" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Alexandre Rademaker <a href="https://leanprover-community.github.io/archive/stream/113489-new-members/topic/noncomputable.html#196719239">(May 07 2020 at 01:47)</a>:</h4>
+<p>actually, I would like to be able to have a term like <code>inhs Human Hominid Hominid human_hominid (inhz Hominid)</code> produced automatically for a type <code>Inherits Human Hominid</code></p>
+
+
+
+<a name="196719286"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113489-new%20members/topic/noncomputable/near/196719286" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Mario Carneiro <a href="https://leanprover-community.github.io/archive/stream/113489-new-members/topic/noncomputable.html#196719286">(May 07 2020 at 01:48)</a>:</h4>
+<p>you can probably do that using typeclass inference</p>
+
+
+
+<a name="196719362"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113489-new%20members/topic/noncomputable/near/196719362" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Alexandre Rademaker <a href="https://leanprover-community.github.io/archive/stream/113489-new-members/topic/noncomputable.html#196719362">(May 07 2020 at 01:50)</a>:</h4>
+<p>Wow! Thank you Mario. Can you give me any reference to understand it better? Probably I have to read <a href="https://leanprover.github.io/theorem_proving_in_lean/type_classes.html" title="https://leanprover.github.io/theorem_proving_in_lean/type_classes.html">https://leanprover.github.io/theorem_proving_in_lean/type_classes.html</a>, right?</p>
+
+
+
+<a name="196719384"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113489-new%20members/topic/noncomputable/near/196719384" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Alexandre Rademaker <a href="https://leanprover-community.github.io/archive/stream/113489-new-members/topic/noncomputable.html#196719384">(May 07 2020 at 01:51)</a>:</h4>
+<p>BTW, nice, I don't need the noncomputable with variables </p>
+<div class="codehilite"><pre><span></span><code><span class="kn">constant</span> <span class="n">Class</span> <span class="o">:</span> <span class="kt">Type</span>
+
+<span class="c1">-- SUMO immediateSubclass</span>
+<span class="kn">constant</span> <span class="n">subClass</span> <span class="o">:</span> <span class="n">Class</span> <span class="bp">→</span> <span class="n">Class</span> <span class="bp">→</span> <span class="kt">Type</span>
+
+<span class="c1">-- SUMO subclass</span>
+<span class="kn">constant</span> <span class="n">Inherits</span> <span class="o">:</span> <span class="n">Class</span> <span class="bp">→</span> <span class="n">Class</span> <span class="bp">→</span> <span class="kt">Type</span>
+
+<span class="kn">variable</span> <span class="n">inhz</span> <span class="o">(</span><span class="n">c</span> <span class="o">:</span> <span class="n">Class</span><span class="o">)</span> <span class="o">:</span> <span class="n">Inherits</span> <span class="n">c</span> <span class="n">c</span>
+<span class="kn">variable</span> <span class="n">inhs</span> <span class="o">(</span><span class="n">c1</span> <span class="n">c2</span> <span class="n">c3</span> <span class="o">:</span> <span class="n">Class</span><span class="o">)</span> <span class="o">:</span> <span class="n">subClass</span> <span class="n">c1</span> <span class="n">c2</span> <span class="bp">→</span> <span class="n">Inherits</span> <span class="n">c2</span> <span class="n">c3</span> <span class="bp">→</span> <span class="n">Inherits</span> <span class="n">c1</span> <span class="n">c3</span>
+
+<span class="kn">variables</span> <span class="n">Human</span> <span class="n">Hominid</span> <span class="n">Entity</span> <span class="o">:</span> <span class="n">Class</span>
+
+<span class="kn">variable</span> <span class="n">human_hominid</span> <span class="o">:</span> <span class="n">subClass</span> <span class="n">Human</span> <span class="n">Hominid</span>
+<span class="kn">variable</span> <span class="n">hominid_entity</span> <span class="o">:</span> <span class="n">subClass</span> <span class="n">Hominid</span> <span class="n">Entity</span>
+
+<span class="kn">theorem</span> <span class="n">test1</span> <span class="o">:</span> <span class="n">Inherits</span> <span class="n">Human</span> <span class="n">Hominid</span> <span class="o">:=</span>
+ <span class="n">inhs</span> <span class="n">Human</span> <span class="n">Hominid</span> <span class="n">Hominid</span> <span class="n">human_hominid</span> <span class="o">(</span><span class="n">inhz</span> <span class="n">Hominid</span><span class="o">)</span>
+
+<span class="kn">theorem</span> <span class="n">test2</span> <span class="o">:</span> <span class="n">Inherits</span> <span class="n">Human</span> <span class="n">Entity</span> <span class="o">:=</span>
+ <span class="n">inhs</span> <span class="n">Human</span> <span class="n">Hominid</span> <span class="n">Entity</span> <span class="n">human_hominid</span> <span class="o">(</span><span class="n">inhs</span> <span class="n">Hominid</span> <span class="n">Entity</span> <span class="n">Entity</span> <span class="n">hominid_entity</span> <span class="o">(</span><span class="n">inhz</span> <span class="n">Entity</span><span class="o">))</span>
+</code></pre></div>
+
+
+
+<a name="196719490"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113489-new%20members/topic/noncomputable/near/196719490" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Mario Carneiro <a href="https://leanprover-community.github.io/archive/stream/113489-new-members/topic/noncomputable.html#196719490">(May 07 2020 at 01:53)</a>:</h4>
+<div class="codehilite"><pre><span></span><code><span class="kn">constant</span> <span class="n">Class</span> <span class="o">:</span> <span class="kt">Type</span>
+
+<span class="c1">-- SUMO immediateSubclass</span>
+<span class="bp">@</span><span class="o">[</span><span class="n">class</span><span class="o">]</span> <span class="kn">constant</span> <span class="n">subClass</span> <span class="o">:</span> <span class="n">Class</span> <span class="bp">→</span> <span class="n">Class</span> <span class="bp">→</span> <span class="kt">Type</span>
+
+<span class="c1">-- SUMO subclass</span>
+<span class="bp">@</span><span class="o">[</span><span class="n">class</span><span class="o">]</span> <span class="kn">constant</span> <span class="n">Inherits</span> <span class="o">:</span> <span class="n">Class</span> <span class="bp">→</span> <span class="n">Class</span> <span class="bp">→</span> <span class="kt">Type</span>
+
+<span class="bp">@</span><span class="o">[</span><span class="kn">instance</span><span class="o">]</span> <span class="kn">constant</span> <span class="n">inhz</span> <span class="o">(</span><span class="n">c</span> <span class="o">:</span> <span class="n">Class</span><span class="o">)</span> <span class="o">:</span> <span class="n">Inherits</span> <span class="n">c</span> <span class="n">c</span>
+<span class="bp">@</span><span class="o">[</span><span class="kn">instance</span><span class="o">]</span> <span class="kn">constant</span> <span class="n">inhs</span> <span class="o">(</span><span class="n">c1</span> <span class="n">c2</span> <span class="n">c3</span> <span class="o">:</span> <span class="n">Class</span><span class="o">)</span> <span class="o">[</span><span class="n">Inherits</span> <span class="n">c2</span> <span class="n">c3</span><span class="o">]</span> <span class="o">[</span><span class="n">subClass</span> <span class="n">c1</span> <span class="n">c2</span><span class="o">]</span> <span class="o">:</span> <span class="n">Inherits</span> <span class="n">c1</span> <span class="n">c3</span>
+
+<span class="kn">constants</span> <span class="n">Human</span> <span class="n">Hominid</span> <span class="n">Entity</span> <span class="o">:</span> <span class="n">Class</span>
+
+<span class="bp">@</span><span class="o">[</span><span class="kn">instance</span><span class="o">]</span> <span class="kn">constant</span> <span class="n">human_hominid</span> <span class="o">:</span> <span class="n">subClass</span> <span class="n">Human</span> <span class="n">Hominid</span>
+<span class="bp">@</span><span class="o">[</span><span class="kn">instance</span><span class="o">]</span> <span class="kn">constant</span> <span class="n">hominid_entity</span> <span class="o">:</span> <span class="n">subClass</span> <span class="n">Hominid</span> <span class="n">Entity</span>
+
+<span class="n">noncomputable</span> <span class="n">def</span> <span class="n">test1</span> <span class="o">:</span> <span class="n">Inherits</span> <span class="n">Human</span> <span class="n">Hominid</span> <span class="o">:=</span> <span class="k">by</span> <span class="n">apply_instance</span>
+
+<span class="n">noncomputable</span> <span class="n">def</span> <span class="n">test2</span> <span class="o">:</span> <span class="n">Inherits</span> <span class="n">Human</span> <span class="n">Entity</span> <span class="o">:=</span> <span class="k">by</span> <span class="n">apply_instance</span>
+</code></pre></div>
+
+
+
+<a name="196719663"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113489-new%20members/topic/noncomputable/near/196719663" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Alexandre Rademaker <a href="https://leanprover-community.github.io/archive/stream/113489-new-members/topic/noncomputable.html#196719663">(May 07 2020 at 01:57)</a>:</h4>
+<p>thank you. I am getting two errors </p>
+<div class="codehilite"><pre><span></span><code><span class="bp">.</span><span class="err">…</span>    <span class="mi">19</span>  <span class="mi">19</span> <span class="n">warning</span>         <span class="kn">definition</span> <span class="err">&#39;</span><span class="n">test1&#39;</span> <span class="n">was</span> <span class="n">incorrectly</span> <span class="n">marked</span> <span class="n">as</span> <span class="n">noncomputable</span> <span class="o">(</span><span class="n">lean</span><span class="bp">-</span><span class="n">checker</span><span class="o">)</span>
+<span class="bp">.</span><span class="err">…</span>    <span class="mi">19</span>  <span class="mi">27</span> <span class="n">error</span>           <span class="n">maximum</span> <span class="n">class</span><span class="bp">-</span><span class="kn">instance</span> <span class="n">resolution</span> <span class="n">depth</span> <span class="n">has</span> <span class="n">been</span> <span class="n">reached</span> <span class="o">(</span><span class="n">the</span> <span class="n">limit</span> <span class="n">can</span> <span class="n">be</span> <span class="n">increased</span> <span class="k">by</span> <span class="n">setting</span> <span class="n">option</span> <span class="err">&#39;</span><span class="n">class</span><span class="bp">.</span><span class="n">instance_max_depth&#39;</span><span class="o">)</span> <span class="o">(</span><span class="n">the</span> <span class="n">class</span><span class="bp">-</span><span class="kn">instance</span> <span class="n">resolution</span> <span class="n">trace</span> <span class="n">can</span> <span class="n">be</span> <span class="n">visualized</span> <span class="k">by</span> <span class="n">setting</span> <span class="n">option</span> <span class="err">&#39;</span><span class="n">trace</span><span class="bp">.</span><span class="n">class_instances&#39;</span><span class="o">)</span>
+ <span class="n">state</span><span class="o">:</span>
+ <span class="err">⊢</span> <span class="n">Inherits</span> <span class="n">Human</span> <span class="n">Hominid</span> <span class="o">(</span><span class="n">lean</span><span class="bp">-</span><span class="n">checker</span><span class="o">)</span>
+</code></pre></div>
+
+
+
+<a name="196720067"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113489-new%20members/topic/noncomputable/near/196720067" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Mario Carneiro <a href="https://leanprover-community.github.io/archive/stream/113489-new-members/topic/noncomputable.html#196720067">(May 07 2020 at 02:05)</a>:</h4>
+<p>You won't be able to use a variable for typeclass inference here. Instances have to be <code>def</code>s or <code>constant</code>s</p>
+
+
+
+<a name="196720121"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113489-new%20members/topic/noncomputable/near/196720121" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Mario Carneiro <a href="https://leanprover-community.github.io/archive/stream/113489-new-members/topic/noncomputable.html#196720121">(May 07 2020 at 02:06)</a>:</h4>
+<p>The error is because you missed that I swapped the arguments to <code>inhs</code></p>
+
+
+
+<a name="196720152"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113489-new%20members/topic/noncomputable/near/196720152" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Mario Carneiro <a href="https://leanprover-community.github.io/archive/stream/113489-new-members/topic/noncomputable.html#196720152">(May 07 2020 at 02:07)</a>:</h4>
+<p>I make no guarantees about the behavior of this typeclass search, and there are issues with infinite searches if it follows the wrong path</p>
+
+
+
+<a name="196720153"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113489-new%20members/topic/noncomputable/near/196720153" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Mario Carneiro <a href="https://leanprover-community.github.io/archive/stream/113489-new-members/topic/noncomputable.html#196720153">(May 07 2020 at 02:07)</a>:</h4>
+<p>but it works in a pinch</p>
+
+
+
+<a name="196720203"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113489-new%20members/topic/noncomputable/near/196720203" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Alexandre Rademaker <a href="https://leanprover-community.github.io/archive/stream/113489-new-members/topic/noncomputable.html#196720203">(May 07 2020 at 02:08)</a>:</h4>
+<p>I see. But I copied and pasted your code. So I didn't understand your point about the swapping of the arguments of inhs...</p>
+
+
+
+<a name="196720248"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113489-new%20members/topic/noncomputable/near/196720248" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Mario Carneiro <a href="https://leanprover-community.github.io/archive/stream/113489-new-members/topic/noncomputable.html#196720248">(May 07 2020 at 02:09)</a>:</h4>
+<p>Are you sure? What version of lean are you running</p>
+
+
+
 {% endraw %}
 
-<hr><p>Last updated: May 07 2020 at 01:07 UTC</p>
+<hr><p>Last updated: May 07 2020 at 02:09 UTC</p>
