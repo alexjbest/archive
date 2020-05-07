@@ -61,6 +61,24 @@ permalink: /stream/113488-general/topic/Typechecking.20expressions.20in.20an.20a
 
 
 
+<a name="196714511"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113488-general/topic/Typechecking%20expressions%20in%20an%20arbitrary%20context/near/196714511" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Jannis Limperg <a href="https://leanprover-community.github.io/archive/stream/113488-general/topic/Typechecking.20expressions.20in.20an.20arbitrary.20context.html#196714511">(May 07 2020 at 00:23)</a>:</h4>
+<p>Awesome, thanks! (And the segfault is why I'm not touching the C++.)</p>
+
+
+
+<a name="196714602"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113488-general/topic/Typechecking%20expressions%20in%20an%20arbitrary%20context/near/196714602" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Bryan Gin-ge Chen <a href="https://leanprover-community.github.io/archive/stream/113488-general/topic/Typechecking.20expressions.20in.20an.20arbitrary.20context.html#196714602">(May 07 2020 at 00:24)</a>:</h4>
+<p>Is this one of the known crashes, or a new one?</p>
+
+
+
+<a name="196716857"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113488-general/topic/Typechecking%20expressions%20in%20an%20arbitrary%20context/near/196716857" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Mario Carneiro <a href="https://leanprover-community.github.io/archive/stream/113488-general/topic/Typechecking.20expressions.20in.20an.20arbitrary.20context.html#196716857">(May 07 2020 at 01:02)</a>:</h4>
+<p>I would guess a new one. Working with expressions in unrelated local contexts in the same tactic state appears to be poorly supported, and it's also not a common thing to do from lean</p>
+
+
+
 {% endraw %}
 
-<hr><p>Last updated: May 07 2020 at 00:09 UTC</p>
+<hr><p>Last updated: May 07 2020 at 01:07 UTC</p>

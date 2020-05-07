@@ -9,7 +9,11 @@ permalink: /stream/113488-general/index.html
 
 ### Topics:
 
-* [Typechecking expressions in an arbitrary context](topic/Typechecking.20expressions.20in.20an.20arbitrary.20context.html) (5 messages, latest: May 06 2020 at 23:53)
+* [inf_le_inf_left](topic/inf_le_inf_left.html) (4 messages, latest: May 07 2020 at 01:07)
+* [Is {...} a tactic?](topic/Is.20.7B.2E.2E.2E.7D.20a.20tactic.3F.html) (3 messages, latest: May 07 2020 at 01:06)
+* [alien mathematics](topic/alien.20mathematics.html) (2 messages, latest: May 07 2020 at 01:04)
+* [Typechecking expressions in an arbitrary context](topic/Typechecking.20expressions.20in.20an.20arbitrary.20context.html) (8 messages, latest: May 07 2020 at 01:02)
+* [unfolding notation in theorem vs def/instance](topic/unfolding.20notation.20in.20theorem.20vs.20def.2Finstance.html) (28 messages, latest: May 07 2020 at 00:46)
 * [Declarative Lean](topic/Declarative.20Lean.html) (75 messages, latest: May 06 2020 at 23:44)
 * [rw: equality is not an equality](topic/rw.3A.20equality.20is.20not.20an.20equality.html) (45 messages, latest: May 06 2020 at 22:34)
 * [`subset` on `finset`](topic/.60subset.60.20on.20.60finset.60.html) (21 messages, latest: May 06 2020 at 20:38)
@@ -30,7 +34,6 @@ permalink: /stream/113488-general/index.html
 * [did finish get faster?](topic/did.20finish.20get.20faster.3F.html) (9 messages, latest: May 04 2020 at 19:05)
 * [Notices of the AMS paper](topic/Notices.20of.20the.20AMS.20paper.html) (99 messages, latest: May 04 2020 at 17:02)
 * [May the 4th](topic/May.20the.204th.html) (3 messages, latest: May 04 2020 at 16:53)
-* [alien mathematics](topic/alien.20mathematics.html) (1 message, latest: May 04 2020 at 15:04)
 * [ordered monoids](topic/ordered.20monoids.html) (110 messages, latest: May 04 2020 at 08:31)
 * [how do I step through proofs?](topic/how.20do.20I.20step.20through.20proofs.3F.html) (88 messages, latest: May 04 2020 at 03:57)
 * [Induction on list](topic/Induction.20on.20list.html) (3 messages, latest: May 04 2020 at 03:40)
@@ -2247,7 +2250,6 @@ permalink: /stream/113488-general/index.html
 * [syntax surprises](topic/syntax.20surprises.html) (31 messages, latest: Jun 19 2018 at 15:43)
 * [Hales60](topic/Hales60.html) (3 messages, latest: Jun 19 2018 at 15:00)
 * [anonymous recursive functions](topic/anonymous.20recursive.20functions.html) (8 messages, latest: Jun 17 2018 at 17:53)
-* [unfolding notation in theorem vs def/instance](topic/unfolding.20notation.20in.20theorem.20vs.20def.2Finstance.html) (24 messages, latest: Jun 16 2018 at 19:32)
 * [getting confused by 'abstract'](topic/getting.20confused.20by.20'abstract'.html) (2 messages, latest: Jun 16 2018 at 10:51)
 * [mem in binder](topic/mem.20in.20binder.html) (9 messages, latest: Jun 15 2018 at 23:02)
 * [congr with subsingleton](topic/congr.20with.20subsingleton.html) (23 messages, latest: Jun 15 2018 at 21:48)
@@ -2771,4 +2773,4 @@ permalink: /stream/113488-general/index.html
 * [test](topic/test.html) (4 messages, latest: Feb 26 2018 at 16:22)
 * [welcome](topic/welcome.html) (1 message, latest: Feb 26 2018 at 16:02)
 
-<hr><p>Last updated: May 07 2020 at 00:09 UTC</p>
+<hr><p>Last updated: May 07 2020 at 01:07 UTC</p>

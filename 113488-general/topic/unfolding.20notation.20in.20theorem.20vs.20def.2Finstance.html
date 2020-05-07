@@ -209,6 +209,70 @@ permalink: /stream/113488-general/topic/unfolding.20notation.20in.20theorem.20vs
 
 
 
+<a name="196715538"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113488-general/topic/unfolding%20notation%20in%20theorem%20vs%20def/instance/near/196715538" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Kenny Lau <a href="https://leanprover-community.github.io/archive/stream/113488-general/topic/unfolding.20notation.20in.20theorem.20vs.20def.2Finstance.html#196715538">(May 07 2020 at 00:39)</a>:</h4>
+<p>Can we solve this 2-year-old problem now by changing the C++ code?</p>
+
+
+
+<a name="196715616"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113488-general/topic/unfolding%20notation%20in%20theorem%20vs%20def/instance/near/196715616" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Kenny Lau <a href="https://leanprover-community.github.io/archive/stream/113488-general/topic/unfolding.20notation.20in.20theorem.20vs.20def.2Finstance.html#196715616">(May 07 2020 at 00:40)</a>:</h4>
+<p>recap:</p>
+<div class="codehilite"><pre><span></span><code><span class="n">universes</span> <span class="n">u</span> <span class="n">v</span>
+
+<span class="kn">instance</span> <span class="n">pi</span><span class="bp">.</span><span class="n">comm_ring_i</span> <span class="o">{</span><span class="n">I</span> <span class="o">:</span> <span class="kt">Type</span><span class="bp">*</span><span class="o">}</span> <span class="o">{</span><span class="n">f</span> <span class="o">:</span> <span class="n">I</span> <span class="bp">→</span> <span class="kt">Type</span><span class="bp">*</span><span class="o">}</span> <span class="o">[</span><span class="bp">∀</span> <span class="n">i</span><span class="o">,</span> <span class="n">semigroup</span> <span class="err">$</span> <span class="n">f</span> <span class="n">i</span><span class="o">]</span> <span class="o">:</span> <span class="n">semigroup</span> <span class="o">(</span><span class="bp">Π</span> <span class="n">i</span> <span class="o">:</span> <span class="n">I</span><span class="o">,</span> <span class="n">f</span> <span class="n">i</span><span class="o">)</span> <span class="o">:=</span>
+<span class="o">{</span> <span class="n">mul</span> <span class="o">:=</span> <span class="bp">λ</span> <span class="n">x</span> <span class="n">y</span> <span class="n">i</span><span class="o">,</span> <span class="n">x</span> <span class="n">i</span> <span class="bp">*</span> <span class="n">y</span> <span class="n">i</span><span class="o">,</span>
+  <span class="n">mul_assoc</span> <span class="o">:=</span> <span class="bp">_</span><span class="o">,</span> <span class="o">}</span>
+
+<span class="c">/-</span><span class="cm"></span>
+<span class="cm">I : Type ?,</span>
+<span class="cm">f : I → Type ?,</span>
+<span class="cm">_inst_1 : Π (i : I), semigroup (f i)</span>
+<span class="cm">⊢ ∀ (a b c : Π (i : I), f i),</span>
+<span class="cm">    (λ (x y : Π (i : I), f i) (i : I), semigroup.mul (x i) (y i))</span>
+<span class="cm">        ((λ (x y : Π (i : I), f i) (i : I), semigroup.mul (x i) (y i)) a b)</span>
+<span class="cm">        c =</span>
+<span class="cm">      (λ (x y : Π (i : I), f i) (i : I), semigroup.mul (x i) (y i)) a</span>
+<span class="cm">        ((λ (x y : Π (i : I), f i) (i : I), semigroup.mul (x i) (y i)) b c)</span>
+<span class="cm">-/</span>
+
+<span class="kn">instance</span> <span class="n">pi</span><span class="bp">.</span><span class="n">comm_ring_i_uv</span> <span class="o">{</span><span class="n">I</span> <span class="o">:</span> <span class="kt">Type</span> <span class="n">u</span><span class="o">}</span> <span class="o">{</span><span class="n">f</span> <span class="o">:</span> <span class="n">I</span> <span class="bp">→</span> <span class="kt">Type</span> <span class="n">v</span><span class="o">}</span> <span class="o">[</span><span class="bp">∀</span> <span class="n">i</span><span class="o">,</span> <span class="n">semigroup</span> <span class="err">$</span> <span class="n">f</span> <span class="n">i</span><span class="o">]</span> <span class="o">:</span> <span class="n">semigroup</span> <span class="o">(</span><span class="bp">Π</span> <span class="n">i</span> <span class="o">:</span> <span class="n">I</span><span class="o">,</span> <span class="n">f</span> <span class="n">i</span><span class="o">)</span> <span class="o">:=</span>
+<span class="o">{</span> <span class="n">mul</span> <span class="o">:=</span> <span class="bp">λ</span> <span class="n">x</span> <span class="n">y</span> <span class="n">i</span><span class="o">,</span> <span class="n">x</span> <span class="n">i</span> <span class="bp">*</span> <span class="n">y</span> <span class="n">i</span><span class="o">,</span>
+  <span class="n">mul_assoc</span> <span class="o">:=</span> <span class="bp">_</span><span class="o">,</span> <span class="o">}</span>
+
+<span class="c">/-</span><span class="cm"></span>
+<span class="cm">I : Type u,</span>
+<span class="cm">f : I → Type v,</span>
+<span class="cm">_inst_1 : Π (i : I), semigroup (f i)</span>
+<span class="cm">⊢ ∀ (a b c : Π (i : I), f i), a * b * c = a * (b * c)</span>
+<span class="cm">-/</span>
+
+<span class="kn">theorem</span> <span class="n">pi</span><span class="bp">.</span><span class="n">comm_ring_t</span> <span class="o">{</span><span class="n">I</span> <span class="o">:</span> <span class="kt">Type</span><span class="bp">*</span><span class="o">}</span> <span class="o">{</span><span class="n">f</span> <span class="o">:</span> <span class="n">I</span> <span class="bp">→</span> <span class="kt">Type</span><span class="bp">*</span><span class="o">}</span> <span class="o">[</span><span class="bp">∀</span> <span class="n">i</span><span class="o">,</span> <span class="n">semigroup</span> <span class="err">$</span> <span class="n">f</span> <span class="n">i</span><span class="o">]</span> <span class="o">:</span> <span class="n">semigroup</span> <span class="o">(</span><span class="bp">Π</span> <span class="n">i</span> <span class="o">:</span> <span class="n">I</span><span class="o">,</span> <span class="n">f</span> <span class="n">i</span><span class="o">)</span> <span class="o">:=</span>
+<span class="o">{</span> <span class="n">mul</span> <span class="o">:=</span> <span class="bp">λ</span> <span class="n">x</span> <span class="n">y</span> <span class="n">i</span><span class="o">,</span> <span class="n">x</span> <span class="n">i</span> <span class="bp">*</span> <span class="n">y</span> <span class="n">i</span><span class="o">,</span>
+  <span class="n">mul_assoc</span> <span class="o">:=</span> <span class="bp">_</span><span class="o">,</span> <span class="o">}</span>
+
+<span class="c">/-</span><span class="cm"></span>
+<span class="cm">I : Type u_1,</span>
+<span class="cm">f : I → Type u_2,</span>
+<span class="cm">_inst_1 : Π (i : I), semigroup (f i)</span>
+<span class="cm">⊢ ∀ (a b c : Π (i : I), f i), a * b * c = a * (b * c)</span>
+<span class="cm">-/</span>
+</code></pre></div>
+
+
+
+<a name="196715755"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113488-general/topic/unfolding%20notation%20in%20theorem%20vs%20def/instance/near/196715755" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Kevin Buzzard <a href="https://leanprover-community.github.io/archive/stream/113488-general/topic/unfolding.20notation.20in.20theorem.20vs.20def.2Finstance.html#196715755">(May 07 2020 at 00:43)</a>:</h4>
+<p>Open an issue in the forked Lean repo.</p>
+
+
+
+<a name="196715961"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113488-general/topic/unfolding%20notation%20in%20theorem%20vs%20def/instance/near/196715961" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Kenny Lau <a href="https://leanprover-community.github.io/archive/stream/113488-general/topic/unfolding.20notation.20in.20theorem.20vs.20def.2Finstance.html#196715961">(May 07 2020 at 00:46)</a>:</h4>
+<p><a href="https://github.com/leanprover-community/lean/issues/214" title="https://github.com/leanprover-community/lean/issues/214">https://github.com/leanprover-community/lean/issues/214</a></p>
+
+
+
 {% endraw %}
 
-<hr><p>Last updated: May 07 2020 at 00:09 UTC</p>
+<hr><p>Last updated: May 07 2020 at 01:07 UTC</p>
