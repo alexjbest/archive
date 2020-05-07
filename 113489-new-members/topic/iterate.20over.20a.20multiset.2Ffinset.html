@@ -28,6 +28,88 @@ permalink: /stream/113489-new-members/topic/iterate.20over.20a.20multiset.2Ffins
 
 
 
+<a name="196720349"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113489-new%20members/topic/iterate%20over%20a%20multiset/finset/near/196720349" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Mario Carneiro <a href="https://leanprover-community.github.io/archive/stream/113489-new-members/topic/iterate.20over.20a.20multiset.2Ffinset.html#196720349">(May 07 2020 at 02:11)</a>:</h4>
+<p>in short, you can't, at least not using <code>match</code></p>
+
+
+
+<a name="196720407"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113489-new%20members/topic/iterate%20over%20a%20multiset/finset/near/196720407" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Mario Carneiro <a href="https://leanprover-community.github.io/archive/stream/113489-new-members/topic/iterate.20over.20a.20multiset.2Ffinset.html#196720407">(May 07 2020 at 02:12)</a>:</h4>
+<p>You can write custom recursion principles, but they don't interact with <code>match</code> which is reserved for pattern matching on <code>inductive</code> types</p>
+
+
+
+<a name="196720420"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113489-new%20members/topic/iterate%20over%20a%20multiset/finset/near/196720420" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Mario Carneiro <a href="https://leanprover-community.github.io/archive/stream/113489-new-members/topic/iterate.20over.20a.20multiset.2Ffinset.html#196720420">(May 07 2020 at 02:13)</a>:</h4>
+<p>what are you trying to do?</p>
+
+
+
+<a name="196720526"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113489-new%20members/topic/iterate%20over%20a%20multiset/finset/near/196720526" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Jack J Garzella <a href="https://leanprover-community.github.io/archive/stream/113489-new-members/topic/iterate.20over.20a.20multiset.2Ffinset.html#196720526">(May 07 2020 at 02:15)</a>:</h4>
+<p>What I'm trying to do is implement an algorithm that performs a specified action for each element in a multiset (really it's underlying set)</p>
+
+
+
+<a name="196720534"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113489-new%20members/topic/iterate%20over%20a%20multiset/finset/near/196720534" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Jack J Garzella <a href="https://leanprover-community.github.io/archive/stream/113489-new-members/topic/iterate.20over.20a.20multiset.2Ffinset.html#196720534">(May 07 2020 at 02:15)</a>:</h4>
+<p>In this case, adjoining all of the roots of a polynomial to a field</p>
+
+
+
+<a name="196720604"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113489-new%20members/topic/iterate%20over%20a%20multiset/finset/near/196720604" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Jack J Garzella <a href="https://leanprover-community.github.io/archive/stream/113489-new-members/topic/iterate.20over.20a.20multiset.2Ffinset.html#196720604">(May 07 2020 at 02:16)</a>:</h4>
+<p>Given one element, I know what to do, but I don't know how to get elements out of the <code>multiset</code> I have</p>
+
+
+
+<a name="196720678"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113489-new%20members/topic/iterate%20over%20a%20multiset/finset/near/196720678" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Mario Carneiro <a href="https://leanprover-community.github.io/archive/stream/113489-new-members/topic/iterate.20over.20a.20multiset.2Ffinset.html#196720678">(May 07 2020 at 02:18)</a>:</h4>
+<p>You can use <code>multiset.fold</code>, but keep in mind that the operation you fold must be commutative</p>
+
+
+
+<a name="196722033"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113489-new%20members/topic/iterate%20over%20a%20multiset/finset/near/196722033" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Jack J Garzella <a href="https://leanprover-community.github.io/archive/stream/113489-new-members/topic/iterate.20over.20a.20multiset.2Ffinset.html#196722033">(May 07 2020 at 02:48)</a>:</h4>
+<p>Ok, but there is no way to convert a <code>finset</code> to a list containing the elements in that <code>finset</code>? (say I don't care about the order)</p>
+
+
+
+<a name="196722400"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113489-new%20members/topic/iterate%20over%20a%20multiset/finset/near/196722400" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Reid Barton <a href="https://leanprover-community.github.io/archive/stream/113489-new-members/topic/iterate.20over.20a.20multiset.2Ffinset.html#196722400">(May 07 2020 at 02:56)</a>:</h4>
+<p>Well you might not care about the order, but somebody else might care.</p>
+
+
+
+<a name="196722533"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113489-new%20members/topic/iterate%20over%20a%20multiset/finset/near/196722533" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Kenny Lau <a href="https://leanprover-community.github.io/archive/stream/113489-new-members/topic/iterate.20over.20a.20multiset.2Ffinset.html#196722533">(May 07 2020 at 02:59)</a>:</h4>
+<p>you can, but not computably (at least in general)</p>
+
+
+
+<a name="196722752"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113489-new%20members/topic/iterate%20over%20a%20multiset/finset/near/196722752" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Jack J Garzella <a href="https://leanprover-community.github.io/archive/stream/113489-new-members/topic/iterate.20over.20a.20multiset.2Ffinset.html#196722752">(May 07 2020 at 03:04)</a>:</h4>
+<p><span class="user-mention silent" data-user-id="110064">Kenny Lau</span> <a href="#narrow/stream/113489-new-members/topic/iterate.20over.20a.20multiset.2Ffinset/near/196722533" title="#narrow/stream/113489-new-members/topic/iterate.20over.20a.20multiset.2Ffinset/near/196722533">said</a>:</p>
+<blockquote>
+<p>you can, but not computably (at least in general)</p>
+</blockquote>
+<p>So, if I were to decide I'm willing to give up on computation, how would I go about it?</p>
+
+
+
+<a name="196722808"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113489-new%20members/topic/iterate%20over%20a%20multiset/finset/near/196722808" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Kenny Lau <a href="https://leanprover-community.github.io/archive/stream/113489-new-members/topic/iterate.20over.20a.20multiset.2Ffinset.html#196722808">(May 07 2020 at 03:05)</a>:</h4>
+<p>in your case, "adjoin all the roots of a polynomial to a field" does not literally mean, extract the roots of said polynomial as a multiset of some unspecified type, and then do this operation of adjoining each one of them to a field</p>
+
+
+
+<a name="196722810"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113489-new%20members/topic/iterate%20over%20a%20multiset/finset/near/196722810" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Kenny Lau <a href="https://leanprover-community.github.io/archive/stream/113489-new-members/topic/iterate.20over.20a.20multiset.2Ffinset.html#196722810">(May 07 2020 at 03:05)</a>:</h4>
+<p>firstly the roots do not exist</p>
+
+
+
 {% endraw %}
 
-<hr><p>Last updated: May 07 2020 at 02:09 UTC</p>
+<hr><p>Last updated: May 07 2020 at 03:05 UTC</p>
