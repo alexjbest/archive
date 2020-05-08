@@ -33,6 +33,34 @@ permalink: /stream/113488-general/topic/inferring.20instance.20variables.html
 
 
 
+<a name="196864702"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113488-general/topic/inferring%20instance%20variables/near/196864702" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Gabriel Ebner <a href="https://leanprover-community.github.io/archive/stream/113488-general/topic/inferring.20instance.20variables.html#196864702">(May 08 2020 at 07:17)</a>:</h4>
+<p>There are two cases:</p>
+<ol>
+<li>Type class instances: here the issue was mainly performance.  Lean used to synthesize arguments in <code>[]</code> even if they were inferable via unification.  This is fixed now.</li>
+<li>Regular definitions.  Here the "issue" is that Lean tries to synthesize arguments in <code>[]</code> eagerly.  This is typically a good idea.  But you run into problems if the inferred instance is not definitionally equal to the one you have in your goal.  I don't think this will change.  An example of this is <code>quotient.mk'</code> vs <code>quotient.mk</code>.</li>
+</ol>
+
+
+
+<a name="196864838"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113488-general/topic/inferring%20instance%20variables/near/196864838" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Johan Commelin <a href="https://leanprover-community.github.io/archive/stream/113488-general/topic/inferring.20instance.20variables.html#196864838">(May 08 2020 at 07:19)</a>:</h4>
+<p><span class="user-mention" data-user-id="110043">@Gabriel Ebner</span> Thanks for the explanation. So in general, we don't need so many <code>{_inst : ring R}</code>s anymore, right?</p>
+
+
+
+<a name="196864904"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113488-general/topic/inferring%20instance%20variables/near/196864904" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Yury G. Kudryashov <a href="https://leanprover-community.github.io/archive/stream/113488-general/topic/inferring.20instance.20variables.html#196864904">(May 08 2020 at 07:20)</a>:</h4>
+<p>I remember a recent PR adding <code>{_inst : ring R}</code>s because of (2).</p>
+
+
+
+<a name="196867344"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113488-general/topic/inferring%20instance%20variables/near/196867344" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Chris Hughes <a href="https://leanprover-community.github.io/archive/stream/113488-general/topic/inferring.20instance.20variables.html#196867344">(May 08 2020 at 07:57)</a>:</h4>
+<p>There are a few places where there is <code>fintype </code> or <code>decidable</code> are in curly brackets because of diamond problems with these classes after rewrites. Is this no longer necessary?</p>
+
+
+
 {% endraw %}
 
-<hr><p>Last updated: May 08 2020 at 07:09 UTC</p>
+<hr><p>Last updated: May 08 2020 at 08:06 UTC</p>
