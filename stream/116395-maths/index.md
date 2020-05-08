@@ -9,6 +9,7 @@ permalink: /stream/116395-maths/index.html
 
 ### Topics:
 
+* [ring localization](topic/ring.20localization.html) (10 messages, latest: May 08 2020 at 09:34)
 * [with_bot](topic/with_bot.html) (51 messages, latest: May 08 2020 at 03:51)
 * [Equivalence of algebras](topic/Equivalence.20of.20algebras.html) (33 messages, latest: May 07 2020 at 20:36)
 * [witt vectors](topic/witt.20vectors.html) (304 messages, latest: May 07 2020 at 19:49)
@@ -33,7 +34,6 @@ permalink: /stream/116395-maths/index.html
 * [category/](topic/category.2F.html) (10 messages, latest: Apr 29 2020 at 17:37)
 * [\[finite_dimensional\]](topic/.5Bfinite_dimensional.5D.html) (6 messages, latest: Apr 29 2020 at 14:35)
 * [I love coersion :)](topic/I.20love.20coersion.20.3A).html) (5 messages, latest: Apr 28 2020 at 23:32)
-* [ring localization](topic/ring.20localization.html) (3 messages, latest: Apr 27 2020 at 18:37)
 * [DVRs](topic/DVRs.html) (62 messages, latest: Apr 27 2020 at 07:45)
 * [submodule map](topic/submodule.20map.html) (6 messages, latest: Apr 26 2020 at 16:22)
 * [legendre symbols](topic/legendre.20symbols.html) (42 messages, latest: Apr 26 2020 at 09:25)
@@ -894,4 +894,4 @@ permalink: /stream/116395-maths/index.html
 * [free group](topic/free.20group.html) (92 messages, latest: Apr 02 2018 at 05:00)
 * [Easy topological space question](topic/Easy.20topological.20space.20question.html) (18 messages, latest: Apr 02 2018 at 01:23)
 
-<hr><p>Last updated: May 08 2020 at 09:11 UTC</p>
+<hr><p>Last updated: May 08 2020 at 10:09 UTC</p>
