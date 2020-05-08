@@ -9,8 +9,9 @@ permalink: /stream/113488-general/index.html
 
 ### Topics:
 
-* [vscode infoview overhaul](topic/vscode.20infoview.20overhaul.html) (3 messages, latest: May 08 2020 at 12:02)
-* [Non-numeric versions in elan](topic/Non-numeric.20versions.20in.20elan.html) (2 messages, latest: May 08 2020 at 11:57)
+* [Testing Lean 9.9.9](topic/Testing.20Lean.209.2E9.2E9.html) (3 messages, latest: May 08 2020 at 12:58)
+* [Non-numeric versions in elan](topic/Non-numeric.20versions.20in.20elan.html) (5 messages, latest: May 08 2020 at 12:37)
+* [vscode infoview overhaul](topic/vscode.20infoview.20overhaul.html) (5 messages, latest: May 08 2020 at 12:20)
 * [inferring instance variables](topic/inferring.20instance.20variables.html) (8 messages, latest: May 08 2020 at 08:40)
 * [minimalist assumptions](topic/minimalist.20assumptions.html) (12 messages, latest: May 08 2020 at 07:24)
 * [congr for unions](topic/congr.20for.20unions.html) (2 messages, latest: May 08 2020 at 01:22)
@@ -2782,4 +2783,4 @@ permalink: /stream/113488-general/index.html
 * [test](topic/test.html) (4 messages, latest: Feb 26 2018 at 16:22)
 * [welcome](topic/welcome.html) (1 message, latest: Feb 26 2018 at 16:02)
 
-<hr><p>Last updated: May 08 2020 at 12:10 UTC</p>
+<hr><p>Last updated: May 08 2020 at 13:09 UTC</p>
