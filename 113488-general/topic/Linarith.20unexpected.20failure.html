@@ -1,0 +1,141 @@
+---
+layout: archive
+title: Zulip Chat Archive
+permalink: /stream/113488-general/topic/Linarith.20unexpected.20failure.html
+---
+
+<h2>Stream: <a href="https://leanprover-community.github.io/archive/stream/113488-general/index.html">general</a></h2>
+<h3>Topic: <a href="https://leanprover-community.github.io/archive/stream/113488-general/topic/Linarith.20unexpected.20failure.html">Linarith unexpected failure</a></h3>
+
+<hr>
+
+<base href="https://leanprover.zulipchat.com/">
+
+<head><link href="/style.css" rel="stylesheet"></head>
+
+{% raw %}
+
+<a name="196951550"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113488-general/topic/Linarith%20unexpected%20failure/near/196951550" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Frédéric Le Roux <a href="https://leanprover-community.github.io/archive/stream/113488-general/topic/Linarith.20unexpected.20failure.html#196951550">(May 08 2020 at 21:14)</a>:</h4>
+<p>A very strange thing is happening here:</p>
+<p><a href="https://github.com/FredericLeRoux/LEAN_ESPACES_METRIQUES/blob/master/esp_metrique.lean#L96" title="https://github.com/FredericLeRoux/LEAN_ESPACES_METRIQUES/blob/master/esp_metrique.lean#L96">https://github.com/FredericLeRoux/LEAN_ESPACES_METRIQUES/blob/master/esp_metrique.lean#L96</a></p>
+<p>The current proof ends with linarith, and it works. But then let's replace line 96,<br>
+<code> have clef : d x z ≤ d x y + d y z, from triangle x y z</code><br>
+with the less explicit<br>
+<code> have clef, from triangle x y z</code><br>
+Lean's answer to this line does not change, as expected. So the context at line 96, after this change, seems to be as before.<br>
+But now the linarith tactic at the next line fails!</p>
+
+
+
+<a name="196952394"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113488-general/topic/Linarith%20unexpected%20failure/near/196952394" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Yury G. Kudryashov <a href="https://leanprover-community.github.io/archive/stream/113488-general/topic/Linarith.20unexpected.20failure.html#196952394">(May 08 2020 at 21:24)</a>:</h4>
+<p>Did you try looking at this with <code>set_option pp.all true</code>?</p>
+
+
+
+<a name="196952461"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113488-general/topic/Linarith%20unexpected%20failure/near/196952461" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Yury G. Kudryashov <a href="https://leanprover-community.github.io/archive/stream/113488-general/topic/Linarith.20unexpected.20failure.html#196952461">(May 08 2020 at 21:25)</a>:</h4>
+<p>Probably it adds <code>dist x z ≤ dist x y + dist y z</code> with a metavariable instead of an instance for <code>metric_space</code>.</p>
+
+
+
+<a name="196954447"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113488-general/topic/Linarith%20unexpected%20failure/near/196954447" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Frédéric Le Roux <a href="https://leanprover-community.github.io/archive/stream/113488-general/topic/Linarith.20unexpected.20failure.html#196954447">(May 08 2020 at 21:49)</a>:</h4>
+<p>So I tried pp.all. Both lines give exactly the same result:<br>
+<code>clef :
+  @has_le.le.{0} real real.has_le (@espace_metrique.dist X _inst_1 x z)
+    (@has_add.add.{0} real (@distrib.to_has_add.{0} real (@ring.to_distrib.{0} real real.ring))
+       (@espace_metrique.dist X _inst_1 x y)
+       (@espace_metrique.dist X _inst_1 y z))</code><br>
+<code>clef2 :
+  @has_le.le.{0} real real.has_le (@espace_metrique.dist X _inst_1 x z)
+    (@has_add.add.{0} real (@distrib.to_has_add.{0} real (@ring.to_distrib.{0} real real.ring))
+       (@espace_metrique.dist X _inst_1 x y)
+       (@espace_metrique.dist X _inst_1 y z))</code></p>
+
+
+
+<a name="196954624"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113488-general/topic/Linarith%20unexpected%20failure/near/196954624" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Yury G. Kudryashov <a href="https://leanprover-community.github.io/archive/stream/113488-general/topic/Linarith.20unexpected.20failure.html#196954624">(May 08 2020 at 21:51)</a>:</h4>
+<p>Then you need a better expert on Lean internals.</p>
+
+
+
+<a name="196955186"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113488-general/topic/Linarith%20unexpected%20failure/near/196955186" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Kevin Buzzard <a href="https://leanprover-community.github.io/archive/stream/113488-general/topic/Linarith.20unexpected.20failure.html#196955186">(May 08 2020 at 21:57)</a>:</h4>
+<p><code>have clef := triangle x y z, </code> works, but <code>have clef, from triangle x y z, </code> fails</p>
+
+
+
+<a name="196955437"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113488-general/topic/Linarith%20unexpected%20failure/near/196955437" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Bhavik Mehta <a href="https://leanprover-community.github.io/archive/stream/113488-general/topic/Linarith.20unexpected.20failure.html#196955437">(May 08 2020 at 22:00)</a>:</h4>
+<p>You can by the way change the <code>linarith</code> to:</p>
+<div class="codehilite"><pre><span></span><code>    <span class="n">linarith</span> <span class="n">only</span> <span class="o">[</span><span class="n">triangle</span> <span class="n">x</span> <span class="n">y</span> <span class="n">z</span><span class="o">,</span> <span class="n">z_in</span><span class="o">,</span> <span class="n">y_in</span><span class="o">,</span> <span class="n">hε</span><span class="o">]</span> <span class="o">}</span>
+</code></pre></div>
+
+
+<p>which works fine</p>
+
+
+
+<a name="196955489"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113488-general/topic/Linarith%20unexpected%20failure/near/196955489" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Kevin Buzzard <a href="https://leanprover-community.github.io/archive/stream/113488-general/topic/Linarith.20unexpected.20failure.html#196955489">(May 08 2020 at 22:00)</a>:</h4>
+<div class="codehilite"><pre><span></span><code><span class="bp">...</span>
+    <span class="k">have</span> <span class="n">clef</span><span class="o">,</span> <span class="k">from</span> <span class="n">triangle</span> <span class="n">x</span> <span class="n">y</span> <span class="n">z</span><span class="o">,</span>
+    <span class="k">have</span> <span class="n">clef2</span> <span class="o">:=</span> <span class="n">triangle</span> <span class="n">x</span> <span class="n">y</span> <span class="n">z</span><span class="o">,</span>
+    <span class="k">have</span> <span class="n">h</span> <span class="o">:</span> <span class="n">clef</span> <span class="bp">=</span> <span class="n">clef2</span> <span class="o">:=</span> <span class="n">rfl</span><span class="o">,</span>
+<span class="c1">--    linarith only [clef, z_in, y_in, hε], -- fails!</span>
+    <span class="n">linarith</span> <span class="n">only</span> <span class="o">[</span><span class="n">clef2</span><span class="o">,</span> <span class="n">z_in</span><span class="o">,</span> <span class="n">y_in</span><span class="o">,</span> <span class="n">hε</span><span class="o">],</span> <span class="c1">-- works</span>
+<span class="bp">...</span>
+</code></pre></div>
+
+
+<p>This is surprising (to me). With pp.all on true, clef and clef2 are identical (indeed the prettyprinter is telling me they have the same type)</p>
+
+
+
+<a name="196955671"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113488-general/topic/Linarith%20unexpected%20failure/near/196955671" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Bhavik Mehta <a href="https://leanprover-community.github.io/archive/stream/113488-general/topic/Linarith.20unexpected.20failure.html#196955671">(May 08 2020 at 22:02)</a>:</h4>
+<p>I think the <code>rfl</code> is doing some simplifications/unfolding to prove the equality, but <code>linarith</code> doesn't perform these; and the clef (in Kevin's code) has something folded differently to what the <code>linarith</code> wants</p>
+
+
+
+<a name="196955712"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113488-general/topic/Linarith%20unexpected%20failure/near/196955712" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Bhavik Mehta <a href="https://leanprover-community.github.io/archive/stream/113488-general/topic/Linarith.20unexpected.20failure.html#196955712">(May 08 2020 at 22:03)</a>:</h4>
+<p>And this also explains why <code>pp.all</code> thinks the terms are the same</p>
+
+
+
+<a name="196955760"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113488-general/topic/Linarith%20unexpected%20failure/near/196955760" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Kevin Buzzard <a href="https://leanprover-community.github.io/archive/stream/113488-general/topic/Linarith.20unexpected.20failure.html#196955760">(May 08 2020 at 22:03)</a>:</h4>
+<div class="codehilite"><pre><span></span><code>clef clef2 : d x z ≤ d x y + d y z,
+h : clef = clef2
+⊢ d x z &lt; r
+</code></pre></div>
+
+
+
+<a name="196955812"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113488-general/topic/Linarith%20unexpected%20failure/near/196955812" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Kevin Buzzard <a href="https://leanprover-community.github.io/archive/stream/113488-general/topic/Linarith.20unexpected.20failure.html#196955812">(May 08 2020 at 22:04)</a>:</h4>
+<p>Where's that Mario super-pp-all code?</p>
+
+
+
+<a name="196955882"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113488-general/topic/Linarith%20unexpected%20failure/near/196955882" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Bhavik Mehta <a href="https://leanprover-community.github.io/archive/stream/113488-general/topic/Linarith.20unexpected.20failure.html#196955882">(May 08 2020 at 22:05)</a>:</h4>
+<div class="codehilite"><pre><span></span><code><span class="bp">...</span>
+    <span class="k">have</span> <span class="n">clef</span><span class="o">,</span> <span class="k">from</span> <span class="n">triangle</span> <span class="n">x</span> <span class="n">y</span> <span class="n">z</span><span class="o">,</span>
+    <span class="n">simp</span> <span class="n">only</span> <span class="o">[]</span> <span class="n">at</span> <span class="n">clef</span><span class="o">,</span>
+    <span class="n">linarith</span> <span class="n">only</span> <span class="o">[</span><span class="n">clef</span><span class="o">,</span> <span class="n">z_in</span><span class="o">,</span> <span class="n">y_in</span><span class="o">,</span> <span class="n">hε</span><span class="o">]}</span>
+<span class="bp">...</span>
+</code></pre></div>
+
+
+<p>works as well, showing that there is something to simplify in the term, and it's this simplification that makes it work</p>
+
+
+
+{% endraw %}
+
+<hr><p>Last updated: May 08 2020 at 22:08 UTC</p>

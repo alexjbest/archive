@@ -9,7 +9,7 @@ permalink: /stream/113489-new-members/index.html
 
 ### Topics:
 
-* [more basics](topic/more.20basics.html) (442 messages, latest: May 08 2020 at 20:49)
+* [more basics](topic/more.20basics.html) (444 messages, latest: May 08 2020 at 21:13)
 * [Adding directories to LEAN_PATH](topic/Adding.20directories.20to.20LEAN_PATH.html) (7 messages, latest: May 08 2020 at 20:49)
 * [lean for coq users?](topic/lean.20for.20coq.20users.3F.html) (33 messages, latest: May 08 2020 at 20:17)
 * [noob question(s)](topic/noob.20question(s).html) (5486 messages, latest: May 08 2020 at 19:07)
@@ -1028,4 +1028,4 @@ permalink: /stream/113489-new-members/index.html
 * [Andrew Ashworth](topic/Andrew.20Ashworth.html) (15 messages, latest: Feb 26 2018 at 16:21)
 * [onboarding](topic/onboarding.html) (1 message, latest: Feb 26 2018 at 16:02)
 
-<hr><p>Last updated: May 08 2020 at 21:06 UTC</p>
+<hr><p>Last updated: May 08 2020 at 22:08 UTC</p>
