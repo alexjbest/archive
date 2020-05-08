@@ -9,9 +9,9 @@ permalink: /stream/113489-new-members/index.html
 
 ### Topics:
 
-* [natural number game questions](topic/natural.20number.20game.20questions.html) (126 messages, latest: May 08 2020 at 08:06)
+* [lean for coq users?](topic/lean.20for.20coq.20users.3F.html) (17 messages, latest: May 08 2020 at 09:02)
+* [natural number game questions](topic/natural.20number.20game.20questions.html) (127 messages, latest: May 08 2020 at 08:08)
 * [noob question(s)](topic/noob.20question(s).html) (5481 messages, latest: May 08 2020 at 04:22)
-* [lean for coq users?](topic/lean.20for.20coq.20users.3F.html) (11 messages, latest: May 07 2020 at 22:44)
 * [getting started](topic/getting.20started.html) (11 messages, latest: May 07 2020 at 20:58)
 * [how is log defined in lean?](topic/how.20is.20log.20defined.20in.20lean.3F.html) (21 messages, latest: May 07 2020 at 20:11)
 * [Recursive function](topic/Recursive.20function.html) (12 messages, latest: May 07 2020 at 19:37)
@@ -1027,4 +1027,4 @@ permalink: /stream/113489-new-members/index.html
 * [Andrew Ashworth](topic/Andrew.20Ashworth.html) (15 messages, latest: Feb 26 2018 at 16:21)
 * [onboarding](topic/onboarding.html) (1 message, latest: Feb 26 2018 at 16:02)
 
-<hr><p>Last updated: May 08 2020 at 08:06 UTC</p>
+<hr><p>Last updated: May 08 2020 at 09:11 UTC</p>

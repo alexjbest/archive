@@ -9,7 +9,7 @@ permalink: /stream/113488-general/index.html
 
 ### Topics:
 
-* [inferring instance variables](topic/inferring.20instance.20variables.html) (7 messages, latest: May 08 2020 at 07:57)
+* [inferring instance variables](topic/inferring.20instance.20variables.html) (8 messages, latest: May 08 2020 at 08:40)
 * [minimalist assumptions](topic/minimalist.20assumptions.html) (12 messages, latest: May 08 2020 at 07:24)
 * [congr for unions](topic/congr.20for.20unions.html) (2 messages, latest: May 08 2020 at 01:22)
 * [widget](topic/widget.html) (47 messages, latest: May 07 2020 at 18:02)
@@ -2780,4 +2780,4 @@ permalink: /stream/113488-general/index.html
 * [test](topic/test.html) (4 messages, latest: Feb 26 2018 at 16:22)
 * [welcome](topic/welcome.html) (1 message, latest: Feb 26 2018 at 16:02)
 
-<hr><p>Last updated: May 08 2020 at 08:06 UTC</p>
+<hr><p>Last updated: May 08 2020 at 09:11 UTC</p>
