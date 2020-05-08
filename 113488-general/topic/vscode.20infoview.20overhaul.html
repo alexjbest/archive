@@ -1,0 +1,45 @@
+---
+layout: archive
+title: Zulip Chat Archive
+permalink: /stream/113488-general/topic/vscode.20infoview.20overhaul.html
+---
+
+<h2>Stream: <a href="https://leanprover-community.github.io/archive/stream/113488-general/index.html">general</a></h2>
+<h3>Topic: <a href="https://leanprover-community.github.io/archive/stream/113488-general/topic/vscode.20infoview.20overhaul.html">vscode infoview overhaul</a></h3>
+
+<hr>
+
+<base href="https://leanprover.zulipchat.com/">
+
+<head><link href="/style.css" rel="stylesheet"></head>
+
+{% raw %}
+
+<a name="196886471"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113488-general/topic/vscode%20infoview%20overhaul/near/196886471" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Edward Ayers <a href="https://leanprover-community.github.io/archive/stream/113488-general/topic/vscode.20infoview.20overhaul.html#196886471">(May 08 2020 at 11:59)</a>:</h4>
+<p>To whom it may concern, </p>
+<p>To make my widget-view thing work in vscode, I modified the code for the vscode extension's infoview quite a lot. In particular infoview.ts is now just a dumb pipe that forwards all the server messages to the webview which is running some react code to update the infoview. So all of the code to do with formatting messages and handling the state of the infoview is now done in the webview javascript. The HTML of the webview page is set once and then the rest is done with server messages and code running in the webview.</p>
+<p>But I broke stuff like freezing the state and the red highlighting thing. I don't want to cause a regression in functionality so I thought I'd make a thread where we can chat about what should be in the featureset for this overhauled version, or perhaps it is best left alone.</p>
+<p>My questions are: </p>
+<ol>
+<li>does anyone use the red code highlighting feature? (sometimes when you hover over an error message or goal the relevant sourcetext will be highlighted in red.) </li>
+<li>the goal view came with output freezing, which I intend to keep, are there any other features of the infoview that are needed by anyone? Filtering different members of the local variables list should be possible using the widget system.</li>
+</ol>
+
+
+
+<a name="196886673"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113488-general/topic/vscode%20infoview%20overhaul/near/196886673" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Patrick Massot <a href="https://leanprover-community.github.io/archive/stream/113488-general/topic/vscode.20infoview.20overhaul.html#196886673">(May 08 2020 at 12:01)</a>:</h4>
+<p>I never use the red thing. For a very long time I thought this was a bug, before someone told me it is a feature.</p>
+
+
+
+<a name="196886727"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113488-general/topic/vscode%20infoview%20overhaul/near/196886727" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Patrick Massot <a href="https://leanprover-community.github.io/archive/stream/113488-general/topic/vscode.20infoview.20overhaul.html#196886727">(May 08 2020 at 12:02)</a>:</h4>
+<p>About 2, see <a href="https://github.com/leanprover/vscode-lean/issues/151" title="https://github.com/leanprover/vscode-lean/issues/151">https://github.com/leanprover/vscode-lean/issues/151</a></p>
+
+
+
+{% endraw %}
+
+<hr><p>Last updated: May 08 2020 at 12:10 UTC</p>
