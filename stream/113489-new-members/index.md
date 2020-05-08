@@ -9,8 +9,8 @@ permalink: /stream/113489-new-members/index.html
 
 ### Topics:
 
-* [hitchhiker's guide](topic/hitchhiker's.20guide.html) (10 messages, latest: May 08 2020 at 15:43)
-* [getting started](topic/getting.20started.html) (45 messages, latest: May 08 2020 at 15:10)
+* [getting started](topic/getting.20started.html) (48 messages, latest: May 08 2020 at 16:50)
+* [hitchhiker's guide](topic/hitchhiker's.20guide.html) (11 messages, latest: May 08 2020 at 16:08)
 * [natural number game questions](topic/natural.20number.20game.20questions.html) (129 messages, latest: May 08 2020 at 09:17)
 * [lean for coq users?](topic/lean.20for.20coq.20users.3F.html) (19 messages, latest: May 08 2020 at 09:15)
 * [noob question(s)](topic/noob.20question(s).html) (5481 messages, latest: May 08 2020 at 04:22)
@@ -1027,4 +1027,4 @@ permalink: /stream/113489-new-members/index.html
 * [Andrew Ashworth](topic/Andrew.20Ashworth.html) (15 messages, latest: Feb 26 2018 at 16:21)
 * [onboarding](topic/onboarding.html) (1 message, latest: Feb 26 2018 at 16:02)
 
-<hr><p>Last updated: May 08 2020 at 16:06 UTC</p>
+<hr><p>Last updated: May 08 2020 at 17:08 UTC</p>

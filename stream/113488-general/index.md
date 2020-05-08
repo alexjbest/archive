@@ -9,8 +9,9 @@ permalink: /stream/113488-general/index.html
 
 ### Topics:
 
-* [Testing Lean 9.9.9](topic/Testing.20Lean.209.2E9.2E9.html) (10 messages, latest: May 08 2020 at 16:03)
-* [seminars](topic/seminars.html) (75 messages, latest: May 08 2020 at 15:58)
+* [Category theory zulip](topic/Category.20theory.20zulip.html) (3 messages, latest: May 08 2020 at 16:56)
+* [seminars](topic/seminars.html) (77 messages, latest: May 08 2020 at 16:55)
+* [Testing Lean 9.9.9](topic/Testing.20Lean.209.2E9.2E9.html) (18 messages, latest: May 08 2020 at 16:50)
 * [vscode infoview overhaul](topic/vscode.20infoview.20overhaul.html) (7 messages, latest: May 08 2020 at 14:48)
 * [new Lean / mathlib tutorial](topic/new.20Lean.20.2F.20mathlib.20tutorial.html) (1 message, latest: May 08 2020 at 14:00)
 * [Non-numeric versions in elan](topic/Non-numeric.20versions.20in.20elan.html) (5 messages, latest: May 08 2020 at 12:37)
@@ -329,7 +330,6 @@ permalink: /stream/113488-general/index.html
 * [lean 3.7.2 failed to download](topic/lean.203.2E7.2E2.20failed.20to.20download.html) (10 messages, latest: Mar 24 2020 at 10:59)
 * [Mathlib docs le vs lt](topic/Mathlib.20docs.20le.20vs.20lt.html) (17 messages, latest: Mar 23 2020 at 22:05)
 * [Calculus of Constructions](topic/Calculus.20of.20Constructions.html) (9 messages, latest: Mar 23 2020 at 21:41)
-* [Category theory zulip](topic/Category.20theory.20zulip.html) (1 message, latest: Mar 23 2020 at 21:33)
 * [goal selectors](topic/goal.20selectors.html) (13 messages, latest: Mar 23 2020 at 17:17)
 * [typeclass inference from inside structures](topic/typeclass.20inference.20from.20inside.20structures.html) (15 messages, latest: Mar 22 2020 at 19:24)
 * [Map from sum in standard lib?](topic/Map.20from.20sum.20in.20standard.20lib.3F.html) (14 messages, latest: Mar 22 2020 at 15:38)
@@ -2784,4 +2784,4 @@ permalink: /stream/113488-general/index.html
 * [test](topic/test.html) (4 messages, latest: Feb 26 2018 at 16:22)
 * [welcome](topic/welcome.html) (1 message, latest: Feb 26 2018 at 16:02)
 
-<hr><p>Last updated: May 08 2020 at 16:06 UTC</p>
+<hr><p>Last updated: May 08 2020 at 17:08 UTC</p>
