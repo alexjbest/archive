@@ -511,6 +511,33 @@ But i don't understand who to deal in lean ?   Is there is a file where this ari
 
 
 
+<a name="196855342"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/116395-maths/topic/with_bot/near/196855342" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Johan Commelin <a href="https://leanprover-community.github.io/archive/stream/116395-maths/topic/with_bot.html#196855342">(May 08 2020 at 03:48)</a>:</h4>
+<p><span class="user-mention" data-user-id="110038">@Kevin Buzzard</span> In mathlib/core what used to be called an <code>ordered_monoid</code> is now called <code>ordered_add_monoid</code>. Once <code>norm_num</code> is out of core, we can refactor everything and also have (multiplicative) <code>ordered_monoid</code>s.<br>
+Of course we could have them now, but not with all the nice <code>to_additive</code> machinery. That's why the <code>norm_num</code> PR is important.</p>
+
+
+
+<a name="196855434"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/116395-maths/topic/with_bot/near/196855434" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Johan Commelin <a href="https://leanprover-community.github.io/archive/stream/116395-maths/topic/with_bot.html#196855434">(May 08 2020 at 03:51)</a>:</h4>
+<p><span class="user-mention silent" data-user-id="110032">Reid Barton</span> <a href="#narrow/stream/116395-maths/topic/with_bot/near/196824707" title="#narrow/stream/116395-maths/topic/with_bot/near/196824707">said</a>:</p>
+<blockquote>
+<p>It's annoying how hard it is to find instances.</p>
+</blockquote>
+<p>With the new widget stuff by <span class="user-mention" data-user-id="121918">@Edward Ayers</span> this will hopefully be a lot easier soon. It's really ironic that the goal window has all this information (in principle), but is only showing us a really nice <code>pp</code> version. And if you ask for the raw stuff, that's what you get. A brutal flood of <span aria-label="poop" class="emoji emoji-1f4a9" role="img" title="poop">:poop:</span>  (-;</p>
+<p>Anyway, in the mean time: what about a command <code>#find_instance</code> that just like <code>#simp</code> uses variables that have been declared in the context, so that you can do things like</p>
+<div class="codehilite"><pre><span></span><code><span class="bp">#</span><span class="n">find_instance</span> <span class="o">:</span> <span class="n">add_comm_monoid</span> <span class="o">(</span><span class="n">with_bot</span> <span class="n">nat</span><span class="o">)</span>
+
+<span class="kn">variables</span> <span class="o">(</span><span class="n">X</span> <span class="n">Y</span> <span class="o">:</span> <span class="kt">Type</span><span class="o">)</span> <span class="o">[</span><span class="n">fintype</span> <span class="n">X</span><span class="o">]</span> <span class="o">[</span><span class="n">fintype</span> <span class="n">Y</span><span class="o">]</span>
+
+<span class="bp">#</span><span class="n">find_instance</span> <span class="o">:</span> <span class="n">fintype</span> <span class="o">(</span><span class="n">X</span> <span class="bp">→</span> <span class="n">Y</span><span class="o">)</span>
+</code></pre></div>
+
+
+<p>etc...</p>
+
+
+
 {% endraw %}
 
-<hr><p>Last updated: May 08 2020 at 03:05 UTC</p>
+<hr><p>Last updated: May 08 2020 at 04:10 UTC</p>
