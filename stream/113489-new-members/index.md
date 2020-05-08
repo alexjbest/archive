@@ -9,11 +9,12 @@ permalink: /stream/113489-new-members/index.html
 
 ### Topics:
 
-* [lean for coq users?](topic/lean.20for.20coq.20users.3F.html) (26 messages, latest: May 08 2020 at 17:34)
-* [getting started](topic/getting.20started.html) (48 messages, latest: May 08 2020 at 16:50)
+* [noob question(s)](topic/noob.20question(s).html) (5486 messages, latest: May 08 2020 at 19:07)
+* [Adding directories to LEAN_PATH](topic/Adding.20directories.20to.20LEAN_PATH.html) (5 messages, latest: May 08 2020 at 18:31)
+* [lean for coq users?](topic/lean.20for.20coq.20users.3F.html) (30 messages, latest: May 08 2020 at 18:21)
+* [getting started](topic/getting.20started.html) (49 messages, latest: May 08 2020 at 18:11)
 * [hitchhiker's guide](topic/hitchhiker's.20guide.html) (11 messages, latest: May 08 2020 at 16:08)
 * [natural number game questions](topic/natural.20number.20game.20questions.html) (129 messages, latest: May 08 2020 at 09:17)
-* [noob question(s)](topic/noob.20question(s).html) (5481 messages, latest: May 08 2020 at 04:22)
 * [how is log defined in lean?](topic/how.20is.20log.20defined.20in.20lean.3F.html) (21 messages, latest: May 07 2020 at 20:11)
 * [Recursive function](topic/Recursive.20function.html) (12 messages, latest: May 07 2020 at 19:37)
 * [fun with pfun and dite](topic/fun.20with.20pfun.20and.20dite.html) (34 messages, latest: May 07 2020 at 17:23)
@@ -1027,4 +1028,4 @@ permalink: /stream/113489-new-members/index.html
 * [Andrew Ashworth](topic/Andrew.20Ashworth.html) (15 messages, latest: Feb 26 2018 at 16:21)
 * [onboarding](topic/onboarding.html) (1 message, latest: Feb 26 2018 at 16:02)
 
-<hr><p>Last updated: May 08 2020 at 18:10 UTC</p>
+<hr><p>Last updated: May 08 2020 at 19:08 UTC</p>

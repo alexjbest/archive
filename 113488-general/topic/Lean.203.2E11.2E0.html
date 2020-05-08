@@ -51,6 +51,94 @@ permalink: /stream/113488-general/topic/Lean.203.2E11.2E0.html
 
 
 
+<a name="196931483"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113488-general/topic/Lean%203.11.0/near/196931483" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Johan Commelin <a href="https://leanprover-community.github.io/archive/stream/113488-general/topic/Lean.203.2E11.2E0.html#196931483">(May 08 2020 at 18:17)</a>:</h4>
+<p>I've battled through my teaching duties¹, so now I can work on this PR (-;</p>
+<p>——</p>
+<p>¹ And created a python script that will generate LaTeX code for Gaussian elimination exercises with all the intermediate steps for the solution. (Speaking of structured procrastination²…)</p>
+<p>² <a href="http://www.structuredprocrastination.com/" title="http://www.structuredprocrastination.com/">http://www.structuredprocrastination.com/</a></p>
+
+
+
+<a name="196932574"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113488-general/topic/Lean%203.11.0/near/196932574" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Johan Commelin <a href="https://leanprover-community.github.io/archive/stream/113488-general/topic/Lean.203.2E11.2E0.html#196932574">(May 08 2020 at 18:27)</a>:</h4>
+<p>I've started the <code>lean-3-11-0</code> branch on top of <code>lean_211_pr</code></p>
+
+
+
+<a name="196932762"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113488-general/topic/Lean%203.11.0/near/196932762" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Bryan Gin-ge Chen <a href="https://leanprover-community.github.io/archive/stream/113488-general/topic/Lean.203.2E11.2E0.html#196932762">(May 08 2020 at 18:28)</a>:</h4>
+<p>I think <code>lean-3*</code> matches some branch protection rules, so we've been using <code>lean_3</code> for the PR branches.</p>
+
+
+
+<a name="196932817"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113488-general/topic/Lean%203.11.0/near/196932817" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Bryan Gin-ge Chen <a href="https://leanprover-community.github.io/archive/stream/113488-general/topic/Lean.203.2E11.2E0.html#196932817">(May 08 2020 at 18:29)</a>:</h4>
+<p>This probably won't be a problem until we try to delete the branch after it merges.</p>
+
+
+
+<a name="196932965"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113488-general/topic/Lean%203.11.0/near/196932965" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Bryan Gin-ge Chen <a href="https://leanprover-community.github.io/archive/stream/113488-general/topic/Lean.203.2E11.2E0.html#196932965">(May 08 2020 at 18:30)</a>:</h4>
+<p>Oh, it also looks like only admins can push to that branch, though this might also not be a problem.</p>
+
+
+
+<a name="196933002"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113488-general/topic/Lean%203.11.0/near/196933002" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Johan Commelin <a href="https://leanprover-community.github.io/archive/stream/113488-general/topic/Lean.203.2E11.2E0.html#196933002">(May 08 2020 at 18:30)</a>:</h4>
+<p>Ooops... I wasn't aware of that</p>
+
+
+
+<a name="196933022"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113488-general/topic/Lean%203.11.0/near/196933022" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Johan Commelin <a href="https://leanprover-community.github.io/archive/stream/113488-general/topic/Lean.203.2E11.2E0.html#196933022">(May 08 2020 at 18:30)</a>:</h4>
+<p>Shall I change the branch name?</p>
+
+
+
+<a name="196933232"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113488-general/topic/Lean%203.11.0/near/196933232" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Bryan Gin-ge Chen <a href="https://leanprover-community.github.io/archive/stream/113488-general/topic/Lean.203.2E11.2E0.html#196933232">(May 08 2020 at 18:32)</a>:</h4>
+<p>Hmm, I don't think it's necessary. I think we can change the branch protection to be more specific (e.g. to only match stuff starting with <code>lean-3.</code>). <strong>edit</strong>: done. This also makes it match up better with <a href="https://github.com/leanprover-community/mathlib/blob/master/.github/workflows/build.yml#L12" title="https://github.com/leanprover-community/mathlib/blob/master/.github/workflows/build.yml#L12">our github actions workflow</a>.</p>
+
+
+
+<a name="196933707"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113488-general/topic/Lean%203.11.0/near/196933707" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Johan Commelin <a href="https://leanprover-community.github.io/archive/stream/113488-general/topic/Lean.203.2E11.2E0.html#196933707">(May 08 2020 at 18:37)</a>:</h4>
+<p><span class="user-mention" data-user-id="123965">@Bryan Gin-ge Chen</span> Future me will forget this again and use <code>lean-3.12.0</code> for the next bump PR <span aria-label="oops" class="emoji emoji-1f643" role="img" title="oops">:oops:</span></p>
+
+
+
+<a name="196933725"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113488-general/topic/Lean%203.11.0/near/196933725" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Johan Commelin <a href="https://leanprover-community.github.io/archive/stream/113488-general/topic/Lean.203.2E11.2E0.html#196933725">(May 08 2020 at 18:37)</a>:</h4>
+<p>I'm at 15% of the build. No errors so far. <span aria-label="fencing" class="emoji emoji-1f93a" role="img" title="fencing">:fencing:</span></p>
+
+
+
+<a name="196933919"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113488-general/topic/Lean%203.11.0/near/196933919" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Johan Commelin <a href="https://leanprover-community.github.io/archive/stream/113488-general/topic/Lean.203.2E11.2E0.html#196933919">(May 08 2020 at 18:39)</a>:</h4>
+<p>Do we actually expect any errors?<br>
+Instantiating metavariables in <code>rw</code> shouldn't cause new errors, I hope.</p>
+
+
+
+<a name="196933944"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113488-general/topic/Lean%203.11.0/near/196933944" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Johan Commelin <a href="https://leanprover-community.github.io/archive/stream/113488-general/topic/Lean.203.2E11.2E0.html#196933944">(May 08 2020 at 18:39)</a>:</h4>
+<p>And fixing a docstring.... (-;</p>
+
+
+
+<a name="196933958"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113488-general/topic/Lean%203.11.0/near/196933958" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Johan Commelin <a href="https://leanprover-community.github.io/archive/stream/113488-general/topic/Lean.203.2E11.2E0.html#196933958">(May 08 2020 at 18:39)</a>:</h4>
+<p>Let's see if my build finishes before CI</p>
+
+
+
+<a name="196935991"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113488-general/topic/Lean%203.11.0/near/196935991" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Johan Commelin <a href="https://leanprover-community.github.io/archive/stream/113488-general/topic/Lean.203.2E11.2E0.html#196935991">(May 08 2020 at 18:56)</a>:</h4>
+<p>~ 50% and still no errors</p>
+
+
+
 {% endraw %}
 
-<hr><p>Last updated: May 08 2020 at 18:10 UTC</p>
+<hr><p>Last updated: May 08 2020 at 19:08 UTC</p>
