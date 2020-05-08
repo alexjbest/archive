@@ -38,6 +38,64 @@ permalink: /stream/113488-general/topic/Testing.20Lean.209.2E9.2E9.html
 
 
 
+<a name="196913489"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113488-general/topic/Testing%20Lean%209.9.9/near/196913489" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Alex J. Best <a href="https://leanprover-community.github.io/archive/stream/113488-general/topic/Testing.20Lean.209.2E9.2E9.html#196913489">(May 08 2020 at 15:54)</a>:</h4>
+<div class="codehilite"><pre><span></span><code><span class="bp">+</span><span class="n">alex</span><span class="o">:</span><span class="bp">~</span> <span class="err">🐌</span> <span class="n">lean</span> <span class="bp">+</span><span class="n">leanprover</span><span class="bp">-</span><span class="n">community</span><span class="bp">/</span><span class="n">lean</span><span class="o">:</span><span class="mi">9</span><span class="bp">.</span><span class="mi">9</span><span class="bp">.</span><span class="mi">9</span> <span class="c1">--version</span>
+<span class="n">info</span><span class="o">:</span> <span class="n">downloading</span> <span class="n">component</span> <span class="err">&#39;</span><span class="n">lean&#39;</span>
+ <span class="mi">17</span><span class="bp">.</span><span class="mi">6</span> <span class="n">MiB</span> <span class="bp">/</span>  <span class="mi">17</span><span class="bp">.</span><span class="mi">6</span> <span class="n">MiB</span> <span class="o">(</span><span class="mi">100</span> <span class="err">%</span><span class="o">)</span>  <span class="mi">16</span><span class="bp">.</span><span class="mi">2</span> <span class="n">MiB</span><span class="bp">/</span><span class="n">s</span> <span class="n">ETA</span><span class="o">:</span>   <span class="mi">0</span> <span class="n">s</span>
+<span class="n">info</span><span class="o">:</span> <span class="n">installing</span> <span class="n">component</span> <span class="err">&#39;</span><span class="n">lean&#39;</span>
+<span class="n">dyld</span><span class="o">:</span> <span class="n">lazy</span> <span class="n">symbol</span> <span class="n">binding</span> <span class="n">failed</span><span class="o">:</span> <span class="n">Symbol</span> <span class="n">not</span> <span class="n">found</span><span class="o">:</span> <span class="bp">____</span><span class="n">chkstk_darwin</span>
+  <span class="n">Referenced</span> <span class="k">from</span><span class="o">:</span> <span class="bp">/</span><span class="n">Users</span><span class="bp">/</span><span class="n">alex</span><span class="bp">/.</span><span class="n">elan</span><span class="bp">/</span><span class="n">toolchains</span><span class="bp">/</span><span class="n">leanprover</span><span class="bp">-</span><span class="n">community</span><span class="bp">-</span><span class="n">lean</span><span class="bp">-</span><span class="mi">9</span><span class="bp">.</span><span class="mi">9</span><span class="bp">.</span><span class="mi">9</span><span class="bp">/</span><span class="n">bin</span><span class="bp">/</span><span class="n">lean</span> <span class="o">(</span><span class="n">which</span> <span class="n">was</span> <span class="n">built</span> <span class="n">for</span> <span class="n">Mac</span> <span class="n">OS</span> <span class="n">X</span> <span class="mi">10</span><span class="bp">.</span><span class="mi">15</span><span class="o">)</span>
+  <span class="n">Expected</span> <span class="k">in</span><span class="o">:</span> <span class="bp">/</span><span class="n">usr</span><span class="bp">/</span><span class="n">lib</span><span class="bp">/</span><span class="n">libSystem</span><span class="bp">.</span><span class="n">B</span><span class="bp">.</span><span class="n">dylib</span>
+
+<span class="n">dyld</span><span class="o">:</span> <span class="n">Symbol</span> <span class="n">not</span> <span class="n">found</span><span class="o">:</span> <span class="bp">____</span><span class="n">chkstk_darwin</span>
+  <span class="n">Referenced</span> <span class="k">from</span><span class="o">:</span> <span class="bp">/</span><span class="n">Users</span><span class="bp">/</span><span class="n">alex</span><span class="bp">/.</span><span class="n">elan</span><span class="bp">/</span><span class="n">toolchains</span><span class="bp">/</span><span class="n">leanprover</span><span class="bp">-</span><span class="n">community</span><span class="bp">-</span><span class="n">lean</span><span class="bp">-</span><span class="mi">9</span><span class="bp">.</span><span class="mi">9</span><span class="bp">.</span><span class="mi">9</span><span class="bp">/</span><span class="n">bin</span><span class="bp">/</span><span class="n">lean</span> <span class="o">(</span><span class="n">which</span> <span class="n">was</span> <span class="n">built</span> <span class="n">for</span> <span class="n">Mac</span> <span class="n">OS</span> <span class="n">X</span> <span class="mi">10</span><span class="bp">.</span><span class="mi">15</span><span class="o">)</span>
+  <span class="n">Expected</span> <span class="k">in</span><span class="o">:</span> <span class="bp">/</span><span class="n">usr</span><span class="bp">/</span><span class="n">lib</span><span class="bp">/</span><span class="n">libSystem</span><span class="bp">.</span><span class="n">B</span><span class="bp">.</span><span class="n">dylib</span>
+
+<span class="n">Abort</span> <span class="n">trap</span><span class="o">:</span> <span class="mi">6</span>
+</code></pre></div>
+
+
+<p>I guess you are right osx is obscure (i'm on 10.13)</p>
+
+
+
+<a name="196914059"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113488-general/topic/Testing%20Lean%209.9.9/near/196914059" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Gabriel Ebner <a href="https://leanprover-community.github.io/archive/stream/113488-general/topic/Testing.20Lean.209.2E9.2E9.html#196914059">(May 08 2020 at 15:58)</a>:</h4>
+<p>This is good to know!  I was just about to release 3.11.0.</p>
+
+
+
+<a name="196914095"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113488-general/topic/Testing%20Lean%209.9.9/near/196914095" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Gabriel Ebner <a href="https://leanprover-community.github.io/archive/stream/113488-general/topic/Testing.20Lean.209.2E9.2E9.html#196914095">(May 08 2020 at 15:58)</a>:</h4>
+<p>Is there anything special you have to do to make binaries work across multiple macos versions?  Is it enough to build it on 10.13?</p>
+
+
+
+<a name="196914237"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113488-general/topic/Testing%20Lean%209.9.9/near/196914237" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Alex J. Best <a href="https://leanprover-community.github.io/archive/stream/113488-general/topic/Testing.20Lean.209.2E9.2E9.html#196914237">(May 08 2020 at 15:59)</a>:</h4>
+<p>I'm not sure, some discussion here <a href="https://github.com/nodegui/nodegui/issues/391" title="https://github.com/nodegui/nodegui/issues/391">https://github.com/nodegui/nodegui/issues/391</a> has some discussion maybe its enough to put "-DCMAKE_OSX_DEPLOYMENT_TARGET=10.12" on line 64 of on-push.yml?</p>
+
+
+
+<a name="196914300"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113488-general/topic/Testing%20Lean%209.9.9/near/196914300" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Alex J. Best <a href="https://leanprover-community.github.io/archive/stream/113488-general/topic/Testing.20Lean.209.2E9.2E9.html#196914300">(May 08 2020 at 16:00)</a>:</h4>
+<p>or 10.13 or whatever ;)</p>
+
+
+
+<a name="196914330"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113488-general/topic/Testing%20Lean%209.9.9/near/196914330" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Bryan Gin-ge Chen <a href="https://leanprover-community.github.io/archive/stream/113488-general/topic/Testing.20Lean.209.2E9.2E9.html#196914330">(May 08 2020 at 16:00)</a>:</h4>
+<p>FWIW 9.9.9 worked for me on 10.14.6.</p>
+
+
+
+<a name="196914747"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113488-general/topic/Testing%20Lean%209.9.9/near/196914747" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Gabriel Ebner <a href="https://leanprover-community.github.io/archive/stream/113488-general/topic/Testing.20Lean.209.2E9.2E9.html#196914747">(May 08 2020 at 16:03)</a>:</h4>
+<p><a href="https://github.com/leanprover-community/lean/issues/222" title="https://github.com/leanprover-community/lean/issues/222">lean#222</a>.  We should have binaries for you to try in about 10 minutes.</p>
+
+
+
 {% endraw %}
 
-<hr><p>Last updated: May 08 2020 at 15:09 UTC</p>
+<hr><p>Last updated: May 08 2020 at 16:06 UTC</p>

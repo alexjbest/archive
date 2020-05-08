@@ -9,10 +9,10 @@ permalink: /stream/113488-general/index.html
 
 ### Topics:
 
+* [Testing Lean 9.9.9](topic/Testing.20Lean.209.2E9.2E9.html) (10 messages, latest: May 08 2020 at 16:03)
+* [seminars](topic/seminars.html) (75 messages, latest: May 08 2020 at 15:58)
 * [vscode infoview overhaul](topic/vscode.20infoview.20overhaul.html) (7 messages, latest: May 08 2020 at 14:48)
-* [seminars](topic/seminars.html) (67 messages, latest: May 08 2020 at 14:31)
 * [new Lean / mathlib tutorial](topic/new.20Lean.20.2F.20mathlib.20tutorial.html) (1 message, latest: May 08 2020 at 14:00)
-* [Testing Lean 9.9.9](topic/Testing.20Lean.209.2E9.2E9.html) (3 messages, latest: May 08 2020 at 12:58)
 * [Non-numeric versions in elan](topic/Non-numeric.20versions.20in.20elan.html) (5 messages, latest: May 08 2020 at 12:37)
 * [inferring instance variables](topic/inferring.20instance.20variables.html) (8 messages, latest: May 08 2020 at 08:40)
 * [minimalist assumptions](topic/minimalist.20assumptions.html) (12 messages, latest: May 08 2020 at 07:24)
@@ -2784,4 +2784,4 @@ permalink: /stream/113488-general/index.html
 * [test](topic/test.html) (4 messages, latest: Feb 26 2018 at 16:22)
 * [welcome](topic/welcome.html) (1 message, latest: Feb 26 2018 at 16:02)
 
-<hr><p>Last updated: May 08 2020 at 15:09 UTC</p>
+<hr><p>Last updated: May 08 2020 at 16:06 UTC</p>
