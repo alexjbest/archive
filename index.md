@@ -8,7 +8,7 @@ permalink: /index.html
 
 ## Streams:
 
-* [general](stream/113488-general/index.html) (2774 topics)
+* [general](stream/113488-general/index.html) (2776 topics)
 
 * [new members](stream/113489-new-members/index.html) (1017 topics)
 
@@ -22,7 +22,7 @@ permalink: /index.html
 
 * [Lean Together 2019](stream/179818-Lean-Together-2019/index.html) (31 topics)
 
-* [Lean for teaching](stream/187764-Lean-for-teaching/index.html) (22 topics)
+* [Lean for teaching](stream/187764-Lean-for-teaching/index.html) (23 topics)
 
 * [Machine Learning for Theorem Proving](stream/219941-Machine-Learning-for-Theorem-Proving/index.html) (17 topics)
 
@@ -44,4 +44,4 @@ permalink: /index.html
 
 * [Xena Summer Projects](stream/237759-Xena-Summer-Projects/index.html) (2 topics)
 
-<hr><p>Last updated: May 08 2020 at 17:08 UTC</p>
+<hr><p>Last updated: May 08 2020 at 18:10 UTC</p>
