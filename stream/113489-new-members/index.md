@@ -9,6 +9,7 @@ permalink: /stream/113489-new-members/index.html
 
 ### Topics:
 
+* [natural number game questions](topic/natural.20number.20game.20questions.html) (102 messages, latest: May 08 2020 at 07:09)
 * [noob question(s)](topic/noob.20question(s).html) (5481 messages, latest: May 08 2020 at 04:22)
 * [lean for coq users?](topic/lean.20for.20coq.20users.3F.html) (11 messages, latest: May 07 2020 at 22:44)
 * [getting started](topic/getting.20started.html) (11 messages, latest: May 07 2020 at 20:58)
@@ -148,7 +149,6 @@ permalink: /stream/113489-new-members/index.html
 * [introduction ilmu](topic/introduction.20ilmu.html) (20 messages, latest: Apr 03 2020 at 21:04)
 * [Type theory books?](topic/Type.20theory.20books.3F.html) (21 messages, latest: Apr 03 2020 at 13:42)
 * [Getting Started with Lean with prior experience in Coq](topic/Getting.20Started.20with.20Lean.20with.20prior.20experience.20in.20Coq.html) (16 messages, latest: Apr 03 2020 at 12:50)
-* [natural number game questions](topic/natural.20number.20game.20questions.html) (93 messages, latest: Apr 03 2020 at 12:44)
 * [Documentation on superclasses](topic/Documentation.20on.20superclasses.html) (2 messages, latest: Apr 02 2020 at 17:14)
 * [1/2 > 0](topic/1.2F2.20.3E.200.html) (8 messages, latest: Apr 01 2020 at 16:36)
 * [How to Extract](topic/How.20to.20Extract.html) (3 messages, latest: Apr 01 2020 at 15:36)
@@ -1027,4 +1027,4 @@ permalink: /stream/113489-new-members/index.html
 * [Andrew Ashworth](topic/Andrew.20Ashworth.html) (15 messages, latest: Feb 26 2018 at 16:21)
 * [onboarding](topic/onboarding.html) (1 message, latest: Feb 26 2018 at 16:02)
 
-<hr><p>Last updated: May 08 2020 at 06:10 UTC</p>
+<hr><p>Last updated: May 08 2020 at 07:09 UTC</p>
