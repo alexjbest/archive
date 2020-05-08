@@ -9,8 +9,9 @@ permalink: /stream/113489-new-members/index.html
 
 ### Topics:
 
-* [lean for coq users?](topic/lean.20for.20coq.20users.3F.html) (31 messages, latest: May 08 2020 at 19:46)
-* [Adding directories to LEAN_PATH](topic/Adding.20directories.20to.20LEAN_PATH.html) (6 messages, latest: May 08 2020 at 19:35)
+* [more basics](topic/more.20basics.html) (442 messages, latest: May 08 2020 at 20:49)
+* [Adding directories to LEAN_PATH](topic/Adding.20directories.20to.20LEAN_PATH.html) (7 messages, latest: May 08 2020 at 20:49)
+* [lean for coq users?](topic/lean.20for.20coq.20users.3F.html) (33 messages, latest: May 08 2020 at 20:17)
 * [noob question(s)](topic/noob.20question(s).html) (5486 messages, latest: May 08 2020 at 19:07)
 * [getting started](topic/getting.20started.html) (49 messages, latest: May 08 2020 at 18:11)
 * [hitchhiker's guide](topic/hitchhiker's.20guide.html) (11 messages, latest: May 08 2020 at 16:08)
@@ -88,7 +89,6 @@ permalink: /stream/113489-new-members/index.html
 * [exhausting finite possibilities](topic/exhausting.20finite.20possibilities.html) (5 messages, latest: Apr 22 2020 at 09:12)
 * [more casting issues](topic/more.20casting.20issues.html) (6 messages, latest: Apr 22 2020 at 00:56)
 * [\[decideable_pred p\]](topic/.5Bdecideable_pred.20p.5D.html) (3 messages, latest: Apr 21 2020 at 17:08)
-* [more basics](topic/more.20basics.html) (438 messages, latest: Apr 21 2020 at 14:26)
 * [Linking / Using mathlib and tactics](topic/Linking.20.2F.20Using.20mathlib.20and.20tactics.html) (10 messages, latest: Apr 21 2020 at 00:48)
 * [List is forced up a universe?](topic/List.20is.20forced.20up.20a.20universe.3F.html) (53 messages, latest: Apr 20 2020 at 10:57)
 * [Universal algebra](topic/Universal.20algebra.html) (19 messages, latest: Apr 20 2020 at 10:44)
@@ -1028,4 +1028,4 @@ permalink: /stream/113489-new-members/index.html
 * [Andrew Ashworth](topic/Andrew.20Ashworth.html) (15 messages, latest: Feb 26 2018 at 16:21)
 * [onboarding](topic/onboarding.html) (1 message, latest: Feb 26 2018 at 16:02)
 
-<hr><p>Last updated: May 08 2020 at 20:06 UTC</p>
+<hr><p>Last updated: May 08 2020 at 21:06 UTC</p>
