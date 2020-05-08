@@ -9,14 +9,14 @@ permalink: /stream/113488-general/index.html
 
 ### Topics:
 
-* [meta questions](topic/meta.20questions.html) (3 messages, latest: May 08 2020 at 19:07)
-* [Lean 3.11.0](topic/Lean.203.2E11.2E0.html) (19 messages, latest: May 08 2020 at 18:56)
+* [Lean 3.11.0](topic/Lean.203.2E11.2E0.html) (26 messages, latest: May 08 2020 at 20:06)
+* [meta questions](topic/meta.20questions.html) (5 messages, latest: May 08 2020 at 19:48)
+* [new Lean / mathlib tutorial](topic/new.20Lean.20.2F.20mathlib.20tutorial.html) (2 messages, latest: May 08 2020 at 19:35)
 * [seminars](topic/seminars.html) (81 messages, latest: May 08 2020 at 18:23)
 * [lean 3.11.0](topic/lean.203.2E11.2E0.html) (1 message, latest: May 08 2020 at 17:40)
 * [Category theory zulip](topic/Category.20theory.20zulip.html) (5 messages, latest: May 08 2020 at 17:11)
 * [Testing Lean 9.9.9](topic/Testing.20Lean.209.2E9.2E9.html) (18 messages, latest: May 08 2020 at 16:50)
 * [vscode infoview overhaul](topic/vscode.20infoview.20overhaul.html) (7 messages, latest: May 08 2020 at 14:48)
-* [new Lean / mathlib tutorial](topic/new.20Lean.20.2F.20mathlib.20tutorial.html) (1 message, latest: May 08 2020 at 14:00)
 * [Non-numeric versions in elan](topic/Non-numeric.20versions.20in.20elan.html) (5 messages, latest: May 08 2020 at 12:37)
 * [inferring instance variables](topic/inferring.20instance.20variables.html) (8 messages, latest: May 08 2020 at 08:40)
 * [minimalist assumptions](topic/minimalist.20assumptions.html) (12 messages, latest: May 08 2020 at 07:24)
@@ -2787,4 +2787,4 @@ permalink: /stream/113488-general/index.html
 * [test](topic/test.html) (4 messages, latest: Feb 26 2018 at 16:22)
 * [welcome](topic/welcome.html) (1 message, latest: Feb 26 2018 at 16:02)
 
-<hr><p>Last updated: May 08 2020 at 19:08 UTC</p>
+<hr><p>Last updated: May 08 2020 at 20:06 UTC</p>
