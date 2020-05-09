@@ -488,6 +488,16 @@ they talk about benefits of proof irrelevance in 11.2 and 11.4.</p>
 
 
 
+<a name="197008657"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113489-new%20members/topic/Please%20Eliminate%20My%20Large%20Questions/near/197008657" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Ken Lee <a href="https://leanprover-community.github.io/archive/stream/113489-new-members/topic/Please.20Eliminate.20My.20Large.20Questions.html#197008657">(May 09 2020 at 19:37)</a>:</h4>
+<p><span class="user-mention silent" data-user-id="110044">Chris Hughes</span> <a href="#narrow/stream/113489-new-members/topic/Please.20Eliminate.20My.20Large.20Questions/near/196012582" title="#narrow/stream/113489-new-members/topic/Please.20Eliminate.20My.20Large.20Questions/near/196012582">said</a>:</p>
+<blockquote>
+<p>Some inductive propsition have a recursor that can make elements of a Type e.g. <code>eq</code>, <code>true</code>, <code>false</code>, <code>and</code>, <code>acc</code>. Others can only make a Prop, e.g. <code>exists</code> and <code>or</code>. eliminating into Type is call large elemination. If large elimination was allowed on <code>or</code> then the iota reduction rule would be inconsistent because of proof irrelevance, your function could return different values for <code>or.inl x</code> and <code>or.inr y</code>, even though <code>or.inl x.= or.inr y</code>. The Props with large elimination don't have this problem.</p>
+</blockquote>
+<p>I just understood your example with or. It makes sense now. Thanks!</p>
+
+
+
 {% endraw %}
 
-<hr><p>Last updated: May 09 2020 at 19:11 UTC</p>
+<hr><p>Last updated: May 09 2020 at 20:06 UTC</p>
