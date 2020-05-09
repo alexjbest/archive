@@ -54,6 +54,130 @@ permalink: /stream/113489-new-members/topic/Induction.20vs.20recursion.html
 
 
 
+<a name="196986657"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113489-new%20members/topic/Induction%20vs%20recursion/near/196986657" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Reid Barton <a href="https://leanprover-community.github.io/archive/stream/113489-new-members/topic/Induction.20vs.20recursion.html#196986657">(May 09 2020 at 11:18)</a>:</h4>
+<p>can you give some hint about Agda <code>with</code>?</p>
+
+
+
+<a name="196986670"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113489-new%20members/topic/Induction%20vs%20recursion/near/196986670" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Reid Barton <a href="https://leanprover-community.github.io/archive/stream/113489-new-members/topic/Induction.20vs.20recursion.html#196986670">(May 09 2020 at 11:19)</a>:</h4>
+<p>Is this <code>match ... with ...</code>?</p>
+
+
+
+<a name="196986678"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113489-new%20members/topic/Induction%20vs%20recursion/near/196986678" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Reid Barton <a href="https://leanprover-community.github.io/archive/stream/113489-new-members/topic/Induction.20vs.20recursion.html#196986678">(May 09 2020 at 11:19)</a>:</h4>
+<p>Everything in your Agda code was easy to read until the last definition, where things got really weird. Maybe this is related to your problem <span aria-label="upside down" class="emoji emoji-1f643" role="img" title="upside down">:upside_down:</span></p>
+
+
+
+<a name="196986998"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113489-new%20members/topic/Induction%20vs%20recursion/near/196986998" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Reid Barton <a href="https://leanprover-community.github.io/archive/stream/113489-new-members/topic/Induction.20vs.20recursion.html#196986998">(May 09 2020 at 11:26)</a>:</h4>
+<p>What happened to <code>range_contains</code>?</p>
+
+
+
+<a name="196987085"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113489-new%20members/topic/Induction%20vs%20recursion/near/196987085" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Reid Barton <a href="https://leanprover-community.github.io/archive/stream/113489-new-members/topic/Induction.20vs.20recursion.html#196987085">(May 09 2020 at 11:29)</a>:</h4>
+<p>I assume <code>record {}</code> is the proof of <code>True</code>?</p>
+
+
+
+<a name="196987144"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113489-new%20members/topic/Induction%20vs%20recursion/near/196987144" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Reid Barton <a href="https://leanprover-community.github.io/archive/stream/113489-new-members/topic/Induction.20vs.20recursion.html#196987144">(May 09 2020 at 11:30)</a>:</h4>
+<p>Things are obviously going to be somewhat harder because the definition of <code>contains</code> for an actual finite set won't compute the way it does in your code, I think</p>
+
+
+
+<a name="196987430"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113489-new%20members/topic/Induction%20vs%20recursion/near/196987430" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Reid Barton <a href="https://leanprover-community.github.io/archive/stream/113489-new-members/topic/Induction.20vs.20recursion.html#196987430">(May 09 2020 at 11:37)</a>:</h4>
+<p>Or much harder</p>
+
+
+
+<a name="196987435"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113489-new%20members/topic/Induction%20vs%20recursion/near/196987435" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Reid Barton <a href="https://leanprover-community.github.io/archive/stream/113489-new-members/topic/Induction.20vs.20recursion.html#196987435">(May 09 2020 at 11:37)</a>:</h4>
+<p>I thought for a while your Agda proof was not correct.</p>
+
+
+
+<a name="196987495"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113489-new%20members/topic/Induction%20vs%20recursion/near/196987495" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Reid Barton <a href="https://leanprover-community.github.io/archive/stream/113489-new-members/topic/Induction.20vs.20recursion.html#196987495">(May 09 2020 at 11:38)</a>:</h4>
+<p>The more I read it, the less I understand...</p>
+
+
+
+<a name="196987587"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113489-new%20members/topic/Induction%20vs%20recursion/near/196987587" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Reid Barton <a href="https://leanprover-community.github.io/archive/stream/113489-new-members/topic/Induction.20vs.20recursion.html#196987587">(May 09 2020 at 11:40)</a>:</h4>
+<p>On line 86, we know <code>n</code> is <code>0</code>, <code>a</code> is not <code>0</code>, <code>v</code> is not <code>0</code>. How can we use <code>cont</code> as the proof?</p>
+
+
+
+<a name="196987907"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113489-new%20members/topic/Induction%20vs%20recursion/near/196987907" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Reid Barton <a href="https://leanprover-community.github.io/archive/stream/113489-new-members/topic/Induction.20vs.20recursion.html#196987907">(May 09 2020 at 11:48)</a>:</h4>
+<p>Anyways, the tactic proof can be repaired by starting with</p>
+<div class="codehilite"><pre><span></span><code>  <span class="n">induction</span> <span class="n">n</span> <span class="k">with</span> <span class="n">n</span> <span class="n">IH</span> <span class="n">generalizing</span> <span class="n">a</span> <span class="n">aIn</span> <span class="n">v</span> <span class="n">vLess</span><span class="o">,</span>
+</code></pre></div>
+
+
+<p>(<code>with n IH</code> just gives better names to the new variables)</p>
+
+
+
+<a name="196987935"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113489-new%20members/topic/Induction%20vs%20recursion/near/196987935" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Reid Barton <a href="https://leanprover-community.github.io/archive/stream/113489-new-members/topic/Induction.20vs.20recursion.html#196987935">(May 09 2020 at 11:49)</a>:</h4>
+<p><code>generalizing ...</code> means basically <code>revert</code> all the variables, apply <code>induction</code>, then re-<code>intros</code> them in all the cases. That way you get an induction hypothesis that can be applied to any <code>a</code>, ....</p>
+
+
+
+<a name="196988189"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113489-new%20members/topic/Induction%20vs%20recursion/near/196988189" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Reid Barton <a href="https://leanprover-community.github.io/archive/stream/113489-new-members/topic/Induction.20vs.20recursion.html#196988189">(May 09 2020 at 11:54)</a>:</h4>
+<p>Also, I guess as a high-level comment, surely it's better strategy to just prove that <code>a ∈ range n</code> is equivalent to <code>a &lt;= n</code> first, rather than embark on an inductive proof of this statement that involves three variables directly</p>
+
+
+
+<a name="196988308"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113489-new%20members/topic/Induction%20vs%20recursion/near/196988308" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Mario Carneiro <a href="https://leanprover-community.github.io/archive/stream/113489-new-members/topic/Induction.20vs.20recursion.html#196988308">(May 09 2020 at 11:57)</a>:</h4>
+<p><span class="user-mention silent" data-user-id="110032">Reid Barton</span> <a href="#narrow/stream/113489-new-members/topic/Induction.20vs.20recursion/near/196987587" title="#narrow/stream/113489-new-members/topic/Induction.20vs.20recursion/near/196987587">said</a>:</p>
+<blockquote>
+<p>On line 86, we know <code>n</code> is <code>0</code>, <code>a</code> is not <code>0</code>, <code>v</code> is not <code>0</code>. How can we use <code>cont</code> as the proof?</p>
+</blockquote>
+<p>Aren't <code>n</code>, <code>a</code> and <code>v</code> all <code>0</code> at that point?</p>
+
+
+
+<a name="196988442"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113489-new%20members/topic/Induction%20vs%20recursion/near/196988442" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Reid Barton <a href="https://leanprover-community.github.io/archive/stream/113489-new-members/topic/Induction.20vs.20recursion.html#196988442">(May 09 2020 at 12:00)</a>:</h4>
+<p>it might be my inability to read this syntax, but I thought that line 84 is the counterpart to line 82, depending on the outcome of a=0</p>
+
+
+
+<a name="196988585"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113489-new%20members/topic/Induction%20vs%20recursion/near/196988585" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Reid Barton <a href="https://leanprover-community.github.io/archive/stream/113489-new-members/topic/Induction.20vs.20recursion.html#196988585">(May 09 2020 at 12:04)</a>:</h4>
+<p>I think the structure is:</p>
+<ul>
+<li>split on a = 0 (not by pattern matching but with the <code>ℕDecideEquality</code> thing--but somehow Agda also decides that <code>a=0</code>, maybe this is what I missed later)<ul>
+<li>when <code>a=0</code>, split on the proof of <code>v&lt;=a</code></li>
+<li>when <code>a!=0</code>, split on <code>ℕDecideEquality v 0</code></li>
+</ul>
+</li>
+</ul>
+
+
+
+<a name="196988603"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113489-new%20members/topic/Induction%20vs%20recursion/near/196988603" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Reid Barton <a href="https://leanprover-community.github.io/archive/stream/113489-new-members/topic/Induction.20vs.20recursion.html#196988603">(May 09 2020 at 12:05)</a>:</h4>
+<p>Well, this is the <code>n=0</code> case</p>
+
+
+
+<a name="196988616"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113489-new%20members/topic/Induction%20vs%20recursion/near/196988616" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Reid Barton <a href="https://leanprover-community.github.io/archive/stream/113489-new-members/topic/Induction.20vs.20recursion.html#196988616">(May 09 2020 at 12:05)</a>:</h4>
+<p>Like I think the <code>...</code> on line 85 corresponds to the <code>... | inr a!=0</code> on line 84, otherwise I can't make sense of it</p>
+
+
+
 {% endraw %}
 
-<hr><p>Last updated: May 09 2020 at 11:17 UTC</p>
+<hr><p>Last updated: May 09 2020 at 12:08 UTC</p>

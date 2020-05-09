@@ -2196,6 +2196,20 @@ Don't bother going through every axiom. Use Ltac instead."</p>
 
 
 
+<a name="196988607"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113488-general/topic/Invitation%20to%20join%20the%20Codewars%20Lean%20community%2C%20Round%202/near/196988607" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Jalex Stark <a href="https://leanprover-community.github.io/archive/stream/113488-general/topic/Invitation.20to.20join.20the.20Codewars.20Lean.20community.2C.20Round.202.html#196988607">(May 09 2020 at 12:05)</a>:</h4>
+<p>Yeah I agree with Donald. To be a tiny bit more explicit, the initial solution would look like</p>
+<div class="codehilite"><pre><span></span><code><span class="n">meta</span> <span class="n">def</span> <span class="n">submission_tactic</span> <span class="o">:=</span>
+</code></pre></div>
+
+
+<p>and the test cases would look like</p>
+<div class="codehilite"><pre><span></span><code><span class="kn">example</span> <span class="o">:</span> <span class="n">test_prop1</span> <span class="o">:=</span> <span class="k">by</span> <span class="n">submission_tactic</span>
+<span class="kn">example</span> <span class="o">:</span> <span class="n">test_prop2</span> <span class="o">:=</span> <span class="k">by</span> <span class="n">submission_tactic</span>
+</code></pre></div>
+
+
+
 {% endraw %}
 
-<hr><p>Last updated: May 09 2020 at 11:17 UTC</p>
+<hr><p>Last updated: May 09 2020 at 12:08 UTC</p>
