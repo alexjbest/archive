@@ -9,11 +9,12 @@ permalink: /stream/113488-general/index.html
 
 ### Topics:
 
-* [fact](topic/fact.html) (9 messages, latest: May 09 2020 at 09:07)
+* [algebra injective surjective](topic/algebra.20injective.20surjective.html) (5 messages, latest: May 09 2020 at 09:59)
+* [nonlinear linarith](topic/nonlinear.20linarith.html) (10 messages, latest: May 09 2020 at 09:55)
+* [fact](topic/fact.html) (10 messages, latest: May 09 2020 at 09:19)
 * [on "What's next after NNG?"](topic/on.20.22What's.20next.20after.20NNG.3F.22.html) (5 messages, latest: May 09 2020 at 09:05)
 * [calculate](topic/calculate.html) (96 messages, latest: May 09 2020 at 08:07)
 * [Invitation to join the Codewars Lean community, Round 2](topic/Invitation.20to.20join.20the.20Codewars.20Lean.20community.2C.20Round.202.html) (305 messages, latest: May 09 2020 at 07:05)
-* [nonlinear linarith](topic/nonlinear.20linarith.html) (5 messages, latest: May 09 2020 at 07:01)
 * [Lean 3.11.0](topic/Lean.203.2E11.2E0.html) (35 messages, latest: May 09 2020 at 03:35)
 * [Linarith unexpected failure](topic/Linarith.20unexpected.20failure.html) (26 messages, latest: May 08 2020 at 22:40)
 * [meta questions](topic/meta.20questions.html) (7 messages, latest: May 08 2020 at 20:54)
@@ -2792,4 +2793,4 @@ permalink: /stream/113488-general/index.html
 * [test](topic/test.html) (4 messages, latest: Feb 26 2018 at 16:22)
 * [welcome](topic/welcome.html) (1 message, latest: Feb 26 2018 at 16:02)
 
-<hr><p>Last updated: May 09 2020 at 09:09 UTC</p>
+<hr><p>Last updated: May 09 2020 at 10:09 UTC</p>
