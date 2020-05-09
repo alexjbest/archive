@@ -32,7 +32,7 @@ permalink: /index.html
 
 * [kbb](stream/141825-kbb/index.html) (13 topics)
 
-* [Zulip meta](stream/236604-Zulip-meta/index.html) (5 topics)
+* [Zulip meta](stream/236604-Zulip-meta/index.html) (6 topics)
 
 * [concrete semantics](stream/187724-concrete-semantics/index.html) (4 topics)
 
@@ -44,4 +44,4 @@ permalink: /index.html
 
 * [Xena Summer Projects](stream/237759-Xena-Summer-Projects/index.html) (2 topics)
 
-<hr><p>Last updated: May 09 2020 at 02:11 UTC</p>
+<hr><p>Last updated: May 09 2020 at 03:10 UTC</p>
