@@ -9,7 +9,8 @@ permalink: /stream/113489-new-members/index.html
 
 ### Topics:
 
-* [Please Eliminate My Large Questions](topic/Please.20Eliminate.20My.20Large.20Questions.html) (73 messages, latest: May 09 2020 at 22:08)
+* [Please Eliminate My Large Questions](topic/Please.20Eliminate.20My.20Large.20Questions.html) (90 messages, latest: May 09 2020 at 23:06)
+* [more basics](topic/more.20basics.html) (449 messages, latest: May 09 2020 at 22:42)
 * [Cannot Import topology.basic](topic/Cannot.20Import.20topology.2Ebasic.html) (73 messages, latest: May 09 2020 at 15:24)
 * [getting started](topic/getting.20started.html) (78 messages, latest: May 09 2020 at 15:11)
 * [Induction vs recursion](topic/Induction.20vs.20recursion.html) (75 messages, latest: May 09 2020 at 15:09)
@@ -21,7 +22,6 @@ permalink: /stream/113489-new-members/index.html
 * [lean for coq users?](topic/lean.20for.20coq.20users.3F.html) (34 messages, latest: May 09 2020 at 04:34)
 * [Rewriting in assumption](topic/Rewriting.20in.20assumption.html) (19 messages, latest: May 09 2020 at 02:06)
 * [canonical answers to "what next after NNG"?](topic/canonical.20answers.20to.20.22what.20next.20after.20NNG.22.3F.html) (2 messages, latest: May 09 2020 at 00:24)
-* [more basics](topic/more.20basics.html) (444 messages, latest: May 08 2020 at 21:13)
 * [hitchhiker's guide](topic/hitchhiker's.20guide.html) (11 messages, latest: May 08 2020 at 16:08)
 * [natural number game questions](topic/natural.20number.20game.20questions.html) (129 messages, latest: May 08 2020 at 09:17)
 * [how is log defined in lean?](topic/how.20is.20log.20defined.20in.20lean.3F.html) (21 messages, latest: May 07 2020 at 20:11)
@@ -1034,4 +1034,4 @@ permalink: /stream/113489-new-members/index.html
 * [Andrew Ashworth](topic/Andrew.20Ashworth.html) (15 messages, latest: Feb 26 2018 at 16:21)
 * [onboarding](topic/onboarding.html) (1 message, latest: Feb 26 2018 at 16:02)
 
-<hr><p>Last updated: May 09 2020 at 22:09 UTC</p>
+<hr><p>Last updated: May 09 2020 at 23:06 UTC</p>

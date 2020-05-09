@@ -504,6 +504,112 @@ they talk about benefits of proof irrelevance in 11.2 and 11.4.</p>
 
 
 
+<a name="197016820"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113489-new%20members/topic/Please%20Eliminate%20My%20Large%20Questions/near/197016820" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Reid Barton <a href="https://leanprover-community.github.io/archive/stream/113489-new-members/topic/Please.20Eliminate.20My.20Large.20Questions.html#197016820">(May 09 2020 at 22:20)</a>:</h4>
+<p>I was going to object to the phrasing of this statement but I guess it's technically accurate. But the alternative to "using a proof irrelevant prop" is "not using prop", not "using a proof relevant prop" (which is an oxymoron).</p>
+
+
+
+<a name="197016829"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113489-new%20members/topic/Please%20Eliminate%20My%20Large%20Questions/near/197016829" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Reid Barton <a href="https://leanprover-community.github.io/archive/stream/113489-new-members/topic/Please.20Eliminate.20My.20Large.20Questions.html#197016829">(May 09 2020 at 22:21)</a>:</h4>
+<p>At least if proof relevance is taken up to propositional equality.</p>
+
+
+
+<a name="197018121"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113489-new%20members/topic/Please%20Eliminate%20My%20Large%20Questions/near/197018121" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Reid Barton <a href="https://leanprover-community.github.io/archive/stream/113489-new-members/topic/Please.20Eliminate.20My.20Large.20Questions.html#197018121">(May 09 2020 at 22:41)</a>:</h4>
+<p>One way to think about this that generalizes to higher dimensions is that Props secretly have extra "truncation constructors" that assert that any two values of the type are actually equal. When you eliminate out of a Prop you need to say where these truncation constructors go, and there is no way to do that. However, there are two cases where it's fine to omit them:</p>
+<ul>
+<li>when eliminating into another Prop, since then in the target it's also automatically true that any two values are equal;</li>
+<li>when the singleton elimination rule applies (rouhgly, there's at most one constructor), since then you don't need to add the truncation constructors.</li>
+</ul>
+
+
+
+<a name="197018197"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113489-new%20members/topic/Please%20Eliminate%20My%20Large%20Questions/near/197018197" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Kevin Buzzard <a href="https://leanprover-community.github.io/archive/stream/113489-new-members/topic/Please.20Eliminate.20My.20Large.20Questions.html#197018197">(May 09 2020 at 22:43)</a>:</h4>
+<p>Can I eliminate or into a subsingleton?</p>
+
+
+
+<a name="197018236"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113489-new%20members/topic/Please%20Eliminate%20My%20Large%20Questions/near/197018236" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Chris Hughes <a href="https://leanprover-community.github.io/archive/stream/113489-new-members/topic/Please.20Eliminate.20My.20Large.20Questions.html#197018236">(May 09 2020 at 22:44)</a>:</h4>
+<p>No</p>
+
+
+
+<a name="197018254"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113489-new%20members/topic/Please%20Eliminate%20My%20Large%20Questions/near/197018254" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Reid Barton <a href="https://leanprover-community.github.io/archive/stream/113489-new-members/topic/Please.20Eliminate.20My.20Large.20Questions.html#197018254">(May 09 2020 at 22:45)</a>:</h4>
+<p>It's true that definitional proof irrelevance makes this picture a bit murky, which is why you have to imagine the truncation constructors as "proofs of definitional equality" or something and they are not expressable in the language.</p>
+
+
+
+<a name="197018311"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113489-new%20members/topic/Please%20Eliminate%20My%20Large%20Questions/near/197018311" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Reid Barton <a href="https://leanprover-community.github.io/archive/stream/113489-new-members/topic/Please.20Eliminate.20My.20Large.20Questions.html#197018311">(May 09 2020 at 22:46)</a>:</h4>
+<p>The recursor you get in Lean for a Prop (whether large- or small-eliminating) is sort of the best approximation that you can actually write down.</p>
+
+
+
+<a name="197018384"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113489-new%20members/topic/Please%20Eliminate%20My%20Large%20Questions/near/197018384" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Chris Hughes <a href="https://leanprover-community.github.io/archive/stream/113489-new-members/topic/Please.20Eliminate.20My.20Large.20Questions.html#197018384">(May 09 2020 at 22:49)</a>:</h4>
+<p>One thing I don't have a very good understanding of is the significance of definitional proof irrelevance versus propositional proof irrelevance. There are quite big differences between the two I think. Understanding this difference is I guess quite important to understanding the downsides of HoTT.</p>
+
+
+
+<a name="197018613"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113489-new%20members/topic/Please%20Eliminate%20My%20Large%20Questions/near/197018613" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Reid Barton <a href="https://leanprover-community.github.io/archive/stream/113489-new-members/topic/Please.20Eliminate.20My.20Large.20Questions.html#197018613">(May 09 2020 at 22:55)</a>:</h4>
+<p>It seems like a big deal to me, but somehow Coq users managed without it for a long time.</p>
+
+
+
+<a name="197018696"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113489-new%20members/topic/Please%20Eliminate%20My%20Large%20Questions/near/197018696" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Chris Hughes <a href="https://leanprover-community.github.io/archive/stream/113489-new-members/topic/Please.20Eliminate.20My.20Large.20Questions.html#197018696">(May 09 2020 at 22:57)</a>:</h4>
+<p>Are things like the Odd order theorem done in a logic weaker than HoTT?</p>
+
+
+
+<a name="197018703"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113489-new%20members/topic/Please%20Eliminate%20My%20Large%20Questions/near/197018703" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Reid Barton <a href="https://leanprover-community.github.io/archive/stream/113489-new-members/topic/Please.20Eliminate.20My.20Large.20Questions.html#197018703">(May 09 2020 at 22:58)</a>:</h4>
+<p>I think so...</p>
+
+
+
+<a name="197018766"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113489-new%20members/topic/Please%20Eliminate%20My%20Large%20Questions/near/197018766" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Reid Barton <a href="https://leanprover-community.github.io/archive/stream/113489-new-members/topic/Please.20Eliminate.20My.20Large.20Questions.html#197018766">(May 09 2020 at 22:59)</a>:</h4>
+<p>well, as far as Prop is concerned anyways</p>
+
+
+
+<a name="197018769"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113489-new%20members/topic/Please%20Eliminate%20My%20Large%20Questions/near/197018769" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Reid Barton <a href="https://leanprover-community.github.io/archive/stream/113489-new-members/topic/Please.20Eliminate.20My.20Large.20Questions.html#197018769">(May 09 2020 at 22:59)</a>:</h4>
+<p>I imagine Coq in general has crazy stuff you cannot disable</p>
+
+
+
+<a name="197018815"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113489-new%20members/topic/Please%20Eliminate%20My%20Large%20Questions/near/197018815" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Chris Hughes <a href="https://leanprover-community.github.io/archive/stream/113489-new-members/topic/Please.20Eliminate.20My.20Large.20Questions.html#197018815">(May 09 2020 at 23:00)</a>:</h4>
+<p>So it's weaker than Coq HoTT right?</p>
+
+
+
+<a name="197018885"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113489-new%20members/topic/Please%20Eliminate%20My%20Large%20Questions/near/197018885" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Reid Barton <a href="https://leanprover-community.github.io/archive/stream/113489-new-members/topic/Please.20Eliminate.20My.20Large.20Questions.html#197018885">(May 09 2020 at 23:02)</a>:</h4>
+<p>oh I understand the question now... I'm not sure.</p>
+
+
+
+<a name="197018900"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113489-new%20members/topic/Please%20Eliminate%20My%20Large%20Questions/near/197018900" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Reid Barton <a href="https://leanprover-community.github.io/archive/stream/113489-new-members/topic/Please.20Eliminate.20My.20Large.20Questions.html#197018900">(May 09 2020 at 23:03)</a>:</h4>
+<p>I think you are asking whether you can prove that identity types are subsingletons in Coq, right?</p>
+
+
+
+<a name="197019060"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113489-new%20members/topic/Please%20Eliminate%20My%20Large%20Questions/near/197019060" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Reid Barton <a href="https://leanprover-community.github.io/archive/stream/113489-new-members/topic/Please.20Eliminate.20My.20Large.20Questions.html#197019060">(May 09 2020 at 23:06)</a>:</h4>
+<p>It looks like it is an axiom but I don't know whether the Feit-Thompson proof used it. I guess probably. But it seems like the kind of axiom you can just push back onto your hypotheses (e.g., into the definition of "finite" group)</p>
+
+
+
 {% endraw %}
 
-<hr><p>Last updated: May 09 2020 at 22:09 UTC</p>
+<hr><p>Last updated: May 09 2020 at 23:06 UTC</p>
