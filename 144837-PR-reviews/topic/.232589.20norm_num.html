@@ -433,6 +433,77 @@ sys     7m33.007s
 
 
 
+<a name="197006333"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/144837-PR%20reviews/topic/%232589%20norm_num/near/197006333" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Mario Carneiro <a href="https://leanprover-community.github.io/archive/stream/144837-PR-reviews/topic/.232589.20norm_num.html#197006333">(May 09 2020 at 18:50)</a>:</h4>
+<div class="codehilite"><pre><span></span><code><span class="c1">-- the following lemma takes about 9 seconds</span>
+<span class="kn">lemma</span> <span class="n">pi_gt_31415</span> <span class="o">:</span> <span class="n">pi</span> <span class="bp">&gt;</span> <span class="mi">3</span><span class="bp">.</span><span class="mi">1415</span> <span class="o">:=</span>
+<span class="k">begin</span>
+  <span class="n">refine</span> <span class="n">lt_of_le_of_lt</span> <span class="bp">_</span> <span class="o">(</span><span class="n">pi_gt_sqrt_two_add_series</span> <span class="mi">6</span><span class="o">),</span> <span class="n">rw</span> <span class="o">[</span><span class="n">mul_comm</span><span class="o">],</span>
+  <span class="n">apply</span> <span class="n">le_mul_of_div_le</span><span class="o">,</span> <span class="n">norm_num</span><span class="o">,</span> <span class="n">apply</span> <span class="n">le_sqrt_of_sqr_le</span><span class="o">,</span> <span class="n">rw</span> <span class="o">[</span><span class="n">le_sub</span><span class="o">],</span>
+  <span class="n">apply</span> <span class="n">sqrt_two_add_series_step_up&#39;</span> <span class="o">(</span><span class="mi">11482</span><span class="bp">/</span><span class="mi">8119</span><span class="o">),</span>
+  <span class="n">apply</span> <span class="n">sqrt_two_add_series_step_up&#39;</span> <span class="o">(</span><span class="mi">5401</span><span class="bp">/</span><span class="mi">2923</span><span class="o">),</span>
+  <span class="n">apply</span> <span class="n">sqrt_two_add_series_step_up&#39;</span> <span class="o">(</span><span class="mi">2348</span><span class="bp">/</span><span class="mi">1197</span><span class="o">),</span>
+  <span class="n">apply</span> <span class="n">sqrt_two_add_series_step_up&#39;</span> <span class="o">(</span><span class="mi">11367</span><span class="bp">/</span><span class="mi">5711</span><span class="o">),</span>
+  <span class="n">apply</span> <span class="n">sqrt_two_add_series_step_up&#39;</span> <span class="o">(</span><span class="mi">25705</span><span class="bp">/</span><span class="mi">12868</span><span class="o">),</span>
+  <span class="n">apply</span> <span class="n">sqrt_two_add_series_step_up&#39;</span> <span class="o">(</span><span class="mi">23235</span><span class="bp">/</span><span class="mi">11621</span><span class="o">),</span>
+  <span class="n">rw</span> <span class="n">sqrt_two_add_series</span><span class="o">,</span>
+  <span class="n">all_goals</span> <span class="o">{</span><span class="n">norm_num</span><span class="o">}</span>
+<span class="kn">end</span>
+</code></pre></div>
+
+
+<div class="codehilite"><pre><span></span><code><span class="n">parsing</span> <span class="n">took</span> <span class="mi">65</span><span class="bp">.</span><span class="mi">4</span><span class="n">ms</span>
+<span class="n">type</span> <span class="n">checking</span> <span class="n">of</span> <span class="n">pi_gt_31415</span> <span class="n">took</span> <span class="mi">0</span><span class="bp">.</span><span class="mi">151</span><span class="n">ms</span>
+<span class="n">decl</span> <span class="n">post</span><span class="bp">-</span><span class="n">processing</span> <span class="n">of</span> <span class="n">pi_gt_31415</span> <span class="n">took</span> <span class="mi">0</span><span class="bp">.</span><span class="mi">00408</span><span class="n">ms</span>
+<span class="n">elaboration</span> <span class="n">of</span> <span class="n">pi_gt_31415</span> <span class="n">took</span> <span class="mi">1</span><span class="bp">.</span><span class="mi">14</span><span class="n">s</span>
+</code></pre></div>
+
+
+<p>From 9 seconds to 1.14 with the new <code>norm_num</code>!</p>
+
+
+
+<a name="197006408"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/144837-PR%20reviews/topic/%232589%20norm_num/near/197006408" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Mario Carneiro <a href="https://leanprover-community.github.io/archive/stream/144837-PR-reviews/topic/.232589.20norm_num.html#197006408">(May 09 2020 at 18:53)</a>:</h4>
+<div class="codehilite"><pre><span></span><code><span class="c1">-- the following lemma took about 15 seconds</span>
+<span class="kn">lemma</span> <span class="n">pi_gt_3141592</span> <span class="o">:</span> <span class="n">pi</span> <span class="bp">&gt;</span> <span class="mi">3</span><span class="bp">.</span><span class="mi">141592</span>  <span class="o">:=</span> <span class="bp">...</span>
+<span class="c1">-- elaboration of pi_gt_3141592 took 3.17s</span>
+
+<span class="c1">-- the following lemma took about 19 seconds</span>
+<span class="kn">lemma</span> <span class="n">pi_lt_3141593</span> <span class="o">:</span> <span class="n">pi</span> <span class="bp">&lt;</span> <span class="mi">3</span><span class="bp">.</span><span class="mi">141593</span> <span class="o">:=</span> <span class="bp">...</span>
+<span class="c1">-- elaboration of pi_lt_3141593 took 3.52s</span>
+</code></pre></div>
+
+
+
+<a name="197006842"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/144837-PR%20reviews/topic/%232589%20norm_num/near/197006842" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Mario Carneiro <a href="https://leanprover-community.github.io/archive/stream/144837-PR-reviews/topic/.232589.20norm_num.html#197006842">(May 09 2020 at 19:04)</a>:</h4>
+<p><span class="user-mention silent" data-user-id="112680">Johan Commelin</span> <a href="#narrow/stream/144837-PR-reviews/topic/.232589.20norm_num/near/196213831" title="#narrow/stream/144837-PR-reviews/topic/.232589.20norm_num/near/196213831">said</a>:</p>
+<blockquote>
+<p>Is this one of those tactics that could have a <code>norm_num?</code> version that outputs a reasonably short certificate that is faster to check than regenerating the proof?</p>
+</blockquote>
+<p>Not particularly. If you know a way to prove correctness of multiplication faster than evaluating it, I'd like to know (I think this is still an open problem). For non-primality there are efficient certificates, of course, but <code>norm_num</code> already generates short proofs when it can (on the assumption that the corresponding VM functions are fast enough that their contribution is negligible). The only case where this is probably not true is in non-primality of large numbers, since the VM does the search for a factor using trial division, which is not good for large numbers.</p>
+
+
+
+<a name="197006856"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/144837-PR%20reviews/topic/%232589%20norm_num/near/197006856" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Mario Carneiro <a href="https://leanprover-community.github.io/archive/stream/144837-PR-reviews/topic/.232589.20norm_num.html#197006856">(May 09 2020 at 19:05)</a>:</h4>
+<p>There are also short certificates for prime numbers but they are complicated and don't really pay off until you get really large</p>
+
+
+
+<a name="197006920"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/144837-PR%20reviews/topic/%232589%20norm_num/near/197006920" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Sebastien Gouezel <a href="https://leanprover-community.github.io/archive/stream/144837-PR-reviews/topic/.232589.20norm_num.html#197006920">(May 09 2020 at 19:06)</a>:</h4>
+<p>I guess it is time to move these statements about the digits of <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>π</mi></mrow><annotation encoding="application/x-tex">\pi</annotation></semantics></math></span><span aria-hidden="true" class="katex-html"><span class="base"><span class="strut" style="height:0.43056em;vertical-align:0em;"></span><span class="mord mathdefault" style="margin-right:0.03588em;">π</span></span></span></span> to mathlib, then! (They used to be in a gist as they were too slow for mathlib, right?)</p>
+
+
+
+<a name="197006922"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/144837-PR%20reviews/topic/%232589%20norm_num/near/197006922" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Mario Carneiro <a href="https://leanprover-community.github.io/archive/stream/144837-PR-reviews/topic/.232589.20norm_num.html#197006922">(May 09 2020 at 19:06)</a>:</h4>
+<p>right</p>
+
+
+
 {% endraw %}
 
-<hr><p>Last updated: May 09 2020 at 18:09 UTC</p>
+<hr><p>Last updated: May 09 2020 at 19:11 UTC</p>

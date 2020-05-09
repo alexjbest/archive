@@ -79,6 +79,18 @@ permalink: /stream/113488-general/topic/rw_mod_hom.html
 
 
 
+<a name="197004341"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113488-general/topic/rw_mod_hom/near/197004341" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Chris Hughes <a href="https://leanprover-community.github.io/archive/stream/113488-general/topic/rw_mod_hom.html#197004341">(May 09 2020 at 18:10)</a>:</h4>
+<p>Can we extend <code>norm_cast</code> to other homs?</p>
+
+
+
+<a name="197004502"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113488-general/topic/rw_mod_hom/near/197004502" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Gabriel Ebner <a href="https://leanprover-community.github.io/archive/stream/113488-general/topic/rw_mod_hom.html#197004502">(May 09 2020 at 18:13)</a>:</h4>
+<p>I think some basic support for other kinds of "coercions" would be straightforward.  We already support three coercions: <code>coe_fn</code>, <code>coe_sort</code>, and <code>coe</code>.  We could add an attribute that allows you to register other functions as coercions.  However the heuristic for <code>↑x = ↑y</code> which first tries to rewrite it to <code>↑↑x = ↑y</code> is probably hard to generalize to other coercions.</p>
+
+
+
 {% endraw %}
 
-<hr><p>Last updated: May 09 2020 at 18:09 UTC</p>
+<hr><p>Last updated: May 09 2020 at 19:11 UTC</p>
