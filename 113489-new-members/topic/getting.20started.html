@@ -381,6 +381,191 @@ Thanks. So, if I undestand the philosophy right, I should download the project g
 
 
 
+<a name="196993554"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113489-new%20members/topic/getting%20started/near/196993554" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Patrick Stevens <a href="https://leanprover-community.github.io/archive/stream/113489-new-members/topic/getting.20started.html#196993554">(May 09 2020 at 14:15)</a>:</h4>
+<p>Sorry, I kind of forgot about it and it has some test failures I haven't explained - let me just have a quick look again</p>
+
+
+
+<a name="196993573"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113489-new%20members/topic/getting%20started/near/196993573" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Patrick Stevens <a href="https://leanprover-community.github.io/archive/stream/113489-new-members/topic/getting.20started.html#196993573">(May 09 2020 at 14:15)</a>:</h4>
+<p>Part of the problem is that it's been literally years since I coded in Python, so everything is hard again :P</p>
+
+
+
+<a name="196993853"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113489-new%20members/topic/getting%20started/near/196993853" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Patrick Massot <a href="https://leanprover-community.github.io/archive/stream/113489-new-members/topic/getting.20started.html#196993853">(May 09 2020 at 14:20)</a>:</h4>
+<p>I should have asked a more specific question. I didn't look at that PR yet because it was flagged as a draft, do you want me to look at it now?</p>
+
+
+
+<a name="196993875"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113489-new%20members/topic/getting%20started/near/196993875" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Patrick Massot <a href="https://leanprover-community.github.io/archive/stream/113489-new-members/topic/getting.20started.html#196993875">(May 09 2020 at 14:21)</a>:</h4>
+<p>Also you should probably rebase on master before doing anything else on your branch</p>
+
+
+
+<a name="196994220"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113489-new%20members/topic/getting%20started/near/196994220" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Patrick Stevens <a href="https://leanprover-community.github.io/archive/stream/113489-new-members/topic/getting.20started.html#196994220">(May 09 2020 at 14:29)</a>:</h4>
+<p>The current status is "tests are failing when I enable the new mode and I have no idea why". I just turned my new flag to default to "off" and now the only test that is failing is the one that asserts the new behaviour - so it's definitely my change that is broken - but I was hoping to finish this without having to work out how to run it locally</p>
+
+
+
+<a name="196994236"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113489-new%20members/topic/getting%20started/near/196994236" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Patrick Stevens <a href="https://leanprover-community.github.io/archive/stream/113489-new-members/topic/getting.20started.html#196994236">(May 09 2020 at 14:29)</a>:</h4>
+<p>In hindsight, quite an optimistic hope</p>
+
+
+
+<a name="196994302"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113489-new%20members/topic/getting%20started/near/196994302" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Patrick Massot <a href="https://leanprover-community.github.io/archive/stream/113489-new-members/topic/getting.20started.html#196994302">(May 09 2020 at 14:31)</a>:</h4>
+<p>The error message on Travis suggests you invented some feature of git python</p>
+
+
+
+<a name="196994355"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113489-new%20members/topic/getting%20started/near/196994355" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Patrick Stevens <a href="https://leanprover-community.github.io/archive/stream/113489-new-members/topic/getting.20started.html#196994355">(May 09 2020 at 14:32)</a>:</h4>
+<p>(fear not, I'll squash away all these ridiculous commits)</p>
+
+
+
+<a name="196994374"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113489-new%20members/topic/getting%20started/near/196994374" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Patrick Massot <a href="https://leanprover-community.github.io/archive/stream/113489-new-members/topic/getting.20started.html#196994374">(May 09 2020 at 14:33)</a>:</h4>
+<p>And also that you didn't rebase on master</p>
+
+
+
+<a name="196994376"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113489-new%20members/topic/getting%20started/near/196994376" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Patrick Massot <a href="https://leanprover-community.github.io/archive/stream/113489-new-members/topic/getting.20started.html#196994376">(May 09 2020 at 14:33)</a>:</h4>
+<p>But this is not a problem at all</p>
+
+
+
+<a name="196994378"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113489-new%20members/topic/getting%20started/near/196994378" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Patrick Massot <a href="https://leanprover-community.github.io/archive/stream/113489-new-members/topic/getting.20started.html#196994378">(May 09 2020 at 14:33)</a>:</h4>
+<p>This can wait</p>
+
+
+
+<a name="196994385"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113489-new%20members/topic/getting%20started/near/196994385" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Patrick Massot <a href="https://leanprover-community.github.io/archive/stream/113489-new-members/topic/getting.20started.html#196994385">(May 09 2020 at 14:33)</a>:</h4>
+<p>I'll release 0.0.6 now</p>
+
+
+
+<a name="196994388"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113489-new%20members/topic/getting%20started/near/196994388" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Patrick Stevens <a href="https://leanprover-community.github.io/archive/stream/113489-new-members/topic/getting.20started.html#196994388">(May 09 2020 at 14:33)</a>:</h4>
+<p>Not rebasing isn't a problem if I'm going to squash-merge anyway, right?</p>
+
+
+
+<a name="196994391"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113489-new%20members/topic/getting%20started/near/196994391" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Patrick Stevens <a href="https://leanprover-community.github.io/archive/stream/113489-new-members/topic/getting.20started.html#196994391">(May 09 2020 at 14:33)</a>:</h4>
+<p>Sure, go for it</p>
+
+
+
+<a name="196994448"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113489-new%20members/topic/getting%20started/near/196994448" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Patrick Massot <a href="https://leanprover-community.github.io/archive/stream/113489-new-members/topic/getting.20started.html#196994448">(May 09 2020 at 14:34)</a>:</h4>
+<p>Oh sorry, I didn't see your new commits.</p>
+
+
+
+<a name="196994476"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113489-new%20members/topic/getting%20started/near/196994476" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Patrick Massot <a href="https://leanprover-community.github.io/archive/stream/113489-new-members/topic/getting.20started.html#196994476">(May 09 2020 at 14:34)</a>:</h4>
+<p>Yes, we can clean up history before merging</p>
+
+
+
+<a name="196994498"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113489-new%20members/topic/getting%20started/near/196994498" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Patrick Massot <a href="https://leanprover-community.github.io/archive/stream/113489-new-members/topic/getting.20started.html#196994498">(May 09 2020 at 14:35)</a>:</h4>
+<p>My actual question is: why do you think you can pass the depth argument to <code>Repo.clone_from</code> like this?</p>
+
+
+
+<a name="196994599"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113489-new%20members/topic/getting%20started/near/196994599" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Patrick Stevens <a href="https://leanprover-community.github.io/archive/stream/113489-new-members/topic/getting.20started.html#196994599">(May 09 2020 at 14:37)</a>:</h4>
+<p>Its docstring contains the text "        :param multi_options: See <code>clone</code> method", and the clone method's docstring contains the text </p>
+<blockquote>
+<div class="codehilite"><pre><span></span><code>   :param multi_options: A list of Clone options that can be provided multiple times.  One
+        option per list item which is passed exactly as specified to clone.
+        For example [&#39;--config core.filemode=false&#39;, &#39;--config core.ignorecase&#39;,
+                     &#39;--recurse-submodule=repo1_path&#39;, &#39;--recurse-submodule=repo2_path&#39;
+</code></pre></div>
+
+
+</blockquote>
+
+
+
+<a name="196994944"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113489-new%20members/topic/getting%20started/near/196994944" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Patrick Stevens <a href="https://leanprover-community.github.io/archive/stream/113489-new-members/topic/getting.20started.html#196994944">(May 09 2020 at 14:45)</a>:</h4>
+<p>Do you mind if I add "/venv" to the .gitignore? I'm finally seeing if I can run the thing myself</p>
+
+
+
+<a name="196995922"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113489-new%20members/topic/getting%20started/near/196995922" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Patrick Massot <a href="https://leanprover-community.github.io/archive/stream/113489-new-members/topic/getting.20started.html#196995922">(May 09 2020 at 15:06)</a>:</h4>
+<div class="codehilite"><pre><span></span><code><span class="n">Python</span> <span class="mf">3.8</span><span class="o">.</span><span class="mi">0</span> <span class="p">(</span><span class="n">default</span><span class="p">,</span> <span class="n">Dec</span>  <span class="mi">7</span> <span class="mi">2019</span><span class="p">,</span> <span class="mi">17</span><span class="p">:</span><span class="mi">45</span><span class="p">:</span><span class="mi">02</span><span class="p">)</span>
+<span class="n">Type</span> <span class="s1">&#39;copyright&#39;</span><span class="p">,</span> <span class="s1">&#39;credits&#39;</span> <span class="ow">or</span> <span class="s1">&#39;license&#39;</span> <span class="k">for</span> <span class="n">more</span> <span class="n">information</span>
+<span class="n">IPython</span> <span class="mf">7.12</span><span class="o">.</span><span class="mi">0</span> <span class="o">--</span> <span class="n">An</span> <span class="n">enhanced</span> <span class="n">Interactive</span> <span class="n">Python</span><span class="o">.</span> <span class="n">Type</span> <span class="s1">&#39;?&#39;</span> <span class="k">for</span> <span class="n">help</span><span class="o">.</span>
+
+<span class="n">In</span> <span class="p">[</span><span class="mi">1</span><span class="p">]:</span> <span class="kn">from</span> <span class="nn">git</span> <span class="kn">import</span> <span class="n">Repo</span>
+
+<span class="n">In</span> <span class="p">[</span><span class="mi">2</span><span class="p">]:</span>  <span class="n">Repo</span><span class="o">.</span><span class="n">clone_from</span><span class="p">(</span><span class="s1">&#39;https://github.com/leanprover-community/tutorials.git&#39;</span>
+   <span class="o">...</span><span class="p">:</span> <span class="p">,</span> <span class="s1">&#39;test_target&#39;</span><span class="p">,</span> <span class="p">[</span><span class="s1">&#39;--depth=1&#39;</span><span class="p">])</span>
+<span class="o">---------------------------------------------------------------------------</span>
+<span class="ne">AttributeError</span>                            <span class="n">Traceback</span> <span class="p">(</span><span class="n">most</span> <span class="n">recent</span> <span class="n">call</span> <span class="n">last</span><span class="p">)</span>
+<span class="o">&lt;</span><span class="n">ipython</span><span class="o">-</span><span class="nb">input</span><span class="o">-</span><span class="mi">2</span><span class="o">-</span><span class="n">e474310ae324</span><span class="o">&gt;</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
+<span class="o">----&gt;</span> <span class="mi">1</span> <span class="n">Repo</span><span class="o">.</span><span class="n">clone_from</span><span class="p">(</span><span class="s1">&#39;https://github.com/leanprover-community/tutorials.git&#39;</span><span class="p">,</span> <span class="s1">&#39;test_target&#39;</span><span class="p">,</span> <span class="p">[</span><span class="s1">&#39;--depth=1&#39;</span><span class="p">])</span>
+
+<span class="o">~/.</span><span class="n">pyenv</span><span class="o">/</span><span class="n">versions</span><span class="o">/</span><span class="mf">3.8</span><span class="o">.</span><span class="mi">0</span><span class="o">/</span><span class="n">lib</span><span class="o">/</span><span class="n">python3</span><span class="o">.</span><span class="mi">8</span><span class="o">/</span><span class="n">site</span><span class="o">-</span><span class="n">packages</span><span class="o">/</span><span class="n">git</span><span class="o">/</span><span class="n">repo</span><span class="o">/</span><span class="n">base</span><span class="o">.</span><span class="n">py</span> <span class="ow">in</span> <span class="n">clone_from</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span> <span class="n">url</span><span class="p">,</span> <span class="n">to_path</span><span class="p">,</span> <span class="n">progress</span><span class="p">,</span> <span class="n">env</span><span class="p">,</span> <span class="n">multi_options</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
+   <span class="mi">1015</span>         <span class="k">if</span> <span class="n">env</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+   <span class="mi">1016</span>             <span class="n">git</span><span class="o">.</span><span class="n">update_environment</span><span class="p">(</span><span class="o">**</span><span class="n">env</span><span class="p">)</span>
+<span class="o">-&gt;</span> <span class="mi">1017</span>         <span class="k">return</span> <span class="bp">cls</span><span class="o">.</span><span class="n">_clone</span><span class="p">(</span><span class="n">git</span><span class="p">,</span> <span class="n">url</span><span class="p">,</span> <span class="n">to_path</span><span class="p">,</span> <span class="n">GitCmdObjectDB</span><span class="p">,</span> <span class="n">progress</span><span class="p">,</span> <span class="n">multi_options</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
+   <span class="mi">1018</span>
+   <span class="mi">1019</span>     <span class="k">def</span> <span class="nf">archive</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">ostream</span><span class="p">,</span> <span class="n">treeish</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">prefix</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
+
+<span class="o">~/.</span><span class="n">pyenv</span><span class="o">/</span><span class="n">versions</span><span class="o">/</span><span class="mf">3.8</span><span class="o">.</span><span class="mi">0</span><span class="o">/</span><span class="n">lib</span><span class="o">/</span><span class="n">python3</span><span class="o">.</span><span class="mi">8</span><span class="o">/</span><span class="n">site</span><span class="o">-</span><span class="n">packages</span><span class="o">/</span><span class="n">git</span><span class="o">/</span><span class="n">repo</span><span class="o">/</span><span class="n">base</span><span class="o">.</span><span class="n">py</span> <span class="ow">in</span> <span class="n">_clone</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span> <span class="n">git</span><span class="p">,</span> <span class="n">url</span><span class="p">,</span> <span class="n">path</span><span class="p">,</span> <span class="n">odb_default_type</span><span class="p">,</span> <span class="n">progress</span><span class="p">,</span> <span class="n">multi_options</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
+    <span class="mi">952</span>                          <span class="n">v</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">universal_newlines</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="o">**</span><span class="n">add_progress</span><span class="p">(</span><span class="n">kwargs</span><span class="p">,</span> <span class="n">git</span><span class="p">,</span> <span class="n">progress</span><span class="p">))</span>
+    <span class="mi">953</span>         <span class="k">if</span> <span class="n">progress</span><span class="p">:</span>
+<span class="o">--&gt;</span> <span class="mi">954</span>             <span class="n">handle_process_output</span><span class="p">(</span><span class="n">proc</span><span class="p">,</span> <span class="kc">None</span><span class="p">,</span> <span class="n">progress</span><span class="o">.</span><span class="n">new_message_handler</span><span class="p">(),</span> <span class="n">finalize_process</span><span class="p">,</span> <span class="n">decode_streams</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+    <span class="mi">955</span>         <span class="k">else</span><span class="p">:</span>
+    <span class="mi">956</span>             <span class="p">(</span><span class="n">stdout</span><span class="p">,</span> <span class="n">stderr</span><span class="p">)</span> <span class="o">=</span> <span class="n">proc</span><span class="o">.</span><span class="n">communicate</span><span class="p">()</span>
+
+<span class="ne">AttributeError</span><span class="p">:</span> <span class="s1">&#39;list&#39;</span> <span class="nb">object</span> <span class="n">has</span> <span class="n">no</span> <span class="n">attribute</span> <span class="s1">&#39;new_message_handler&#39;</span>
+</code></pre></div>
+
+
+
+<a name="196995940"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113489-new%20members/topic/getting%20started/near/196995940" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Patrick Massot <a href="https://leanprover-community.github.io/archive/stream/113489-new-members/topic/getting.20started.html#196995940">(May 09 2020 at 15:06)</a>:</h4>
+<p>This has nothing to do with <code>leanproject</code>, this is simply not how <code>Repo.clone_from</code> works (at least the version I have here).</p>
+
+
+
+<a name="196995952"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113489-new%20members/topic/getting%20started/near/196995952" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Patrick Stevens <a href="https://leanprover-community.github.io/archive/stream/113489-new-members/topic/getting.20started.html#196995952">(May 09 2020 at 15:07)</a>:</h4>
+<p><span class="user-mention silent" data-user-id="110031">Patrick Massot</span> <a href="#narrow/stream/113489-new-members/topic/getting.20started/near/196995940" title="#narrow/stream/113489-new-members/topic/getting.20started/near/196995940">said</a>:</p>
+<blockquote>
+<p>This has nothing to do with <code>leanproject</code>, this is simply not how <code>Repo.clone_from</code> works (at least the version I have here).</p>
+</blockquote>
+<p>Sure, I understand the message; I simply followed what I thought were clear and simple instructions from the docstring :P but nothing is clear and simple when you haven't touched a language for years</p>
+
+
+
+<a name="196996106"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113489-new%20members/topic/getting%20started/near/196996106" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Patrick Massot <a href="https://leanprover-community.github.io/archive/stream/113489-new-members/topic/getting.20started.html#196996106">(May 09 2020 at 15:10)</a>:</h4>
+<p>No problem. I'm very happy when people want to contribute to <code>leanproject</code>, and there is no hurry at all. I released anyway since there was a critical bug since the appearance of an unfortunately named branch in the mathlib repository</p>
+
+
+
+<a name="196996108"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113489-new%20members/topic/getting%20started/near/196996108" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Patrick Massot <a href="https://leanprover-community.github.io/archive/stream/113489-new-members/topic/getting.20started.html#196996108">(May 09 2020 at 15:11)</a>:</h4>
+<p>And now I need to leave</p>
+
+
+
 {% endraw %}
 
-<hr><p>Last updated: May 09 2020 at 14:10 UTC</p>
+<hr><p>Last updated: May 09 2020 at 15:12 UTC</p>

@@ -9,6 +9,8 @@ permalink: /stream/113488-general/index.html
 
 ### Topics:
 
+* [calculate](topic/calculate.html) (102 messages, latest: May 09 2020 at 14:43)
+* [new Lean / mathlib tutorial](topic/new.20Lean.20.2F.20mathlib.20tutorial.html) (3 messages, latest: May 09 2020 at 14:33)
 * [Linarith unexpected failure](topic/Linarith.20unexpected.20failure.html) (30 messages, latest: May 09 2020 at 14:06)
 * [leanproject up?](topic/leanproject.20up.3F.html) (14 messages, latest: May 09 2020 at 12:50)
 * [nonlinear linarith](topic/nonlinear.20linarith.html) (29 messages, latest: May 09 2020 at 12:45)
@@ -16,10 +18,8 @@ permalink: /stream/113488-general/index.html
 * [Invitation to join the Codewars Lean community, Round 2](topic/Invitation.20to.20join.20the.20Codewars.20Lean.20community.2C.20Round.202.html) (308 messages, latest: May 09 2020 at 12:09)
 * [fact](topic/fact.html) (11 messages, latest: May 09 2020 at 11:18)
 * [on "What's next after NNG?"](topic/on.20.22What's.20next.20after.20NNG.3F.22.html) (5 messages, latest: May 09 2020 at 09:05)
-* [calculate](topic/calculate.html) (96 messages, latest: May 09 2020 at 08:07)
 * [Lean 3.11.0](topic/Lean.203.2E11.2E0.html) (35 messages, latest: May 09 2020 at 03:35)
 * [meta questions](topic/meta.20questions.html) (7 messages, latest: May 08 2020 at 20:54)
-* [new Lean / mathlib tutorial](topic/new.20Lean.20.2F.20mathlib.20tutorial.html) (2 messages, latest: May 08 2020 at 19:35)
 * [seminars](topic/seminars.html) (81 messages, latest: May 08 2020 at 18:23)
 * [lean 3.11.0](topic/lean.203.2E11.2E0.html) (1 message, latest: May 08 2020 at 17:40)
 * [Category theory zulip](topic/Category.20theory.20zulip.html) (5 messages, latest: May 08 2020 at 17:11)
@@ -2794,4 +2794,4 @@ permalink: /stream/113488-general/index.html
 * [test](topic/test.html) (4 messages, latest: Feb 26 2018 at 16:22)
 * [welcome](topic/welcome.html) (1 message, latest: Feb 26 2018 at 16:02)
 
-<hr><p>Last updated: May 09 2020 at 14:10 UTC</p>
+<hr><p>Last updated: May 09 2020 at 15:12 UTC</p>

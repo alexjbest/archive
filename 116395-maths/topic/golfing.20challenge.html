@@ -299,6 +299,58 @@ permalink: /stream/116395-maths/topic/golfing.20challenge.html
 
 
 
+<a name="196993454"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/116395-maths/topic/golfing%20challenge/near/196993454" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Johan Commelin <a href="https://leanprover-community.github.io/archive/stream/116395-maths/topic/golfing.20challenge.html#196993454">(May 09 2020 at 14:12)</a>:</h4>
+<p><span class="user-mention" data-user-id="110064">@Kenny Lau</span>  Sounds good. Thanks! Wanna make a PR?</p>
+
+
+
+<a name="196993461"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/116395-maths/topic/golfing%20challenge/near/196993461" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Kenny Lau <a href="https://leanprover-community.github.io/archive/stream/116395-maths/topic/golfing.20challenge.html#196993461">(May 09 2020 at 14:12)</a>:</h4>
+<p>go ahead</p>
+
+
+
+<a name="196994350"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/116395-maths/topic/golfing%20challenge/near/196994350" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Johan Commelin <a href="https://leanprover-community.github.io/archive/stream/116395-maths/topic/golfing.20challenge.html#196994350">(May 09 2020 at 14:32)</a>:</h4>
+<p><span class="user-mention" data-user-id="110064">@Kenny Lau</span> Golfed further:</p>
+<div class="codehilite"><pre><span></span><code><span class="kn">lemma</span> <span class="n">dvd_sub_pow_of_dvd_sub</span> <span class="o">(</span><span class="n">R</span> <span class="o">:</span> <span class="kt">Type</span><span class="bp">*</span><span class="o">)</span> <span class="o">[</span><span class="n">comm_ring</span> <span class="n">R</span><span class="o">]</span> <span class="o">(</span><span class="n">p</span> <span class="o">:</span> <span class="bp">ℕ</span><span class="o">)</span> <span class="o">[</span><span class="n">hp</span> <span class="o">:</span> <span class="n">fact</span> <span class="n">p</span><span class="bp">.</span><span class="n">prime</span><span class="o">]</span>
+  <span class="o">(</span><span class="n">a</span> <span class="n">b</span> <span class="o">:</span> <span class="n">R</span><span class="o">)</span> <span class="o">(</span><span class="n">h</span> <span class="o">:</span> <span class="o">(</span><span class="n">p</span> <span class="o">:</span> <span class="n">R</span><span class="o">)</span> <span class="err">∣</span> <span class="n">a</span> <span class="bp">-</span> <span class="n">b</span><span class="o">)</span> <span class="o">(</span><span class="n">k</span> <span class="o">:</span> <span class="bp">ℕ</span><span class="o">)</span> <span class="o">:</span>
+  <span class="o">(</span><span class="n">p</span><span class="bp">^</span><span class="o">(</span><span class="n">k</span><span class="bp">+</span><span class="mi">1</span><span class="o">)</span> <span class="o">:</span> <span class="n">R</span><span class="o">)</span> <span class="err">∣</span> <span class="n">a</span><span class="bp">^</span><span class="o">(</span><span class="n">p</span><span class="bp">^</span><span class="n">k</span><span class="o">)</span> <span class="bp">-</span> <span class="n">b</span><span class="bp">^</span><span class="o">(</span><span class="n">p</span><span class="bp">^</span><span class="n">k</span><span class="o">)</span> <span class="o">:=</span>
+<span class="k">begin</span>
+  <span class="n">induction</span> <span class="n">k</span> <span class="k">with</span> <span class="n">k</span> <span class="n">ih</span><span class="o">,</span>
+  <span class="o">{</span> <span class="n">rwa</span> <span class="o">[</span><span class="n">pow_one</span><span class="o">,</span> <span class="n">nat</span><span class="bp">.</span><span class="n">pow_zero</span><span class="o">,</span> <span class="n">pow_one</span><span class="o">,</span> <span class="n">pow_one</span><span class="o">]</span> <span class="o">},</span>
+  <span class="n">rw</span> <span class="o">[</span><span class="n">nat</span><span class="bp">.</span><span class="n">pow_succ</span><span class="o">,</span> <span class="n">pow_mul</span><span class="o">,</span> <span class="n">pow_mul</span><span class="o">,</span> <span class="err">←</span> <span class="n">geom_sum₂_mul</span><span class="o">,</span> <span class="n">pow_succ</span><span class="o">],</span>
+  <span class="n">refine</span> <span class="n">mul_dvd_mul</span> <span class="bp">_</span> <span class="n">ih</span><span class="o">,</span>
+  <span class="k">have</span> <span class="o">:</span> <span class="o">(</span><span class="n">p</span> <span class="o">:</span> <span class="n">R</span><span class="o">)</span> <span class="err">∈</span> <span class="n">ideal</span><span class="bp">.</span><span class="n">span</span> <span class="o">({</span><span class="n">p</span><span class="o">}</span> <span class="o">:</span> <span class="n">set</span> <span class="n">R</span><span class="o">),</span> <span class="o">{</span> <span class="n">rw</span> <span class="n">ideal</span><span class="bp">.</span><span class="n">mem_span_singleton</span> <span class="o">},</span>
+  <span class="n">rw</span> <span class="o">[</span><span class="err">←</span> <span class="n">ideal</span><span class="bp">.</span><span class="n">quotient</span><span class="bp">.</span><span class="n">eq_zero_iff_mem</span><span class="o">,</span> <span class="n">mk_eq_mk_hom</span><span class="o">,</span> <span class="n">ring_hom</span><span class="bp">.</span><span class="n">map_nat_cast</span><span class="o">]</span> <span class="n">at</span> <span class="n">this</span><span class="o">,</span>
+  <span class="n">rw</span> <span class="o">[</span><span class="err">←</span> <span class="n">ideal</span><span class="bp">.</span><span class="n">mem_span_singleton</span><span class="o">,</span> <span class="err">←</span> <span class="n">ideal</span><span class="bp">.</span><span class="n">quotient</span><span class="bp">.</span><span class="n">eq</span><span class="o">,</span> <span class="n">mk_eq_mk_hom</span><span class="o">,</span> <span class="n">mk_eq_mk_hom</span><span class="o">]</span> <span class="n">at</span> <span class="n">h</span><span class="o">,</span>
+  <span class="n">rw</span> <span class="o">[</span><span class="err">←</span> <span class="n">ideal</span><span class="bp">.</span><span class="n">mem_span_singleton</span><span class="o">,</span> <span class="err">←</span> <span class="n">ideal</span><span class="bp">.</span><span class="n">quotient</span><span class="bp">.</span><span class="n">eq_zero_iff_mem</span><span class="o">,</span> <span class="n">mk_eq_mk_hom</span><span class="o">,</span>
+      <span class="n">ring_hom</span><span class="bp">.</span><span class="n">map_geom_series₂</span><span class="o">,</span> <span class="n">ring_hom</span><span class="bp">.</span><span class="n">map_pow</span><span class="o">,</span> <span class="n">ring_hom</span><span class="bp">.</span><span class="n">map_pow</span><span class="o">,</span> <span class="n">h</span><span class="o">,</span> <span class="n">geom_series₂_self</span><span class="o">,</span>
+      <span class="n">this</span><span class="o">,</span> <span class="n">zero_mul</span><span class="o">],</span>
+<span class="kn">end</span>
+</code></pre></div>
+
+
+
+<a name="196994371"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/116395-maths/topic/golfing%20challenge/near/196994371" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Kenny Lau <a href="https://leanprover-community.github.io/archive/stream/116395-maths/topic/golfing.20challenge.html#196994371">(May 09 2020 at 14:33)</a>:</h4>
+<p><span class="user-mention" data-user-id="112680">@Johan Commelin</span> aha, you applied the quotient philosophy even more</p>
+
+
+
+<a name="196995771"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/116395-maths/topic/golfing%20challenge/near/196995771" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Kevin Buzzard <a href="https://leanprover-community.github.io/archive/stream/116395-maths/topic/golfing.20challenge.html#196995771">(May 09 2020 at 15:03)</a>:</h4>
+<p>Wow, from a monster it's now at de Bruijn index 1!</p>
+
+
+
+<a name="196996126"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/116395-maths/topic/golfing%20challenge/near/196996126" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Johan Commelin <a href="https://leanprover-community.github.io/archive/stream/116395-maths/topic/golfing.20challenge.html#196996126">(May 09 2020 at 15:11)</a>:</h4>
+<p><a href="https://github.com/leanprover-community/mathlib/issues/2640" title="https://github.com/leanprover-community/mathlib/issues/2640">#2640</a></p>
+
+
+
 {% endraw %}
 
-<hr><p>Last updated: May 09 2020 at 14:10 UTC</p>
+<hr><p>Last updated: May 09 2020 at 15:12 UTC</p>

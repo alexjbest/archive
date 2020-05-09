@@ -9,9 +9,12 @@ permalink: /stream/113489-new-members/index.html
 
 ### Topics:
 
-* [Induction vs recursion](topic/Induction.20vs.20recursion.html) (49 messages, latest: May 09 2020 at 14:09)
-* [getting started](topic/getting.20started.html) (54 messages, latest: May 09 2020 at 13:52)
-* [noob question(s)](topic/noob.20question(s).html) (5500 messages, latest: May 09 2020 at 13:47)
+* [getting started](topic/getting.20started.html) (78 messages, latest: May 09 2020 at 15:11)
+* [Induction vs recursion](topic/Induction.20vs.20recursion.html) (75 messages, latest: May 09 2020 at 15:09)
+* [Cannot Import topology.basic](topic/Cannot.20Import.20topology.2Ebasic.html) (63 messages, latest: May 09 2020 at 15:07)
+* [Structural recursion syntax](topic/Structural.20recursion.20syntax.html) (9 messages, latest: May 09 2020 at 15:04)
+* [Docs about `meta` keyword](topic/Docs.20about.20.60meta.60.20keyword.html) (9 messages, latest: May 09 2020 at 14:46)
+* [noob question(s)](topic/noob.20question(s).html) (5507 messages, latest: May 09 2020 at 14:27)
 * [Adding directories to LEAN_PATH](topic/Adding.20directories.20to.20LEAN_PATH.html) (13 messages, latest: May 09 2020 at 10:32)
 * [noncomputable](topic/noncomputable.html) (48 messages, latest: May 09 2020 at 05:47)
 * [lean for coq users?](topic/lean.20for.20coq.20users.3F.html) (34 messages, latest: May 09 2020 at 04:34)
@@ -1031,4 +1034,4 @@ permalink: /stream/113489-new-members/index.html
 * [Andrew Ashworth](topic/Andrew.20Ashworth.html) (15 messages, latest: Feb 26 2018 at 16:21)
 * [onboarding](topic/onboarding.html) (1 message, latest: Feb 26 2018 at 16:02)
 
-<hr><p>Last updated: May 09 2020 at 14:10 UTC</p>
+<hr><p>Last updated: May 09 2020 at 15:12 UTC</p>
