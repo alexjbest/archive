@@ -9,8 +9,8 @@ permalink: /stream/113489-new-members/index.html
 
 ### Topics:
 
+* [noob question(s)](topic/noob.20question(s).html) (5498 messages, latest: May 09 2020 at 07:20)
 * [noncomputable](topic/noncomputable.html) (48 messages, latest: May 09 2020 at 05:47)
-* [noob question(s)](topic/noob.20question(s).html) (5496 messages, latest: May 09 2020 at 04:58)
 * [lean for coq users?](topic/lean.20for.20coq.20users.3F.html) (34 messages, latest: May 09 2020 at 04:34)
 * [Adding directories to LEAN_PATH](topic/Adding.20directories.20to.20LEAN_PATH.html) (8 messages, latest: May 09 2020 at 03:53)
 * [Rewriting in assumption](topic/Rewriting.20in.20assumption.html) (19 messages, latest: May 09 2020 at 02:06)
@@ -1030,4 +1030,4 @@ permalink: /stream/113489-new-members/index.html
 * [Andrew Ashworth](topic/Andrew.20Ashworth.html) (15 messages, latest: Feb 26 2018 at 16:21)
 * [onboarding](topic/onboarding.html) (1 message, latest: Feb 26 2018 at 16:02)
 
-<hr><p>Last updated: May 09 2020 at 07:13 UTC</p>
+<hr><p>Last updated: May 09 2020 at 08:12 UTC</p>

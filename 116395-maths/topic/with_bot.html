@@ -564,6 +564,237 @@ Of course we could have them now, but not with all the nice <code>to_additive</c
 
 
 
+<a name="196978005"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/116395-maths/topic/with_bot/near/196978005" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Kevin Buzzard <a href="https://leanprover-community.github.io/archive/stream/116395-maths/topic/with_bot.html#196978005">(May 09 2020 at 07:16)</a>:</h4>
+<p>I think the trick is to find out which one is used in the library and then to always use that one, and to always use it in the exact syntactic form which is in the library, because if you don't then <code>simp</code> will not work</p>
+
+
+
+<a name="196978641"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/116395-maths/topic/with_bot/near/196978641" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> orlando <a href="https://leanprover-community.github.io/archive/stream/116395-maths/topic/with_bot.html#196978641">(May 09 2020 at 07:37)</a>:</h4>
+<p><span class="user-mention" data-user-id="110038">@Kevin Buzzard</span>  : In theory, i understand ! But i practice i have some difficulty  for example at the last proof  i can't finish the proof without a conversion  <code> int.cast vs bot_cast </code>.  </p>
+<p>The tactic state before <code> cast_with_bot </code> is </p>
+<div class="codehilite"><pre><span></span><code><span class="mi">1</span> <span class="n">goal</span>
+<span class="n">R</span> <span class="o">:</span> <span class="kt">Type</span> <span class="n">u</span><span class="o">,</span>
+<span class="bp">_</span><span class="n">inst_1</span> <span class="o">:</span> <span class="n">nonzero_comm_ring</span> <span class="n">R</span><span class="o">,</span>
+<span class="n">A</span> <span class="o">:</span> <span class="kt">Type</span> <span class="n">v</span><span class="o">,</span>
+<span class="bp">_</span><span class="n">inst_2</span> <span class="o">:</span> <span class="n">fintype</span> <span class="n">A</span><span class="o">,</span>
+<span class="bp">_</span><span class="n">inst_3</span> <span class="o">:</span> <span class="n">decidable_eq</span> <span class="n">A</span><span class="o">,</span>
+<span class="n">s</span> <span class="o">:</span> <span class="n">finset</span> <span class="n">A</span><span class="o">,</span>
+<span class="n">φ</span> <span class="o">:</span> <span class="n">A</span> <span class="bp">→</span> <span class="n">polynomial</span> <span class="n">R</span><span class="o">,</span>
+<span class="n">hyp</span> <span class="o">:</span> <span class="bp">∀</span> <span class="o">(</span><span class="n">ℓ</span> <span class="o">:</span> <span class="n">A</span><span class="o">),</span> <span class="n">degree</span> <span class="o">(</span><span class="n">φ</span> <span class="n">ℓ</span><span class="o">)</span> <span class="bp">=</span> <span class="mi">1</span><span class="o">,</span>
+<span class="n">hyp_lc</span> <span class="o">:</span> <span class="bp">∀</span> <span class="o">(</span><span class="n">ℓ</span> <span class="o">:</span> <span class="n">A</span><span class="o">),</span> <span class="n">monic</span> <span class="o">(</span><span class="n">φ</span> <span class="n">ℓ</span><span class="o">),</span>
+<span class="err">⊢</span> <span class="err">↑</span><span class="o">(</span><span class="n">card</span> <span class="n">s</span><span class="o">)</span> <span class="bp">=</span> <span class="err">↑</span><span class="o">(</span><span class="n">card</span> <span class="n">s</span><span class="o">)</span>   <span class="c1">----- AHHAHAHAHAHAHAHAH  :upside_down:</span>
+</code></pre></div>
+
+
+<div class="codehilite"><pre><span></span><code><span class="kn">import</span> <span class="n">data</span><span class="bp">.</span><span class="n">polynomial</span>
+<span class="kn">open</span> <span class="n">finset</span> <span class="n">polynomial</span> <span class="n">with_bot</span>
+<span class="n">universes</span> <span class="n">u</span> <span class="n">v</span>
+<span class="kn">variables</span>
+          <span class="o">{</span><span class="n">R</span> <span class="o">:</span> <span class="kt">Type</span> <span class="n">u</span><span class="o">}[</span><span class="n">nonzero_comm_ring</span> <span class="n">R</span><span class="o">]</span>
+          <span class="o">{</span><span class="n">A</span> <span class="o">:</span> <span class="kt">Type</span> <span class="n">v</span><span class="o">}</span> <span class="o">[</span><span class="n">fintype</span> <span class="n">A</span><span class="o">][</span><span class="n">decidable_eq</span> <span class="n">A</span><span class="o">]</span>
+<span class="kn">lemma</span> <span class="n">prod_monic</span> <span class="o">(</span><span class="n">s</span> <span class="o">:</span> <span class="n">finset</span> <span class="n">A</span><span class="o">)(</span><span class="n">φ</span> <span class="o">:</span> <span class="n">A</span> <span class="bp">→</span> <span class="n">polynomial</span> <span class="n">R</span><span class="o">)</span>  <span class="o">(</span><span class="n">hyp</span> <span class="o">:</span> <span class="bp">∀</span> <span class="n">a</span> <span class="o">:</span> <span class="n">A</span><span class="o">,</span> <span class="n">monic</span> <span class="o">(</span><span class="n">φ</span> <span class="n">a</span><span class="o">))</span> <span class="o">:</span>
+                <span class="n">monic</span> <span class="o">(</span><span class="n">finset</span><span class="bp">.</span><span class="n">prod</span> <span class="n">s</span>  <span class="o">(</span><span class="bp">λ</span> <span class="n">x</span> <span class="o">:</span> <span class="n">A</span><span class="o">,</span> <span class="n">φ</span> <span class="n">x</span><span class="o">))</span>  <span class="o">:=</span>
+ <span class="k">begin</span>
+    <span class="n">apply</span> <span class="o">(</span><span class="n">finset</span><span class="bp">.</span><span class="n">induction_on</span> <span class="n">s</span><span class="o">),</span> <span class="o">{</span>
+      <span class="n">erw</span> <span class="n">prod_empty</span> <span class="n">at</span>  <span class="bp">*</span><span class="o">,</span>
+      <span class="n">exact</span> <span class="n">leading_coeff_C</span> <span class="bp">_</span><span class="o">,</span>
+    <span class="o">},</span>
+    <span class="o">{</span>
+        <span class="n">intros</span> <span class="n">ℓ</span>  <span class="n">s</span> <span class="n">hyp&#39;</span> <span class="n">hyp_rec</span><span class="o">,</span>
+        <span class="n">rw</span> <span class="n">finset</span><span class="bp">.</span><span class="n">prod_insert</span> <span class="o">(</span><span class="k">by</span> <span class="n">assumption</span><span class="o">),</span>
+       <span class="n">exact</span> <span class="n">monic_mul</span> <span class="o">(</span><span class="n">hyp</span> <span class="n">ℓ</span><span class="o">)</span>  <span class="n">hyp_rec</span><span class="o">,</span>
+    <span class="o">},</span>
+ <span class="kn">end</span>
+<span class="kn">lemma</span> <span class="n">degree_prod_monic</span> <span class="o">(</span><span class="n">s</span> <span class="o">:</span> <span class="n">finset</span> <span class="n">A</span><span class="o">)(</span><span class="n">φ</span> <span class="o">:</span> <span class="n">A</span> <span class="bp">→</span> <span class="n">polynomial</span> <span class="n">R</span><span class="o">)</span>
+<span class="o">(</span><span class="n">hyp_lc</span> <span class="o">:</span> <span class="bp">∀</span> <span class="n">ℓ</span> <span class="o">:</span> <span class="n">A</span><span class="o">,</span> <span class="n">monic</span> <span class="o">(</span><span class="n">φ</span> <span class="n">ℓ</span> <span class="o">))</span> <span class="o">:</span>
+  <span class="n">degree</span> <span class="o">(</span><span class="n">finset</span><span class="bp">.</span><span class="n">prod</span> <span class="n">s</span>  <span class="o">(</span><span class="bp">λ</span> <span class="n">x</span> <span class="o">:</span> <span class="n">A</span><span class="o">,</span> <span class="n">φ</span> <span class="n">x</span><span class="o">))</span> <span class="bp">=</span>  <span class="n">finset</span><span class="bp">.</span><span class="n">sum</span> <span class="n">s</span> <span class="o">(</span> <span class="bp">λ</span> <span class="n">x</span> <span class="o">:</span> <span class="n">A</span><span class="o">,</span> <span class="n">degree</span> <span class="o">(</span><span class="n">φ</span> <span class="n">x</span><span class="o">))</span> <span class="o">:=</span>
+  <span class="k">begin</span>
+        <span class="n">apply</span> <span class="o">(</span><span class="n">finset</span><span class="bp">.</span><span class="n">induction_on</span> <span class="n">s</span><span class="o">),</span> <span class="o">{</span>
+          <span class="n">rw</span> <span class="n">prod_empty</span><span class="o">,</span>
+          <span class="n">exact</span> <span class="n">degree_C</span> <span class="o">(</span><span class="n">one_ne_zero</span><span class="o">),</span>
+    <span class="o">},</span>
+    <span class="o">{</span>
+        <span class="n">intros</span> <span class="n">ℓ</span>  <span class="n">s</span> <span class="n">hyp&#39;</span> <span class="n">hyp_rec</span><span class="o">,</span>
+        <span class="n">rw</span> <span class="n">finset</span><span class="bp">.</span><span class="n">prod_insert</span> <span class="o">(</span><span class="k">by</span> <span class="n">assumption</span><span class="o">),</span>
+        <span class="n">rw</span> <span class="n">finset</span><span class="bp">.</span><span class="n">sum_insert</span> <span class="o">(</span><span class="k">by</span> <span class="n">assumption</span><span class="o">),</span>
+        <span class="n">rw</span> <span class="err">←</span> <span class="n">hyp_rec</span><span class="o">,</span>
+        <span class="n">apply</span> <span class="n">degree_mul_eq&#39;</span><span class="o">,</span>
+        <span class="n">conv_lhs</span> <span class="o">{</span>
+            <span class="n">rw</span>  <span class="n">monic</span><span class="bp">.</span><span class="n">def</span><span class="bp">.</span><span class="n">mp</span> <span class="o">(</span><span class="n">hyp_lc</span> <span class="n">ℓ</span><span class="o">),</span> <span class="n">rw</span> <span class="n">one_mul</span><span class="o">,</span>
+            <span class="n">rw</span>  <span class="n">monic</span><span class="bp">.</span><span class="n">def</span><span class="bp">.</span><span class="n">mp</span> <span class="o">(</span><span class="n">prod_monic</span> <span class="n">s</span> <span class="n">φ</span> <span class="n">hyp_lc</span><span class="o">),</span>
+        <span class="o">},</span>
+        <span class="n">exact</span> <span class="n">one_ne_zero</span><span class="o">,</span>
+    <span class="o">},</span>
+  <span class="kn">end</span>
+
+<span class="kn">theorem</span> <span class="n">cast_with_bot</span>   <span class="o">(</span><span class="n">a</span>  <span class="o">:</span> <span class="bp">ℕ</span> <span class="o">)</span> <span class="o">:</span>  <span class="n">nat</span><span class="bp">.</span><span class="n">cast</span> <span class="o">(</span><span class="n">a</span><span class="o">)</span> <span class="bp">=</span> <span class="o">(</span><span class="n">a</span><span class="o">:</span> <span class="n">with_bot</span> <span class="bp">ℕ</span> <span class="o">)</span> <span class="o">:=</span> <span class="k">begin</span>
+    <span class="n">apply</span> <span class="o">(</span><span class="n">nat</span><span class="bp">.</span><span class="n">rec_on</span> <span class="n">a</span><span class="o">),</span>  <span class="o">{</span>
+        <span class="n">exact</span> <span class="n">rfl</span><span class="o">,</span>
+    <span class="o">},</span>
+    <span class="n">intros</span> <span class="n">ℓ</span>  <span class="n">hyp_rec</span><span class="o">,</span>
+    <span class="n">change</span> <span class="bp">_</span> <span class="bp">=</span> <span class="err">↑</span><span class="n">ℓ</span> <span class="bp">+</span> <span class="err">↑</span><span class="mi">1</span><span class="o">,</span>
+    <span class="n">erw</span> <span class="err">←</span> <span class="n">hyp_rec</span><span class="o">,</span> <span class="n">exact</span> <span class="n">rfl</span><span class="o">,</span>
+<span class="kn">end</span>
+<span class="kn">lemma</span> <span class="n">coeff_prod_nat&#39;</span>  <span class="o">(</span><span class="n">s</span> <span class="o">:</span> <span class="n">finset</span> <span class="n">A</span><span class="o">)(</span><span class="n">φ</span> <span class="o">:</span> <span class="n">A</span> <span class="bp">→</span> <span class="n">polynomial</span> <span class="n">R</span><span class="o">)(</span><span class="n">hyp</span> <span class="o">:</span> <span class="bp">∀</span> <span class="n">ℓ</span> <span class="o">:</span> <span class="n">A</span><span class="o">,</span> <span class="n">degree</span><span class="o">(</span><span class="n">φ</span> <span class="n">ℓ</span> <span class="o">)</span> <span class="bp">=</span> <span class="mi">1</span> <span class="o">)</span>
+<span class="o">(</span><span class="n">hyp_lc</span> <span class="o">:</span> <span class="bp">∀</span> <span class="n">ℓ</span> <span class="o">:</span> <span class="n">A</span><span class="o">,</span> <span class="n">monic</span><span class="o">(</span><span class="n">φ</span> <span class="n">ℓ</span><span class="o">)</span> <span class="o">)</span> <span class="o">:</span>   <span class="c1">-- monic !</span>
+  <span class="n">degree</span> <span class="o">(</span><span class="n">finset</span><span class="bp">.</span><span class="n">prod</span> <span class="n">s</span>  <span class="o">(</span><span class="bp">λ</span> <span class="n">x</span> <span class="o">:</span> <span class="n">A</span><span class="o">,</span> <span class="n">φ</span> <span class="n">x</span><span class="o">))</span> <span class="bp">=</span>  <span class="n">card</span> <span class="n">s</span> <span class="o">:=</span>
+ <span class="k">begin</span>
+    <span class="n">rw</span> <span class="n">degree_prod_monic</span> <span class="n">s</span> <span class="n">φ</span>  <span class="n">hyp_lc</span><span class="o">,</span>
+    <span class="n">conv_lhs</span><span class="o">{</span>
+        <span class="n">apply_congr</span><span class="o">,</span> <span class="n">skip</span><span class="o">,</span>
+        <span class="n">rw</span> <span class="n">hyp</span> <span class="n">x</span><span class="o">,</span>
+    <span class="o">},</span>
+    <span class="n">rw</span> <span class="n">finset</span><span class="bp">.</span><span class="n">sum_const</span><span class="o">,</span>  <span class="n">rw</span> <span class="n">add_monoid</span><span class="bp">.</span><span class="n">smul_one</span><span class="o">,</span>
+                                            <span class="c1">---- here i have to use nat.cast = with_bot coe  HERE</span>
+      <span class="n">refine</span> <span class="n">cast_with_bot</span>  <span class="bp">_</span> <span class="o">,</span>
+<span class="kn">end</span>
+</code></pre></div>
+
+
+
+<a name="196978749"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/116395-maths/topic/with_bot/near/196978749" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Kevin Buzzard <a href="https://leanprover-community.github.io/archive/stream/116395-maths/topic/with_bot.html#196978749">(May 09 2020 at 07:40)</a>:</h4>
+<p>Maybe sometimes it is unavoidable?</p>
+
+
+
+<a name="196978788"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/116395-maths/topic/with_bot/near/196978788" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Kevin Buzzard <a href="https://leanprover-community.github.io/archive/stream/116395-maths/topic/with_bot.html#196978788">(May 09 2020 at 07:41)</a>:</h4>
+<p>Maybe there is a missing <code>simp</code> lemma though?</p>
+
+
+
+<a name="196978842"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/116395-maths/topic/with_bot/near/196978842" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Kevin Buzzard <a href="https://leanprover-community.github.io/archive/stream/116395-maths/topic/with_bot.html#196978842">(May 09 2020 at 07:42)</a>:</h4>
+<p>I am not an expert in <code>simp</code> but maybe one should expect <code>norm_cast</code> to solve this. Unfortunately I just regard <code>norm_cast</code> as magic</p>
+
+
+
+<a name="196978847"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/116395-maths/topic/with_bot/near/196978847" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> orlando <a href="https://leanprover-community.github.io/archive/stream/116395-maths/topic/with_bot.html#196978847">(May 09 2020 at 07:43)</a>:</h4>
+<p>i try all the <code> simp hint library_search and suggest </code>  before understanding that the first coersion is <code>nat.cast</code> and the second <code>bot_cast </code></p>
+
+
+
+<a name="196978858"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/116395-maths/topic/with_bot/near/196978858" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Kevin Buzzard <a href="https://leanprover-community.github.io/archive/stream/116395-maths/topic/with_bot.html#196978858">(May 09 2020 at 07:43)</a>:</h4>
+<p>So I don't know whether <code>norm_cast</code> should be taught to solve this or whether it is not its job</p>
+
+
+
+<a name="196978860"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/116395-maths/topic/with_bot/near/196978860" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> orlando <a href="https://leanprover-community.github.io/archive/stream/116395-maths/topic/with_bot.html#196978860">(May 09 2020 at 07:43)</a>:</h4>
+<p><code> hint </code> give me a command<code>unfold_coes </code> <span aria-label="grinning face with smiling eyes" class="emoji emoji-1f601" role="img" title="grinning face with smiling eyes">:grinning_face_with_smiling_eyes:</span></p>
+
+
+
+<a name="196978862"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/116395-maths/topic/with_bot/near/196978862" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Mario Carneiro <a href="https://leanprover-community.github.io/archive/stream/116395-maths/topic/with_bot.html#196978862">(May 09 2020 at 07:43)</a>:</h4>
+<p>there should be a theorem that says they are the same</p>
+
+
+
+<a name="196978903"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/116395-maths/topic/with_bot/near/196978903" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Kevin Buzzard <a href="https://leanprover-community.github.io/archive/stream/116395-maths/topic/with_bot.html#196978903">(May 09 2020 at 07:44)</a>:</h4>
+<p>But should the user be required to know its name?</p>
+
+
+
+<a name="196978908"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/116395-maths/topic/with_bot/near/196978908" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Mario Carneiro <a href="https://leanprover-community.github.io/archive/stream/116395-maths/topic/with_bot.html#196978908">(May 09 2020 at 07:44)</a>:</h4>
+<p>first the theorem, then the fancy</p>
+
+
+
+<a name="196978911"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/116395-maths/topic/with_bot/near/196978911" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Kevin Buzzard <a href="https://leanprover-community.github.io/archive/stream/116395-maths/topic/with_bot.html#196978911">(May 09 2020 at 07:44)</a>:</h4>
+<p>Because I am always confused about whether it's cast or coe, and which namespace it's in</p>
+
+
+
+<a name="196978912"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/116395-maths/topic/with_bot/near/196978912" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Mario Carneiro <a href="https://leanprover-community.github.io/archive/stream/116395-maths/topic/with_bot.html#196978912">(May 09 2020 at 07:44)</a>:</h4>
+<p>are we sure the theorem even exists?</p>
+
+
+
+<a name="196978922"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/116395-maths/topic/with_bot/near/196978922" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Mario Carneiro <a href="https://leanprover-community.github.io/archive/stream/116395-maths/topic/with_bot.html#196978922">(May 09 2020 at 07:45)</a>:</h4>
+<p>because if it doesn't I won't expect the tactics to find the proof</p>
+
+
+
+<a name="196978933"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/116395-maths/topic/with_bot/near/196978933" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Kevin Buzzard <a href="https://leanprover-community.github.io/archive/stream/116395-maths/topic/with_bot.html#196978933">(May 09 2020 at 07:45)</a>:</h4>
+<p>I don't know enough about <code>simp</code> to know how to even state the lemma</p>
+
+
+
+<a name="196978988"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/116395-maths/topic/with_bot/near/196978988" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Mario Carneiro <a href="https://leanprover-community.github.io/archive/stream/116395-maths/topic/with_bot.html#196978988">(May 09 2020 at 07:46)</a>:</h4>
+<p>I don't know exactly what the lemma is here, something about with_bot?</p>
+
+
+
+<a name="196978989"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/116395-maths/topic/with_bot/near/196978989" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> orlando <a href="https://leanprover-community.github.io/archive/stream/116395-maths/topic/with_bot.html#196978989">(May 09 2020 at 07:46)</a>:</h4>
+<p>i don't see  <code> nat.coe = bot_coe </code> theorem in mathlib</p>
+
+
+
+<a name="196978994"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/116395-maths/topic/with_bot/near/196978994" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Mario Carneiro <a href="https://leanprover-community.github.io/archive/stream/116395-maths/topic/with_bot.html#196978994">(May 09 2020 at 07:47)</a>:</h4>
+<p>does that even typecheck?</p>
+
+
+
+<a name="196978996"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/116395-maths/topic/with_bot/near/196978996" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Kevin Buzzard <a href="https://leanprover-community.github.io/archive/stream/116395-maths/topic/with_bot.html#196978996">(May 09 2020 at 07:47)</a>:</h4>
+<p>This is all part of the CS machinery which I don't have much of an understanding of. I am not even 100% sure that <code>norm_cast</code> should do it, but I guess that would be my instinct</p>
+
+
+
+<a name="196978997"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/116395-maths/topic/with_bot/near/196978997" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Mario Carneiro <a href="https://leanprover-community.github.io/archive/stream/116395-maths/topic/with_bot.html#196978997">(May 09 2020 at 07:47)</a>:</h4>
+<p>what are the types</p>
+
+
+
+<a name="196979000"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/116395-maths/topic/with_bot/near/196979000" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Kevin Buzzard <a href="https://leanprover-community.github.io/archive/stream/116395-maths/topic/with_bot.html#196979000">(May 09 2020 at 07:47)</a>:</h4>
+<p>And I wouldn't know how to make it do it if it didn't</p>
+
+
+
+<a name="196979004"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/116395-maths/topic/with_bot/near/196979004" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Mario Carneiro <a href="https://leanprover-community.github.io/archive/stream/116395-maths/topic/with_bot.html#196979004">(May 09 2020 at 07:47)</a>:</h4>
+<p>there is a mathematical part of this to be dealt with before the tactics can take over</p>
+
+
+
+<a name="196979007"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/116395-maths/topic/with_bot/near/196979007" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> orlando <a href="https://leanprover-community.github.io/archive/stream/116395-maths/topic/with_bot.html#196979007">(May 09 2020 at 07:48)</a>:</h4>
+<p>This is ok </p>
+<div class="codehilite"><pre><span></span><code><span class="kn">theorem</span> <span class="n">cast_with_bot</span>   <span class="o">(</span><span class="n">a</span>  <span class="o">:</span> <span class="bp">ℕ</span> <span class="o">)</span> <span class="o">:</span>  <span class="n">nat</span><span class="bp">.</span><span class="n">cast</span> <span class="o">(</span><span class="n">a</span><span class="o">)</span> <span class="bp">=</span> <span class="o">(</span><span class="n">a</span><span class="o">:</span> <span class="n">with_bot</span> <span class="bp">ℕ</span> <span class="o">)</span> <span class="o">:=</span> <span class="k">begin</span>
+    <span class="n">apply</span> <span class="o">(</span><span class="n">nat</span><span class="bp">.</span><span class="n">rec_on</span> <span class="n">a</span><span class="o">),</span>  <span class="o">{</span>
+        <span class="n">exact</span> <span class="n">rfl</span><span class="o">,</span>
+    <span class="o">},</span>
+    <span class="n">intros</span> <span class="n">ℓ</span>  <span class="n">hyp_rec</span><span class="o">,</span>
+    <span class="n">change</span> <span class="bp">_</span> <span class="bp">=</span> <span class="err">↑</span><span class="n">ℓ</span> <span class="bp">+</span> <span class="err">↑</span><span class="mi">1</span><span class="o">,</span>
+    <span class="n">erw</span> <span class="err">←</span> <span class="n">hyp_rec</span><span class="o">,</span> <span class="n">exact</span> <span class="n">rfl</span><span class="o">,</span>
+<span class="kn">end</span>
+</code></pre></div>
+
+
+
+<a name="196979045"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/116395-maths/topic/with_bot/near/196979045" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Mario Carneiro <a href="https://leanprover-community.github.io/archive/stream/116395-maths/topic/with_bot.html#196979045">(May 09 2020 at 07:48)</a>:</h4>
+<p>just over nat though?</p>
+
+
+
 {% endraw %}
 
-<hr><p>Last updated: May 09 2020 at 07:13 UTC</p>
+<hr><p>Last updated: May 09 2020 at 08:12 UTC</p>

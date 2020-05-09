@@ -381,6 +381,337 @@ But for homework, you could make it a rule.</p>
 
 
 
+<a name="196977903"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113488-general/topic/calculate/near/196977903" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Mario Carneiro <a href="https://leanprover-community.github.io/archive/stream/113488-general/topic/calculate.html#196977903">(May 09 2020 at 07:13)</a>:</h4>
+<p>It's easy to detect if a numeral is given by tactics, you don't need this</p>
+
+
+
+<a name="196977904"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113488-general/topic/calculate/near/196977904" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Johan Commelin <a href="https://leanprover-community.github.io/archive/stream/113488-general/topic/calculate.html#196977904">(May 09 2020 at 07:13)</a>:</h4>
+<p>Right. They mean: give me an answer that is an <code>expr</code> that only uses <code>name</code>s from some <code>L : list name</code>. Only <code>L</code> is an implicit variable (-;</p>
+
+
+
+<a name="196977905"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113488-general/topic/calculate/near/196977905" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Kevin Buzzard <a href="https://leanprover-community.github.io/archive/stream/113488-general/topic/calculate.html#196977905">(May 09 2020 at 07:13)</a>:</h4>
+<p>"For which real numbers x!=3 is (x+1)/(x-3) positive?"</p>
+
+
+
+<a name="196977942"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113488-general/topic/calculate/near/196977942" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Kevin Buzzard <a href="https://leanprover-community.github.io/archive/stream/113488-general/topic/calculate.html#196977942">(May 09 2020 at 07:14)</a>:</h4>
+<p>The answer is "those ones"</p>
+
+
+
+<a name="196977943"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113488-general/topic/calculate/near/196977943" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Mario Carneiro <a href="https://leanprover-community.github.io/archive/stream/113488-general/topic/calculate.html#196977943">(May 09 2020 at 07:14)</a>:</h4>
+<p>but I think the problem is that numerals don't suffice for many problems</p>
+
+
+
+<a name="196977944"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113488-general/topic/calculate/near/196977944" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Johan Commelin <a href="https://leanprover-community.github.io/archive/stream/113488-general/topic/calculate.html#196977944">(May 09 2020 at 07:14)</a>:</h4>
+<p><span class="user-mention silent" data-user-id="110049">Mario Carneiro</span> <a href="#narrow/stream/113488-general/topic/calculate/near/196977903" title="#narrow/stream/113488-general/topic/calculate/near/196977903">said</a>:</p>
+<blockquote>
+<p>It's easy to detect if a numeral is given by tactics, you don't need this</p>
+</blockquote>
+<p>But I want to be able to allow <code>real.pi</code> (sometimes)</p>
+
+
+
+<a name="196977951"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113488-general/topic/calculate/near/196977951" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Mario Carneiro <a href="https://leanprover-community.github.io/archive/stream/113488-general/topic/calculate.html#196977951">(May 09 2020 at 07:14)</a>:</h4>
+<p>you can write a tactic that detects terms of the required form</p>
+
+
+
+<a name="196977954"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113488-general/topic/calculate/near/196977954" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Mario Carneiro <a href="https://leanprover-community.github.io/archive/stream/113488-general/topic/calculate.html#196977954">(May 09 2020 at 07:15)</a>:</h4>
+<p>assuming you can define what the required form is</p>
+
+
+
+<a name="196977958"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113488-general/topic/calculate/near/196977958" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Johan Commelin <a href="https://leanprover-community.github.io/archive/stream/113488-general/topic/calculate.html#196977958">(May 09 2020 at 07:15)</a>:</h4>
+<p>You mean "<em>you</em> can write a tactic that detects terms of the required form"</p>
+
+
+
+<a name="196977959"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113488-general/topic/calculate/near/196977959" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Johan Commelin <a href="https://leanprover-community.github.io/archive/stream/113488-general/topic/calculate.html#196977959">(May 09 2020 at 07:15)</a>:</h4>
+<p>You still overestimate my skills</p>
+
+
+
+<a name="196977962"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113488-general/topic/calculate/near/196977962" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Johan Commelin <a href="https://leanprover-community.github.io/archive/stream/113488-general/topic/calculate.html#196977962">(May 09 2020 at 07:15)</a>:</h4>
+<p>But this "required form". Do you think I'm on the right path with my <code>list name</code>?</p>
+
+
+
+<a name="196977963"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113488-general/topic/calculate/near/196977963" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Mario Carneiro <a href="https://leanprover-community.github.io/archive/stream/113488-general/topic/calculate.html#196977963">(May 09 2020 at 07:15)</a>:</h4>
+<p><code>expr.of_nat</code> does this for numerals</p>
+
+
+
+<a name="196977966"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113488-general/topic/calculate/near/196977966" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Mario Carneiro <a href="https://leanprover-community.github.io/archive/stream/113488-general/topic/calculate.html#196977966">(May 09 2020 at 07:15)</a>:</h4>
+<p>the list name is probably underconstraining if you want a well formed numeral</p>
+
+
+
+<a name="196978010"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113488-general/topic/calculate/near/196978010" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Mario Carneiro <a href="https://leanprover-community.github.io/archive/stream/113488-general/topic/calculate.html#196978010">(May 09 2020 at 07:16)</a>:</h4>
+<p>There is also a way to do it without tactics, again using an indutive type to define the required form</p>
+
+
+
+<a name="196978015"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113488-general/topic/calculate/near/196978015" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Johan Commelin <a href="https://leanprover-community.github.io/archive/stream/113488-general/topic/calculate.html#196978015">(May 09 2020 at 07:17)</a>:</h4>
+<p>But wouldn't I be able to prove by induction that every <code>n</code> satisfies the inductive predicate?</p>
+
+
+
+<a name="196978018"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113488-general/topic/calculate/near/196978018" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Mario Carneiro <a href="https://leanprover-community.github.io/archive/stream/113488-general/topic/calculate.html#196978018">(May 09 2020 at 07:17)</a>:</h4>
+<p><code>def foo : { n : nat_term // (n : nat) = 4 - 2 } := sorry</code></p>
+
+
+
+<a name="196978058"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113488-general/topic/calculate/near/196978058" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Mario Carneiro <a href="https://leanprover-community.github.io/archive/stream/113488-general/topic/calculate.html#196978058">(May 09 2020 at 07:18)</a>:</h4>
+<p>"oh and make it computable too please"</p>
+
+
+
+<a name="196978311"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113488-general/topic/calculate/near/196978311" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Johan Commelin <a href="https://leanprover-community.github.io/archive/stream/113488-general/topic/calculate.html#196978311">(May 09 2020 at 07:27)</a>:</h4>
+<p><span class="user-mention" data-user-id="110049">@Mario Carneiro</span> But can we turn that into something that has a slick UI?</p>
+
+
+
+<a name="196978314"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113488-general/topic/calculate/near/196978314" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Johan Commelin <a href="https://leanprover-community.github.io/archive/stream/113488-general/topic/calculate.html#196978314">(May 09 2020 at 07:27)</a>:</h4>
+<p>Or would that still require tactics</p>
+
+
+
+<a name="196978367"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113488-general/topic/calculate/near/196978367" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Johan Commelin <a href="https://leanprover-community.github.io/archive/stream/113488-general/topic/calculate.html#196978367">(May 09 2020 at 07:28)</a>:</h4>
+<p>I would like to create something that is foolproof and looks good.</p>
+
+
+
+<a name="196978390"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113488-general/topic/calculate/near/196978390" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Mario Carneiro <a href="https://leanprover-community.github.io/archive/stream/113488-general/topic/calculate.html#196978390">(May 09 2020 at 07:28)</a>:</h4>
+<p>looks good probably requires tactics</p>
+
+
+
+<a name="196978393"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113488-general/topic/calculate/near/196978393" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Johan Commelin <a href="https://leanprover-community.github.io/archive/stream/113488-general/topic/calculate.html#196978393">(May 09 2020 at 07:29)</a>:</h4>
+<p>But that's lean's strength</p>
+
+
+
+<a name="196978396"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113488-general/topic/calculate/near/196978396" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Johan Commelin <a href="https://leanprover-community.github.io/archive/stream/113488-general/topic/calculate.html#196978396">(May 09 2020 at 07:29)</a>:</h4>
+<p>I'm not opposed to tactics (-;</p>
+
+
+
+<a name="196978397"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113488-general/topic/calculate/near/196978397" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Kevin Buzzard <a href="https://leanprover-community.github.io/archive/stream/113488-general/topic/calculate.html#196978397">(May 09 2020 at 07:29)</a>:</h4>
+<p>How would you do my real number question? It's somehow "clear" to mathematicians that the answer is expected to be a disjoint union of open/closed/semiopen intervals</p>
+
+
+
+<a name="196978401"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113488-general/topic/calculate/near/196978401" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Mario Carneiro <a href="https://leanprover-community.github.io/archive/stream/113488-general/topic/calculate.html#196978401">(May 09 2020 at 07:29)</a>:</h4>
+<p>then say that</p>
+
+
+
+<a name="196978407"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113488-general/topic/calculate/near/196978407" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Kevin Buzzard <a href="https://leanprover-community.github.io/archive/stream/113488-general/topic/calculate.html#196978407">(May 09 2020 at 07:29)</a>:</h4>
+<p>But this seems to be as much a convention as anything else</p>
+
+
+
+<a name="196978409"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113488-general/topic/calculate/near/196978409" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Johan Commelin <a href="https://leanprover-community.github.io/archive/stream/113488-general/topic/calculate.html#196978409">(May 09 2020 at 07:29)</a>:</h4>
+<p><span class="user-mention" data-user-id="110038">@Kevin Buzzard</span> You have to formalise the "language"</p>
+
+
+
+<a name="196978411"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113488-general/topic/calculate/near/196978411" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Kevin Buzzard <a href="https://leanprover-community.github.io/archive/stream/113488-general/topic/calculate.html#196978411">(May 09 2020 at 07:29)</a>:</h4>
+<p>Right</p>
+
+
+
+<a name="196978413"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113488-general/topic/calculate/near/196978413" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Johan Commelin <a href="https://leanprover-community.github.io/archive/stream/113488-general/topic/calculate.html#196978413">(May 09 2020 at 07:29)</a>:</h4>
+<p><span class="user-mention silent" data-user-id="110038">Kevin Buzzard</span> <a href="#narrow/stream/113488-general/topic/calculate/near/196978407" title="#narrow/stream/113488-general/topic/calculate/near/196978407">said</a>:</p>
+<blockquote>
+<p>But this seems to be as much a convention as anything else</p>
+</blockquote>
+<p>Sure, so hide it in a type class</p>
+
+
+
+<a name="196978414"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113488-general/topic/calculate/near/196978414" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Mario Carneiro <a href="https://leanprover-community.github.io/archive/stream/113488-general/topic/calculate.html#196978414">(May 09 2020 at 07:29)</a>:</h4>
+<p>you can define "disjoint union of intervals" easily enough</p>
+
+
+
+<a name="196978456"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113488-general/topic/calculate/near/196978456" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Kevin Buzzard <a href="https://leanprover-community.github.io/archive/stream/113488-general/topic/calculate.html#196978456">(May 09 2020 at 07:30)</a>:</h4>
+<p>"Express as your answer as a disjoint union of intervals" or something</p>
+
+
+
+<a name="196978460"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113488-general/topic/calculate/near/196978460" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Mario Carneiro <a href="https://leanprover-community.github.io/archive/stream/113488-general/topic/calculate.html#196978460">(May 09 2020 at 07:30)</a>:</h4>
+<p>of course you are stymied to some extent by various general theorems like "every open set is a disjoint union of intervals" and such</p>
+
+
+
+<a name="196978462"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113488-general/topic/calculate/near/196978462" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Johan Commelin <a href="https://leanprover-community.github.io/archive/stream/113488-general/topic/calculate.html#196978462">(May 09 2020 at 07:30)</a>:</h4>
+<p><span class="user-mention silent" data-user-id="110038">Kevin Buzzard</span> <a href="#narrow/stream/113488-general/topic/calculate/near/196978456" title="#narrow/stream/113488-general/topic/calculate/near/196978456">said</a>:</p>
+<blockquote>
+<p>"Express as your answer as a disjoint union of intervals" or something</p>
+</blockquote>
+<p>But every set is a disjoint union of intervals!</p>
+
+
+
+<a name="196978465"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113488-general/topic/calculate/near/196978465" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Kevin Buzzard <a href="https://leanprover-community.github.io/archive/stream/113488-general/topic/calculate.html#196978465">(May 09 2020 at 07:30)</a>:</h4>
+<p>Rofl</p>
+
+
+
+<a name="196978471"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113488-general/topic/calculate/near/196978471" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Mario Carneiro <a href="https://leanprover-community.github.io/archive/stream/113488-general/topic/calculate.html#196978471">(May 09 2020 at 07:31)</a>:</h4>
+<p>not every set is the finite disjoint union of intervals, but if it's a polynomial then the options are pretty limited</p>
+
+
+
+<a name="196978474"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113488-general/topic/calculate/near/196978474" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Kevin Buzzard <a href="https://leanprover-community.github.io/archive/stream/113488-general/topic/calculate.html#196978474">(May 09 2020 at 07:31)</a>:</h4>
+<p>That's great :-) This question is hard!</p>
+
+
+
+<a name="196978478"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113488-general/topic/calculate/near/196978478" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Johan Commelin <a href="https://leanprover-community.github.io/archive/stream/113488-general/topic/calculate.html#196978478">(May 09 2020 at 07:31)</a>:</h4>
+<p>I think it's pretty clear that we want to inspect the <code>expr</code> that the user provides.</p>
+
+
+
+<a name="196978518"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113488-general/topic/calculate/near/196978518" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Mario Carneiro <a href="https://leanprover-community.github.io/archive/stream/113488-general/topic/calculate.html#196978518">(May 09 2020 at 07:32)</a>:</h4>
+<p>Did you know that you can inspect exprs using typeclass inference?</p>
+
+
+
+<a name="196978519"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113488-general/topic/calculate/near/196978519" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Johan Commelin <a href="https://leanprover-community.github.io/archive/stream/113488-general/topic/calculate.html#196978519">(May 09 2020 at 07:32)</a>:</h4>
+<p>No?</p>
+
+
+
+<a name="196978522"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113488-general/topic/calculate/near/196978522" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Johan Commelin <a href="https://leanprover-community.github.io/archive/stream/113488-general/topic/calculate.html#196978522">(May 09 2020 at 07:32)</a>:</h4>
+<p>But it sounds like that is maybe not "best practice"</p>
+
+
+
+<a name="196978525"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113488-general/topic/calculate/near/196978525" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Kevin Buzzard <a href="https://leanprover-community.github.io/archive/stream/113488-general/topic/calculate.html#196978525">(May 09 2020 at 07:33)</a>:</h4>
+<p>My daughter is doing maths online nowadays for school and using various web pages which are supposed to inspect her text input and decide whether she got it right.</p>
+
+
+
+<a name="196978527"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113488-general/topic/calculate/near/196978527" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Kevin Buzzard <a href="https://leanprover-community.github.io/archive/stream/113488-general/topic/calculate.html#196978527">(May 09 2020 at 07:33)</a>:</h4>
+<p>These systems are by no means perfect</p>
+
+
+
+<a name="196978530"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113488-general/topic/calculate/near/196978530" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Kevin Buzzard <a href="https://leanprover-community.github.io/archive/stream/113488-general/topic/calculate.html#196978530">(May 09 2020 at 07:33)</a>:</h4>
+<p>But it never occurred to me to just tell her to type the question in as the answer</p>
+
+
+
+<a name="196978572"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113488-general/topic/calculate/near/196978572" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Kevin Buzzard <a href="https://leanprover-community.github.io/archive/stream/113488-general/topic/calculate.html#196978572">(May 09 2020 at 07:34)</a>:</h4>
+<p>She normally has enough trouble with a correct answer not being accepted because of some grammar issue</p>
+
+
+
+<a name="196978639"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113488-general/topic/calculate/near/196978639" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Mario Carneiro <a href="https://leanprover-community.github.io/archive/stream/113488-general/topic/calculate.html#196978639">(May 09 2020 at 07:37)</a>:</h4>
+<div class="codehilite"><pre><span></span><code><span class="n">class</span> <span class="n">is_numeral</span> <span class="o">(</span><span class="n">n</span> <span class="o">:</span> <span class="bp">ℕ</span><span class="o">)</span> <span class="o">:=</span> <span class="n">mk</span>
+
+<span class="kn">instance</span> <span class="n">zero</span><span class="bp">.</span><span class="n">is_numeral</span> <span class="o">:</span> <span class="n">is_numeral</span> <span class="mi">0</span> <span class="o">:=</span> <span class="bp">⟨⟩</span>
+<span class="kn">instance</span> <span class="n">one</span><span class="bp">.</span><span class="n">is_numeral</span> <span class="o">:</span> <span class="n">is_numeral</span> <span class="mi">1</span> <span class="o">:=</span> <span class="bp">⟨⟩</span>
+<span class="kn">instance</span> <span class="n">bit0</span><span class="bp">.</span><span class="n">is_numeral</span> <span class="o">{</span><span class="n">n</span><span class="o">}</span> <span class="o">[</span><span class="n">is_numeral</span> <span class="n">n</span><span class="o">]</span> <span class="o">:</span> <span class="n">is_numeral</span> <span class="o">(</span><span class="n">bit0</span> <span class="n">n</span><span class="o">)</span> <span class="o">:=</span> <span class="bp">⟨⟩</span>
+<span class="kn">instance</span> <span class="n">bit1</span><span class="bp">.</span><span class="n">is_numeral</span> <span class="o">{</span><span class="n">n</span><span class="o">}</span> <span class="o">[</span><span class="n">is_numeral</span> <span class="n">n</span><span class="o">]</span> <span class="o">:</span> <span class="n">is_numeral</span> <span class="o">(</span><span class="n">bit1</span> <span class="n">n</span><span class="o">)</span> <span class="o">:=</span> <span class="bp">⟨⟩</span>
+
+<span class="n">def</span> <span class="n">exists_numeral</span> <span class="o">(</span><span class="n">P</span> <span class="o">:</span> <span class="bp">ℕ</span> <span class="bp">→</span> <span class="kt">Prop</span><span class="o">)</span> <span class="o">:=</span> <span class="n">Exists</span> <span class="n">P</span>
+<span class="kn">theorem</span> <span class="n">exists_numeral</span><span class="bp">.</span><span class="n">intro</span> <span class="o">{</span><span class="n">P</span> <span class="o">:</span> <span class="bp">ℕ</span> <span class="bp">→</span> <span class="kt">Prop</span><span class="o">}</span>
+  <span class="o">(</span><span class="n">n</span> <span class="o">:</span> <span class="bp">ℕ</span><span class="o">)</span> <span class="o">[</span><span class="n">is_numeral</span> <span class="n">n</span><span class="o">]</span> <span class="o">(</span><span class="n">h</span> <span class="o">:</span> <span class="n">P</span> <span class="n">n</span><span class="o">)</span> <span class="o">:</span> <span class="n">exists_numeral</span> <span class="n">P</span> <span class="o">:=</span> <span class="n">exists</span><span class="bp">.</span><span class="n">intro</span> <span class="n">n</span> <span class="n">h</span>
+
+<span class="kn">example</span> <span class="o">:</span> <span class="n">exists_numeral</span> <span class="o">(</span><span class="bp">λ</span> <span class="n">n</span><span class="o">,</span> <span class="mi">4</span> <span class="bp">-</span> <span class="mi">2</span> <span class="bp">=</span> <span class="n">n</span><span class="o">)</span> <span class="o">:=</span>
+<span class="n">exists_numeral</span><span class="bp">.</span><span class="n">intro</span> <span class="mi">2</span> <span class="n">rfl</span> <span class="c1">-- ok</span>
+<span class="kn">example</span> <span class="o">:</span> <span class="n">exists_numeral</span> <span class="o">(</span><span class="bp">λ</span> <span class="n">n</span><span class="o">,</span> <span class="mi">4</span> <span class="bp">-</span> <span class="mi">2</span> <span class="bp">=</span> <span class="n">n</span><span class="o">)</span> <span class="o">:=</span>
+<span class="n">exists_numeral</span><span class="bp">.</span><span class="n">intro</span> <span class="o">(</span><span class="mi">4</span> <span class="bp">-</span> <span class="mi">2</span><span class="o">)</span> <span class="n">rfl</span> <span class="c1">-- not ok</span>
+</code></pre></div>
+
+
+
+<a name="196978697"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113488-general/topic/calculate/near/196978697" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Mario Carneiro <a href="https://leanprover-community.github.io/archive/stream/113488-general/topic/calculate.html#196978697">(May 09 2020 at 07:38)</a>:</h4>
+<p>this might satisfy your "looks good" criterion with a bit of notation, and gives helpful error messages, but it is not foolproof against hackers</p>
+
+
+
+<a name="196978705"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113488-general/topic/calculate/near/196978705" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Mario Carneiro <a href="https://leanprover-community.github.io/archive/stream/113488-general/topic/calculate.html#196978705">(May 09 2020 at 07:39)</a>:</h4>
+<p>so you would have to have a tactic as backup if you want more security</p>
+
+
+
+<a name="196978785"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113488-general/topic/calculate/near/196978785" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Mario Carneiro <a href="https://leanprover-community.github.io/archive/stream/113488-general/topic/calculate.html#196978785">(May 09 2020 at 07:41)</a>:</h4>
+<p>(you should also add <code>attribute [irreducible] exists_numeral</code> so that you can't accidentally circumvent it using <code>split</code> or <code>existsi</code>)</p>
+
+
+
+<a name="196979245"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113488-general/topic/calculate/near/196979245" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Johan Commelin <a href="https://leanprover-community.github.io/archive/stream/113488-general/topic/calculate.html#196979245">(May 09 2020 at 07:55)</a>:</h4>
+<p><span class="user-mention silent" data-user-id="110049">Mario Carneiro</span> <a href="#narrow/stream/113488-general/topic/calculate/near/196978697" title="#narrow/stream/113488-general/topic/calculate/near/196978697">said</a>:</p>
+<blockquote>
+<p>this might satisfy your "looks good" criterion with a bit of notation, and gives helpful error messages, but it is not foolproof against hackers</p>
+</blockquote>
+<p>Right, I can still prove <code>exists_numeral</code> for arbitrary nats, right? Because it is almost the same as my first <code>calculate</code>.</p>
+
+
+
+<a name="196979755"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113488-general/topic/calculate/near/196979755" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Mario Carneiro <a href="https://leanprover-community.github.io/archive/stream/113488-general/topic/calculate.html#196979755">(May 09 2020 at 08:07)</a>:</h4>
+<p>right, the idea here is that a good faith usage not using lots of @ signs will give errors in the right places</p>
+
+
+
 {% endraw %}
 
-<hr><p>Last updated: May 09 2020 at 07:13 UTC</p>
+<hr><p>Last updated: May 09 2020 at 08:12 UTC</p>
