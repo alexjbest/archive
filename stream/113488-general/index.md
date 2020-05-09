@@ -9,6 +9,7 @@ permalink: /stream/113488-general/index.html
 
 ### Topics:
 
+* [calculate](topic/calculate.html) (32 messages, latest: May 09 2020 at 06:10)
 * [nonlinear linarith](topic/nonlinear.20linarith.html) (4 messages, latest: May 09 2020 at 05:06)
 * [Lean 3.11.0](topic/Lean.203.2E11.2E0.html) (35 messages, latest: May 09 2020 at 03:35)
 * [Invitation to join the Codewars Lean community, Round 2](topic/Invitation.20to.20join.20the.20Codewars.20Lean.20community.2C.20Round.202.html) (304 messages, latest: May 09 2020 at 03:23)
@@ -2791,4 +2792,4 @@ permalink: /stream/113488-general/index.html
 * [test](topic/test.html) (4 messages, latest: Feb 26 2018 at 16:22)
 * [welcome](topic/welcome.html) (1 message, latest: Feb 26 2018 at 16:02)
 
-<hr><p>Last updated: May 09 2020 at 05:11 UTC</p>
+<hr><p>Last updated: May 09 2020 at 06:11 UTC</p>

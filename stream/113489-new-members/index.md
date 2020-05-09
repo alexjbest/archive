@@ -9,6 +9,7 @@ permalink: /stream/113489-new-members/index.html
 
 ### Topics:
 
+* [noncomputable](topic/noncomputable.html) (48 messages, latest: May 09 2020 at 05:47)
 * [noob question(s)](topic/noob.20question(s).html) (5496 messages, latest: May 09 2020 at 04:58)
 * [lean for coq users?](topic/lean.20for.20coq.20users.3F.html) (34 messages, latest: May 09 2020 at 04:34)
 * [Adding directories to LEAN_PATH](topic/Adding.20directories.20to.20LEAN_PATH.html) (8 messages, latest: May 09 2020 at 03:53)
@@ -23,7 +24,6 @@ permalink: /stream/113489-new-members/index.html
 * [fun with pfun and dite](topic/fun.20with.20pfun.20and.20dite.html) (34 messages, latest: May 07 2020 at 17:23)
 * [Zulipchat search question](topic/Zulipchat.20search.20question.html) (4 messages, latest: May 07 2020 at 17:07)
 * [Heather Macbeth (introduction)](topic/Heather.20Macbeth.20(introduction).html) (3 messages, latest: May 07 2020 at 17:00)
-* [noncomputable](topic/noncomputable.html) (46 messages, latest: May 07 2020 at 12:53)
 * [Confused with double "exists"](topic/Confused.20with.20double.20.22exists.22.html) (5 messages, latest: May 07 2020 at 08:00)
 * [Product of continuous functions](topic/Product.20of.20continuous.20functions.html) (16 messages, latest: May 07 2020 at 05:57)
 * [iterate over a multiset/finset](topic/iterate.20over.20a.20multiset.2Ffinset.html) (43 messages, latest: May 07 2020 at 03:30)
@@ -1030,4 +1030,4 @@ permalink: /stream/113489-new-members/index.html
 * [Andrew Ashworth](topic/Andrew.20Ashworth.html) (15 messages, latest: Feb 26 2018 at 16:21)
 * [onboarding](topic/onboarding.html) (1 message, latest: Feb 26 2018 at 16:02)
 
-<hr><p>Last updated: May 09 2020 at 05:11 UTC</p>
+<hr><p>Last updated: May 09 2020 at 06:11 UTC</p>

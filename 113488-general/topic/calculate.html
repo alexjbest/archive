@@ -1,0 +1,278 @@
+---
+layout: archive
+title: Zulip Chat Archive
+permalink: /stream/113488-general/topic/calculate.html
+---
+
+<h2>Stream: <a href="https://leanprover-community.github.io/archive/stream/113488-general/index.html">general</a></h2>
+<h3>Topic: <a href="https://leanprover-community.github.io/archive/stream/113488-general/topic/calculate.html">calculate</a></h3>
+
+<hr>
+
+<base href="https://leanprover.zulipchat.com/">
+
+<head><link href="/style.css" rel="stylesheet"></head>
+
+{% raw %}
+
+<a name="196974760"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113488-general/topic/calculate/near/196974760" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Johan Commelin <a href="https://leanprover-community.github.io/archive/stream/113488-general/topic/calculate.html#196974760">(May 09 2020 at 05:27)</a>:</h4>
+<p>I've been playing a bit with how to state exercises in Lean. This may also be related to the IMO grand challenge. This is what I've come up with so far.</p>
+
+
+
+<a name="196974797"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113488-general/topic/calculate/near/196974797" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Johan Commelin <a href="https://leanprover-community.github.io/archive/stream/113488-general/topic/calculate.html#196974797">(May 09 2020 at 05:28)</a>:</h4>
+<div class="codehilite"><pre><span></span><code><span class="kn">import</span> <span class="n">data</span><span class="bp">.</span><span class="n">complex</span><span class="bp">.</span><span class="n">basic</span>
+
+<span class="bp">@</span><span class="o">[</span><span class="kn">irreducible</span><span class="o">]</span> <span class="n">def</span> <span class="n">calculate</span> <span class="o">{</span><span class="n">α</span> <span class="o">:</span> <span class="kt">Type</span><span class="bp">*</span><span class="o">}</span> <span class="o">(</span><span class="n">a</span> <span class="o">:</span> <span class="n">α</span><span class="o">)</span> <span class="o">:</span> <span class="kt">Prop</span> <span class="o">:=</span>
+<span class="bp">∃</span> <span class="n">x</span><span class="o">,</span> <span class="n">x</span> <span class="bp">=</span> <span class="n">a</span>
+
+<span class="kn">section</span> <span class="n">bit</span>
+
+<span class="kn">variables</span> <span class="o">{</span><span class="n">α</span> <span class="o">:</span> <span class="kt">Type</span><span class="bp">*</span><span class="o">}</span>
+
+<span class="n">local</span> <span class="n">attribute</span> <span class="o">[</span><span class="kn">reducible</span><span class="o">]</span> <span class="n">calculate</span>
+
+<span class="kn">lemma</span> <span class="n">calculate_zero</span> <span class="o">[</span><span class="n">has_zero</span> <span class="n">α</span><span class="o">]</span> <span class="o">:</span>
+  <span class="n">calculate</span> <span class="o">(</span><span class="mi">0</span> <span class="o">:</span> <span class="n">α</span><span class="o">)</span> <span class="o">:=</span> <span class="bp">⟨</span><span class="mi">0</span><span class="o">,</span> <span class="n">rfl</span><span class="bp">⟩</span>
+
+<span class="kn">lemma</span> <span class="n">calculate_one</span> <span class="o">[</span><span class="n">has_one</span> <span class="n">α</span><span class="o">]</span> <span class="o">:</span>
+  <span class="n">calculate</span> <span class="o">(</span><span class="mi">1</span> <span class="o">:</span> <span class="n">α</span><span class="o">)</span> <span class="o">:=</span> <span class="bp">⟨</span><span class="mi">1</span><span class="o">,</span> <span class="n">rfl</span><span class="bp">⟩</span>
+
+<span class="kn">lemma</span> <span class="n">calculate_bit0</span> <span class="o">[</span><span class="n">has_add</span> <span class="n">α</span><span class="o">]</span> <span class="o">{</span><span class="n">a</span> <span class="o">:</span> <span class="n">α</span><span class="o">}</span> <span class="o">(</span><span class="n">h</span> <span class="o">:</span> <span class="n">calculate</span> <span class="n">a</span><span class="o">)</span> <span class="o">:</span>
+  <span class="n">calculate</span> <span class="o">(</span><span class="n">bit0</span> <span class="n">a</span><span class="o">)</span> <span class="o">:=</span> <span class="bp">⟨</span><span class="n">bit0</span> <span class="n">a</span><span class="o">,</span> <span class="n">rfl</span><span class="bp">⟩</span>
+
+<span class="kn">lemma</span> <span class="n">calculate_bit1</span> <span class="o">[</span><span class="n">has_one</span> <span class="n">α</span><span class="o">]</span> <span class="o">[</span><span class="n">has_add</span> <span class="n">α</span><span class="o">]</span> <span class="o">{</span><span class="n">a</span> <span class="o">:</span> <span class="n">α</span><span class="o">}</span> <span class="o">(</span><span class="n">h</span> <span class="o">:</span> <span class="n">calculate</span> <span class="n">a</span><span class="o">)</span> <span class="o">:</span>
+  <span class="n">calculate</span> <span class="o">(</span><span class="n">bit1</span> <span class="n">a</span><span class="o">)</span> <span class="o">:=</span> <span class="bp">⟨</span><span class="n">bit1</span> <span class="n">a</span><span class="o">,</span> <span class="n">rfl</span><span class="bp">⟩</span>
+
+<span class="kn">end</span> <span class="n">bit</span>
+
+<span class="kn">example</span> <span class="o">:</span> <span class="n">calculate</span> <span class="o">(</span><span class="mi">4</span> <span class="bp">-</span> <span class="mi">2</span> <span class="o">:</span> <span class="n">ℝ</span><span class="o">)</span> <span class="o">:=</span>
+<span class="k">begin</span>
+  <span class="k">have</span> <span class="o">:</span> <span class="o">(</span><span class="mi">4</span> <span class="bp">-</span> <span class="mi">2</span> <span class="o">:</span> <span class="n">ℝ</span><span class="o">)</span> <span class="bp">=</span> <span class="mi">2</span><span class="o">,</span> <span class="n">norm_num</span><span class="o">,</span>
+  <span class="n">rw</span> <span class="n">this</span><span class="o">,</span>
+  <span class="n">apply</span> <span class="n">calculate_bit0</span><span class="o">,</span>
+  <span class="n">apply</span> <span class="n">calculate_one</span><span class="o">,</span>
+<span class="kn">end</span>
+</code></pre></div>
+
+
+
+<a name="196974805"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113488-general/topic/calculate/near/196974805" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Johan Commelin <a href="https://leanprover-community.github.io/archive/stream/113488-general/topic/calculate.html#196974805">(May 09 2020 at 05:29)</a>:</h4>
+<p>My question is: can you modify reducibility settings of definitions while you're inside a tactic proof?</p>
+
+
+
+<a name="196974868"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113488-general/topic/calculate/near/196974868" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Johan Commelin <a href="https://leanprover-community.github.io/archive/stream/113488-general/topic/calculate.html#196974868">(May 09 2020 at 05:31)</a>:</h4>
+<p>Because inside a game / competition / homework setting I guess you can reasonably enforce that participants / students are only allowed to "hand in" a <code>begin ... end</code>-block. But if they can make <code>calculate</code> reducible inside that tactic block, of course this is all doomed.</p>
+
+
+
+<a name="196974914"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113488-general/topic/calculate/near/196974914" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Johan Commelin <a href="https://leanprover-community.github.io/archive/stream/113488-general/topic/calculate.html#196974914">(May 09 2020 at 05:33)</a>:</h4>
+<p>I've also been thinking that one might want to add some typeclass that adds some "allowed expressions", for example <code>calculate pi</code> would be an "axiom" for the reals, that could be added by the instructor / kata designer</p>
+
+
+
+<a name="196974967"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113488-general/topic/calculate/near/196974967" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Johan Commelin <a href="https://leanprover-community.github.io/archive/stream/113488-general/topic/calculate.html#196974967">(May 09 2020 at 05:35)</a>:</h4>
+<p>Maybe in codewars you actually hand in more than just a <code>begin ... end</code> block. So then that's not the intended audience <span aria-label="smile" class="emoji emoji-263a" role="img" title="smile">:smile:</span> <br>
+But for homework, you could make it a rule.</p>
+
+
+
+<a name="196975010"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113488-general/topic/calculate/near/196975010" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Johan Commelin <a href="https://leanprover-community.github.io/archive/stream/113488-general/topic/calculate.html#196975010">(May 09 2020 at 05:36)</a>:</h4>
+<p>This should come with a tactic (or custom <code>begin ... end</code> environment, like <code>calculate_done</code>, that will check that the final expression can be "calculated"</p>
+
+
+
+<a name="196975071"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113488-general/topic/calculate/near/196975071" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Mario Carneiro <a href="https://leanprover-community.github.io/archive/stream/113488-general/topic/calculate.html#196975071">(May 09 2020 at 05:38)</a>:</h4>
+<p>You can unfold irreducible in a tactic proof (indeed you can even just remove the attribute)</p>
+
+
+
+<a name="196975121"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113488-general/topic/calculate/near/196975121" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Johan Commelin <a href="https://leanprover-community.github.io/archive/stream/113488-general/topic/calculate.html#196975121">(May 09 2020 at 05:41)</a>:</h4>
+<p>So then we would need to do something quite a bit more clever.</p>
+
+
+
+<a name="196975122"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113488-general/topic/calculate/near/196975122" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Mario Carneiro <a href="https://leanprover-community.github.io/archive/stream/113488-general/topic/calculate.html#196975122">(May 09 2020 at 05:41)</a>:</h4>
+<p>In this case, using only the provided lemmas, you are asking to prove that <code>4 - 2</code> is a natural number, but this doesn't require computing the number</p>
+
+
+
+<a name="196975127"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113488-general/topic/calculate/near/196975127" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Mario Carneiro <a href="https://leanprover-community.github.io/archive/stream/113488-general/topic/calculate.html#196975127">(May 09 2020 at 05:41)</a>:</h4>
+<p>If you really wanted to lock it down to the provided lemmas, you could just have an inductive predicate to that effect</p>
+
+
+
+<a name="196975212"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113488-general/topic/calculate/near/196975212" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Johan Commelin <a href="https://leanprover-community.github.io/archive/stream/113488-general/topic/calculate.html#196975212">(May 09 2020 at 05:44)</a>:</h4>
+<p>But you can't prove <code>calculate n</code> for <code>(n : nat)</code>, right? Unless you remove the irreducibility.</p>
+
+
+
+<a name="196975216"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113488-general/topic/calculate/near/196975216" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Johan Commelin <a href="https://leanprover-community.github.io/archive/stream/113488-general/topic/calculate.html#196975216">(May 09 2020 at 05:44)</a>:</h4>
+<p>You have to turn it into something sufficiently close to a numeral</p>
+
+
+
+<a name="196975219"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113488-general/topic/calculate/near/196975219" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Johan Commelin <a href="https://leanprover-community.github.io/archive/stream/113488-general/topic/calculate.html#196975219">(May 09 2020 at 05:44)</a>:</h4>
+<p>(E.g. <code>2 + 2</code> is fine.)</p>
+
+
+
+<a name="196975225"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113488-general/topic/calculate/near/196975225" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Johan Commelin <a href="https://leanprover-community.github.io/archive/stream/113488-general/topic/calculate.html#196975225">(May 09 2020 at 05:45)</a>:</h4>
+<p>Maybe I should cook up an example involving determinants, to make this slightly less trivial.</p>
+
+
+
+<a name="196975439"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113488-general/topic/calculate/near/196975439" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Mario Carneiro <a href="https://leanprover-community.github.io/archive/stream/113488-general/topic/calculate.html#196975439">(May 09 2020 at 05:52)</a>:</h4>
+<p>Indeed I can, using the Power of Induction:</p>
+<div class="codehilite"><pre><span></span><code><span class="kn">example</span> <span class="o">(</span><span class="n">n</span> <span class="o">:</span> <span class="bp">ℕ</span><span class="o">)</span> <span class="o">:</span> <span class="n">calculate</span> <span class="o">(</span><span class="n">n</span> <span class="o">:</span> <span class="n">ℝ</span><span class="o">)</span> <span class="o">:=</span>
+<span class="k">begin</span>
+  <span class="n">refine</span> <span class="n">nat</span><span class="bp">.</span><span class="n">binary_rec</span> <span class="bp">_</span> <span class="bp">_</span> <span class="n">n</span><span class="o">,</span>
+  <span class="o">{</span> <span class="n">simp</span> <span class="o">[</span><span class="n">calculate_zero</span><span class="o">]</span> <span class="o">},</span>
+  <span class="o">{</span> <span class="n">rintro</span> <span class="o">(</span><span class="bp">_|_</span><span class="o">)</span> <span class="n">n</span> <span class="n">h</span><span class="bp">;</span> <span class="n">simp</span> <span class="o">[</span><span class="n">nat</span><span class="bp">.</span><span class="n">bit</span><span class="o">,</span> <span class="n">calculate_bit0</span><span class="o">,</span> <span class="n">calculate_bit1</span><span class="o">,</span> <span class="n">h</span><span class="o">]</span> <span class="o">}</span>
+<span class="kn">end</span>
+</code></pre></div>
+
+
+
+<a name="196975575"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113488-general/topic/calculate/near/196975575" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Johan Commelin <a href="https://leanprover-community.github.io/archive/stream/113488-general/topic/calculate.html#196975575">(May 09 2020 at 05:57)</a>:</h4>
+<p>/me clearly doesn't know enough about bits</p>
+
+
+
+<a name="196975581"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113488-general/topic/calculate/near/196975581" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Johan Commelin <a href="https://leanprover-community.github.io/archive/stream/113488-general/topic/calculate.html#196975581">(May 09 2020 at 05:57)</a>:</h4>
+<p>But this means that whatever definition of <code>calculate</code> you come up with, you can always prove <code>calculate n</code>, I guess.</p>
+
+
+
+<a name="196975621"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113488-general/topic/calculate/near/196975621" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Mario Carneiro <a href="https://leanprover-community.github.io/archive/stream/113488-general/topic/calculate.html#196975621">(May 09 2020 at 05:58)</a>:</h4>
+<p>I mean you could simplify this by saying that you only provide <code>calculate (nat.succ n)</code> when <code>calculate n</code>, and then it would more clearly be an instance of induction</p>
+
+
+
+<a name="196975627"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113488-general/topic/calculate/near/196975627" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Mario Carneiro <a href="https://leanprover-community.github.io/archive/stream/113488-general/topic/calculate.html#196975627">(May 09 2020 at 05:58)</a>:</h4>
+<p>but if you couldn't do this kind of thing it would defeat the purpose of lean as a proof assistant. We <em>want</em> to be able to prove properties by induction</p>
+
+
+
+<a name="196975632"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113488-general/topic/calculate/near/196975632" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Johan Commelin <a href="https://leanprover-community.github.io/archive/stream/113488-general/topic/calculate.html#196975632">(May 09 2020 at 05:59)</a>:</h4>
+<p>Sure</p>
+
+
+
+<a name="196975638"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113488-general/topic/calculate/near/196975638" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Johan Commelin <a href="https://leanprover-community.github.io/archive/stream/113488-general/topic/calculate.html#196975638">(May 09 2020 at 05:59)</a>:</h4>
+<p>But I thought maybe we can single out certain properties and make them irreducible and yadda yadda...</p>
+
+
+
+<a name="196975686"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113488-general/topic/calculate/near/196975686" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Mario Carneiro <a href="https://leanprover-community.github.io/archive/stream/113488-general/topic/calculate.html#196975686">(May 09 2020 at 06:00)</a>:</h4>
+<p>Another way to get what you want is to say that you have an infinite number of axioms, <code>calculate 0</code>, <code>calculate 1</code>, <code>calculate 2</code>, ... without using lean quantifiers to get it</p>
+
+
+
+<a name="196975701"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113488-general/topic/calculate/near/196975701" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Johan Commelin <a href="https://leanprover-community.github.io/archive/stream/113488-general/topic/calculate.html#196975701">(May 09 2020 at 06:01)</a>:</h4>
+<p>Maybe another option would be to have a tactic <code>check_answer</code> that must be the last line of the tactic block?</p>
+
+
+
+<a name="196975708"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113488-general/topic/calculate/near/196975708" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Johan Commelin <a href="https://leanprover-community.github.io/archive/stream/113488-general/topic/calculate.html#196975708">(May 09 2020 at 06:01)</a>:</h4>
+<p>And the tactic fails if it doesn't like the <code>(p)expr</code> that has been constructed so far.</p>
+
+
+
+<a name="196975752"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113488-general/topic/calculate/near/196975752" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Johan Commelin <a href="https://leanprover-community.github.io/archive/stream/113488-general/topic/calculate.html#196975752">(May 09 2020 at 06:02)</a>:</h4>
+<p>Or would you still be able to cheat using induction?</p>
+
+
+
+<a name="196975805"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113488-general/topic/calculate/near/196975805" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Johan Commelin <a href="https://leanprover-community.github.io/archive/stream/113488-general/topic/calculate.html#196975805">(May 09 2020 at 06:04)</a>:</h4>
+<p>Hmm... I'm afraid this won't be foolproof either...</p>
+
+
+
+<a name="196975817"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113488-general/topic/calculate/near/196975817" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Johan Commelin <a href="https://leanprover-community.github.io/archive/stream/113488-general/topic/calculate.html#196975817">(May 09 2020 at 06:05)</a>:</h4>
+<p>You can probably do something like</p>
+<div class="codehilite"><pre><span></span><code>  <span class="n">tactic1</span><span class="o">,</span>
+  <span class="n">tactic2</span><span class="o">,</span>
+  <span class="n">close_goal_by_induction</span><span class="o">,</span> <span class="c1">-- proof accomplished!</span>
+  <span class="k">show</span> <span class="n">calculate</span> <span class="mi">1</span><span class="o">,</span>
+  <span class="n">check_answer</span>
+</code></pre></div>
+
+
+
+<a name="196975822"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113488-general/topic/calculate/near/196975822" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Johan Commelin <a href="https://leanprover-community.github.io/archive/stream/113488-general/topic/calculate.html#196975822">(May 09 2020 at 06:05)</a>:</h4>
+<p>And just fool it into checking a trivial exercise</p>
+
+
+
+<a name="196975939"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113488-general/topic/calculate/near/196975939" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Mario Carneiro <a href="https://leanprover-community.github.io/archive/stream/113488-general/topic/calculate.html#196975939">(May 09 2020 at 06:08)</a>:</h4>
+<div class="codehilite"><pre><span></span><code><span class="kn">import</span> <span class="n">tactic</span><span class="bp">.</span><span class="n">core</span>
+
+<span class="kn">constant</span> <span class="n">calculate</span> <span class="o">:</span> <span class="bp">ℕ</span> <span class="bp">→</span> <span class="kt">Prop</span>
+
+<span class="kn">namespace</span> <span class="n">tactic</span>
+<span class="kn">namespace</span> <span class="n">interactive</span>
+<span class="kn">open</span> <span class="n">interactive</span><span class="bp">.</span><span class="n">types</span>
+<span class="n">meta</span> <span class="n">def</span> <span class="n">calculate</span> <span class="o">:</span> <span class="n">tactic</span> <span class="n">unit</span> <span class="o">:=</span>
+<span class="n">do</span>
+  <span class="bp">`</span><span class="o">(</span><span class="bp">_</span><span class="n">root_</span><span class="bp">.</span><span class="n">calculate</span> <span class="err">%%</span><span class="n">e</span><span class="o">)</span> <span class="err">←</span> <span class="n">target</span><span class="o">,</span>
+  <span class="n">n</span> <span class="err">←</span> <span class="n">e</span><span class="bp">.</span><span class="n">to_nat</span><span class="o">,</span>
+  <span class="k">let</span> <span class="n">ax</span> <span class="o">:=</span> <span class="n">mk_simple_name</span> <span class="o">(</span><span class="s2">&quot;calculate_&quot;</span> <span class="bp">++</span> <span class="n">to_string</span> <span class="n">n</span><span class="o">),</span>
+  <span class="n">try</span> <span class="o">(</span><span class="n">add_decl</span> <span class="o">(</span><span class="n">declaration</span><span class="bp">.</span><span class="n">ax</span> <span class="n">ax</span> <span class="o">[]</span> <span class="bp">`</span><span class="o">(</span><span class="bp">_</span><span class="n">root_</span><span class="bp">.</span><span class="n">calculate</span> <span class="err">%%</span><span class="o">(</span><span class="n">reflect</span> <span class="n">n</span><span class="o">)))),</span>
+  <span class="n">exact</span> <span class="o">(</span><span class="n">expr</span><span class="bp">.</span><span class="n">const</span> <span class="n">ax</span> <span class="o">[])</span>
+<span class="kn">end</span> <span class="n">interactive</span>
+<span class="kn">end</span> <span class="n">tactic</span>
+
+<span class="kn">example</span> <span class="o">:</span> <span class="n">calculate</span> <span class="mi">5</span> <span class="o">:=</span> <span class="k">by</span> <span class="n">calculate</span>
+
+<span class="kn">example</span> <span class="o">:</span> <span class="n">calculate</span> <span class="o">(</span><span class="mi">4</span> <span class="bp">-</span> <span class="mi">2</span><span class="o">)</span> <span class="o">:=</span> <span class="k">by</span> <span class="n">calculate</span>
+</code></pre></div>
+
+
+
+<a name="196975956"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113488-general/topic/calculate/near/196975956" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Mario Carneiro <a href="https://leanprover-community.github.io/archive/stream/113488-general/topic/calculate.html#196975956">(May 09 2020 at 06:09)</a>:</h4>
+<p>this achieves an infinite family of axioms by having the <code>calculate</code> tactic produce them on the fly</p>
+
+
+
+<a name="196975960"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113488-general/topic/calculate/near/196975960" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Mario Carneiro <a href="https://leanprover-community.github.io/archive/stream/113488-general/topic/calculate.html#196975960">(May 09 2020 at 06:10)</a>:</h4>
+<p>you can't do induction on them</p>
+
+
+
+{% endraw %}
+
+<hr><p>Last updated: May 09 2020 at 06:11 UTC</p>

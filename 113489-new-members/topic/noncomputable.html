@@ -439,6 +439,22 @@ Lean (version 3.4.2, Release)</p>
 
 
 
+<a name="196975218"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113489-new%20members/topic/noncomputable/near/196975218" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Mario Carneiro <a href="https://leanprover-community.github.io/archive/stream/113489-new-members/topic/noncomputable.html#196975218">(May 09 2020 at 05:44)</a>:</h4>
+<p><span class="user-mention silent" data-user-id="121542">Alexandre Rademaker</span> <a href="#narrow/stream/113489-new-members/topic/noncomputable/near/196765225" title="#narrow/stream/113489-new-members/topic/noncomputable/near/196765225">said</a>:</p>
+<blockquote>
+<p>I see, thank you so much for your attention.  I will read it carefully to understand the details. The main issue, I believe, is to understand the limitations of that approach. The comments <code>not provable</code> in the end means not probable with typeclass inference or not provable at all with this way to model classes and instances? </p>
+</blockquote>
+<p>Not provable from the axioms that were provided. Presumably you have omitted some axioms that are needed to prove these.</p>
+
+
+
+<a name="196975285"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113489-new%20members/topic/noncomputable/near/196975285" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Mario Carneiro <a href="https://leanprover-community.github.io/archive/stream/113489-new-members/topic/noncomputable.html#196975285">(May 09 2020 at 05:47)</a>:</h4>
+<p>Indeed, these predicates and functions are essentially untyped, and typeclass inference is having to solve a harder problem than it normally would because there are so few classes and so many instances. One simple way to improve this is to have one typeclass per property and try to minimize the number of two-argument typeclasses. And things like <code>ins x Class</code> are really calling out for a <code>Class</code> type as you indicate, which would eliminate the need to do any type class search, although you still have to do something about subtyping.</p>
+
+
+
 {% endraw %}
 
-<hr><p>Last updated: May 09 2020 at 05:11 UTC</p>
+<hr><p>Last updated: May 09 2020 at 06:11 UTC</p>
