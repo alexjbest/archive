@@ -9,7 +9,7 @@ permalink: /stream/116395-maths/index.html
 
 ### Topics:
 
-* [with_bot](topic/with_bot.html) (115 messages, latest: May 09 2020 at 18:39)
+* [with_bot](topic/with_bot.html) (119 messages, latest: May 09 2020 at 20:45)
 * [golfing challenge](topic/golfing.20challenge.html) (60 messages, latest: May 09 2020 at 17:48)
 * [ring localization](topic/ring.20localization.html) (10 messages, latest: May 08 2020 at 09:34)
 * [Equivalence of algebras](topic/Equivalence.20of.20algebras.html) (33 messages, latest: May 07 2020 at 20:36)
@@ -894,4 +894,4 @@ permalink: /stream/116395-maths/index.html
 * [free group](topic/free.20group.html) (92 messages, latest: Apr 02 2018 at 05:00)
 * [Easy topological space question](topic/Easy.20topological.20space.20question.html) (18 messages, latest: Apr 02 2018 at 01:23)
 
-<hr><p>Last updated: May 09 2020 at 20:06 UTC</p>
+<hr><p>Last updated: May 09 2020 at 21:09 UTC</p>
