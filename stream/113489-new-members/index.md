@@ -9,9 +9,9 @@ permalink: /stream/113489-new-members/index.html
 
 ### Topics:
 
+* [Cannot Import topology.basic](topic/Cannot.20Import.20topology.2Ebasic.html) (73 messages, latest: May 09 2020 at 15:24)
 * [getting started](topic/getting.20started.html) (78 messages, latest: May 09 2020 at 15:11)
 * [Induction vs recursion](topic/Induction.20vs.20recursion.html) (75 messages, latest: May 09 2020 at 15:09)
-* [Cannot Import topology.basic](topic/Cannot.20Import.20topology.2Ebasic.html) (63 messages, latest: May 09 2020 at 15:07)
 * [Structural recursion syntax](topic/Structural.20recursion.20syntax.html) (9 messages, latest: May 09 2020 at 15:04)
 * [Docs about `meta` keyword](topic/Docs.20about.20.60meta.60.20keyword.html) (9 messages, latest: May 09 2020 at 14:46)
 * [noob question(s)](topic/noob.20question(s).html) (5507 messages, latest: May 09 2020 at 14:27)
@@ -1034,4 +1034,4 @@ permalink: /stream/113489-new-members/index.html
 * [Andrew Ashworth](topic/Andrew.20Ashworth.html) (15 messages, latest: Feb 26 2018 at 16:21)
 * [onboarding](topic/onboarding.html) (1 message, latest: Feb 26 2018 at 16:02)
 
-<hr><p>Last updated: May 09 2020 at 15:12 UTC</p>
+<hr><p>Last updated: May 09 2020 at 16:13 UTC</p>

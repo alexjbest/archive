@@ -438,6 +438,87 @@ permalink: /stream/113489-new-members/topic/Cannot.20Import.20topology.2Ebasic.h
 
 
 
+<a name="196996254"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113489-new%20members/topic/Cannot%20Import%20topology.basic/near/196996254" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Mario Carneiro <a href="https://leanprover-community.github.io/archive/stream/113489-new-members/topic/Cannot.20Import.20topology.2Ebasic.html#196996254">(May 09 2020 at 15:14)</a>:</h4>
+<p><span class="user-mention silent" data-user-id="110031">Patrick Massot</span> <a href="#narrow/stream/113489-new-members/topic/Cannot.20Import.20topology.2Ebasic/near/196995743" title="#narrow/stream/113489-new-members/topic/Cannot.20Import.20topology.2Ebasic/near/196995743">said</a>:</p>
+<blockquote>
+<p><span class="user-mention silent" data-user-id="110049">Mario Carneiro</span> <a href="#narrow/stream/113489-new-members/topic/Cannot.20Import.20topology.2Ebasic/near/196995107" title="#narrow/stream/113489-new-members/topic/Cannot.20Import.20topology.2Ebasic/near/196995107">said</a>:</p>
+<blockquote>
+<p>Any comments on changing the error message to <code>"file '" &lt;&lt; fname &lt;&lt; "' not found in the search path"</code>?</p>
+</blockquote>
+<p>This is a change in Lean core, right? If we are changing this message, could we even add some troubleshooting advice? Or maybe a url (this would need to wait for the new website)?</p>
+</blockquote>
+<p>Sure, we could add some advice here, but keep in mind this is just the generic "file not found" message. It also shows up whenever you are adding or changing imports, or you misspelled something, and it doesn't necessarily have to do with importing a file in mathlib, it could just be the user's own file.</p>
+
+
+
+<a name="196996284"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113489-new%20members/topic/Cannot%20Import%20topology.basic/near/196996284" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Mario Carneiro <a href="https://leanprover-community.github.io/archive/stream/113489-new-members/topic/Cannot.20Import.20topology.2Ebasic.html#196996284">(May 09 2020 at 15:15)</a>:</h4>
+<p>If you can come up with useful advice that is generic over all that, be my guest</p>
+
+
+
+<a name="196996438"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113489-new%20members/topic/Cannot%20Import%20topology.basic/near/196996438" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Johan Commelin <a href="https://leanprover-community.github.io/archive/stream/113489-new-members/topic/Cannot.20Import.20topology.2Ebasic.html#196996438">(May 09 2020 at 15:19)</a>:</h4>
+<p><span class="user-mention" data-user-id="300537">@Carlo Cabrera</span> Sorry, sorry, sorry. I was the one who broke <code>leanproject</code> by creating an "evil" branch name in git. I apologise for the pain.</p>
+
+
+
+<a name="196996493"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113489-new%20members/topic/Cannot%20Import%20topology.basic/near/196996493" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Mario Carneiro <a href="https://leanprover-community.github.io/archive/stream/113489-new-members/topic/Cannot.20Import.20topology.2Ebasic.html#196996493">(May 09 2020 at 15:20)</a>:</h4>
+<p>How about <code>file 'foo' not found in the search path. Use 'lean --path' to see where lean is looking, or http://leanproject.github.io/file-not-found for more</code></p>
+
+
+
+<a name="196996496"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113489-new%20members/topic/Cannot%20Import%20topology.basic/near/196996496" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Johan Commelin <a href="https://leanprover-community.github.io/archive/stream/113489-new-members/topic/Cannot.20Import.20topology.2Ebasic.html#196996496">(May 09 2020 at 15:20)</a>:</h4>
+<p><span class="user-mention silent" data-user-id="110049">Mario Carneiro</span> <a href="#narrow/stream/113489-new-members/topic/Cannot.20Import.20topology.2Ebasic/near/196996284" title="#narrow/stream/113489-new-members/topic/Cannot.20Import.20topology.2Ebasic/near/196996284">said</a>:</p>
+<blockquote>
+<p>If you can come up with useful advice that is generic over all that, be my guest</p>
+</blockquote>
+<p>The error message could start with being generic, but could include a line towards the end:<br>
+"Are you setting up your first Lean project, and seeing this error message? The problem might be: ..."</p>
+
+
+
+<a name="196996563"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113489-new%20members/topic/Cannot%20Import%20topology.basic/near/196996563" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Johan Commelin <a href="https://leanprover-community.github.io/archive/stream/113489-new-members/topic/Cannot.20Import.20topology.2Ebasic.html#196996563">(May 09 2020 at 15:22)</a>:</h4>
+<p><span class="user-mention silent" data-user-id="110049">Mario Carneiro</span> <a href="#narrow/stream/113489-new-members/topic/Cannot.20Import.20topology.2Ebasic/near/196996493" title="#narrow/stream/113489-new-members/topic/Cannot.20Import.20topology.2Ebasic/near/196996493">said</a>:</p>
+<blockquote>
+<p>How about <code>file 'foo' not found in the search path. Use 'lean --path' to see where lean is looking, or http://leanproject.github.io/file-not-found for more</code></p>
+</blockquote>
+<p>Do change the URL to the community project though!</p>
+
+
+
+<a name="196996575"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113489-new%20members/topic/Cannot%20Import%20topology.basic/near/196996575" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Mario Carneiro <a href="https://leanprover-community.github.io/archive/stream/113489-new-members/topic/Cannot.20Import.20topology.2Ebasic.html#196996575">(May 09 2020 at 15:22)</a>:</h4>
+<p>oops, that is a nonsense url for more reasons than one</p>
+
+
+
+<a name="196996582"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113489-new%20members/topic/Cannot%20Import%20topology.basic/near/196996582" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Reid Barton <a href="https://leanprover-community.github.io/archive/stream/113489-new-members/topic/Cannot.20Import.20topology.2Ebasic.html#196996582">(May 09 2020 at 15:23)</a>:</h4>
+<p>it would produce an appropriate error message though</p>
+
+
+
+<a name="196996594"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113489-new%20members/topic/Cannot%20Import%20topology.basic/near/196996594" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Carlo Cabrera <a href="https://leanprover-community.github.io/archive/stream/113489-new-members/topic/Cannot.20Import.20topology.2Ebasic.html#196996594">(May 09 2020 at 15:23)</a>:</h4>
+<p><span class="user-mention silent" data-user-id="112680">Johan Commelin</span> <a href="#narrow/stream/113489-new-members/topic/Cannot.20Import.20topology.2Ebasic/near/196996438" title="#narrow/stream/113489-new-members/topic/Cannot.20Import.20topology.2Ebasic/near/196996438">said</a>:</p>
+<blockquote>
+<p><span class="user-mention silent" data-user-id="300537">Carlo Cabrera</span> Sorry, sorry, sorry. I was the one who broke <code>leanproject</code> by creating an "evil" branch name in git. I apologise for the pain.</p>
+</blockquote>
+<p>No harm done. I'd been meaning to pick Lean up for quite a while now. Just says I should've picked it up properly much earlier!</p>
+
+
+
+<a name="196996641"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113489-new%20members/topic/Cannot%20Import%20topology.basic/near/196996641" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Mario Carneiro <a href="https://leanprover-community.github.io/archive/stream/113489-new-members/topic/Cannot.20Import.20topology.2Ebasic.html#196996641">(May 09 2020 at 15:24)</a>:</h4>
+<p>Obviously we would need to create this <code>file-not-found</code> landing page; I don't think there is a good place to link right now</p>
+
+
+
 {% endraw %}
 
-<hr><p>Last updated: May 09 2020 at 15:12 UTC</p>
+<hr><p>Last updated: May 09 2020 at 16:13 UTC</p>

@@ -9,6 +9,7 @@ permalink: /stream/219941-Machine-Learning-for-Theorem-Proving/index.html
 
 ### Topics:
 
+* [Paper: Tactic Learning and Proving for the Coq Proof Assista](topic/Paper.3A.20Tactic.20Learning.20and.20Proving.20for.20the.20Coq.20Proof.20Assista.html) (17 messages, latest: May 09 2020 at 15:26)
 * [Paper: Simple Dataset for ... Isabelle/HOL](topic/Paper.3A.20Simple.20Dataset.20for.20.2E.2E.2E.20Isabelle.2FHOL.html) (14 messages, latest: May 06 2020 at 23:54)
 * [Paper: Property Preserving Embedding of First-order Logic](topic/Paper.3A.20Property.20Preserving.20Embedding.20of.20First-order.20Logic.html) (3 messages, latest: May 04 2020 at 03:49)
 * [Paper: Prolog Technology Reinforcement Learning Prover](topic/Paper.3A.20Prolog.20Technology.20Reinforcement.20Learning.20Prover.html) (5 messages, latest: Apr 28 2020 at 23:43)
@@ -16,7 +17,6 @@ permalink: /stream/219941-Machine-Learning-for-Theorem-Proving/index.html
 * [Data sets: where to put them?](topic/Data.20sets.3A.20where.20to.20put.20them.3F.html) (8 messages, latest: Apr 27 2020 at 12:42)
 * [rw_hint](topic/rw_hint.html) (35 messages, latest: Apr 08 2020 at 12:46)
 * [AITP 2020](topic/AITP.202020.html) (17 messages, latest: Apr 06 2020 at 14:34)
-* [Paper: Tactic Learning and Proving for the Coq Proof Assista](topic/Paper.3A.20Tactic.20Learning.20and.20Proving.20for.20the.20Coq.20Proof.20Assista.html) (15 messages, latest: Apr 06 2020 at 03:02)
 * [HOList](topic/HOList.html) (151 messages, latest: Apr 02 2020 at 00:06)
 * [ML for Lean: How to do it?](topic/ML.20for.20Lean.3A.20How.20to.20do.20it.3F.html) (99 messages, latest: Feb 23 2020 at 02:40)
 * [Paper: An Experimental Study of Formula Embeddings for Autom](topic/Paper.3A.20An.20Experimental.20Study.20of.20Formula.20Embeddings.20for.20Autom.html) (18 messages, latest: Feb 09 2020 at 18:55)
@@ -27,4 +27,4 @@ permalink: /stream/219941-Machine-Learning-for-Theorem-Proving/index.html
 * [stream events](topic/stream.20events.html) (2 messages, latest: Jan 14 2020 at 00:58)
 * [NEVER MIND.  USE THIS STREAM NOW.](topic/NEVER.20MIND.2E.20.20USE.20THIS.20STREAM.20NOW.2E.html) (1 message, latest: Jan 14 2020 at 00:42)
 
-<hr><p>Last updated: May 09 2020 at 15:12 UTC</p>
+<hr><p>Last updated: May 09 2020 at 16:13 UTC</p>

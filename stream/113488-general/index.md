@@ -9,6 +9,7 @@ permalink: /stream/113488-general/index.html
 
 ### Topics:
 
+* [Declarative Lean](topic/Declarative.20Lean.html) (81 messages, latest: May 09 2020 at 15:39)
 * [calculate](topic/calculate.html) (102 messages, latest: May 09 2020 at 14:43)
 * [new Lean / mathlib tutorial](topic/new.20Lean.20.2F.20mathlib.20tutorial.html) (3 messages, latest: May 09 2020 at 14:33)
 * [Linarith unexpected failure](topic/Linarith.20unexpected.20failure.html) (30 messages, latest: May 09 2020 at 14:06)
@@ -33,7 +34,6 @@ permalink: /stream/113488-general/index.html
 * [pretty printer in to_string](topic/pretty.20printer.20in.20to_string.html) (5 messages, latest: May 07 2020 at 14:05)
 * [to_expr mystery](topic/to_expr.20mystery.html) (16 messages, latest: May 07 2020 at 12:09)
 * [function namespace](topic/function.20namespace.html) (16 messages, latest: May 07 2020 at 08:22)
-* [Declarative Lean](topic/Declarative.20Lean.html) (78 messages, latest: May 07 2020 at 07:50)
 * [Is {...} a tactic?](topic/Is.20.7B.2E.2E.2E.7D.20a.20tactic.3F.html) (5 messages, latest: May 07 2020 at 03:14)
 * [inf_le_inf_left](topic/inf_le_inf_left.html) (6 messages, latest: May 07 2020 at 01:10)
 * [alien mathematics](topic/alien.20mathematics.html) (2 messages, latest: May 07 2020 at 01:04)
@@ -2794,4 +2794,4 @@ permalink: /stream/113488-general/index.html
 * [test](topic/test.html) (4 messages, latest: Feb 26 2018 at 16:22)
 * [welcome](topic/welcome.html) (1 message, latest: Feb 26 2018 at 16:02)
 
-<hr><p>Last updated: May 09 2020 at 15:12 UTC</p>
+<hr><p>Last updated: May 09 2020 at 16:13 UTC</p>
