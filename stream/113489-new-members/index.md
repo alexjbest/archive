@@ -9,11 +9,11 @@ permalink: /stream/113489-new-members/index.html
 
 ### Topics:
 
+* [Adding directories to LEAN_PATH](topic/Adding.20directories.20to.20LEAN_PATH.html) (8 messages, latest: May 09 2020 at 03:53)
 * [noob question(s)](topic/noob.20question(s).html) (5495 messages, latest: May 09 2020 at 02:58)
 * [Rewriting in assumption](topic/Rewriting.20in.20assumption.html) (19 messages, latest: May 09 2020 at 02:06)
 * [canonical answers to "what next after NNG"?](topic/canonical.20answers.20to.20.22what.20next.20after.20NNG.22.3F.html) (2 messages, latest: May 09 2020 at 00:24)
 * [more basics](topic/more.20basics.html) (444 messages, latest: May 08 2020 at 21:13)
-* [Adding directories to LEAN_PATH](topic/Adding.20directories.20to.20LEAN_PATH.html) (7 messages, latest: May 08 2020 at 20:49)
 * [lean for coq users?](topic/lean.20for.20coq.20users.3F.html) (33 messages, latest: May 08 2020 at 20:17)
 * [getting started](topic/getting.20started.html) (49 messages, latest: May 08 2020 at 18:11)
 * [hitchhiker's guide](topic/hitchhiker's.20guide.html) (11 messages, latest: May 08 2020 at 16:08)
@@ -1030,4 +1030,4 @@ permalink: /stream/113489-new-members/index.html
 * [Andrew Ashworth](topic/Andrew.20Ashworth.html) (15 messages, latest: Feb 26 2018 at 16:21)
 * [onboarding](topic/onboarding.html) (1 message, latest: Feb 26 2018 at 16:02)
 
-<hr><p>Last updated: May 09 2020 at 03:10 UTC</p>
+<hr><p>Last updated: May 09 2020 at 04:13 UTC</p>
