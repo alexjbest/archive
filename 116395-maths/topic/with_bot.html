@@ -546,6 +546,24 @@ Of course we could have them now, but not with all the nice <code>to_additive</c
 
 
 
+<a name="196961450"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/116395-maths/topic/with_bot/near/196961450" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Chris Hughes <a href="https://leanprover-community.github.io/archive/stream/116395-maths/topic/with_bot.html#196961450">(May 08 2020 at 23:24)</a>:</h4>
+<p>If you had used the notation for <code>nat.cast</code> I think <code>simp</code> would solve it. Otherwise, I think it would have to be done by induction on <code>a</code> if it isn't in the library.</p>
+
+
+
+<a name="196961546"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/116395-maths/topic/with_bot/near/196961546" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Chris Hughes <a href="https://leanprover-community.github.io/archive/stream/116395-maths/topic/with_bot.html#196961546">(May 08 2020 at 23:26)</a>:</h4>
+<p>There's two coercion from nat to <code>with_bot nat</code>, and you should usually just use the higher priority <code>with_bot</code> coercion. Most of the necessary lemmas are in the <code>with_bot</code> namespace.</p>
+
+
+
+<a name="196963421"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/116395-maths/topic/with_bot/near/196963421" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> orlando <a href="https://leanprover-community.github.io/archive/stream/116395-maths/topic/with_bot.html#196963421">(May 09 2020 at 00:04)</a>:</h4>
+<p>Ok for the two coersion, so the definition is <code> with_bot</code> not <code>nat.cast </code> !    Thx !</p>
+
+
+
 {% endraw %}
 
-<hr><p>Last updated: May 08 2020 at 23:09 UTC</p>
+<hr><p>Last updated: May 09 2020 at 00:09 UTC</p>
