@@ -85,6 +85,74 @@ permalink: /stream/113489-new-members/topic/Adding.20directories.20to.20LEAN_PAT
 
 
 
+<a name="196984482"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113489-new%20members/topic/Adding%20directories%20to%20LEAN_PATH/near/196984482" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Patrick Massot <a href="https://leanprover-community.github.io/archive/stream/113489-new-members/topic/Adding.20directories.20to.20LEAN_PATH.html#196984482">(May 09 2020 at 10:25)</a>:</h4>
+<p>Thinking about this away from keyboard, I realized the previous message in this thread probably sounds harsh. I apologize. This is only my frustration that we work like crazy to help beginners and it still doesn't work.</p>
+
+
+
+<a name="196984696"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113489-new%20members/topic/Adding%20directories%20to%20LEAN_PATH/near/196984696" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Patrick Massot <a href="https://leanprover-community.github.io/archive/stream/113489-new-members/topic/Adding.20directories.20to.20LEAN_PATH.html#196984696">(May 09 2020 at 10:30)</a>:</h4>
+<p>Let's get back to <a href="https://github.com/leanprover-community/tutorials/blob/master/README.md" title="https://github.com/leanprover-community/tutorials/blob/master/README.md">https://github.com/leanprover-community/tutorials/blob/master/README.md</a>. After running <code>leanproject get tutorials</code>, you should have a folder tutorials containing:</p>
+<div class="codehilite"><pre><span></span><code>tutorials/
+├── leanpkg.path
+├── leanpkg.toml
+├── LICENSE
+├── mk_exercises.py
+├── README.md
+├── src
+│   ├── exercises
+│   │   ├── 00_first_proofs.lean
+│   │   ├── 01_equality_rewriting.lean
+│   │   ├── 02_iff_if_and.lean
+│   │   ├── 03_forall_or.lean
+│   │   ├── 04_exists.lean
+│   │   ├── 05_sequence_limits.lean
+│   │   ├── 06_sub_sequences.lean
+│   │   ├── 07bis_abstract_negations.lean
+│   │   ├── 07_first_negations.lean
+│   │   ├── 08_limits_negation.lean
+│   │   └── 09_limits_final.lean
+│   └── solutions
+│       ├── 00_first_proofs.lean
+│       ├── 01_equality_rewriting.lean
+│       ├── 02_iff_if_and.lean
+│       ├── 03_forall_or.lean
+│       ├── 04_exists.lean
+│       ├── 05_sequence_limits.lean
+│       ├── 06_sub_sequences.lean
+│       ├── 07bis_abstract_negations.lean
+│       ├── 07_first_negations.lean
+│       ├── 08_limits_negation.lean
+│       ├── 09_limits_final.lean
+│       └── tuto_lib.lean
+└── _target
+    └── deps
+        └── mathlib ...
+</code></pre></div>
+
+
+<p>with a <em>lot</em> more stuff inside mathlib. Then the next instructions was to copy <code>exercices</code> as some other subfolder of <code>src</code>. Say you called it <code>my_work</code>. It should contain exactly the same list of files as <code>exercices</code> but those files may contains less sorries and more proofs. In particular <code>tuto_lib.lean</code> hasn't been moved anywhere, it is still in <code>src/solutions</code></p>
+
+
+
+<a name="196984737"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113489-new%20members/topic/Adding%20directories%20to%20LEAN_PATH/near/196984737" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Patrick Massot <a href="https://leanprover-community.github.io/archive/stream/113489-new-members/topic/Adding.20directories.20to.20LEAN_PATH.html#196984737">(May 09 2020 at 10:31)</a>:</h4>
+<p>Also, you should be able to run from the tutorials folder:</p>
+<div class="codehilite"><pre><span></span><code>$ cat leanpkg.path
+builtin_path
+path _target/deps/mathlib/src
+path ./src/solutions
+</code></pre></div>
+
+
+
+<a name="196984794"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113489-new%20members/topic/Adding%20directories%20to%20LEAN_PATH/near/196984794" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Patrick Massot <a href="https://leanprover-community.github.io/archive/stream/113489-new-members/topic/Adding.20directories.20to.20LEAN_PATH.html#196984794">(May 09 2020 at 10:32)</a>:</h4>
+<p>Which tells us that, if you correctly open this folder in VScode, Lean will find <code>tuto_lib</code> since it will look in <code>./src/solutions</code>.</p>
+
+
+
 {% endraw %}
 
-<hr><p>Last updated: May 09 2020 at 10:09 UTC</p>
+<hr><p>Last updated: May 09 2020 at 11:17 UTC</p>

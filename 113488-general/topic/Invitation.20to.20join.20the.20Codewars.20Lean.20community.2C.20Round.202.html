@@ -2186,6 +2186,16 @@ Don't bother going through every axiom. Use Ltac instead."</p>
 
 
 
+<a name="196985457"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113488-general/topic/Invitation%20to%20join%20the%20Codewars%20Lean%20community%2C%20Round%202/near/196985457" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Donald Sebastian Leung <a href="https://leanprover-community.github.io/archive/stream/113488-general/topic/Invitation.20to.20join.20the.20Codewars.20Lean.20community.2C.20Round.202.html#196985457">(May 09 2020 at 10:49)</a>:</h4>
+<blockquote>
+<p>How will you check the user only used their tactic though? Can this be made part of the framework?</p>
+</blockquote>
+<p>I think Jalex's idea is that the solver will not be proving theorems at all, only implementing the required tactics, and then the test cases themselves will contain theorem statements and proofs using the tactic(s) defined by the solver, which, if implemented correctly, should compile with no errors (and not insert <code>sorry</code>s / forbidden axioms). So in that case, the solver will have no (direct) control over which tactics are being used in the proofs.</p>
+<p>But if you mean whether one can ensure that the solver-defined tactic does not invoke a particular built-in tactic, then no, this is not possible with the current setup.</p>
+
+
+
 {% endraw %}
 
-<hr><p>Last updated: May 09 2020 at 10:09 UTC</p>
+<hr><p>Last updated: May 09 2020 at 11:17 UTC</p>
