@@ -9,7 +9,8 @@ permalink: /stream/113489-new-members/index.html
 
 ### Topics:
 
-* [Induction vs recursion](topic/Induction.20vs.20recursion.html) (19 messages, latest: May 09 2020 at 12:05)
+* [getting started](topic/getting.20started.html) (52 messages, latest: May 09 2020 at 13:04)
+* [Induction vs recursion](topic/Induction.20vs.20recursion.html) (38 messages, latest: May 09 2020 at 12:54)
 * [Adding directories to LEAN_PATH](topic/Adding.20directories.20to.20LEAN_PATH.html) (13 messages, latest: May 09 2020 at 10:32)
 * [noob question(s)](topic/noob.20question(s).html) (5499 messages, latest: May 09 2020 at 09:15)
 * [noncomputable](topic/noncomputable.html) (48 messages, latest: May 09 2020 at 05:47)
@@ -17,7 +18,6 @@ permalink: /stream/113489-new-members/index.html
 * [Rewriting in assumption](topic/Rewriting.20in.20assumption.html) (19 messages, latest: May 09 2020 at 02:06)
 * [canonical answers to "what next after NNG"?](topic/canonical.20answers.20to.20.22what.20next.20after.20NNG.22.3F.html) (2 messages, latest: May 09 2020 at 00:24)
 * [more basics](topic/more.20basics.html) (444 messages, latest: May 08 2020 at 21:13)
-* [getting started](topic/getting.20started.html) (49 messages, latest: May 08 2020 at 18:11)
 * [hitchhiker's guide](topic/hitchhiker's.20guide.html) (11 messages, latest: May 08 2020 at 16:08)
 * [natural number game questions](topic/natural.20number.20game.20questions.html) (129 messages, latest: May 08 2020 at 09:17)
 * [how is log defined in lean?](topic/how.20is.20log.20defined.20in.20lean.3F.html) (21 messages, latest: May 07 2020 at 20:11)
@@ -1031,4 +1031,4 @@ permalink: /stream/113489-new-members/index.html
 * [Andrew Ashworth](topic/Andrew.20Ashworth.html) (15 messages, latest: Feb 26 2018 at 16:21)
 * [onboarding](topic/onboarding.html) (1 message, latest: Feb 26 2018 at 16:02)
 
-<hr><p>Last updated: May 09 2020 at 12:08 UTC</p>
+<hr><p>Last updated: May 09 2020 at 13:11 UTC</p>

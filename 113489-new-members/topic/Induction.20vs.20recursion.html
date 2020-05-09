@@ -178,6 +178,149 @@ permalink: /stream/113489-new-members/topic/Induction.20vs.20recursion.html
 
 
 
+<a name="196988795"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113489-new%20members/topic/Induction%20vs%20recursion/near/196988795" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Mario Carneiro <a href="https://leanprover-community.github.io/archive/stream/113489-new-members/topic/Induction.20vs.20recursion.html#196988795">(May 09 2020 at 12:11)</a>:</h4>
+<p>I get this for the translation of 79-86 to lean syntax</p>
+<div class="codehilite"><pre><span></span><code><span class="n">def</span> <span class="n">rangeClosed</span> <span class="o">:</span> <span class="bp">∀</span> <span class="o">(</span><span class="n">n</span> <span class="n">a</span> <span class="o">:</span> <span class="bp">ℕ</span><span class="o">),</span> <span class="n">contains</span> <span class="bp">ℕ</span><span class="n">DecideEquality</span> <span class="o">(</span><span class="n">range</span> <span class="n">n</span><span class="o">)</span> <span class="n">a</span> <span class="bp">→</span> <span class="bp">∀</span> <span class="o">(</span><span class="n">v</span> <span class="o">:</span> <span class="bp">ℕ</span><span class="o">),</span> <span class="o">(</span><span class="n">v</span> <span class="bp">≤</span> <span class="n">a</span><span class="o">)</span> <span class="bp">→</span> <span class="n">contains</span> <span class="bp">ℕ</span><span class="n">DecideEquality</span> <span class="o">(</span><span class="n">range</span> <span class="n">n</span><span class="o">)</span> <span class="n">v</span>
+<span class="bp">|</span> <span class="n">zero</span> <span class="n">a</span> <span class="n">cont</span> <span class="n">v</span> <span class="o">(</span><span class="n">h</span> <span class="o">:</span> <span class="n">v</span> <span class="bp">≤</span> <span class="n">a</span><span class="o">)</span> <span class="o">:=</span>
+  <span class="k">match</span> <span class="n">a</span><span class="o">,</span> <span class="n">cont</span><span class="o">,</span> <span class="n">v</span><span class="o">,</span> <span class="n">h</span><span class="o">,</span> <span class="bp">ℕ</span><span class="n">DecideEquality</span> <span class="n">a</span> <span class="mi">0</span> <span class="k">with</span>
+  <span class="bp">|</span> <span class="bp">.</span><span class="o">(</span><span class="mi">0</span><span class="o">),</span> <span class="n">cont</span><span class="o">,</span> <span class="n">v</span><span class="o">,</span> <span class="n">inl</span> <span class="o">(</span><span class="n">h</span> <span class="o">:</span> <span class="n">v</span><span class="bp">&lt;</span><span class="mi">0</span><span class="o">),</span> <span class="n">inl</span> <span class="n">rfl</span> <span class="o">:=</span> <span class="n">exFalso</span> <span class="o">(</span><span class="n">notLessZero</span> <span class="n">v</span> <span class="n">h</span><span class="o">)</span>
+  <span class="bp">|</span> <span class="bp">.</span><span class="o">(</span><span class="mi">0</span><span class="o">),</span> <span class="n">cont</span><span class="o">,</span> <span class="n">v</span><span class="o">,</span> <span class="n">inr</span> <span class="n">rfl</span><span class="o">,</span> <span class="n">inl</span> <span class="n">rfl</span> <span class="o">:=</span> <span class="bp">⟨⟩</span>
+  <span class="bp">|</span> <span class="n">a</span><span class="o">,</span> <span class="n">cont</span><span class="o">,</span> <span class="n">v</span><span class="o">,</span> <span class="n">inr</span> <span class="n">rfl</span><span class="o">,</span> <span class="n">inr</span> <span class="o">(</span><span class="n">h</span> <span class="o">:</span> <span class="n">a</span> <span class="bp">≠</span> <span class="mi">0</span><span class="o">)</span> <span class="o">:=</span>
+    <span class="k">match</span> <span class="n">a</span><span class="o">,</span> <span class="n">cont</span><span class="o">,</span> <span class="n">v</span><span class="o">,</span> <span class="n">h</span><span class="o">,</span> <span class="bp">ℕ</span><span class="n">DecideEquality</span> <span class="n">v</span> <span class="mi">0</span> <span class="k">with</span>
+    <span class="bp">|</span> <span class="n">a</span><span class="o">,</span> <span class="n">cont</span><span class="o">,</span> <span class="n">v</span><span class="o">,</span> <span class="n">h</span><span class="o">,</span> <span class="n">inl</span> <span class="o">(</span><span class="n">h₂</span> <span class="o">:</span> <span class="n">v</span> <span class="bp">=</span> <span class="mi">0</span><span class="o">)</span> <span class="o">:=</span> <span class="bp">⟨⟩</span>
+    <span class="bp">|</span> <span class="n">a</span><span class="o">,</span> <span class="n">cont</span><span class="o">,</span> <span class="n">v</span><span class="o">,</span> <span class="n">h</span><span class="o">,</span> <span class="n">inr</span> <span class="o">(</span><span class="n">h₂</span> <span class="o">:</span> <span class="n">v</span> <span class="bp">≠</span> <span class="mi">0</span><span class="o">)</span> <span class="o">:=</span> <span class="n">cont</span>
+    <span class="kn">end</span>
+  <span class="kn">end</span>
+<span class="bp">...</span>
+</code></pre></div>
+
+
+
+<a name="196988959"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113489-new%20members/topic/Induction%20vs%20recursion/near/196988959" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Reid Barton <a href="https://leanprover-community.github.io/archive/stream/113489-new-members/topic/Induction.20vs.20recursion.html#196988959">(May 09 2020 at 12:14)</a>:</h4>
+<p>Does it work?</p>
+
+
+
+<a name="196988966"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113489-new%20members/topic/Induction%20vs%20recursion/near/196988966" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Reid Barton <a href="https://leanprover-community.github.io/archive/stream/113489-new-members/topic/Induction.20vs.20recursion.html#196988966">(May 09 2020 at 12:15)</a>:</h4>
+<p>Or did you manage to type all this without feedback from lean?</p>
+
+
+
+<a name="196989020"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113489-new%20members/topic/Induction%20vs%20recursion/near/196989020" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Reid Barton <a href="https://leanprover-community.github.io/archive/stream/113489-new-members/topic/Induction.20vs.20recursion.html#196989020">(May 09 2020 at 12:16)</a>:</h4>
+<p>The only way I can imagine <code>cont : contains ℕDecideEquality (range n) a</code> has type <code>contains ℕDecideEquality (range n) v</code> here is that Agda actually decided this case is impossible</p>
+
+
+
+<a name="196989029"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113489-new%20members/topic/Induction%20vs%20recursion/near/196989029" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Reid Barton <a href="https://leanprover-community.github.io/archive/stream/113489-new-members/topic/Induction.20vs.20recursion.html#196989029">(May 09 2020 at 12:17)</a>:</h4>
+<p>or I guess that it reduced both of these types to <code>False</code>... that is more plausible</p>
+
+
+
+<a name="196989038"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113489-new%20members/topic/Induction%20vs%20recursion/near/196989038" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Mario Carneiro <a href="https://leanprover-community.github.io/archive/stream/113489-new-members/topic/Induction.20vs.20recursion.html#196989038">(May 09 2020 at 12:17)</a>:</h4>
+<p>No feedback</p>
+
+
+
+<a name="196989041"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113489-new%20members/topic/Induction%20vs%20recursion/near/196989041" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Reid Barton <a href="https://leanprover-community.github.io/archive/stream/113489-new-members/topic/Induction.20vs.20recursion.html#196989041">(May 09 2020 at 12:17)</a>:</h4>
+<p>I still don't understand how it could do that though</p>
+
+
+
+<a name="196989046"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113489-new%20members/topic/Induction%20vs%20recursion/near/196989046" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Mario Carneiro <a href="https://leanprover-community.github.io/archive/stream/113489-new-members/topic/Induction.20vs.20recursion.html#196989046">(May 09 2020 at 12:17)</a>:</h4>
+<p>I'm working on a compiling version</p>
+
+
+
+<a name="196989097"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113489-new%20members/topic/Induction%20vs%20recursion/near/196989097" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Mario Carneiro <a href="https://leanprover-community.github.io/archive/stream/113489-new-members/topic/Induction.20vs.20recursion.html#196989097">(May 09 2020 at 12:18)</a>:</h4>
+<p>but the lean definitions are different in a few places, unless I replicate the whole definition from nothing as was done in the original</p>
+
+
+
+<a name="196989169"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113489-new%20members/topic/Induction%20vs%20recursion/near/196989169" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Reid Barton <a href="https://leanprover-community.github.io/archive/stream/113489-new-members/topic/Induction.20vs.20recursion.html#196989169">(May 09 2020 at 12:20)</a>:</h4>
+<p>I guess I don't know how matching on <code>ℕDecideEquality a 0</code> actually works. It seems like for the Agda code to work, it needs to have already unfolded the definition of the type of <code>cont</code> to see that it contains <code>ℕDecideEquality a 0</code>, so that it can be replaced by a constructor in the branches</p>
+
+
+
+<a name="196989186"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113489-new%20members/topic/Induction%20vs%20recursion/near/196989186" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Mario Carneiro <a href="https://leanprover-community.github.io/archive/stream/113489-new-members/topic/Induction.20vs.20recursion.html#196989186">(May 09 2020 at 12:21)</a>:</h4>
+<p>I'm pretty sure that it's just like <code>obtain rfl | h := decidable.em (a = 0)</code></p>
+
+
+
+<a name="196989258"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113489-new%20members/topic/Induction%20vs%20recursion/near/196989258" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Reid Barton <a href="https://leanprover-community.github.io/archive/stream/113489-new-members/topic/Induction.20vs.20recursion.html#196989258">(May 09 2020 at 12:23)</a>:</h4>
+<p>But in that case, in your Lean translation, <code>    | a, cont, v, h, inr (h₂ : v ≠ 0) := cont</code> is clearly a type error right?</p>
+
+
+
+<a name="196989311"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113489-new%20members/topic/Induction%20vs%20recursion/near/196989311" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Mario Carneiro <a href="https://leanprover-community.github.io/archive/stream/113489-new-members/topic/Induction.20vs.20recursion.html#196989311">(May 09 2020 at 12:24)</a>:</h4>
+<p>Oh, actually it might not be, if that's simultaneously matching on the <code>ℕDecideEquality a 0</code> inside the definition of <code>contains</code></p>
+
+
+
+<a name="196989318"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113489-new%20members/topic/Induction%20vs%20recursion/near/196989318" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Mario Carneiro <a href="https://leanprover-community.github.io/archive/stream/113489-new-members/topic/Induction.20vs.20recursion.html#196989318">(May 09 2020 at 12:24)</a>:</h4>
+<p>in lean you would have to <code>unfold contains</code> first</p>
+
+
+
+<a name="196989319"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113489-new%20members/topic/Induction%20vs%20recursion/near/196989319" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Reid Barton <a href="https://leanprover-community.github.io/archive/stream/113489-new-members/topic/Induction.20vs.20recursion.html#196989319">(May 09 2020 at 12:24)</a>:</h4>
+<p>I think that must be what is happening but I don't know how Agda knows to do that</p>
+
+
+
+<a name="196989344"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113489-new%20members/topic/Induction%20vs%20recursion/near/196989344" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Reid Barton <a href="https://leanprover-community.github.io/archive/stream/113489-new-members/topic/Induction.20vs.20recursion.html#196989344">(May 09 2020 at 12:25)</a>:</h4>
+<p>I mean it cannot unfold everything in scope as far as possible before matching on anything, right? Or can it?</p>
+
+
+
+<a name="196989393"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113489-new%20members/topic/Induction%20vs%20recursion/near/196989393" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Mario Carneiro <a href="https://leanprover-community.github.io/archive/stream/113489-new-members/topic/Induction.20vs.20recursion.html#196989393">(May 09 2020 at 12:26)</a>:</h4>
+<p>"The user said it typechecks, so by golly I'll make it typecheck"</p>
+
+
+
+<a name="196990462"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113489-new%20members/topic/Induction%20vs%20recursion/near/196990462" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Reid Barton <a href="https://leanprover-community.github.io/archive/stream/113489-new-members/topic/Induction.20vs.20recursion.html#196990462">(May 09 2020 at 12:54)</a>:</h4>
+<p>Here is how I might prove the original lemma:</p>
+<div class="codehilite"><pre><span></span><code><span class="kn">lemma</span> <span class="n">nat</span><span class="bp">.</span><span class="n">le_succ_iff</span> <span class="o">(</span><span class="n">a</span> <span class="n">b</span> <span class="o">:</span> <span class="n">nat</span><span class="o">)</span> <span class="o">:</span> <span class="n">a</span> <span class="bp">≤</span> <span class="n">b</span><span class="bp">.</span><span class="n">succ</span> <span class="bp">↔</span> <span class="n">a</span> <span class="bp">≤</span> <span class="n">b</span> <span class="bp">∨</span> <span class="n">a</span> <span class="bp">=</span> <span class="n">b</span><span class="bp">.</span><span class="n">succ</span> <span class="o">:=</span>
+<span class="bp">⟨</span><span class="n">nat</span><span class="bp">.</span><span class="n">of_le_succ</span><span class="o">,</span> <span class="bp">λ</span> <span class="n">h</span><span class="o">,</span> <span class="n">h</span><span class="bp">.</span><span class="n">elim</span> <span class="n">nat</span><span class="bp">.</span><span class="n">le_succ_of_le</span> <span class="n">le_of_eq</span><span class="bp">⟩</span>
+
+<span class="kn">lemma</span> <span class="n">mem_range_iff_le</span> <span class="o">(</span><span class="n">n</span> <span class="n">a</span> <span class="o">:</span> <span class="n">nat</span><span class="o">)</span> <span class="o">:</span> <span class="n">a</span> <span class="err">∈</span> <span class="n">range</span> <span class="n">n</span> <span class="bp">↔</span> <span class="n">a</span> <span class="bp">≤</span> <span class="n">n</span> <span class="o">:=</span>
+<span class="k">begin</span>
+  <span class="n">induction</span> <span class="n">n</span> <span class="k">with</span> <span class="n">n</span> <span class="n">IH</span><span class="o">,</span>
+  <span class="o">{</span> <span class="n">simp</span> <span class="o">[</span><span class="n">range</span><span class="o">]</span> <span class="o">},</span>
+  <span class="o">{</span> <span class="n">simp</span> <span class="o">[</span><span class="n">range</span><span class="o">,</span> <span class="n">IH</span><span class="o">,</span> <span class="n">nat</span><span class="bp">.</span><span class="n">le_succ_iff</span><span class="o">,</span> <span class="n">or</span><span class="bp">.</span><span class="n">comm</span><span class="o">]</span> <span class="o">},</span>
+<span class="kn">end</span>
+
+<span class="kn">lemma</span> <span class="n">range_closed</span> <span class="o">(</span><span class="n">n</span> <span class="o">:</span> <span class="n">nat</span><span class="o">)</span> <span class="o">(</span><span class="n">a</span> <span class="o">:</span> <span class="n">nat</span><span class="o">)</span> <span class="o">(</span><span class="n">aIn</span> <span class="o">:</span> <span class="n">a</span> <span class="err">∈</span> <span class="n">range</span> <span class="n">n</span><span class="o">)</span> <span class="o">(</span><span class="n">v</span> <span class="o">:</span> <span class="n">nat</span><span class="o">)</span> <span class="o">(</span><span class="n">vLess</span> <span class="o">:</span> <span class="n">v</span> <span class="bp">≤</span> <span class="n">a</span><span class="o">)</span> <span class="o">:</span> <span class="n">v</span> <span class="err">∈</span> <span class="n">range</span> <span class="n">n</span> <span class="o">:=</span>
+<span class="k">begin</span>
+  <span class="n">rw</span> <span class="n">mem_range_iff_le</span> <span class="n">at</span> <span class="err">⊢</span> <span class="n">aIn</span><span class="o">,</span>
+  <span class="n">exact</span> <span class="n">le_trans</span> <span class="n">vLess</span> <span class="n">aIn</span>
+<span class="kn">end</span>
+</code></pre></div>
+
+
+
+<a name="196990467"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113489-new%20members/topic/Induction%20vs%20recursion/near/196990467" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Reid Barton <a href="https://leanprover-community.github.io/archive/stream/113489-new-members/topic/Induction.20vs.20recursion.html#196990467">(May 09 2020 at 12:54)</a>:</h4>
+<p>obviously I relied a bit on the standard library, but not heavily</p>
+
+
+
 {% endraw %}
 
-<hr><p>Last updated: May 09 2020 at 12:08 UTC</p>
+<hr><p>Last updated: May 09 2020 at 13:11 UTC</p>
