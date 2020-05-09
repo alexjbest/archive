@@ -9,8 +9,8 @@ permalink: /stream/113488-general/index.html
 
 ### Topics:
 
+* [Invitation to join the Codewars Lean community, Round 2](topic/Invitation.20to.20join.20the.20Codewars.20Lean.20community.2C.20Round.202.html) (326 messages, latest: May 09 2020 at 21:51)
 * [rw_mod_hom](topic/rw_mod_hom.html) (11 messages, latest: May 09 2020 at 18:13)
-* [Invitation to join the Codewars Lean community, Round 2](topic/Invitation.20to.20join.20the.20Codewars.20Lean.20community.2C.20Round.202.html) (311 messages, latest: May 09 2020 at 18:01)
 * [Declarative Lean](topic/Declarative.20Lean.html) (81 messages, latest: May 09 2020 at 15:39)
 * [calculate](topic/calculate.html) (102 messages, latest: May 09 2020 at 14:43)
 * [new Lean / mathlib tutorial](topic/new.20Lean.20.2F.20mathlib.20tutorial.html) (3 messages, latest: May 09 2020 at 14:33)
@@ -2795,4 +2795,4 @@ permalink: /stream/113488-general/index.html
 * [test](topic/test.html) (4 messages, latest: Feb 26 2018 at 16:22)
 * [welcome](topic/welcome.html) (1 message, latest: Feb 26 2018 at 16:02)
 
-<hr><p>Last updated: May 09 2020 at 21:09 UTC</p>
+<hr><p>Last updated: May 09 2020 at 22:09 UTC</p>
