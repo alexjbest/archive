@@ -9,6 +9,8 @@ permalink: /stream/113489-new-members/index.html
 
 ### Topics:
 
+* [Having trouble applying lemma due to metavariable](topic/Having.20trouble.20applying.20lemma.20due.20to.20metavariable.html) (4 messages, latest: May 10 2020 at 16:03)
+* [Contrapositive law without excluded middle?](topic/Contrapositive.20law.20without.20excluded.20middle.3F.html) (17 messages, latest: May 10 2020 at 15:58)
 * [noob question(s)](topic/noob.20question(s).html) (5515 messages, latest: May 10 2020 at 12:42)
 * [the complex number game](topic/the.20complex.20number.20game.html) (3 messages, latest: May 10 2020 at 12:34)
 * [Luiz Carlos Rumbelsperger Viana](topic/Luiz.20Carlos.20Rumbelsperger.20Viana.html) (9 messages, latest: May 10 2020 at 11:46)
@@ -1037,4 +1039,4 @@ permalink: /stream/113489-new-members/index.html
 * [Andrew Ashworth](topic/Andrew.20Ashworth.html) (15 messages, latest: Feb 26 2018 at 16:21)
 * [onboarding](topic/onboarding.html) (1 message, latest: Feb 26 2018 at 16:02)
 
-<hr><p>Last updated: May 10 2020 at 15:12 UTC</p>
+<hr><p>Last updated: May 10 2020 at 16:09 UTC</p>

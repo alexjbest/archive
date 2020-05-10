@@ -249,6 +249,149 @@ So here's a minimal example:</p>
 
 
 
+<a name="197060562"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/116395-maths/topic/Quotients%20%26%20synthesizing/near/197060562" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Ryan Lahfa <a href="https://leanprover-community.github.io/archive/stream/116395-maths/topic/Quotients.20.26.20synthesizing.html#197060562">(May 10 2020 at 15:14)</a>:</h4>
+<p>I tried lift_2, and it's complaining about synthesizing:</p>
+<div class="codehilite"><pre><span></span><code><span class="n">failed</span> <span class="n">to</span> <span class="n">synthesize</span> <span class="n">type</span> <span class="n">class</span> <span class="kn">instance</span> <span class="n">for</span>
+<span class="n">T</span> <span class="o">:</span> <span class="kt">Type</span><span class="o">,</span>
+<span class="bp">_</span><span class="n">inst_1</span> <span class="o">:</span> <span class="n">metric_space</span> <span class="n">T</span><span class="o">,</span>
+<span class="n">x</span> <span class="n">y</span> <span class="o">:</span> <span class="n">completion</span> <span class="n">T</span>
+<span class="err">⊢</span> <span class="n">setoid</span> <span class="o">(</span><span class="n">cauchy_seqs</span> <span class="n">T</span><span class="o">)</span>
+</code></pre></div>
+
+
+<p>For full example:</p>
+<div class="codehilite"><pre><span></span><code><span class="kn">import</span> <span class="n">data</span><span class="bp">.</span><span class="n">real</span><span class="bp">.</span><span class="n">basic</span>
+<span class="n">class</span> <span class="n">metric_space</span> <span class="o">(</span><span class="n">X</span> <span class="o">:</span> <span class="kt">Type</span><span class="bp">*</span><span class="o">)</span> <span class="o">:=</span>
+<span class="o">(</span><span class="n">d</span> <span class="o">:</span> <span class="n">X</span> <span class="bp">→</span> <span class="n">X</span> <span class="bp">→</span> <span class="n">ℝ</span><span class="o">)</span>
+<span class="o">(</span><span class="n">d_pos</span> <span class="o">:</span> <span class="bp">∀</span> <span class="n">x</span> <span class="n">y</span><span class="o">,</span> <span class="n">d</span> <span class="n">x</span> <span class="n">y</span> <span class="bp">≥</span> <span class="mi">0</span><span class="o">)</span>
+<span class="o">(</span><span class="n">presep</span> <span class="o">:</span> <span class="bp">∀</span> <span class="n">x</span> <span class="n">y</span><span class="o">,</span> <span class="n">x</span><span class="bp">=</span><span class="n">y</span> <span class="bp">→</span> <span class="n">d</span> <span class="n">x</span> <span class="n">y</span> <span class="bp">=</span> <span class="mi">0</span><span class="o">)</span>
+<span class="o">(</span><span class="n">sep</span> <span class="o">:</span> <span class="bp">∀</span> <span class="n">x</span> <span class="n">y</span><span class="o">,</span> <span class="n">d</span> <span class="n">x</span> <span class="n">y</span> <span class="bp">=</span> <span class="mi">0</span> <span class="bp">→</span>  <span class="n">x</span> <span class="bp">=</span> <span class="n">y</span><span class="o">)</span>
+<span class="o">(</span><span class="n">sym</span> <span class="o">:</span> <span class="bp">∀</span> <span class="n">x</span> <span class="n">y</span><span class="o">,</span> <span class="n">d</span> <span class="n">x</span> <span class="n">y</span> <span class="bp">=</span> <span class="n">d</span> <span class="n">y</span> <span class="n">x</span><span class="o">)</span>
+<span class="o">(</span><span class="n">triangle</span> <span class="o">:</span> <span class="bp">∀</span> <span class="n">x</span> <span class="n">y</span> <span class="n">z</span><span class="o">,</span> <span class="n">d</span> <span class="n">x</span> <span class="n">z</span> <span class="bp">≤</span> <span class="n">d</span> <span class="n">x</span> <span class="n">y</span> <span class="bp">+</span> <span class="n">d</span> <span class="n">y</span> <span class="n">z</span><span class="o">)</span>
+
+<span class="kn">section</span> <span class="n">test</span>
+<span class="kn">open</span> <span class="n">metric_space</span>
+<span class="kn">variables</span> <span class="o">{</span><span class="n">X</span><span class="o">:</span> <span class="kt">Type</span><span class="bp">*</span><span class="o">}</span> <span class="o">[</span><span class="n">metric_space</span> <span class="n">X</span><span class="o">]</span>
+
+<span class="n">def</span> <span class="n">is_cauchy</span> <span class="o">(</span><span class="n">x</span><span class="o">:</span> <span class="bp">ℕ</span> <span class="bp">→</span> <span class="n">X</span><span class="o">)</span> <span class="o">:=</span>
+  <span class="bp">∀</span> <span class="n">ε</span> <span class="bp">&gt;</span> <span class="mi">0</span><span class="o">,</span> <span class="bp">∃</span> <span class="n">N</span><span class="o">,</span> <span class="bp">∀</span> <span class="n">p</span> <span class="bp">≥</span> <span class="n">N</span><span class="o">,</span> <span class="bp">∀</span> <span class="n">q</span> <span class="bp">≥</span> <span class="n">N</span><span class="o">,</span> <span class="o">((</span><span class="n">d</span> <span class="o">(</span><span class="n">x</span> <span class="n">p</span><span class="o">)</span> <span class="o">(</span><span class="n">x</span> <span class="n">q</span><span class="o">))</span> <span class="bp">&lt;</span> <span class="n">ε</span><span class="o">)</span>
+
+<span class="n">def</span> <span class="n">cauchy_seqs</span> <span class="o">(</span><span class="n">X</span> <span class="o">:</span> <span class="kt">Type</span><span class="bp">*</span><span class="o">)</span> <span class="o">[</span><span class="n">metric_space</span> <span class="n">X</span><span class="o">]</span> <span class="o">:=</span> <span class="o">{</span> <span class="n">f</span> <span class="o">:</span> <span class="bp">ℕ</span> <span class="bp">→</span> <span class="n">X</span> <span class="bp">//</span> <span class="n">is_cauchy</span> <span class="n">f</span> <span class="o">}</span>
+
+
+<span class="n">def</span> <span class="n">cauchy</span><span class="bp">.</span><span class="n">setoid</span> <span class="o">(</span><span class="n">X</span> <span class="o">:</span> <span class="kt">Type</span><span class="bp">*</span><span class="o">)</span> <span class="o">[</span><span class="n">metric_space</span> <span class="n">X</span><span class="o">]</span> <span class="o">:</span> <span class="n">setoid</span> <span class="o">(</span><span class="n">cauchy_seqs</span> <span class="n">X</span><span class="o">)</span> <span class="o">:=</span>
+<span class="o">{</span>
+  <span class="n">r</span> <span class="o">:=</span> <span class="n">sorry</span><span class="o">,</span>
+  <span class="n">iseqv</span> <span class="o">:=</span> <span class="n">sorry</span>
+<span class="o">}</span>
+<span class="c1">-- Définit la distance entre 2 suites de Cauchy par lim d(x_n, y_n).</span>
+<span class="n">def</span> <span class="n">cauchy</span><span class="bp">.</span><span class="n">dist</span> <span class="o">(</span><span class="n">T</span><span class="o">:</span> <span class="kt">Type</span><span class="bp">*</span><span class="o">)</span> <span class="o">[</span><span class="n">metric_space</span> <span class="n">T</span><span class="o">]</span> <span class="o">(</span><span class="n">x</span> <span class="n">y</span><span class="o">:</span> <span class="n">cauchy_seqs</span> <span class="n">T</span><span class="o">):</span> <span class="n">ℝ</span>
+  <span class="o">:=</span> <span class="n">sorry</span> <span class="c1">-- some cauchy limit stuff.</span>
+
+<span class="n">def</span> <span class="n">completion</span> <span class="o">(</span><span class="n">X</span> <span class="o">:</span> <span class="kt">Type</span><span class="bp">*</span><span class="o">)</span> <span class="o">[</span><span class="n">metric_space</span> <span class="n">X</span><span class="o">]</span> <span class="o">:</span> <span class="kt">Type</span><span class="bp">*</span> <span class="o">:=</span> <span class="n">quotient</span> <span class="o">(</span><span class="n">cauchy</span><span class="bp">.</span><span class="n">setoid</span> <span class="n">X</span><span class="o">)</span>
+<span class="n">def</span> <span class="n">completion</span><span class="bp">.</span><span class="n">dist</span> <span class="o">(</span><span class="n">T</span><span class="o">:</span> <span class="kt">Type</span><span class="bp">*</span><span class="o">)</span> <span class="o">[</span><span class="n">metric_space</span> <span class="n">T</span><span class="o">]</span> <span class="o">(</span><span class="n">x</span> <span class="n">y</span><span class="o">:</span> <span class="n">completion</span> <span class="n">T</span><span class="o">):</span> <span class="n">ℝ</span> <span class="o">:=</span>
+  <span class="n">quotient</span><span class="bp">.</span><span class="n">lift₂</span> <span class="o">(</span><span class="n">cauchy</span><span class="bp">.</span><span class="n">dist</span> <span class="n">T</span><span class="o">)</span> <span class="n">x</span> <span class="n">y</span>
+
+<span class="kn">instance</span> <span class="n">completion</span><span class="bp">.</span><span class="n">metric_space</span> <span class="o">(</span><span class="n">X</span><span class="o">:</span> <span class="kt">Type</span><span class="bp">*</span><span class="o">)</span> <span class="o">[</span><span class="n">metric_space</span> <span class="n">X</span><span class="o">]:</span> <span class="n">metric_space</span> <span class="o">(</span><span class="n">completion</span> <span class="n">X</span><span class="o">)</span> <span class="o">:=</span>
+<span class="o">{</span>
+  <span class="n">d</span> <span class="o">:=</span> <span class="n">sorry</span><span class="o">,</span>
+  <span class="n">d_pos</span> <span class="o">:=</span> <span class="n">sorry</span><span class="o">,</span>
+  <span class="c1">-- etc</span>
+<span class="o">}</span>
+
+<span class="kn">end</span> <span class="n">test</span>
+</code></pre></div>
+
+
+<p><code>completion.dist</code> has errors</p>
+
+
+
+<a name="197060653"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/116395-maths/topic/Quotients%20%26%20synthesizing/near/197060653" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Reid Barton <a href="https://leanprover-community.github.io/archive/stream/116395-maths/topic/Quotients.20.26.20synthesizing.html#197060653">(May 10 2020 at 15:16)</a>:</h4>
+<p>Okay, because your <code>completion</code> is not an instance. To be honest, this whole type class design with quotient is pretty dubious.<br>
+Is there a <code>lift\2'</code> that uses a <code>{}</code> argument for the <code>setoid</code>?</p>
+
+
+
+<a name="197060698"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/116395-maths/topic/Quotients%20%26%20synthesizing/near/197060698" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Ryan Lahfa <a href="https://leanprover-community.github.io/archive/stream/116395-maths/topic/Quotients.20.26.20synthesizing.html#197060698">(May 10 2020 at 15:17)</a>:</h4>
+<p><span class="user-mention silent" data-user-id="110032">Reid Barton</span> <a href="#narrow/stream/116395-maths/topic/Quotients.20.26.20synthesizing/near/197060653" title="#narrow/stream/116395-maths/topic/Quotients.20.26.20synthesizing/near/197060653">said</a>:</p>
+<blockquote>
+<p>Okay, because your <code>completion</code> is not an instance. To be honest, this whole type class design with quotient is pretty dubious.<br>
+Is there a <code>lift\2'</code> that uses a <code>{}</code> argument for the <code>setoid</code>?</p>
+</blockquote>
+<p>I can turn it into an instance, but I heard/read here that most of the time quotients need not to be instances, I don't really understand why (but I guess there must be a good reason)</p>
+
+
+
+<a name="197060794"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/116395-maths/topic/Quotients%20%26%20synthesizing/near/197060794" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Ryan Lahfa <a href="https://leanprover-community.github.io/archive/stream/116395-maths/topic/Quotients.20.26.20synthesizing.html#197060794">(May 10 2020 at 15:18)</a>:</h4>
+<p>As far as I see it, in <code>quot.lean</code>, there's no <code>{…}</code></p>
+
+
+
+<a name="197060799"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/116395-maths/topic/Quotients%20%26%20synthesizing/near/197060799" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Ryan Lahfa <a href="https://leanprover-community.github.io/archive/stream/116395-maths/topic/Quotients.20.26.20synthesizing.html#197060799">(May 10 2020 at 15:18)</a>:</h4>
+<p>for setoids.</p>
+
+
+
+<a name="197060805"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/116395-maths/topic/Quotients%20%26%20synthesizing/near/197060805" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Patrick Massot <a href="https://leanprover-community.github.io/archive/stream/116395-maths/topic/Quotients.20.26.20synthesizing.html#197060805">(May 10 2020 at 15:18)</a>:</h4>
+<p>There is nothing specific about quotient, the question is: do you want multiple instances on the same type?</p>
+
+
+
+<a name="197060823"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/116395-maths/topic/Quotients%20%26%20synthesizing/near/197060823" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Patrick Massot <a href="https://leanprover-community.github.io/archive/stream/116395-maths/topic/Quotients.20.26.20synthesizing.html#197060823">(May 10 2020 at 15:18)</a>:</h4>
+<p>If yes then there will be trouble.</p>
+
+
+
+<a name="197060862"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/116395-maths/topic/Quotients%20%26%20synthesizing/near/197060862" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Patrick Massot <a href="https://leanprover-community.github.io/archive/stream/116395-maths/topic/Quotients.20.26.20synthesizing.html#197060862">(May 10 2020 at 15:19)</a>:</h4>
+<p>The link with quotients is that this issue comes up for instance with setoid on Z (you want several quotients of Z)</p>
+
+
+
+<a name="197060948"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/116395-maths/topic/Quotients%20%26%20synthesizing/near/197060948" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Reid Barton <a href="https://leanprover-community.github.io/archive/stream/116395-maths/topic/Quotients.20.26.20synthesizing.html#197060948">(May 10 2020 at 15:20)</a>:</h4>
+<p>Since you defined your own <code>cauchy_seqs</code> type and the <code>setoid</code> only depends on other stuff available through instances, it would be fine (and easiest) to make it an instance in this case.</p>
+
+
+
+<a name="197060952"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/116395-maths/topic/Quotients%20%26%20synthesizing/near/197060952" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Ryan Lahfa <a href="https://leanprover-community.github.io/archive/stream/116395-maths/topic/Quotients.20.26.20synthesizing.html#197060952">(May 10 2020 at 15:20)</a>:</h4>
+<p>I don't think I'm going to have an instance of something else than a metric space for the Cauchy sequences quotient by <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mo><mi>lim</mi><mo>⁡</mo></mo><mi>n</mi></msub><mi>d</mi><mo stretchy="false">(</mo><msub><mi>x</mi><mi>n</mi></msub><mo separator="true">,</mo><msub><mi>y</mi><mi>n</mi></msub><mo stretchy="false">)</mo></mrow><annotation encoding="application/x-tex">\lim_n d(x_n, y_n)</annotation></semantics></math></span><span aria-hidden="true" class="katex-html"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mop"><span class="mop">lim</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.151392em;"><span style="top:-2.5500000000000003em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathdefault mtight">n</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span><span class="mspace" style="margin-right:0.16666666666666666em;"></span><span class="mord mathdefault">d</span><span class="mopen">(</span><span class="mord"><span class="mord mathdefault">x</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.151392em;"><span style="top:-2.5500000000000003em;margin-left:0em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathdefault mtight">n</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span><span class="mpunct">,</span><span class="mspace" style="margin-right:0.16666666666666666em;"></span><span class="mord"><span class="mord mathdefault" style="margin-right:0.03588em;">y</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.151392em;"><span style="top:-2.5500000000000003em;margin-left:-0.03588em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathdefault mtight">n</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span><span class="mclose">)</span></span></span></span> AFAIK.</p>
+
+
+
+<a name="197060956"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/116395-maths/topic/Quotients%20%26%20synthesizing/near/197060956" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Ryan Lahfa <a href="https://leanprover-community.github.io/archive/stream/116395-maths/topic/Quotients.20.26.20synthesizing.html#197060956">(May 10 2020 at 15:20)</a>:</h4>
+<p>Alright, will do :)</p>
+
+
+
+<a name="197060977"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/116395-maths/topic/Quotients%20%26%20synthesizing/near/197060977" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Kenny Lau <a href="https://leanprover-community.github.io/archive/stream/116395-maths/topic/Quotients.20.26.20synthesizing.html#197060977">(May 10 2020 at 15:21)</a>:</h4>
+<p>I think the last time I asked, Mario told me that arbitrary lifting is independent of Lean</p>
+
+
+
+<a name="197060981"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/116395-maths/topic/Quotients%20%26%20synthesizing/near/197060981" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Kenny Lau <a href="https://leanprover-community.github.io/archive/stream/116395-maths/topic/Quotients.20.26.20synthesizing.html#197060981">(May 10 2020 at 15:21)</a>:</h4>
+<p>at least the computable one</p>
+
+
+
+<a name="197060986"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/116395-maths/topic/Quotients%20%26%20synthesizing/near/197060986" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Kenny Lau <a href="https://leanprover-community.github.io/archive/stream/116395-maths/topic/Quotients.20.26.20synthesizing.html#197060986">(May 10 2020 at 15:21)</a>:</h4>
+<p>but finite lifting should be doable by induction</p>
+
+
+
 {% endraw %}
 
-<hr><p>Last updated: May 10 2020 at 15:12 UTC</p>
+<hr><p>Last updated: May 10 2020 at 16:09 UTC</p>
