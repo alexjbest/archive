@@ -9,17 +9,17 @@ permalink: /stream/113489-new-members/index.html
 
 ### Topics:
 
+* [more basics](topic/more.20basics.html) (466 messages, latest: May 10 2020 at 22:05)
+* [Having trouble applying lemma due to metavariable](topic/Having.20trouble.20applying.20lemma.20due.20to.20metavariable.html) (6 messages, latest: May 10 2020 at 21:44)
 * [noob question(s)](topic/noob.20question(s).html) (5566 messages, latest: May 10 2020 at 20:30)
 * [do tactics change?](topic/do.20tactics.20change.3F.html) (28 messages, latest: May 10 2020 at 20:19)
 * [How to do algebraic transformations?](topic/How.20to.20do.20algebraic.20transformations.3F.html) (18 messages, latest: May 10 2020 at 17:39)
 * [apply with typeclass instances](topic/apply.20with.20typeclass.20instances.html) (29 messages, latest: May 10 2020 at 17:07)
 * [Contrapositive law without excluded middle?](topic/Contrapositive.20law.20without.20excluded.20middle.3F.html) (18 messages, latest: May 10 2020 at 17:03)
-* [Having trouble applying lemma due to metavariable](topic/Having.20trouble.20applying.20lemma.20due.20to.20metavariable.html) (5 messages, latest: May 10 2020 at 16:13)
 * [the complex number game](topic/the.20complex.20number.20game.html) (3 messages, latest: May 10 2020 at 12:34)
 * [Luiz Carlos Rumbelsperger Viana](topic/Luiz.20Carlos.20Rumbelsperger.20Viana.html) (9 messages, latest: May 10 2020 at 11:46)
 * [how is log defined in lean?](topic/how.20is.20log.20defined.20in.20lean.3F.html) (22 messages, latest: May 10 2020 at 09:33)
 * [Please Eliminate My Large Questions](topic/Please.20Eliminate.20My.20Large.20Questions.html) (106 messages, latest: May 10 2020 at 08:23)
-* [more basics](topic/more.20basics.html) (450 messages, latest: May 10 2020 at 02:23)
 * [lift to units?](topic/lift.20to.20units.3F.html) (2 messages, latest: May 10 2020 at 00:16)
 * [Cannot Import topology.basic](topic/Cannot.20Import.20topology.2Ebasic.html) (73 messages, latest: May 09 2020 at 15:24)
 * [getting started](topic/getting.20started.html) (78 messages, latest: May 09 2020 at 15:11)
@@ -1042,4 +1042,4 @@ permalink: /stream/113489-new-members/index.html
 * [Andrew Ashworth](topic/Andrew.20Ashworth.html) (15 messages, latest: Feb 26 2018 at 16:21)
 * [onboarding](topic/onboarding.html) (1 message, latest: Feb 26 2018 at 16:02)
 
-<hr><p>Last updated: May 10 2020 at 21:10 UTC</p>
+<hr><p>Last updated: May 10 2020 at 22:07 UTC</p>

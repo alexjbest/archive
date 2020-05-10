@@ -3980,6 +3980,104 @@ this : ∀ (n m k : ℕ), n + (m + k) = m + (n + k)
 
 
 
+<a name="197081142"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113489-new%20members/topic/more%20basics/near/197081142" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Carlo Cabrera <a href="https://leanprover-community.github.io/archive/stream/113489-new-members/topic/more.20basics.html#197081142">(May 10 2020 at 21:56)</a>:</h4>
+<p>How do I tell Lean I've derived a contradiction? Here is a snippet from Lean's tactic state... <a href="/user_uploads/3121/d1KYjYOd5iZ9gP21bnc5iyd2/Screenshot-2020-05-10-22.54.59.png" title="Screenshot-2020-05-10-22.54.59.png">Tactic State Snippet</a></p>
+<div class="message_inline_image"><a href="/user_uploads/3121/d1KYjYOd5iZ9gP21bnc5iyd2/Screenshot-2020-05-10-22.54.59.png" title="Tactic State Snippet"><img src="/user_uploads/3121/d1KYjYOd5iZ9gP21bnc5iyd2/Screenshot-2020-05-10-22.54.59.png"></a></div>
+
+
+
+<a name="197081155"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113489-new%20members/topic/more%20basics/near/197081155" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Kenny Lau <a href="https://leanprover-community.github.io/archive/stream/113489-new-members/topic/more.20basics.html#197081155">(May 10 2020 at 21:57)</a>:</h4>
+<div class="codehilite"><pre><span></span><code><span class="kn">example</span> <span class="o">(</span><span class="n">R</span> <span class="o">:</span> <span class="kt">Prop</span><span class="o">)</span> <span class="o">(</span><span class="n">H</span> <span class="o">:</span> <span class="n">R</span> <span class="bp">∧</span> <span class="bp">¬</span><span class="n">R</span><span class="o">)</span> <span class="o">:</span> <span class="n">false</span> <span class="o">:=</span> <span class="k">by</span> <span class="n">cc</span>
+</code></pre></div>
+
+
+
+<a name="197081157"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113489-new%20members/topic/more%20basics/near/197081157" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Mario Carneiro <a href="https://leanprover-community.github.io/archive/stream/113489-new-members/topic/more.20basics.html#197081157">(May 10 2020 at 21:57)</a>:</h4>
+<p><code>by contradiction</code> is the correct answer</p>
+
+
+
+<a name="197081204"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113489-new%20members/topic/more%20basics/near/197081204" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Mario Carneiro <a href="https://leanprover-community.github.io/archive/stream/113489-new-members/topic/more.20basics.html#197081204">(May 10 2020 at 21:58)</a>:</h4>
+<p>or <code>by exact notr r</code></p>
+
+
+
+<a name="197081215"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113489-new%20members/topic/more%20basics/near/197081215" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Kenny Lau <a href="https://leanprover-community.github.io/archive/stream/113489-new-members/topic/more.20basics.html#197081215">(May 10 2020 at 21:58)</a>:</h4>
+<p>oh I didn't notice that r and notr were there lol</p>
+
+
+
+<a name="197081239"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113489-new%20members/topic/more%20basics/near/197081239" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Mario Carneiro <a href="https://leanprover-community.github.io/archive/stream/113489-new-members/topic/more.20basics.html#197081239">(May 10 2020 at 21:59)</a>:</h4>
+<p>I suspect carlo put them together to make it more obvious for lean</p>
+
+
+
+<a name="197081281"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113489-new%20members/topic/more%20basics/near/197081281" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Carlo Cabrera <a href="https://leanprover-community.github.io/archive/stream/113489-new-members/topic/more.20basics.html#197081281">(May 10 2020 at 22:00)</a>:</h4>
+<p>Excellent, thanks, Kenny and Mario. I did try to put them together to see if that got me somewhere, but it seems it did not by itself.</p>
+
+
+
+<a name="197081283"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113489-new%20members/topic/more%20basics/near/197081283" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Kenny Lau <a href="https://leanprover-community.github.io/archive/stream/113489-new-members/topic/more.20basics.html#197081283">(May 10 2020 at 22:00)</a>:</h4>
+<p>also, <a href="https://github.com/leanprover-community/mathlib/wiki/Minimum-Working-Example-&#40;MWE&#41;" title="https://github.com/leanprover-community/mathlib/wiki/Minimum-Working-Example-&#40;MWE&#41;">#mwe</a></p>
+
+
+
+<a name="197081284"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113489-new%20members/topic/more%20basics/near/197081284" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Mario Carneiro <a href="https://leanprover-community.github.io/archive/stream/113489-new-members/topic/more.20basics.html#197081284">(May 10 2020 at 22:00)</a>:</h4>
+<p>but the right way to put them together is to apply the <code>\not R</code> proof to the <code>R</code> proof, because <code>\not R</code> is short for <code>R -&gt; false</code></p>
+
+
+
+<a name="197081293"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113489-new%20members/topic/more%20basics/near/197081293" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Mario Carneiro <a href="https://leanprover-community.github.io/archive/stream/113489-new-members/topic/more.20basics.html#197081293">(May 10 2020 at 22:00)</a>:</h4>
+<p>so <code>notr r : false</code></p>
+
+
+
+<a name="197081324"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113489-new%20members/topic/more%20basics/near/197081324" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Mario Carneiro <a href="https://leanprover-community.github.io/archive/stream/113489-new-members/topic/more.20basics.html#197081324">(May 10 2020 at 22:01)</a>:</h4>
+<p>using apply you can <code>apply notr</code> and the goal will change to <code>R</code></p>
+
+
+
+<a name="197081370"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113489-new%20members/topic/more%20basics/near/197081370" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Carlo Cabrera <a href="https://leanprover-community.github.io/archive/stream/113489-new-members/topic/more.20basics.html#197081370">(May 10 2020 at 22:02)</a>:</h4>
+<p>To be fair I noticed that "cc" actually proved what I needed to without additional work, but I was trying to get a feel for using tactics by doing it the long way</p>
+
+
+
+<a name="197081383"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113489-new%20members/topic/more%20basics/near/197081383" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Kenny Lau <a href="https://leanprover-community.github.io/archive/stream/113489-new-members/topic/more.20basics.html#197081383">(May 10 2020 at 22:03)</a>:</h4>
+<p>I notice that <code>notr</code> is basically <code>h2 notq</code></p>
+
+
+
+<a name="197081387"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113489-new%20members/topic/more%20basics/near/197081387" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Kenny Lau <a href="https://leanprover-community.github.io/archive/stream/113489-new-members/topic/more.20basics.html#197081387">(May 10 2020 at 22:03)</a>:</h4>
+<p>so how about <code>by exact h2 notq r</code></p>
+
+
+
+<a name="197081432"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113489-new%20members/topic/more%20basics/near/197081432" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Mario Carneiro <a href="https://leanprover-community.github.io/archive/stream/113489-new-members/topic/more.20basics.html#197081432">(May 10 2020 at 22:04)</a>:</h4>
+<p>kenny wants a <a href="https://github.com/leanprover-community/mathlib/wiki/Minimum-Working-Example-&#40;MWE&#41;" title="https://github.com/leanprover-community/mathlib/wiki/Minimum-Working-Example-&#40;MWE&#41;">#mwe</a> so he can golf your theorem to oblivion</p>
+
+
+
+<a name="197081454"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113489-new%20members/topic/more%20basics/near/197081454" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Carlo Cabrera <a href="https://leanprover-community.github.io/archive/stream/113489-new-members/topic/more.20basics.html#197081454">(May 10 2020 at 22:05)</a>:</h4>
+<p>He probably already has, this is from Imperial's exercise sheets. I guess you can't make it shorter than "cc"</p>
+
+
+
 {% endraw %}
 
-<hr><p>Last updated: May 10 2020 at 21:10 UTC</p>
+<hr><p>Last updated: May 10 2020 at 22:07 UTC</p>
