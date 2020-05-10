@@ -9,6 +9,7 @@ permalink: /stream/113488-general/index.html
 
 ### Topics:
 
+* [convert_struct?](topic/convert_struct.3F.html) (2 messages, latest: May 10 2020 at 22:45)
 * [Invitation to join the Codewars Lean community, Round 2](topic/Invitation.20to.20join.20the.20Codewars.20Lean.20community.2C.20Round.202.html) (330 messages, latest: May 10 2020 at 21:11)
 * [structure unification fails](topic/structure.20unification.20fails.html) (7 messages, latest: May 10 2020 at 19:22)
 * [how do you make ite/dite compute in tactic mode](topic/how.20do.20you.20make.20ite.2Fdite.20compute.20in.20tactic.20mode.html) (5 messages, latest: May 10 2020 at 19:00)
@@ -2802,4 +2803,4 @@ permalink: /stream/113488-general/index.html
 * [test](topic/test.html) (4 messages, latest: Feb 26 2018 at 16:22)
 * [welcome](topic/welcome.html) (1 message, latest: Feb 26 2018 at 16:02)
 
-<hr><p>Last updated: May 10 2020 at 22:07 UTC</p>
+<hr><p>Last updated: May 10 2020 at 23:11 UTC</p>

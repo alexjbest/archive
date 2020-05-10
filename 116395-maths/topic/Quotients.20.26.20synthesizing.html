@@ -890,6 +890,272 @@ I'll provide a MWE</p>
 
 
 
+<a name="197081561"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/116395-maths/topic/Quotients%20%26%20synthesizing/near/197081561" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Kenny Lau <a href="https://leanprover-community.github.io/archive/stream/116395-maths/topic/Quotients.20.26.20synthesizing.html#197081561">(May 10 2020 at 22:08)</a>:</h4>
+<p>MWE:</p>
+<div class="codehilite"><pre><span></span><code><span class="kn">import</span> <span class="n">data</span><span class="bp">.</span><span class="n">real</span><span class="bp">.</span><span class="n">basic</span>
+<span class="n">class</span> <span class="n">metric_space</span> <span class="o">(</span><span class="n">X</span> <span class="o">:</span> <span class="kt">Type</span><span class="bp">*</span><span class="o">)</span> <span class="o">:=</span>
+<span class="o">(</span><span class="n">d</span> <span class="o">:</span> <span class="n">X</span> <span class="bp">→</span> <span class="n">X</span> <span class="bp">→</span> <span class="n">ℝ</span><span class="o">)</span>
+<span class="n">class</span> <span class="n">premetric_space</span> <span class="o">(</span><span class="n">X</span> <span class="o">:</span> <span class="kt">Type</span><span class="bp">*</span><span class="o">)</span> <span class="o">:=</span>
+<span class="o">(</span><span class="n">d</span> <span class="o">:</span> <span class="n">X</span> <span class="bp">→</span> <span class="n">X</span> <span class="bp">→</span> <span class="n">ℝ</span><span class="o">)</span>
+<span class="o">(</span><span class="n">sym</span> <span class="o">:</span> <span class="bp">∀</span> <span class="n">x</span> <span class="n">y</span><span class="o">,</span> <span class="n">d</span> <span class="n">x</span> <span class="n">y</span> <span class="bp">=</span> <span class="n">d</span> <span class="n">y</span> <span class="n">x</span><span class="o">)</span>
+
+<span class="n">open_locale</span> <span class="n">classical</span>
+<span class="n">noncomputable</span> <span class="n">theory</span>
+
+<span class="kn">section</span> <span class="n">test</span>
+<span class="kn">open</span> <span class="n">metric_space</span>
+<span class="kn">variables</span> <span class="o">{</span><span class="n">X</span><span class="o">:</span> <span class="kt">Type</span><span class="bp">*</span><span class="o">}</span> <span class="o">[</span><span class="n">metric_space</span> <span class="n">X</span><span class="o">]</span>
+
+<span class="n">def</span> <span class="n">is_cauchy</span> <span class="o">(</span><span class="n">x</span><span class="o">:</span> <span class="bp">ℕ</span> <span class="bp">→</span> <span class="n">X</span><span class="o">)</span> <span class="o">:=</span>
+  <span class="bp">∀</span> <span class="n">ε</span> <span class="bp">&gt;</span> <span class="mi">0</span><span class="o">,</span> <span class="bp">∃</span> <span class="n">N</span><span class="o">,</span> <span class="bp">∀</span> <span class="n">p</span> <span class="bp">≥</span> <span class="n">N</span><span class="o">,</span> <span class="bp">∀</span> <span class="n">q</span> <span class="bp">≥</span> <span class="n">N</span><span class="o">,</span> <span class="o">((</span><span class="n">d</span> <span class="o">(</span><span class="n">x</span> <span class="n">p</span><span class="o">)</span> <span class="o">(</span><span class="n">x</span> <span class="n">q</span><span class="o">))</span> <span class="bp">&lt;</span> <span class="n">ε</span><span class="o">)</span>
+
+<span class="n">def</span> <span class="n">cauchy_seqs</span> <span class="o">(</span><span class="n">X</span> <span class="o">:</span> <span class="kt">Type</span><span class="bp">*</span><span class="o">)</span> <span class="o">[</span><span class="n">metric_space</span> <span class="n">X</span><span class="o">]</span> <span class="o">:=</span> <span class="o">{</span> <span class="n">f</span> <span class="o">:</span> <span class="bp">ℕ</span> <span class="bp">→</span> <span class="n">X</span> <span class="bp">//</span> <span class="n">is_cauchy</span> <span class="n">f</span> <span class="o">}</span>
+
+<span class="n">def</span> <span class="n">cauchy</span><span class="bp">.</span><span class="n">dist</span> <span class="o">(</span><span class="n">T</span><span class="o">:</span> <span class="kt">Type</span><span class="bp">*</span><span class="o">)</span> <span class="o">[</span><span class="n">metric_space</span> <span class="n">T</span><span class="o">]</span> <span class="o">(</span><span class="n">x</span> <span class="n">y</span><span class="o">:</span> <span class="n">cauchy_seqs</span> <span class="n">T</span><span class="o">)</span> <span class="o">:</span> <span class="n">ℝ</span> <span class="o">:=</span> <span class="n">sorry</span>
+
+<span class="kn">instance</span> <span class="n">pre_ecart</span><span class="bp">.</span><span class="n">premetrique</span> <span class="o">(</span><span class="n">X</span><span class="o">:</span> <span class="kt">Type</span><span class="bp">*</span><span class="o">)</span> <span class="o">[</span><span class="n">metric_space</span> <span class="n">X</span><span class="o">]:</span> <span class="n">premetric_space</span> <span class="o">(</span><span class="n">cauchy_seqs</span> <span class="n">X</span><span class="o">)</span> <span class="o">:=</span>
+<span class="o">{</span> <span class="n">d</span> <span class="o">:=</span> <span class="n">cauchy</span><span class="bp">.</span><span class="n">dist</span> <span class="n">X</span><span class="o">,</span>
+  <span class="n">sym</span> <span class="o">:=</span> <span class="n">sorry</span> <span class="o">}</span>
+
+<span class="kn">example</span> <span class="o">(</span><span class="n">T</span> <span class="o">:</span> <span class="kt">Type</span><span class="bp">*</span><span class="o">)</span> <span class="o">[</span><span class="n">metric_space</span> <span class="n">T</span><span class="o">]</span> <span class="o">(</span><span class="n">x</span> <span class="n">y</span> <span class="o">:</span> <span class="n">cauchy_seqs</span> <span class="n">T</span><span class="o">)</span> <span class="o">:</span>
+  <span class="n">cauchy</span><span class="bp">.</span><span class="n">dist</span> <span class="n">T</span> <span class="n">x</span> <span class="n">y</span> <span class="bp">=</span> <span class="n">cauchy</span><span class="bp">.</span><span class="n">dist</span> <span class="n">T</span> <span class="n">y</span> <span class="n">x</span> <span class="o">:=</span>
+<span class="k">by</span> <span class="n">rw</span> <span class="n">premetric_space</span><span class="bp">.</span><span class="n">sym</span> <span class="n">x</span> <span class="n">y</span> <span class="c1">-- fails</span>
+
+<span class="kn">end</span> <span class="n">test</span>
+</code></pre></div>
+
+
+
+<a name="197081567"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/116395-maths/topic/Quotients%20%26%20synthesizing/near/197081567" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Kenny Lau <a href="https://leanprover-community.github.io/archive/stream/116395-maths/topic/Quotients.20.26.20synthesizing.html#197081567">(May 10 2020 at 22:08)</a>:</h4>
+<p>so there are two solutions</p>
+
+
+
+<a name="197081578"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/116395-maths/topic/Quotients%20%26%20synthesizing/near/197081578" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Ryan Lahfa <a href="https://leanprover-community.github.io/archive/stream/116395-maths/topic/Quotients.20.26.20synthesizing.html#197081578">(May 10 2020 at 22:09)</a>:</h4>
+<p>I listen carefully</p>
+
+
+
+<a name="197081582"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/116395-maths/topic/Quotients%20%26%20synthesizing/near/197081582" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Kenny Lau <a href="https://leanprover-community.github.io/archive/stream/116395-maths/topic/Quotients.20.26.20synthesizing.html#197081582">(May 10 2020 at 22:09)</a>:</h4>
+<ol>
+<li>use <code>premetric_space.d x y</code> instead of <code>cauchy.dist T x y</code></li>
+</ol>
+
+
+
+<a name="197081631"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/116395-maths/topic/Quotients%20%26%20synthesizing/near/197081631" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Kenny Lau <a href="https://leanprover-community.github.io/archive/stream/116395-maths/topic/Quotients.20.26.20synthesizing.html#197081631">(May 10 2020 at 22:10)</a>:</h4>
+<ol start="2">
+<li>prove <code>cauchy.dist T x y = cauchy.dist T y x</code> immediately after declaring the instance</li>
+</ol>
+
+
+
+<a name="197081634"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/116395-maths/topic/Quotients%20%26%20synthesizing/near/197081634" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Kenny Lau <a href="https://leanprover-community.github.io/archive/stream/116395-maths/topic/Quotients.20.26.20synthesizing.html#197081634">(May 10 2020 at 22:10)</a>:</h4>
+<p>(the proof is just <code>premetric_space.sym</code> this time)</p>
+
+
+
+<a name="197081637"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/116395-maths/topic/Quotients%20%26%20synthesizing/near/197081637" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Ryan Lahfa <a href="https://leanprover-community.github.io/archive/stream/116395-maths/topic/Quotients.20.26.20synthesizing.html#197081637">(May 10 2020 at 22:10)</a>:</h4>
+<p>can I even do that because premetric_space depends on some  metricspace?</p>
+
+
+
+<a name="197081642"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/116395-maths/topic/Quotients%20%26%20synthesizing/near/197081642" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Kenny Lau <a href="https://leanprover-community.github.io/archive/stream/116395-maths/topic/Quotients.20.26.20synthesizing.html#197081642">(May 10 2020 at 22:10)</a>:</h4>
+<p>Lean will infer it</p>
+
+
+
+<a name="197081726"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/116395-maths/topic/Quotients%20%26%20synthesizing/near/197081726" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Ryan Lahfa <a href="https://leanprover-community.github.io/archive/stream/116395-maths/topic/Quotients.20.26.20synthesizing.html#197081726">(May 10 2020 at 22:12)</a>:</h4>
+<p>Okay, will try 1, then will fallback to 2, <span class="user-mention" data-user-id="110064">@Kenny Lau</span> thanks a lot.<br>
+A more abstract question, if we take back my MWE:</p>
+<div class="codehilite"><pre><span></span><code><span class="n">def</span> <span class="n">completion</span><span class="bp">.</span><span class="n">dist</span> <span class="o">(</span><span class="n">T</span><span class="o">:</span> <span class="kt">Type</span><span class="bp">*</span><span class="o">)</span> <span class="o">[</span><span class="n">metric_space</span> <span class="n">T</span><span class="o">]</span> <span class="o">(</span><span class="n">x</span> <span class="n">y</span><span class="o">:</span> <span class="n">completion</span> <span class="n">T</span><span class="o">):</span> <span class="n">ℝ</span> <span class="o">:=</span>
+  <span class="n">quotient</span><span class="bp">.</span><span class="n">lift₂</span> <span class="o">(</span><span class="n">cauchy</span><span class="bp">.</span><span class="n">dist</span> <span class="n">T</span><span class="o">)</span> <span class="o">(</span><span class="n">completion</span><span class="bp">.</span><span class="n">dist_soundness</span> <span class="n">T</span><span class="o">)</span> <span class="n">x</span> <span class="n">y</span>
+</code></pre></div>
+
+
+<p>Precisely this, when I have some assumption: <code>completion.dist T x y = 0</code>, how can I turn it into something more usable?<br>
+What I've done is turn back x y into <code>[[X], [[Y]]</code> (using exists_rep, sound) and then, can I somehow say that I have <code>cauchy.dist T X Y = 0</code> ?</p>
+
+
+
+<a name="197081728"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/116395-maths/topic/Quotients%20%26%20synthesizing/near/197081728" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Kenny Lau <a href="https://leanprover-community.github.io/archive/stream/116395-maths/topic/Quotients.20.26.20synthesizing.html#197081728">(May 10 2020 at 22:12)</a>:</h4>
+<p><span class="user-mention" data-user-id="110049">@Mario Carneiro</span> is 1 or 2 better?</p>
+
+
+
+<a name="197081807"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/116395-maths/topic/Quotients%20%26%20synthesizing/near/197081807" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Ryan Lahfa <a href="https://leanprover-community.github.io/archive/stream/116395-maths/topic/Quotients.20.26.20synthesizing.html#197081807">(May 10 2020 at 22:14)</a>:</h4>
+<p>1 worked fine</p>
+
+
+
+<a name="197081820"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/116395-maths/topic/Quotients%20%26%20synthesizing/near/197081820" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Kenny Lau <a href="https://leanprover-community.github.io/archive/stream/116395-maths/topic/Quotients.20.26.20synthesizing.html#197081820">(May 10 2020 at 22:15)</a>:</h4>
+<p>doesn't mean it's better</p>
+
+
+
+<a name="197081821"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/116395-maths/topic/Quotients%20%26%20synthesizing/near/197081821" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Kenny Lau <a href="https://leanprover-community.github.io/archive/stream/116395-maths/topic/Quotients.20.26.20synthesizing.html#197081821">(May 10 2020 at 22:15)</a>:</h4>
+<div class="codehilite"><pre><span></span><code><span class="kn">instance</span> <span class="n">completion</span><span class="bp">.</span><span class="n">metric_space</span> <span class="o">(</span><span class="n">X</span><span class="o">:</span> <span class="kt">Type</span><span class="bp">*</span><span class="o">)</span> <span class="o">[</span><span class="n">metric_space</span> <span class="n">X</span><span class="o">]:</span> <span class="n">metric_space</span> <span class="o">(</span><span class="n">completion</span> <span class="n">X</span><span class="o">)</span> <span class="o">:=</span>
+<span class="o">{</span>
+  <span class="n">d</span> <span class="o">:=</span> <span class="n">completion</span><span class="bp">.</span><span class="n">dist</span> <span class="n">X</span><span class="o">,</span>
+  <span class="n">d_pos</span> <span class="o">:=</span> <span class="bp">λ</span> <span class="n">x</span> <span class="n">y</span><span class="o">,</span> <span class="n">quotient</span><span class="bp">.</span><span class="n">induction_on₂</span> <span class="n">x</span> <span class="n">y</span> <span class="err">$</span> <span class="bp">λ</span> <span class="n">Y</span> <span class="n">Z</span><span class="o">,</span> <span class="k">show</span> <span class="n">cauchy</span><span class="bp">.</span><span class="n">dist</span> <span class="n">X</span> <span class="n">Y</span> <span class="n">Z</span> <span class="bp">≥</span> <span class="mi">0</span><span class="o">,</span> <span class="k">from</span> <span class="n">sorry</span><span class="o">,</span>
+  <span class="c1">-- etc</span>
+<span class="o">}</span>
+</code></pre></div>
+
+
+
+<a name="197081824"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/116395-maths/topic/Quotients%20%26%20synthesizing/near/197081824" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Kenny Lau <a href="https://leanprover-community.github.io/archive/stream/116395-maths/topic/Quotients.20.26.20synthesizing.html#197081824">(May 10 2020 at 22:15)</a>:</h4>
+<p>use <code>induction_on</code> instead of <code>exists_rep</code></p>
+
+
+
+<a name="197081828"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/116395-maths/topic/Quotients%20%26%20synthesizing/near/197081828" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Ryan Lahfa <a href="https://leanprover-community.github.io/archive/stream/116395-maths/topic/Quotients.20.26.20synthesizing.html#197081828">(May 10 2020 at 22:15)</a>:</h4>
+<p>Thanks a lot</p>
+
+
+
+<a name="197081897"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/116395-maths/topic/Quotients%20%26%20synthesizing/near/197081897" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Mario Carneiro <a href="https://leanprover-community.github.io/archive/stream/116395-maths/topic/Quotients.20.26.20synthesizing.html#197081897">(May 10 2020 at 22:16)</a>:</h4>
+<p>Doesn't mathlib use <code>dist</code> for this?</p>
+
+
+
+<a name="197081910"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/116395-maths/topic/Quotients%20%26%20synthesizing/near/197081910" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Mario Carneiro <a href="https://leanprover-community.github.io/archive/stream/116395-maths/topic/Quotients.20.26.20synthesizing.html#197081910">(May 10 2020 at 22:17)</a>:</h4>
+<p>There is a definition <code>dist</code> which just unwraps <code>metric_space.dist</code>, and rather than <code>cauchy.dist</code> or <code>premetric_space.d</code> you should be using <code>dist</code></p>
+
+
+
+<a name="197081927"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/116395-maths/topic/Quotients%20%26%20synthesizing/near/197081927" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Kenny Lau <a href="https://leanprover-community.github.io/archive/stream/116395-maths/topic/Quotients.20.26.20synthesizing.html#197081927">(May 10 2020 at 22:17)</a>:</h4>
+<p>aha, the third solution</p>
+
+
+
+<a name="197081929"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/116395-maths/topic/Quotients%20%26%20synthesizing/near/197081929" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Ryan Lahfa <a href="https://leanprover-community.github.io/archive/stream/116395-maths/topic/Quotients.20.26.20synthesizing.html#197081929">(May 10 2020 at 22:17)</a>:</h4>
+<p><span class="user-mention" data-user-id="110049">@Mario Carneiro</span> I'm rebuilding this as an exercise, so I'm not sure what you're suggesting is not just reusing mathlib, which I cannot</p>
+
+
+
+<a name="197081985"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/116395-maths/topic/Quotients%20%26%20synthesizing/near/197081985" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Mario Carneiro <a href="https://leanprover-community.github.io/archive/stream/116395-maths/topic/Quotients.20.26.20synthesizing.html#197081985">(May 10 2020 at 22:18)</a>:</h4>
+<p>That's fine, then just rebuild <code>dist</code> too</p>
+
+
+
+<a name="197081994"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/116395-maths/topic/Quotients%20%26%20synthesizing/near/197081994" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Ryan Lahfa <a href="https://leanprover-community.github.io/archive/stream/116395-maths/topic/Quotients.20.26.20synthesizing.html#197081994">(May 10 2020 at 22:18)</a>:</h4>
+<p>Is there some file or pointer where to look?</p>
+
+
+
+<a name="197082082"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/116395-maths/topic/Quotients%20%26%20synthesizing/near/197082082" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Mario Carneiro <a href="https://leanprover-community.github.io/archive/stream/116395-maths/topic/Quotients.20.26.20synthesizing.html#197082082">(May 10 2020 at 22:19)</a>:</h4>
+<p><a href="https://github.com/leanprover-community/mathlib/blob/master/src/topology/metric_space/premetric_space.lean" title="https://github.com/leanprover-community/mathlib/blob/master/src/topology/metric_space/premetric_space.lean">https://github.com/leanprover-community/mathlib/blob/master/src/topology/metric_space/premetric_space.lean</a></p>
+
+
+
+<a name="197082148"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/116395-maths/topic/Quotients%20%26%20synthesizing/near/197082148" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Mario Carneiro <a href="https://leanprover-community.github.io/archive/stream/116395-maths/topic/Quotients.20.26.20synthesizing.html#197082148">(May 10 2020 at 22:20)</a>:</h4>
+<p>It looks like <code>has_dist</code> has been broken off as its own typeclass</p>
+
+
+
+<a name="197082157"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/116395-maths/topic/Quotients%20%26%20synthesizing/near/197082157" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Mario Carneiro <a href="https://leanprover-community.github.io/archive/stream/116395-maths/topic/Quotients.20.26.20synthesizing.html#197082157">(May 10 2020 at 22:20)</a>:</h4>
+<p><a href="https://github.com/leanprover-community/mathlib/blob/master/src/topology/metric_space/basic.lean#L46" title="https://github.com/leanprover-community/mathlib/blob/master/src/topology/metric_space/basic.lean#L46">https://github.com/leanprover-community/mathlib/blob/master/src/topology/metric_space/basic.lean#L46</a></p>
+
+
+
+<a name="197082163"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/116395-maths/topic/Quotients%20%26%20synthesizing/near/197082163" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Ryan Lahfa <a href="https://leanprover-community.github.io/archive/stream/116395-maths/topic/Quotients.20.26.20synthesizing.html#197082163">(May 10 2020 at 22:21)</a>:</h4>
+<p>Okay, so  <code>has_XXX</code> technique, thanks</p>
+
+
+
+<a name="197082243"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/116395-maths/topic/Quotients%20%26%20synthesizing/near/197082243" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Ryan Lahfa <a href="https://leanprover-community.github.io/archive/stream/116395-maths/topic/Quotients.20.26.20synthesizing.html#197082243">(May 10 2020 at 22:22)</a>:</h4>
+<p><span class="user-mention" data-user-id="110064">@Kenny Lau</span> I just didn't understand something on induction_on2</p>
+
+
+
+<a name="197082271"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/116395-maths/topic/Quotients%20%26%20synthesizing/near/197082271" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Ryan Lahfa <a href="https://leanprover-community.github.io/archive/stream/116395-maths/topic/Quotients.20.26.20synthesizing.html#197082271">(May 10 2020 at 22:23)</a>:</h4>
+<p>When you pass the hypothesis: for all x, y: cauchy_seqs, I can prove cauchy.dist X Y Z ≥ 0, why does it "coerce" to completion.dist ?</p>
+
+
+
+<a name="197082289"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/116395-maths/topic/Quotients%20%26%20synthesizing/near/197082289" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Ryan Lahfa <a href="https://leanprover-community.github.io/archive/stream/116395-maths/topic/Quotients.20.26.20synthesizing.html#197082289">(May 10 2020 at 22:23)</a>:</h4>
+<p>i mean like, does cauchy.dist X Y Z ≥ 0 → completion.dist X [Y] [Z] ≥ 0 automatically?</p>
+
+
+
+<a name="197082489"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/116395-maths/topic/Quotients%20%26%20synthesizing/near/197082489" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Kenny Lau <a href="https://leanprover-community.github.io/archive/stream/116395-maths/topic/Quotients.20.26.20synthesizing.html#197082489">(May 10 2020 at 22:26)</a>:</h4>
+<p><code>completion.dist X [Y] [Z]</code> is defeq to <code>cauchy.dist X Y Z</code></p>
+
+
+
+<a name="197082493"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/116395-maths/topic/Quotients%20%26%20synthesizing/near/197082493" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Kenny Lau <a href="https://leanprover-community.github.io/archive/stream/116395-maths/topic/Quotients.20.26.20synthesizing.html#197082493">(May 10 2020 at 22:26)</a>:</h4>
+<p>because of definitional equalities involving <code>quotient.lift</code></p>
+
+
+
+<a name="197082505"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/116395-maths/topic/Quotients%20%26%20synthesizing/near/197082505" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Ryan Lahfa <a href="https://leanprover-community.github.io/archive/stream/116395-maths/topic/Quotients.20.26.20synthesizing.html#197082505">(May 10 2020 at 22:27)</a>:</h4>
+<p>okay, nice it makes it super clear, last question, <span class="user-mention" data-user-id="110064">@Kenny Lau</span> how can I prove <code>X \~~  Y</code> or <code>[X] = [Y]</code> knowing that I can prove that <code>cauchy.dist X Y = 0</code> (which is exactly the def of the relation)?</p>
+
+
+
+<a name="197082533"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/116395-maths/topic/Quotients%20%26%20synthesizing/near/197082533" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Kenny Lau <a href="https://leanprover-community.github.io/archive/stream/116395-maths/topic/Quotients.20.26.20synthesizing.html#197082533">(May 10 2020 at 22:27)</a>:</h4>
+<p><code>quotient.sound</code></p>
+
+
+
+<a name="197082534"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/116395-maths/topic/Quotients%20%26%20synthesizing/near/197082534" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Ryan Lahfa <a href="https://leanprover-community.github.io/archive/stream/116395-maths/topic/Quotients.20.26.20synthesizing.html#197082534">(May 10 2020 at 22:27)</a>:</h4>
+<p>well<br>
+cauchy.dist X Y = 0 is defeq X ~~Y I guess</p>
+
+
+
+<a name="197082585"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/116395-maths/topic/Quotients%20%26%20synthesizing/near/197082585" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Ryan Lahfa <a href="https://leanprover-community.github.io/archive/stream/116395-maths/topic/Quotients.20.26.20synthesizing.html#197082585">(May 10 2020 at 22:28)</a>:</h4>
+<p>yes, I used quot.sound and some hypothesis and it just worked ™, thx a lot</p>
+
+
+
+<a name="197082823"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/116395-maths/topic/Quotients%20%26%20synthesizing/near/197082823" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Ryan Lahfa <a href="https://leanprover-community.github.io/archive/stream/116395-maths/topic/Quotients.20.26.20synthesizing.html#197082823">(May 10 2020 at 22:32)</a>:</h4>
+<p><span class="user-mention" data-user-id="110064">@Kenny Lau</span> is there a induction_on3 ? :D</p>
+
+
+
+<a name="197082826"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/116395-maths/topic/Quotients%20%26%20synthesizing/near/197082826" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Ryan Lahfa <a href="https://leanprover-community.github.io/archive/stream/116395-maths/topic/Quotients.20.26.20synthesizing.html#197082826">(May 10 2020 at 22:32)</a>:</h4>
+<p>Oh there is !</p>
+
+
+
 {% endraw %}
 
-<hr><p>Last updated: May 10 2020 at 22:07 UTC</p>
+<hr><p>Last updated: May 10 2020 at 23:11 UTC</p>

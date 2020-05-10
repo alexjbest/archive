@@ -1,0 +1,193 @@
+---
+layout: archive
+title: Zulip Chat Archive
+permalink: /stream/113489-new-members/topic/an.20element.20of.20set.20(set.20unit).html
+---
+
+<h2>Stream: <a href="https://leanprover-community.github.io/archive/stream/113489-new-members/index.html">new members</a></h2>
+<h3>Topic: <a href="https://leanprover-community.github.io/archive/stream/113489-new-members/topic/an.20element.20of.20set.20(set.20unit).html">an element of set (set unit)</a></h3>
+
+<hr>
+
+<base href="https://leanprover.zulipchat.com/">
+
+<head><link href="/style.css" rel="stylesheet"></head>
+
+{% raw %}
+
+<a name="197082611"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113489-new%20members/topic/an%20element%20of%20set%20%28set%20unit%29/near/197082611" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Bhavik Mehta <a href="https://leanprover-community.github.io/archive/stream/113489-new-members/topic/an.20element.20of.20set.20(set.20unit).html#197082611">(May 10 2020 at 22:28)</a>:</h4>
+<p>Here's a MWE: </p>
+<div class="codehilite"><pre><span></span><code><span class="kn">lemma</span> <span class="n">pp1</span> <span class="o">(</span><span class="n">x</span> <span class="o">:</span> <span class="n">set</span> <span class="o">(</span><span class="n">set</span> <span class="n">unit</span><span class="o">))</span> <span class="o">:</span> <span class="n">x</span> <span class="bp">=</span> <span class="err">∅</span> <span class="bp">∨</span> <span class="n">x</span> <span class="bp">=</span> <span class="o">{</span><span class="err">∅</span><span class="o">}</span> <span class="bp">∨</span> <span class="n">x</span> <span class="bp">=</span> <span class="o">{{()}}</span> <span class="bp">∨</span> <span class="n">x</span> <span class="bp">=</span> <span class="o">{</span><span class="err">∅</span><span class="o">,</span> <span class="o">{()}}</span> <span class="o">:=</span>
+<span class="n">sorry</span>
+</code></pre></div>
+
+
+<p>Golf away! (This came up in the middle of some category theory which I'm hoping to make into a kata)</p>
+
+
+
+<a name="197083348"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113489-new%20members/topic/an%20element%20of%20set%20%28set%20unit%29/near/197083348" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Kevin Buzzard <a href="https://leanprover-community.github.io/archive/stream/113489-new-members/topic/an.20element.20of.20set.20(set.20unit).html#197083348">(May 10 2020 at 22:42)</a>:</h4>
+<p><code>dec_trivial</code> should work but doesn't seem to</p>
+
+
+
+<a name="197083359"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113489-new%20members/topic/an%20element%20of%20set%20%28set%20unit%29/near/197083359" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Kevin Buzzard <a href="https://leanprover-community.github.io/archive/stream/113489-new-members/topic/an.20element.20of.20set.20(set.20unit).html#197083359">(May 10 2020 at 22:42)</a>:</h4>
+<div class="codehilite"><pre><span></span><code><span class="kn">import</span> <span class="n">data</span><span class="bp">.</span><span class="n">fintype</span><span class="bp">.</span><span class="n">basic</span>
+
+<span class="kn">example</span> <span class="o">(</span><span class="n">X</span> <span class="o">:</span> <span class="kt">Type</span><span class="o">)</span> <span class="o">[</span><span class="n">fintype</span> <span class="n">X</span><span class="o">]</span> <span class="o">:</span> <span class="n">fintype</span> <span class="o">(</span><span class="n">set</span> <span class="n">X</span><span class="o">)</span> <span class="o">:=</span> <span class="k">by</span> <span class="n">apply_instance</span>
+</code></pre></div>
+
+
+<p>doesn't either.</p>
+
+
+
+<a name="197083411"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113489-new%20members/topic/an%20element%20of%20set%20%28set%20unit%29/near/197083411" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Bhavik Mehta <a href="https://leanprover-community.github.io/archive/stream/113489-new-members/topic/an.20element.20of.20set.20(set.20unit).html#197083411">(May 10 2020 at 22:44)</a>:</h4>
+<p>that instance is classical - does that affect things?</p>
+
+
+
+<a name="197083412"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113489-new%20members/topic/an%20element%20of%20set%20%28set%20unit%29/near/197083412" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Kenny Lau <a href="https://leanprover-community.github.io/archive/stream/113489-new-members/topic/an.20element.20of.20set.20(set.20unit).html#197083412">(May 10 2020 at 22:44)</a>:</h4>
+<p>they don't work because <code>set X</code> doesn't have decidable equality</p>
+
+
+
+<a name="197083414"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113489-new%20members/topic/an%20element%20of%20set%20%28set%20unit%29/near/197083414" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Mario Carneiro <a href="https://leanprover-community.github.io/archive/stream/113489-new-members/topic/an.20element.20of.20set.20(set.20unit).html#197083414">(May 10 2020 at 22:44)</a>:</h4>
+<p>You need decidable equality I think?</p>
+
+
+
+<a name="197083421"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113489-new%20members/topic/an%20element%20of%20set%20%28set%20unit%29/near/197083421" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Kevin Buzzard <a href="https://leanprover-community.github.io/archive/stream/113489-new-members/topic/an.20element.20of.20set.20(set.20unit).html#197083421">(May 10 2020 at 22:45)</a>:</h4>
+<p>Then why doesn't dec_trivial work for Bhavik's lemma?</p>
+
+
+
+<a name="197083423"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113489-new%20members/topic/an%20element%20of%20set%20%28set%20unit%29/near/197083423" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Mario Carneiro <a href="https://leanprover-community.github.io/archive/stream/113489-new-members/topic/an.20element.20of.20set.20(set.20unit).html#197083423">(May 10 2020 at 22:45)</a>:</h4>
+<p>that doesn't sound right though</p>
+
+
+
+<a name="197083424"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113489-new%20members/topic/an%20element%20of%20set%20%28set%20unit%29/near/197083424" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Kenny Lau <a href="https://leanprover-community.github.io/archive/stream/113489-new-members/topic/an.20element.20of.20set.20(set.20unit).html#197083424">(May 10 2020 at 22:45)</a>:</h4>
+<p>the statement <code>x = \empty</code> is undecidable</p>
+
+
+
+<a name="197083429"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113489-new%20members/topic/an%20element%20of%20set%20%28set%20unit%29/near/197083429" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Kevin Buzzard <a href="https://leanprover-community.github.io/archive/stream/113489-new-members/topic/an.20element.20of.20set.20(set.20unit).html#197083429">(May 10 2020 at 22:45)</a>:</h4>
+<p><code>example (X : Type) [decidable_eq X] [fintype X] : fintype (set X) := by apply_instance</code> works</p>
+
+
+
+<a name="197083430"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113489-new%20members/topic/an%20element%20of%20set%20%28set%20unit%29/near/197083430" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Kenny Lau <a href="https://leanprover-community.github.io/archive/stream/113489-new-members/topic/an.20element.20of.20set.20(set.20unit).html#197083430">(May 10 2020 at 22:45)</a>:</h4>
+<p>because <code>x</code> can be the set of counter-examples to Riemann's hypothesis</p>
+
+
+
+<a name="197083435"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113489-new%20members/topic/an%20element%20of%20set%20%28set%20unit%29/near/197083435" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Mario Carneiro <a href="https://leanprover-community.github.io/archive/stream/113489-new-members/topic/an.20element.20of.20set.20(set.20unit).html#197083435">(May 10 2020 at 22:45)</a>:</h4>
+<p>You should not need decidable equality to produce this set, it's just <code>powerset fintype.univ</code></p>
+
+
+
+<a name="197083477"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113489-new%20members/topic/an%20element%20of%20set%20%28set%20unit%29/near/197083477" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Kevin Buzzard <a href="https://leanprover-community.github.io/archive/stream/113489-new-members/topic/an.20element.20of.20set.20(set.20unit).html#197083477">(May 10 2020 at 22:46)</a>:</h4>
+<p>Aah, but maybe it doesn't have decidable equality!</p>
+
+
+
+<a name="197083483"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113489-new%20members/topic/an%20element%20of%20set%20%28set%20unit%29/near/197083483" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Bhavik Mehta <a href="https://leanprover-community.github.io/archive/stream/113489-new-members/topic/an.20element.20of.20set.20(set.20unit).html#197083483">(May 10 2020 at 22:46)</a>:</h4>
+<p>I'm totally okay with noncomputable/classical proofs for this, by the way</p>
+
+
+
+<a name="197083485"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113489-new%20members/topic/an%20element%20of%20set%20%28set%20unit%29/near/197083485" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Kevin Buzzard <a href="https://leanprover-community.github.io/archive/stream/113489-new-members/topic/an.20element.20of.20set.20(set.20unit).html#197083485">(May 10 2020 at 22:46)</a>:</h4>
+<p><code>example (X : Type) [decidable_eq X] [fintype X] : decidable_eq (set X) := by apply_instance -- fails</code></p>
+
+
+
+<a name="197083490"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113489-new%20members/topic/an%20element%20of%20set%20%28set%20unit%29/near/197083490" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Mario Carneiro <a href="https://leanprover-community.github.io/archive/stream/113489-new-members/topic/an.20element.20of.20set.20(set.20unit).html#197083490">(May 10 2020 at 22:47)</a>:</h4>
+<p>The only requirement of <code>fintype</code> is that you have a constructible list of elements that are all (classically) provably exhaustive and distinct from each other</p>
+
+
+
+<a name="197083491"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113489-new%20members/topic/an%20element%20of%20set%20%28set%20unit%29/near/197083491" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Kevin Buzzard <a href="https://leanprover-community.github.io/archive/stream/113489-new-members/topic/an.20element.20of.20set.20(set.20unit).html#197083491">(May 10 2020 at 22:47)</a>:</h4>
+<p>so <code>set (set unit)</code> might not be a fintype after all :-) in constructiveland</p>
+
+
+
+<a name="197083500"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113489-new%20members/topic/an%20element%20of%20set%20%28set%20unit%29/near/197083500" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Kenny Lau <a href="https://leanprover-community.github.io/archive/stream/113489-new-members/topic/an.20element.20of.20set.20(set.20unit).html#197083500">(May 10 2020 at 22:47)</a>:</h4>
+<p>exactly</p>
+
+
+
+<a name="197083502"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113489-new%20members/topic/an%20element%20of%20set%20%28set%20unit%29/near/197083502" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Mario Carneiro <a href="https://leanprover-community.github.io/archive/stream/113489-new-members/topic/an.20element.20of.20set.20(set.20unit).html#197083502">(May 10 2020 at 22:47)</a>:</h4>
+<p>An instance of <code>fintype (set (set unit))</code> is <code>&lt;{univ, empty}, &lt;classical proof&gt;&gt;</code></p>
+
+
+
+<a name="197083539"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113489-new%20members/topic/an%20element%20of%20set%20%28set%20unit%29/near/197083539" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Bhavik Mehta <a href="https://leanprover-community.github.io/archive/stream/113489-new-members/topic/an.20element.20of.20set.20(set.20unit).html#197083539">(May 10 2020 at 22:48)</a>:</h4>
+<p>in <code>data.fintype</code> the instance <code>set.fintype</code> is given:</p>
+<div class="codehilite"><pre><span></span><code><span class="kn">instance</span> <span class="n">set</span><span class="bp">.</span><span class="n">fintype</span> <span class="o">[</span><span class="n">decidable_eq</span> <span class="n">α</span><span class="o">]</span> <span class="o">[</span><span class="n">fintype</span> <span class="n">α</span><span class="o">]</span> <span class="o">:</span> <span class="n">fintype</span> <span class="o">(</span><span class="n">set</span> <span class="n">α</span><span class="o">)</span> <span class="o">:=</span>
+<span class="n">pi</span><span class="bp">.</span><span class="n">fintype</span>
+</code></pre></div>
+
+
+
+<a name="197083544"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113489-new%20members/topic/an%20element%20of%20set%20%28set%20unit%29/near/197083544" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Mario Carneiro <a href="https://leanprover-community.github.io/archive/stream/113489-new-members/topic/an.20element.20of.20set.20(set.20unit).html#197083544">(May 10 2020 at 22:48)</a>:</h4>
+<p>I see, if that's the proof then that explains it</p>
+
+
+
+<a name="197083546"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113489-new%20members/topic/an%20element%20of%20set%20%28set%20unit%29/near/197083546" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Mario Carneiro <a href="https://leanprover-community.github.io/archive/stream/113489-new-members/topic/an.20element.20of.20set.20(set.20unit).html#197083546">(May 10 2020 at 22:48)</a>:</h4>
+<p>there is another proof that avoids the assumption</p>
+
+
+
+<a name="197083716"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113489-new%20members/topic/an%20element%20of%20set%20%28set%20unit%29/near/197083716" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Kevin Buzzard <a href="https://leanprover-community.github.io/archive/stream/113489-new-members/topic/an.20element.20of.20set.20(set.20unit).html#197083716">(May 10 2020 at 22:54)</a>:</h4>
+<p>Mario's instance above has one too many <code>set</code>s.</p>
+
+
+
+<a name="197083782"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113489-new%20members/topic/an%20element%20of%20set%20%28set%20unit%29/near/197083782" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Mario Carneiro <a href="https://leanprover-community.github.io/archive/stream/113489-new-members/topic/an.20element.20of.20set.20(set.20unit).html#197083782">(May 10 2020 at 22:57)</a>:</h4>
+<div class="codehilite"><pre><span></span><code><span class="kn">instance</span> <span class="n">set</span><span class="bp">.</span><span class="n">fintype</span> <span class="o">[</span><span class="n">fintype</span> <span class="n">α</span><span class="o">]</span> <span class="o">:</span> <span class="n">fintype</span> <span class="o">(</span><span class="n">set</span> <span class="n">α</span><span class="o">)</span> <span class="o">:=</span>
+<span class="bp">⟨</span><span class="o">(</span><span class="bp">@</span><span class="n">finset</span><span class="bp">.</span><span class="n">univ</span> <span class="n">α</span> <span class="bp">_</span><span class="o">)</span><span class="bp">.</span><span class="n">powerset</span><span class="bp">.</span><span class="n">map</span> <span class="bp">⟨</span><span class="n">coe</span><span class="o">,</span> <span class="n">to_set_injective</span><span class="bp">⟩</span><span class="o">,</span> <span class="bp">λ</span> <span class="n">s</span><span class="o">,</span>
+  <span class="k">by</span> <span class="n">classical</span><span class="bp">;</span> <span class="n">simp</span> <span class="o">[</span><span class="n">subset_univ</span><span class="o">]</span><span class="bp">;</span> <span class="n">exact</span> <span class="bp">⟨</span><span class="n">finset</span><span class="bp">.</span><span class="n">univ</span><span class="bp">.</span><span class="n">filter</span> <span class="n">s</span><span class="o">,</span> <span class="k">by</span> <span class="n">simp</span><span class="bp">;</span> <span class="n">refl</span><span class="bp">⟩⟩</span>
+</code></pre></div>
+
+
+
+<a name="197083836"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113489-new%20members/topic/an%20element%20of%20set%20%28set%20unit%29/near/197083836" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Mario Carneiro <a href="https://leanprover-community.github.io/archive/stream/113489-new-members/topic/an.20element.20of.20set.20(set.20unit).html#197083836">(May 10 2020 at 22:59)</a>:</h4>
+<p>which is at least enough to prove</p>
+<div class="codehilite"><pre><span></span><code><span class="bp">#</span><span class="kn">eval</span> <span class="n">fintype</span><span class="bp">.</span><span class="n">card</span> <span class="o">(</span><span class="n">set</span> <span class="o">(</span><span class="n">set</span> <span class="n">unit</span><span class="o">))</span> <span class="c1">-- 4</span>
+</code></pre></div>
+
+
+<p>(which indeed shows that I don't have enough <code>set</code>s in my instance)</p>
+
+
+
+{% endraw %}
+
+<hr><p>Last updated: May 10 2020 at 23:11 UTC</p>
