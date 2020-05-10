@@ -40,6 +40,18 @@ permalink: /stream/113488-general/topic/how.20do.20you.20make.20ite.2Fdite.20com
 
 
 
+<a name="197072138"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113488-general/topic/how%20do%20you%20make%20ite/dite%20compute%20in%20tactic%20mode/near/197072138" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Slavomir Kaslev <a href="https://leanprover-community.github.io/archive/stream/113488-general/topic/how.20do.20you.20make.20ite.2Fdite.20compute.20in.20tactic.20mode.html#197072138">(May 10 2020 at 18:58)</a>:</h4>
+<p>That's exactly it. Thank you so much, Reid!</p>
+
+
+
+<a name="197072228"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113488-general/topic/how%20do%20you%20make%20ite/dite%20compute%20in%20tactic%20mode/near/197072228" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Yury G. Kudryashov <a href="https://leanprover-community.github.io/archive/stream/113488-general/topic/how.20do.20you.20make.20ite.2Fdite.20compute.20in.20tactic.20mode.html#197072228">(May 10 2020 at 19:00)</a>:</h4>
+<p>If you don't have <code>x &lt; a</code> in the environment, then you can also use <code>split_ifs</code> tactic that will run <code>by_cases</code> on relevant conditions, then simplify using <code>if_pos</code>, <code>if_neg</code>, <code>dif_pos</code>, <code>dif_neg</code>.</p>
+
+
+
 {% endraw %}
 
-<hr><p>Last updated: May 10 2020 at 18:08 UTC</p>
+<hr><p>Last updated: May 10 2020 at 19:11 UTC</p>

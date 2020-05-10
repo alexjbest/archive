@@ -9,11 +9,12 @@ permalink: /stream/113488-general/index.html
 
 ### Topics:
 
+* [structure unification fails](topic/structure.20unification.20fails.html) (3 messages, latest: May 10 2020 at 19:02)
+* [how do you make ite/dite compute in tactic mode](topic/how.20do.20you.20make.20ite.2Fdite.20compute.20in.20tactic.20mode.html) (5 messages, latest: May 10 2020 at 19:00)
 * [olean cache](topic/olean.20cache.html) (1 message, latest: May 10 2020 at 17:17)
 * [Lean's proof of FTA is "obviously wrong"](topic/Lean's.20proof.20of.20FTA.20is.20.22obviously.20wrong.22.html) (33 messages, latest: May 10 2020 at 14:31)
 * [New user bundles](topic/New.20user.20bundles.html) (157 messages, latest: May 10 2020 at 13:10)
 * [proof of soundness](topic/proof.20of.20soundness.html) (3 messages, latest: May 10 2020 at 12:42)
-* [how do you make ite/dite compute in tactic mode](topic/how.20do.20you.20make.20ite.2Fdite.20compute.20in.20tactic.20mode.html) (3 messages, latest: May 10 2020 at 12:31)
 * ["save status" in natural number game](topic/.22save.20status.22.20in.20natural.20number.20game.html) (50 messages, latest: May 10 2020 at 10:11)
 * [lean core vs mathlib](topic/lean.20core.20vs.20mathlib.html) (4 messages, latest: May 10 2020 at 06:42)
 * [algebra classes](topic/algebra.20classes.html) (1 message, latest: May 10 2020 at 05:41)
@@ -130,7 +131,6 @@ permalink: /stream/113488-general/index.html
 * [class instances in definition of Prop](topic/class.20instances.20in.20definition.20of.20Prop.html) (16 messages, latest: Apr 25 2020 at 16:37)
 * [a + succ b syntactically succ(a+b)?](topic/a.20.2B.20succ.20b.20syntactically.20succ(a.2Bb).3F.html) (3 messages, latest: Apr 25 2020 at 16:27)
 * [lean-client-python](topic/lean-client-python.html) (45 messages, latest: Apr 25 2020 at 12:37)
-* [structure unification fails](topic/structure.20unification.20fails.html) (1 message, latest: Apr 25 2020 at 06:15)
 * [tac1;{tac2, tac3}](topic/tac1.3B.7Btac2.2C.20tac3.7D.html) (22 messages, latest: Apr 25 2020 at 01:06)
 * [class instance unification fails](topic/class.20instance.20unification.20fails.html) (14 messages, latest: Apr 24 2020 at 23:12)
 * [parser fun](topic/parser.20fun.html) (10 messages, latest: Apr 24 2020 at 17:06)
@@ -2802,4 +2802,4 @@ permalink: /stream/113488-general/index.html
 * [test](topic/test.html) (4 messages, latest: Feb 26 2018 at 16:22)
 * [welcome](topic/welcome.html) (1 message, latest: Feb 26 2018 at 16:02)
 
-<hr><p>Last updated: May 10 2020 at 18:08 UTC</p>
+<hr><p>Last updated: May 10 2020 at 19:11 UTC</p>
