@@ -9,9 +9,9 @@ permalink: /stream/113489-new-members/index.html
 
 ### Topics:
 
+* [How to do algebraic transformations?](topic/How.20to.20do.20algebraic.20transformations.3F.html) (18 messages, latest: May 10 2020 at 17:39)
 * [apply with typeclass instances](topic/apply.20with.20typeclass.20instances.html) (29 messages, latest: May 10 2020 at 17:07)
 * [Contrapositive law without excluded middle?](topic/Contrapositive.20law.20without.20excluded.20middle.3F.html) (18 messages, latest: May 10 2020 at 17:03)
-* [How to do algebraic transformations?](topic/How.20to.20do.20algebraic.20transformations.3F.html) (1 message, latest: May 10 2020 at 16:57)
 * [Having trouble applying lemma due to metavariable](topic/Having.20trouble.20applying.20lemma.20due.20to.20metavariable.html) (5 messages, latest: May 10 2020 at 16:13)
 * [noob question(s)](topic/noob.20question(s).html) (5515 messages, latest: May 10 2020 at 12:42)
 * [the complex number game](topic/the.20complex.20number.20game.html) (3 messages, latest: May 10 2020 at 12:34)
@@ -1041,4 +1041,4 @@ permalink: /stream/113489-new-members/index.html
 * [Andrew Ashworth](topic/Andrew.20Ashworth.html) (15 messages, latest: Feb 26 2018 at 16:21)
 * [onboarding](topic/onboarding.html) (1 message, latest: Feb 26 2018 at 16:02)
 
-<hr><p>Last updated: May 10 2020 at 17:08 UTC</p>
+<hr><p>Last updated: May 10 2020 at 18:08 UTC</p>
