@@ -9,6 +9,7 @@ permalink: /stream/113488-general/index.html
 
 ### Topics:
 
+* [New user bundles](topic/New.20user.20bundles.html) (150 messages, latest: May 10 2020 at 10:40)
 * ["save status" in natural number game](topic/.22save.20status.22.20in.20natural.20number.20game.html) (50 messages, latest: May 10 2020 at 10:11)
 * [lean core vs mathlib](topic/lean.20core.20vs.20mathlib.html) (4 messages, latest: May 10 2020 at 06:42)
 * [algebra classes](topic/algebra.20classes.html) (1 message, latest: May 10 2020 at 05:41)
@@ -434,7 +435,6 @@ permalink: /stream/113488-general/index.html
 * [proof](topic/proof.html) (72 messages, latest: Feb 25 2020 at 07:35)
 * [olean files in VSCode](topic/olean.20files.20in.20VSCode.html) (3 messages, latest: Feb 25 2020 at 06:35)
 * [Complex number doesn't have has_repr](topic/Complex.20number.20doesn't.20have.20has_repr.html) (2 messages, latest: Feb 25 2020 at 03:26)
-* [New user bundles](topic/New.20user.20bundles.html) (149 messages, latest: Feb 24 2020 at 22:50)
 * [cache in CI](topic/cache.20in.20CI.html) (2 messages, latest: Feb 24 2020 at 21:42)
 * [lifting complete lattices](topic/lifting.20complete.20lattices.html) (15 messages, latest: Feb 24 2020 at 20:40)
 * [Why doesn't this loop?](topic/Why.20doesn't.20this.20loop.3F.html) (5 messages, latest: Feb 24 2020 at 20:13)
@@ -2798,4 +2798,4 @@ permalink: /stream/113488-general/index.html
 * [test](topic/test.html) (4 messages, latest: Feb 26 2018 at 16:22)
 * [welcome](topic/welcome.html) (1 message, latest: Feb 26 2018 at 16:02)
 
-<hr><p>Last updated: May 10 2020 at 10:13 UTC</p>
+<hr><p>Last updated: May 10 2020 at 11:13 UTC</p>

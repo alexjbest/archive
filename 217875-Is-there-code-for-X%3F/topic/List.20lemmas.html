@@ -30,6 +30,18 @@ permalink: /stream/217875-Is-there-code-for-X%3F/topic/List.20lemmas.html
 
 
 
+<a name="197048927"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/217875-Is%20there%20code%20for%20X%3F/topic/List%20lemmas/near/197048927" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Shing Tak Lam <a href="https://leanprover-community.github.io/archive/stream/217875-Is-there-code-for-X%3F/topic/List.20lemmas.html#197048927">(May 10 2020 at 11:13)</a>:</h4>
+<p><code>library_search</code> is helpful here and finds solution to both.</p>
+<div class="codehilite"><pre><span></span><code><span class="kn">lemma</span> <span class="n">singleton_append</span> <span class="o">{</span><span class="n">α</span><span class="o">}</span> <span class="o">(</span><span class="n">x</span> <span class="o">:</span> <span class="n">α</span><span class="o">)</span> <span class="o">(</span><span class="n">l</span> <span class="o">:</span> <span class="n">list</span> <span class="n">α</span><span class="o">)</span> <span class="o">:</span> <span class="o">[</span><span class="n">x</span><span class="o">]</span> <span class="bp">++</span> <span class="n">l</span> <span class="bp">=</span> <span class="n">x</span> <span class="bp">::</span> <span class="n">l</span> <span class="o">:=</span>
+<span class="n">rfl</span>
+
+<span class="kn">lemma</span> <span class="n">bind_singleton</span> <span class="o">{</span><span class="n">α</span> <span class="n">β</span><span class="o">}</span> <span class="o">(</span><span class="n">x</span> <span class="o">:</span> <span class="n">α</span><span class="o">)</span> <span class="o">(</span><span class="n">f</span> <span class="o">:</span> <span class="n">α</span> <span class="bp">→</span> <span class="n">list</span> <span class="n">β</span><span class="o">)</span> <span class="o">:</span> <span class="n">list</span><span class="bp">.</span><span class="n">bind</span> <span class="o">[</span><span class="n">x</span><span class="o">]</span> <span class="n">f</span> <span class="bp">=</span> <span class="n">f</span> <span class="n">x</span> <span class="o">:=</span>
+<span class="n">list</span><span class="bp">.</span><span class="n">append_nil</span> <span class="o">(</span><span class="n">f</span> <span class="n">x</span><span class="o">)</span>
+</code></pre></div>
+
+
+
 {% endraw %}
 
-<hr><p>Last updated: May 10 2020 at 10:13 UTC</p>
+<hr><p>Last updated: May 10 2020 at 11:13 UTC</p>
