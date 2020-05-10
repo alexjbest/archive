@@ -1,0 +1,43 @@
+---
+layout: archive
+title: Zulip Chat Archive
+permalink: /stream/113489-new-members/topic/How.20to.20do.20algebraic.20transformations.3F.html
+---
+
+<h2>Stream: <a href="https://leanprover-community.github.io/archive/stream/113489-new-members/index.html">new members</a></h2>
+<h3>Topic: <a href="https://leanprover-community.github.io/archive/stream/113489-new-members/topic/How.20to.20do.20algebraic.20transformations.3F.html">How to do algebraic transformations?</a></h3>
+
+<hr>
+
+<base href="https://leanprover.zulipchat.com/">
+
+<head><link href="/style.css" rel="stylesheet"></head>
+
+{% raw %}
+
+<a name="197065910"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113489-new%20members/topic/How%20to%20do%20algebraic%20transformations%3F/near/197065910" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Daniel Fabian <a href="https://leanprover-community.github.io/archive/stream/113489-new-members/topic/How.20to.20do.20algebraic.20transformations.3F.html#197065910">(May 10 2020 at 16:57)</a>:</h4>
+<p>Is there a way to do, what you might call "forward reasoning" in lean? The idea being that maybe I a bunch of fairly complicated expressions and I'd like to manipulate them a bit before they become an instance of the goal.</p>
+<p>I've got this state as an example:</p>
+<div class="codehilite"><pre><span></span><code><span class="n">f</span> <span class="o">:</span> <span class="bp">ℤ</span> <span class="bp">→</span> <span class="bp">ℤ</span><span class="o">,</span>
+<span class="n">h</span> <span class="o">:</span> <span class="bp">∀</span> <span class="o">(</span><span class="n">a</span> <span class="n">b</span> <span class="o">:</span> <span class="bp">ℤ</span><span class="o">),</span> <span class="n">f</span> <span class="o">(</span><span class="mi">2</span> <span class="bp">*</span> <span class="n">a</span><span class="o">)</span> <span class="bp">+</span> <span class="mi">2</span> <span class="bp">*</span> <span class="n">f</span> <span class="n">b</span> <span class="bp">=</span> <span class="n">f</span> <span class="o">(</span><span class="n">f</span> <span class="o">(</span><span class="n">a</span> <span class="bp">+</span> <span class="n">b</span><span class="o">)),</span>
+<span class="n">symm</span> <span class="o">:</span> <span class="bp">∀</span> <span class="o">(</span><span class="n">a</span> <span class="n">b</span> <span class="n">k</span> <span class="n">l</span> <span class="o">:</span> <span class="bp">ℤ</span><span class="o">),</span> <span class="n">f</span> <span class="o">(</span><span class="mi">2</span> <span class="bp">*</span> <span class="o">(</span><span class="n">a</span> <span class="bp">+</span> <span class="n">k</span><span class="o">))</span> <span class="bp">+</span> <span class="mi">2</span> <span class="bp">*</span> <span class="n">f</span> <span class="o">(</span><span class="n">l</span> <span class="bp">-</span> <span class="n">a</span><span class="o">)</span> <span class="bp">=</span> <span class="n">f</span> <span class="o">(</span><span class="mi">2</span> <span class="bp">*</span> <span class="o">(</span><span class="n">b</span> <span class="bp">+</span> <span class="n">k</span><span class="o">))</span> <span class="bp">+</span> <span class="mi">2</span> <span class="bp">*</span> <span class="n">f</span> <span class="o">(</span><span class="n">l</span> <span class="bp">-</span> <span class="n">b</span><span class="o">),</span>
+<span class="n">diff</span> <span class="o">:</span> <span class="bp">∀</span> <span class="o">(</span><span class="n">k</span> <span class="n">l</span> <span class="o">:</span> <span class="bp">ℤ</span><span class="o">),</span> <span class="mi">2</span> <span class="bp">*</span> <span class="o">(</span><span class="n">f</span> <span class="n">k</span> <span class="bp">-</span> <span class="n">f</span> <span class="n">l</span><span class="o">)</span> <span class="bp">=</span> <span class="n">f</span> <span class="o">(</span><span class="mi">2</span> <span class="bp">*</span> <span class="n">k</span><span class="o">)</span> <span class="bp">-</span> <span class="n">f</span> <span class="o">(</span><span class="mi">2</span> <span class="bp">*</span> <span class="n">l</span><span class="o">),</span>
+<span class="n">h_f</span> <span class="o">:</span> <span class="bp">∀</span> <span class="o">(</span><span class="n">k</span> <span class="o">:</span> <span class="bp">ℤ</span><span class="o">),</span> <span class="mi">2</span> <span class="bp">*</span> <span class="n">f</span> <span class="n">k</span> <span class="bp">=</span> <span class="n">f</span> <span class="o">(</span><span class="mi">2</span> <span class="bp">*</span> <span class="n">k</span><span class="o">)</span> <span class="bp">+</span> <span class="n">f</span> <span class="mi">0</span><span class="o">,</span>
+<span class="n">f_lin</span> <span class="o">:</span> <span class="bp">∀</span> <span class="o">(</span><span class="n">k</span> <span class="o">:</span> <span class="bp">ℤ</span><span class="o">),</span> <span class="mi">2</span> <span class="bp">*</span> <span class="n">f</span> <span class="n">k</span> <span class="bp">=</span> <span class="mi">2</span> <span class="bp">*</span> <span class="n">k</span> <span class="bp">*</span> <span class="o">(</span><span class="n">f</span> <span class="mi">1</span> <span class="bp">-</span> <span class="n">f</span> <span class="mi">0</span><span class="o">)</span> <span class="bp">+</span> <span class="n">f</span> <span class="mi">0</span><span class="o">,</span>
+<span class="n">f₀</span> <span class="o">:</span> <span class="n">f</span> <span class="mi">0</span> <span class="bp">=</span> <span class="mi">0</span><span class="o">,</span>
+<span class="n">k</span> <span class="o">:</span> <span class="bp">ℤ</span>
+<span class="err">⊢</span> <span class="n">f</span> <span class="n">k</span> <span class="bp">=</span> <span class="n">k</span> <span class="bp">*</span> <span class="n">f</span> <span class="mi">1</span>
+</code></pre></div>
+
+
+<p><code>f_lin</code> here is in a bad shape, we need to rewrite by <code>f₀</code>, then divide by two and only then does it become a valid instance.</p>
+<p>Somehow I find it really hard to manipulate equations, or more precisely, I often find that I'd like to do a bunch of algebraic transforms before things become an instance of the goal.</p>
+<p>If I were to do "backwards reasoning", i.e. keep making the goal more and more complicated until it becomes an instance of the hypothesis, then it's quite convenient, but the expressions get worse and worse as opposed to better.</p>
+<p>Am I missing something very basic here?</p>
+
+
+
+{% endraw %}
+
+<hr><p>Last updated: May 10 2020 at 17:08 UTC</p>
