@@ -1,0 +1,254 @@
+---
+layout: archive
+title: Zulip Chat Archive
+permalink: /stream/116395-maths/topic/Quotients.20.26.20synthesizing.html
+---
+
+<h2>Stream: <a href="https://leanprover-community.github.io/archive/stream/116395-maths/index.html">maths</a></h2>
+<h3>Topic: <a href="https://leanprover-community.github.io/archive/stream/116395-maths/topic/Quotients.20.26.20synthesizing.html">Quotients & synthesizing</a></h3>
+
+<hr>
+
+<base href="https://leanprover.zulipchat.com/">
+
+<head><link href="/style.css" rel="stylesheet"></head>
+
+{% raw %}
+
+<a name="197057758"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/116395-maths/topic/Quotients%20%26%20synthesizing/near/197057758" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Ryan Lahfa <a href="https://leanprover-community.github.io/archive/stream/116395-maths/topic/Quotients.20.26.20synthesizing.html#197057758">(May 10 2020 at 14:18)</a>:</h4>
+<p>Hello, I'm trying to do some quotients stuff, namely to build the completion of a metric space.<br>
+So here's a minimal example:</p>
+<div class="codehilite"><pre><span></span><code><span class="kn">import</span> <span class="n">data</span><span class="bp">.</span><span class="n">real</span><span class="bp">.</span><span class="n">basic</span>
+<span class="n">class</span> <span class="n">metric_space</span> <span class="o">(</span><span class="n">X</span> <span class="o">:</span> <span class="kt">Type</span><span class="bp">*</span><span class="o">)</span> <span class="o">:=</span>
+<span class="o">(</span><span class="n">d</span> <span class="o">:</span> <span class="n">X</span> <span class="bp">→</span> <span class="n">X</span> <span class="bp">→</span> <span class="n">ℝ</span><span class="o">)</span>
+<span class="o">(</span><span class="n">d_pos</span> <span class="o">:</span> <span class="bp">∀</span> <span class="n">x</span> <span class="n">y</span><span class="o">,</span> <span class="n">d</span> <span class="n">x</span> <span class="n">y</span> <span class="bp">≥</span> <span class="mi">0</span><span class="o">)</span>
+<span class="o">(</span><span class="n">presep</span> <span class="o">:</span> <span class="bp">∀</span> <span class="n">x</span> <span class="n">y</span><span class="o">,</span> <span class="n">x</span><span class="bp">=</span><span class="n">y</span> <span class="bp">→</span> <span class="n">d</span> <span class="n">x</span> <span class="n">y</span> <span class="bp">=</span> <span class="mi">0</span><span class="o">)</span>
+<span class="o">(</span><span class="n">sep</span> <span class="o">:</span> <span class="bp">∀</span> <span class="n">x</span> <span class="n">y</span><span class="o">,</span> <span class="n">d</span> <span class="n">x</span> <span class="n">y</span> <span class="bp">=</span> <span class="mi">0</span> <span class="bp">→</span>  <span class="n">x</span> <span class="bp">=</span> <span class="n">y</span><span class="o">)</span>
+<span class="o">(</span><span class="n">sym</span> <span class="o">:</span> <span class="bp">∀</span> <span class="n">x</span> <span class="n">y</span><span class="o">,</span> <span class="n">d</span> <span class="n">x</span> <span class="n">y</span> <span class="bp">=</span> <span class="n">d</span> <span class="n">y</span> <span class="n">x</span><span class="o">)</span>
+<span class="o">(</span><span class="n">triangle</span> <span class="o">:</span> <span class="bp">∀</span> <span class="n">x</span> <span class="n">y</span> <span class="n">z</span><span class="o">,</span> <span class="n">d</span> <span class="n">x</span> <span class="n">z</span> <span class="bp">≤</span> <span class="n">d</span> <span class="n">x</span> <span class="n">y</span> <span class="bp">+</span> <span class="n">d</span> <span class="n">y</span> <span class="n">z</span><span class="o">)</span>
+
+<span class="kn">section</span> <span class="n">test</span>
+<span class="kn">open</span> <span class="n">metric_space</span>
+<span class="kn">variables</span> <span class="o">{</span><span class="n">X</span><span class="o">:</span> <span class="kt">Type</span><span class="bp">*</span><span class="o">}</span> <span class="o">[</span><span class="n">metric_space</span> <span class="n">X</span><span class="o">]</span>
+
+<span class="n">def</span> <span class="n">cauchy</span> <span class="o">(</span><span class="n">x</span><span class="o">:</span> <span class="bp">ℕ</span> <span class="bp">→</span> <span class="n">X</span><span class="o">)</span> <span class="o">:=</span>
+  <span class="bp">∀</span> <span class="n">ε</span> <span class="bp">&gt;</span> <span class="mi">0</span><span class="o">,</span> <span class="bp">∃</span> <span class="n">N</span><span class="o">,</span> <span class="bp">∀</span> <span class="n">p</span> <span class="bp">≥</span> <span class="n">N</span><span class="o">,</span> <span class="bp">∀</span> <span class="n">q</span> <span class="bp">≥</span> <span class="n">N</span><span class="o">,</span> <span class="o">((</span><span class="n">d</span> <span class="o">(</span><span class="n">x</span> <span class="n">p</span><span class="o">)</span> <span class="o">(</span><span class="n">x</span> <span class="n">q</span><span class="o">))</span> <span class="bp">&lt;</span> <span class="n">ε</span><span class="o">)</span>
+<span class="n">def</span> <span class="n">cauchy_seqs</span> <span class="o">:=</span> <span class="o">{</span> <span class="n">f</span> <span class="o">:</span> <span class="bp">ℕ</span> <span class="bp">→</span> <span class="n">X</span> <span class="bp">//</span> <span class="n">cauchy</span> <span class="n">f</span> <span class="o">}</span>
+
+
+<span class="n">def</span> <span class="n">cauchy</span><span class="bp">.</span><span class="n">setoid</span> <span class="o">:</span> <span class="n">setoid</span> <span class="n">cauchy_seqs</span> <span class="o">:=</span>
+<span class="o">{</span>
+  <span class="n">r</span> <span class="o">:=</span> <span class="n">sorry</span><span class="o">,</span>
+  <span class="n">iseqv</span> <span class="o">:=</span> <span class="n">sorry</span>
+<span class="o">}</span>
+
+<span class="n">def</span> <span class="n">completion_of_metric_space</span><span class="o">:</span> <span class="kt">Type</span><span class="bp">*</span> <span class="o">:=</span> <span class="n">quotient</span> <span class="n">cauchy</span><span class="bp">.</span><span class="n">setoid</span>
+<span class="c1">-- instance completion.metric_space: espace_metrique cauchy.setoid</span>
+<span class="kn">end</span> <span class="n">test</span>
+</code></pre></div>
+
+
+<p>So here's my first attempt, <code>cauchy.setoid</code> fails with:</p>
+<div class="codehilite"><pre><span></span><code><span class="n">don&#39;t</span> <span class="n">know</span> <span class="n">how</span> <span class="n">to</span> <span class="n">synthesize</span> <span class="n">placeholder</span>
+<span class="kn">context</span><span class="o">:</span>
+<span class="err">⊢</span> <span class="kt">Type</span> <span class="err">?</span>
+</code></pre></div>
+
+
+<p>So what I have done is to add types everywhere and had this new minimal example, but now I have this "too many arguments" issues:</p>
+<div class="codehilite"><pre><span></span><code><span class="kn">import</span> <span class="n">data</span><span class="bp">.</span><span class="n">set</span>
+<span class="kn">import</span> <span class="n">data</span><span class="bp">.</span><span class="n">real</span><span class="bp">.</span><span class="n">basic</span>
+
+
+<span class="c1">-- Une structure d&#39;espace métrique sur un type X --</span>
+<span class="n">class</span> <span class="n">metric_space</span> <span class="o">(</span><span class="n">X</span> <span class="o">:</span> <span class="kt">Type</span><span class="bp">*</span><span class="o">)</span> <span class="o">:=</span>
+<span class="o">(</span><span class="n">d</span> <span class="o">:</span> <span class="n">X</span> <span class="bp">→</span> <span class="n">X</span> <span class="bp">→</span> <span class="n">ℝ</span><span class="o">)</span>
+<span class="o">(</span><span class="n">d_pos</span> <span class="o">:</span> <span class="bp">∀</span> <span class="n">x</span> <span class="n">y</span><span class="o">,</span> <span class="n">d</span> <span class="n">x</span> <span class="n">y</span> <span class="bp">≥</span> <span class="mi">0</span><span class="o">)</span>
+<span class="o">(</span><span class="n">presep</span> <span class="o">:</span> <span class="bp">∀</span> <span class="n">x</span> <span class="n">y</span><span class="o">,</span> <span class="n">x</span><span class="bp">=</span><span class="n">y</span> <span class="bp">→</span> <span class="n">d</span> <span class="n">x</span> <span class="n">y</span> <span class="bp">=</span> <span class="mi">0</span><span class="o">)</span>
+<span class="o">(</span><span class="n">sep</span> <span class="o">:</span> <span class="bp">∀</span> <span class="n">x</span> <span class="n">y</span><span class="o">,</span> <span class="n">d</span> <span class="n">x</span> <span class="n">y</span> <span class="bp">=</span> <span class="mi">0</span> <span class="bp">→</span>  <span class="n">x</span> <span class="bp">=</span> <span class="n">y</span><span class="o">)</span>
+<span class="o">(</span><span class="n">sym</span> <span class="o">:</span> <span class="bp">∀</span> <span class="n">x</span> <span class="n">y</span><span class="o">,</span> <span class="n">d</span> <span class="n">x</span> <span class="n">y</span> <span class="bp">=</span> <span class="n">d</span> <span class="n">y</span> <span class="n">x</span><span class="o">)</span>
+<span class="o">(</span><span class="n">triangle</span> <span class="o">:</span> <span class="bp">∀</span> <span class="n">x</span> <span class="n">y</span> <span class="n">z</span><span class="o">,</span> <span class="n">d</span> <span class="n">x</span> <span class="n">z</span> <span class="bp">≤</span> <span class="n">d</span> <span class="n">x</span> <span class="n">y</span> <span class="bp">+</span> <span class="n">d</span> <span class="n">y</span> <span class="n">z</span><span class="o">)</span>
+
+<span class="kn">namespace</span> <span class="n">test</span>
+<span class="kn">open</span> <span class="n">metric_space</span>
+<span class="kn">variables</span> <span class="o">{</span><span class="n">X</span><span class="o">:</span> <span class="kt">Type</span><span class="bp">*</span><span class="o">}</span> <span class="o">[</span><span class="n">metric_space</span> <span class="n">X</span><span class="o">]</span>
+
+<span class="n">def</span> <span class="n">cauchy</span> <span class="o">(</span><span class="n">x</span><span class="o">:</span> <span class="bp">ℕ</span> <span class="bp">→</span> <span class="n">X</span><span class="o">)</span> <span class="o">:=</span>
+  <span class="bp">∀</span> <span class="n">ε</span> <span class="bp">&gt;</span> <span class="mi">0</span><span class="o">,</span> <span class="bp">∃</span> <span class="n">N</span><span class="o">,</span> <span class="bp">∀</span> <span class="n">p</span> <span class="bp">≥</span> <span class="n">N</span><span class="o">,</span> <span class="bp">∀</span> <span class="n">q</span> <span class="bp">≥</span> <span class="n">N</span><span class="o">,</span> <span class="o">((</span><span class="n">d</span> <span class="o">(</span><span class="n">x</span> <span class="n">p</span><span class="o">)</span> <span class="o">(</span><span class="n">x</span> <span class="n">q</span><span class="o">))</span> <span class="bp">&lt;</span> <span class="n">ε</span><span class="o">)</span>
+
+<span class="kn">end</span> <span class="n">test</span>
+
+<span class="kn">section</span> <span class="n">test2</span>
+<span class="n">def</span> <span class="n">cauchy_seqs</span> <span class="o">(</span><span class="n">X</span><span class="o">:</span> <span class="kt">Type</span><span class="bp">*</span><span class="o">)</span> <span class="o">[</span><span class="n">metric_space</span> <span class="n">X</span><span class="o">]</span> <span class="o">:=</span> <span class="o">{</span> <span class="n">f</span> <span class="o">:</span> <span class="bp">ℕ</span> <span class="bp">→</span> <span class="n">X</span> <span class="bp">//</span> <span class="n">test</span><span class="bp">.</span><span class="n">cauchy</span> <span class="n">f</span> <span class="o">}</span>
+<span class="n">def</span> <span class="n">cauchy</span><span class="bp">.</span><span class="n">setoid</span> <span class="o">(</span><span class="n">X</span><span class="o">:</span> <span class="kt">Type</span><span class="bp">*</span><span class="o">)</span> <span class="o">[</span><span class="n">metric_space</span> <span class="n">X</span><span class="o">]</span> <span class="o">:</span> <span class="n">setoid</span> <span class="o">(</span><span class="n">cauchy_seqs</span> <span class="n">X</span><span class="o">)</span> <span class="o">:=</span>
+<span class="o">{</span>
+  <span class="n">r</span> <span class="o">:=</span> <span class="n">sorry</span><span class="o">,</span>
+  <span class="n">iseqv</span> <span class="o">:=</span> <span class="n">sorry</span>
+<span class="o">}</span>
+
+<span class="c1">-- en termes d&#39;univers, quotient retourne un type d&#39;univers u + 1 en partant de T : Type u.</span>
+<span class="n">def</span> <span class="n">completion_of_metric_space</span> <span class="o">(</span><span class="n">X</span><span class="o">:</span> <span class="kt">Type</span><span class="bp">*</span><span class="o">)</span> <span class="o">[</span><span class="n">metric_space</span> <span class="n">X</span><span class="o">]:</span> <span class="kt">Type</span><span class="bp">*</span> <span class="o">:=</span> <span class="n">quotient</span> <span class="o">(</span><span class="n">cauchy</span><span class="bp">.</span><span class="n">setoid</span> <span class="n">X</span><span class="o">)</span>
+
+<span class="kn">instance</span> <span class="n">completion</span><span class="bp">.</span><span class="n">metric_space</span> <span class="o">(</span><span class="n">X</span><span class="o">:</span> <span class="kt">Type</span><span class="bp">*</span><span class="o">)</span> <span class="o">[</span><span class="n">metric_space</span> <span class="n">X</span><span class="o">]:</span> <span class="n">metric_space</span> <span class="o">(</span><span class="n">completion_of_metric_space</span> <span class="n">X</span><span class="o">)</span>
+<span class="o">{</span>
+  <span class="n">d</span> <span class="o">:=</span> <span class="n">sorry</span><span class="o">,</span>
+<span class="o">}</span>
+<span class="kn">end</span> <span class="n">test2</span>
+</code></pre></div>
+
+
+<p>Precisely:</p>
+<div class="codehilite"><pre><span></span><code><span class="n">function</span> <span class="n">expected</span> <span class="n">at</span>
+  <span class="n">metric_space</span> <span class="o">(</span><span class="n">completion_of_metric_space</span> <span class="n">X</span><span class="o">)</span>
+<span class="n">term</span> <span class="n">has</span> <span class="n">type</span>
+  <span class="kt">Type</span> <span class="err">?</span>
+<span class="n">Additional</span> <span class="n">information</span><span class="o">:</span>
+<span class="bp">/</span><span class="n">home</span><span class="bp">/</span><span class="n">raito</span><span class="bp">/</span><span class="n">dev</span><span class="bp">/</span><span class="n">projects</span><span class="bp">/</span><span class="n">projet</span><span class="bp">-</span><span class="n">maths</span><span class="bp">-</span><span class="n">lean</span><span class="bp">/</span><span class="n">src</span><span class="bp">/</span><span class="n">espaces</span><span class="bp">-</span><span class="n">metriques</span><span class="bp">/</span><span class="n">test</span><span class="bp">.</span><span class="n">lean</span><span class="o">:</span><span class="mi">34</span><span class="o">:</span><span class="mi">62</span><span class="o">:</span> <span class="kn">context</span><span class="o">:</span> <span class="n">switched</span> <span class="n">to</span> <span class="n">simple</span> <span class="n">application</span> <span class="n">elaboration</span> <span class="n">procedure</span> <span class="n">because</span> <span class="n">failed</span> <span class="n">to</span> <span class="n">use</span> <span class="n">expected</span> <span class="n">type</span> <span class="n">to</span> <span class="n">elaborate</span> <span class="n">it</span><span class="o">,</span> <span class="n">error</span> <span class="n">message</span>
+  <span class="n">too</span> <span class="n">many</span> <span class="n">arguments</span>
+</code></pre></div>
+
+
+<p>I have found this topic: <a href="https://leanprover-community.github.io/archive/stream/113488-general/topic/has_coe_to_fun.20with.20implicit.20arguments.html" title="https://leanprover-community.github.io/archive/stream/113488-general/topic/has_coe_to_fun.20with.20implicit.20arguments.html">https://leanprover-community.github.io/archive/stream/113488-general/topic/has_coe_to_fun.20with.20implicit.20arguments.html</a> which seems to have this error, but I don't understand how to port the idea to my problem.</p>
+<p>Also, I guess it might have to do with some universes stuff as I'm trying to cheat and let Lean compute the correct universes, but it might be possible that I need to be explicit and specify that a completion lives in Type (u + 1) ?</p>
+
+
+
+<a name="197058198"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/116395-maths/topic/Quotients%20%26%20synthesizing/near/197058198" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Kevin Buzzard <a href="https://leanprover-community.github.io/archive/stream/116395-maths/topic/Quotients.20.26.20synthesizing.html#197058198">(May 10 2020 at 14:24)</a>:</h4>
+<p>Not at lean right now so treat with a pinch of salt. Lean can't figure out X in the first example. Make it explicit and call it <code>cauchy_seqs X</code></p>
+
+
+
+<a name="197058271"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/116395-maths/topic/Quotients%20%26%20synthesizing/near/197058271" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Kevin Buzzard <a href="https://leanprover-community.github.io/archive/stream/116395-maths/topic/Quotients.20.26.20synthesizing.html#197058271">(May 10 2020 at 14:26)</a>:</h4>
+<p>Oh you got that far</p>
+
+
+
+<a name="197058280"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/116395-maths/topic/Quotients%20%26%20synthesizing/near/197058280" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Ryan Lahfa <a href="https://leanprover-community.github.io/archive/stream/116395-maths/topic/Quotients.20.26.20synthesizing.html#197058280">(May 10 2020 at 14:27)</a>:</h4>
+<p><span class="user-mention silent" data-user-id="110038">Kevin Buzzard</span> <a href="#narrow/stream/116395-maths/topic/Quotients.20.26.20synthesizing/near/197058271" title="#narrow/stream/116395-maths/topic/Quotients.20.26.20synthesizing/near/197058271">said</a>:</p>
+<blockquote>
+<p>Oh you got that far</p>
+</blockquote>
+<p>Indeed, but that means that I have to do it the 2nd way at least :)</p>
+
+
+
+<a name="197058716"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/116395-maths/topic/Quotients%20%26%20synthesizing/near/197058716" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Kevin Buzzard <a href="https://leanprover-community.github.io/archive/stream/116395-maths/topic/Quotients.20.26.20synthesizing.html#197058716">(May 10 2020 at 14:33)</a>:</h4>
+<div class="codehilite"><pre><span></span><code><span class="kn">import</span> <span class="n">data</span><span class="bp">.</span><span class="n">real</span><span class="bp">.</span><span class="n">basic</span>
+<span class="n">class</span> <span class="n">metric_space</span> <span class="o">(</span><span class="n">X</span> <span class="o">:</span> <span class="kt">Type</span><span class="bp">*</span><span class="o">)</span> <span class="o">:=</span>
+<span class="o">(</span><span class="n">d</span> <span class="o">:</span> <span class="n">X</span> <span class="bp">→</span> <span class="n">X</span> <span class="bp">→</span> <span class="n">ℝ</span><span class="o">)</span>
+<span class="o">(</span><span class="n">d_pos</span> <span class="o">:</span> <span class="bp">∀</span> <span class="n">x</span> <span class="n">y</span><span class="o">,</span> <span class="n">d</span> <span class="n">x</span> <span class="n">y</span> <span class="bp">≥</span> <span class="mi">0</span><span class="o">)</span>
+<span class="o">(</span><span class="n">presep</span> <span class="o">:</span> <span class="bp">∀</span> <span class="n">x</span> <span class="n">y</span><span class="o">,</span> <span class="n">x</span><span class="bp">=</span><span class="n">y</span> <span class="bp">→</span> <span class="n">d</span> <span class="n">x</span> <span class="n">y</span> <span class="bp">=</span> <span class="mi">0</span><span class="o">)</span>
+<span class="o">(</span><span class="n">sep</span> <span class="o">:</span> <span class="bp">∀</span> <span class="n">x</span> <span class="n">y</span><span class="o">,</span> <span class="n">d</span> <span class="n">x</span> <span class="n">y</span> <span class="bp">=</span> <span class="mi">0</span> <span class="bp">→</span>  <span class="n">x</span> <span class="bp">=</span> <span class="n">y</span><span class="o">)</span>
+<span class="o">(</span><span class="n">sym</span> <span class="o">:</span> <span class="bp">∀</span> <span class="n">x</span> <span class="n">y</span><span class="o">,</span> <span class="n">d</span> <span class="n">x</span> <span class="n">y</span> <span class="bp">=</span> <span class="n">d</span> <span class="n">y</span> <span class="n">x</span><span class="o">)</span>
+<span class="o">(</span><span class="n">triangle</span> <span class="o">:</span> <span class="bp">∀</span> <span class="n">x</span> <span class="n">y</span> <span class="n">z</span><span class="o">,</span> <span class="n">d</span> <span class="n">x</span> <span class="n">z</span> <span class="bp">≤</span> <span class="n">d</span> <span class="n">x</span> <span class="n">y</span> <span class="bp">+</span> <span class="n">d</span> <span class="n">y</span> <span class="n">z</span><span class="o">)</span>
+
+<span class="kn">section</span> <span class="n">test</span>
+<span class="kn">open</span> <span class="n">metric_space</span>
+<span class="kn">variables</span> <span class="o">{</span><span class="n">X</span><span class="o">:</span> <span class="kt">Type</span><span class="bp">*</span><span class="o">}</span> <span class="o">[</span><span class="n">metric_space</span> <span class="n">X</span><span class="o">]</span>
+
+<span class="n">def</span> <span class="n">is_cauchy</span> <span class="o">(</span><span class="n">x</span><span class="o">:</span> <span class="bp">ℕ</span> <span class="bp">→</span> <span class="n">X</span><span class="o">)</span> <span class="o">:=</span>
+  <span class="bp">∀</span> <span class="n">ε</span> <span class="bp">&gt;</span> <span class="mi">0</span><span class="o">,</span> <span class="bp">∃</span> <span class="n">N</span><span class="o">,</span> <span class="bp">∀</span> <span class="n">p</span> <span class="bp">≥</span> <span class="n">N</span><span class="o">,</span> <span class="bp">∀</span> <span class="n">q</span> <span class="bp">≥</span> <span class="n">N</span><span class="o">,</span> <span class="o">((</span><span class="n">d</span> <span class="o">(</span><span class="n">x</span> <span class="n">p</span><span class="o">)</span> <span class="o">(</span><span class="n">x</span> <span class="n">q</span><span class="o">))</span> <span class="bp">&lt;</span> <span class="n">ε</span><span class="o">)</span>
+
+<span class="n">def</span> <span class="n">cauchy_seqs</span> <span class="o">(</span><span class="n">X</span> <span class="o">:</span> <span class="kt">Type</span><span class="bp">*</span><span class="o">)</span> <span class="o">[</span><span class="n">metric_space</span> <span class="n">X</span><span class="o">]</span> <span class="o">:=</span> <span class="o">{</span> <span class="n">f</span> <span class="o">:</span> <span class="bp">ℕ</span> <span class="bp">→</span> <span class="n">X</span> <span class="bp">//</span> <span class="n">is_cauchy</span> <span class="n">f</span> <span class="o">}</span>
+
+
+<span class="n">def</span> <span class="n">cauchy</span><span class="bp">.</span><span class="n">setoid</span> <span class="o">(</span><span class="n">X</span> <span class="o">:</span> <span class="kt">Type</span><span class="bp">*</span><span class="o">)</span> <span class="o">[</span><span class="n">metric_space</span> <span class="n">X</span><span class="o">]</span> <span class="o">:</span> <span class="n">setoid</span> <span class="o">(</span><span class="n">cauchy_seqs</span> <span class="n">X</span><span class="o">)</span> <span class="o">:=</span>
+<span class="o">{</span>
+  <span class="n">r</span> <span class="o">:=</span> <span class="n">sorry</span><span class="o">,</span>
+  <span class="n">iseqv</span> <span class="o">:=</span> <span class="n">sorry</span>
+<span class="o">}</span>
+
+<span class="n">def</span> <span class="n">completion</span> <span class="o">(</span><span class="n">X</span> <span class="o">:</span> <span class="kt">Type</span><span class="bp">*</span><span class="o">)</span> <span class="o">[</span><span class="n">metric_space</span> <span class="n">X</span><span class="o">]</span> <span class="o">:</span> <span class="kt">Type</span><span class="bp">*</span> <span class="o">:=</span> <span class="n">quotient</span> <span class="o">(</span><span class="n">cauchy</span><span class="bp">.</span><span class="n">setoid</span> <span class="n">X</span><span class="o">)</span>
+
+<span class="kn">instance</span> <span class="n">completion</span><span class="bp">.</span><span class="n">metric_space</span> <span class="o">(</span><span class="n">X</span><span class="o">:</span> <span class="kt">Type</span><span class="bp">*</span><span class="o">)</span> <span class="o">[</span><span class="n">metric_space</span> <span class="n">X</span><span class="o">]:</span> <span class="n">metric_space</span> <span class="o">(</span><span class="n">completion</span> <span class="n">X</span><span class="o">)</span> <span class="o">:=</span>
+<span class="o">{</span>
+  <span class="n">d</span> <span class="o">:=</span> <span class="n">sorry</span><span class="o">,</span>
+  <span class="n">d_pos</span> <span class="o">:=</span> <span class="n">sorry</span><span class="o">,</span>
+  <span class="c1">-- etc</span>
+<span class="o">}</span>
+
+<span class="kn">end</span> <span class="n">test</span>
+</code></pre></div>
+
+
+
+<a name="197059056"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/116395-maths/topic/Quotients%20%26%20synthesizing/near/197059056" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Kevin Buzzard <a href="https://leanprover-community.github.io/archive/stream/116395-maths/topic/Quotients.20.26.20synthesizing.html#197059056">(May 10 2020 at 14:38)</a>:</h4>
+<p>PS <code>d_pos</code> follows from the other axioms :P (use the triangle equality) and <code>presep</code> should just be <code>forall x, d x x = 0</code></p>
+
+
+
+<a name="197059061"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/116395-maths/topic/Quotients%20%26%20synthesizing/near/197059061" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Ryan Lahfa <a href="https://leanprover-community.github.io/archive/stream/116395-maths/topic/Quotients.20.26.20synthesizing.html#197059061">(May 10 2020 at 14:38)</a>:</h4>
+<p>Wow, I don't see very well what's the difference, <span class="user-mention" data-user-id="110038">@Kevin Buzzard</span></p>
+
+
+
+<a name="197059100"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/116395-maths/topic/Quotients%20%26%20synthesizing/near/197059100" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Ryan Lahfa <a href="https://leanprover-community.github.io/archive/stream/116395-maths/topic/Quotients.20.26.20synthesizing.html#197059100">(May 10 2020 at 14:38)</a>:</h4>
+<p>(<span class="user-mention" data-user-id="110038">@Kevin Buzzard</span> I agree, you've already told me this :D! But I'm not allowed to change those :D)</p>
+
+
+
+<a name="197059171"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/116395-maths/topic/Quotients%20%26%20synthesizing/near/197059171" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Kevin Buzzard <a href="https://leanprover-community.github.io/archive/stream/116395-maths/topic/Quotients.20.26.20synthesizing.html#197059171">(May 10 2020 at 14:39)</a>:</h4>
+<p>I guess you just made some syntax error in the second example -- no <code>:=</code>?</p>
+
+
+
+<a name="197059243"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/116395-maths/topic/Quotients%20%26%20synthesizing/near/197059243" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Ryan Lahfa <a href="https://leanprover-community.github.io/archive/stream/116395-maths/topic/Quotients.20.26.20synthesizing.html#197059243">(May 10 2020 at 14:40)</a>:</h4>
+<p>… indeed.</p>
+
+
+
+<a name="197059261"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/116395-maths/topic/Quotients%20%26%20synthesizing/near/197059261" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Ryan Lahfa <a href="https://leanprover-community.github.io/archive/stream/116395-maths/topic/Quotients.20.26.20synthesizing.html#197059261">(May 10 2020 at 14:41)</a>:</h4>
+<p>The error is a bit cryptic though</p>
+
+
+
+<a name="197059402"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/116395-maths/topic/Quotients%20%26%20synthesizing/near/197059402" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Kevin Buzzard <a href="https://leanprover-community.github.io/archive/stream/116395-maths/topic/Quotients.20.26.20synthesizing.html#197059402">(May 10 2020 at 14:44)</a>:</h4>
+<p>There used to be a comment on the official Lean github repo saying something like "we will close issues complaining that error messages are confusing"</p>
+
+
+
+<a name="197060170"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/116395-maths/topic/Quotients%20%26%20synthesizing/near/197060170" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Ryan Lahfa <a href="https://leanprover-community.github.io/archive/stream/116395-maths/topic/Quotients.20.26.20synthesizing.html#197060170">(May 10 2020 at 15:04)</a>:</h4>
+<p>While I'm on the subject of quotients, is there a way to transfer a map <code>f : (a_1 a_2 … a_n: cauchy_seqs X) → Y</code> into a <code>f' : (a_1 … a_n: completion X) → Y</code>?</p>
+
+
+
+<a name="197060275"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/116395-maths/topic/Quotients%20%26%20synthesizing/near/197060275" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Reid Barton <a href="https://leanprover-community.github.io/archive/stream/116395-maths/topic/Quotients.20.26.20synthesizing.html#197060275">(May 10 2020 at 15:07)</a>:</h4>
+<p><code>quotient.lift</code>?</p>
+
+
+
+<a name="197060356"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/116395-maths/topic/Quotients%20%26%20synthesizing/near/197060356" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Ryan Lahfa <a href="https://leanprover-community.github.io/archive/stream/116395-maths/topic/Quotients.20.26.20synthesizing.html#197060356">(May 10 2020 at 15:10)</a>:</h4>
+<p>it sounded like <code>quotient.lift</code> takes a <code>f : α → β</code>,</p>
+
+
+
+<a name="197060423"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/116395-maths/topic/Quotients%20%26%20synthesizing/near/197060423" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Reid Barton <a href="https://leanprover-community.github.io/archive/stream/116395-maths/topic/Quotients.20.26.20synthesizing.html#197060423">(May 10 2020 at 15:11)</a>:</h4>
+<p>Oh I see.</p>
+
+
+
+<a name="197060432"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/116395-maths/topic/Quotients%20%26%20synthesizing/near/197060432" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Reid Barton <a href="https://leanprover-community.github.io/archive/stream/116395-maths/topic/Quotients.20.26.20synthesizing.html#197060432">(May 10 2020 at 15:11)</a>:</h4>
+<p>Well you can't have <code>…</code>, but I think there is a version for 2 arguments at least and you can look at how that works.</p>
+
+
+
+{% endraw %}
+
+<hr><p>Last updated: May 10 2020 at 15:12 UTC</p>
