@@ -32,6 +32,96 @@ permalink: /stream/113488-general/topic/Negative.20squares.html
 
 
 
+<a name="197024610"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113488-general/topic/Negative%20squares/near/197024610" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Reid Barton <a href="https://leanprover-community.github.io/archive/stream/113488-general/topic/Negative.20squares.html#197024610">(May 10 2020 at 01:15)</a>:</h4>
+<p>So I made this change (which required some small adjustments to the core library) and compared the export files, but they don't quite agree. Is it too much to hope that they would be identical?</p>
+
+
+
+<a name="197024844"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113488-general/topic/Negative%20squares/near/197024844" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Reid Barton <a href="https://leanprover-community.github.io/archive/stream/113488-general/topic/Negative.20squares.html#197024844">(May 10 2020 at 01:19)</a>:</h4>
+<p>The first difference is in <code>bitvec.to_nat_of_nat</code></p>
+
+
+
+<a name="197025221"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113488-general/topic/Negative%20squares/near/197025221" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Alex J. Best <a href="https://leanprover-community.github.io/archive/stream/113488-general/topic/Negative.20squares.html#197025221">(May 10 2020 at 01:27)</a>:</h4>
+<p>Cool thanks, I don't understand why this theorem would change though. I'm rebuilding with priority 75 now. Will see what happens</p>
+
+
+
+<a name="197025360"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113488-general/topic/Negative%20squares/near/197025360" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Reid Barton <a href="https://leanprover-community.github.io/archive/stream/113488-general/topic/Negative.20squares.html#197025360">(May 10 2020 at 01:29)</a>:</h4>
+<p>My current guess is that the whole system is just nondeterministic when it comes to things like simp</p>
+
+
+
+<a name="197025880"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113488-general/topic/Negative%20squares/near/197025880" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Reid Barton <a href="https://leanprover-community.github.io/archive/stream/113488-general/topic/Negative.20squares.html#197025880">(May 10 2020 at 01:38)</a>:</h4>
+<p>I <code>#print</code>ed the offending lemma in both versions, and it looks like indeed <code>simp</code> (or maybe some other tactic, who knows) indeed cooked up a different proof</p>
+
+
+
+<a name="197025970"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113488-general/topic/Negative%20squares/near/197025970" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Reid Barton <a href="https://leanprover-community.github.io/archive/stream/113488-general/topic/Negative.20squares.html#197025970">(May 10 2020 at 01:41)</a>:</h4>
+<p>I guess changing the precedence of <code>-</code> does technically change the environment... though I was hoping the difference would basically disappear after parsing</p>
+
+
+
+<a name="197026083"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113488-general/topic/Negative%20squares/near/197026083" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Reid Barton <a href="https://leanprover-community.github.io/archive/stream/113488-general/topic/Negative.20squares.html#197026083">(May 10 2020 at 01:44)</a>:</h4>
+<p>Hmm, I blew away my olean files and built the exact same tree again and the first difference was again in <code>to_nat_of_nat</code></p>
+
+
+
+<a name="197026089"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113488-general/topic/Negative%20squares/near/197026089" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Reid Barton <a href="https://leanprover-community.github.io/archive/stream/113488-general/topic/Negative.20squares.html#197026089">(May 10 2020 at 01:45)</a>:</h4>
+<p>I mean comparing two builds of the same core library</p>
+
+
+
+<a name="197026252"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113488-general/topic/Negative%20squares/near/197026252" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Reid Barton <a href="https://leanprover-community.github.io/archive/stream/113488-general/topic/Negative.20squares.html#197026252">(May 10 2020 at 01:51)</a>:</h4>
+<p>It would be nice if I could omit proofs from the export files... though if there are differences then they might disrupt some internal counters, I suppose</p>
+
+
+
+<a name="197026312"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113488-general/topic/Negative%20squares/near/197026312" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Reid Barton <a href="https://leanprover-community.github.io/archive/stream/113488-general/topic/Negative.20squares.html#197026312">(May 10 2020 at 01:53)</a>:</h4>
+<p>Why 75? I guess the question is mainly how <code>- x * y</code> should parse.</p>
+
+
+
+<a name="197026405"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113488-general/topic/Negative%20squares/near/197026405" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Yury G. Kudryashov <a href="https://leanprover-community.github.io/archive/stream/113488-general/topic/Negative.20squares.html#197026405">(May 10 2020 at 01:56)</a>:</h4>
+<p>Another related question: how should we parse <code>a b^c d</code>?</p>
+
+
+
+<a name="197026446"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113488-general/topic/Negative%20squares/near/197026446" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Alex J. Best <a href="https://leanprover-community.github.io/archive/stream/113488-general/topic/Negative.20squares.html#197026446">(May 10 2020 at 01:58)</a>:</h4>
+<p>Maybe 65 is right then, 75 just seemed like less of a change, less than ^ but more than the others.</p>
+
+
+
+<a name="197026456"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113488-general/topic/Negative%20squares/near/197026456" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Reid Barton <a href="https://leanprover-community.github.io/archive/stream/113488-general/topic/Negative.20squares.html#197026456">(May 10 2020 at 01:59)</a>:</h4>
+<p>My branch is <a href="https://github.com/rwbarton/lean-1/tree/rwbarton-neg-precedence" title="https://github.com/rwbarton/lean-1/tree/rwbarton-neg-precedence">https://github.com/rwbarton/lean-1/tree/rwbarton-neg-precedence</a></p>
+
+
+
+<a name="197026494"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113488-general/topic/Negative%20squares/near/197026494" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Reid Barton <a href="https://leanprover-community.github.io/archive/stream/113488-general/topic/Negative.20squares.html#197026494">(May 10 2020 at 02:00)</a>:</h4>
+<p><a href="https://github.com/rwbarton/lean-1/commit/dafdfea9f486e623476dc0fbf387ac7d150a52a0" title="https://github.com/rwbarton/lean-1/commit/dafdfea9f486e623476dc0fbf387ac7d150a52a0">https://github.com/rwbarton/lean-1/commit/dafdfea9f486e623476dc0fbf387ac7d150a52a0</a></p>
+
+
+
+<a name="197026549"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113488-general/topic/Negative%20squares/near/197026549" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Reid Barton <a href="https://leanprover-community.github.io/archive/stream/113488-general/topic/Negative.20squares.html#197026549">(May 10 2020 at 02:02)</a>:</h4>
+<p>Perhaps surprisingly, there was <a href="https://github.com/rwbarton/lean-1/commit/dafdfea9f486e623476dc0fbf387ac7d150a52a0#diff-632a90007287df84e031262d1026ac10L196" title="https://github.com/rwbarton/lean-1/commit/dafdfea9f486e623476dc0fbf387ac7d150a52a0#diff-632a90007287df84e031262d1026ac10L196">at least one example</a> of a lemma whose statement changed but I only noticed because it broke another proof. So if we can't test by comparing the olean files, maybe I should just try building mathlib with the new core library</p>
+
+
+
 {% endraw %}
 
-<hr><p>Last updated: May 10 2020 at 01:11 UTC</p>
+<hr><p>Last updated: May 10 2020 at 02:10 UTC</p>
