@@ -9,8 +9,8 @@ permalink: /stream/113489-new-members/index.html
 
 ### Topics:
 
-* [the complex number game](topic/the.20complex.20number.20game.html) (1 message, latest: May 10 2020 at 12:08)
-* [noob question(s)](topic/noob.20question(s).html) (5511 messages, latest: May 10 2020 at 12:04)
+* [noob question(s)](topic/noob.20question(s).html) (5515 messages, latest: May 10 2020 at 12:42)
+* [the complex number game](topic/the.20complex.20number.20game.html) (3 messages, latest: May 10 2020 at 12:34)
 * [Luiz Carlos Rumbelsperger Viana](topic/Luiz.20Carlos.20Rumbelsperger.20Viana.html) (9 messages, latest: May 10 2020 at 11:46)
 * [how is log defined in lean?](topic/how.20is.20log.20defined.20in.20lean.3F.html) (22 messages, latest: May 10 2020 at 09:33)
 * [Please Eliminate My Large Questions](topic/Please.20Eliminate.20My.20Large.20Questions.html) (106 messages, latest: May 10 2020 at 08:23)
@@ -1037,4 +1037,4 @@ permalink: /stream/113489-new-members/index.html
 * [Andrew Ashworth](topic/Andrew.20Ashworth.html) (15 messages, latest: Feb 26 2018 at 16:21)
 * [onboarding](topic/onboarding.html) (1 message, latest: Feb 26 2018 at 16:02)
 
-<hr><p>Last updated: May 10 2020 at 12:12 UTC</p>
+<hr><p>Last updated: May 10 2020 at 13:08 UTC</p>

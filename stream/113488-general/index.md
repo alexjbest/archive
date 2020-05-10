@@ -9,9 +9,9 @@ permalink: /stream/113488-general/index.html
 
 ### Topics:
 
-* [New user bundles](topic/New.20user.20bundles.html) (154 messages, latest: May 10 2020 at 12:06)
-* [how do you make ite/dite compute in tactic mode](topic/how.20do.20you.20make.20ite.2Fdite.20compute.20in.20tactic.20mode.html) (2 messages, latest: May 10 2020 at 11:42)
-* [proof of soundness](topic/proof.20of.20soundness.html) (2 messages, latest: May 10 2020 at 11:32)
+* [New user bundles](topic/New.20user.20bundles.html) (156 messages, latest: May 10 2020 at 13:04)
+* [proof of soundness](topic/proof.20of.20soundness.html) (3 messages, latest: May 10 2020 at 12:42)
+* [how do you make ite/dite compute in tactic mode](topic/how.20do.20you.20make.20ite.2Fdite.20compute.20in.20tactic.20mode.html) (3 messages, latest: May 10 2020 at 12:31)
 * ["save status" in natural number game](topic/.22save.20status.22.20in.20natural.20number.20game.html) (50 messages, latest: May 10 2020 at 10:11)
 * [lean core vs mathlib](topic/lean.20core.20vs.20mathlib.html) (4 messages, latest: May 10 2020 at 06:42)
 * [algebra classes](topic/algebra.20classes.html) (1 message, latest: May 10 2020 at 05:41)
@@ -2800,4 +2800,4 @@ permalink: /stream/113488-general/index.html
 * [test](topic/test.html) (4 messages, latest: Feb 26 2018 at 16:22)
 * [welcome](topic/welcome.html) (1 message, latest: Feb 26 2018 at 16:02)
 
-<hr><p>Last updated: May 10 2020 at 12:12 UTC</p>
+<hr><p>Last updated: May 10 2020 at 13:08 UTC</p>

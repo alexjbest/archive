@@ -12,7 +12,7 @@ permalink: /index.html
 
 * [new members](stream/113489-new-members/index.html) (1027 topics)
 
-* [maths](stream/116395-maths/index.html) (885 topics)
+* [maths](stream/116395-maths/index.html) (886 topics)
 
 * [PR reviews](stream/144837-PR-reviews/index.html) (240 topics)
 
@@ -24,7 +24,7 @@ permalink: /index.html
 
 * [Lean for teaching](stream/187764-Lean-for-teaching/index.html) (23 topics)
 
-* [Machine Learning for Theorem Proving](stream/219941-Machine-Learning-for-Theorem-Proving/index.html) (18 topics)
+* [Machine Learning for Theorem Proving](stream/219941-Machine-Learning-for-Theorem-Proving/index.html) (20 topics)
 
 * [IMO-grand-challenge](stream/208328-IMO-grand-challenge/index.html) (15 topics)
 
@@ -44,4 +44,4 @@ permalink: /index.html
 
 * [Xena Summer Projects](stream/237759-Xena-Summer-Projects/index.html) (2 topics)
 
-<hr><p>Last updated: May 10 2020 at 12:12 UTC</p>
+<hr><p>Last updated: May 10 2020 at 13:08 UTC</p>
