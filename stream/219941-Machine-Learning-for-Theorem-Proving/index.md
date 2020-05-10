@@ -9,7 +9,8 @@ permalink: /stream/219941-Machine-Learning-for-Theorem-Proving/index.html
 
 ### Topics:
 
-* [Paper: Tactic Learning and Proving for the Coq Proof Assista](topic/Paper.3A.20Tactic.20Learning.20and.20Proving.20for.20the.20Coq.20Proof.20Assista.html) (20 messages, latest: May 09 2020 at 21:55)
+* [Paper: Learning to Prove Theorems via Interacting with Proof](topic/Paper.3A.20Learning.20to.20Prove.20Theorems.20via.20Interacting.20with.20Proof.html) (8 messages, latest: May 09 2020 at 23:55)
+* [Paper: Tactic Learning and Proving for the Coq Proof Assista](topic/Paper.3A.20Tactic.20Learning.20and.20Proving.20for.20the.20Coq.20Proof.20Assista.html) (21 messages, latest: May 09 2020 at 23:51)
 * [Paper: Simple Dataset for ... Isabelle/HOL](topic/Paper.3A.20Simple.20Dataset.20for.20.2E.2E.2E.20Isabelle.2FHOL.html) (14 messages, latest: May 06 2020 at 23:54)
 * [Paper: Property Preserving Embedding of First-order Logic](topic/Paper.3A.20Property.20Preserving.20Embedding.20of.20First-order.20Logic.html) (3 messages, latest: May 04 2020 at 03:49)
 * [Paper: Prolog Technology Reinforcement Learning Prover](topic/Paper.3A.20Prolog.20Technology.20Reinforcement.20Learning.20Prover.html) (5 messages, latest: Apr 28 2020 at 23:43)
@@ -27,4 +28,4 @@ permalink: /stream/219941-Machine-Learning-for-Theorem-Proving/index.html
 * [stream events](topic/stream.20events.html) (2 messages, latest: Jan 14 2020 at 00:58)
 * [NEVER MIND.  USE THIS STREAM NOW.](topic/NEVER.20MIND.2E.20.20USE.20THIS.20STREAM.20NOW.2E.html) (1 message, latest: Jan 14 2020 at 00:42)
 
-<hr><p>Last updated: May 09 2020 at 23:06 UTC</p>
+<hr><p>Last updated: May 10 2020 at 00:10 UTC</p>

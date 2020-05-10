@@ -610,6 +610,90 @@ they talk about benefits of proof irrelevance in 11.2 and 11.4.</p>
 
 
 
+<a name="197019076"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113489-new%20members/topic/Please%20Eliminate%20My%20Large%20Questions/near/197019076" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Reid Barton <a href="https://leanprover-community.github.io/archive/stream/113489-new-members/topic/Please.20Eliminate.20My.20Large.20Questions.html#197019076">(May 09 2020 at 23:07)</a>:</h4>
+<p>oh, now I'm reading that it follows from decidable equality</p>
+
+
+
+<a name="197019082"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113489-new%20members/topic/Please%20Eliminate%20My%20Large%20Questions/near/197019082" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Chris Hughes <a href="https://leanprover-community.github.io/archive/stream/113489-new-members/topic/Please.20Eliminate.20My.20Large.20Questions.html#197019082">(May 09 2020 at 23:07)</a>:</h4>
+<p>My memory of this was that there was a proof irrelevance axiom, but that's not as good as definitional proof irrelevance I don't think.</p>
+
+
+
+<a name="197019088"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113489-new%20members/topic/Please%20Eliminate%20My%20Large%20Questions/near/197019088" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Reid Barton <a href="https://leanprover-community.github.io/archive/stream/113489-new-members/topic/Please.20Eliminate.20My.20Large.20Questions.html#197019088">(May 09 2020 at 23:07)</a>:</h4>
+<p>Right, it's not as good, but the question is how much not as good and/or can you fix it with automation.</p>
+
+
+
+<a name="197019470"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113489-new%20members/topic/Please%20Eliminate%20My%20Large%20Questions/near/197019470" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Chris Hughes <a href="https://leanprover-community.github.io/archive/stream/113489-new-members/topic/Please.20Eliminate.20My.20Large.20Questions.html#197019470">(May 09 2020 at 23:16)</a>:</h4>
+<p>Is this provable without proof irrelevance. <code>(Π (a b : α) (h₁ h₂ : a = b), subsingleton (h₁ = h₂)) → ∀ a b : α, subsingleton (a = b)</code> This is the key to proving identity types are subsinlgetons with proof irrelevance right? You need that two proofs of equality of equalities are equal?</p>
+
+
+
+<a name="197020021"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113489-new%20members/topic/Please%20Eliminate%20My%20Large%20Questions/near/197020021" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Reid Barton <a href="https://leanprover-community.github.io/archive/stream/113489-new-members/topic/Please.20Eliminate.20My.20Large.20Questions.html#197020021">(May 09 2020 at 23:25)</a>:</h4>
+<p>This is not true in HoTT. A 1-type need not be a 0-type.</p>
+
+
+
+<a name="197020521"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113489-new%20members/topic/Please%20Eliminate%20My%20Large%20Questions/near/197020521" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Chris Hughes <a href="https://leanprover-community.github.io/archive/stream/113489-new-members/topic/Please.20Eliminate.20My.20Large.20Questions.html#197020521">(May 09 2020 at 23:33)</a>:</h4>
+<p>And this is because you can have topological spaces where the fundamental group at any point is trivial, but it is not path connected, like the disjoint union of path connected spaces?</p>
+
+
+
+<a name="197020687"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113489-new%20members/topic/Please%20Eliminate%20My%20Large%20Questions/near/197020687" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Reid Barton <a href="https://leanprover-community.github.io/archive/stream/113489-new-members/topic/Please.20Eliminate.20My.20Large.20Questions.html#197020687">(May 09 2020 at 23:36)</a>:</h4>
+<p>Well, it's one level up from that, I think...</p>
+
+
+
+<a name="197020701"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113489-new%20members/topic/Please%20Eliminate%20My%20Large%20Questions/near/197020701" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Reid Barton <a href="https://leanprover-community.github.io/archive/stream/113489-new-members/topic/Please.20Eliminate.20My.20Large.20Questions.html#197020701">(May 09 2020 at 23:37)</a>:</h4>
+<p>or maybe two levels?</p>
+
+
+
+<a name="197020821"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113489-new%20members/topic/Please%20Eliminate%20My%20Large%20Questions/near/197020821" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Reid Barton <a href="https://leanprover-community.github.io/archive/stream/113489-new-members/topic/Please.20Eliminate.20My.20Large.20Questions.html#197020821">(May 09 2020 at 23:38)</a>:</h4>
+<p>You said: Suppose whenever I have two points <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>a</mi></mrow><annotation encoding="application/x-tex">a</annotation></semantics></math></span><span aria-hidden="true" class="katex-html"><span class="base"><span class="strut" style="height:0.43056em;vertical-align:0em;"></span><span class="mord mathdefault">a</span></span></span></span> and <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>b</mi></mrow><annotation encoding="application/x-tex">b</annotation></semantics></math></span><span aria-hidden="true" class="katex-html"><span class="base"><span class="strut" style="height:0.69444em;vertical-align:0em;"></span><span class="mord mathdefault">b</span></span></span></span>, and two paths <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>h</mi><mn>1</mn></msub></mrow><annotation encoding="application/x-tex">h_1</annotation></semantics></math></span><span aria-hidden="true" class="katex-html"><span class="base"><span class="strut" style="height:0.84444em;vertical-align:-0.15em;"></span><span class="mord"><span class="mord mathdefault">h</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.30110799999999993em;"><span style="top:-2.5500000000000003em;margin-left:0em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight">1</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span></span></span></span> and <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>h</mi><mn>2</mn></msub></mrow><annotation encoding="application/x-tex">h_2</annotation></semantics></math></span><span aria-hidden="true" class="katex-html"><span class="base"><span class="strut" style="height:0.84444em;vertical-align:-0.15em;"></span><span class="mord"><span class="mord mathdefault">h</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.30110799999999993em;"><span style="top:-2.5500000000000003em;margin-left:0em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight">2</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span></span></span></span> between <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>a</mi></mrow><annotation encoding="application/x-tex">a</annotation></semantics></math></span><span aria-hidden="true" class="katex-html"><span class="base"><span class="strut" style="height:0.43056em;vertical-align:0em;"></span><span class="mord mathdefault">a</span></span></span></span> and <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>b</mi></mrow><annotation encoding="application/x-tex">b</annotation></semantics></math></span><span aria-hidden="true" class="katex-html"><span class="base"><span class="strut" style="height:0.69444em;vertical-align:0em;"></span><span class="mord mathdefault">b</span></span></span></span>, and two homotopies between <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>h</mi><mn>1</mn></msub></mrow><annotation encoding="application/x-tex">h_1</annotation></semantics></math></span><span aria-hidden="true" class="katex-html"><span class="base"><span class="strut" style="height:0.84444em;vertical-align:-0.15em;"></span><span class="mord"><span class="mord mathdefault">h</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.30110799999999993em;"><span style="top:-2.5500000000000003em;margin-left:0em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight">1</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span></span></span></span> and <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>h</mi><mn>2</mn></msub></mrow><annotation encoding="application/x-tex">h_2</annotation></semantics></math></span><span aria-hidden="true" class="katex-html"><span class="base"><span class="strut" style="height:0.84444em;vertical-align:-0.15em;"></span><span class="mord"><span class="mord mathdefault">h</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.30110799999999993em;"><span style="top:-2.5500000000000003em;margin-left:0em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight">2</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span></span></span></span>, they are equal.</p>
+
+
+
+<a name="197020847"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113489-new%20members/topic/Please%20Eliminate%20My%20Large%20Questions/near/197020847" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Reid Barton <a href="https://leanprover-community.github.io/archive/stream/113489-new-members/topic/Please.20Eliminate.20My.20Large.20Questions.html#197020847">(May 09 2020 at 23:38)</a>:</h4>
+<p>So I can't have a space like a 2-sphere, but a circle is fine.</p>
+
+
+
+<a name="197020943"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113489-new%20members/topic/Please%20Eliminate%20My%20Large%20Questions/near/197020943" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Chris Hughes <a href="https://leanprover-community.github.io/archive/stream/113489-new-members/topic/Please.20Eliminate.20My.20Large.20Questions.html#197020943">(May 09 2020 at 23:40)</a>:</h4>
+<p>I think I should have said simply connected not path connected.</p>
+
+
+
+<a name="197020955"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113489-new%20members/topic/Please%20Eliminate%20My%20Large%20Questions/near/197020955" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Reid Barton <a href="https://leanprover-community.github.io/archive/stream/113489-new-members/topic/Please.20Eliminate.20My.20Large.20Questions.html#197020955">(May 09 2020 at 23:41)</a>:</h4>
+<p>A counterexample to your statement is going to be a something whose loop spaces are discrete but which is not discrete. Like a circle for example</p>
+
+
+
+<a name="197021007"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113489-new%20members/topic/Please%20Eliminate%20My%20Large%20Questions/near/197021007" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Reid Barton <a href="https://leanprover-community.github.io/archive/stream/113489-new-members/topic/Please.20Eliminate.20My.20Large.20Questions.html#197021007">(May 09 2020 at 23:42)</a>:</h4>
+<p>By "discrete" I mean like an ordinary set without any of this funny homotopy business.</p>
+
+
+
+<a name="197021059"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113489-new%20members/topic/Please%20Eliminate%20My%20Large%20Questions/near/197021059" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Chris Hughes <a href="https://leanprover-community.github.io/archive/stream/113489-new-members/topic/Please.20Eliminate.20My.20Large.20Questions.html#197021059">(May 09 2020 at 23:44)</a>:</h4>
+<p>Oh yes. I see now. I had an out by one error.</p>
+
+
+
 {% endraw %}
 
-<hr><p>Last updated: May 09 2020 at 23:06 UTC</p>
+<hr><p>Last updated: May 10 2020 at 00:10 UTC</p>
