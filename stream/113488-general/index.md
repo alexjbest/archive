@@ -9,6 +9,7 @@ permalink: /stream/113488-general/index.html
 
 ### Topics:
 
+* [Invitation to join the Codewars Lean community, Round 2](topic/Invitation.20to.20join.20the.20Codewars.20Lean.20community.2C.20Round.202.html) (329 messages, latest: May 10 2020 at 21:02)
 * [structure unification fails](topic/structure.20unification.20fails.html) (7 messages, latest: May 10 2020 at 19:22)
 * [how do you make ite/dite compute in tactic mode](topic/how.20do.20you.20make.20ite.2Fdite.20compute.20in.20tactic.20mode.html) (5 messages, latest: May 10 2020 at 19:00)
 * [olean cache](topic/olean.20cache.html) (1 message, latest: May 10 2020 at 17:17)
@@ -21,7 +22,6 @@ permalink: /stream/113488-general/index.html
 * [Lean 3.11.0](topic/Lean.203.2E11.2E0.html) (36 messages, latest: May 10 2020 at 04:08)
 * [Negative squares](topic/Negative.20squares.html) (19 messages, latest: May 10 2020 at 02:32)
 * [rw_mod_hom](topic/rw_mod_hom.html) (12 messages, latest: May 10 2020 at 01:51)
-* [Invitation to join the Codewars Lean community, Round 2](topic/Invitation.20to.20join.20the.20Codewars.20Lean.20community.2C.20Round.202.html) (328 messages, latest: May 09 2020 at 22:24)
 * [Declarative Lean](topic/Declarative.20Lean.html) (81 messages, latest: May 09 2020 at 15:39)
 * [calculate](topic/calculate.html) (102 messages, latest: May 09 2020 at 14:43)
 * [new Lean / mathlib tutorial](topic/new.20Lean.20.2F.20mathlib.20tutorial.html) (3 messages, latest: May 09 2020 at 14:33)
@@ -2802,4 +2802,4 @@ permalink: /stream/113488-general/index.html
 * [test](topic/test.html) (4 messages, latest: Feb 26 2018 at 16:22)
 * [welcome](topic/welcome.html) (1 message, latest: Feb 26 2018 at 16:02)
 
-<hr><p>Last updated: May 10 2020 at 20:06 UTC</p>
+<hr><p>Last updated: May 10 2020 at 21:10 UTC</p>
