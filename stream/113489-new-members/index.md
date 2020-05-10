@@ -9,10 +9,10 @@ permalink: /stream/113489-new-members/index.html
 
 ### Topics:
 
-* [Luiz Carlos Rumbelsperger Viana](topic/Luiz.20Carlos.20Rumbelsperger.20Viana.html) (5 messages, latest: May 10 2020 at 01:46)
+* [more basics](topic/more.20basics.html) (450 messages, latest: May 10 2020 at 02:23)
+* [Luiz Carlos Rumbelsperger Viana](topic/Luiz.20Carlos.20Rumbelsperger.20Viana.html) (6 messages, latest: May 10 2020 at 02:23)
 * [lift to units?](topic/lift.20to.20units.3F.html) (2 messages, latest: May 10 2020 at 00:16)
 * [Please Eliminate My Large Questions](topic/Please.20Eliminate.20My.20Large.20Questions.html) (104 messages, latest: May 09 2020 at 23:44)
-* [more basics](topic/more.20basics.html) (449 messages, latest: May 09 2020 at 22:42)
 * [Cannot Import topology.basic](topic/Cannot.20Import.20topology.2Ebasic.html) (73 messages, latest: May 09 2020 at 15:24)
 * [getting started](topic/getting.20started.html) (78 messages, latest: May 09 2020 at 15:11)
 * [Induction vs recursion](topic/Induction.20vs.20recursion.html) (75 messages, latest: May 09 2020 at 15:09)
@@ -1036,4 +1036,4 @@ permalink: /stream/113489-new-members/index.html
 * [Andrew Ashworth](topic/Andrew.20Ashworth.html) (15 messages, latest: Feb 26 2018 at 16:21)
 * [onboarding](topic/onboarding.html) (1 message, latest: Feb 26 2018 at 16:02)
 
-<hr><p>Last updated: May 10 2020 at 02:10 UTC</p>
+<hr><p>Last updated: May 10 2020 at 03:09 UTC</p>

@@ -9,7 +9,7 @@ permalink: /stream/113488-general/index.html
 
 ### Topics:
 
-* [Negative squares](topic/Negative.20squares.html) (17 messages, latest: May 10 2020 at 02:02)
+* [Negative squares](topic/Negative.20squares.html) (19 messages, latest: May 10 2020 at 02:32)
 * [rw_mod_hom](topic/rw_mod_hom.html) (12 messages, latest: May 10 2020 at 01:51)
 * [Invitation to join the Codewars Lean community, Round 2](topic/Invitation.20to.20join.20the.20Codewars.20Lean.20community.2C.20Round.202.html) (328 messages, latest: May 09 2020 at 22:24)
 * [Declarative Lean](topic/Declarative.20Lean.html) (81 messages, latest: May 09 2020 at 15:39)
@@ -2796,4 +2796,4 @@ permalink: /stream/113488-general/index.html
 * [test](topic/test.html) (4 messages, latest: Feb 26 2018 at 16:22)
 * [welcome](topic/welcome.html) (1 message, latest: Feb 26 2018 at 16:02)
 
-<hr><p>Last updated: May 10 2020 at 02:10 UTC</p>
+<hr><p>Last updated: May 10 2020 at 03:09 UTC</p>
