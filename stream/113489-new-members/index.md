@@ -9,6 +9,7 @@ permalink: /stream/113489-new-members/index.html
 
 ### Topics:
 
+* [how is log defined in lean?](topic/how.20is.20log.20defined.20in.20lean.3F.html) (22 messages, latest: May 10 2020 at 09:33)
 * [Please Eliminate My Large Questions](topic/Please.20Eliminate.20My.20Large.20Questions.html) (106 messages, latest: May 10 2020 at 08:23)
 * [Luiz Carlos Rumbelsperger Viana](topic/Luiz.20Carlos.20Rumbelsperger.20Viana.html) (8 messages, latest: May 10 2020 at 06:41)
 * [more basics](topic/more.20basics.html) (450 messages, latest: May 10 2020 at 02:23)
@@ -26,7 +27,6 @@ permalink: /stream/113489-new-members/index.html
 * [canonical answers to "what next after NNG"?](topic/canonical.20answers.20to.20.22what.20next.20after.20NNG.22.3F.html) (2 messages, latest: May 09 2020 at 00:24)
 * [hitchhiker's guide](topic/hitchhiker's.20guide.html) (11 messages, latest: May 08 2020 at 16:08)
 * [natural number game questions](topic/natural.20number.20game.20questions.html) (129 messages, latest: May 08 2020 at 09:17)
-* [how is log defined in lean?](topic/how.20is.20log.20defined.20in.20lean.3F.html) (21 messages, latest: May 07 2020 at 20:11)
 * [Recursive function](topic/Recursive.20function.html) (12 messages, latest: May 07 2020 at 19:37)
 * [fun with pfun and dite](topic/fun.20with.20pfun.20and.20dite.html) (34 messages, latest: May 07 2020 at 17:23)
 * [Zulipchat search question](topic/Zulipchat.20search.20question.html) (4 messages, latest: May 07 2020 at 17:07)
@@ -1036,4 +1036,4 @@ permalink: /stream/113489-new-members/index.html
 * [Andrew Ashworth](topic/Andrew.20Ashworth.html) (15 messages, latest: Feb 26 2018 at 16:21)
 * [onboarding](topic/onboarding.html) (1 message, latest: Feb 26 2018 at 16:02)
 
-<hr><p>Last updated: May 10 2020 at 09:09 UTC</p>
+<hr><p>Last updated: May 10 2020 at 10:13 UTC</p>

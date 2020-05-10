@@ -9,7 +9,7 @@ permalink: /stream/113488-general/index.html
 
 ### Topics:
 
-* ["save status" in natural number game](topic/.22save.20status.22.20in.20natural.20number.20game.html) (48 messages, latest: May 10 2020 at 09:03)
+* ["save status" in natural number game](topic/.22save.20status.22.20in.20natural.20number.20game.html) (50 messages, latest: May 10 2020 at 10:11)
 * [lean core vs mathlib](topic/lean.20core.20vs.20mathlib.html) (4 messages, latest: May 10 2020 at 06:42)
 * [algebra classes](topic/algebra.20classes.html) (1 message, latest: May 10 2020 at 05:41)
 * [Lean 3.11.0](topic/Lean.203.2E11.2E0.html) (36 messages, latest: May 10 2020 at 04:08)
@@ -2798,4 +2798,4 @@ permalink: /stream/113488-general/index.html
 * [test](topic/test.html) (4 messages, latest: Feb 26 2018 at 16:22)
 * [welcome](topic/welcome.html) (1 message, latest: Feb 26 2018 at 16:02)
 
-<hr><p>Last updated: May 10 2020 at 09:09 UTC</p>
+<hr><p>Last updated: May 10 2020 at 10:13 UTC</p>
