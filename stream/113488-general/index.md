@@ -9,6 +9,7 @@ permalink: /stream/113488-general/index.html
 
 ### Topics:
 
+* ["save status" in natural number game](topic/.22save.20status.22.20in.20natural.20number.20game.html) (48 messages, latest: May 10 2020 at 09:03)
 * [lean core vs mathlib](topic/lean.20core.20vs.20mathlib.html) (4 messages, latest: May 10 2020 at 06:42)
 * [algebra classes](topic/algebra.20classes.html) (1 message, latest: May 10 2020 at 05:41)
 * [Lean 3.11.0](topic/Lean.203.2E11.2E0.html) (36 messages, latest: May 10 2020 at 04:08)
@@ -157,7 +158,6 @@ permalink: /stream/113488-general/index.html
 * [help with the `delta_instance` derive handler](topic/help.20with.20the.20.60delta_instance.60.20derive.20handler.html) (33 messages, latest: Apr 20 2020 at 03:20)
 * [subst.eq](topic/subst.2Eeq.html) (228 messages, latest: Apr 19 2020 at 07:06)
 * [filename tactic](topic/filename.20tactic.html) (27 messages, latest: Apr 19 2020 at 03:06)
-* ["save status" in natural number game](topic/.22save.20status.22.20in.20natural.20number.20game.html) (46 messages, latest: Apr 19 2020 at 00:45)
 * [CoCalc injectivity](topic/CoCalc.20injectivity.html) (5 messages, latest: Apr 18 2020 at 20:41)
 * [calculating fibonacci numbers](topic/calculating.20fibonacci.20numbers.html) (81 messages, latest: Apr 18 2020 at 20:37)
 * [Link to leanprover-community website from GitHub?](topic/Link.20to.20leanprover-community.20website.20from.20GitHub.3F.html) (7 messages, latest: Apr 18 2020 at 19:05)
@@ -2798,4 +2798,4 @@ permalink: /stream/113488-general/index.html
 * [test](topic/test.html) (4 messages, latest: Feb 26 2018 at 16:22)
 * [welcome](topic/welcome.html) (1 message, latest: Feb 26 2018 at 16:02)
 
-<hr><p>Last updated: May 10 2020 at 08:08 UTC</p>
+<hr><p>Last updated: May 10 2020 at 09:09 UTC</p>
