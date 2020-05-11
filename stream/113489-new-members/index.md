@@ -9,7 +9,7 @@ permalink: /stream/113489-new-members/index.html
 
 ### Topics:
 
-* [more basics](topic/more.20basics.html) (476 messages, latest: May 11 2020 at 05:57)
+* [more basics](topic/more.20basics.html) (479 messages, latest: May 11 2020 at 06:38)
 * [leanproject and branches](topic/leanproject.20and.20branches.html) (13 messages, latest: May 11 2020 at 05:42)
 * [hitchhiker's guide](topic/hitchhiker's.20guide.html) (18 messages, latest: May 11 2020 at 04:08)
 * [noob question(s)](topic/noob.20question(s).html) (5597 messages, latest: May 11 2020 at 00:21)
@@ -1044,4 +1044,4 @@ permalink: /stream/113489-new-members/index.html
 * [Andrew Ashworth](topic/Andrew.20Ashworth.html) (15 messages, latest: Feb 26 2018 at 16:21)
 * [onboarding](topic/onboarding.html) (1 message, latest: Feb 26 2018 at 16:02)
 
-<hr><p>Last updated: May 11 2020 at 06:09 UTC</p>
+<hr><p>Last updated: May 11 2020 at 07:08 UTC</p>
