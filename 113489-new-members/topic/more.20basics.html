@@ -4084,6 +4084,62 @@ this : ∀ (n m k : ℕ), n + (m + k) = m + (n + k)
 
 
 
+<a name="197086512"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113489-new%20members/topic/more%20basics/near/197086512" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Carlo Cabrera <a href="https://leanprover-community.github.io/archive/stream/113489-new-members/topic/more.20basics.html#197086512">(May 10 2020 at 23:54)</a>:</h4>
+<p>I guess I'm not understanding how <code>by contradiction</code> works yet. Here's one case where I expect it to work, but doesn't:</p>
+<div class="codehilite"><pre><span></span><code><span class="kn">example</span> <span class="o">(</span><span class="n">P</span> <span class="n">Q</span> <span class="o">:</span> <span class="kt">Prop</span><span class="o">)</span>
+    <span class="o">(</span><span class="n">h₁</span> <span class="o">:</span> <span class="n">P</span> <span class="bp">→</span> <span class="n">Q</span><span class="o">)</span>
+    <span class="o">(</span><span class="n">h₂</span> <span class="o">:</span> <span class="n">Q</span> <span class="bp">→</span> <span class="bp">¬</span><span class="n">P</span><span class="o">)</span> <span class="o">:</span>
+    <span class="bp">¬</span><span class="n">P</span> <span class="o">:=</span>
+<span class="k">begin</span>
+    <span class="k">have</span> <span class="n">pnotp</span> <span class="o">:</span> <span class="n">P</span> <span class="bp">→</span> <span class="bp">¬</span><span class="n">P</span><span class="o">,</span>
+        <span class="n">intro</span> <span class="n">h</span><span class="o">,</span>
+        <span class="k">by</span> <span class="n">exact</span> <span class="n">h₂</span> <span class="o">(</span><span class="n">h₁</span> <span class="n">h</span><span class="o">),</span>
+<span class="kn">end</span>
+</code></pre></div>
+
+
+<p>In a simpler example, I can show that <code>(P → ¬P) → ¬P</code>, but for some reason the approach doesn't work in the example I gave above. (i.e. one where instead of two hypotheses, there is a single one that says <code>(P → ¬P)</code>)</p>
+
+
+
+<a name="197086945"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113489-new%20members/topic/more%20basics/near/197086945" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Dan Stanescu <a href="https://leanprover-community.github.io/archive/stream/113489-new-members/topic/more.20basics.html#197086945">(May 11 2020 at 00:04)</a>:</h4>
+<p><span class="user-mention silent" data-user-id="300537">Carlo Cabrera</span> <a href="#narrow/stream/113489-new-members/topic/more.20basics/near/197086512" title="#narrow/stream/113489-new-members/topic/more.20basics/near/197086512">said</a>:</p>
+<blockquote>
+<p>I guess I'm not understanding how <code>by contradiction</code> works yet. Here's one case where I expect it to work, but doesn't:</p>
+</blockquote>
+<p>You mean something like this?</p>
+<div class="codehilite"><pre><span></span><code><span class="kn">example</span> <span class="o">(</span><span class="n">P</span> <span class="n">Q</span> <span class="o">:</span> <span class="kt">Prop</span><span class="o">)</span>
+    <span class="o">(</span><span class="n">h₁</span> <span class="o">:</span> <span class="n">P</span> <span class="bp">→</span> <span class="n">Q</span><span class="o">)</span>
+    <span class="o">(</span><span class="n">h₂</span> <span class="o">:</span> <span class="n">Q</span> <span class="bp">→</span> <span class="bp">¬</span><span class="n">P</span><span class="o">)</span> <span class="o">:</span>
+    <span class="bp">¬</span><span class="n">P</span> <span class="o">:=</span>
+<span class="k">begin</span>
+    <span class="n">by_contradiction</span> <span class="n">H</span><span class="o">,</span>
+    <span class="n">exact</span> <span class="n">h₂</span> <span class="o">(</span><span class="n">h₁</span> <span class="n">H</span><span class="o">)</span> <span class="n">H</span><span class="o">,</span>
+<span class="kn">end</span>
+</code></pre></div>
+
+
+
+<a name="197086946"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113489-new%20members/topic/more%20basics/near/197086946" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Jalex Stark <a href="https://leanprover-community.github.io/archive/stream/113489-new-members/topic/more.20basics.html#197086946">(May 11 2020 at 00:04)</a>:</h4>
+<p>why are you using <code>by</code> if you're already in tactic mode?</p>
+
+
+
+<a name="197087024"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113489-new%20members/topic/more%20basics/near/197087024" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Jalex Stark <a href="https://leanprover-community.github.io/archive/stream/113489-new-members/topic/more.20basics.html#197087024">(May 11 2020 at 00:06)</a>:</h4>
+<p>I think <span class="user-mention" data-user-id="300537">@Carlo Cabrera</span>  is talking about the <code>contradiction</code> tactic, which looks for <code>P</code> and <code>¬ P</code> in the hypotheses</p>
+
+
+
+<a name="197087055"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113489-new%20members/topic/more%20basics/near/197087055" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Jalex Stark <a href="https://leanprover-community.github.io/archive/stream/113489-new-members/topic/more.20basics.html#197087055">(May 11 2020 at 00:07)</a>:</h4>
+<p>and <span class="user-mention" data-user-id="259857">@Dan Stanescu</span>  is talking about the <code>by_contradiction</code> tactic which puts the negation of the goal into the hypotheses and makes <code>false</code> the new goal</p>
+
+
+
 {% endraw %}
 
-<hr><p>Last updated: May 10 2020 at 23:11 UTC</p>
+<hr><p>Last updated: May 11 2020 at 00:10 UTC</p>
