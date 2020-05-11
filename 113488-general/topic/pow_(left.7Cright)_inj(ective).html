@@ -113,6 +113,108 @@ permalink: /stream/113488-general/topic/pow_(left.7Cright)_inj(ective).html
 
 
 
+<a name="197118701"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113488-general/topic/pow_%28left%7Cright%29_inj%28ective%29/near/197118701" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Mario Carneiro <a href="https://leanprover-community.github.io/archive/stream/113488-general/topic/pow_(left.7Cright)_inj(ective).html#197118701">(May 11 2020 at 09:12)</a>:</h4>
+<p>I would concur with Chris here. I think that in an injectivity lemma you should name the variable that changes, not the variable that doesn't. (Consider how it would generalize to theorems like <code>f a b c d = f a b c' d -&gt; c = c'</code>.)</p>
+
+
+
+<a name="197118936"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113488-general/topic/pow_%28left%7Cright%29_inj%28ective%29/near/197118936" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Kenny Lau <a href="https://leanprover-community.github.io/archive/stream/113488-general/topic/pow_(left.7Cright)_inj(ective).html#197118936">(May 11 2020 at 09:15)</a>:</h4>
+<p>that's why the left/right convention is arbitrary and entirely inconsistent</p>
+
+
+
+<a name="197118969"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113488-general/topic/pow_%28left%7Cright%29_inj%28ective%29/near/197118969" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Kevin Buzzard <a href="https://leanprover-community.github.io/archive/stream/113488-general/topic/pow_(left.7Cright)_inj(ective).html#197118969">(May 11 2020 at 09:15)</a>:</h4>
+<p>In maths I never know what a left module is and a right module. I never know what a left adjoint and a right adjoint functor are either, and all attempts to "explain" this to me have been ultimately futile. I don't even know which to use out of <code>congr_arg</code> and <code>congr_fun</code>. One fixes the arg and changes the fun, and the other does the other one. I just look these things up when I need to know.</p>
+
+
+
+<a name="197120168"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113488-general/topic/pow_%28left%7Cright%29_inj%28ective%29/near/197120168" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Kevin Buzzard <a href="https://leanprover-community.github.io/archive/stream/113488-general/topic/pow_(left.7Cright)_inj(ective).html#197120168">(May 11 2020 at 09:29)</a>:</h4>
+<p>With a congr lemma do you name the variable that changes or the variable that doesn't? With a left module is it the ring element on the left or the module element? Is it possible to make some sort of global convention or are all of these slightly different questions each worthy of conventions which have to be individually learnt?</p>
+
+
+
+<a name="197120232"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113488-general/topic/pow_%28left%7Cright%29_inj%28ective%29/near/197120232" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Mario Carneiro <a href="https://leanprover-community.github.io/archive/stream/113488-general/topic/pow_(left.7Cright)_inj(ective).html#197120232">(May 11 2020 at 09:30)</a>:</h4>
+<p>with <code>congr_arg</code> and <code>congr_fun</code>, the named thing is the thing that changes</p>
+
+
+
+<a name="197120248"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113488-general/topic/pow_%28left%7Cright%29_inj%28ective%29/near/197120248" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Kevin Buzzard <a href="https://leanprover-community.github.io/archive/stream/113488-general/topic/pow_(left.7Cright)_inj(ective).html#197120248">(May 11 2020 at 09:30)</a>:</h4>
+<p>Now tell me how to remember that</p>
+
+
+
+<a name="197120305"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113488-general/topic/pow_%28left%7Cright%29_inj%28ective%29/near/197120305" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Kevin Buzzard <a href="https://leanprover-community.github.io/archive/stream/113488-general/topic/pow_(left.7Cright)_inj(ective).html#197120305">(May 11 2020 at 09:31)</a>:</h4>
+<p>Because this is an arbitrary decision</p>
+
+
+
+<a name="197120316"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113488-general/topic/pow_%28left%7Cright%29_inj%28ective%29/near/197120316" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Mario Carneiro <a href="https://leanprover-community.github.io/archive/stream/113488-general/topic/pow_(left.7Cright)_inj(ective).html#197120316">(May 11 2020 at 09:31)</a>:</h4>
+<p>I think the multiple arguments thing is a good example. If you have a seven argument function and you need to change one of them, you want to name the thing that is changing</p>
+
+
+
+<a name="197120383"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113488-general/topic/pow_%28left%7Cright%29_inj%28ective%29/near/197120383" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Mario Carneiro <a href="https://leanprover-community.github.io/archive/stream/113488-general/topic/pow_(left.7Cright)_inj(ective).html#197120383">(May 11 2020 at 09:32)</a>:</h4>
+<p>i.e. <code>f_inj_third_arg</code> or something</p>
+
+
+
+<a name="197120420"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113488-general/topic/pow_%28left%7Cright%29_inj%28ective%29/near/197120420" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Kevin Buzzard <a href="https://leanprover-community.github.io/archive/stream/113488-general/topic/pow_(left.7Cright)_inj(ective).html#197120420">(May 11 2020 at 09:32)</a>:</h4>
+<p>Can this be translated into a convention for a=b iff a+c = b+c? Is the left argument "changing"there in the sense that it could be two things?</p>
+
+
+
+<a name="197120470"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113488-general/topic/pow_%28left%7Cright%29_inj%28ective%29/near/197120470" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Mario Carneiro <a href="https://leanprover-community.github.io/archive/stream/113488-general/topic/pow_(left.7Cright)_inj(ective).html#197120470">(May 11 2020 at 09:33)</a>:</h4>
+<p>This is injectivity of <code>\lam x, x + c</code>. Spot the variable</p>
+
+
+
+<a name="197120484"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113488-general/topic/pow_%28left%7Cright%29_inj%28ective%29/near/197120484" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Kevin Buzzard <a href="https://leanprover-community.github.io/archive/stream/113488-general/topic/pow_(left.7Cright)_inj(ective).html#197120484">(May 11 2020 at 09:33)</a>:</h4>
+<p>This is something I've struggled with all my life and I'd love to see some sort of global "principle" which guides conventions so I get better at guessing</p>
+
+
+
+<a name="197120529"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113488-general/topic/pow_%28left%7Cright%29_inj%28ective%29/near/197120529" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Mario Carneiro <a href="https://leanprover-community.github.io/archive/stream/113488-general/topic/pow_(left.7Cright)_inj(ective).html#197120529">(May 11 2020 at 09:34)</a>:</h4>
+<p>If you have <code>\lam x, bla bla .... x ... bla bla</code> you name where the <code>x</code> is</p>
+
+
+
+<a name="197121855"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113488-general/topic/pow_%28left%7Cright%29_inj%28ective%29/near/197121855" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Markus Himmel <a href="https://leanprover-community.github.io/archive/stream/113488-general/topic/pow_(left.7Cright)_inj(ective).html#197121855">(May 11 2020 at 09:47)</a>:</h4>
+<p>One reason why the other convention is so popular might be that lemmas like <code>mul_left_injective</code> are really just synonyms for lemmas like <code>mul_left_cancel</code>, which follow the other convention. Still, I agree that the convention where the name refers to the variable makes more sense and will make another PR.</p>
+
+
+
+<a name="197122423"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113488-general/topic/pow_%28left%7Cright%29_inj%28ective%29/near/197122423" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Mario Carneiro <a href="https://leanprover-community.github.io/archive/stream/113488-general/topic/pow_(left.7Cright)_inj(ective).html#197122423">(May 11 2020 at 09:52)</a>:</h4>
+<p><code>mul_left_cancel</code> makes some sense given that it says in the name that the thing on the left is being cancelled</p>
+
+
+
+<a name="197122435"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113488-general/topic/pow_%28left%7Cright%29_inj%28ective%29/near/197122435" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Mario Carneiro <a href="https://leanprover-community.github.io/archive/stream/113488-general/topic/pow_(left.7Cright)_inj(ective).html#197122435">(May 11 2020 at 09:52)</a>:</h4>
+<p>it also agrees with wikipedia</p>
+
+
+
+<a name="197122524"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113488-general/topic/pow_%28left%7Cright%29_inj%28ective%29/near/197122524" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Markus Himmel <a href="https://leanprover-community.github.io/archive/stream/113488-general/topic/pow_(left.7Cright)_inj(ective).html#197122524">(May 11 2020 at 09:53)</a>:</h4>
+<p>I agree. I just meant that when defining a synonym for <code>mul_left_cancel</code> (which is a good name), it might be tempting to name it <code>mul_left_injective</code>, even though <code>mul_right_injective</code> makes more sense</p>
+
+
+
 {% endraw %}
 
-<hr><p>Last updated: May 11 2020 at 09:12 UTC</p>
+<hr><p>Last updated: May 11 2020 at 10:06 UTC</p>

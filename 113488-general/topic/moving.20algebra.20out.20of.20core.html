@@ -159,6 +159,109 @@ make
 
 
 
+<a name="197121715"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113488-general/topic/moving%20algebra%20out%20of%20core/near/197121715" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Johan Commelin <a href="https://leanprover-community.github.io/archive/stream/113488-general/topic/moving.20algebra.20out.20of.20core.html#197121715">(May 11 2020 at 09:45)</a>:</h4>
+<p>This is what we need to unclutter:<br>
+<a href="/user_uploads/3121/WEHf9-B-Lka6tbRn01erZj_z/import_graph.pdf">import_graph.pdf</a></p>
+
+
+
+<a name="197122013"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113488-general/topic/moving%20algebra%20out%20of%20core/near/197122013" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Johan Commelin <a href="https://leanprover-community.github.io/archive/stream/113488-general/topic/moving.20algebra.20out.20of.20core.html#197122013">(May 11 2020 at 09:48)</a>:</h4>
+<p><span class="user-mention" data-user-id="110049">@Mario Carneiro</span> Do you know by heart whether something like <code>init.meta.well_founded_tactics</code> has to stay in core?</p>
+
+
+
+<a name="197122044"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113488-general/topic/moving%20algebra%20out%20of%20core/near/197122044" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Mario Carneiro <a href="https://leanprover-community.github.io/archive/stream/113488-general/topic/moving.20algebra.20out.20of.20core.html#197122044">(May 11 2020 at 09:49)</a>:</h4>
+<p>that tactic is a mess, I'd like to see it gone</p>
+
+
+
+<a name="197122074"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113488-general/topic/moving%20algebra%20out%20of%20core/near/197122074" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Mario Carneiro <a href="https://leanprover-community.github.io/archive/stream/113488-general/topic/moving.20algebra.20out.20of.20core.html#197122074">(May 11 2020 at 09:49)</a>:</h4>
+<p>it should be <code>assumption</code></p>
+
+
+
+<a name="197122501"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113488-general/topic/moving%20algebra%20out%20of%20core/near/197122501" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Johan Commelin <a href="https://leanprover-community.github.io/archive/stream/113488-general/topic/moving.20algebra.20out.20of.20core.html#197122501">(May 11 2020 at 09:53)</a>:</h4>
+<p>What does that mean for this project...</p>
+
+
+
+<a name="197122654"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113488-general/topic/moving%20algebra%20out%20of%20core/near/197122654" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Mario Carneiro <a href="https://leanprover-community.github.io/archive/stream/113488-general/topic/moving.20algebra.20out.20of.20core.html#197122654">(May 11 2020 at 09:54)</a>:</h4>
+<p>It can definitely be removed from core</p>
+
+
+
+<a name="197122743"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113488-general/topic/moving%20algebra%20out%20of%20core/near/197122743" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Johan Commelin <a href="https://leanprover-community.github.io/archive/stream/113488-general/topic/moving.20algebra.20out.20of.20core.html#197122743">(May 11 2020 at 09:55)</a>:</h4>
+<p>Ok, I'll try my best</p>
+
+
+
+<a name="197122820"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113488-general/topic/moving%20algebra%20out%20of%20core/near/197122820" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Mario Carneiro <a href="https://leanprover-community.github.io/archive/stream/113488-general/topic/moving.20algebra.20out.20of.20core.html#197122820">(May 11 2020 at 09:56)</a>:</h4>
+<p>It is used by lean magic currently: if you leave off the <code>using_well_founded</code> clause in a well founded recursive definition, it will call the tactic in <code>well_founded_tactics</code> in order to solve the size decreasing theorem</p>
+
+
+
+<a name="197122835"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113488-general/topic/moving%20algebra%20out%20of%20core/near/197122835" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Mario Carneiro <a href="https://leanprover-community.github.io/archive/stream/113488-general/topic/moving.20algebra.20out.20of.20core.html#197122835">(May 11 2020 at 09:56)</a>:</h4>
+<p>that needs to be changed to another tactic, and I recommend <code>assumption</code></p>
+
+
+
+<a name="197122895"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113488-general/topic/moving%20algebra%20out%20of%20core/near/197122895" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Johan Commelin <a href="https://leanprover-community.github.io/archive/stream/113488-general/topic/moving.20algebra.20out.20of.20core.html#197122895">(May 11 2020 at 09:57)</a>:</h4>
+<p>Does that mean a lot of proofs in mathlib will have to be fixed?</p>
+
+
+
+<a name="197122902"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113488-general/topic/moving%20algebra%20out%20of%20core/near/197122902" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Mario Carneiro <a href="https://leanprover-community.github.io/archive/stream/113488-general/topic/moving.20algebra.20out.20of.20core.html#197122902">(May 11 2020 at 09:57)</a>:</h4>
+<p>It does mean a regression for well founded definitions that currently are using the tactic to prove the size decreasing theorem; they will need to put the <code>using_well_founded</code> clause in and reference <code>well_founded_tactic</code> explicitly</p>
+
+
+
+<a name="197122961"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113488-general/topic/moving%20algebra%20out%20of%20core/near/197122961" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Johan Commelin <a href="https://leanprover-community.github.io/archive/stream/113488-general/topic/moving.20algebra.20out.20of.20core.html#197122961">(May 11 2020 at 09:58)</a>:</h4>
+<p>And does lean need to be changed before <code>well_founded_tactics</code> can be removed? You seem to suggest that lean depends on it.</p>
+
+
+
+<a name="197123009"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113488-general/topic/moving%20algebra%20out%20of%20core/near/197123009" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Mario Carneiro <a href="https://leanprover-community.github.io/archive/stream/113488-general/topic/moving.20algebra.20out.20of.20core.html#197123009">(May 11 2020 at 09:58)</a>:</h4>
+<p>Well founded definitions like this are extremely rare in mathlib, and even when they are used the result isn't great, because it does recursion on <code>T.sizeof</code> which has few lemmas</p>
+
+
+
+<a name="197123399"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113488-general/topic/moving%20algebra%20out%20of%20core/near/197123399" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Mario Carneiro <a href="https://leanprover-community.github.io/archive/stream/113488-general/topic/moving.20algebra.20out.20of.20core.html#197123399">(May 11 2020 at 10:03)</a>:</h4>
+<p><code>well_founded_tactics.default</code> is referenced by lean</p>
+
+
+
+<a name="197123434"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113488-general/topic/moving%20algebra%20out%20of%20core/near/197123434" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Mario Carneiro <a href="https://leanprover-community.github.io/archive/stream/113488-general/topic/moving.20algebra.20out.20of.20core.html#197123434">(May 11 2020 at 10:03)</a>:</h4>
+<p>and it uses default construction of <code>well_founded_tactics</code>, resulting in the use of <code>well_founded_tactics.default_dec_tac</code></p>
+
+
+
+<a name="197123504"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113488-general/topic/moving%20algebra%20out%20of%20core/near/197123504" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Mario Carneiro <a href="https://leanprover-community.github.io/archive/stream/113488-general/topic/moving.20algebra.20out.20of.20core.html#197123504">(May 11 2020 at 10:04)</a>:</h4>
+<p>So if you change the default value of <code>well_founded_tactics.dec_tac</code> to <code>assumption</code>, you should be able to remove <code>default_dec_tac</code></p>
+
+
+
+<a name="197123633"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113488-general/topic/moving%20algebra%20out%20of%20core/near/197123633" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Mario Carneiro <a href="https://leanprover-community.github.io/archive/stream/113488-general/topic/moving.20algebra.20out.20of.20core.html#197123633">(May 11 2020 at 10:06)</a>:</h4>
+<p>Another option is to use a <code>def_replacer</code> here, so that users can mark their own default dec_tac, changing the global default</p>
+
+
+
 {% endraw %}
 
-<hr><p>Last updated: May 11 2020 at 09:12 UTC</p>
+<hr><p>Last updated: May 11 2020 at 10:06 UTC</p>

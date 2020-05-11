@@ -38,7 +38,7 @@ permalink: /index.html
 
 * [Big Proof 2019](stream/198800-Big-Proof-2019/index.html) (3 topics)
 
-* [Codewars](stream/238266-Codewars/index.html) (2 topics)
+* [Codewars](stream/238266-Codewars/index.html) (3 topics)
 
 * [Program verification](stream/236449-Program-verification/index.html) (2 topics)
 
@@ -46,4 +46,4 @@ permalink: /index.html
 
 * [Xena Summer Projects](stream/237759-Xena-Summer-Projects/index.html) (2 topics)
 
-<hr><p>Last updated: May 11 2020 at 09:12 UTC</p>
+<hr><p>Last updated: May 11 2020 at 10:06 UTC</p>
