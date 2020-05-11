@@ -9,7 +9,7 @@ permalink: /stream/113488-general/index.html
 
 ### Topics:
 
-* [moving algebra out of core](topic/moving.20algebra.20out.20of.20core.html) (36 messages, latest: May 11 2020 at 10:06)
+* [moving algebra out of core](topic/moving.20algebra.20out.20of.20core.html) (38 messages, latest: May 11 2020 at 10:08)
 * [pow_(left\|right)_inj(ective)](topic/pow_(left.7Cright)_inj(ective).html) (24 messages, latest: May 11 2020 at 09:53)
 * [Lean in the wild](topic/Lean.20in.20the.20wild.html) (466 messages, latest: May 11 2020 at 09:43)
 * [iterate](topic/iterate.html) (11 messages, latest: May 11 2020 at 06:35)
@@ -2806,4 +2806,4 @@ permalink: /stream/113488-general/index.html
 * [test](topic/test.html) (4 messages, latest: Feb 26 2018 at 16:22)
 * [welcome](topic/welcome.html) (1 message, latest: Feb 26 2018 at 16:02)
 
-<hr><p>Last updated: May 11 2020 at 10:06 UTC</p>
+<hr><p>Last updated: May 11 2020 at 11:06 UTC</p>

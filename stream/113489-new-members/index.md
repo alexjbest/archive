@@ -9,6 +9,7 @@ permalink: /stream/113489-new-members/index.html
 
 ### Topics:
 
+* [How does eq.refl work?](topic/How.20does.20eq.2Erefl.20work.3F.html) (9 messages, latest: May 11 2020 at 11:00)
 * [more basics](topic/more.20basics.html) (494 messages, latest: May 11 2020 at 08:31)
 * [noob question(s)](topic/noob.20question(s).html) (5598 messages, latest: May 11 2020 at 07:18)
 * [leanproject and branches](topic/leanproject.20and.20branches.html) (14 messages, latest: May 11 2020 at 07:16)
@@ -1044,4 +1045,4 @@ permalink: /stream/113489-new-members/index.html
 * [Andrew Ashworth](topic/Andrew.20Ashworth.html) (15 messages, latest: Feb 26 2018 at 16:21)
 * [onboarding](topic/onboarding.html) (1 message, latest: Feb 26 2018 at 16:02)
 
-<hr><p>Last updated: May 11 2020 at 10:06 UTC</p>
+<hr><p>Last updated: May 11 2020 at 11:06 UTC</p>
