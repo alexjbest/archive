@@ -274,6 +274,67 @@ make
 
 
 
+<a name="197181675"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113488-general/topic/moving%20algebra%20out%20of%20core/near/197181675" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Johan Commelin <a href="https://leanprover-community.github.io/archive/stream/113488-general/topic/moving.20algebra.20out.20of.20core.html#197181675">(May 11 2020 at 17:54)</a>:</h4>
+<p><a href="https://github.com/leanprover-community/lean/issues/229">lean#229</a> is a wip PR that compiles</p>
+
+
+
+<a name="197181717"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113488-general/topic/moving%20algebra%20out%20of%20core/near/197181717" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Johan Commelin <a href="https://leanprover-community.github.io/archive/stream/113488-general/topic/moving.20algebra.20out.20of.20core.html#197181717">(May 11 2020 at 17:55)</a>:</h4>
+<p>I would like some advice on the way forward.</p>
+
+
+
+<a name="197181902"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113488-general/topic/moving%20algebra%20out%20of%20core/near/197181902" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Johan Commelin <a href="https://leanprover-community.github.io/archive/stream/113488-general/topic/moving.20algebra.20out.20of.20core.html#197181902">(May 11 2020 at 17:56)</a>:</h4>
+<p>Previously <code>init.data.nat.lemmas</code> imported <code>init.algebra.functions</code> and hence the entire algebraic hierarchy in core.<br>
+Now <code>init.algebra.functions</code> only imports <code>init.algebra.order</code>, and hence <code>init.algebra.{group,field,ordered_ring}</code> etc can all be moved out of core.</p>
+
+
+
+<a name="197182022"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113488-general/topic/moving%20algebra%20out%20of%20core/near/197182022" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Johan Commelin <a href="https://leanprover-community.github.io/archive/stream/113488-general/topic/moving.20algebra.20out.20of.20core.html#197182022">(May 11 2020 at 17:57)</a>:</h4>
+<p>I had to prove something like 20 lemmas specifically for <code>nat</code> and <code>int</code> that would otherwise follow from an <code>ordered_(semi)ring</code> instance.</p>
+
+
+
+<a name="197182138"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113488-general/topic/moving%20algebra%20out%20of%20core/near/197182138" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Kevin Buzzard <a href="https://leanprover-community.github.io/archive/stream/113488-general/topic/moving.20algebra.20out.20of.20core.html#197182138">(May 11 2020 at 17:58)</a>:</h4>
+<p>Wow, so this really is the light at the end of the tunnel?</p>
+
+
+
+<a name="197182155"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113488-general/topic/moving%20algebra%20out%20of%20core/near/197182155" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Johan Commelin <a href="https://leanprover-community.github.io/archive/stream/113488-general/topic/moving.20algebra.20out.20of.20core.html#197182155">(May 11 2020 at 17:58)</a>:</h4>
+<p>Also, <code>nat</code> now has a personal <code>has_dvd</code> instance, and <code>int</code> its own <code>has_sub</code> instance, because they can't get them from <code>comm_semiring</code> resp. <code>add_group</code>.</p>
+
+
+
+<a name="197182168"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113488-general/topic/moving%20algebra%20out%20of%20core/near/197182168" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Kevin Buzzard <a href="https://leanprover-community.github.io/archive/stream/113488-general/topic/moving.20algebra.20out.20of.20core.html#197182168">(May 11 2020 at 17:58)</a>:</h4>
+<p>When you posted that graph earlier I was just thinking that this might be impossible</p>
+
+
+
+<a name="197182266"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113488-general/topic/moving%20algebra%20out%20of%20core/near/197182266" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Kevin Buzzard <a href="https://leanprover-community.github.io/archive/stream/113488-general/topic/moving.20algebra.20out.20of.20core.html#197182266">(May 11 2020 at 17:59)</a>:</h4>
+<p>Nat also has its own has_pow instance though, and this causes lots of problems</p>
+
+
+
+<a name="197182300"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113488-general/topic/moving%20algebra%20out%20of%20core/near/197182300" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Johan Commelin <a href="https://leanprover-community.github.io/archive/stream/113488-general/topic/moving.20algebra.20out.20of.20core.html#197182300">(May 11 2020 at 17:59)</a>:</h4>
+<p>But mine are defeq to what you would get otherwise</p>
+
+
+
+<a name="197182327"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113488-general/topic/moving%20algebra%20out%20of%20core/near/197182327" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Kevin Buzzard <a href="https://leanprover-community.github.io/archive/stream/113488-general/topic/moving.20algebra.20out.20of.20core.html#197182327">(May 11 2020 at 18:00)</a>:</h4>
+<p>I was hoping you'd say that :-)</p>
+
+
+
 {% endraw %}
 
-<hr><p>Last updated: May 11 2020 at 17:06 UTC</p>
+<hr><p>Last updated: May 11 2020 at 18:12 UTC</p>

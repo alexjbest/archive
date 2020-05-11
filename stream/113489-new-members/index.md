@@ -9,6 +9,9 @@ permalink: /stream/113489-new-members/index.html
 
 ### Topics:
 
+* [Structural recursion syntax](topic/Structural.20recursion.20syntax.html) (10 messages, latest: May 11 2020 at 18:12)
+* [From n<=1, get n=0 or n=1](topic/From.20n.3C.3D1.2C.20get.20n.3D0.20or.20n.3D1.html) (7 messages, latest: May 11 2020 at 18:02)
+* [list.sum (range (succ n)) =](topic/list.2Esum.20(range.20(succ.20n)).20.3D.html) (9 messages, latest: May 11 2020 at 17:25)
 * [Trouble installing Lean (Windows)](topic/Trouble.20installing.20Lean.20(Windows).html) (5 messages, latest: May 11 2020 at 15:16)
 * [Accessing LHS / RHS from equation](topic/Accessing.20LHS.20.2F.20RHS.20from.20equation.html) (26 messages, latest: May 11 2020 at 14:50)
 * [noob question(s)](topic/noob.20question(s).html) (5602 messages, latest: May 11 2020 at 12:12)
@@ -31,7 +34,6 @@ permalink: /stream/113489-new-members/index.html
 * [Cannot Import topology.basic](topic/Cannot.20Import.20topology.2Ebasic.html) (73 messages, latest: May 09 2020 at 15:24)
 * [getting started](topic/getting.20started.html) (78 messages, latest: May 09 2020 at 15:11)
 * [Induction vs recursion](topic/Induction.20vs.20recursion.html) (75 messages, latest: May 09 2020 at 15:09)
-* [Structural recursion syntax](topic/Structural.20recursion.20syntax.html) (9 messages, latest: May 09 2020 at 15:04)
 * [Docs about `meta` keyword](topic/Docs.20about.20.60meta.60.20keyword.html) (9 messages, latest: May 09 2020 at 14:46)
 * [Adding directories to LEAN_PATH](topic/Adding.20directories.20to.20LEAN_PATH.html) (13 messages, latest: May 09 2020 at 10:32)
 * [noncomputable](topic/noncomputable.html) (48 messages, latest: May 09 2020 at 05:47)
@@ -1047,4 +1049,4 @@ permalink: /stream/113489-new-members/index.html
 * [Andrew Ashworth](topic/Andrew.20Ashworth.html) (15 messages, latest: Feb 26 2018 at 16:21)
 * [onboarding](topic/onboarding.html) (1 message, latest: Feb 26 2018 at 16:02)
 
-<hr><p>Last updated: May 11 2020 at 17:06 UTC</p>
+<hr><p>Last updated: May 11 2020 at 18:12 UTC</p>

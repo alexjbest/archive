@@ -161,6 +161,55 @@ Comments on the code would be welcome, I know it is a real mess.</p>
 
 
 
+<a name="197180255"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/116395-maths/topic/Bounded%20continuous%20functions/near/197180255" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Yury G. Kudryashov <a href="https://leanprover-community.github.io/archive/stream/116395-maths/topic/Bounded.20continuous.20functions.html#197180255">(May 11 2020 at 17:43)</a>:</h4>
+<p>Lint complains about <code>≥</code> in <code>norm_eq</code>. We try to use <code>≤</code> everywhere because it makes the life of <code>rw</code> and <code>simp</code> easier.</p>
+
+
+
+<a name="197180512"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/116395-maths/topic/Bounded%20continuous%20functions/near/197180512" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Heather Macbeth <a href="https://leanprover-community.github.io/archive/stream/116395-maths/topic/Bounded.20continuous.20functions.html#197180512">(May 11 2020 at 17:45)</a>:</h4>
+<p>Interesting, thank you!  I will make these changes.  Let me know if you think of others.</p>
+
+
+
+<a name="197180661"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/116395-maths/topic/Bounded%20continuous%20functions/near/197180661" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Yury G. Kudryashov <a href="https://leanprover-community.github.io/archive/stream/116395-maths/topic/Bounded.20continuous.20functions.html#197180661">(May 11 2020 at 17:46)</a>:</h4>
+<p>It will be easier to comment once you'll make PR.</p>
+
+
+
+<a name="197180933"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/116395-maths/topic/Bounded%20continuous%20functions/near/197180933" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Heather Macbeth <a href="https://leanprover-community.github.io/archive/stream/116395-maths/topic/Bounded.20continuous.20functions.html#197180933">(May 11 2020 at 17:48)</a>:</h4>
+<p>FWIW, the <code>≥</code> comes as an adaptation of Sebastien's</p>
+<div class="codehilite"><pre><span></span><code><span class="c">/-</span><span class="cm">- The uniform distance between two bounded continuous functions -/</span>
+<span class="kn">instance</span> <span class="o">:</span> <span class="n">has_dist</span> <span class="o">(</span><span class="n">α</span> <span class="bp">→</span><span class="err">ᵇ</span> <span class="n">β</span><span class="o">)</span> <span class="o">:=</span>
+<span class="bp">⟨λ</span><span class="n">f</span> <span class="n">g</span><span class="o">,</span> <span class="n">Inf</span> <span class="o">{</span><span class="n">C</span> <span class="bp">|</span> <span class="n">C</span> <span class="bp">≥</span> <span class="mi">0</span> <span class="bp">∧</span> <span class="bp">∀</span> <span class="n">x</span> <span class="o">:</span> <span class="n">α</span><span class="o">,</span> <span class="n">dist</span> <span class="o">(</span><span class="n">f</span> <span class="n">x</span><span class="o">)</span> <span class="o">(</span><span class="n">g</span> <span class="n">x</span><span class="o">)</span> <span class="bp">≤</span> <span class="n">C</span><span class="o">}</span><span class="bp">⟩</span>
+</code></pre></div>
+
+
+<p>Is this also non-standard style, or is there a difference between the two usages?</p>
+
+
+
+<a name="197181019"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/116395-maths/topic/Bounded%20continuous%20functions/near/197181019" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Yury G. Kudryashov <a href="https://leanprover-community.github.io/archive/stream/116395-maths/topic/Bounded.20continuous.20functions.html#197181019">(May 11 2020 at 17:49)</a>:</h4>
+<p>I think that we should change this too. <span class="user-mention" data-user-id="110050">@Sebastien Gouezel</span> ?</p>
+
+
+
+<a name="197181071"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/116395-maths/topic/Bounded%20continuous%20functions/near/197181071" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Yury G. Kudryashov <a href="https://leanprover-community.github.io/archive/stream/116395-maths/topic/Bounded.20continuous.20functions.html#197181071">(May 11 2020 at 17:49)</a>:</h4>
+<p>The main exception for this rule is <code>∀ ε &gt; 0</code> because <code>∀ ε, 0 &lt; ε →</code> looks worse.</p>
+
+
+
+<a name="197181577"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/116395-maths/topic/Bounded%20continuous%20functions/near/197181577" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Sebastien Gouezel <a href="https://leanprover-community.github.io/archive/stream/116395-maths/topic/Bounded.20continuous.20functions.html#197181577">(May 11 2020 at 17:54)</a>:</h4>
+<p>Yes, that's clearly a newcomer's mistake, that should be fixed :)</p>
+
+
+
 {% endraw %}
 
-<hr><p>Last updated: May 11 2020 at 17:06 UTC</p>
+<hr><p>Last updated: May 11 2020 at 18:12 UTC</p>
