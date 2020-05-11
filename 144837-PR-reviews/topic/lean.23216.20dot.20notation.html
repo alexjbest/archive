@@ -112,6 +112,25 @@ permalink: /stream/144837-PR-reviews/topic/lean.23216.20dot.20notation.html
 
 
 
+<a name="197100878"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/144837-PR%20reviews/topic/lean%23216%20dot%20notation/near/197100878" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Yury G. Kudryashov <a href="https://leanprover-community.github.io/archive/stream/144837-PR-reviews/topic/lean.23216.20dot.20notation.html#197100878">(May 11 2020 at 05:14)</a>:</h4>
+<p>Then you need some <code>elan override</code> magic</p>
+
+
+
+<a name="197101505"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/144837-PR%20reviews/topic/lean%23216%20dot%20notation/near/197101505" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Bryan Gin-ge Chen <a href="https://leanprover-community.github.io/archive/stream/144837-PR-reviews/topic/lean.23216.20dot.20notation.html#197101505">(May 11 2020 at 05:31)</a>:</h4>
+<p>I just tested the following and it seems that making a symlink manually works as a replacement for <code>elan toolchain link</code>:</p>
+<div class="codehilite"><pre><span></span><code>$ ln -s /path/to/local/lean/. ~/.elan/toolchains/blah
+$ elan override set blah
+info: using existing install for &#39;blah&#39;
+info: override toolchain for &#39;/path/to/some/lean/package&#39; set to &#39;blah&#39;
+
+  blah unchanged - Lean (version 3.10.0, commit 675c47294a57, Release)
+</code></pre></div>
+
+
+
 {% endraw %}
 
-<hr><p>Last updated: May 11 2020 at 05:12 UTC</p>
+<hr><p>Last updated: May 11 2020 at 06:09 UTC</p>
