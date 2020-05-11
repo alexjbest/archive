@@ -9,7 +9,9 @@ permalink: /stream/113489-new-members/index.html
 
 ### Topics:
 
-* [Structural recursion syntax](topic/Structural.20recursion.20syntax.html) (10 messages, latest: May 11 2020 at 18:12)
+* [How to move things to the other side of the equation?](topic/How.20to.20move.20things.20to.20the.20other.20side.20of.20the.20equation.3F.html) (2 messages, latest: May 11 2020 at 19:09)
+* [Failed to synthesize type class instance](topic/Failed.20to.20synthesize.20type.20class.20instance.html) (17 messages, latest: May 11 2020 at 18:48)
+* [Structural recursion syntax](topic/Structural.20recursion.20syntax.html) (23 messages, latest: May 11 2020 at 18:32)
 * [From n<=1, get n=0 or n=1](topic/From.20n.3C.3D1.2C.20get.20n.3D0.20or.20n.3D1.html) (7 messages, latest: May 11 2020 at 18:02)
 * [list.sum (range (succ n)) =](topic/list.2Esum.20(range.20(succ.20n)).20.3D.html) (9 messages, latest: May 11 2020 at 17:25)
 * [Trouble installing Lean (Windows)](topic/Trouble.20installing.20Lean.20(Windows).html) (5 messages, latest: May 11 2020 at 15:16)
@@ -1049,4 +1051,4 @@ permalink: /stream/113489-new-members/index.html
 * [Andrew Ashworth](topic/Andrew.20Ashworth.html) (15 messages, latest: Feb 26 2018 at 16:21)
 * [onboarding](topic/onboarding.html) (1 message, latest: Feb 26 2018 at 16:02)
 
-<hr><p>Last updated: May 11 2020 at 18:12 UTC</p>
+<hr><p>Last updated: May 11 2020 at 19:11 UTC</p>

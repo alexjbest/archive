@@ -9,8 +9,9 @@ permalink: /stream/113488-general/index.html
 
 ### Topics:
 
-* [tiny stdlib between core and mathlib](topic/tiny.20stdlib.20between.20core.20and.20mathlib.html) (5 messages, latest: May 11 2020 at 18:05)
-* [has_dvd](topic/has_dvd.html) (4 messages, latest: May 11 2020 at 18:03)
+* [Specialized `ext` lemmas](topic/Specialized.20.60ext.60.20lemmas.html) (11 messages, latest: May 11 2020 at 19:06)
+* [has_dvd](topic/has_dvd.html) (5 messages, latest: May 11 2020 at 18:56)
+* [tiny stdlib between core and mathlib](topic/tiny.20stdlib.20between.20core.20and.20mathlib.html) (9 messages, latest: May 11 2020 at 18:43)
 * [moving algebra out of core](topic/moving.20algebra.20out.20of.20core.html) (48 messages, latest: May 11 2020 at 18:00)
 * [New website](topic/New.20website.html) (29 messages, latest: May 11 2020 at 17:47)
 * [Proof Ground 2020](topic/Proof.20Ground.202020.html) (1 message, latest: May 11 2020 at 16:58)
@@ -100,7 +101,6 @@ permalink: /stream/113488-general/index.html
 * [first argument of minimal_polynomial necessary](topic/first.20argument.20of.20minimal_polynomial.20necessary.html) (8 messages, latest: May 02 2020 at 08:32)
 * [transitive coercions](topic/transitive.20coercions.html) (69 messages, latest: May 02 2020 at 08:31)
 * [abel idempotence](topic/abel.20idempotence.html) (6 messages, latest: May 01 2020 at 22:27)
-* [Specialized `ext` lemmas](topic/Specialized.20.60ext.60.20lemmas.html) (9 messages, latest: May 01 2020 at 20:41)
 * [documenting notation](topic/documenting.20notation.html) (3 messages, latest: May 01 2020 at 20:35)
 * [sub_eq_add_neg](topic/sub_eq_add_neg.html) (13 messages, latest: May 01 2020 at 18:32)
 * [unnecessary(?) simp lemma](topic/unnecessary(.3F).20simp.20lemma.html) (4 messages, latest: May 01 2020 at 18:01)
@@ -2813,4 +2813,4 @@ permalink: /stream/113488-general/index.html
 * [test](topic/test.html) (4 messages, latest: Feb 26 2018 at 16:22)
 * [welcome](topic/welcome.html) (1 message, latest: Feb 26 2018 at 16:02)
 
-<hr><p>Last updated: May 11 2020 at 18:12 UTC</p>
+<hr><p>Last updated: May 11 2020 at 19:11 UTC</p>

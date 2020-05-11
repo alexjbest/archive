@@ -9,7 +9,8 @@ permalink: /stream/116395-maths/index.html
 
 ### Topics:
 
-* [Bounded continuous functions](topic/Bounded.20continuous.20functions.html) (27 messages, latest: May 11 2020 at 17:54)
+* [Lean for the curious mathematician](topic/Lean.20for.20the.20curious.20mathematician.html) (16 messages, latest: May 11 2020 at 19:10)
+* [Bounded continuous functions](topic/Bounded.20continuous.20functions.html) (33 messages, latest: May 11 2020 at 18:46)
 * [Quotients & synthesizing](topic/Quotients.20.26.20synthesizing.html) (97 messages, latest: May 10 2020 at 22:32)
 * [quotient by zero submodule](topic/quotient.20by.20zero.20submodule.html) (35 messages, latest: May 10 2020 at 16:55)
 * [Creating limits extends reflects limits?](topic/Creating.20limits.20extends.20reflects.20limits.3F.html) (1 message, latest: May 10 2020 at 16:52)
@@ -161,7 +162,6 @@ permalink: /stream/116395-maths/index.html
 * [nonempty](topic/nonempty.html) (24 messages, latest: Feb 10 2020 at 02:08)
 * [composition of algebra structures?](topic/composition.20of.20algebra.20structures.3F.html) (4 messages, latest: Feb 09 2020 at 23:03)
 * ["trivial" R-algebra hom construction](topic/.22trivial.22.20R-algebra.20hom.20construction.html) (6 messages, latest: Feb 08 2020 at 15:03)
-* [Lean for the curious mathematician](topic/Lean.20for.20the.20curious.20mathematician.html) (13 messages, latest: Feb 07 2020 at 19:04)
 * [bundled kernels for add_comm_groups?](topic/bundled.20kernels.20for.20add_comm_groups.3F.html) (9 messages, latest: Feb 06 2020 at 11:34)
 * [`simp` lemmas for `matrix.mul` vs `has_mul.mul`](topic/.60simp.60.20lemmas.20for.20.60matrix.2Emul.60.20vs.20.60has_mul.2Emul.60.html) (11 messages, latest: Feb 05 2020 at 10:29)
 * [Unifying `tangent_cone_at` and `pos_tangent_cone_at`](topic/Unifying.20.60tangent_cone_at.60.20and.20.60pos_tangent_cone_at.60.html) (4 messages, latest: Feb 05 2020 at 07:45)
@@ -898,4 +898,4 @@ permalink: /stream/116395-maths/index.html
 * [free group](topic/free.20group.html) (92 messages, latest: Apr 02 2018 at 05:00)
 * [Easy topological space question](topic/Easy.20topological.20space.20question.html) (18 messages, latest: Apr 02 2018 at 01:23)
 
-<hr><p>Last updated: May 11 2020 at 18:12 UTC</p>
+<hr><p>Last updated: May 11 2020 at 19:11 UTC</p>

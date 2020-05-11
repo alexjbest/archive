@@ -1,0 +1,141 @@
+---
+layout: archive
+title: Zulip Chat Archive
+permalink: /stream/113489-new-members/topic/Failed.20to.20synthesize.20type.20class.20instance.html
+---
+
+<h2>Stream: <a href="https://leanprover-community.github.io/archive/stream/113489-new-members/index.html">new members</a></h2>
+<h3>Topic: <a href="https://leanprover-community.github.io/archive/stream/113489-new-members/topic/Failed.20to.20synthesize.20type.20class.20instance.html">Failed to synthesize type class instance</a></h3>
+
+<hr>
+
+<base href="https://leanprover.zulipchat.com/">
+
+<head><link href="/style.css" rel="stylesheet"></head>
+
+{% raw %}
+
+<a name="197186829"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113489-new%20members/topic/Failed%20to%20synthesize%20type%20class%20instance/near/197186829" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Patrick Stevens <a href="https://leanprover-community.github.io/archive/stream/113489-new-members/topic/Failed.20to.20synthesize.20type.20class.20instance.html#197186829">(May 11 2020 at 18:39)</a>:</h4>
+<p>Defining the set of all powers of p dividing n:</p>
+<div class="codehilite"><pre><span></span><code><span class="n">def</span> <span class="n">times_p</span> <span class="o">(</span><span class="n">p</span> <span class="o">:</span> <span class="n">nat</span><span class="o">)</span> <span class="o">(</span><span class="n">pos</span> <span class="o">:</span> <span class="mi">0</span> <span class="bp">&lt;</span> <span class="n">p</span><span class="o">)</span> <span class="o">:</span> <span class="n">nat</span> <span class="err">↪</span> <span class="n">nat</span> <span class="o">:=</span>
+<span class="o">{</span> <span class="n">to_fun</span> <span class="o">:=</span> <span class="bp">λ</span> <span class="n">i</span><span class="o">,</span> <span class="n">i</span> <span class="bp">*</span> <span class="n">p</span><span class="o">,</span>
+  <span class="n">inj</span> <span class="o">:=</span> <span class="k">begin</span> <span class="n">intros</span> <span class="n">x</span> <span class="n">y</span> <span class="n">prod</span><span class="o">,</span> <span class="n">dsimp</span> <span class="n">at</span> <span class="n">prod</span><span class="o">,</span> <span class="n">exact</span> <span class="o">(</span><span class="n">nat</span><span class="bp">.</span><span class="n">mul_right_inj</span> <span class="n">pos</span><span class="o">)</span><span class="bp">.</span><span class="n">mp</span> <span class="n">prod</span><span class="o">,</span> <span class="kn">end</span>
+<span class="o">}</span>
+
+<span class="n">def</span> <span class="n">powers_dividing</span> <span class="o">:</span> <span class="n">nat</span> <span class="bp">→</span> <span class="bp">Π</span> <span class="o">(</span><span class="n">p</span> <span class="o">:</span> <span class="n">nat</span><span class="o">)</span> <span class="o">[</span><span class="n">nat</span><span class="bp">.</span><span class="n">prime</span> <span class="n">p</span><span class="o">],</span> <span class="n">finset</span> <span class="n">nat</span>
+<span class="bp">|</span> <span class="n">n</span> <span class="n">p</span> <span class="n">is_prime</span> <span class="o">:=</span> <span class="k">have</span> <span class="n">n</span> <span class="bp">/</span> <span class="n">p</span> <span class="bp">&lt;</span> <span class="n">n</span><span class="o">,</span> <span class="k">from</span> <span class="n">sorry</span><span class="o">,</span>
+  <span class="k">if</span> <span class="n">p</span> <span class="err">∣</span> <span class="n">n</span> <span class="k">then</span>
+    <span class="n">insert</span> <span class="mi">1</span> <span class="o">(</span><span class="n">finset</span><span class="bp">.</span><span class="n">map</span> <span class="o">(</span><span class="n">times_p</span> <span class="n">p</span> <span class="o">(</span><span class="n">nat</span><span class="bp">.</span><span class="n">prime</span><span class="bp">.</span><span class="n">pos</span> <span class="n">is_prime</span><span class="o">))</span> <span class="o">(</span><span class="n">powers_dividing</span> <span class="o">(</span><span class="n">n</span> <span class="bp">/</span> <span class="n">p</span><span class="o">)</span> <span class="n">p</span> <span class="n">is_prime</span><span class="o">))</span>
+  <span class="k">else</span>
+    <span class="n">finset</span><span class="bp">.</span><span class="n">singleton</span> <span class="mi">1</span>
+</code></pre></div>
+
+
+<p>But Lean fails at the recursive call to <code>powers_dividing</code> to synthesise the type class instance that results in <code>nat.prime p</code>, even though it's right there in scope, it's <code>is_prime</code>. Can I tell it any harder to use <code>is_prime</code>?</p>
+
+
+
+<a name="197186916"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113489-new%20members/topic/Failed%20to%20synthesize%20type%20class%20instance/near/197186916" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Patrick Stevens <a href="https://leanprover-community.github.io/archive/stream/113489-new-members/topic/Failed.20to.20synthesize.20type.20class.20instance.html#197186916">(May 11 2020 at 18:40)</a>:</h4>
+<p>Actually now I type this, I realise I can probably look at the Sylow theorems to find something like this</p>
+
+
+
+<a name="197187179"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113489-new%20members/topic/Failed%20to%20synthesize%20type%20class%20instance/near/197187179" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Reid Barton <a href="https://leanprover-community.github.io/archive/stream/113489-new-members/topic/Failed.20to.20synthesize.20type.20class.20instance.html#197187179">(May 11 2020 at 18:42)</a>:</h4>
+<p><span class="user-mention silent" data-user-id="117987">Patrick Stevens</span> <a href="#narrow/stream/113489-new-members/topic/Failed.20to.20synthesize.20type.20class.20instance/near/197186829">said</a>:</p>
+<blockquote>
+<p>Can I tell it any harder to use <code>is_prime</code>?</p>
+</blockquote>
+<p>Yes, several ways</p>
+
+
+
+<a name="197187270"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113489-new%20members/topic/Failed%20to%20synthesize%20type%20class%20instance/near/197187270" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Reid Barton <a href="https://leanprover-community.github.io/archive/stream/113489-new-members/topic/Failed.20to.20synthesize.20type.20class.20instance.html#197187270">(May 11 2020 at 18:43)</a>:</h4>
+<p>But the easiest is to move the <code>(p) [nat.prime p]</code> left of the colon</p>
+
+
+
+<a name="197187284"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113489-new%20members/topic/Failed%20to%20synthesize%20type%20class%20instance/near/197187284" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Reid Barton <a href="https://leanprover-community.github.io/archive/stream/113489-new-members/topic/Failed.20to.20synthesize.20type.20class.20instance.html#197187284">(May 11 2020 at 18:43)</a>:</h4>
+<p>since it doesn't seem to be changing anyways</p>
+
+
+
+<a name="197187411"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113489-new%20members/topic/Failed%20to%20synthesize%20type%20class%20instance/near/197187411" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Kevin Buzzard <a href="https://leanprover-community.github.io/archive/stream/113489-new-members/topic/Failed.20to.20synthesize.20type.20class.20instance.html#197187411">(May 11 2020 at 18:44)</a>:</h4>
+<p>Stuff like <code>[nat.prime p]</code> to the right of the colon is not added to the typeclass database.</p>
+
+
+
+<a name="197187476"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113489-new%20members/topic/Failed%20to%20synthesize%20type%20class%20instance/near/197187476" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Reid Barton <a href="https://leanprover-community.github.io/archive/stream/113489-new-members/topic/Failed.20to.20synthesize.20type.20class.20instance.html#197187476">(May 11 2020 at 18:45)</a>:</h4>
+<p>The <code>[]</code> only affects how somebody calls your function and not what is available for instance search.</p>
+
+
+
+<a name="197187512"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113489-new%20members/topic/Failed%20to%20synthesize%20type%20class%20instance/near/197187512" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Patrick Stevens <a href="https://leanprover-community.github.io/archive/stream/113489-new-members/topic/Failed.20to.20synthesize.20type.20class.20instance.html#197187512">(May 11 2020 at 18:45)</a>:</h4>
+<p>Ah, of course - thanks</p>
+
+
+
+<a name="197187518"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113489-new%20members/topic/Failed%20to%20synthesize%20type%20class%20instance/near/197187518" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Kevin Buzzard <a href="https://leanprover-community.github.io/archive/stream/113489-new-members/topic/Failed.20to.20synthesize.20type.20class.20instance.html#197187518">(May 11 2020 at 18:45)</a>:</h4>
+<p><code>def powers_dividing (n : nat) (p : nat) [nat.prime p] : finset nat := ...</code></p>
+
+
+
+<a name="197187627"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113489-new%20members/topic/Failed%20to%20synthesize%20type%20class%20instance/near/197187627" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Patrick Stevens <a href="https://leanprover-community.github.io/archive/stream/113489-new-members/topic/Failed.20to.20synthesize.20type.20class.20instance.html#197187627">(May 11 2020 at 18:46)</a>:</h4>
+<p>In this case I do need things on the right of the colon, because I need to recurse, I think - but I can certainly move the prime bits over</p>
+
+
+
+<a name="197187663"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113489-new%20members/topic/Failed%20to%20synthesize%20type%20class%20instance/near/197187663" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Reid Barton <a href="https://leanprover-community.github.io/archive/stream/113489-new-members/topic/Failed.20to.20synthesize.20type.20class.20instance.html#197187663">(May 11 2020 at 18:46)</a>:</h4>
+<p>If you're really committed to this order of function arguments, then there are other options</p>
+
+
+
+<a name="197187723"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113489-new%20members/topic/Failed%20to%20synthesize%20type%20class%20instance/near/197187723" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Patrick Stevens <a href="https://leanprover-community.github.io/archive/stream/113489-new-members/topic/Failed.20to.20synthesize.20type.20class.20instance.html#197187723">(May 11 2020 at 18:46)</a>:</h4>
+<p>My next question was "suppose I do need to change <code>p</code> as I go, what do I do then", which  comes under the same banner</p>
+
+
+
+<a name="197187746"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113489-new%20members/topic/Failed%20to%20synthesize%20type%20class%20instance/near/197187746" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Kevin Buzzard <a href="https://leanprover-community.github.io/archive/stream/113489-new-members/topic/Failed.20to.20synthesize.20type.20class.20instance.html#197187746">(May 11 2020 at 18:47)</a>:</h4>
+<p>You can use <code>letI</code> and <code>haveI</code>  to register instances</p>
+
+
+
+<a name="197187755"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113489-new%20members/topic/Failed%20to%20synthesize%20type%20class%20instance/near/197187755" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Patrick Stevens <a href="https://leanprover-community.github.io/archive/stream/113489-new-members/topic/Failed.20to.20synthesize.20type.20class.20instance.html#197187755">(May 11 2020 at 18:47)</a>:</h4>
+<p>But <code>def powers_dividing (p : nat) [is_prime : nat.prime p] : nat → finset nat</code> is perfect for my current function</p>
+
+
+
+<a name="197187760"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113489-new%20members/topic/Failed%20to%20synthesize%20type%20class%20instance/near/197187760" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Reid Barton <a href="https://leanprover-community.github.io/archive/stream/113489-new-members/topic/Failed.20to.20synthesize.20type.20class.20instance.html#197187760">(May 11 2020 at 18:47)</a>:</h4>
+<p><code>by exactI</code> is one (this will make all local variables available as instances), otherwise <code>@</code> can help you out</p>
+
+
+
+<a name="197187775"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113489-new%20members/topic/Failed%20to%20synthesize%20type%20class%20instance/near/197187775" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Patrick Stevens <a href="https://leanprover-community.github.io/archive/stream/113489-new-members/topic/Failed.20to.20synthesize.20type.20class.20instance.html#197187775">(May 11 2020 at 18:47)</a>:</h4>
+<p>Thanks!</p>
+
+
+
+<a name="197187925"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113489-new%20members/topic/Failed%20to%20synthesize%20type%20class%20instance/near/197187925" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Reid Barton <a href="https://leanprover-community.github.io/archive/stream/113489-new-members/topic/Failed.20to.20synthesize.20type.20class.20instance.html#197187925">(May 11 2020 at 18:48)</a>:</h4>
+<p>I assume <code>@</code> also works with recursive calls although I'm not sure I ever tried it.</p>
+
+
+
+{% endraw %}
+
+<hr><p>Last updated: May 11 2020 at 19:11 UTC</p>

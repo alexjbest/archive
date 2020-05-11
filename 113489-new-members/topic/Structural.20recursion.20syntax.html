@@ -107,6 +107,85 @@ permalink: /stream/113489-new-members/topic/Structural.20recursion.20syntax.html
 
 
 
+<a name="197184151"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113489-new%20members/topic/Structural%20recursion%20syntax/near/197184151" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Chris Hughes <a href="https://leanprover-community.github.io/archive/stream/113489-new-members/topic/Structural.20recursion.20syntax.html#197184151">(May 11 2020 at 18:15)</a>:</h4>
+<div class="codehilite"><pre><span></span><code><span class="n">def</span> <span class="kn">eval</span> <span class="o">:</span> <span class="n">nat</span> <span class="bp">-&gt;</span> <span class="bp">Π</span> <span class="o">(</span><span class="n">p</span> <span class="o">:</span> <span class="n">nat</span><span class="o">)</span> <span class="o">[</span><span class="n">prime</span> <span class="n">p</span><span class="o">],</span> <span class="n">nat</span>
+</code></pre></div>
+
+
+
+<a name="197184505"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113489-new%20members/topic/Structural%20recursion%20syntax/near/197184505" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Patrick Stevens <a href="https://leanprover-community.github.io/archive/stream/113489-new-members/topic/Structural.20recursion.20syntax.html#197184505">(May 11 2020 at 18:18)</a>:</h4>
+<p>It did take me a while to discover that that was \p and not \prod</p>
+
+
+
+<a name="197184526"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113489-new%20members/topic/Structural%20recursion%20syntax/near/197184526" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Patrick Stevens <a href="https://leanprover-community.github.io/archive/stream/113489-new-members/topic/Structural.20recursion.20syntax.html#197184526">(May 11 2020 at 18:18)</a>:</h4>
+<p>But I got there in the end, thanks</p>
+
+
+
+<a name="197184842"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113489-new%20members/topic/Structural%20recursion%20syntax/near/197184842" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Kevin Buzzard <a href="https://leanprover-community.github.io/archive/stream/113489-new-members/topic/Structural.20recursion.20syntax.html#197184842">(May 11 2020 at 18:21)</a>:</h4>
+<p>I think that pi is what distinguishes us from Isabelle/HOL.</p>
+
+
+
+<a name="197185412"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113489-new%20members/topic/Structural%20recursion%20syntax/near/197185412" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Patrick Stevens <a href="https://leanprover-community.github.io/archive/stream/113489-new-members/topic/Structural.20recursion.20syntax.html#197185412">(May 11 2020 at 18:26)</a>:</h4>
+<p>Yeah, I'm not at all used to it from Agda which just elides all of this into the same function syntax</p>
+
+
+
+<a name="197185523"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113489-new%20members/topic/Structural%20recursion%20syntax/near/197185523" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Kevin Buzzard <a href="https://leanprover-community.github.io/archive/stream/113489-new-members/topic/Structural.20recursion.20syntax.html#197185523">(May 11 2020 at 18:27)</a>:</h4>
+<p>Oh so "explicit" pi types are not in Agda and you'd have to make a structure and then define a function from it?</p>
+
+
+
+<a name="197185634"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113489-new%20members/topic/Structural%20recursion%20syntax/near/197185634" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Kevin Buzzard <a href="https://leanprover-community.github.io/archive/stream/113489-new-members/topic/Structural.20recursion.20syntax.html#197185634">(May 11 2020 at 18:28)</a>:</h4>
+<p><code>eval</code> can just be treated as a function here, you can partially apply it and everything.</p>
+
+
+
+<a name="197185673"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113489-new%20members/topic/Structural%20recursion%20syntax/near/197185673" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Kevin Buzzard <a href="https://leanprover-community.github.io/archive/stream/113489-new-members/topic/Structural.20recursion.20syntax.html#197185673">(May 11 2020 at 18:29)</a>:</h4>
+<p>Oh! You're just saying that the syntax is different?</p>
+
+
+
+<a name="197185706"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113489-new%20members/topic/Structural%20recursion%20syntax/near/197185706" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Reid Barton <a href="https://leanprover-community.github.io/archive/stream/113489-new-members/topic/Structural.20recursion.20syntax.html#197185706">(May 11 2020 at 18:29)</a>:</h4>
+<p>The Agda syntax is like what <span class="user-mention" data-user-id="117987">@Patrick Stevens</span> wrote in the question</p>
+
+
+
+<a name="197185852"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113489-new%20members/topic/Structural%20recursion%20syntax/near/197185852" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Patrick Stevens <a href="https://leanprover-community.github.io/archive/stream/113489-new-members/topic/Structural.20recursion.20syntax.html#197185852">(May 11 2020 at 18:30)</a>:</h4>
+<p>Yeah, I just need to get used to the existence of a separate equation compiler</p>
+
+
+
+<a name="197185921"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113489-new%20members/topic/Structural%20recursion%20syntax/near/197185921" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Reid Barton <a href="https://leanprover-community.github.io/archive/stream/113489-new-members/topic/Structural.20recursion.20syntax.html#197185921">(May 11 2020 at 18:31)</a>:</h4>
+<p>well, the question is really mostly about the syntax of Pi-types</p>
+
+
+
+<a name="197185930"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113489-new%20members/topic/Structural%20recursion%20syntax/near/197185930" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Reid Barton <a href="https://leanprover-community.github.io/archive/stream/113489-new-members/topic/Structural.20recursion.20syntax.html#197185930">(May 11 2020 at 18:31)</a>:</h4>
+<p>In Lean we use a Pi <span aria-label="upside down" class="emoji emoji-1f643" role="img" title="upside down">:upside_down:</span></p>
+
+
+
+<a name="197185986"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113489-new%20members/topic/Structural%20recursion%20syntax/near/197185986" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Reid Barton <a href="https://leanprover-community.github.io/archive/stream/113489-new-members/topic/Structural.20recursion.20syntax.html#197185986">(May 11 2020 at 18:32)</a>:</h4>
+<p>but the Agda syntax seems less annoying honestly</p>
+
+
+
 {% endraw %}
 
-<hr><p>Last updated: May 11 2020 at 18:12 UTC</p>
+<hr><p>Last updated: May 11 2020 at 19:11 UTC</p>
