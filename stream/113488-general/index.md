@@ -9,8 +9,9 @@ permalink: /stream/113488-general/index.html
 
 ### Topics:
 
-* [New website](topic/New.20website.html) (4 messages, latest: May 11 2020 at 13:59)
-* [pow_(left\|right)_inj(ective)](topic/pow_(left.7Cright)_inj(ective).html) (27 messages, latest: May 11 2020 at 13:53)
+* [pow_(left\|right)_inj(ective)](topic/pow_(left.7Cright)_inj(ective).html) (30 messages, latest: May 11 2020 at 15:08)
+* [new Lean / mathlib tutorial](topic/new.20Lean.20.2F.20mathlib.20tutorial.html) (7 messages, latest: May 11 2020 at 15:07)
+* [New website](topic/New.20website.html) (28 messages, latest: May 11 2020 at 14:59)
 * [Create a mathlib branch that builds with Lean master?](topic/Create.20a.20mathlib.20branch.20that.20builds.20with.20Lean.20master.3F.html) (7 messages, latest: May 11 2020 at 13:16)
 * [well_founded_tactics](topic/well_founded_tactics.html) (7 messages, latest: May 11 2020 at 12:57)
 * [Lean in the wild](topic/Lean.20in.20the.20wild.html) (467 messages, latest: May 11 2020 at 11:57)
@@ -32,7 +33,6 @@ permalink: /stream/113488-general/index.html
 * [rw_mod_hom](topic/rw_mod_hom.html) (12 messages, latest: May 10 2020 at 01:51)
 * [Declarative Lean](topic/Declarative.20Lean.html) (81 messages, latest: May 09 2020 at 15:39)
 * [calculate](topic/calculate.html) (102 messages, latest: May 09 2020 at 14:43)
-* [new Lean / mathlib tutorial](topic/new.20Lean.20.2F.20mathlib.20tutorial.html) (3 messages, latest: May 09 2020 at 14:33)
 * [Linarith unexpected failure](topic/Linarith.20unexpected.20failure.html) (30 messages, latest: May 09 2020 at 14:06)
 * [leanproject up?](topic/leanproject.20up.3F.html) (14 messages, latest: May 09 2020 at 12:50)
 * [nonlinear linarith](topic/nonlinear.20linarith.html) (29 messages, latest: May 09 2020 at 12:45)
@@ -2809,4 +2809,4 @@ permalink: /stream/113488-general/index.html
 * [test](topic/test.html) (4 messages, latest: Feb 26 2018 at 16:22)
 * [welcome](topic/welcome.html) (1 message, latest: Feb 26 2018 at 16:02)
 
-<hr><p>Last updated: May 11 2020 at 14:08 UTC</p>
+<hr><p>Last updated: May 11 2020 at 15:11 UTC</p>

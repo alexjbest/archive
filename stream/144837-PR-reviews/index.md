@@ -9,6 +9,7 @@ permalink: /stream/144837-PR-reviews/index.html
 
 ### Topics:
 
+* [lean#227 pretty-print using dot notation](topic/lean.23227.20pretty-print.20using.20dot.20notation.html) (16 messages, latest: May 11 2020 at 14:28)
 * [lean#216 dot notation](topic/lean.23216.20dot.20notation.html) (18 messages, latest: May 11 2020 at 13:15)
 * [#2589 norm_num](topic/.232589.20norm_num.html) (67 messages, latest: May 09 2020 at 21:00)
 * [#2609 reflections](topic/.232609.20reflections.html) (4 messages, latest: May 07 2020 at 16:32)
@@ -250,4 +251,4 @@ permalink: /stream/144837-PR-reviews/index.html
 * [documentation PRs](topic/documentation.20PRs.html) (2 messages, latest: Oct 07 2018 at 11:21)
 * [hello](topic/hello.html) (1 message, latest: Oct 07 2018 at 10:24)
 
-<hr><p>Last updated: May 11 2020 at 14:08 UTC</p>
+<hr><p>Last updated: May 11 2020 at 15:11 UTC</p>
