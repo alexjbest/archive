@@ -38,10 +38,12 @@ permalink: /index.html
 
 * [Big Proof 2019](stream/198800-Big-Proof-2019/index.html) (3 topics)
 
+* [Codewars](stream/238266-Codewars/index.html) (2 topics)
+
 * [Program verification](stream/236449-Program-verification/index.html) (2 topics)
 
 * [Type theory](stream/236446-Type-theory/index.html) (2 topics)
 
 * [Xena Summer Projects](stream/237759-Xena-Summer-Projects/index.html) (2 topics)
 
-<hr><p>Last updated: May 11 2020 at 00:10 UTC</p>
+<hr><p>Last updated: May 11 2020 at 01:09 UTC</p>

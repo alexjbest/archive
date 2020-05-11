@@ -9,9 +9,9 @@ permalink: /stream/113489-new-members/index.html
 
 ### Topics:
 
-* [more basics](topic/more.20basics.html) (472 messages, latest: May 11 2020 at 00:07)
+* [noob question(s)](topic/noob.20question(s).html) (5597 messages, latest: May 11 2020 at 00:21)
+* [more basics](topic/more.20basics.html) (475 messages, latest: May 11 2020 at 00:12)
 * [an element of set (set unit)](topic/an.20element.20of.20set.20(set.20unit).html) (39 messages, latest: May 11 2020 at 00:04)
-* [noob question(s)](topic/noob.20question(s).html) (5594 messages, latest: May 10 2020 at 23:55)
 * [(no topic)](topic/(no.20topic).html) (50 messages, latest: May 10 2020 at 23:45)
 * [Having trouble applying lemma due to metavariable](topic/Having.20trouble.20applying.20lemma.20due.20to.20metavariable.html) (6 messages, latest: May 10 2020 at 21:44)
 * [do tactics change?](topic/do.20tactics.20change.3F.html) (28 messages, latest: May 10 2020 at 20:19)
@@ -1043,4 +1043,4 @@ permalink: /stream/113489-new-members/index.html
 * [Andrew Ashworth](topic/Andrew.20Ashworth.html) (15 messages, latest: Feb 26 2018 at 16:21)
 * [onboarding](topic/onboarding.html) (1 message, latest: Feb 26 2018 at 16:02)
 
-<hr><p>Last updated: May 11 2020 at 00:10 UTC</p>
+<hr><p>Last updated: May 11 2020 at 01:09 UTC</p>
