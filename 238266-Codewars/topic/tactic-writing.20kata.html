@@ -46,6 +46,21 @@ works too, but I'd be fine with that.</p>
 
 
 
+<a name="197100673"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/238266-Codewars/topic/tactic-writing%20kata/near/197100673" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Donald Sebastian Leung <a href="https://leanprover-community.github.io/archive/stream/238266-Codewars/topic/tactic-writing.20kata.html#197100673">(May 11 2020 at 05:08)</a>:</h4>
+<blockquote>
+<p>and the test cases would look like<br>
+</p>
+</blockquote>
+<div class="codehilite"><pre><span></span><code><span class="kn">example</span> <span class="o">:</span> <span class="n">test_prop1</span> <span class="o">:=</span> <span class="k">by</span> <span class="n">submission_tactic</span>
+<span class="kn">example</span> <span class="o">:</span> <span class="n">test_prop2</span> <span class="o">:=</span> <span class="k">by</span> <span class="n">submission_tactic</span>
+</code></pre></div>
+
+
+<p>Keep in mind to check the generated proofs for sorries and forbidden axioms; otherwise, I would imagine that one could just define their tactic to use <code>sorry</code> and pass all the tests.</p>
+
+
+
 {% endraw %}
 
-<hr><p>Last updated: May 11 2020 at 04:09 UTC</p>
+<hr><p>Last updated: May 11 2020 at 05:12 UTC</p>

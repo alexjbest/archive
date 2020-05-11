@@ -27,6 +27,91 @@ permalink: /stream/144837-PR-reviews/topic/lean.23216.20dot.20notation.html
 
 
 
+<a name="197098057"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/144837-PR%20reviews/topic/lean%23216%20dot%20notation/near/197098057" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Johan Commelin <a href="https://leanprover-community.github.io/archive/stream/144837-PR-reviews/topic/lean.23216.20dot.20notation.html#197098057">(May 11 2020 at 04:10)</a>:</h4>
+<p>I am willing to take this on. But I will probably need some help (-;</p>
+
+
+
+<a name="197098237"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/144837-PR%20reviews/topic/lean%23216%20dot%20notation/near/197098237" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Johan Commelin <a href="https://leanprover-community.github.io/archive/stream/144837-PR-reviews/topic/lean.23216.20dot.20notation.html#197098237">(May 11 2020 at 04:16)</a>:</h4>
+<p>When I'm compiling the core library, how do I tell it to use my custom compiled lean?</p>
+
+
+
+<a name="197098239"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/144837-PR%20reviews/topic/lean%23216%20dot%20notation/near/197098239" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Johan Commelin <a href="https://leanprover-community.github.io/archive/stream/144837-PR-reviews/topic/lean.23216.20dot.20notation.html#197098239">(May 11 2020 at 04:16)</a>:</h4>
+<p>I always forget the <code>elan</code> incantation. And <code>elan help</code> isn't telling me what to do <span aria-label="sad" class="emoji emoji-2639" role="img" title="sad">:sad:</span></p>
+
+
+
+<a name="197098690"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/144837-PR%20reviews/topic/lean%23216%20dot%20notation/near/197098690" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Johan Commelin <a href="https://leanprover-community.github.io/archive/stream/144837-PR-reviews/topic/lean.23216.20dot.20notation.html#197098690">(May 11 2020 at 04:24)</a>:</h4>
+<p>My proposal is to move <code>library/init/algebra/</code> out of core, and into <code>init/algebra</code> in mathlib. (In follow-up PRs, we can merge <code>init/algebra/*</code> into the rest of mathlib in proper places.)</p>
+
+
+
+<a name="197100115"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/144837-PR%20reviews/topic/lean%23216%20dot%20notation/near/197100115" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Bryan Gin-ge Chen <a href="https://leanprover-community.github.io/archive/stream/144837-PR-reviews/topic/lean.23216.20dot.20notation.html#197100115">(May 11 2020 at 04:52)</a>:</h4>
+<p><span class="user-mention" data-user-id="112680">@Johan Commelin</span> did <a href="#narrow/stream/144837-PR-reviews/topic/lean.23211.20don't.20unfold.20irred.20defs/near/196194753" title="#narrow/stream/144837-PR-reviews/topic/lean.23211.20don't.20unfold.20irred.20defs/near/196194753">this suggestion</a> help, or are you trying to do something else?</p>
+
+
+
+<a name="197100186"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/144837-PR%20reviews/topic/lean%23216%20dot%20notation/near/197100186" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Johan Commelin <a href="https://leanprover-community.github.io/archive/stream/144837-PR-reviews/topic/lean.23216.20dot.20notation.html#197100186">(May 11 2020 at 04:54)</a>:</h4>
+<p><span class="user-mention" data-user-id="123965">@Bryan Gin-ge Chen</span> aah, does that also work when you are modifying core? I should of course have tried.</p>
+
+
+
+<a name="197100194"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/144837-PR%20reviews/topic/lean%23216%20dot%20notation/near/197100194" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Bryan Gin-ge Chen <a href="https://leanprover-community.github.io/archive/stream/144837-PR-reviews/topic/lean.23216.20dot.20notation.html#197100194">(May 11 2020 at 04:54)</a>:</h4>
+<p>Yes, that's my primary use case for it.</p>
+
+
+
+<a name="197100204"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/144837-PR%20reviews/topic/lean%23216%20dot%20notation/near/197100204" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Johan Commelin <a href="https://leanprover-community.github.io/archive/stream/144837-PR-reviews/topic/lean.23216.20dot.20notation.html#197100204">(May 11 2020 at 04:55)</a>:</h4>
+<p><code>error: invalid custom toolchain name: 'local2'</code></p>
+
+
+
+<a name="197100207"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/144837-PR%20reviews/topic/lean%23216%20dot%20notation/near/197100207" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Johan Commelin <a href="https://leanprover-community.github.io/archive/stream/144837-PR-reviews/topic/lean.23216.20dot.20notation.html#197100207">(May 11 2020 at 04:55)</a>:</h4>
+<p>I'm running this from the root of the core git repo.</p>
+
+
+
+<a name="197100209"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/144837-PR%20reviews/topic/lean%23216%20dot%20notation/near/197100209" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Johan Commelin <a href="https://leanprover-community.github.io/archive/stream/144837-PR-reviews/topic/lean.23216.20dot.20notation.html#197100209">(May 11 2020 at 04:55)</a>:</h4>
+<p><code>elan toolchain link local2 .</code></p>
+
+
+
+<a name="197100328"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/144837-PR%20reviews/topic/lean%23216%20dot%20notation/near/197100328" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Bryan Gin-ge Chen <a href="https://leanprover-community.github.io/archive/stream/144837-PR-reviews/topic/lean.23216.20dot.20notation.html#197100328">(May 11 2020 at 04:58)</a>:</h4>
+<p>Uh oh.</p>
+<blockquote>
+<p>Any name is permitted as long as it does not fully match an initial<br>
+    substring of a standard release channel. For example, you can use<br>
+    the names 'latest' or '2018-04-01' but you cannot use 'stable' or<br>
+    'nightly'.</p>
+</blockquote>
+<p>I wonder if this is conflicting with <a href="https://github.com/Kha/elan/commit/ab556e229cd5e690cdb74cc5fab70721810e774c" title="https://github.com/Kha/elan/commit/ab556e229cd5e690cdb74cc5fab70721810e774c">the recent change to <code>elan</code></a> which allows arbitrary release names..</p>
+
+
+
+<a name="197100332"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/144837-PR%20reviews/topic/lean%23216%20dot%20notation/near/197100332" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Bryan Gin-ge Chen <a href="https://leanprover-community.github.io/archive/stream/144837-PR-reviews/topic/lean.23216.20dot.20notation.html#197100332">(May 11 2020 at 04:59)</a>:</h4>
+<p><span class="user-mention" data-user-id="110024">@Sebastian Ullrich</span></p>
+
+
+
+<a name="197100537"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/144837-PR%20reviews/topic/lean%23216%20dot%20notation/near/197100537" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Bryan Gin-ge Chen <a href="https://leanprover-community.github.io/archive/stream/144837-PR-reviews/topic/lean.23216.20dot.20notation.html#197100537">(May 11 2020 at 05:05)</a>:</h4>
+<p>I think <code>elan toolchain link</code> just creates a symlink inside your <code>~/.elan/toolchains</code> directory to the directory you specify.</p>
+
+
+
 {% endraw %}
 
-<hr><p>Last updated: May 11 2020 at 04:09 UTC</p>
+<hr><p>Last updated: May 11 2020 at 05:12 UTC</p>
