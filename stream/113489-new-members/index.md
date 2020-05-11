@@ -9,9 +9,9 @@ permalink: /stream/113489-new-members/index.html
 
 ### Topics:
 
+* [noob question(s)](topic/noob.20question(s).html) (5602 messages, latest: May 11 2020 at 12:12)
 * [How does eq.refl work?](topic/How.20does.20eq.2Erefl.20work.3F.html) (10 messages, latest: May 11 2020 at 11:44)
 * [(no topic)](topic/(no.20topic).html) (51 messages, latest: May 11 2020 at 11:44)
-* [noob question(s)](topic/noob.20question(s).html) (5601 messages, latest: May 11 2020 at 11:35)
 * [more basics](topic/more.20basics.html) (494 messages, latest: May 11 2020 at 08:31)
 * [leanproject and branches](topic/leanproject.20and.20branches.html) (14 messages, latest: May 11 2020 at 07:16)
 * [hitchhiker's guide](topic/hitchhiker's.20guide.html) (18 messages, latest: May 11 2020 at 04:08)
@@ -1045,4 +1045,4 @@ permalink: /stream/113489-new-members/index.html
 * [Andrew Ashworth](topic/Andrew.20Ashworth.html) (15 messages, latest: Feb 26 2018 at 16:21)
 * [onboarding](topic/onboarding.html) (1 message, latest: Feb 26 2018 at 16:02)
 
-<hr><p>Last updated: May 11 2020 at 12:08 UTC</p>
+<hr><p>Last updated: May 11 2020 at 13:09 UTC</p>

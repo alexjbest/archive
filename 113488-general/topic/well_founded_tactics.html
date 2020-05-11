@@ -1,0 +1,72 @@
+---
+layout: archive
+title: Zulip Chat Archive
+permalink: /stream/113488-general/topic/well_founded_tactics.html
+---
+
+<h2>Stream: <a href="https://leanprover-community.github.io/archive/stream/113488-general/index.html">general</a></h2>
+<h3>Topic: <a href="https://leanprover-community.github.io/archive/stream/113488-general/topic/well_founded_tactics.html">well_founded_tactics</a></h3>
+
+<hr>
+
+<base href="https://leanprover.zulipchat.com/">
+
+<head><link href="/style.css" rel="stylesheet"></head>
+
+{% raw %}
+
+<a name="197140378"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113488-general/topic/well_founded_tactics/near/197140378" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Johan Commelin <a href="https://leanprover-community.github.io/archive/stream/113488-general/topic/well_founded_tactics.html#197140378">(May 11 2020 at 12:52)</a>:</h4>
+<p><span class="user-mention" data-user-id="110049">@Mario Carneiro</span> Do you mean something like this?</p>
+<div class="codehilite"><pre><span></span><code><span class="n">meta</span> <span class="kn">structure</span> <span class="n">well_founded_tactics</span> <span class="o">:=</span>
+<span class="o">(</span><span class="n">rel_tac</span> <span class="o">:</span> <span class="n">expr</span> <span class="bp">→</span> <span class="n">list</span> <span class="n">expr</span> <span class="bp">→</span> <span class="n">tactic</span> <span class="n">unit</span> <span class="o">:=</span> <span class="bp">λ</span> <span class="bp">_</span> <span class="bp">_</span><span class="o">,</span> <span class="n">tactic</span><span class="bp">.</span><span class="n">apply_instance</span><span class="o">)</span>
+<span class="o">(</span><span class="n">dec_tac</span> <span class="o">:</span> <span class="n">tactic</span> <span class="n">unit</span> <span class="o">:=</span> <span class="n">tactic</span><span class="bp">.</span><span class="n">assumption</span><span class="o">)</span>
+</code></pre></div>
+
+
+
+<a name="197140444"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113488-general/topic/well_founded_tactics/near/197140444" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Johan Commelin <a href="https://leanprover-community.github.io/archive/stream/113488-general/topic/well_founded_tactics.html#197140444">(May 11 2020 at 12:53)</a>:</h4>
+<p>For some reason that breaks <code>gcd</code>, so I had to add the last line to</p>
+<div class="codehilite"><pre><span></span><code><span class="n">def</span> <span class="n">gcd</span> <span class="o">:</span> <span class="n">nat</span> <span class="bp">→</span> <span class="n">nat</span> <span class="bp">→</span> <span class="n">nat</span>
+<span class="bp">|</span> <span class="mi">0</span>        <span class="n">y</span> <span class="o">:=</span> <span class="n">y</span>
+<span class="bp">|</span> <span class="o">(</span><span class="n">succ</span> <span class="n">x</span><span class="o">)</span> <span class="n">y</span> <span class="o">:=</span> <span class="k">have</span> <span class="n">y</span> <span class="err">%</span> <span class="n">succ</span> <span class="n">x</span> <span class="bp">&lt;</span> <span class="n">succ</span> <span class="n">x</span><span class="o">,</span> <span class="k">from</span> <span class="n">mod_lt</span> <span class="bp">_</span> <span class="err">$</span> <span class="n">succ_pos</span> <span class="bp">_</span><span class="o">,</span>
+                <span class="n">gcd</span> <span class="o">(</span><span class="n">y</span> <span class="err">%</span> <span class="n">succ</span> <span class="n">x</span><span class="o">)</span> <span class="o">(</span><span class="n">succ</span> <span class="n">x</span><span class="o">)</span>
+<span class="n">using_well_founded</span> <span class="o">{</span> <span class="n">dec_tac</span> <span class="o">:=</span> <span class="n">well_founded_tactics</span><span class="bp">.</span><span class="n">default_dec_tac</span> <span class="o">}</span>
+</code></pre></div>
+
+
+
+<a name="197140489"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113488-general/topic/well_founded_tactics/near/197140489" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Johan Commelin <a href="https://leanprover-community.github.io/archive/stream/113488-general/topic/well_founded_tactics.html#197140489">(May 11 2020 at 12:53)</a>:</h4>
+<p>Which I find confusing, because the <code>have</code> clause is there. What more does the system want?</p>
+
+
+
+<a name="197140644"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113488-general/topic/well_founded_tactics/near/197140644" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Reid Barton <a href="https://leanprover-community.github.io/archive/stream/113488-general/topic/well_founded_tactics.html#197140644">(May 11 2020 at 12:55)</a>:</h4>
+<p>I have no idea what is going on but can I just object on principle to having something called <code>default_dec_tac</code> which is not in fact the default value for <code>dec_tac</code></p>
+
+
+
+<a name="197140693"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113488-general/topic/well_founded_tactics/near/197140693" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Reid Barton <a href="https://leanprover-community.github.io/archive/stream/113488-general/topic/well_founded_tactics.html#197140693">(May 11 2020 at 12:55)</a>:</h4>
+<p>I guess you would rename <code>default_dec_tac</code></p>
+
+
+
+<a name="197140794"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113488-general/topic/well_founded_tactics/near/197140794" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Johan Commelin <a href="https://leanprover-community.github.io/archive/stream/113488-general/topic/well_founded_tactics.html#197140794">(May 11 2020 at 12:56)</a>:</h4>
+<p>Sure... this is WIP</p>
+
+
+
+<a name="197140849"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113488-general/topic/well_founded_tactics/near/197140849" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Johan Commelin <a href="https://leanprover-community.github.io/archive/stream/113488-general/topic/well_founded_tactics.html#197140849">(May 11 2020 at 12:57)</a>:</h4>
+<p><span class="user-mention" data-user-id="110049">@Mario Carneiro</span> I think the <code>def_replacer</code> approach is better. But can that be done in <code>core</code>?</p>
+
+
+
+{% endraw %}
+
+<hr><p>Last updated: May 11 2020 at 13:09 UTC</p>
