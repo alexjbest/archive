@@ -9,10 +9,10 @@ permalink: /stream/116395-maths/index.html
 
 ### Topics:
 
+* [Bounded continuous functions](topic/Bounded.20continuous.20functions.html) (20 messages, latest: May 11 2020 at 17:01)
 * [Quotients & synthesizing](topic/Quotients.20.26.20synthesizing.html) (97 messages, latest: May 10 2020 at 22:32)
 * [quotient by zero submodule](topic/quotient.20by.20zero.20submodule.html) (35 messages, latest: May 10 2020 at 16:55)
 * [Creating limits extends reflects limits?](topic/Creating.20limits.20extends.20reflects.20limits.3F.html) (1 message, latest: May 10 2020 at 16:52)
-* [Bounded continuous functions](topic/Bounded.20continuous.20functions.html) (14 messages, latest: May 10 2020 at 15:21)
 * [with_bot](topic/with_bot.html) (121 messages, latest: May 09 2020 at 22:06)
 * [golfing challenge](topic/golfing.20challenge.html) (60 messages, latest: May 09 2020 at 17:48)
 * [ring localization](topic/ring.20localization.html) (10 messages, latest: May 08 2020 at 09:34)
@@ -898,4 +898,4 @@ permalink: /stream/116395-maths/index.html
 * [free group](topic/free.20group.html) (92 messages, latest: Apr 02 2018 at 05:00)
 * [Easy topological space question](topic/Easy.20topological.20space.20question.html) (18 messages, latest: Apr 02 2018 at 01:23)
 
-<hr><p>Last updated: May 11 2020 at 16:10 UTC</p>
+<hr><p>Last updated: May 11 2020 at 17:06 UTC</p>

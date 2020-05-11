@@ -8,7 +8,7 @@ permalink: /index.html
 
 ## Streams:
 
-* [general](stream/113488-general/index.html) (2800 topics)
+* [general](stream/113488-general/index.html) (2801 topics)
 
 * [new members](stream/113489-new-members/index.html) (1037 topics)
 
@@ -34,11 +34,11 @@ permalink: /index.html
 
 * [Zulip meta](stream/236604-Zulip-meta/index.html) (6 topics)
 
+* [Codewars](stream/238266-Codewars/index.html) (4 topics)
+
 * [concrete semantics](stream/187724-concrete-semantics/index.html) (4 topics)
 
 * [Big Proof 2019](stream/198800-Big-Proof-2019/index.html) (3 topics)
-
-* [Codewars](stream/238266-Codewars/index.html) (3 topics)
 
 * [Program verification](stream/236449-Program-verification/index.html) (2 topics)
 
@@ -46,4 +46,4 @@ permalink: /index.html
 
 * [Xena Summer Projects](stream/237759-Xena-Summer-Projects/index.html) (2 topics)
 
-<hr><p>Last updated: May 11 2020 at 16:10 UTC</p>
+<hr><p>Last updated: May 11 2020 at 17:06 UTC</p>

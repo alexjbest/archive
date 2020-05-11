@@ -111,6 +111,56 @@ But to do that, they need to know a github username.</p>
 
 
 
+<a name="197170666"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/116395-maths/topic/Bounded%20continuous%20functions/near/197170666" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Heather Macbeth <a href="https://leanprover-community.github.io/archive/stream/116395-maths/topic/Bounded.20continuous.20functions.html#197170666">(May 11 2020 at 16:27)</a>:</h4>
+<p>Here is the new branch:<br>
+<a href="https://github.com/leanprover-community/mathlib/tree/bounded-continuous-functions">https://github.com/leanprover-community/mathlib/tree/bounded-continuous-functions</a><br>
+Comments on the code would be welcome, I know it is a real mess.</p>
+
+
+
+<a name="197174403"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/116395-maths/topic/Bounded%20continuous%20functions/near/197174403" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Johan Commelin <a href="https://leanprover-community.github.io/archive/stream/116395-maths/topic/Bounded.20continuous.20functions.html#197174403">(May 11 2020 at 16:56)</a>:</h4>
+<p><span class="user-mention" data-user-id="260507">@Heather Macbeth</span> At first glance this is already looking very good! Some minor stylistic issues, but nothing big, I think.</p>
+
+
+
+<a name="197174513"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/116395-maths/topic/Bounded%20continuous%20functions/near/197174513" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Johan Commelin <a href="https://leanprover-community.github.io/archive/stream/116395-maths/topic/Bounded.20continuous.20functions.html#197174513">(May 11 2020 at 16:57)</a>:</h4>
+<p>I suggest that you open a PR, and then we can give line by line comments.</p>
+
+
+
+<a name="197174673"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/116395-maths/topic/Bounded%20continuous%20functions/near/197174673" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Johan Commelin <a href="https://leanprover-community.github.io/archive/stream/116395-maths/topic/Bounded.20continuous.20functions.html#197174673">(May 11 2020 at 16:58)</a>:</h4>
+<p>Here is a small start:</p>
+<ul>
+<li>I think in mathlib we don't put spaces in the norm operator. So <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi mathvariant="normal">∥</mi><mi>x</mi><mi mathvariant="normal">∥</mi></mrow><annotation encoding="application/x-tex">\|x\|</annotation></semantics></math></span><span aria-hidden="true" class="katex-html"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord">∥</span><span class="mord mathdefault">x</span><span class="mord">∥</span></span></span></span> and not <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi mathvariant="normal">∥</mi><mtext> </mtext><mi>x</mi><mtext> </mtext><mi mathvariant="normal">∥</mi></mrow><annotation encoding="application/x-tex">\|\ x\ \|</annotation></semantics></math></span><span aria-hidden="true" class="katex-html"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord">∥</span><span class="mspace"> </span><span class="mord mathdefault">x</span><span class="mspace"> </span><span class="mord">∥</span></span></span></span>.</li>
+</ul>
+
+
+
+<a name="197174759"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/116395-maths/topic/Bounded%20continuous%20functions/near/197174759" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Johan Commelin <a href="https://leanprover-community.github.io/archive/stream/116395-maths/topic/Bounded.20continuous.20functions.html#197174759">(May 11 2020 at 16:59)</a>:</h4>
+<ul>
+<li>Idem dito for: <code>⟨ ... ⟩</code></li>
+</ul>
+
+
+
+<a name="197174929"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/116395-maths/topic/Bounded%20continuous%20functions/near/197174929" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Johan Commelin <a href="https://leanprover-community.github.io/archive/stream/116395-maths/topic/Bounded.20continuous.20functions.html#197174929">(May 11 2020 at 17:01)</a>:</h4>
+<p>And then, when you build an instance, and it's not a one-liner, the preferred style is</p>
+<div class="codehilite"><pre><span></span><code><span class="kn">instance</span> <span class="n">foobar</span> <span class="o">:</span> <span class="n">some_class</span> <span class="n">X</span> <span class="o">:=</span>
+<span class="o">{</span> <span class="n">field_name</span> <span class="o">:=</span> <span class="n">value</span><span class="o">,</span>
+  <span class="n">other_field</span> <span class="o">:=</span> <span class="n">quux</span> <span class="o">}</span>
+</code></pre></div>
+
+
+<p>instead of the anonymous <code>⟨ ... ⟩</code></p>
+
+
+
 {% endraw %}
 
-<hr><p>Last updated: May 11 2020 at 16:10 UTC</p>
+<hr><p>Last updated: May 11 2020 at 17:06 UTC</p>
