@@ -9,6 +9,7 @@ permalink: /stream/113489-new-members/index.html
 
 ### Topics:
 
+* [hitchhiker's guide](topic/hitchhiker's.20guide.html) (15 messages, latest: May 11 2020 at 01:50)
 * [noob question(s)](topic/noob.20question(s).html) (5597 messages, latest: May 11 2020 at 00:21)
 * [more basics](topic/more.20basics.html) (475 messages, latest: May 11 2020 at 00:12)
 * [an element of set (set unit)](topic/an.20element.20of.20set.20(set.20unit).html) (39 messages, latest: May 11 2020 at 00:04)
@@ -33,7 +34,6 @@ permalink: /stream/113489-new-members/index.html
 * [lean for coq users?](topic/lean.20for.20coq.20users.3F.html) (34 messages, latest: May 09 2020 at 04:34)
 * [Rewriting in assumption](topic/Rewriting.20in.20assumption.html) (19 messages, latest: May 09 2020 at 02:06)
 * [canonical answers to "what next after NNG"?](topic/canonical.20answers.20to.20.22what.20next.20after.20NNG.22.3F.html) (2 messages, latest: May 09 2020 at 00:24)
-* [hitchhiker's guide](topic/hitchhiker's.20guide.html) (11 messages, latest: May 08 2020 at 16:08)
 * [natural number game questions](topic/natural.20number.20game.20questions.html) (129 messages, latest: May 08 2020 at 09:17)
 * [Recursive function](topic/Recursive.20function.html) (12 messages, latest: May 07 2020 at 19:37)
 * [fun with pfun and dite](topic/fun.20with.20pfun.20and.20dite.html) (34 messages, latest: May 07 2020 at 17:23)
@@ -1043,4 +1043,4 @@ permalink: /stream/113489-new-members/index.html
 * [Andrew Ashworth](topic/Andrew.20Ashworth.html) (15 messages, latest: Feb 26 2018 at 16:21)
 * [onboarding](topic/onboarding.html) (1 message, latest: Feb 26 2018 at 16:02)
 
-<hr><p>Last updated: May 11 2020 at 01:09 UTC</p>
+<hr><p>Last updated: May 11 2020 at 02:11 UTC</p>

@@ -86,6 +86,37 @@ permalink: /stream/113489-new-members/topic/hitchhiker's.20guide.html
 
 
 
+<a name="197091538"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113489-new%20members/topic/hitchhiker%27s%20guide/near/197091538" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Nam <a href="https://leanprover-community.github.io/archive/stream/113489-new-members/topic/hitchhiker's.20guide.html#197091538">(May 11 2020 at 01:44)</a>:</h4>
+<div class="codehilite"><pre><span></span><code><span class="n">def</span> <span class="n">action</span> <span class="o">(</span><span class="n">σ</span> <span class="n">α</span> <span class="o">:</span> <span class="kt">Type</span><span class="o">)</span> <span class="o">:=</span> <span class="n">σ</span> <span class="bp">→</span> <span class="n">α</span> <span class="bp">×</span> <span class="n">σ</span>
+<span class="n">def</span> <span class="n">diff_list</span> <span class="o">:</span> <span class="n">list</span> <span class="n">N</span> <span class="bp">→</span> <span class="n">action</span> <span class="n">N</span> <span class="o">(</span><span class="n">list</span> <span class="n">N</span><span class="o">)</span>
+<span class="bp">#</span><span class="kn">eval</span> <span class="n">diff_list</span> <span class="o">[</span><span class="mi">1</span><span class="o">,</span> <span class="mi">2</span><span class="o">,</span> <span class="mi">3</span><span class="o">,</span> <span class="mi">2</span><span class="o">]</span> <span class="mi">0</span>
+</code></pre></div>
+
+
+<p>#. why is the body of the first <code>def</code>, erm, kinda weird? it is a function type.<br>
+#. <code>diff_list</code> has one argument, why do we call it with 2 (a list, and the initial state)? is this the first argument (\sigma) in <code>action</code>?</p>
+
+
+
+<a name="197091659"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113489-new%20members/topic/hitchhiker%27s%20guide/near/197091659" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Mario Carneiro <a href="https://leanprover-community.github.io/archive/stream/113489-new-members/topic/hitchhiker's.20guide.html#197091659">(May 11 2020 at 01:49)</a>:</h4>
+<p><code>action</code> is defining a type, which is a function type in this case</p>
+
+
+
+<a name="197091662"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113489-new%20members/topic/hitchhiker%27s%20guide/near/197091662" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Mario Carneiro <a href="https://leanprover-community.github.io/archive/stream/113489-new-members/topic/hitchhiker's.20guide.html#197091662">(May 11 2020 at 01:49)</a>:</h4>
+<p>the type of <code>action</code> is <code>action : Type -&gt; Type -&gt; Type</code></p>
+
+
+
+<a name="197091710"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113489-new%20members/topic/hitchhiker%27s%20guide/near/197091710" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Mario Carneiro <a href="https://leanprover-community.github.io/archive/stream/113489-new-members/topic/hitchhiker's.20guide.html#197091710">(May 11 2020 at 01:50)</a>:</h4>
+<p><code>diff_list</code> has one argument, but the result is an <code>action</code>, which is itself a function, expecting an argument of its own (the sigma, as you say)</p>
+
+
+
 {% endraw %}
 
-<hr><p>Last updated: May 11 2020 at 01:09 UTC</p>
+<hr><p>Last updated: May 11 2020 at 02:11 UTC</p>
