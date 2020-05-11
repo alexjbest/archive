@@ -4206,6 +4206,65 @@ this : ∀ (n m k : ℕ), n + (m + k) = m + (n + k)
 
 
 
+<a name="197108432"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113489-new%20members/topic/more%20basics/near/197108432" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Iocta <a href="https://leanprover-community.github.io/archive/stream/113489-new-members/topic/more.20basics.html#197108432">(May 11 2020 at 07:22)</a>:</h4>
+<p>ok</p>
+
+
+
+<a name="197108823"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113489-new%20members/topic/more%20basics/near/197108823" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Patrick Massot <a href="https://leanprover-community.github.io/archive/stream/113489-new-members/topic/more.20basics.html#197108823">(May 11 2020 at 07:25)</a>:</h4>
+<p>Either <code>from</code> or <code>by</code> is unnecessary</p>
+
+
+
+<a name="197108926"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113489-new%20members/topic/more%20basics/near/197108926" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Kenny Lau <a href="https://leanprover-community.github.io/archive/stream/113489-new-members/topic/more.20basics.html#197108926">(May 11 2020 at 07:27)</a>:</h4>
+<p>that's right, because <code>from</code> is unnecessary</p>
+
+
+
+<a name="197109258"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113489-new%20members/topic/more%20basics/near/197109258" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Patrick Massot <a href="https://leanprover-community.github.io/archive/stream/113489-new-members/topic/more.20basics.html#197109258">(May 11 2020 at 07:31)</a>:</h4>
+<p>Removing <code>from</code> and keeping <code>by</code> also works</p>
+
+
+
+<a name="197112719"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113489-new%20members/topic/more%20basics/near/197112719" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Carlo Cabrera <a href="https://leanprover-community.github.io/archive/stream/113489-new-members/topic/more.20basics.html#197112719">(May 11 2020 at 08:07)</a>:</h4>
+<p><span class="user-mention silent" data-user-id="252300">Jalex Stark</span> <a href="#narrow/stream/113489-new-members/topic/more.20basics/near/197087288">said</a>:</p>
+<blockquote>
+<p><span class="user-mention silent" data-user-id="300537">Carlo Cabrera</span> is this the proof you want?</p>
+<div class="codehilite"><pre><span></span><code><span class="kn">example</span> <span class="o">(</span><span class="n">P</span> <span class="n">Q</span> <span class="o">:</span> <span class="kt">Prop</span><span class="o">)</span>
+    <span class="o">(</span><span class="n">h₁</span> <span class="o">:</span> <span class="n">P</span> <span class="bp">→</span> <span class="n">Q</span><span class="o">)</span>
+    <span class="o">(</span><span class="n">h₂</span> <span class="o">:</span> <span class="n">Q</span> <span class="bp">→</span> <span class="bp">¬</span><span class="n">P</span><span class="o">)</span> <span class="o">:</span>
+    <span class="bp">¬</span><span class="n">P</span> <span class="o">:=</span>
+<span class="k">begin</span>
+<span class="n">intro</span> <span class="n">hp</span><span class="o">,</span>
+<span class="k">have</span> <span class="o">:=</span> <span class="o">(</span><span class="n">h₂</span> <span class="err">∘</span> <span class="n">h₁</span><span class="o">)</span> <span class="n">hp</span><span class="o">,</span>
+<span class="n">contradiction</span><span class="o">,</span>
+<span class="kn">end</span>
+</code></pre></div>
+
+
+</blockquote>
+<p><span class="user-mention" data-user-id="252300">@Jalex Stark</span>  Yes! That was what I had in mind. I don't know why I was using <code>by</code>, thanks for pointing that out. Would you say that this is the simplest approach to the example?</p>
+<p>Thanks for your comments too, <span class="user-mention" data-user-id="259857">@Dan Stanescu</span>. I learned something from you both here.</p>
+
+
+
+<a name="197113065"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113489-new%20members/topic/more%20basics/near/197113065" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Johan Commelin <a href="https://leanprover-community.github.io/archive/stream/113489-new-members/topic/more.20basics.html#197113065">(May 11 2020 at 08:11)</a>:</h4>
+<p><del> <code>by { exfalso, exact (h₂ ∘ h₁) id }</code>? </del></p>
+
+
+
+<a name="197113147"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113489-new%20members/topic/more%20basics/near/197113147" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Johan Commelin <a href="https://leanprover-community.github.io/archive/stream/113489-new-members/topic/more.20basics.html#197113147">(May 11 2020 at 08:12)</a>:</h4>
+<p>Meh, me confused</p>
+
+
+
 {% endraw %}
 
-<hr><p>Last updated: May 11 2020 at 07:08 UTC</p>
+<hr><p>Last updated: May 11 2020 at 08:13 UTC</p>

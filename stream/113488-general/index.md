@@ -9,9 +9,9 @@ permalink: /stream/113488-general/index.html
 
 ### Topics:
 
-* [pow_(left\|right)_inj(ective)](topic/pow_(left.7Cright)_inj(ective).html) (5 messages, latest: May 11 2020 at 06:37)
+* [pow_(left\|right)_inj(ective)](topic/pow_(left.7Cright)_inj(ective).html) (6 messages, latest: May 11 2020 at 08:06)
+* [moving algebra out of core](topic/moving.20algebra.20out.20of.20core.html) (16 messages, latest: May 11 2020 at 08:04)
 * [iterate](topic/iterate.html) (11 messages, latest: May 11 2020 at 06:35)
-* [moving algebra out of core](topic/moving.20algebra.20out.20of.20core.html) (11 messages, latest: May 11 2020 at 05:04)
 * [Invitation to join the Codewars Lean community, Round 2](topic/Invitation.20to.20join.20the.20Codewars.20Lean.20community.2C.20Round.202.html) (331 messages, latest: May 11 2020 at 00:28)
 * [convert_struct?](topic/convert_struct.3F.html) (4 messages, latest: May 11 2020 at 00:08)
 * [structure unification fails](topic/structure.20unification.20fails.html) (7 messages, latest: May 10 2020 at 19:22)
@@ -2806,4 +2806,4 @@ permalink: /stream/113488-general/index.html
 * [test](topic/test.html) (4 messages, latest: Feb 26 2018 at 16:22)
 * [welcome](topic/welcome.html) (1 message, latest: Feb 26 2018 at 16:02)
 
-<hr><p>Last updated: May 11 2020 at 07:08 UTC</p>
+<hr><p>Last updated: May 11 2020 at 08:13 UTC</p>
