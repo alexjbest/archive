@@ -4265,6 +4265,93 @@ this : ∀ (n m k : ℕ), n + (m + k) = m + (n + k)
 
 
 
+<a name="197113236"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113489-new%20members/topic/more%20basics/near/197113236" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Patrick Massot <a href="https://leanprover-community.github.io/archive/stream/113489-new-members/topic/more.20basics.html#197113236">(May 11 2020 at 08:13)</a>:</h4>
+<p>The simplest approach is</p>
+<div class="codehilite"><pre><span></span><code><span class="kn">example</span> <span class="o">(</span><span class="n">P</span> <span class="n">Q</span> <span class="o">:</span> <span class="kt">Prop</span><span class="o">)</span>
+    <span class="o">(</span><span class="n">h₁</span> <span class="o">:</span> <span class="n">P</span> <span class="bp">→</span> <span class="n">Q</span><span class="o">)</span>
+    <span class="o">(</span><span class="n">h₂</span> <span class="o">:</span> <span class="n">Q</span> <span class="bp">→</span> <span class="bp">¬</span><span class="n">P</span><span class="o">)</span> <span class="o">:</span>
+    <span class="bp">¬</span><span class="n">P</span> <span class="o">:=</span>
+<span class="bp">λ</span> <span class="n">hp</span><span class="o">,</span> <span class="n">h₂</span> <span class="o">(</span><span class="n">h₁</span> <span class="n">hp</span><span class="o">)</span> <span class="n">hp</span>
+</code></pre></div>
+
+
+<p>or </p>
+<div class="codehilite"><pre><span></span><code><span class="kn">example</span> <span class="o">(</span><span class="n">P</span> <span class="n">Q</span> <span class="o">:</span> <span class="kt">Prop</span><span class="o">)</span>
+    <span class="o">(</span><span class="n">h₁</span> <span class="o">:</span> <span class="n">P</span> <span class="bp">→</span> <span class="n">Q</span><span class="o">)</span>
+    <span class="o">(</span><span class="n">h₂</span> <span class="o">:</span> <span class="n">Q</span> <span class="bp">→</span> <span class="bp">¬</span><span class="n">P</span><span class="o">)</span> <span class="o">:</span>
+    <span class="bp">¬</span><span class="n">P</span> <span class="o">:=</span>
+<span class="k">by</span> <span class="n">tauto</span>
+</code></pre></div>
+
+
+<p>depending on taste</p>
+
+
+
+<a name="197113923"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113489-new%20members/topic/more%20basics/near/197113923" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Carlo Cabrera <a href="https://leanprover-community.github.io/archive/stream/113489-new-members/topic/more.20basics.html#197113923">(May 11 2020 at 08:21)</a>:</h4>
+<p>Excellent, thank you.</p>
+
+
+
+<a name="197113926"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113489-new%20members/topic/more%20basics/near/197113926" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Kenny Lau <a href="https://leanprover-community.github.io/archive/stream/113489-new-members/topic/more.20basics.html#197113926">(May 11 2020 at 08:21)</a>:</h4>
+<div class="codehilite"><pre><span></span><code><span class="kn">example</span> <span class="o">(</span><span class="n">P</span> <span class="n">Q</span> <span class="o">:</span> <span class="kt">Prop</span><span class="o">)</span>
+    <span class="o">(</span><span class="n">h₁</span> <span class="o">:</span> <span class="n">P</span> <span class="bp">→</span> <span class="n">Q</span><span class="o">)</span>
+    <span class="o">(</span><span class="n">h₂</span> <span class="o">:</span> <span class="n">Q</span> <span class="bp">→</span> <span class="bp">¬</span><span class="n">P</span><span class="o">)</span> <span class="o">:</span>
+    <span class="bp">¬</span><span class="n">P</span> <span class="o">:=</span>
+<span class="k">assume</span> <span class="n">hp</span> <span class="o">:</span> <span class="n">P</span><span class="o">,</span>
+  <span class="k">have</span> <span class="n">hq</span> <span class="o">:</span> <span class="n">Q</span><span class="o">,</span> <span class="k">from</span> <span class="n">h₁</span> <span class="n">hp</span><span class="o">,</span>
+  <span class="k">have</span> <span class="n">hnp</span> <span class="o">:</span> <span class="bp">¬</span><span class="n">P</span><span class="o">,</span> <span class="k">from</span> <span class="n">h₂</span> <span class="n">hq</span><span class="o">,</span>
+  <span class="k">show</span> <span class="n">false</span><span class="o">,</span> <span class="k">from</span> <span class="n">hnp</span> <span class="n">hp</span>
+</code></pre></div>
+
+
+
+<a name="197113941"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113489-new%20members/topic/more%20basics/near/197113941" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Kevin Buzzard <a href="https://leanprover-community.github.io/archive/stream/113489-new-members/topic/more.20basics.html#197113941">(May 11 2020 at 08:21)</a>:</h4>
+<p>Aargh</p>
+
+
+
+<a name="197113974"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113489-new%20members/topic/more%20basics/near/197113974" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Kenny Lau <a href="https://leanprover-community.github.io/archive/stream/113489-new-members/topic/more.20basics.html#197113974">(May 11 2020 at 08:21)</a>:</h4>
+<div class="codehilite"><pre><span></span><code><span class="kn">example</span> <span class="o">(</span><span class="n">P</span> <span class="n">Q</span> <span class="o">:</span> <span class="kt">Prop</span><span class="o">)</span>
+    <span class="o">(</span><span class="n">h₁</span> <span class="o">:</span> <span class="n">P</span> <span class="bp">→</span> <span class="n">Q</span><span class="o">)</span>
+    <span class="o">(</span><span class="n">h₂</span> <span class="o">:</span> <span class="n">Q</span> <span class="bp">→</span> <span class="bp">¬</span><span class="n">P</span><span class="o">)</span> <span class="o">:</span>
+    <span class="bp">¬</span><span class="n">P</span> <span class="o">:=</span>
+<span class="k">assume</span> <span class="n">Aargh</span> <span class="o">:</span> <span class="n">P</span><span class="o">,</span>
+  <span class="k">have</span> <span class="n">hq</span> <span class="o">:</span> <span class="n">Q</span><span class="o">,</span> <span class="k">from</span> <span class="n">h₁</span> <span class="n">Aargh</span><span class="o">,</span>
+  <span class="k">have</span> <span class="n">hnp</span> <span class="o">:</span> <span class="bp">¬</span><span class="n">P</span><span class="o">,</span> <span class="k">from</span> <span class="n">h₂</span> <span class="n">hq</span><span class="o">,</span>
+  <span class="k">show</span> <span class="n">false</span><span class="o">,</span> <span class="k">from</span> <span class="n">hnp</span> <span class="n">Aargh</span>
+</code></pre></div>
+
+
+
+<a name="197113979"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113489-new%20members/topic/more%20basics/near/197113979" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Kevin Buzzard <a href="https://leanprover-community.github.io/archive/stream/113489-new-members/topic/more.20basics.html#197113979">(May 11 2020 at 08:21)</a>:</h4>
+<p>The horribleist approach to complement the two simple ones</p>
+
+
+
+<a name="197114426"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113489-new%20members/topic/more%20basics/near/197114426" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Kevin Buzzard <a href="https://leanprover-community.github.io/archive/stream/113489-new-members/topic/more.20basics.html#197114426">(May 11 2020 at 08:27)</a>:</h4>
+<p>I can't actually see what the question is because I'm on mobile and one of the hypotheses is <code>h-box : P box Q</code>. From the code it looks like the box should be an implies sign, but I can see an implies sign in h2 so I'm confused</p>
+
+
+
+<a name="197114771"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113489-new%20members/topic/more%20basics/near/197114771" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Kenny Lau <a href="https://leanprover-community.github.io/archive/stream/113489-new-members/topic/more.20basics.html#197114771">(May 11 2020 at 08:31)</a>:</h4>
+<div class="codehilite"><pre><span></span><code><span class="kn">example</span> <span class="o">(</span><span class="n">P</span> <span class="n">Q</span> <span class="o">:</span> <span class="kt">Prop</span><span class="o">)</span>
+    <span class="o">(</span><span class="n">h₁</span> <span class="o">:</span> <span class="n">P</span> <span class="bp">→</span> <span class="n">Q</span><span class="o">)</span>
+    <span class="o">(</span><span class="n">h₂</span> <span class="o">:</span> <span class="n">Q</span> <span class="bp">→</span> <span class="bp">¬</span><span class="n">P</span><span class="o">)</span> <span class="o">:</span>
+    <span class="bp">¬</span><span class="n">P</span> <span class="o">:=</span>
+<span class="n">implies</span><span class="bp">.</span><span class="n">trans</span> <span class="o">(</span><span class="n">and_self</span> <span class="n">P</span><span class="o">)</span><span class="bp">.</span><span class="n">mpr</span> <span class="o">(</span><span class="n">and</span><span class="bp">.</span><span class="n">rec</span> <span class="o">(</span><span class="n">implies</span><span class="bp">.</span><span class="n">trans</span> <span class="n">h₁</span> <span class="n">h₂</span><span class="o">))</span>
+</code></pre></div>
+
+
+
 {% endraw %}
 
-<hr><p>Last updated: May 11 2020 at 08:13 UTC</p>
+<hr><p>Last updated: May 11 2020 at 09:12 UTC</p>
