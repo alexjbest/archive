@@ -9,12 +9,13 @@ permalink: /stream/113488-general/index.html
 
 ### Topics:
 
-* [pow_(left\|right)_inj(ective)](topic/pow_(left.7Cright)_inj(ective).html) (30 messages, latest: May 11 2020 at 15:08)
-* [new Lean / mathlib tutorial](topic/new.20Lean.20.2F.20mathlib.20tutorial.html) (7 messages, latest: May 11 2020 at 15:07)
+* [Lean in the wild](topic/Lean.20in.20the.20wild.html) (471 messages, latest: May 11 2020 at 16:09)
+* [new Lean / mathlib tutorial](topic/new.20Lean.20.2F.20mathlib.20tutorial.html) (10 messages, latest: May 11 2020 at 15:52)
+* [Strange term creation error](topic/Strange.20term.20creation.20error.html) (5 messages, latest: May 11 2020 at 15:35)
+* [pow_(left\|right)_inj(ective)](topic/pow_(left.7Cright)_inj(ective).html) (31 messages, latest: May 11 2020 at 15:13)
 * [New website](topic/New.20website.html) (28 messages, latest: May 11 2020 at 14:59)
 * [Create a mathlib branch that builds with Lean master?](topic/Create.20a.20mathlib.20branch.20that.20builds.20with.20Lean.20master.3F.html) (7 messages, latest: May 11 2020 at 13:16)
 * [well_founded_tactics](topic/well_founded_tactics.html) (7 messages, latest: May 11 2020 at 12:57)
-* [Lean in the wild](topic/Lean.20in.20the.20wild.html) (467 messages, latest: May 11 2020 at 11:57)
 * [moving algebra out of core](topic/moving.20algebra.20out.20of.20core.html) (38 messages, latest: May 11 2020 at 10:08)
 * [iterate](topic/iterate.html) (11 messages, latest: May 11 2020 at 06:35)
 * [Invitation to join the Codewars Lean community, Round 2](topic/Invitation.20to.20join.20the.20Codewars.20Lean.20community.2C.20Round.202.html) (331 messages, latest: May 11 2020 at 00:28)
@@ -2809,4 +2810,4 @@ permalink: /stream/113488-general/index.html
 * [test](topic/test.html) (4 messages, latest: Feb 26 2018 at 16:22)
 * [welcome](topic/welcome.html) (1 message, latest: Feb 26 2018 at 16:02)
 
-<hr><p>Last updated: May 11 2020 at 15:11 UTC</p>
+<hr><p>Last updated: May 11 2020 at 16:10 UTC</p>

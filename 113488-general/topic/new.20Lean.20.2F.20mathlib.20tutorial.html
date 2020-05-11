@@ -64,6 +64,36 @@ Maybe it's good to leave it there though, it teaches readers that theorem prover
 
 
 
+<a name="197159933"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113488-general/topic/new%20Lean%20/%20mathlib%20tutorial/near/197159933" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Shing Tak Lam <a href="https://leanprover-community.github.io/archive/stream/113488-general/topic/new.20Lean.20.2F.20mathlib.20tutorial.html#197159933">(May 11 2020 at 15:14)</a>:</h4>
+<p>I think what <span class="user-mention" data-user-id="299728">@Jean-Philippe Burelle</span>  is saying is that the exercise</p>
+<div class="codehilite"><pre><span></span><code><span class="kn">theorem</span> <span class="n">one_mul</span> <span class="o">(</span><span class="n">a</span> <span class="o">:</span> <span class="n">G</span><span class="o">)</span> <span class="o">:</span> <span class="mi">1</span> <span class="bp">*</span> <span class="n">a</span> <span class="bp">=</span> <span class="n">a</span> <span class="o">:=</span>
+<span class="n">sorry</span>
+</code></pre></div>
+
+
+<p>should be</p>
+<div class="codehilite"><pre><span></span><code><span class="kn">theorem</span> <span class="n">mul_one</span> <span class="o">(</span><span class="n">a</span> <span class="o">:</span> <span class="n">G</span><span class="o">)</span> <span class="o">:</span>  <span class="n">a</span> <span class="bp">*</span> <span class="mi">1</span> <span class="bp">=</span> <span class="n">a</span> <span class="o">:=</span>
+<span class="n">sorry</span>
+</code></pre></div>
+
+
+<p>since <code>one_mul</code> is true by definition of a group</p>
+
+
+
+<a name="197161201"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113488-general/topic/new%20Lean%20/%20mathlib%20tutorial/near/197161201" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Johan Commelin <a href="https://leanprover-community.github.io/archive/stream/113488-general/topic/new.20Lean.20.2F.20mathlib.20tutorial.html#197161201">(May 11 2020 at 15:22)</a>:</h4>
+<p><span class="user-mention" data-user-id="299728">@Jean-Philippe Burelle</span> sorry, I'm dense <span aria-label="oops" class="emoji emoji-1f643" role="img" title="oops">:oops:</span></p>
+
+
+
+<a name="197165647"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113488-general/topic/new%20Lean%20/%20mathlib%20tutorial/near/197165647" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Jeremy Avigad <a href="https://leanprover-community.github.io/archive/stream/113488-general/topic/new.20Lean.20.2F.20mathlib.20tutorial.html#197165647">(May 11 2020 at 15:52)</a>:</h4>
+<p>Thanks! I just fixed in my copy. It will be online within the next day or two. Also, the name of the theorem after that should have been <code>mul_right_inv</code>. We have a tool that checks the snippets to make sure they compile, but we don't have a tool to check the exercises to make sure that they make sense.</p>
+
+
+
 {% endraw %}
 
-<hr><p>Last updated: May 11 2020 at 15:11 UTC</p>
+<hr><p>Last updated: May 11 2020 at 16:10 UTC</p>
