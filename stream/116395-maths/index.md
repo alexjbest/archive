@@ -9,7 +9,7 @@ permalink: /stream/116395-maths/index.html
 
 ### Topics:
 
-* [Lean for the curious mathematician](topic/Lean.20for.20the.20curious.20mathematician.html) (16 messages, latest: May 11 2020 at 19:10)
+* [Lean for the curious mathematician](topic/Lean.20for.20the.20curious.20mathematician.html) (18 messages, latest: May 11 2020 at 19:28)
 * [Bounded continuous functions](topic/Bounded.20continuous.20functions.html) (33 messages, latest: May 11 2020 at 18:46)
 * [Quotients & synthesizing](topic/Quotients.20.26.20synthesizing.html) (97 messages, latest: May 10 2020 at 22:32)
 * [quotient by zero submodule](topic/quotient.20by.20zero.20submodule.html) (35 messages, latest: May 10 2020 at 16:55)
@@ -898,4 +898,4 @@ permalink: /stream/116395-maths/index.html
 * [free group](topic/free.20group.html) (92 messages, latest: Apr 02 2018 at 05:00)
 * [Easy topological space question](topic/Easy.20topological.20space.20question.html) (18 messages, latest: Apr 02 2018 at 01:23)
 
-<hr><p>Last updated: May 11 2020 at 19:11 UTC</p>
+<hr><p>Last updated: May 11 2020 at 20:06 UTC</p>

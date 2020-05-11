@@ -4352,6 +4352,112 @@ this : ∀ (n m k : ℕ), n + (m + k) = m + (n + k)
 
 
 
+<a name="197192487"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113489-new%20members/topic/more%20basics/near/197192487" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Iocta <a href="https://leanprover-community.github.io/archive/stream/113489-new-members/topic/more.20basics.html#197192487">(May 11 2020 at 19:25)</a>:</h4>
+<div class="codehilite"><pre><span></span><code><span class="kn">theorem</span> <span class="n">zero_mul</span> <span class="o">(</span><span class="n">a</span> <span class="o">:</span> <span class="n">R</span><span class="o">)</span> <span class="o">:</span> <span class="mi">0</span> <span class="bp">*</span> <span class="n">a</span>  <span class="bp">=</span> <span class="mi">0</span> <span class="o">:=</span>
+<span class="k">begin</span>
+<span class="n">rw</span> <span class="err">←</span> <span class="n">add_left_neg</span> <span class="n">a</span><span class="o">,</span>
+<span class="n">rw</span> <span class="n">add_mul</span><span class="o">,</span>
+<span class="n">rw</span> <span class="n">add_comm</span><span class="o">,</span>
+<span class="n">rw</span> <span class="n">add_left_neg</span> <span class="n">a</span><span class="o">,</span>
+<span class="n">rw</span> <span class="n">add_comm</span> <span class="o">(</span><span class="n">a</span> <span class="bp">*</span> <span class="n">a</span><span class="o">)</span> <span class="o">(</span><span class="bp">-</span><span class="n">a</span> <span class="bp">*</span> <span class="n">a</span><span class="o">),</span>
+<span class="k">have</span> <span class="n">h</span><span class="o">:</span> <span class="o">(</span><span class="bp">-</span><span class="n">a</span> <span class="bp">*</span> <span class="n">a</span><span class="o">)</span> <span class="bp">+</span> <span class="o">(</span><span class="n">a</span> <span class="bp">*</span> <span class="n">a</span><span class="o">)</span> <span class="bp">=</span> <span class="bp">-</span><span class="o">(</span><span class="n">a</span> <span class="bp">*</span> <span class="n">a</span><span class="o">)</span> <span class="bp">+</span> <span class="o">(</span><span class="n">a</span> <span class="bp">*</span> <span class="n">a</span><span class="o">),</span>
+<span class="k">from</span> <span class="n">sorry</span><span class="o">,</span>
+<span class="n">rw</span> <span class="n">h</span><span class="o">,</span>
+<span class="n">rw</span> <span class="n">add_left_neg</span> <span class="o">(</span><span class="n">a</span> <span class="bp">*</span> <span class="n">a</span><span class="o">),</span>
+<span class="kn">end</span>
+</code></pre></div>
+
+
+<p>How can I fill <code>sorry</code>, or is there a better way to solve this problem?</p>
+
+
+
+<a name="197192691"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113489-new%20members/topic/more%20basics/near/197192691" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Jalex Stark <a href="https://leanprover-community.github.io/archive/stream/113489-new-members/topic/more.20basics.html#197192691">(May 11 2020 at 19:27)</a>:</h4>
+<p>please give a <a href="https://github.com/leanprover-community/mathlib/wiki/Minimum-Working-Example-&#40;MWE&#41;">#mwe</a><br>
+Is <code>R</code> a commutative ring?</p>
+
+
+
+<a name="197192717"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113489-new%20members/topic/more%20basics/near/197192717" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Jalex Stark <a href="https://leanprover-community.github.io/archive/stream/113489-new-members/topic/more.20basics.html#197192717">(May 11 2020 at 19:27)</a>:</h4>
+<p>are you avoiding use of the <code>ring</code> tactic?</p>
+
+
+
+<a name="197192784"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113489-new%20members/topic/more%20basics/near/197192784" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Kevin Buzzard <a href="https://leanprover-community.github.io/archive/stream/113489-new-members/topic/more.20basics.html#197192784">(May 11 2020 at 19:27)</a>:</h4>
+<p>Are you avoiding use the of the <code>zero_mul</code> lemma? ;-)</p>
+
+
+
+<a name="197192944"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113489-new%20members/topic/more%20basics/near/197192944" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Jalex Stark <a href="https://leanprover-community.github.io/archive/stream/113489-new-members/topic/more.20basics.html#197192944">(May 11 2020 at 19:29)</a>:</h4>
+<p>If you want to learn the proof of zero_mul for natural numbers, play the natural number game</p>
+
+
+
+<a name="197193001"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113489-new%20members/topic/more%20basics/near/197193001" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Jalex Stark <a href="https://leanprover-community.github.io/archive/stream/113489-new-members/topic/more.20basics.html#197193001">(May 11 2020 at 19:29)</a>:</h4>
+<p>If you want to learn it for general commutative rings then you should be thinking about what the axioms are and what order you want to develop the theory in</p>
+
+
+
+<a name="197193052"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113489-new%20members/topic/more%20basics/near/197193052" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Kevin Buzzard <a href="https://leanprover-community.github.io/archive/stream/113489-new-members/topic/more.20basics.html#197193052">(May 11 2020 at 19:29)</a>:</h4>
+<p>but currently your question is unanswerable because you didn't supply the typeclass of R in a mwe</p>
+
+
+
+<a name="197193160"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113489-new%20members/topic/more%20basics/near/197193160" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Iocta <a href="https://leanprover-community.github.io/archive/stream/113489-new-members/topic/more.20basics.html#197193160">(May 11 2020 at 19:30)</a>:</h4>
+<div class="codehilite"><pre><span></span><code><span class="kn">variables</span> <span class="o">{</span><span class="n">R</span> <span class="o">:</span> <span class="kt">Type</span><span class="bp">*</span><span class="o">}</span> <span class="o">[</span><span class="n">ring</span> <span class="n">R</span><span class="o">]</span>
+
+<span class="kn">theorem</span> <span class="n">zero_mul</span> <span class="o">(</span><span class="n">a</span> <span class="o">:</span> <span class="n">R</span><span class="o">)</span> <span class="o">:</span> <span class="mi">0</span> <span class="bp">*</span> <span class="n">a</span>  <span class="bp">=</span> <span class="mi">0</span> <span class="o">:=</span>
+<span class="k">begin</span>
+<span class="n">rw</span> <span class="err">←</span> <span class="n">add_left_neg</span> <span class="n">a</span><span class="o">,</span>
+<span class="n">rw</span> <span class="n">add_mul</span><span class="o">,</span>
+<span class="n">rw</span> <span class="n">add_comm</span><span class="o">,</span>
+<span class="n">rw</span> <span class="n">add_left_neg</span> <span class="n">a</span><span class="o">,</span>
+<span class="n">rw</span> <span class="n">add_comm</span> <span class="o">(</span><span class="n">a</span> <span class="bp">*</span> <span class="n">a</span><span class="o">)</span> <span class="o">(</span><span class="bp">-</span><span class="n">a</span> <span class="bp">*</span> <span class="n">a</span><span class="o">),</span>
+<span class="k">have</span> <span class="n">h</span><span class="o">:</span> <span class="o">(</span><span class="bp">-</span><span class="n">a</span> <span class="bp">*</span> <span class="n">a</span><span class="o">)</span> <span class="bp">+</span> <span class="o">(</span><span class="n">a</span> <span class="bp">*</span> <span class="n">a</span><span class="o">)</span> <span class="bp">=</span> <span class="bp">-</span><span class="o">(</span><span class="n">a</span> <span class="bp">*</span> <span class="n">a</span><span class="o">)</span> <span class="bp">+</span> <span class="o">(</span><span class="n">a</span> <span class="bp">*</span> <span class="n">a</span><span class="o">),</span>
+<span class="k">from</span> <span class="n">sorry</span><span class="o">,</span>
+<span class="n">rw</span> <span class="n">h</span><span class="o">,</span>
+<span class="n">rw</span> <span class="n">add_left_neg</span> <span class="o">(</span><span class="n">a</span> <span class="bp">*</span> <span class="n">a</span><span class="o">),</span>
+<span class="kn">end</span>
+</code></pre></div>
+
+
+
+<a name="197193242"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113489-new%20members/topic/more%20basics/near/197193242" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Kevin Buzzard <a href="https://leanprover-community.github.io/archive/stream/113489-new-members/topic/more.20basics.html#197193242">(May 11 2020 at 19:31)</a>:</h4>
+<p><span class="user-mention silent" data-user-id="110038">Kevin Buzzard</span> <a href="#narrow/stream/113489-new-members/topic/more.20basics/near/197114426">said</a>:</p>
+<blockquote>
+<p>I can't actually see what the question is because I'm on mobile and one of the hypotheses is <code>h-box : P box Q</code>. From the code it looks like the box should be an implies sign, but I can see an implies sign in h2 so I'm confused</p>
+</blockquote>
+<p>Oh -- back to this -- on mobile the implication for h1 didn't render but the one for h2 did?</p>
+
+
+
+<a name="197193273"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113489-new%20members/topic/more%20basics/near/197193273" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Kenny Lau <a href="https://leanprover-community.github.io/archive/stream/113489-new-members/topic/more.20basics.html#197193273">(May 11 2020 at 19:31)</a>:</h4>
+<p>how about one topic for one question</p>
+
+
+
+<a name="197193361"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113489-new%20members/topic/more%20basics/near/197193361" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Reid Barton <a href="https://leanprover-community.github.io/archive/stream/113489-new-members/topic/more.20basics.html#197193361">(May 11 2020 at 19:32)</a>:</h4>
+<p>if you're talking about Kenny's most recent message, I can assure you they are the same character</p>
+
+
+
+<a name="197193439"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113489-new%20members/topic/more%20basics/near/197193439" class="zl"><img src="https://leanprover-community.github.io/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Kevin Buzzard <a href="https://leanprover-community.github.io/archive/stream/113489-new-members/topic/more.20basics.html#197193439">(May 11 2020 at 19:32)</a>:</h4>
+<p><span class="user-mention" data-user-id="253355">@Iocta</span> can you start a new topic instead of just posting on some other one?</p>
+
+
+
 {% endraw %}
 
-<hr><p>Last updated: May 11 2020 at 19:11 UTC</p>
+<hr><p>Last updated: May 11 2020 at 20:06 UTC</p>

@@ -9,7 +9,9 @@ permalink: /stream/113489-new-members/index.html
 
 ### Topics:
 
-* [How to move things to the other side of the equation?](topic/How.20to.20move.20things.20to.20the.20other.20side.20of.20the.20equation.3F.html) (2 messages, latest: May 11 2020 at 19:09)
+* [How to move things to the other side of the equation?](topic/How.20to.20move.20things.20to.20the.20other.20side.20of.20the.20equation.3F.html) (32 messages, latest: May 11 2020 at 19:51)
+* [zero_mul](topic/zero_mul.html) (17 messages, latest: May 11 2020 at 19:39)
+* [more basics](topic/more.20basics.html) (506 messages, latest: May 11 2020 at 19:32)
 * [Failed to synthesize type class instance](topic/Failed.20to.20synthesize.20type.20class.20instance.html) (17 messages, latest: May 11 2020 at 18:48)
 * [Structural recursion syntax](topic/Structural.20recursion.20syntax.html) (23 messages, latest: May 11 2020 at 18:32)
 * [From n<=1, get n=0 or n=1](topic/From.20n.3C.3D1.2C.20get.20n.3D0.20or.20n.3D1.html) (7 messages, latest: May 11 2020 at 18:02)
@@ -19,7 +21,6 @@ permalink: /stream/113489-new-members/index.html
 * [noob question(s)](topic/noob.20question(s).html) (5602 messages, latest: May 11 2020 at 12:12)
 * [How does eq.refl work?](topic/How.20does.20eq.2Erefl.20work.3F.html) (10 messages, latest: May 11 2020 at 11:44)
 * [(no topic)](topic/(no.20topic).html) (51 messages, latest: May 11 2020 at 11:44)
-* [more basics](topic/more.20basics.html) (494 messages, latest: May 11 2020 at 08:31)
 * [leanproject and branches](topic/leanproject.20and.20branches.html) (14 messages, latest: May 11 2020 at 07:16)
 * [hitchhiker's guide](topic/hitchhiker's.20guide.html) (18 messages, latest: May 11 2020 at 04:08)
 * [an element of set (set unit)](topic/an.20element.20of.20set.20(set.20unit).html) (39 messages, latest: May 11 2020 at 00:04)
@@ -1051,4 +1052,4 @@ permalink: /stream/113489-new-members/index.html
 * [Andrew Ashworth](topic/Andrew.20Ashworth.html) (15 messages, latest: Feb 26 2018 at 16:21)
 * [onboarding](topic/onboarding.html) (1 message, latest: Feb 26 2018 at 16:02)
 
-<hr><p>Last updated: May 11 2020 at 19:11 UTC</p>
+<hr><p>Last updated: May 11 2020 at 20:06 UTC</p>
