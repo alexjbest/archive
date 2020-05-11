@@ -9,8 +9,8 @@ permalink: /stream/113489-new-members/index.html
 
 ### Topics:
 
-* [How to move things to the other side of the equation?](topic/How.20to.20move.20things.20to.20the.20other.20side.20of.20the.20equation.3F.html) (32 messages, latest: May 11 2020 at 19:51)
-* [zero_mul](topic/zero_mul.html) (17 messages, latest: May 11 2020 at 19:39)
+* [zero_mul](topic/zero_mul.html) (19 messages, latest: May 11 2020 at 20:46)
+* [How to move things to the other side of the equation?](topic/How.20to.20move.20things.20to.20the.20other.20side.20of.20the.20equation.3F.html) (34 messages, latest: May 11 2020 at 20:35)
 * [more basics](topic/more.20basics.html) (506 messages, latest: May 11 2020 at 19:32)
 * [Failed to synthesize type class instance](topic/Failed.20to.20synthesize.20type.20class.20instance.html) (17 messages, latest: May 11 2020 at 18:48)
 * [Structural recursion syntax](topic/Structural.20recursion.20syntax.html) (23 messages, latest: May 11 2020 at 18:32)
@@ -1052,4 +1052,4 @@ permalink: /stream/113489-new-members/index.html
 * [Andrew Ashworth](topic/Andrew.20Ashworth.html) (15 messages, latest: Feb 26 2018 at 16:21)
 * [onboarding](topic/onboarding.html) (1 message, latest: Feb 26 2018 at 16:02)
 
-<hr><p>Last updated: May 11 2020 at 20:06 UTC</p>
+<hr><p>Last updated: May 11 2020 at 21:08 UTC</p>

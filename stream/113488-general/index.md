@@ -9,10 +9,10 @@ permalink: /stream/113488-general/index.html
 
 ### Topics:
 
+* [moving algebra out of core](topic/moving.20algebra.20out.20of.20core.html) (53 messages, latest: May 11 2020 at 21:07)
+* [tiny stdlib between core and mathlib](topic/tiny.20stdlib.20between.20core.20and.20mathlib.html) (10 messages, latest: May 11 2020 at 20:18)
 * [Specialized `ext` lemmas](topic/Specialized.20.60ext.60.20lemmas.html) (11 messages, latest: May 11 2020 at 19:06)
 * [has_dvd](topic/has_dvd.html) (5 messages, latest: May 11 2020 at 18:56)
-* [tiny stdlib between core and mathlib](topic/tiny.20stdlib.20between.20core.20and.20mathlib.html) (9 messages, latest: May 11 2020 at 18:43)
-* [moving algebra out of core](topic/moving.20algebra.20out.20of.20core.html) (48 messages, latest: May 11 2020 at 18:00)
 * [New website](topic/New.20website.html) (29 messages, latest: May 11 2020 at 17:47)
 * [Proof Ground 2020](topic/Proof.20Ground.202020.html) (1 message, latest: May 11 2020 at 16:58)
 * [Case tags](topic/Case.20tags.html) (21 messages, latest: May 11 2020 at 16:36)
@@ -2813,4 +2813,4 @@ permalink: /stream/113488-general/index.html
 * [test](topic/test.html) (4 messages, latest: Feb 26 2018 at 16:22)
 * [welcome](topic/welcome.html) (1 message, latest: Feb 26 2018 at 16:02)
 
-<hr><p>Last updated: May 11 2020 at 20:06 UTC</p>
+<hr><p>Last updated: May 11 2020 at 21:08 UTC</p>
